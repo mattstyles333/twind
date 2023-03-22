@@ -561,10 +561,6 @@ video {
   display: flex;
 }
 
-.contents {
-  display: contents;
-}
-
 .hidden {
   display: none;
 }
@@ -585,9 +581,8 @@ video {
   white-space: nowrap;
 }
 
-.bg-l {
-  --tw-bg-opacity: 1;
-  background-color: rgb(214 211 209 / var(--tw-bg-opacity));
+.fill-p {
+  fill: #1f2937;
 }
 
 .fill-s {
@@ -596,14 +591,6 @@ video {
 
 .fill-t {
   fill: #00824E;
-}
-
-.fill-l {
-  fill: #d6d3d1;
-}
-
-.fill-p {
-  fill: #1f2937;
 }
 
 .pb-2 {
