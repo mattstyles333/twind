@@ -1035,6 +1035,14 @@ video {
   width: 16rem;
 }
 
+.w-128 {
+  width: 32rem;
+}
+
+.w-256 {
+  width: 64rem;
+}
+
 .w-7 {
   width: 1.75rem;
 }
