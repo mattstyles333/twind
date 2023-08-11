@@ -2332,6 +2332,14 @@ video {
   padding-top: 10px;
 }
 
+.pt-4 {
+  padding-top: 1rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -3870,6 +3878,10 @@ video {
 
   .md\:mt-8 {
     margin-top: 2rem;
+  }
+
+  .md\:ml-6 {
+    margin-left: 1.5rem;
   }
 
   .md\:block {
