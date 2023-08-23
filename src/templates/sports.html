@@ -1,640 +1,923 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../output.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="../output.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-</head>
-
-<body class="bg-white">
-  <div class="relative lg:grid lg:grid-cols-2">
-    <img alt="A runner tying his shoes" class="absolute h-full w-full object-cover lg:relative"
-      src="https://unsplash.com/photos/d3bYmnZ0ank/download?force=true&auto=format&fit=crop&w=1228&q=80" width="1228"
-      height="768" loading="lazy" />
-    <div class="relative bg-gradient-to-t from-s pt-48 pb-12 px-8 lg:bg-p">
-      <div class="max-w-lg mx-auto flex flex-col gap-10">
-        <div class="text-6xl leading-none font-bold text-white drop-shadow-lg text-center lg:text-left xl:text-7xl">
-          Sports Glasses
-        </div>
-        <div class="text-2xl leading-8 font-semibold text-white text-center lg:text-left">
-          Omnes possibilem vitrum quod cogitare potes offerimus, a varifocalibus ad transmutationes speculi!
-        </div>
-        <div class="flex flex-col gap-4 justify-center sm:flex-row lg:flex-wrap lg:justify-start">
-          <a href="{{store url='home'}}" class="bg-white text-s text-2xl font-bold px-8 py-6 shadow-md rounded-md flex justify-between hover:bg-l
-                               sm:gap-4">
-            <span>Shop Men</span><span>→</span>
-          </a>
-          <a href="{{store url='home'}}" class="bg-white text-s text-2xl font-bold px-8 py-6 shadow-md rounded-md flex justify-between
-                               sm:gap-4">
-            <span>Shop Women</span><span>→</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <section class="my-12 bg-white">
-    <div class="mx-4 md:mx-8 lg:mx-24 ">
-      <h2 class="text-4xl text-center text-slate-800 font-bold">Choose Your Sport</h2>
-      <div class="mt-4 md:mt-12">
-        <!-- 2 rows, 3 columns on large screens -->
-        <div class="grid grid-cols-2 gap-6 lg:grid-cols-6 md:gap-8 lg:gap-12 container mx-auto px-12">
-          <!-- Column 1 -->
+  <body class="bg-white">
+    <div class="relative lg:grid lg:grid-cols-2">
+      <img
+        alt="A runner tying his shoes"
+        class="absolute h-full w-full object-cover lg:relative"
+        src="https://unsplash.com/photos/d3bYmnZ0ank/download?force=true&auto=format&fit=crop&w=1228&q=80"
+        width="1228"
+        height="768"
+        loading="lazy"
+      />
+      <div class="from-s lg:bg-p relative bg-gradient-to-t px-8 pb-12 pt-48">
+        <div class="mx-auto flex max-w-lg flex-col gap-10">
           <div
-            class="hover:-translate-y-6 bg-l ease-in-out duration-1000 rounded-lg hover:shadow-xl group relative shadow-lg dark:bg-gray-800 dark:border-gray-700 mb-12 filter ">
-            <a href="">
-              <img class="w-32 p-6 filter ease-in-out mx-auto" src="../img/cycling.png" alt="" />
-              <div class="">
-              </div>
-              <div
-                class="bg-p group-hover:bg-s ease-in-out duration-1000 dark:border-gray-700 dark:divide-gray-700 rounded-b-lg">
-                <a class="w-full text-white px-4 inline-flex justify-center font-medium text-l shadow-sm align-middle text-sm p-3 sm:p-4"
-                  href="#">
-                  Shop Cycling Glasses
-                </a>
-              </div>
-            </a>
+            class="text-center text-6xl font-bold leading-none text-white drop-shadow-lg lg:text-left xl:text-7xl"
+          >
+            Sports Glasses
           </div>
           <div
-            class="hover:-translate-y-6 bg-l ease-in-out duration-1000 rounded-lg hover:shadow-xl group relative shadow-lg dark:bg-gray-800 dark:border-gray-700 mb-12 filter ">
-            <a href="">
-              <img class="w-32 p-6 filter ease-in-out mx-auto" src="../img/cycling.png" alt="" />
-              <div class="">
-              </div>
-              <div
-                class="bg-p group-hover:bg-s ease-in-out duration-1000 dark:border-gray-700 dark:divide-gray-700 rounded-b-lg">
-                <a class="w-full text-white px-4 inline-flex justify-center font-medium text-l shadow-sm align-middle text-sm p-3 sm:p-4"
-                  href="#">
-                  Shop Cycling Glasses
-                </a>
-              </div>
-            </a>
+            class="text-center text-2xl font-semibold leading-8 text-white lg:text-left"
+          >
+            Omnes possibilem vitrum quod cogitare potes offerimus, a
+            varifocalibus ad transmutationes speculi!
           </div>
           <div
-            class="hover:-translate-y-6 bg-l ease-in-out duration-1000 rounded-lg hover:shadow-xl group relative shadow-lg dark:bg-gray-800 dark:border-gray-700 mb-12 filter ">
-            <a href="">
-              <img class="w-32 p-6 filter ease-in-out mx-auto" src="../img/cycling.png" alt="" />
-              <div class="">
-              </div>
-              <div
-                class="bg-p group-hover:bg-s ease-in-out duration-1000 dark:border-gray-700 dark:divide-gray-700 rounded-b-lg">
-                <a class="w-full text-white px-4 inline-flex justify-center font-medium text-l shadow-sm align-middle text-sm p-3 sm:p-4"
-                  href="#">
-                  Shop Cycling Glasses
-                </a>
-              </div>
+            class="flex flex-col justify-center gap-4 sm:flex-row lg:flex-wrap lg:justify-start"
+          >
+            <a
+              href="{{store url='home'}}"
+              class="text-s hover:bg-l flex justify-between rounded-md bg-white px-8 py-6 text-2xl font-bold shadow-md sm:gap-4"
+            >
+              <span>Shop Men</span><span>→</span>
             </a>
-          </div>
-          <div
-            class="hover:-translate-y-6 bg-l ease-in-out duration-1000 rounded-lg hover:shadow-xl group relative shadow-lg dark:bg-gray-800 dark:border-gray-700 mb-12 filter ">
-            <a href="">
-              <img class="w-32 p-6 filter ease-in-out mx-auto" src="../img/cycling.png" alt="" />
-              <div class="">
-              </div>
-              <div
-                class="bg-p group-hover:bg-s ease-in-out duration-1000 dark:border-gray-700 dark:divide-gray-700 rounded-b-lg">
-                <a class="w-full text-white px-4 inline-flex justify-center font-medium text-l shadow-sm align-middle text-sm p-3 sm:p-4"
-                  href="#">
-                  Shop Cycling Glasses
-                </a>
-              </div>
-            </a>
-          </div>
-          <div
-            class="hover:-translate-y-6 bg-l ease-in-out duration-1000 rounded-lg hover:shadow-xl group relative shadow-lg dark:bg-gray-800 dark:border-gray-700 mb-12 filter ">
-            <a href="">
-              <img class="w-32 p-6 filter ease-in-out mx-auto" src="../img/cycling.png" alt="" />
-              <div class="">
-              </div>
-              <div
-                class="bg-p group-hover:bg-s ease-in-out duration-1000 dark:border-gray-700 dark:divide-gray-700 rounded-b-lg">
-                <a class="w-full text-white px-4 inline-flex justify-center font-medium text-l shadow-sm align-middle text-sm p-3 sm:p-4"
-                  href="#">
-                  Shop Cycling Glasses
-                </a>
-              </div>
-            </a>
-          </div>
-          <div
-            class="hover:-translate-y-6 bg-l ease-in-out duration-1000 rounded-lg hover:shadow-xl group relative shadow-lg dark:bg-gray-800 dark:border-gray-700 mb-12 filter ">
-            <a href="">
-              <img class="w-32 p-6 filter ease-in-out mx-auto" src="../img/cycling.png" alt="" />
-              <div class="">
-              </div>
-              <div
-                class="bg-p group-hover:bg-s ease-in-out duration-1000 dark:border-gray-700 dark:divide-gray-700 rounded-b-lg">
-                <a class="w-full text-white px-4 inline-flex justify-center font-medium text-l shadow-sm align-middle text-sm p-3 sm:p-4"
-                  href="#">
-                  Shop Cycling Glasses
-                </a>
-              </div>
-            </a>
-          </div>
-          <div
-            class="hover:-translate-y-6 bg-l ease-in-out duration-1000 rounded-lg hover:shadow-xl group relative shadow-lg dark:bg-gray-800 dark:border-gray-700 mb-12 filter ">
-            <a href="">
-              <img class="w-32 p-6 filter ease-in-out mx-auto" src="../img/cycling.png" alt="" />
-              <div class="">
-              </div>
-              <div
-                class="bg-p group-hover:bg-s ease-in-out duration-1000 dark:border-gray-700 dark:divide-gray-700 rounded-b-lg">
-                <a class="w-full text-white px-4 inline-flex justify-center font-medium text-l shadow-sm align-middle text-sm p-3 sm:p-4"
-                  href="#">
-                  Shop Cycling Glasses
-                </a>
-              </div>
-            </a>
-          </div>
-          <div
-            class="hover:-translate-y-6 bg-l ease-in-out duration-1000 rounded-lg hover:shadow-xl group relative shadow-lg dark:bg-gray-800 dark:border-gray-700 mb-12 filter ">
-            <a href="">
-              <img class="w-32 p-6 filter ease-in-out mx-auto" src="../img/cycling.png" alt="" />
-              <div class="">
-              </div>
-              <div
-                class="bg-p group-hover:bg-s ease-in-out duration-1000 dark:border-gray-700 dark:divide-gray-700 rounded-b-lg">
-                <a class="w-full text-white px-4 inline-flex justify-center font-medium text-l shadow-sm align-middle text-sm p-3 sm:p-4"
-                  href="#">
-                  Shop Cycling Glasses
-                </a>
-              </div>
-            </a>
-          </div>
-          <div
-            class="hover:-translate-y-6 bg-l ease-in-out duration-1000 rounded-lg hover:shadow-xl group relative shadow-lg dark:bg-gray-800 dark:border-gray-700 mb-12 filter ">
-            <a href="">
-              <img class="w-32 p-6 filter ease-in-out mx-auto" src="../img/cycling.png" alt="" />
-              <div class="">
-              </div>
-              <div
-                class="bg-p group-hover:bg-s ease-in-out duration-1000 dark:border-gray-700 dark:divide-gray-700 rounded-b-lg">
-                <a class="w-full text-white px-4 inline-flex justify-center font-medium text-l shadow-sm align-middle text-sm p-3 sm:p-4"
-                  href="#">
-                  Shop Cycling Glasses
-                </a>
-              </div>
-            </a>
-          </div>
-          <div
-            class="hover:-translate-y-6 bg-l ease-in-out duration-1000 rounded-lg hover:shadow-xl group relative shadow-lg dark:bg-gray-800 dark:border-gray-700 mb-12 filter ">
-            <a href="">
-              <img class="w-32 p-6 filter ease-in-out mx-auto" src="../img/cycling.png" alt="" />
-              <div class="">
-              </div>
-              <div
-                class="bg-p group-hover:bg-s ease-in-out duration-1000 dark:border-gray-700 dark:divide-gray-700 rounded-b-lg">
-                <a class="w-full text-white px-4 inline-flex justify-center font-medium text-l shadow-sm align-middle text-sm p-3 sm:p-4"
-                  href="#">
-                  Shop Cycling Glasses
-                </a>
-              </div>
-            </a>
-          </div>
-          <div
-            class="hover:-translate-y-6 bg-l ease-in-out duration-1000 rounded-lg hover:shadow-xl group relative shadow-lg dark:bg-gray-800 dark:border-gray-700 mb-12 filter ">
-            <a href="">
-              <img class="w-32 p-6 filter ease-in-out mx-auto" src="../img/cycling.png" alt="" />
-              <div class="">
-              </div>
-              <div
-                class="bg-p group-hover:bg-s ease-in-out duration-1000 dark:border-gray-700 dark:divide-gray-700 rounded-b-lg">
-                <a class="w-full text-white px-4 inline-flex justify-center font-medium text-l shadow-sm align-middle text-sm p-3 sm:p-4"
-                  href="#">
-                  Shop Cycling Glasses
-                </a>
-              </div>
-            </a>
-          </div>
-          <div
-            class="hover:-translate-y-6 bg-l ease-in-out duration-1000 rounded-lg hover:shadow-xl group relative shadow-lg dark:bg-gray-800 dark:border-gray-700 mb-12 filter ">
-            <a href="">
-              <img class="w-32 p-6 filter ease-in-out mx-auto" src="../img/cycling.png" alt="" />
-              <div class="">
-              </div>
-              <div
-                class="bg-p group-hover:bg-s ease-in-out duration-1000 dark:border-gray-700 dark:divide-gray-700 rounded-b-lg">
-                <a class="w-full text-white px-4 inline-flex justify-center font-medium text-l shadow-sm align-middle text-sm p-3 sm:p-4"
-                  href="#">
-                  Shop Cycling Glasses
-                </a>
-              </div>
+            <a
+              href="{{store url='home'}}"
+              class="text-s flex justify-between rounded-md bg-white px-8 py-6 text-2xl font-bold shadow-md sm:gap-4"
+            >
+              <span>Shop Women</span><span>→</span>
             </a>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <div class="bg-white hidden md:block dark:bg-p my-16">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div
-        class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-        <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-          src="https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg" alt="Transistor" width="158"
-          height="48">
-        <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-          src="https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg" alt="Reform" width="158" height="48">
-        <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-          src="https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg" alt="Tuple" width="158" height="48">
-        <img class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-          src="https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg" alt="SavvyCal" width="158"
-          height="48">
-        <img class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-          src="https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg" alt="Statamic" width="158"
-          height="48">
+    <section class="my-12 bg-white">
+      <div class="mx-4 md:mx-8 lg:mx-24">
+        <h2 class="text-center text-4xl font-bold text-slate-800">
+          Choose Your Sport
+        </h2>
+        <div class="mt-4 md:mt-12">
+          <!-- 2 rows, 3 columns on large screens -->
+          <div
+            class="container mx-auto grid grid-cols-2 gap-6 px-12 md:gap-8 lg:grid-cols-6 lg:gap-12"
+          >
+            <!-- Column 1 -->
+            <div
+              class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+            >
+              <a href="">
+                <img
+                  class="mx-auto w-32 p-6 filter ease-in-out"
+                  src="../img/cycling.png"
+                  alt=""
+                />
+                <div class=""></div>
+                <div
+                  class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700"
+                >
+                  <a
+                    class="text-l inline-flex w-full justify-center p-3 px-4 align-middle text-sm font-medium text-white shadow-sm sm:p-4"
+                    href="#"
+                  >
+                    Shop Cycling Glasses
+                  </a>
+                </div>
+              </a>
+            </div>
+            <div
+              class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+            >
+              <a href="">
+                <img
+                  class="mx-auto w-32 p-6 filter ease-in-out"
+                  src="../img/cycling.png"
+                  alt=""
+                />
+                <div class=""></div>
+                <div
+                  class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700"
+                >
+                  <a
+                    class="text-l inline-flex w-full justify-center p-3 px-4 align-middle text-sm font-medium text-white shadow-sm sm:p-4"
+                    href="#"
+                  >
+                    Shop Cycling Glasses
+                  </a>
+                </div>
+              </a>
+            </div>
+            <div
+              class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+            >
+              <a href="">
+                <img
+                  class="mx-auto w-32 p-6 filter ease-in-out"
+                  src="../img/cycling.png"
+                  alt=""
+                />
+                <div class=""></div>
+                <div
+                  class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700"
+                >
+                  <a
+                    class="text-l inline-flex w-full justify-center p-3 px-4 align-middle text-sm font-medium text-white shadow-sm sm:p-4"
+                    href="#"
+                  >
+                    Shop Cycling Glasses
+                  </a>
+                </div>
+              </a>
+            </div>
+            <div
+              class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+            >
+              <a href="">
+                <img
+                  class="mx-auto w-32 p-6 filter ease-in-out"
+                  src="../img/cycling.png"
+                  alt=""
+                />
+                <div class=""></div>
+                <div
+                  class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700"
+                >
+                  <a
+                    class="text-l inline-flex w-full justify-center p-3 px-4 align-middle text-sm font-medium text-white shadow-sm sm:p-4"
+                    href="#"
+                  >
+                    Shop Cycling Glasses
+                  </a>
+                </div>
+              </a>
+            </div>
+            <div
+              class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+            >
+              <a href="">
+                <img
+                  class="mx-auto w-32 p-6 filter ease-in-out"
+                  src="../img/cycling.png"
+                  alt=""
+                />
+                <div class=""></div>
+                <div
+                  class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700"
+                >
+                  <a
+                    class="text-l inline-flex w-full justify-center p-3 px-4 align-middle text-sm font-medium text-white shadow-sm sm:p-4"
+                    href="#"
+                  >
+                    Shop Cycling Glasses
+                  </a>
+                </div>
+              </a>
+            </div>
+            <div
+              class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+            >
+              <a href="">
+                <img
+                  class="mx-auto w-32 p-6 filter ease-in-out"
+                  src="../img/cycling.png"
+                  alt=""
+                />
+                <div class=""></div>
+                <div
+                  class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700"
+                >
+                  <a
+                    class="text-l inline-flex w-full justify-center p-3 px-4 align-middle text-sm font-medium text-white shadow-sm sm:p-4"
+                    href="#"
+                  >
+                    Shop Cycling Glasses
+                  </a>
+                </div>
+              </a>
+            </div>
+            <div
+              class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+            >
+              <a href="">
+                <img
+                  class="mx-auto w-32 p-6 filter ease-in-out"
+                  src="../img/cycling.png"
+                  alt=""
+                />
+                <div class=""></div>
+                <div
+                  class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700"
+                >
+                  <a
+                    class="text-l inline-flex w-full justify-center p-3 px-4 align-middle text-sm font-medium text-white shadow-sm sm:p-4"
+                    href="#"
+                  >
+                    Shop Cycling Glasses
+                  </a>
+                </div>
+              </a>
+            </div>
+            <div
+              class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+            >
+              <a href="">
+                <img
+                  class="mx-auto w-32 p-6 filter ease-in-out"
+                  src="../img/cycling.png"
+                  alt=""
+                />
+                <div class=""></div>
+                <div
+                  class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700"
+                >
+                  <a
+                    class="text-l inline-flex w-full justify-center p-3 px-4 align-middle text-sm font-medium text-white shadow-sm sm:p-4"
+                    href="#"
+                  >
+                    Shop Cycling Glasses
+                  </a>
+                </div>
+              </a>
+            </div>
+            <div
+              class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+            >
+              <a href="">
+                <img
+                  class="mx-auto w-32 p-6 filter ease-in-out"
+                  src="../img/cycling.png"
+                  alt=""
+                />
+                <div class=""></div>
+                <div
+                  class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700"
+                >
+                  <a
+                    class="text-l inline-flex w-full justify-center p-3 px-4 align-middle text-sm font-medium text-white shadow-sm sm:p-4"
+                    href="#"
+                  >
+                    Shop Cycling Glasses
+                  </a>
+                </div>
+              </a>
+            </div>
+            <div
+              class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+            >
+              <a href="">
+                <img
+                  class="mx-auto w-32 p-6 filter ease-in-out"
+                  src="../img/cycling.png"
+                  alt=""
+                />
+                <div class=""></div>
+                <div
+                  class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700"
+                >
+                  <a
+                    class="text-l inline-flex w-full justify-center p-3 px-4 align-middle text-sm font-medium text-white shadow-sm sm:p-4"
+                    href="#"
+                  >
+                    Shop Cycling Glasses
+                  </a>
+                </div>
+              </a>
+            </div>
+            <div
+              class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+            >
+              <a href="">
+                <img
+                  class="mx-auto w-32 p-6 filter ease-in-out"
+                  src="../img/cycling.png"
+                  alt=""
+                />
+                <div class=""></div>
+                <div
+                  class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700"
+                >
+                  <a
+                    class="text-l inline-flex w-full justify-center p-3 px-4 align-middle text-sm font-medium text-white shadow-sm sm:p-4"
+                    href="#"
+                  >
+                    Shop Cycling Glasses
+                  </a>
+                </div>
+              </a>
+            </div>
+            <div
+              class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+            >
+              <a href="">
+                <img
+                  class="mx-auto w-32 p-6 filter ease-in-out"
+                  src="../img/cycling.png"
+                  alt=""
+                />
+                <div class=""></div>
+                <div
+                  class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700"
+                >
+                  <a
+                    class="text-l inline-flex w-full justify-center p-3 px-4 align-middle text-sm font-medium text-white shadow-sm sm:p-4"
+                    href="#"
+                  >
+                    Shop Cycling Glasses
+                  </a>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <section class="p-6 my-12">
-    <div class="mt-4 container px-2 md:px-6 py-2 mx-auto ">
-      <div class="flex overflow-hidden flex-col rounded-md shadow-lg lg:flex-row bg-l my-4">
-        <img src="../img/horizontal.png" alt="" class="h-96 dark:bg-gray-500 " />
-        <div class="flex flex-col flex-1 justify-center p-6 ">
-          <h3 class="text-3xl font-bold">Lorem ipsum dolor sit amet consectetur</h3>
-          <p class="my-6 text-gray-800 leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime minima dicta amet, molestiae aliquam incidunt
-            suscipit
-            recusandae labore ratione doloremque, architecto et illo minus quo tenetur ducimus, voluptatibus repellendus
-            fuga
-            aperiam vel ab! Ipsam corrupti blanditiis dolorum! Officia assumenda rem nam, eveniet enim ad inventore
-            laudantium est
-            illum voluptatem quis.
-          </p>
+    </section>
+    <div class="dark:bg-p my-16 hidden bg-white md:block">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div
+          class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5"
+        >
+          <img
+            class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+            src="https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg"
+            alt="Transistor"
+            width="158"
+            height="48"
+          />
+          <img
+            class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+            src="https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg"
+            alt="Reform"
+            width="158"
+            height="48"
+          />
+          <img
+            class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+            src="https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg"
+            alt="Tuple"
+            width="158"
+            height="48"
+          />
+          <img
+            class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
+            src="https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg"
+            alt="SavvyCal"
+            width="158"
+            height="48"
+          />
+          <img
+            class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
+            src="https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg"
+            alt="Statamic"
+            width="158"
+            height="48"
+          />
         </div>
       </div>
     </div>
-  </section>
-  <section class="my-24 ">
-    <div class="mx-6 md:mx-8 lg:mx-24 ">
-      <h2 class="text-4xl text-center text-slate-800 font-bold">Card Links to Other Pages</h2>
-      <div class="mt-4 md:mt-12">
-        <!-- 2 rows, 3 columns on large screens -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-8 lg:gap-24 md:px-24 ">
-          <!-- Column 1 -->
-          <div
-            class="hover:-translate-y-6 bg-l hover:bg-white ease-in-out duration-1000 rounded-lg hover:shadow-xl group relative shadow-lg dark:bg-gray-800 dark:border-gray-700 mb-12 filter ">
-            <a href="">
-              <img
-                class="rounded-t-lg w-full filter ease-in-out duration-500 bg-p opacity-100 transition-opacity ease-in-out duration-1000 group-hover:opacity-90"
-                src="../img/card.png" alt="" />
-              <div class="p-3 ">
-                <h5
-                  class="pb-1 px-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white border-b-4 border-white">
-                  Wrapped Glasses</h5>
-                <p class="mb-3 mt-3 ml-4  leading-relaxed font-normal text-gray-700 dark:text-gray-400 ">This coating
-                  eliminates surface reflections on a
-                  lens,
-                  enabling more light transmission, enhancing vision, reducing eye strain, and improving the aesthetics
-                  of
-                  glasses.
-                  An anti-reflective coat also enhances driver safety by minimizing glare from streetlights or
-                  headlights,
-                  leading
-                  to faster recognition of road hazards, especially at night.
-
-
-                </p>
-              </div>
-              <div
-                class="bg-p group-hover:bg-s ease-in-out duration-1000 dark:border-gray-700 dark:divide-gray-700 rounded-b-lg">
-                <a class="w-full px-4 inline-flex justify-center font-medium  text-l shadow-sm align-middle focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm p-3 sm:p-4 dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
-                  href="#">
-                  View sample
-                </a>
-              </div>
-            </a>
-          </div>
-          <div
-            class="hover:-translate-y-6 bg-l hover:bg-white ease-in-out duration-1000 rounded-lg hover:shadow-xl group relative shadow-lg dark:bg-gray-800 dark:border-gray-700 mb-12 filter ">
-            <a href="">
-              <img
-                class="rounded-t-lg w-full filter ease-in-out duration-500 bg-p opacity-100 transition-opacity ease-in-out duration-1000 group-hover:opacity-90"
-                src="../img/card.png" alt="" />
-              <div class="p-3 ">
-                <h5
-                  class="pb-1 px-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white border-b-4 border-white">
-                  Polarised Sunglasses</h5>
-                <p class="mb-3 mt-3 ml-4  leading-relaxed font-normal text-gray-700 dark:text-gray-400 ">This coating
-                  eliminates
-                  surface reflections on a
-                  lens,
-                  enabling more light transmission, enhancing vision, reducing eye strain, and improving the aesthetics
-                  of
-                  glasses.
-                  An anti-reflective coat also enhances driver safety by minimizing glare from streetlights or
-                  headlights,
-                  leading
-                  to faster recognition of road hazards, especially at night.
-
-
-                </p>
-              </div>
-              <div
-                class="bg-p group-hover:bg-s ease-in-out duration-1000 dark:border-gray-700 dark:divide-gray-700 rounded-b-lg">
-                <a class="w-full px-4 inline-flex justify-center font-medium  text-l shadow-sm align-middle focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm p-3 sm:p-4 dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
-                  href="#">
-                  View sample
-                </a>
-              </div>
-            </a>
-          </div>
-          <div
-            class="hover:-translate-y-6 bg-l hover:bg-white ease-in-out duration-1000 rounded-lg hover:shadow-xl group relative shadow-lg dark:bg-gray-800 dark:border-gray-700 mb-12 filter ">
-            <a href="">
-              <img
-                class="rounded-t-lg w-full filter ease-in-out duration-500 bg-p opacity-100 transition-opacity ease-in-out duration-1000 group-hover:opacity-90"
-                src="../img/card.png" alt="" />
-              <div class="p-3 ">
-                <h5
-                  class="pb-1 px-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white border-b-4 border-white">
-                  Mirrored Lenses</h5>
-                <p class="mb-3 mt-3 ml-4  leading-relaxed font-normal text-gray-700 dark:text-gray-400 ">This coating
-                  eliminates
-                  surface reflections on a
-                  lens,
-                  enabling more light transmission, enhancing vision, reducing eye strain, and improving the aesthetics
-                  of
-                  glasses.
-                  An anti-reflective coat also enhances driver safety by minimizing glare from streetlights or
-                  headlights,
-                  leading
-                  to faster recognition of road hazards, especially at night.
-
-
-                </p>
-              </div>
-              <div
-                class="bg-p group-hover:bg-s ease-in-out duration-1000 dark:border-gray-700 dark:divide-gray-700 rounded-b-lg">
-                <a class="w-full px-4 inline-flex justify-center font-medium  text-l shadow-sm align-middle focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm p-3 sm:p-4 dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
-                  href="#">
-                  View sample
-                </a>
-              </div>
-            </a>
+    <section class="my-12 p-6">
+      <div class="container mx-auto mt-4 px-2 py-2 md:px-6">
+        <div
+          class="bg-l my-4 flex flex-col overflow-hidden rounded-md shadow-lg lg:flex-row"
+        >
+          <img
+            src="../img/horizontal.png"
+            alt=""
+            class="h-96 dark:bg-gray-500"
+          />
+          <div class="flex flex-1 flex-col justify-center p-6">
+            <h3 class="text-3xl font-bold">
+              Lorem ipsum dolor sit amet consectetur
+            </h3>
+            <p class="my-6 leading-relaxed text-gray-800">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+              minima dicta amet, molestiae aliquam incidunt suscipit recusandae
+              labore ratione doloremque, architecto et illo minus quo tenetur
+              ducimus, voluptatibus repellendus fuga aperiam vel ab! Ipsam
+              corrupti blanditiis dolorum! Officia assumenda rem nam, eveniet
+              enim ad inventore laudantium est illum voluptatem quis.
+            </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="py-2">
-    <div class="container mx-auto px-12">
-      <h2 class="text-center text-4xl lg:w-5/12 md:w-8/12 sm:w-full mx-auto font-bold text-slate-800 mt-8">
-        Frequently Asked Questions
-      </h2>
-      <div class="flex flex-wrap mt-10">
-        <div class="overflow-hidden w-full lg:w-1/3 mx-auto pb-5 px-5 block ">
-          <img src="../img/faq2.jpeg" alt="Lenses" class="w-full rounded-xl" />
+    </section>
+    <section class="my-24">
+      <div class="mx-6 md:mx-8 lg:mx-24">
+        <h2 class="text-center text-4xl font-bold text-slate-800">
+          Card Links to Other Pages
+        </h2>
+        <div class="mt-4 md:mt-12">
+          <!-- 2 rows, 3 columns on large screens -->
+          <div
+            class="grid grid-cols-1 gap-8 md:gap-8 md:px-24 lg:grid-cols-3 lg:gap-24"
+          >
+            <!-- Column 1 -->
+            <div
+              class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:bg-white hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+            >
+              <a href="">
+                <img
+                  class="bg-p w-full rounded-t-lg opacity-100 filter transition-opacity duration-1000 duration-500 ease-in-out ease-in-out group-hover:opacity-90"
+                  src="../img/card.png"
+                  alt=""
+                />
+                <div class="p-3">
+                  <h5
+                    class="border-b-4 border-white px-4 pb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                  >
+                    Wrapped Glasses
+                  </h5>
+                  <p
+                    class="mb-3 ml-4 mt-3 font-normal leading-relaxed text-gray-700 dark:text-gray-400"
+                  >
+                    This coating eliminates surface reflections on a lens,
+                    enabling more light transmission, enhancing vision, reducing
+                    eye strain, and improving the aesthetics of glasses. An
+                    anti-reflective coat also enhances driver safety by
+                    minimizing glare from streetlights or headlights, leading to
+                    faster recognition of road hazards, especially at night.
+                  </p>
+                </div>
+                <div
+                  class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700"
+                >
+                  <a
+                    class="text-l inline-flex w-full justify-center p-3 px-4 align-middle text-sm font-medium shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:hover:bg-slate-800 dark:hover:text-white dark:focus:ring-offset-gray-800 sm:p-4"
+                    href="#"
+                  >
+                    View sample
+                  </a>
+                </div>
+              </a>
+            </div>
+            <div
+              class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:bg-white hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+            >
+              <a href="">
+                <img
+                  class="bg-p w-full rounded-t-lg opacity-100 filter transition-opacity duration-1000 duration-500 ease-in-out ease-in-out group-hover:opacity-90"
+                  src="../img/card.png"
+                  alt=""
+                />
+                <div class="p-3">
+                  <h5
+                    class="border-b-4 border-white px-4 pb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                  >
+                    Polarised Sunglasses
+                  </h5>
+                  <p
+                    class="mb-3 ml-4 mt-3 font-normal leading-relaxed text-gray-700 dark:text-gray-400"
+                  >
+                    This coating eliminates surface reflections on a lens,
+                    enabling more light transmission, enhancing vision, reducing
+                    eye strain, and improving the aesthetics of glasses. An
+                    anti-reflective coat also enhances driver safety by
+                    minimizing glare from streetlights or headlights, leading to
+                    faster recognition of road hazards, especially at night.
+                  </p>
+                </div>
+                <div
+                  class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700"
+                >
+                  <a
+                    class="text-l inline-flex w-full justify-center p-3 px-4 align-middle text-sm font-medium shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:hover:bg-slate-800 dark:hover:text-white dark:focus:ring-offset-gray-800 sm:p-4"
+                    href="#"
+                  >
+                    View sample
+                  </a>
+                </div>
+              </a>
+            </div>
+            <div
+              class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:bg-white hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+            >
+              <a href="">
+                <img
+                  class="bg-p w-full rounded-t-lg opacity-100 filter transition-opacity duration-1000 duration-500 ease-in-out ease-in-out group-hover:opacity-90"
+                  src="../img/card.png"
+                  alt=""
+                />
+                <div class="p-3">
+                  <h5
+                    class="border-b-4 border-white px-4 pb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                  >
+                    Mirrored Lenses
+                  </h5>
+                  <p
+                    class="mb-3 ml-4 mt-3 font-normal leading-relaxed text-gray-700 dark:text-gray-400"
+                  >
+                    This coating eliminates surface reflections on a lens,
+                    enabling more light transmission, enhancing vision, reducing
+                    eye strain, and improving the aesthetics of glasses. An
+                    anti-reflective coat also enhances driver safety by
+                    minimizing glare from streetlights or headlights, leading to
+                    faster recognition of road hazards, especially at night.
+                  </p>
+                </div>
+                <div
+                  class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700"
+                >
+                  <a
+                    class="text-l inline-flex w-full justify-center p-3 px-4 align-middle text-sm font-medium shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:hover:bg-slate-800 dark:hover:text-white dark:focus:ring-offset-gray-800 sm:p-4"
+                    href="#"
+                  >
+                    View sample
+                  </a>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
-  
-        <div class="md:w-full w-full lg:w-2/3 align-middle">
-          <div class="bg-white mx-auto border border-gray-200" x-data="{selected:0}">
-            <ul class="shadow-box">
-              <li class="relative border-b border-gray-200">
-                <button type="button" class="w-full px-8 py-6 text-left"
-                  @click="selected !== 1 ? selected = 1 : selected = null">
-                  <div class="flex items-center justify-between">
-                    <span> Should I use reCAPTCHA v2 or v3? </span>
-                    <div>
-                      <span class="text-lg transition-all block" :class="selected === 1 ? 'rotate-90' : ''">
-                        <svg class="h-5 w-5" fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
-                          <path id="XMLID_225_"
-                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
+      </div>
+    </section>
+    <section class="py-2">
+      <div class="container mx-auto px-12">
+        <h2
+          class="mx-auto mt-8 text-center text-4xl font-bold text-slate-800 sm:w-full md:w-8/12 lg:w-5/12"
+        >
+          Frequently Asked Questions
+        </h2>
+        <div class="mt-10 flex flex-wrap">
+          <div class="mx-auto block w-full overflow-hidden px-5 pb-5 lg:w-1/3">
+            <img
+              src="../img/faq2.jpeg"
+              alt="Lenses"
+              class="w-full rounded-xl"
+            />
+          </div>
+
+          <div class="w-full align-middle md:w-full lg:w-2/3">
+            <div
+              class="mx-auto border border-gray-200 bg-white"
+              x-data="{selected:0}"
+            >
+              <ul class="shadow-box">
+                <li class="relative border-b border-gray-200">
+                  <button
+                    type="button"
+                    class="w-full px-8 py-6 text-left"
+                    @click="selected !== 1 ? selected = 1 : selected = null"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span> Should I use reCAPTCHA v2 or v3? </span>
+                      <div>
+                        <span
+                          class="block text-lg transition-all"
+                          :class="selected === 1 ? 'rotate-90' : ''"
+                        >
+                          <svg
+                            class="h-5 w-5"
+                            fill="#000000"
+                            version="1.1"
+                            id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 330 330"
+                            xml:space="preserve"
+                          >
+                            <path
+                              id="XMLID_225_"
+                              d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </button>
+
+                  <div
+                    class="relative max-h-0 overflow-hidden transition-all duration-700"
+                    x-ref="container1"
+                    x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+                  >
+                    <div class="p-6">
+                      <p>
+                        reCAPTCHA v2 is not going away! We will continue to
+                        fully support and improve security and usability for v2.
+                      </p>
+                      <p>
+                        reCAPTCHA v3 is intended for power users, site owners
+                        that want more data about their traffic, and for use
+                        cases in which it is not appropriate to show a challenge
+                        to the user.
+                      </p>
+                      <p>
+                        For example, a registration page might still use
+                        reCAPTCHA v2 for a higher-friction challenge, whereas
+                        more common actions like sign-in, searches, comments, or
+                        voting might use reCAPTCHA v3. To see more details, see
+                        the reCAPTCHA v3 developer guide.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="relative border-b border-gray-200">
+                  <button
+                    type="button"
+                    class="w-full px-8 py-6 text-left"
+                    @click="selected !== 2 ? selected = 2 : selected = null"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span>
+                        I'd like to run automated tests with reCAPTCHA. What
+                        should I do?
+                      </span>
+                      <span
+                        class="block text-lg transition-all"
+                        :class="selected === 2 ? 'rotate-90' : ''"
+                      >
+                        <svg
+                          class="h-5 w-5"
+                          fill="#000000"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330"
+                          xml:space="preserve"
+                        >
+                          <path
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                          />
                         </svg>
                       </span>
                     </div>
+                  </button>
+
+                  <div
+                    class="relative max-h-0 overflow-hidden transition-all duration-700"
+                    x-ref="container2"
+                    x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
+                  >
+                    <div class="p-6">
+                      <p>
+                        For reCAPTCHA v3, create a separate key for testing
+                        environments. Scores may not be accurate as reCAPTCHA v3
+                        relies on seeing real traffic.
+                      </p>
+                      <p>
+                        For reCAPTCHA v2, use the following test keys. You will
+                        always get No CAPTCHA and all verification requests will
+                        pass.
+                      </p>
+                    </div>
                   </div>
-                </button>
-  
-                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container1"
-                  x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
-                  <div class="p-6">
-                    <p>
-                      reCAPTCHA v2 is not going away! We will continue to fully
-                      support and improve security and usability for v2.
-                    </p>
-                    <p>
-                      reCAPTCHA v3 is intended for power users, site owners that want
-                      more data about their traffic, and for use cases in which it is
-                      not appropriate to show a challenge to the user.
-                    </p>
-                    <p>
-                      For example, a registration page might still use reCAPTCHA v2
-                      for a higher-friction challenge, whereas more common actions
-                      like sign-in, searches, comments, or voting might use reCAPTCHA
-                      v3. To see more details, see the reCAPTCHA v3 developer guide.
-                    </p>
-                  </div>
-                </div>
-              </li>
-  
-              <li class="relative border-b border-gray-200">
-                <button type="button" class="w-full px-8 py-6 text-left"
-                  @click="selected !== 2 ? selected = 2 : selected = null">
-                  <div class="flex items-center justify-between">
-                    <span>
-                      I'd like to run automated tests with reCAPTCHA. What should I
-                      do?
-                    </span>
-                    <span class="text-lg transition-all block" :class="selected === 2 ? 'rotate-90' : ''">
-                      <svg class="h-5 w-5" fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
-                        <path id="XMLID_225_"
-                          d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
-                      </svg>
-                    </span>
-                  </div>
-                </button>
-  
-                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container2"
-                  x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
-                  <div class="p-6">
-                    <p>
-                      For reCAPTCHA v3, create a separate key for testing
-                      environments. Scores may not be accurate as reCAPTCHA v3 relies
-                      on seeing real traffic.
-                    </p>
-                    <p>
-                      For reCAPTCHA v2, use the following test keys. You will always
-                      get No CAPTCHA and all verification requests will pass.
-                    </p>
-                  </div>
-                </div>
-              </li>
-  
-              <li class="relative border-b border-gray-200">
-                <button type="button" class="w-full px-8 py-6 text-left"
-                  @click="selected !== 3 ? selected = 3 : selected = null">
-                  <div class="flex items-center justify-between">
-                    <span> Can I run reCAPTCHA v2 and v3 on the same page? </span>
-                    <span class="text-lg transition-all block" :class="selected === 3 ? 'rotate-90' : ''">
-                      <svg class="h-5 w-5" fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
-                        <path id="XMLID_225_"
-                          d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
-                      </svg>
-                    </span>
-                  </div>
-                </button>
-  
-                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container3"
-                  x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
-                  <div class="p-6">
-                    <p>
-                      To do this, load the v3 site key as documented, and then
-                      explicitly render v2 using grecaptcha.render.
-                    </p>
-                    <p>
-                      You are allowed to hide the badge as long as you include the
-                      reCAPTCHA branding visibly in the user flow. Please include the
-                      following text:
-                    </p>
-                    <p>
-                      Yes, please use "www.recaptcha.net" in your code in
-                      circumstances when "www.google.com" is not accessible.
-                    </p>
-                    <ul>
-                      <li>
-                        First, replace &lt;script
-                        src="https://www.google.com/recaptcha/api.js" async
-                        defer&gt;&lt;/script&gt; with &lt;script
-                        src="https://www.recaptcha.net/recaptcha/api.js" async
-                        defer&gt;&lt;/script&gt;
-                      </li>
-                      <li>
+                </li>
+
+                <li class="relative border-b border-gray-200">
+                  <button
+                    type="button"
+                    class="w-full px-8 py-6 text-left"
+                    @click="selected !== 3 ? selected = 3 : selected = null"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span>
+                        Can I run reCAPTCHA v2 and v3 on the same page?
+                      </span>
+                      <span
+                        class="block text-lg transition-all"
+                        :class="selected === 3 ? 'rotate-90' : ''"
+                      >
+                        <svg
+                          class="h-5 w-5"
+                          fill="#000000"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330"
+                          xml:space="preserve"
+                        >
+                          <path
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+
+                  <div
+                    class="relative max-h-0 overflow-hidden transition-all duration-700"
+                    x-ref="container3"
+                    x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
+                  >
+                    <div class="p-6">
+                      <p>
+                        To do this, load the v3 site key as documented, and then
+                        explicitly render v2 using grecaptcha.render.
+                      </p>
+                      <p>
+                        You are allowed to hide the badge as long as you include
+                        the reCAPTCHA branding visibly in the user flow. Please
+                        include the following text:
+                      </p>
+                      <p>
+                        Yes, please use "www.recaptcha.net" in your code in
+                        circumstances when "www.google.com" is not accessible.
+                      </p>
+                      <ul>
+                        <li>
+                          First, replace &lt;script
+                          src="https://www.google.com/recaptcha/api.js" async
+                          defer&gt;&lt;/script&gt; with &lt;script
+                          src="https://www.recaptcha.net/recaptcha/api.js" async
+                          defer&gt;&lt;/script&gt;
+                        </li>
+                        <li>
+                          After that, apply the same to everywhere else that
+                          uses "www.google.com/recaptcha/" on your site.
+                        </li>
+                      </ul>
+                      <p>
                         After that, apply the same to everywhere else that uses
                         "www.google.com/recaptcha/" on your site.
-                      </li>
-                    </ul>
-                    <p>
-                      After that, apply the same to everywhere else that uses
-                      "www.google.com/recaptcha/" on your site.
-                    </p>
-                  </div>
-                </div>
-              </li>
-  
-              <li class="relative border-b border-gray-200">
-                <button type="button" class="w-full px-8 py-6 text-left"
-                  @click="selected !== 4 ? selected = 4 : selected = null">
-                  <div class="flex items-center justify-between">
-                    <span> Should I use reCAPTCHA v2 or v3? </span>
-                    <div>
-                      <span class="text-lg transition-all block" :class="selected === 4 ? 'rotate-90' : ''">
-                        <svg class="h-5 w-5" fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
-                          <path id="XMLID_225_"
-                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
-                        </svg>
-                      </span>
+                      </p>
                     </div>
                   </div>
-                </button>
-  
-                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container4"
-                  x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
-                  <div class="p-6">
-                    <p>
-                      reCAPTCHA v2 is not going away! We will continue to fully
-                      support and improve security and usability for v2.
-                    </p>
-                    <p>
-                      reCAPTCHA v3 is intended for power users, site owners that want
-                      more data about their traffic, and for use cases in which it is
-                      not appropriate to show a challenge to the user.
-                    </p>
-                    <p>
-                      For example, a registration page might still use reCAPTCHA v2
-                      for a higher-friction challenge, whereas more common actions
-                      like sign-in, searches, comments, or voting might use reCAPTCHA
-                      v3. To see more details, see the reCAPTCHA v3 developer guide.
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li class="relative border-b border-gray-200">
-                <button type="button" class="w-full px-8 py-6 text-left"
-                  @click="selected !== 5 ? selected = 5 : selected = null">
-                  <div class="flex items-center justify-between">
-                    <span> Should I use reCAPTCHA v2 or v3? </span>
-                    <div>
-                      <span class="text-lg transition-all block" :class="selected === 5 ? 'rotate-90' : ''">
-                        <svg class="h-5 w-5" fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
-                          <path id="XMLID_225_"
-                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
-                        </svg>
-                      </span>
+                </li>
+
+                <li class="relative border-b border-gray-200">
+                  <button
+                    type="button"
+                    class="w-full px-8 py-6 text-left"
+                    @click="selected !== 4 ? selected = 4 : selected = null"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span> Should I use reCAPTCHA v2 or v3? </span>
+                      <div>
+                        <span
+                          class="block text-lg transition-all"
+                          :class="selected === 4 ? 'rotate-90' : ''"
+                        >
+                          <svg
+                            class="h-5 w-5"
+                            fill="#000000"
+                            version="1.1"
+                            id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 330 330"
+                            xml:space="preserve"
+                          >
+                            <path
+                              id="XMLID_225_"
+                              d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </button>
+
+                  <div
+                    class="relative max-h-0 overflow-hidden transition-all duration-700"
+                    x-ref="container4"
+                    x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
+                  >
+                    <div class="p-6">
+                      <p>
+                        reCAPTCHA v2 is not going away! We will continue to
+                        fully support and improve security and usability for v2.
+                      </p>
+                      <p>
+                        reCAPTCHA v3 is intended for power users, site owners
+                        that want more data about their traffic, and for use
+                        cases in which it is not appropriate to show a challenge
+                        to the user.
+                      </p>
+                      <p>
+                        For example, a registration page might still use
+                        reCAPTCHA v2 for a higher-friction challenge, whereas
+                        more common actions like sign-in, searches, comments, or
+                        voting might use reCAPTCHA v3. To see more details, see
+                        the reCAPTCHA v3 developer guide.
+                      </p>
                     </div>
                   </div>
-                </button>
-  
-                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container5"
-                  x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''">
-                  <div class="p-6">
-                    <p>
-                      reCAPTCHA v2 is not going away! We will continue to fully
-                      support and improve security and usability for v2.
-                    </p>
-                    <p>
-                      reCAPTCHA v3 is intended for power users, site owners that want
-                      more data about their traffic, and for use cases in which it is
-                      not appropriate to show a challenge to the user.
-                    </p>
-                    <p>
-                      For example, a registration page might still use reCAPTCHA v2
-                      for a higher-friction challenge, whereas more common actions
-                      like sign-in, searches, comments, or voting might use reCAPTCHA
-                      v3. To see more details, see the reCAPTCHA v3 developer guide.
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li class="relative border-b border-gray-200">
-                <button type="button" class="w-full px-8 py-6 text-left"
-                  @click="selected !== 6 ? selected = 6 : selected = null">
-                  <div class="flex items-center justify-between">
-                    <span> Should I use reCAPTCHA v2 or v3? </span>
-                    <div>
-                      <span class="text-lg transition-all block" :class="selected === 6 ? 'rotate-90' : ''">
-                        <svg class="h-5 w-5" fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
-                          <path id="XMLID_225_"
-                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
-                        </svg>
-                      </span>
+                </li>
+                <li class="relative border-b border-gray-200">
+                  <button
+                    type="button"
+                    class="w-full px-8 py-6 text-left"
+                    @click="selected !== 5 ? selected = 5 : selected = null"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span> Should I use reCAPTCHA v2 or v3? </span>
+                      <div>
+                        <span
+                          class="block text-lg transition-all"
+                          :class="selected === 5 ? 'rotate-90' : ''"
+                        >
+                          <svg
+                            class="h-5 w-5"
+                            fill="#000000"
+                            version="1.1"
+                            id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 330 330"
+                            xml:space="preserve"
+                          >
+                            <path
+                              id="XMLID_225_"
+                              d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </button>
+
+                  <div
+                    class="relative max-h-0 overflow-hidden transition-all duration-700"
+                    x-ref="container5"
+                    x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''"
+                  >
+                    <div class="p-6">
+                      <p>
+                        reCAPTCHA v2 is not going away! We will continue to
+                        fully support and improve security and usability for v2.
+                      </p>
+                      <p>
+                        reCAPTCHA v3 is intended for power users, site owners
+                        that want more data about their traffic, and for use
+                        cases in which it is not appropriate to show a challenge
+                        to the user.
+                      </p>
+                      <p>
+                        For example, a registration page might still use
+                        reCAPTCHA v2 for a higher-friction challenge, whereas
+                        more common actions like sign-in, searches, comments, or
+                        voting might use reCAPTCHA v3. To see more details, see
+                        the reCAPTCHA v3 developer guide.
+                      </p>
                     </div>
                   </div>
-                </button>
-  
-                <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container6"
-                  x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''">
-                  <div class="p-6">
-                    <p>
-                      reCAPTCHA v2 is not going away! We will continue to fully
-                      support and improve security and usability for v2.
-                    </p>
-                    <p>
-                      reCAPTCHA v3 is intended for power users, site owners that want
-                      more data about their traffic, and for use cases in which it is
-                      not appropriate to show a challenge to the user.
-                    </p>
-                    <p>
-                      For example, a registration page might still use reCAPTCHA v2
-                      for a higher-friction challenge, whereas more common actions
-                      like sign-in, searches, comments, or voting might use reCAPTCHA
-                      v3. To see more details, see the reCAPTCHA v3 developer guide.
-                    </p>
+                </li>
+                <li class="relative border-b border-gray-200">
+                  <button
+                    type="button"
+                    class="w-full px-8 py-6 text-left"
+                    @click="selected !== 6 ? selected = 6 : selected = null"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span> Should I use reCAPTCHA v2 or v3? </span>
+                      <div>
+                        <span
+                          class="block text-lg transition-all"
+                          :class="selected === 6 ? 'rotate-90' : ''"
+                        >
+                          <svg
+                            class="h-5 w-5"
+                            fill="#000000"
+                            version="1.1"
+                            id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 330 330"
+                            xml:space="preserve"
+                          >
+                            <path
+                              id="XMLID_225_"
+                              d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </button>
+
+                  <div
+                    class="relative max-h-0 overflow-hidden transition-all duration-700"
+                    x-ref="container6"
+                    x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''"
+                  >
+                    <div class="p-6">
+                      <p>
+                        reCAPTCHA v2 is not going away! We will continue to
+                        fully support and improve security and usability for v2.
+                      </p>
+                      <p>
+                        reCAPTCHA v3 is intended for power users, site owners
+                        that want more data about their traffic, and for use
+                        cases in which it is not appropriate to show a challenge
+                        to the user.
+                      </p>
+                      <p>
+                        For example, a registration page might still use
+                        reCAPTCHA v2 for a higher-friction challenge, whereas
+                        more common actions like sign-in, searches, comments, or
+                        voting might use reCAPTCHA v3. To see more details, see
+                        the reCAPTCHA v3 developer guide.
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </li>
-            </ul>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-  </section>
-
-</body>
+    </section>
+  </body>
 </html>
