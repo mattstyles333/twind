@@ -24,25 +24,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [19.4]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: "npm"
-      - run: npm install .
-      - run: npx tailwindcss -i ./src/input.css -o ./src/output.css
   deploy:
-    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -52,7 +34,16 @@ jobs:
         uses: actions/checkout@v3
         with:
           sparse-checkout: |
-            src
+            src/
+            src/output.css
+
+      - name: NodeJs Build
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19.4
+          cache: "npm"
+      - run: npm install .
+      - run: npx tailwindcss -i ./src/input.css -o ./src/output.css
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
