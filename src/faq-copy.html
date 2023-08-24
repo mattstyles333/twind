@@ -1,194 +1,398 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="output.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
-  <body class="bg-gray-lighter">
-    <section class="py-2">
-        <div class="container mx-auto">
-            <h2 class="text-center text-4xl lg:w-5/12 md:w-8/12 sm:w-full mx-auto font-bold text-slate-900 mt-8"> Section Title </h2>
-            <div class="flex flex-wrap mt-10">
-                <div class="md:w-full lg:w-1/3 p-5 w-full h-full flex justify-center items-center">
-                    <img src="img/faq.jpg" alt="Lenses" class="w-full h-full rounded-xl">
+  <section class="py-2">
+    <div class="container mx-auto px-12">
+      <h2
+        class="mx-auto mt-8 text-center text-4xl font-bold text-slate-800 sm:w-full md:w-8/12 lg:w-5/12"
+      >
+        Frequently Asked Questions
+      </h2>
+      <div class="mt-10 flex flex-wrap">
+        <div class="mx-auto block w-full overflow-hidden px-5 pb-5 lg:w-1/3">
+          <img src="img/faq2.jpeg" alt="Lenses" class="w-full rounded-xl" />
+        </div>
+
+        <div class="w-full align-middle md:w-full lg:w-2/3">
+          <div
+            class="mx-auto border border-gray-200 bg-white"
+            x-data="{selected:0}"
+          >
+            <ul class="shadow-box">
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 1 ? selected = 1 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span> Should I use reCAPTCHA v2 or v3? </span>
+                    <div>
+                      <span
+                        class="block text-lg transition-all"
+                        :class="selected === 1 ? 'rotate-90' : ''"
+                      >
+                        <svg
+                          class="h-5 w-5"
+                          fill="#000000"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330"
+                          xml:space="preserve"
+                        >
+                          <path
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container1"
+                  x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      reCAPTCHA v2 is not going away! We will continue to fully
+                      support and improve security and usability for v2.
+                    </p>
+                    <p>
+                      reCAPTCHA v3 is intended for power users, site owners that
+                      want more data about their traffic, and for use cases in
+                      which it is not appropriate to show a challenge to the
+                      user.
+                    </p>
+                    <p>
+                      For example, a registration page might still use reCAPTCHA
+                      v2 for a higher-friction challenge, whereas more common
+                      actions like sign-in, searches, comments, or voting might
+                      use reCAPTCHA v3. To see more details, see the reCAPTCHA
+                      v3 developer guide.
+                    </p>
+                  </div>
                 </div>
-              <div class="md:w-full p-5 w-full lg:w-2/3 align-middle">
-                  <div class="accordion rounded-lg show mb-4 bg-gray-100">
-                      <h3 class="acc-head font-medium text-slate-900 text-lg p-3 flex justify-between items-center">
-                          <span>Highest Quality Lense Material</span> <i class="fa fa-arrow-down"></i>
-                      </h3>
-                      <div class="acc-content">
-                          <p class="p-3 text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                              Esse error iusto impedit ut cupiditate voluptates praesentium perferendis
-                              placeat illum tempore! Doloribus, nihil quia facilis error iure praesentium
-                              quaerat autem doloremque.</p>
-                      </div>
-                  </div>
-                  <div class="accordion rounded-lg mb-4 bg-gray-100">
-                      <h3 class="acc-head font-semibold text-slate-900 text-lg p-3 flex justify-between items-center">
-                          <span>Cartered to Your Needs</span> <i class="fa fa-arrow-down"></i>
-                      </h3>
-                      <div class="acc-content hidden">
-                          <p class="p-3 text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                              Esse error iusto impedit ut cupiditate voluptates praesentium perferendis
-                              placeat illum tempore! Doloribus, nihil quia facilis error iure praesentium
-                              quaerat autem doloremque.</p>
-                      </div>
-                  </div>
-                  <div class="accordion rounded-lg mb-4 bg-gray-100">
-                      <h3 class="acc-head font-semibold text-slate-900 text-lg p-3 flex justify-between items-center">
-                          <span>Helpful Lens Experts</span> <i class="fa fa-arrow-down"></i>
-                      </h3>
-                      <div class="acc-content hidden">
-                          <p class="p-3 text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                              Esse error iusto impedit ut cupiditate voluptates praesentium perferendis
-                              placeat illum tempore! Doloribus, nihil quia facilis error iure praesentium
-                              quaerat autem doloremque.</p>
-                      </div>
-                  </div>
-                  <div class="accordion rounded-lg mb-4 bg-gray-100">
-                      <h3 class="acc-head font-semibold text-slate-900 text-lg p-3 flex justify-between items-center"><span>A
-                              Variety of Lenses to Choose From</span> <i class="fa fa-arrow-down"></i></h3>
-                      <div class="acc-content hidden">
-                          <p class="p-3 text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                              Esse error iusto impedit ut cupiditate voluptates praesentium perferendis
-                              placeat illum tempore! Doloribus, nihil quia facilis error iure praesentium
-                              quaerat autem doloremque.</p>
-                      </div>
-                  </div>
-                  <div class="accordion rounded-lg mb-4 bg-gray-100">
-                      <h3 class="acc-head font-semibold text-slate-900 text-lg p-3 flex justify-between items-center">
-                          <span>Helpful Coatings</span> <i class="fa fa-arrow-down"></i>
-                      </h3>
-                      <div class="acc-content hidden">
-                          <p class="p-3 text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                              Esse error iusto impedit ut cupiditate voluptates praesentium perferendis
-                              placeat illum tempore! Doloribus, nihil quia facilis error iure praesentium
-                              quaerat autem doloremque.</p>
-                      </div>
-                  </div>
-                  <div class="accordion rounded-lg mb-4 bg-gray-100">
-                      <h3 class="acc-head font-semibold text-slate-900 text-lg p-3 flex justify-between items-center"><span>Shop
-                              With Confidence</span> <i class="fa fa-arrow-down"></i></h3>
-                      <div class="acc-content hidden">
-                          <p class="p-3 text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                              Esse error iusto impedit ut cupiditate voluptates praesentium perferendis
-                              placeat illum tempore! Doloribus, nihil quia facilis error iure praesentium
-                              quaerat autem doloremque.</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-    </section>
+              </li>
 
-    <section class="py-12">
-      <div class="container mx-auto">
-        <h2 class="text-center text-4xl lg:w-5/12 md:w-8/12 sm:w-full mx-auto font-bold text-slate-900 mb-8"> Section Title </h2>
-          <div class="flex flex-wrap">
-            <div class="lg:hidden md:w-full p-5 w-full h-full ">
-                <img src="img/sports.jpg" alt="Lenses" class="w-full h-full rounded-xl">
-            </div>
-              <div class="md:w-full p-5 w-full align-middle lg:w-2/3">
-                  <div class="accordion rounded-lg mb-4 bg-gray-100">
-                      <h3 class="acc-head font-semibold text-slate-900 text-lg p-3 flex justify-between items-center">
-                          <span>Shop With Confidence</span> <i class="fa fa-arrow-down"></i>
-                      </h3>
-                      <div class="acc-content hidden">
-                          <p class="p-3 text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                              Esse error iusto impedit ut cupiditate voluptates praesentium perferendis
-                              placeat illum tempore! Doloribus, nihil quia facilis error iure praesentium
-                              quaerat autem doloremque.</p>
-                      </div>
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 2 ? selected = 2 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span>
+                      I'd like to run automated tests with reCAPTCHA. What
+                      should I do?
+                    </span>
+                    <span
+                      class="block text-lg transition-all"
+                      :class="selected === 2 ? 'rotate-90' : ''"
+                    >
+                      <svg
+                        class="h-5 w-5"
+                        fill="#000000"
+                        version="1.1"
+                        id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 330 330"
+                        xml:space="preserve"
+                      >
+                        <path
+                          id="XMLID_225_"
+                          d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                        />
+                      </svg>
+                    </span>
                   </div>
-                  <div class="accordion rounded-lg mb-4 bg-gray-100">
-                      <h3 class="acc-head font-semibold text-slate-900 text-lg p-3 flex justify-between items-center">
-                          <span>Helpful Coatings</span> <i class="fa fa-arrow-down"></i>
-                      </h3>
-                      <div class="acc-content hidden">
-                          <p class="p-3 text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                              Esse error iusto impedit ut cupiditate voluptates praesentium perferendis
-                              placeat illum tempore! Doloribus, nihil quia facilis error iure praesentium
-                              quaerat autem doloremque.</p>
-                      </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container2"
+                  x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      For reCAPTCHA v3, create a separate key for testing
+                      environments. Scores may not be accurate as reCAPTCHA v3
+                      relies on seeing real traffic.
+                    </p>
+                    <p>
+                      For reCAPTCHA v2, use the following test keys. You will
+                      always get No CAPTCHA and all verification requests will
+                      pass.
+                    </p>
                   </div>
-                  <div class="accordion rounded-lg mb-4 bg-gray-100">
-                      <h3 class="acc-head font-semibold text-slate-900 text-lg p-3 flex justify-between items-center">
-                          <span>A Variety of Lenses to Choose From</span> <i class="fa fa-arrow-down"></i>
-                      </h3>
-                      <div class="acc-content hidden">
-                          <p class="p-3 text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                              Esse error iusto impedit ut cupiditate voluptates praesentium perferendis
-                              placeat illum tempore! Doloribus, nihil quia facilis error iure praesentium
-                              quaerat autem doloremque.</p>
-                      </div>
+                </div>
+              </li>
+
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 3 ? selected = 3 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span>
+                      Can I run reCAPTCHA v2 and v3 on the same page?
+                    </span>
+                    <span
+                      class="block text-lg transition-all"
+                      :class="selected === 3 ? 'rotate-90' : ''"
+                    >
+                      <svg
+                        class="h-5 w-5"
+                        fill="#000000"
+                        version="1.1"
+                        id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 330 330"
+                        xml:space="preserve"
+                      >
+                        <path
+                          id="XMLID_225_"
+                          d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                        />
+                      </svg>
+                    </span>
                   </div>
-                  <div class="accordion rounded-lg mb-4 bg-gray-100">
-                      <h3 class="acc-head font-semibold text-slate-900 text-lg p-3 flex justify-between items-center">
-                          <span>Helpful Lens Experts</span> <i class="fa fa-arrow-down"></i>
-                      </h3>
-                      <div class="acc-content hidden">
-                          <p class="p-3 text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                              Esse error iusto impedit ut cupiditate voluptates praesentium perferendis
-                              placeat illum tempore! Doloribus, nihil quia facilis error iure praesentium
-                              quaerat autem doloremque.</p>
-                      </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container3"
+                  x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      To do this, load the v3 site key as documented, and then
+                      explicitly render v2 using grecaptcha.render.
+                    </p>
+                    <p>
+                      You are allowed to hide the badge as long as you include
+                      the reCAPTCHA branding visibly in the user flow. Please
+                      include the following text:
+                    </p>
+                    <p>
+                      Yes, please use "www.recaptcha.net" in your code in
+                      circumstances when "www.google.com" is not accessible.
+                    </p>
+                    <ul>
+                      <li>
+                        First, replace &lt;script
+                        src="https://www.google.com/recaptcha/api.js" async
+                        defer&gt;&lt;/script&gt; with &lt;script
+                        src="https://www.recaptcha.net/recaptcha/api.js" async
+                        defer&gt;&lt;/script&gt;
+                      </li>
+                      <li>
+                        After that, apply the same to everywhere else that uses
+                        "www.google.com/recaptcha/" on your site.
+                      </li>
+                    </ul>
+                    <p>
+                      After that, apply the same to everywhere else that uses
+                      "www.google.com/recaptcha/" on your site.
+                    </p>
                   </div>
-                  <div class="accordion rounded-lg mb-4 bg-gray-100">
-                      <h3 class="acc-head font-semibold text-slate-900 text-lg p-3 flex justify-between items-center">
-                          <span>Cartered to Your Needs</span> <i class="fa fa-arrow-down"></i>
-                      </h3>
-                      <div class="acc-content hidden">
-                          <p class="p-3 text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                              Esse error iusto impedit ut cupiditate voluptates praesentium perferendis
-                              placeat illum tempore! Doloribus, nihil quia facilis error iure praesentium
-                              quaerat autem doloremque.</p>
-                      </div>
+                </div>
+              </li>
+
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 4 ? selected = 4 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span> Should I use reCAPTCHA v2 or v3? </span>
+                    <div>
+                      <span
+                        class="block text-lg transition-all"
+                        :class="selected === 4 ? 'rotate-90' : ''"
+                      >
+                        <svg
+                          class="h-5 w-5"
+                          fill="#000000"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330"
+                          xml:space="preserve"
+                        >
+                          <path
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
                   </div>
-                  <div class="accordion font-weight: 500; rounded-lg show mb-4 bg-gray-100">
-                      <h3 class="acc-head font-semibold text-slate-900 text-lg p-3 flex justify-between items-center">
-                          <span>Highest Quality Lense Material</span> <i class="fa fa-arrow-down"></i>
-                      </h3>
-                      <div class="acc-content">
-                          <p class="p-3 text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                              Esse error iusto impedit ut cupiditate voluptates praesentium perferendis
-                              placeat illum tempore! Doloribus, nihil quia facilis error iure praesentium
-                              quaerat autem doloremque.</p>
-                      </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container4"
+                  x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      reCAPTCHA v2 is not going away! We will continue to fully
+                      support and improve security and usability for v2.
+                    </p>
+                    <p>
+                      reCAPTCHA v3 is intended for power users, site owners that
+                      want more data about their traffic, and for use cases in
+                      which it is not appropriate to show a challenge to the
+                      user.
+                    </p>
+                    <p>
+                      For example, a registration page might still use reCAPTCHA
+                      v2 for a higher-friction challenge, whereas more common
+                      actions like sign-in, searches, comments, or voting might
+                      use reCAPTCHA v3. To see more details, see the reCAPTCHA
+                      v3 developer guide.
+                    </p>
                   </div>
-              </div>
-              <div class="hidden lg:block md:w-1/3 p-5 w-full h-full">
-                  <img src="img/faq2.jpg" alt="Lenses" class="w-full h-full rounded-xl">
-              </div>
+                </div>
+              </li>
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 5 ? selected = 5 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span> Should I use reCAPTCHA v2 or v3? </span>
+                    <div>
+                      <span
+                        class="block text-lg transition-all"
+                        :class="selected === 5 ? 'rotate-90' : ''"
+                      >
+                        <svg
+                          class="h-5 w-5"
+                          fill="#000000"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330"
+                          xml:space="preserve"
+                        >
+                          <path
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container5"
+                  x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      reCAPTCHA v2 is not going away! We will continue to fully
+                      support and improve security and usability for v2.
+                    </p>
+                    <p>
+                      reCAPTCHA v3 is intended for power users, site owners that
+                      want more data about their traffic, and for use cases in
+                      which it is not appropriate to show a challenge to the
+                      user.
+                    </p>
+                    <p>
+                      For example, a registration page might still use reCAPTCHA
+                      v2 for a higher-friction challenge, whereas more common
+                      actions like sign-in, searches, comments, or voting might
+                      use reCAPTCHA v3. To see more details, see the reCAPTCHA
+                      v3 developer guide.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 6 ? selected = 6 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span> Should I use reCAPTCHA v2 or v3? </span>
+                    <div>
+                      <span
+                        class="block text-lg transition-all"
+                        :class="selected === 6 ? 'rotate-90' : ''"
+                      >
+                        <svg
+                          class="h-5 w-5"
+                          fill="#000000"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330"
+                          xml:space="preserve"
+                        >
+                          <path
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container6"
+                  x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      reCAPTCHA v2 is not going away! We will continue to fully
+                      support and improve security and usability for v2.
+                    </p>
+                    <p>
+                      reCAPTCHA v3 is intended for power users, site owners that
+                      want more data about their traffic, and for use cases in
+                      which it is not appropriate to show a challenge to the
+                      user.
+                    </p>
+                    <p>
+                      For example, a registration page might still use reCAPTCHA
+                      v2 for a higher-friction challenge, whereas more common
+                      actions like sign-in, searches, comments, or voting might
+                      use reCAPTCHA v3. To see more details, see the reCAPTCHA
+                      v3 developer guide.
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
+        </div>
       </div>
+    </div>
   </section>
-  
-
-
-
-    <script>
-      const accordions = document.querySelectorAll('.accordion');
-  
-      accordions.forEach(accordion => {
-          const accHead = accordion.querySelector('.acc-head');
-          const accContent = accordion.querySelector('.acc-content');
-  
-          accHead.addEventListener('click', () => {
-              accordions.forEach(otherAccordion => {
-                  if (otherAccordion !== accordion) {
-                      otherAccordion.querySelector('.acc-content').classList.add('hidden');
-                      otherAccordion.querySelector('.acc-head i').classList.remove('fa-arrow-up');
-                      otherAccordion.querySelector('.acc-head i').classList.add('fa-arrow-down');
-                  }
-              });
-  
-              accContent.classList.toggle('hidden');
-              accHead.querySelector('i').classList.toggle('fa-arrow-down');
-              accHead.querySelector('i').classList.toggle('fa-arrow-up');
-          });
-      });
-  </script>
-  </body>
 </html>
