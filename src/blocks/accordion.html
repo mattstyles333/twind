@@ -1,10 +1,10 @@
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <link href="../output.css" rel="stylesheet" />
 
-<div class="bg-gray-100 h-screen w-screen flex justify-center">
+<div class="flex h-screen w-screen justify-center bg-gray-100">
   <div class="mr-8">
     <div
-      class="bg-white max-w-xl mx-auto border border-gray-200"
+      class="mx-auto max-w-xl border border-gray-200 bg-white"
       x-data="{selected:1}"
     >
       <ul class="shadow-box">
@@ -18,7 +18,7 @@
               <span> Should I use reCAPTCHA v2 or v3? </span>
               <div>
                 <span
-                  class="text-lg transition-all block"
+                  class="block text-lg transition-all"
                   :class="selected === 1 ? 'rotate-90' : ''"
                 >
                   <svg
@@ -42,7 +42,7 @@
           </button>
 
           <div
-            class="relative overflow-hidden transition-all max-h-0 duration-700"
+            class="relative max-h-0 overflow-hidden transition-all duration-700"
             x-ref="container1"
             x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
           >
@@ -78,7 +78,7 @@
                 do?
               </span>
               <span
-                class="text-lg transition-all block"
+                class="block text-lg transition-all"
                 :class="selected === 2 ? 'rotate-90' : ''"
               >
                 <svg
@@ -101,7 +101,7 @@
           </button>
 
           <div
-            class="relative overflow-hidden transition-all max-h-0 duration-700"
+            class="relative max-h-0 overflow-hidden transition-all duration-700"
             x-ref="container2"
             x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
           >
@@ -128,7 +128,7 @@
             <div class="flex items-center justify-between">
               <span> Can I run reCAPTCHA v2 and v3 on the same page? </span>
               <span
-                class="text-lg transition-all block"
+                class="block text-lg transition-all"
                 :class="selected === 3 ? 'rotate-90' : ''"
               >
                 <svg
@@ -151,7 +151,7 @@
           </button>
 
           <div
-            class="relative overflow-hidden transition-all max-h-0 duration-700"
+            class="relative max-h-0 overflow-hidden transition-all duration-700"
             x-ref="container3"
             x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
           >
@@ -200,7 +200,7 @@
               <span> Should I use reCAPTCHA v2 or v3? </span>
               <div>
                 <span
-                  class="text-lg transition-all block"
+                  class="block text-lg transition-all"
                   :class="selected === 4 ? 'rotate-90' : ''"
                 >
                   <svg
@@ -224,7 +224,7 @@
           </button>
 
           <div
-            class="relative overflow-hidden transition-all max-h-0 duration-700"
+            class="relative max-h-0 overflow-hidden transition-all duration-700"
             x-ref="container4"
             x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
           >
@@ -257,7 +257,7 @@
               <span> Should I use reCAPTCHA v2 or v3? </span>
               <div>
                 <span
-                  class="text-lg transition-all block"
+                  class="block text-lg transition-all"
                   :class="selected === 5 ? 'rotate-90' : ''"
                 >
                   <svg
@@ -281,7 +281,7 @@
           </button>
 
           <div
-            class="relative overflow-hidden transition-all max-h-0 duration-700"
+            class="relative max-h-0 overflow-hidden transition-all duration-700"
             x-ref="container5"
             x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''"
           >
@@ -314,7 +314,7 @@
               <span> Should I use reCAPTCHA v2 or v3? </span>
               <div>
                 <span
-                  class="text-lg transition-all block"
+                  class="block text-lg transition-all"
                   :class="selected === 6 ? 'rotate-90' : ''"
                 >
                   <svg
@@ -338,7 +338,7 @@
           </button>
 
           <div
-            class="relative overflow-hidden transition-all max-h-0 duration-700"
+            class="relative max-h-0 overflow-hidden transition-all duration-700"
             x-ref="container6"
             x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''"
           >
