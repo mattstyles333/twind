@@ -8,25 +8,52 @@
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
   <body>
-    <section class="md:hidden">
+    <div
+      class="relative mb-12 shadow-2xl shadow-gray-400 lg:grid lg:grid-cols-2"
+    >
       <img
-        src="../img/cat-banner-sm.png"
-        class="h-full object-cover md:hidden"
-        alt="Image alt text"
+        alt="A runner tying his shoes"
+        class="absolute h-96 w-full object-cover object-top lg:relative"
+        src="https://unsplash.com/photos/d3bYmnZ0ank/download?force=true&auto=format&fit=crop&w=1228&q=80"
+        width="1228"
+        height="768"
+        loading="lazy"
       />
-    </section>
-    <section class="grid grid-cols-1 gap-0 md:grid-cols-12">
-      <img
-        src="../img/cat-banner.png"
-        class="col-start-2 col-end-12 hidden h-full w-full object-cover md:block"
-        alt="Image alt text"
-      />
-      <div class="col-span-8 py-6 font-semibold md:col-start-2">
-        <h1 class="text-1xl mx-2 text-left md:text-2xl">
-          Prescription Glasses Frames
-        </h1>
+      <div
+        class="from-s lg:bg-p relative h-96 bg-gradient-to-t px-8 pb-12 pt-12"
+      >
+        <div class="mx-auto flex max-w-2xl flex-col gap-10">
+          <div
+            class="text-left text-6xl font-bold leading-none text-white drop-shadow-lg md:text-center lg:text-left xl:text-6xl"
+          >
+            Lg Category Template
+          </div>
+          <div
+            class="max-w-2xl text-left text-2xl font-semibold leading-8 text-white md:text-center lg:text-left"
+          >
+            Omnes possibilem vitrum quod cogitare potes offerimus, a
+            varifocalibus ad transmutationes speculi!
+          </div>
+          <div
+            class="flex flex-col justify-center gap-4 sm:flex-row lg:flex-wrap lg:justify-start"
+          >
+            <a
+              href="{{store url='home'}}"
+              class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-5 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl sm:gap-4 md:w-48"
+            >
+              <span class="mx-auto">Shop Men</span>
+            </a>
+            <a
+              href="{{store url='home'}}"
+              class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-5 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl sm:gap-4 md:w-48"
+            >
+              <span class="mx-auto">Shop Women</span>
+            </a>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+
     <!--filter-->
     <section class="grid hidden grid-cols-1 gap-0 lg:grid lg:grid-cols-12">
       <div class="col-start-2 col-end-12 w-full rounded-lg bg-white">
@@ -347,17 +374,8 @@
     </nav>
     <!--FAQ-->
     <section class="mt-12 w-full bg-gray-100 py-12 shadow-inner">
-      <p
-        class="justify-content-between align-items-center container mx-4 mx-auto px-4 text-center text-gray-600 lg:px-32"
-      >
-        Browse our extensive range of spectacle frames, including designer
-        glasses at incredibly low prices. If you’re looking for a specific pair
-        of spectacles, you can search within our men's and women's categories,
-        or our large selection of sports glasses, prescription sunglasses and
-        varifocal glasses to find the perfect pair to suit your personal needs.
-      </p>
       <h2
-        class="my-6 text-center text-2xl font-bold md:my-8 md:text-3xl lg:text-4xl"
+        class="mb-6 text-center text-2xl font-bold md:my-8 md:text-3xl lg:text-4xl"
       >
         Frequently Asked Questions
       </h2>
@@ -375,7 +393,7 @@
                   @click="selected !== 1 ? selected = 1 : selected = null"
                 >
                   <div class="flex items-center justify-between">
-                    <span> Should I use reCAPTCHA v2 or v3? </span>
+                    <span class="pr-2"> Should I use reCAPTCHA v2 or v3? </span>
                     <div>
                       <span
                         class="block text-lg transition-all"
@@ -435,7 +453,7 @@
                   @click="selected !== 2 ? selected = 2 : selected = null"
                 >
                   <div class="flex items-center justify-between">
-                    <span>
+                    <span class="pr-2">
                       I'd like to run automated tests with reCAPTCHA. What
                       should I do?
                     </span>
@@ -489,7 +507,7 @@
                   @click="selected !== 3 ? selected = 3 : selected = null"
                 >
                   <div class="flex items-center justify-between">
-                    <span class="mr-4">
+                    <span class="pr-2">
                       Can I run reCAPTCHA v2 and v3 on the same page?
                     </span>
                     <span
@@ -562,7 +580,7 @@
                   @click="selected !== 4 ? selected = 4 : selected = null"
                 >
                   <div class="flex items-center justify-between">
-                    <span> Should I use reCAPTCHA v2 or v3? </span>
+                    <span class="pr-2"> Should I use reCAPTCHA v2 or v3? </span>
                     <div>
                       <span
                         class="block text-lg transition-all"
@@ -621,7 +639,7 @@
                   @click="selected !== 5 ? selected = 5 : selected = null"
                 >
                   <div class="flex items-center justify-between">
-                    <span> Should I use reCAPTCHA v2 or v3? </span>
+                    <span class="pr-2"> Should I use reCAPTCHA v2 or v3? </span>
                     <div>
                       <span
                         class="block text-lg transition-all"
@@ -680,7 +698,7 @@
                   @click="selected !== 6 ? selected = 6 : selected = null"
                 >
                   <div class="flex items-center justify-between">
-                    <span> Should I use reCAPTCHA v2 or v3? </span>
+                    <span class="pr-2"> Should I use reCAPTCHA v2 or v3? </span>
                     <div>
                       <span
                         class="block text-lg transition-all"
