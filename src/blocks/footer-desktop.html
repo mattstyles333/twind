@@ -1,36 +1,36 @@
-<html>
+<section>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../output.css" rel="stylesheet" />
   </head>
-  <body class="bg-l">
+  <section class="bg-l">
     <!-- Footer container -->
-    <div class="block md:hidden bg-l">
-      <h4 class="font-bold ml-10 mt-6">
+    <div class="bg-l block md:hidden">
+      <h4 class="ml-10 mt-6 font-bold">
         Sign Up to Our Newsletter to Receive <br />Exclusive Offers and Savings
       </h4>
-      <form class="flex flex-row flex-wrap mt-4">
+      <form class="mt-4 flex flex-row flex-wrap">
         <input
           type="text"
-          class="text-gray-500 w-2/3 p-2 ml-10"
+          class="ml-10 w-2/3 p-2 text-gray-500"
           placeholder="email@example.com"
         /><br />
-        <button class="p-2 w-1/3 bg-s text-white hover:bg-s ml-10 mt-4">
+        <button class="bg-s hover:bg-s ml-10 mt-4 w-1/3 p-2 text-white">
           Subscribe
         </button>
       </form>
     </div>
     <footer
-      class="bg-p text-left text-neutral-600 dark:bg-p dark:text-neutral-200 lg:text-left leading-relaxed"
+      class="bg-p dark:bg-p text-left leading-relaxed text-neutral-600 dark:text-neutral-200 lg:text-left"
     >
       <!-- Main container div: holds the entire content of the footer, including four sections (Tailwind Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. -->
-      <div class="mx-6 py-10 text-left md:text-left hidden md:block">
-        <div class="grid-1 grid gap-6 md:grid-cols-2 lg:grid-cols-4 ml-20">
+      <div class="mx-6 hidden py-10 text-left md:block md:text-left">
+        <div class="grid-1 ml-20 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <!-- Tailwind Elements section -->
           <!-- Contact section -->
           <div>
-            <p class="mb-4 flex justify-left md:justify-start text-white">
+            <p class="justify-left mb-4 flex text-white md:justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -46,7 +46,7 @@
               </svg>
               info@spex4less.com
             </p>
-            <p class="mb-4 flex justify-left md:justify-start text-white">
+            <p class="justify-left mb-4 flex text-white md:justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -61,7 +61,7 @@
               </svg>
               0151 632 6611<br />Mon-Fri: 9am-5pm<br />Sat: 9am-12pm
             </p>
-            <p class="mb-4 flex justify-left md:justify-start text-white">
+            <p class="justify-left mb-4 flex text-white md:justify-start">
               <svg
                 viewBox="0 0 38 36"
                 fill="none"
@@ -138,7 +138,7 @@
               <li>
                 <a
                   href="https://www.spex4less.com/glasses"
-                  class="hover:underline hover:text-violet-600"
+                  class="hover:text-violet-600 hover:underline"
                   >Glasses</a
                 >
               </li>
@@ -178,13 +178,13 @@
               Sign Up to Our Newsletter to Receive <br />Exclusive Offers and
               Savings
             </h4>
-            <form class="flex flex-row flex-wrap mt-4">
+            <form class="mt-4 flex flex-row flex-wrap">
               <input
                 type="text"
-                class="text-gray-500 w-2/3 p-2"
+                class="w-2/3 p-2 text-gray-500"
                 placeholder="email@example.com"
               />
-              <button class="p-2 w-1/3 bg-s text-white hover:bg-s">
+              <button class="bg-s hover:bg-s w-1/3 p-2 text-white">
                 Subscribe
               </button>
             </form>
@@ -192,14 +192,14 @@
         </div>
       </div>
 
-      <div class="w-full px-8 mx-auto space-y-2 lg:max-w-md md:hidden">
+      <div class="mx-auto w-full space-y-2 px-8 md:hidden lg:max-w-md">
         <details class="justify-content-between align-items-center">
-          <summary class="font-semibold bg-p px-4 py-2 text-md cursor-pointer">
+          <summary class="bg-p text-md cursor-pointer px-4 py-2 font-semibold">
             Contact Us
           </summary>
-          <div class="ml-10 bg-p">
+          <div class="bg-p ml-10">
             <!-- Contact information content here -->
-            <p class="mb-4 flex justify-left md:justify-start">
+            <p class="justify-left mb-4 flex md:justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -215,7 +215,7 @@
               </svg>
               info@spex4less.com
             </p>
-            <p class="mb-4 flex justify-left md:justify-start">
+            <p class="justify-left mb-4 flex md:justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -230,7 +230,7 @@
               </svg>
               0151 632 6611<br />Mon-Fri: 9am-5pm<br />Sat: 9am-12pm
             </p>
-            <p class="mb-4 flex justify-left md:justify-start">
+            <p class="justify-left mb-4 flex md:justify-start">
               <svg
                 viewBox="0 0 38 36"
                 fill="none"
@@ -249,10 +249,10 @@
           </div>
         </details>
         <details class="justify-content-between align-items-center">
-          <summary class="font-semibold bg-p px-4 py-2 text-md cursor-pointer">
+          <summary class="bg-p text-md cursor-pointer px-4 py-2 font-semibold">
             Useful Information
           </summary>
-          <div class="ml-10 bg-p">
+          <div class="bg-p ml-10">
             <ul>
               <!-- Useful information links here -->
               <li>
@@ -308,16 +308,16 @@
           </div>
         </details>
         <details class="justify-content-between align-items-center">
-          <summary class="font-semibold bg-p px-4 py-2 text-md cursor-pointer">
+          <summary class="bg-p text-md cursor-pointer px-4 py-2 font-semibold">
             Shop
           </summary>
-          <div class="ml-10 bg-p">
+          <div class="bg-p ml-10">
             <ul>
               <!-- Shop links here -->
               <li>
                 <a
                   href="https://www.spex4less.com/glasses"
-                  class="hover:underline hover:text-violet-600"
+                  class="hover:text-violet-600 hover:underline"
                   >Glasses</a
                 >
               </li>
@@ -356,7 +356,7 @@
       </div>
 
       <!--Copyright section-->
-      <div class="bg-s p-6 mt-6 text-center leading-none text-white">
+      <div class="bg-s mt-6 p-6 text-center leading-none text-white">
         <p class="mb-4">
           © 2004 - 2023 Spex4less, Fashion Specs Direct LTD, All Rights
           Reserved.
@@ -371,5 +371,5 @@
         </p>
       </div>
     </footer>
-  </body>
-</html>
+  </section>
+</section>
