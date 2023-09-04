@@ -1,0 +1,1390 @@
+<section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../output.css" rel="stylesheet" />
+    <script
+      defer
+      src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"
+    ></script>
+  </head>
+  <section>
+    <div class="relative shadow-2xl shadow-gray-400 lg:grid lg:grid-cols-2">
+      <img
+        alt="A runner tying his shoes"
+        class="absolute h-full w-full object-cover lg:relative"
+        src="https://unsplash.com/photos/d3bYmnZ0ank/download?force=true&auto=format&fit=crop&w=1228&q=80"
+        width="1228"
+        height="768"
+        loading="lazy"
+      />
+      <div class="from-s lg:bg-p relative bg-gradient-to-t px-8 pb-12 pt-48">
+        <div class="mx-auto flex max-w-lg flex-col gap-10">
+          <div
+            class="text-center text-6xl font-bold leading-none text-white drop-shadow-lg lg:text-left xl:text-7xl"
+          >
+            Reglaze
+          </div>
+          <div
+            class="text-center text-2xl font-semibold leading-8 text-white lg:text-left"
+          >
+            Omnes possibilem vitrum quod cogitare potes offerimus, a
+            varifocalibus ad transmutationes speculi!
+          </div>
+          <div
+            class="flex flex-col justify-center gap-4 sm:flex-row lg:flex-wrap lg:justify-start"
+          >
+            <a
+              href="{{store url='home'}}"
+              class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-5 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl sm:gap-4 md:w-48"
+            >
+              <span class="mx-auto">Shop Men</span>
+            </a>
+            <a
+              href="{{store url='home'}}"
+              class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-5 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl sm:gap-4 md:w-48"
+            >
+              <span class="mx-auto">Shop Women</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="container mx-auto">
+      <div class="my-24">
+        <h2
+          class="text-center text-4xl font-bold capitalize text-slate-800 md:text-5xl"
+        >
+          Subtitle for Page with brief intro
+        </h2>
+        <p class="mt-6 text-center text-lg leading-loose lg:px-48">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
+    </section>
+    <!--steps-->
+    <section class="container mx-auto">
+      <h2
+        class="mt-8 text-center text-4xl font-bold capitalize text-slate-800 md:mt-12 md:text-5xl"
+      >
+        How to choose your glasses
+      </h2>
+      <p class="mt-6 text-center">
+        Choosing your glasses has never been easier, simply follow these 4 easy
+        steps!
+      </p>
+      <div class="container mx-auto py-4 md:px-4 lg:py-12">
+        <div class="row-gap-10 grid gap-6 lg:grid-cols-2">
+          <div class="lg:py-6">
+            <div class="flex">
+              <div class="mr-4 flex flex-col items-center">
+                <div>
+                  <div
+                    class="flex h-10 w-10 items-center justify-center rounded-full border"
+                  >
+                    <svg
+                      class="w-4 text-gray-600"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      viewBox="0 0 24 24"
+                    >
+                      <line
+                        fill="none"
+                        stroke-miterlimit="10"
+                        x1="12"
+                        y1="2"
+                        x2="12"
+                        y2="22"
+                      ></line>
+                      <polyline
+                        fill="none"
+                        stroke-miterlimit="10"
+                        points="19,15 12,22 5,15"
+                      ></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="pb-2 pt-1 lg:pb-8">
+                <p class="mb-2 text-lg font-bold">Step 1</p>
+                <p class="text-gray-700">
+                  All recipes are written using certain conventions, which
+                  define the characteristics of common ingredients. The rules
+                  vary from place to place. All recipes are written using
+                  certain conventions, which define the characteristics of
+                  common ingredients. The rules vary from place to place.All
+                  recipes are written using certain conventions, which define
+                  the characteristics of common ingredients. The rules vary from
+                  place to place.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--graphics-->
+          <div class="hidden justify-center lg:block">
+            <div
+              class="mx-24 justify-center"
+              x-data="{ visible: false }"
+              x-intersect="visible = true"
+            >
+              <img
+                src="../img/step1-thin.png"
+                class="transform rounded-lg object-cover shadow-lg transition-all duration-1000 ease-in-out lg:relative"
+                :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="container mx-auto py-4 md:px-4 lg:py-12">
+        <div class="row-gap-10 grid gap-6 lg:grid-cols-2">
+          <div class="lg:py-6">
+            <div class="flex">
+              <div class="mr-4 flex flex-col items-center">
+                <div>
+                  <div
+                    class="flex h-10 w-10 items-center justify-center rounded-full border"
+                  >
+                    <svg
+                      class="w-4 text-gray-600"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      viewBox="0 0 24 24"
+                    >
+                      <line
+                        fill="none"
+                        stroke-miterlimit="10"
+                        x1="12"
+                        y1="2"
+                        x2="12"
+                        y2="22"
+                      ></line>
+                      <polyline
+                        fill="none"
+                        stroke-miterlimit="10"
+                        points="19,15 12,22 5,15"
+                      ></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="pb-8 pt-1">
+                <p class="mb-2 text-lg font-bold">Step 1</p>
+                <p class="text-gray-700">
+                  All recipes are written using certain conventions, which
+                  define the characteristics of common ingredients. The rules
+                  vary from place to place. All recipes are written using
+                  certain conventions, which define the characteristics of
+                  common ingredients. The rules vary from place to place.All
+                  recipes are written using certain conventions, which define
+                  the characteristics of common ingredients. The rules vary from
+                  place to place.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--graphics-->
+          <div class="hidden justify-center lg:block">
+            <div
+              class="mx-24 justify-center"
+              x-data="{ visible: false }"
+              x-intersect="visible = true"
+            >
+              <img
+                src="../img/step1-thin.png"
+                class="transform rounded-lg object-cover shadow-lg transition-all duration-1000 ease-in-out lg:relative"
+                :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="container mx-auto py-4 md:px-4 lg:py-12">
+        <div class="row-gap-10 grid gap-6 lg:grid-cols-2">
+          <div class="lg:py-6">
+            <div class="flex">
+              <div class="mr-4 flex flex-col items-center">
+                <div>
+                  <div
+                    class="flex h-10 w-10 items-center justify-center rounded-full border"
+                  >
+                    <svg
+                      class="w-4 text-gray-600"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      viewBox="0 0 24 24"
+                    >
+                      <line
+                        fill="none"
+                        stroke-miterlimit="10"
+                        x1="12"
+                        y1="2"
+                        x2="12"
+                        y2="22"
+                      ></line>
+                      <polyline
+                        fill="none"
+                        stroke-miterlimit="10"
+                        points="19,15 12,22 5,15"
+                      ></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="pb-8 pt-1">
+                <p class="mb-2 text-lg font-bold">Step 1</p>
+                <p class="text-gray-700">
+                  All recipes are written using certain conventions, which
+                  define the characteristics of common ingredients. The rules
+                  vary from place to place. All recipes are written using
+                  certain conventions, which define the characteristics of
+                  common ingredients. The rules vary from place to place.All
+                  recipes are written using certain conventions, which define
+                  the characteristics of common ingredients. The rules vary from
+                  place to place.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--graphics-->
+          <div class="hidden justify-center lg:block">
+            <div
+              class="mx-24 justify-center"
+              x-data="{ visible: false }"
+              x-intersect="visible = true"
+            >
+              <img
+                src="../img/step1-thin.png"
+                class="transform rounded-lg object-cover shadow-lg transition-all duration-1000 ease-in-out lg:relative"
+                :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="container mx-auto py-4 md:px-4 lg:py-12">
+        <div class="row-gap-10 grid gap-6 lg:grid-cols-2">
+          <div class="lg:py-6">
+            <div class="flex">
+              <div class="mr-4 flex flex-col items-center">
+                <div>
+                  <div
+                    class="flex h-10 w-10 items-center justify-center rounded-full border"
+                  >
+                    <svg
+                      class="w-4 text-gray-600"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      viewBox="0 0 24 24"
+                    >
+                      <line
+                        fill="none"
+                        stroke-miterlimit="10"
+                        x1="12"
+                        y1="2"
+                        x2="12"
+                        y2="22"
+                      ></line>
+                      <polyline
+                        fill="none"
+                        stroke-miterlimit="10"
+                        points="19,15 12,22 5,15"
+                      ></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="pb-8 pt-1">
+                <p class="mb-2 text-lg font-bold">Step 1</p>
+                <p class="text-gray-700">
+                  All recipes are written using certain conventions, which
+                  define the characteristics of common ingredients. The rules
+                  vary from place to place. All recipes are written using
+                  certain conventions, which define the characteristics of
+                  common ingredients. The rules vary from place to place.All
+                  recipes are written using certain conventions, which define
+                  the characteristics of common ingredients. The rules vary from
+                  place to place.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--graphics-->
+          <div class="hidden justify-center lg:block">
+            <div
+              class="mx-24 justify-center"
+              x-data="{ visible: false }"
+              x-intersect="visible = true"
+            >
+              <img
+                src="../img/step1-thin.png"
+                class="transform rounded-lg object-cover shadow-lg transition-all duration-1000 ease-in-out lg:relative"
+                :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-l my-24 border-b-2 py-12 shadow-inner">
+      <div class="mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <h2
+          class="text-center text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl"
+        >
+          Read trusted reviews from our customers
+        </h2>
+
+        <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
+          <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+            <div class="flex items-center gap-4">
+              <img
+                alt="Man"
+                src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                class="h-14 w-14 rounded-full object-cover"
+              />
+
+              <div>
+                <div class="flex justify-center gap-0.5 text-green-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </div>
+
+                <p class="mt-0.5 text-lg font-medium text-gray-900">
+                  Paul Starr
+                </p>
+              </div>
+            </div>
+
+            <p class="mt-4 text-gray-700">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
+              sit rerum incidunt, a consequuntur recusandae ab saepe illo est
+              quia obcaecati neque quibusdam eius accusamus error officiis atque
+              voluptates magnam!
+            </p>
+          </blockquote>
+
+          <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+            <div class="flex items-center gap-4">
+              <img
+                alt="Man"
+                src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                class="h-14 w-14 rounded-full object-cover"
+              />
+
+              <div>
+                <div class="flex justify-center gap-0.5 text-green-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </div>
+
+                <p class="mt-0.5 text-lg font-medium text-gray-900">
+                  Paul Starr
+                </p>
+              </div>
+            </div>
+
+            <p class="mt-4 text-gray-700">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
+              sit rerum incidunt, a consequuntur recusandae ab saepe illo est
+              quia obcaecati neque quibusdam eius accusamus error officiis atque
+              voluptates magnam!
+            </p>
+          </blockquote>
+
+          <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+            <div class="flex items-center gap-4">
+              <img
+                alt="Man"
+                src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                class="h-14 w-14 rounded-full object-cover"
+              />
+
+              <div>
+                <div class="flex justify-center gap-0.5 text-green-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </div>
+
+                <p class="mt-0.5 text-lg font-medium text-gray-900">
+                  Paul Starr
+                </p>
+              </div>
+            </div>
+
+            <p class="mt-4 text-gray-700">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
+              sit rerum incidunt, a consequuntur recusandae ab saepe illo est
+              quia obcaecati neque quibusdam eius accusamus error officiis atque
+              voluptates magnam!
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2 class="mb-6 text-center text-5xl font-bold text-slate-800">
+        Reglazing Price Comparison
+      </h2>
+      <p class="container mx-auto text-center leading-loose">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit
+        rerum incidunt, a consequuntur recusandae ab saepe illo est quia
+        obcaecati neque quibusdam eius accusamus error officiis atque voluptates
+        magnam! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
+        sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia
+        obcaecati neque quibusdam eius accusamus error officiis atque voluptates
+        magnam! sit rerum incidunt, a consequuntur recusandae ab saepe illo est
+        quia
+      </p>
+      <p class="container mx-auto mt-6 text-center leading-loose">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit
+        rerum incidunt, a consequuntur recusandae ab saepe illo est quia
+        obcaecati neque quibusdam eius accusamus error officiis atque voluptates
+        magnam! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
+        sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia
+        obcaecati neque quibusdam eius accusamus error officiis atque voluptates
+        magnam!
+      </p>
+      <div class="container mx-auto my-4 md:my-12 md:px-2 lg:px-8">
+        <table
+          class="w-full border-separate border border-white text-left text-xs text-gray-500 dark:text-gray-400 md:text-base"
+        >
+          <thead
+            class="bg-p text-xxs text-center uppercase text-gray-700 text-white dark:bg-gray-700 dark:text-gray-400"
+          >
+            <tr>
+              <th scope="col" class="rounded-tl-lg px-2 py-2 md:px-6 md:py-3">
+                Product
+              </th>
+              <th scope="col" class="px-2 py-2 md:px-6 md:py-3">Color</th>
+              <th scope="col" class="px-2 py-2 md:px-6 md:py-3">Category</th>
+              <th scope="col" class="rounded-tr-lg px-2 py-2 md:px-6 md:py-3">
+                Price
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b bg-white dark:border-gray-700 dark:bg-gray-800">
+              <th
+                scope="row"
+                class="bg-l whitespace-nowrap px-2 py-2 font-medium text-gray-900 dark:text-white md:px-6 md:py-4"
+              >
+                Silver
+              </th>
+              <td class="bg-l px-2 py-2 md:px-6 md:py-4">Silver</td>
+              <td class="bg-l px-2 py-2 md:px-6 md:py-4">Laptop</td>
+              <td class="bg-l px-2 py-2 md:px-6 md:py-4">$2999</td>
+            </tr>
+            <tr class="border-b bg-white dark:border-gray-700 dark:bg-gray-800">
+              <th
+                scope="row"
+                class="bg-l whitespace-nowrap px-2 py-2 font-medium text-gray-900 dark:text-white md:px-6 md:py-4"
+              >
+                Silver
+              </th>
+              <td class="bg-l px-2 py-2 md:px-6 md:py-4">White</td>
+              <td class="bg-l px-2 py-2 md:px-6 md:py-4">Laptop PC</td>
+              <td class="bg-l px-2 py-2 md:px-6 md:py-4">$1999</td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800">
+              <th
+                scope="row"
+                class="bg-l whitespace-nowrap px-2 py-2 font-medium text-gray-900 dark:text-white md:px-6 md:py-4"
+              >
+                Silver
+              </th>
+              <td class="bg-l px-2 py-2 md:px-6 md:py-4">Black</td>
+              <td class="bg-l px-2 py-2 md:px-6 md:py-4">Accessories</td>
+              <td class="bg-l px-2 py-2 md:px-6 md:py-4">$99</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="container mx-auto my-4 md:my-12 md:px-2 lg:px-8">
+        <table
+          class="w-full border-separate border border-white text-left text-xs text-gray-500 dark:text-gray-400 md:text-base"
+        >
+          <thead
+            class="bg-p text-xxs text-center uppercase text-gray-700 text-white dark:bg-gray-700 dark:text-gray-400"
+          >
+            <tr>
+              <th scope="col" class="rounded-tl-lg px-2 py-2 md:px-6 md:py-3">
+                Product
+              </th>
+              <th scope="col" class="px-2 py-2 md:px-6 md:py-3">Color</th>
+              <th scope="col" class="px-2 py-2 md:px-6 md:py-3">Category</th>
+              <th scope="col" class="rounded-tr-lg px-2 py-2 md:px-6 md:py-3">
+                Price
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b bg-white dark:border-gray-700 dark:bg-gray-800">
+              <th
+                scope="row"
+                class="bg-l whitespace-nowrap px-2 py-2 font-medium text-gray-900 dark:text-white md:px-6 md:py-4"
+              >
+                Silver
+              </th>
+              <td class="bg-l px-2 py-2 md:px-6 md:py-4">Silver</td>
+              <td class="bg-l px-2 py-2 md:px-6 md:py-4">Laptop</td>
+              <td class="bg-l px-2 py-2 md:px-6 md:py-4">$2999</td>
+            </tr>
+            <tr class="border-b bg-white dark:border-gray-700 dark:bg-gray-800">
+              <th
+                scope="row"
+                class="bg-l whitespace-nowrap px-2 py-2 font-medium text-gray-900 dark:text-white md:px-6 md:py-4"
+              >
+                Silver
+              </th>
+              <td class="bg-l px-2 py-2 md:px-6 md:py-4">White</td>
+              <td class="bg-l px-2 py-2 md:px-6 md:py-4">Laptop PC</td>
+              <td class="bg-l px-2 py-2 md:px-6 md:py-4">$1999</td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800">
+              <th
+                scope="row"
+                class="bg-l whitespace-nowrap px-2 py-2 font-medium text-gray-900 dark:text-white md:px-6 md:py-4"
+              >
+                Silver
+              </th>
+              <td class="bg-l px-2 py-2 md:px-6 md:py-4">Black</td>
+              <td class="bg-l px-2 py-2 md:px-6 md:py-4">Accessories</td>
+              <td class="bg-l px-2 py-2 md:px-6 md:py-4">$99</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="container mx-auto lg:mt-24">
+      <div class="grid lg:grid-cols-2 lg:items-center lg:gap-8 lg:px-12">
+        <div aria-hidden="true" class="px-12 lg:mt-0">
+          <img
+            src="../img/woman-thin.png"
+            alt=""
+            class="mx-auto mb-8 rounded-lg shadow-xl shadow-gray-500"
+          />
+        </div>
+        <div>
+          <h3
+            class="text-2xl font-bold tracking-tight dark:text-gray-50 sm:text-3xl md:mt-12"
+          >
+            Lorem ipsum dolor sit amet consectetur
+          </h3>
+          <p class="mt-3 text-lg dark:text-gray-400">
+            Omnes nostra armatura veniunt cum lente standard gratuita ad
+            prescriptionem tuam precisam facta. Lentibus nostris nova
+            technologia et materia utentes claritatem et firmitatem maximam
+            assecuramus.
+          </p>
+          <div class="mt-12 space-y-12">
+            <div class="jusitfy-center flex">
+              <div class="ml-4">
+                <h4 class="text-lg font-medium leading-6 dark:text-gray-50">
+                  Materiae Lentium Summae Qualitatis
+                </h4>
+                <p class="mt-2 dark:text-gray-400">
+                  Lentibus nostris nova technologia et materia utentes
+                  claritatem et firmitatem maximam assecuramus.
+                </p>
+              </div>
+            </div>
+            <div class="jusitfy-center flex">
+              <div class="ml-4">
+                <h4 class="text-lg font-medium leading-6 dark:text-gray-50">
+                  Materiae Lentium Summae Qualitatis
+                </h4>
+                <p class="mt-2 dark:text-gray-400">
+                  Lentibus nostris nova technologia et materia utentes
+                  claritatem et firmitatem maximam assecuramus.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="mt-12 w-full bg-gray-100 py-12 shadow-inner">
+      <h2
+        class="mb-6 text-center text-2xl font-bold md:my-8 md:text-3xl lg:text-4xl"
+      >
+        Frequently Asked Questions
+      </h2>
+      <div class="container mx-auto px-4 lg:px-32">
+        <div class="">
+          <div
+            class="mx-auto border border-gray-200 bg-white"
+            x-data="{selected:0}"
+          >
+            <ul class="shadow-box">
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 1 ? selected = 1 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span class="pr-2"> Should I use reCAPTCHA v2 or v3? </span>
+                    <div>
+                      <span
+                        class="block text-lg transition-all"
+                        :class="selected === 1 ? 'rotate-90' : ''"
+                      >
+                        <svg
+                          class="h-5 w-5"
+                          fill="#000000"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330"
+                          xml:space="preserve"
+                        >
+                          <path
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container1"
+                  x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      reCAPTCHA v2 is not going away! We will continue to fully
+                      support and improve security and usability for v2.
+                    </p>
+                    <p>
+                      reCAPTCHA v3 is intended for power users, site owners that
+                      want more data about their traffic, and for use cases in
+                      which it is not appropriate to show a challenge to the
+                      user.
+                    </p>
+                    <p>
+                      For example, a registration page might still use reCAPTCHA
+                      v2 for a higher-friction challenge, whereas more common
+                      actions like sign-in, searches, comments, or voting might
+                      use reCAPTCHA v3. To see more details, see the reCAPTCHA
+                      v3 developer guide.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 2 ? selected = 2 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span class="pr-2">
+                      I'd like to run automated tests with reCAPTCHA. What
+                      should I do?
+                    </span>
+                    <span
+                      class="block text-lg transition-all"
+                      :class="selected === 2 ? 'rotate-90' : ''"
+                    >
+                      <svg
+                        class="h-5 w-5"
+                        fill="#000000"
+                        version="1.1"
+                        id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 330 330"
+                        xml:space="preserve"
+                      >
+                        <path
+                          id="XMLID_225_"
+                          d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container2"
+                  x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      For reCAPTCHA v3, create a separate key for testing
+                      environments. Scores may not be accurate as reCAPTCHA v3
+                      relies on seeing real traffic.
+                    </p>
+                    <p>
+                      For reCAPTCHA v2, use the following test keys. You will
+                      always get No CAPTCHA and all verification requests will
+                      pass.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 3 ? selected = 3 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span class="pr-2">
+                      Can I run reCAPTCHA v2 and v3 on the same page?
+                    </span>
+                    <span
+                      class="block text-lg transition-all"
+                      :class="selected === 3 ? 'rotate-90' : ''"
+                    >
+                      <svg
+                        class="h-5 w-5"
+                        fill="#000000"
+                        version="1.1"
+                        id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 330 330"
+                        xml:space="preserve"
+                      >
+                        <path
+                          id="XMLID_225_"
+                          d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container3"
+                  x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      To do this, load the v3 site key as documented, and then
+                      explicitly render v2 using grecaptcha.render.
+                    </p>
+                    <p>
+                      You are allowed to hide the badge as long as you include
+                      the reCAPTCHA branding visibly in the user flow. Please
+                      include the following text:
+                    </p>
+                    <p>
+                      Yes, please use "www.recaptcha.net" in your code in
+                      circumstances when "www.google.com" is not accessible.
+                    </p>
+                    <ul>
+                      <li>
+                        First, replace &lt;script
+                        src="https://www.google.com/recaptcha/api.js" async
+                        defer&gt;&lt;/script&gt; with &lt;script
+                        src="https://www.recaptcha.net/recaptcha/api.js" async
+                        defer&gt;&lt;/script&gt;
+                      </li>
+                      <li>
+                        After that, apply the same to everywhere else that uses
+                        "www.google.com/recaptcha/" on your site.
+                      </li>
+                    </ul>
+                    <p>
+                      After that, apply the same to everywhere else that uses
+                      "www.google.com/recaptcha/" on your site.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 4 ? selected = 4 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span class="pr-2"> Should I use reCAPTCHA v2 or v3? </span>
+                    <div>
+                      <span
+                        class="block text-lg transition-all"
+                        :class="selected === 4 ? 'rotate-90' : ''"
+                      >
+                        <svg
+                          class="h-5 w-5"
+                          fill="#000000"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330"
+                          xml:space="preserve"
+                        >
+                          <path
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container4"
+                  x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      reCAPTCHA v2 is not going away! We will continue to fully
+                      support and improve security and usability for v2.
+                    </p>
+                    <p>
+                      reCAPTCHA v3 is intended for power users, site owners that
+                      want more data about their traffic, and for use cases in
+                      which it is not appropriate to show a challenge to the
+                      user.
+                    </p>
+                    <p>
+                      For example, a registration page might still use reCAPTCHA
+                      v2 for a higher-friction challenge, whereas more common
+                      actions like sign-in, searches, comments, or voting might
+                      use reCAPTCHA v3. To see more details, see the reCAPTCHA
+                      v3 developer guide.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 5 ? selected = 5 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span class="pr-2"> Should I use reCAPTCHA v2 or v3? </span>
+                    <div>
+                      <span
+                        class="block text-lg transition-all"
+                        :class="selected === 5 ? 'rotate-90' : ''"
+                      >
+                        <svg
+                          class="h-5 w-5"
+                          fill="#000000"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330"
+                          xml:space="preserve"
+                        >
+                          <path
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container5"
+                  x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      reCAPTCHA v2 is not going away! We will continue to fully
+                      support and improve security and usability for v2.
+                    </p>
+                    <p>
+                      reCAPTCHA v3 is intended for power users, site owners that
+                      want more data about their traffic, and for use cases in
+                      which it is not appropriate to show a challenge to the
+                      user.
+                    </p>
+                    <p>
+                      For example, a registration page might still use reCAPTCHA
+                      v2 for a higher-friction challenge, whereas more common
+                      actions like sign-in, searches, comments, or voting might
+                      use reCAPTCHA v3. To see more details, see the reCAPTCHA
+                      v3 developer guide.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 6 ? selected = 6 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span class="pr-2"> Should I use reCAPTCHA v2 or v3? </span>
+                    <div>
+                      <span
+                        class="block text-lg transition-all"
+                        :class="selected === 6 ? 'rotate-90' : ''"
+                      >
+                        <svg
+                          class="h-5 w-5"
+                          fill="#000000"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330"
+                          xml:space="preserve"
+                        >
+                          <path
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container6"
+                  x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      reCAPTCHA v2 is not going away! We will continue to fully
+                      support and improve security and usability for v2.
+                    </p>
+                    <p>
+                      reCAPTCHA v3 is intended for power users, site owners that
+                      want more data about their traffic, and for use cases in
+                      which it is not appropriate to show a challenge to the
+                      user.
+                    </p>
+                    <p>
+                      For example, a registration page might still use reCAPTCHA
+                      v2 for a higher-friction challenge, whereas more common
+                      actions like sign-in, searches, comments, or voting might
+                      use reCAPTCHA v3. To see more details, see the reCAPTCHA
+                      v3 developer guide.
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <h2
+          class="text-center text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl"
+        >
+          Read trusted reviews from our customers
+        </h2>
+
+        <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
+          <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+            <div class="flex items-center gap-4">
+              <img
+                alt="Man"
+                src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                class="h-14 w-14 rounded-full object-cover"
+              />
+
+              <div>
+                <div class="flex justify-center gap-0.5 text-green-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </div>
+
+                <p class="mt-0.5 text-lg font-medium text-gray-900">
+                  Paul Starr
+                </p>
+              </div>
+            </div>
+
+            <p class="mt-4 text-gray-700">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
+              sit rerum incidunt, a consequuntur recusandae ab saepe illo est
+              quia obcaecati neque quibusdam eius accusamus error officiis atque
+              voluptates magnam!
+            </p>
+          </blockquote>
+
+          <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+            <div class="flex items-center gap-4">
+              <img
+                alt="Man"
+                src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                class="h-14 w-14 rounded-full object-cover"
+              />
+
+              <div>
+                <div class="flex justify-center gap-0.5 text-green-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </div>
+
+                <p class="mt-0.5 text-lg font-medium text-gray-900">
+                  Paul Starr
+                </p>
+              </div>
+            </div>
+
+            <p class="mt-4 text-gray-700">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
+              sit rerum incidunt, a consequuntur recusandae ab saepe illo est
+              quia obcaecati neque quibusdam eius accusamus error officiis atque
+              voluptates magnam!
+            </p>
+          </blockquote>
+
+          <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+            <div class="flex items-center gap-4">
+              <img
+                alt="Man"
+                src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                class="h-14 w-14 rounded-full object-cover"
+              />
+
+              <div>
+                <div class="flex justify-center gap-0.5 text-green-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </div>
+
+                <p class="mt-0.5 text-lg font-medium text-gray-900">
+                  Paul Starr
+                </p>
+              </div>
+            </div>
+
+            <p class="mt-4 text-gray-700">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
+              sit rerum incidunt, a consequuntur recusandae ab saepe illo est
+              quia obcaecati neque quibusdam eius accusamus error officiis atque
+              voluptates magnam!
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+  </section>
+</section>
