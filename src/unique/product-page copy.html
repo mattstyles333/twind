@@ -5,56 +5,12 @@
     <link href="../output.css" rel="stylesheet" />
   </head>
   <section>
-    <section class="bg-white pb-10 pt-2 font-sans shadow-lg sm:pt-16">
-      <div class="container mx-auto px-4">
-        <nav class="flex hidden sm:block">
-          <ol role="list" class="flex items-center">
-            <li class="text-left">
-              <div class="-m-1">
-                <a
-                  href="#"
-                  class="rounded-md p-1 text-sm font-medium text-gray-600 hover:text-gray-800 focus:text-gray-900 focus:shadow"
-                >
-                  Glasses
-                </a>
-              </div>
-            </li>
-
-            <li class="text-left">
-              <div class="flex items-center">
-                <span class="mx-2 text-gray-400">/</span>
-                <div class="-m-1">
-                  <a
-                    href="#"
-                    class="rounded-md p-1 text-sm font-medium text-gray-600 hover:text-gray-800 focus:text-gray-900 focus:shadow"
-                  >
-                    Oakley
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <li class="text-left">
-              <div class="flex items-center">
-                <span class="mx-2 text-gray-400">/</span>
-                <div class="-m-1">
-                  <a
-                    href="#"
-                    class="rounded-md p-1 text-sm font-medium text-gray-600 hover:text-gray-800 focus:text-gray-900 focus:shadow"
-                    aria-current="page"
-                  >
-                    Holbrook RX Oakley Glasses OX 8156
-                  </a>
-                </div>
-              </div>
-            </li>
-          </ol>
-        </nav>
-
+    <section class="bg-white pb-10 pt-2 font-sans sm:pt-16">
+      <div class="container mx-auto">
         <div
-          class="lg:col-gap-12 xl:col-gap-16 mt-4 grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16"
+          class="lg:col-gap-12 xl:col-gap-16 mt-4 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-5 lg:gap-16"
         >
-          <div class="lg:col-span-3 lg:row-end-1">
+          <div class="my-auto lg:col-span-3 lg:row-end-1">
             <div class="lg:flex lg:items-start">
               <div class="lg:order-2 lg:ml-40">
                 <div class="max-w-xl overflow-hidden rounded-lg">
@@ -69,7 +25,7 @@
                     -25%
                   </span>
                   <img
-                    class="h-full w-full max-w-full object-cover"
+                    class="w-full object-contain"
                     src="../img/holbrook.jpg"
                     alt=""
                   />
@@ -97,7 +53,7 @@
               Glasses OX 8156
             </h1>
 
-            <div class="mt-4 flex items-center">
+            <div class="mt-2 flex items-center lg:mt-4">
               <div class="flex items-center">
                 <svg
                   class="block h-4 w-4 align-middle text-yellow-500"
@@ -157,12 +113,16 @@
               </div>
               <p class="ml-2 text-sm font-medium text-gray-500">51 Reviews</p>
             </div>
-            <h1 class="mt-4 hidden text-xl font-bold sm:block md:text-3xl">
+            <h1
+              class="mt-2 hidden text-xl font-bold sm:block md:text-3xl lg:mt-4"
+            >
               £64.97
             </h1>
 
             <div>
-              <h4 class="mt-4 text-base text-gray-900 md:mt-8">Colour</h4>
+              <h4 class="mt-2 text-base text-gray-900 md:mt-4 lg:mt-4">
+                Colour
+              </h4>
 
               <fieldset class="mt-4">
                 <span class="flex items-center space-x-3">
@@ -229,7 +189,7 @@
                 </span>
               </fieldset>
             </div>
-            <h2 class="mt-4 text-base text-gray-900 md:mt-8">Size</h2>
+            <h2 class="mt-4 text-base text-gray-900 md:mt-4 lg:mt-8">Size</h2>
             <div class="mt-3 flex select-none flex-wrap items-center gap-2">
               <label class="">
                 <input
@@ -240,7 +200,7 @@
                   checked
                 />
                 <p
-                  class="peer-checked:bg-s rounded-lg border bg-gray-200 px-6 py-2 text-sm font-bold peer-checked:text-white md:text-lg"
+                  class="peer-checked:bg-s rounded-lg border bg-gray-200 px-6 py-2 text-sm font-bold duration-1000 ease-in-out peer-checked:text-white md:text-lg"
                 >
                   54
                 </p>
@@ -253,7 +213,7 @@
                   class="peer sr-only"
                 />
                 <p
-                  class="peer-checked:bg-s rounded-lg border bg-gray-200 px-6 py-2 text-sm font-bold peer-checked:text-white md:text-lg"
+                  class="peer-checked:bg-s rounded-lg border bg-gray-200 px-6 py-2 text-sm font-bold duration-1000 ease-in-out peer-checked:text-white md:text-lg"
                 >
                   56
                 </p>
@@ -266,7 +226,7 @@
                   class="peer sr-only"
                 />
                 <p
-                  class="peer-checked:bg-s rounded-lg border bg-gray-200 px-6 py-2 text-sm font-bold peer-checked:text-white md:text-lg"
+                  class="peer-checked:bg-s rounded-lg border bg-gray-200 px-6 py-2 text-sm font-bold duration-1000 ease-in-out peer-checked:text-white md:text-lg"
                 >
                   58
                 </p>
@@ -275,7 +235,7 @@
             <div class="text-center md:text-left">
               <button
                 type="button"
-                class="bg-s hover:bg-p mt-6 inline-flex w-full items-center justify-center rounded-md border-2 border-transparent bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow md:mt-8 md:w-7/12"
+                class="bg-s hover:bg-p mt-6 inline-flex w-full items-center justify-center rounded-md border-2 border-transparent bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-1000 ease-in-out focus:shadow md:mt-4 lg:mt-8"
               >
                 Select Lenses
               </button>
@@ -391,193 +351,259 @@
           </div>
         </div>
       </div>
-      <hr
-        class="center mb-8 h-px border-0 bg-gray-300 shadow-md dark:bg-gray-300 md:mb-0"
-      />
     </section>
     <!-- product details -->
-    <section class="container mx-auto w-full md:hidden">
-      <div class="mb-4 mt-6 md:mt-6">
-        <h2 class="float-left font-bold text-gray-900 sm:text-xl md:text-3xl">
-          Frame Measurements
-        </h2>
-        <button type="button" class="px-3" id="open-btn">
-          <svg
-            width="25"
-            height="25"
-            viewBox="0 0 57 57"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M25.7761 0.068238C19.1243 0.751571 13.0712 3.62133 8.36586 8.32256C-2.78862 19.467 -2.78862 37.5467 8.36586 48.6912C12.8943 53.2155 18.3996 55.9199 24.9965 56.8603C26.3195 57.0489 30.6951 57.0458 32.069 56.8554C38.5272 55.96 44.2008 53.1653 48.6499 48.688C53.825 43.48 56.7037 36.8526 56.9797 29.5108C57.2776 21.5849 54.2851 13.9775 48.6409 8.31297C44.2645 3.92072 38.7198 1.14734 32.4588 0.218937C31.0967 0.0169266 27.1434 -0.0721989 25.7761 0.068238ZM32.6258 4.2886C37.7982 5.23217 42.1976 7.52244 45.8241 11.1595C50.4913 15.8403 53.008 21.9176 53.008 28.5069C53.008 37.8883 47.7859 46.2986 39.336 50.5263C35.9696 52.2105 32.3749 53.0471 28.5049 53.0471C21.9297 53.0471 15.8461 50.5199 11.1856 45.8523C7.50313 42.1643 5.2161 37.7054 4.26271 32.3552C3.97914 30.7637 3.97914 26.2501 4.26271 24.6585C5.2161 19.3083 7.50313 14.8495 11.1856 11.1614C15.1614 7.17966 19.9692 4.84733 25.7761 4.08335C27.1491 3.90276 31.1712 4.02323 32.6258 4.2886ZM27.5773 15.0514C26.3285 15.403 25.4598 16.4294 25.4615 17.5516C25.4636 19.0163 26.612 20.1226 28.2399 20.2284C30.0692 20.3473 31.5166 19.1942 31.5096 17.6237C31.5016 15.8237 29.4956 14.5115 27.5773 15.0514ZM27.6234 23.8355C26.8485 23.9658 26.1865 24.3348 25.8616 24.8178L25.6046 25.2002L25.6347 32.7594L25.6647 40.3185L26.0414 40.7076C26.6428 41.329 27.3912 41.6024 28.5072 41.6085C29.3604 41.613 29.5313 41.5765 30.1988 41.2475C31.5039 40.604 31.4007 41.3471 31.4007 32.597V25.0568L31.0599 24.6679C30.4585 23.982 28.9403 23.6142 27.6234 23.8355Z"
-              fill="#1F2937"
-            />
-          </svg>
-        </button>
-      </div>
-
-      <table class="w-full md:hidden">
-        <tr>
-          <th class="text-left text-gray-800">Eye Size</th>
-          <th class="text-left text-gray-800">Bridge</th>
-          <th class="text-left text-gray-800">Arm</th>
-          <th class="text-left text-gray-800">Width</th>
-          <th class="text-left text-gray-800">Depth</th>
-        </tr>
-        <tr>
-          <td>54</td>
-          <td>18</td>
-          <td>137</td>
-          <td>137</td>
-          <td>42</td>
-        </tr>
-        <tr>
-          <td>56</td>
-          <td>18</td>
-          <td>137</td>
-          <td>141</td>
-          <td>43.5</td>
-        </tr>
-      </table>
-      <table class="mt-10 w-full md:hidden">
-        <tr>
-          <td class="text-left">Gender:</td>
-          <td class="text-left">Men's</td>
-        </tr>
-        <tr>
-          <td class="text-left">Material:</td>
-          <td class="text-left">Acetate</td>
-        </tr>
-        <tr>
-          <td class="text-left">Side Temples:</td>
-          <td class="text-left">Hinged</td>
-        </tr>
-        <tr>
-          <td class="text-left">Multifocal:</td>
-          <td class="text-left">Yes</td>
-        </tr>
-      </table>
-    </section>
-    <!-- reviews -->
-    <section class="block md:hidden">
-      <h2
-        class="md:text-10xl font-heading ml-4 mt-8 text-4xl font-normal leading-tight md:mb-24"
-      >
-        Reviews
-      </h2>
-      <img
-        class="h-full w-full max-w-full object-cover"
-        src="../img/trustpilot-mob.png"
-        alt=""
-      />
-    </section>
-
-    <section class="container mx-auto mt-6 hidden md:block">
-      <div class="flex">
-        <div class="hidden w-2/3 lg:block">
-          <h2 class="mb-6 text-left text-3xl font-bold text-slate-800">
-            Reviews
+    <section class="bg-l shadown-inner">
+      <!--mobile-->
+      <section class="container mx-auto w-full py-4 md:hidden">
+        <div class="mb-4 mt-6 md:mt-6">
+          <h2 class="float-left font-bold text-gray-900 sm:text-xl md:text-3xl">
+            Frame Details
           </h2>
-          <img class="object-cover pr-6" src="../img/trustpilot.png" alt="" />
+          <button type="button" class="px-3" id="open-btn">
+            <svg
+              width="25"
+              height="25"
+              viewBox="0 0 57 57"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M25.7761 0.068238C19.1243 0.751571 13.0712 3.62133 8.36586 8.32256C-2.78862 19.467 -2.78862 37.5467 8.36586 48.6912C12.8943 53.2155 18.3996 55.9199 24.9965 56.8603C26.3195 57.0489 30.6951 57.0458 32.069 56.8554C38.5272 55.96 44.2008 53.1653 48.6499 48.688C53.825 43.48 56.7037 36.8526 56.9797 29.5108C57.2776 21.5849 54.2851 13.9775 48.6409 8.31297C44.2645 3.92072 38.7198 1.14734 32.4588 0.218937C31.0967 0.0169266 27.1434 -0.0721989 25.7761 0.068238ZM32.6258 4.2886C37.7982 5.23217 42.1976 7.52244 45.8241 11.1595C50.4913 15.8403 53.008 21.9176 53.008 28.5069C53.008 37.8883 47.7859 46.2986 39.336 50.5263C35.9696 52.2105 32.3749 53.0471 28.5049 53.0471C21.9297 53.0471 15.8461 50.5199 11.1856 45.8523C7.50313 42.1643 5.2161 37.7054 4.26271 32.3552C3.97914 30.7637 3.97914 26.2501 4.26271 24.6585C5.2161 19.3083 7.50313 14.8495 11.1856 11.1614C15.1614 7.17966 19.9692 4.84733 25.7761 4.08335C27.1491 3.90276 31.1712 4.02323 32.6258 4.2886ZM27.5773 15.0514C26.3285 15.403 25.4598 16.4294 25.4615 17.5516C25.4636 19.0163 26.612 20.1226 28.2399 20.2284C30.0692 20.3473 31.5166 19.1942 31.5096 17.6237C31.5016 15.8237 29.4956 14.5115 27.5773 15.0514ZM27.6234 23.8355C26.8485 23.9658 26.1865 24.3348 25.8616 24.8178L25.6046 25.2002L25.6347 32.7594L25.6647 40.3185L26.0414 40.7076C26.6428 41.329 27.3912 41.6024 28.5072 41.6085C29.3604 41.613 29.5313 41.5765 30.1988 41.2475C31.5039 40.604 31.4007 41.3471 31.4007 32.597V25.0568L31.0599 24.6679C30.4585 23.982 28.9403 23.6142 27.6234 23.8355Z"
+                fill="#1F2937"
+              />
+            </svg>
+          </button>
         </div>
-        <section class="pl-4">
-          <div class="mb-8">
-            <h2
-              class="float-left font-bold text-gray-900 sm:text-xl md:text-3xl"
+
+        <div class="container mx-auto my-4">
+          <table
+            class="w-full border-separate text-left text-xs text-gray-500 dark:text-gray-400 md:text-base"
+          >
+            <thead
+              class="bg-p text-xxs text-center uppercase text-gray-700 text-white dark:bg-gray-700 dark:text-gray-400"
             >
-              Frame Measurements
+              <tr>
+                <th scope="col" class="rounded-tl-lg px-2 py-2 md:px-4 md:py-3">
+                  Eye Size
+                </th>
+                <th scope="col" class="px-2 py-2 md:px-4 md:py-3">Bridge</th>
+                <th scope="col" class="px-2 py-2 md:px-4 md:py-3">Arm</th>
+                <th scope="col" class="px-2 py-2 md:px-4 md:py-3">Width</th>
+                <th scope="col" class="rounded-tr-lg px-2 py-2 md:px-4 md:py-3">
+                  Depth
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
+              >
+                <th
+                  scope="row"
+                  class="whitespace-nowrap px-2 py-2 font-medium text-gray-900 dark:text-white md:px-6 md:py-2"
+                >
+                  52
+                </th>
+                <td class="px-2 py-2 md:px-6 md:py-2">18</td>
+                <td class="px-2 py-2 md:px-6 md:py-2">137</td>
+                <td class="px-2 py-2 md:px-6 md:py-2">137</td>
+                <td class="px-2 py-2 md:px-6 md:py-2">42</td>
+              </tr>
+              <tr
+                class="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
+              >
+                <th
+                  scope="row"
+                  class="whitespace-nowrap px-2 py-2 font-medium text-gray-900 dark:text-white md:px-6 md:py-2"
+                >
+                  52
+                </th>
+                <td class="px-2 py-2 md:px-6 md:py-2">18</td>
+                <td class="px-2 py-2 md:px-6 md:py-2">137</td>
+                <td class="px-2 py-2 md:px-6 md:py-2">137</td>
+                <td class="px-2 py-2 md:px-6 md:py-2">42</td>
+              </tr>
+              <tr
+                class="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
+              >
+                <th
+                  scope="row"
+                  class="whitespace-nowrap px-2 py-2 font-medium text-gray-900 dark:text-white md:px-6 md:py-2"
+                >
+                  52
+                </th>
+                <td class="px-2 py-2 md:px-6 md:py-2">18</td>
+                <td class="px-2 py-2 md:px-6 md:py-2">137</td>
+                <td class="px-2 py-2 md:px-6 md:py-2">137</td>
+                <td class="px-2 py-2 md:px-6 md:py-2">42</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <table class="mt-10 md:hidden">
+          <tr>
+            <td class="text-left">Gender:</td>
+            <td class="text-left">Men's</td>
+          </tr>
+          <tr>
+            <td class="text-left">Material:</td>
+            <td class="text-left">Acetate</td>
+          </tr>
+          <tr>
+            <td class="text-left">Side Temples:</td>
+            <td class="text-left">Hinged</td>
+          </tr>
+          <tr>
+            <td class="text-left">Multifocal:</td>
+            <td class="text-left">Yes</td>
+          </tr>
+        </table>
+      </section>
+      <!-- reviews -->
+      <section class="block md:hidden">
+        <h2
+          class="md:text-10xl font-heading ml-4 mt-8 text-4xl font-normal leading-tight md:mb-24"
+        >
+          Reviews
+        </h2>
+        <img
+          class="h-full w-full max-w-full object-cover"
+          src="../img/trustpilot-mob.png"
+          alt=""
+        />
+      </section>
+    </section>
+    <!--desktop/tablet-->
+    <section class="bg-l hidden py-8 shadow-inner md:block">
+      <section class="container mx-auto">
+        <div class="flex">
+          <div class="hidden w-3/5 lg:block">
+            <h2 class="mb-6 text-left text-3xl font-bold text-slate-800">
+              Reviews
             </h2>
-            <button type="button" class="justify-center px-3" id="open-btn">
-              <svg
-                width="25"
-                height="25"
-                viewBox="0 0 57 57"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M25.7761 0.068238C19.1243 0.751571 13.0712 3.62133 8.36586 8.32256C-2.78862 19.467 -2.78862 37.5467 8.36586 48.6912C12.8943 53.2155 18.3996 55.9199 24.9965 56.8603C26.3195 57.0489 30.6951 57.0458 32.069 56.8554C38.5272 55.96 44.2008 53.1653 48.6499 48.688C53.825 43.48 56.7037 36.8526 56.9797 29.5108C57.2776 21.5849 54.2851 13.9775 48.6409 8.31297C44.2645 3.92072 38.7198 1.14734 32.4588 0.218937C31.0967 0.0169266 27.1434 -0.0721989 25.7761 0.068238ZM32.6258 4.2886C37.7982 5.23217 42.1976 7.52244 45.8241 11.1595C50.4913 15.8403 53.008 21.9176 53.008 28.5069C53.008 37.8883 47.7859 46.2986 39.336 50.5263C35.9696 52.2105 32.3749 53.0471 28.5049 53.0471C21.9297 53.0471 15.8461 50.5199 11.1856 45.8523C7.50313 42.1643 5.2161 37.7054 4.26271 32.3552C3.97914 30.7637 3.97914 26.2501 4.26271 24.6585C5.2161 19.3083 7.50313 14.8495 11.1856 11.1614C15.1614 7.17966 19.9692 4.84733 25.7761 4.08335C27.1491 3.90276 31.1712 4.02323 32.6258 4.2886ZM27.5773 15.0514C26.3285 15.403 25.4598 16.4294 25.4615 17.5516C25.4636 19.0163 26.612 20.1226 28.2399 20.2284C30.0692 20.3473 31.5166 19.1942 31.5096 17.6237C31.5016 15.8237 29.4956 14.5115 27.5773 15.0514ZM27.6234 23.8355C26.8485 23.9658 26.1865 24.3348 25.8616 24.8178L25.6046 25.2002L25.6347 32.7594L25.6647 40.3185L26.0414 40.7076C26.6428 41.329 27.3912 41.6024 28.5072 41.6085C29.3604 41.613 29.5313 41.5765 30.1988 41.2475C31.5039 40.604 31.4007 41.3471 31.4007 32.597V25.0568L31.0599 24.6679C30.4585 23.982 28.9403 23.6142 27.6234 23.8355Z"
-                  fill="#1F2937"
-                />
-              </svg>
-            </button>
+            <img class="object-cover pr-6" src="../img/trustpilot.png" alt="" />
           </div>
-          <div class="container mx-auto my-4">
-            <table
-              class="w-full border-separate text-left text-xs text-gray-500 dark:text-gray-400 md:text-base"
-            >
-              <thead
-                class="bg-p text-xxs text-center uppercase text-gray-700 text-white dark:bg-gray-700 dark:text-gray-400"
+          <section class="pl-4 lg:w-2/5">
+            <div class="mb-8">
+              <h2
+                class="float-left font-bold text-gray-900 sm:text-xl md:text-3xl"
               >
+                Frame Details
+              </h2>
+              <button type="button" class="justify-center px-3" id="open-btn">
+                <svg
+                  width="25"
+                  height="25"
+                  viewBox="0 0 57 57"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M25.7761 0.068238C19.1243 0.751571 13.0712 3.62133 8.36586 8.32256C-2.78862 19.467 -2.78862 37.5467 8.36586 48.6912C12.8943 53.2155 18.3996 55.9199 24.9965 56.8603C26.3195 57.0489 30.6951 57.0458 32.069 56.8554C38.5272 55.96 44.2008 53.1653 48.6499 48.688C53.825 43.48 56.7037 36.8526 56.9797 29.5108C57.2776 21.5849 54.2851 13.9775 48.6409 8.31297C44.2645 3.92072 38.7198 1.14734 32.4588 0.218937C31.0967 0.0169266 27.1434 -0.0721989 25.7761 0.068238ZM32.6258 4.2886C37.7982 5.23217 42.1976 7.52244 45.8241 11.1595C50.4913 15.8403 53.008 21.9176 53.008 28.5069C53.008 37.8883 47.7859 46.2986 39.336 50.5263C35.9696 52.2105 32.3749 53.0471 28.5049 53.0471C21.9297 53.0471 15.8461 50.5199 11.1856 45.8523C7.50313 42.1643 5.2161 37.7054 4.26271 32.3552C3.97914 30.7637 3.97914 26.2501 4.26271 24.6585C5.2161 19.3083 7.50313 14.8495 11.1856 11.1614C15.1614 7.17966 19.9692 4.84733 25.7761 4.08335C27.1491 3.90276 31.1712 4.02323 32.6258 4.2886ZM27.5773 15.0514C26.3285 15.403 25.4598 16.4294 25.4615 17.5516C25.4636 19.0163 26.612 20.1226 28.2399 20.2284C30.0692 20.3473 31.5166 19.1942 31.5096 17.6237C31.5016 15.8237 29.4956 14.5115 27.5773 15.0514ZM27.6234 23.8355C26.8485 23.9658 26.1865 24.3348 25.8616 24.8178L25.6046 25.2002L25.6347 32.7594L25.6647 40.3185L26.0414 40.7076C26.6428 41.329 27.3912 41.6024 28.5072 41.6085C29.3604 41.613 29.5313 41.5765 30.1988 41.2475C31.5039 40.604 31.4007 41.3471 31.4007 32.597V25.0568L31.0599 24.6679C30.4585 23.982 28.9403 23.6142 27.6234 23.8355Z"
+                    fill="#1F2937"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="container mx-auto my-4">
+              <table
+                class="w-full border-separate text-left text-xs text-gray-500 dark:text-gray-400 md:text-base"
+              >
+                <thead
+                  class="bg-p text-xxs text-center uppercase text-gray-700 text-white dark:bg-gray-700 dark:text-gray-400"
+                >
+                  <tr>
+                    <th
+                      scope="col"
+                      class="rounded-tl-lg px-2 py-2 md:px-4 md:py-3"
+                    >
+                      Eye Size
+                    </th>
+                    <th scope="col" class="px-2 py-2 md:px-4 md:py-3">
+                      Bridge
+                    </th>
+                    <th scope="col" class="px-2 py-2 md:px-4 md:py-3">Arm</th>
+                    <th scope="col" class="px-2 py-2 md:px-4 md:py-3">Width</th>
+                    <th
+                      scope="col"
+                      class="rounded-tr-lg px-2 py-2 md:px-4 md:py-3"
+                    >
+                      Depth
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    class="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
+                  >
+                    <th
+                      scope="row"
+                      class="whitespace-nowrap px-2 py-2 font-medium text-gray-900 dark:text-white md:px-6 md:py-2"
+                    >
+                      52
+                    </th>
+                    <td class="px-2 py-2 md:px-6 md:py-2">18</td>
+                    <td class="px-2 py-2 md:px-6 md:py-2">137</td>
+                    <td class="px-2 py-2 md:px-6 md:py-2">137</td>
+                    <td class="px-2 py-2 md:px-6 md:py-2">42</td>
+                  </tr>
+                  <tr
+                    class="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
+                  >
+                    <th
+                      scope="row"
+                      class="whitespace-nowrap px-2 py-2 font-medium text-gray-900 dark:text-white md:px-6 md:py-2"
+                    >
+                      52
+                    </th>
+                    <td class="px-2 py-2 md:px-6 md:py-2">18</td>
+                    <td class="px-2 py-2 md:px-6 md:py-2">137</td>
+                    <td class="px-2 py-2 md:px-6 md:py-2">137</td>
+                    <td class="px-2 py-2 md:px-6 md:py-2">42</td>
+                  </tr>
+                  <tr
+                    class="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
+                  >
+                    <th
+                      scope="row"
+                      class="whitespace-nowrap px-2 py-2 font-medium text-gray-900 dark:text-white md:px-6 md:py-2"
+                    >
+                      52
+                    </th>
+                    <td class="px-2 py-2 md:px-6 md:py-2">18</td>
+                    <td class="px-2 py-2 md:px-6 md:py-2">137</td>
+                    <td class="px-2 py-2 md:px-6 md:py-2">137</td>
+                    <td class="px-2 py-2 md:px-6 md:py-2">42</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="mt-4 hidden w-full leading-6 lg:block">
                 <tr>
-                  <th
-                    scope="col"
-                    class="rounded-tl-lg px-2 py-2 md:px-4 md:py-3"
-                  >
-                    Eye Size
-                  </th>
-                  <th scope="col" class="px-2 py-2 md:px-4 md:py-3">Bridge</th>
-                  <th scope="col" class="px-2 py-2 md:px-4 md:py-3">Arm</th>
-                  <th scope="col" class="px-2 py-2 md:px-4 md:py-3">Width</th>
-                  <th
-                    scope="col"
-                    class="rounded-tr-lg px-2 py-2 md:px-4 md:py-3"
-                  >
-                    Depth
-                  </th>
+                  <td class="text-left">Gender:</td>
+                  <td class="text-left">Men's</td>
                 </tr>
-              </thead>
-              <tbody>
-                <tr
-                  class="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
-                >
-                  <th
-                    scope="row"
-                    class="whitespace-nowrap px-2 py-2 font-medium text-gray-900 dark:text-white md:px-6 md:py-2"
-                  >
-                    52
-                  </th>
-                  <td class="px-2 py-2 md:px-6 md:py-2">18</td>
-                  <td class="px-2 py-2 md:px-6 md:py-2">137</td>
-                  <td class="px-2 py-2 md:px-6 md:py-2">137</td>
-                  <td class="px-2 py-2 md:px-6 md:py-2">42</td>
+                <tr>
+                  <td class="text-left">Material:</td>
+                  <td class="text-left">Acetate</td>
                 </tr>
-                <tr
-                  class="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
-                >
-                  <th
-                    scope="row"
-                    class="whitespace-nowrap px-2 py-2 font-medium text-gray-900 dark:text-white md:px-6 md:py-2"
-                  >
-                    52
-                  </th>
-                  <td class="px-2 py-2 md:px-6 md:py-2">18</td>
-                  <td class="px-2 py-2 md:px-6 md:py-2">137</td>
-                  <td class="px-2 py-2 md:px-6 md:py-2">137</td>
-                  <td class="px-2 py-2 md:px-6 md:py-2">42</td>
+                <tr>
+                  <td class="text-left">Side Temples:</td>
+                  <td class="text-left">Hinged</td>
                 </tr>
-                <tr
-                  class="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
-                >
-                  <th
-                    scope="row"
-                    class="whitespace-nowrap px-2 py-2 font-medium text-gray-900 dark:text-white md:px-6 md:py-2"
-                  >
-                    52
-                  </th>
-                  <td class="px-2 py-2 md:px-6 md:py-2">18</td>
-                  <td class="px-2 py-2 md:px-6 md:py-2">137</td>
-                  <td class="px-2 py-2 md:px-6 md:py-2">137</td>
-                  <td class="px-2 py-2 md:px-6 md:py-2">42</td>
+                <tr>
+                  <td class="text-left">Multifocal:</td>
+                  <td class="text-left">Yes</td>
                 </tr>
-              </tbody>
-            </table>
-            <table class="mt-4 w-2/5 leading-6">
+              </table>
+            </div>
+          </section>
+          <section class="hidden text-base md:block lg:hidden">
+            <table class="ml-8 mt-16 leading-6">
               <tr>
                 <td class="text-left">Gender:</td>
                 <td class="text-left">Men's</td>
@@ -595,9 +621,9 @@
                 <td class="text-left">Yes</td>
               </tr>
             </table>
-          </div>
-        </section>
-      </div>
+          </section>
+        </div>
+      </section>
     </section>
   </section>
 </section>
