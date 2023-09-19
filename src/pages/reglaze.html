@@ -7,6 +7,10 @@
       defer
       src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
     ></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"
+    ></script>
   </head>
   <section>
     <div class="relative shadow-2xl shadow-gray-400 lg:grid lg:grid-cols-2">
@@ -110,11 +114,16 @@
                     individual needs just right.
                   </div>
                 </div>
-                <div class="hidden w-full px-4 lg:block">
+                <div
+                  class="hidden w-full px-4 lg:block"
+                  x-data="{ visible: false }"
+                  x-intersect="visible = true"
+                >
                   <img
                     src="../img/glasses-step.png"
                     alt="step 1"
-                    class="rounded-xl object-scale-down shadow-lg shadow-gray-400"
+                    class="transform rounded-lg object-cover shadow-lg shadow-gray-400 transition-all duration-1000 ease-in-out lg:relative"
+                    :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
                   />
                 </div>
               </div>
@@ -148,11 +157,16 @@
             </div>
             <div class="flex-auto">
               <div class="flex flex-col items-center md:flex-row">
-                <div class="hidden w-full px-4 lg:block">
+                <div
+                  class="hidden w-full px-4 lg:block"
+                  x-data="{ visible: false }"
+                  x-intersect="visible = true"
+                >
                   <img
                     src="../img/lenses-step.png"
-                    alt="step 2"
-                    class="rounded-xl object-scale-down shadow-lg shadow-gray-400"
+                    alt="step 1"
+                    class="transform rounded-lg object-cover shadow-lg shadow-gray-400 transition-all duration-1000 ease-in-out lg:relative"
+                    :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
                   />
                 </div>
                 <div class="flex-auto px-4">
@@ -211,11 +225,16 @@
                     informing you of the expected timeframe.
                   </div>
                 </div>
-                <div class="hidden w-full px-4 lg:block">
+                <div
+                  class="hidden w-full px-4 lg:block"
+                  x-data="{ visible: false }"
+                  x-intersect="visible = true"
+                >
                   <img
                     src="../img/prescription-step.png"
                     alt="step 1"
-                    class="rounded-xl object-scale-down shadow-lg shadow-gray-400"
+                    class="transform rounded-lg object-cover shadow-lg shadow-gray-400 transition-all duration-1000 ease-in-out lg:relative"
+                    :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
                   />
                 </div>
               </div>
@@ -244,11 +263,16 @@
             </div>
             <div class="flex-auto">
               <div class="flex flex-col items-center md:flex-row">
-                <div class="hidden w-full px-4 lg:block">
+                <div
+                  class="hidden w-full px-4 lg:block"
+                  x-data="{ visible: false }"
+                  x-intersect="visible = true"
+                >
                   <img
                     src="../img/order-step.png"
-                    alt="step 4"
-                    class="rounded-xl object-scale-down shadow-lg shadow-gray-400"
+                    alt="step 1"
+                    class="transform rounded-lg object-cover shadow-lg shadow-gray-400 transition-all duration-1000 ease-in-out lg:relative"
+                    :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
                   />
                 </div>
                 <div class="flex-auto px-4">

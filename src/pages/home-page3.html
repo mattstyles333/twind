@@ -626,11 +626,11 @@
       <h2
         class="my-8 text-center text-4xl font-bold capitalize text-slate-800 md:mt-12 md:text-5xl"
       >
-        How to choose your glasses
+        How to buy your glasses
       </h2>
       <p class="mb-12 text-center text-lg leading-loose">
-        Choosing your glasses has never been easier, simply follow these 4 easy
-        steps!
+        Buying your glasses online has never been easier, simply follow these 4
+        easy steps!
       </p>
       <section class="container mx-auto max-w-7xl px-4 py-10 md:px-10">
         <div>
@@ -661,11 +661,16 @@
                     Find your perfect fit today!
                   </div>
                 </div>
-                <div class="hidden w-full px-4 lg:block">
+                <div
+                  class="hidden w-full px-4 lg:block"
+                  x-data="{ visible: false }"
+                  x-intersect="visible = true"
+                >
                   <img
                     src="../img/glasses-step.png"
                     alt="step 1"
-                    class="rounded-xl object-scale-down shadow-lg shadow-gray-400"
+                    class="transform rounded-lg object-cover shadow-lg shadow-gray-400 transition-all duration-1000 ease-in-out lg:relative"
+                    :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
                   />
                 </div>
               </div>
@@ -699,11 +704,16 @@
             </div>
             <div class="flex-auto">
               <div class="flex flex-col items-center md:flex-row">
-                <div class="hidden w-full px-4 lg:block">
+                <div
+                  class="hidden w-full px-4 lg:block"
+                  x-data="{ visible: false }"
+                  x-intersect="visible = true"
+                >
                   <img
                     src="../img/lenses-step.png"
-                    alt="step 2"
-                    class="rounded-xl object-scale-down shadow-lg shadow-gray-400"
+                    alt="step 1"
+                    class="transform rounded-lg object-cover shadow-lg shadow-gray-400 transition-all duration-1000 ease-in-out lg:relative"
+                    :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
                   />
                 </div>
                 <div class="flex-auto px-4">
@@ -751,21 +761,26 @@
               <div class="flex flex-col items-center md:flex-row">
                 <div class="flex-auto">
                   <div class="font p-3 text-3xl font-bold text-slate-800">
-                    Choose Your Frame
+                    Enter Your Prescription
                   </div>
                   <div class="px-3 pb-6 text-lg leading-7">
-                    At Spex4Less, we offer a diverse range of frames to suit
-                    your personal preferences. Whatever you're looking for,
-                    we've got you covered. Our collection includes both
-                    affordable stock frames and impressive designer options.
-                    Find your perfect fit today!
+                    For the next step, please forward your prescription to us.
+                    If you haven't received your prescription yet but are eager
+                    to place an order, that's completely fine. Initiate your
+                    order now, and when you do get your prescription, just send
+                    it over to us at info@spex4less.com.
                   </div>
                 </div>
-                <div class="hidden w-full px-4 lg:block">
+                <div
+                  class="hidden w-full px-4 lg:block"
+                  x-data="{ visible: false }"
+                  x-intersect="visible = true"
+                >
                   <img
                     src="../img/prescription-step.png"
                     alt="step 1"
-                    class="rounded-xl object-scale-down shadow-lg shadow-gray-400"
+                    class="transform rounded-lg object-cover shadow-lg shadow-gray-400 transition-all duration-1000 ease-in-out lg:relative"
+                    :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
                   />
                 </div>
               </div>
@@ -794,11 +809,16 @@
             </div>
             <div class="flex-auto">
               <div class="flex flex-col items-center md:flex-row">
-                <div class="hidden w-full px-4 lg:block">
+                <div
+                  class="hidden w-full px-4 lg:block"
+                  x-data="{ visible: false }"
+                  x-intersect="visible = true"
+                >
                   <img
                     src="../img/order-step.png"
-                    alt="step 4"
-                    class="rounded-xl object-scale-down shadow-lg shadow-gray-400"
+                    alt="step 1"
+                    class="transform rounded-lg object-cover shadow-lg shadow-gray-400 transition-all duration-1000 ease-in-out lg:relative"
+                    :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
                   />
                 </div>
                 <div class="flex-auto px-4">
