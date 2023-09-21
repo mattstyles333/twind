@@ -62,336 +62,287 @@
           Subtitle for Page with brief intro
         </h2>
         <p class="mt-6 text-center text-lg leading-loose lg:px-48">
-          Are you tired of spending hours online trying to choose the perfect pair of glasses? With over 6000 frames to choose 
-          from at Spex4less, we understand that finding the right frame can feel overwhelming. The following steps have been made to 
-          assist you in finding the perfect frame for you! If you have any additional questions about frames don’t hesitate to contact our 
-          customer service team.
+          Are you tired of spending hours online trying to choose the perfect
+          pair of glasses? With over 6000 frames to choose from at Spex4less, we
+          understand that finding the right frame can feel overwhelming. The
+          following steps have been made to assist you in finding the perfect
+          frame for you! If you have any additional questions about frames don’t
+          hesitate to contact our customer service team.
         </p>
       </div>
     </section>
     <!--steps-->
     <section class="container mx-auto">
       <h2
-        class="mt-8 text-center text-4xl font-bold capitalize text-slate-800 md:mt-12 md:text-5xl"
+        class="my-8 text-center text-4xl font-bold capitalize text-slate-800 md:mt-12 md:text-5xl"
       >
-        How to choose your glasses
+        How To Choose Your Glasses
       </h2>
-      <p class="mt-6 text-center">
-        Choosing your glasses has never been easier! The following 6 steps will help you find the perfect frame. 
+      <p class="mb-12 text-center text-lg leading-loose">
+        Choosing your glasses has never been easier! The following 5 steps will
+        help you find the perfect frame.
       </p>
-      <div class="container mx-auto py-4 md:px-4 lg:py-12">
-        <div class="row-gap-10 grid gap-6 lg:grid-cols-2">
-          <div class="lg:py-6">
-            <div class="flex">
-              <div class="mr-4 flex flex-col items-center">
-                <div>
-                  <div
-                    class="flex h-10 w-10 items-center justify-center rounded-full border"
-                  >
-                    <svg
-                      class="w-4 text-gray-600"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      viewBox="0 0 24 24"
-                    >
-                      <line
-                        fill="none"
-                        stroke-miterlimit="10"
-                        x1="12"
-                        y1="2"
-                        x2="12"
-                        y2="22"
-                      ></line>
-                      <polyline
-                        fill="none"
-                        stroke-miterlimit="10"
-                        points="19,15 12,22 5,15"
-                      ></polyline>
-                    </svg>
+      <section class="container mx-auto max-w-7xl px-4 py-10 md:px-10">
+        <div>
+          <div class="flex flex-row">
+            <div class="hidden flex-col items-center md:flex">
+              <div
+                class="mr-4 flex w-32 flex-col items-center justify-center rounded-xl border border-gray-200 py-5 uppercase"
+              >
+                <div class="text-3xl font-black text-slate-800">Step 1</div>
+              </div>
+              <div class="h-full border-l-4 border-transparent">
+                <div
+                  class="mr-4 h-full border-l-4 border-solid border-gray-200"
+                ></div>
+              </div>
+            </div>
+            <div class="flex-auto">
+              <div class="flex flex-col items-center md:flex-row">
+                <div class="flex-auto">
+                  <div class="font p-3 text-3xl font-bold text-slate-800">
+                    Choose Your Frame
+                  </div>
+                  <div class="px-3 pb-6 text-lg leading-7">
+                    At Spex4Less, we offer a diverse range of frames to suit
+                    your personal preferences. Whatever you're looking for,
+                    we've got you covered. Our collection includes both
+                    affordable stock frames and impressive designer options.
+                    Find your perfect fit today!
+                  </div>
+                </div>
+                <div
+                  class="hidden w-full px-4 lg:block"
+                  x-data="{ visible: false }"
+                  x-intersect="visible = true"
+                >
+                  <img
+                    src="../img/glasses-step.png"
+                    alt="step 1"
+                    class="transform rounded-lg object-cover shadow-lg shadow-gray-400 transition-all duration-1000 ease-in-out lg:relative"
+                    :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-row items-start">
+            <div class="border-r-4 border-t-4 border-transparent">
+              <div
+                class="ml-16 h-16 w-16 rounded-bl-full border-b-4 border-l-4 border-solid border-gray-200"
+              ></div>
+            </div>
+            <div class="flex-auto border-t-4 border-transparent">
+              <div class="h-16 border-b-4 border-solid border-gray-200"></div>
+            </div>
+            <div
+              class="mr-16 mt-16 h-16 w-16 rounded-tr-full border-r-4 border-t-4 border-solid border-gray-200"
+            ></div>
+          </div>
+          <div class="flex flex-row-reverse">
+            <div class="hidden flex-col items-center md:flex">
+              <div
+                class="ml-4 flex w-32 flex-col items-center justify-center rounded-xl border border-gray-200 py-5 uppercase"
+              >
+                <div class="text-3xl font-black text-slate-800">Step 2</div>
+              </div>
+              <div class="h-full border-r-4 border-transparent">
+                <div
+                  class="ml-4 h-full border-l-4 border-solid border-gray-200"
+                ></div>
+              </div>
+            </div>
+            <div class="flex-auto">
+              <div class="flex flex-col items-center md:flex-row">
+                <div
+                  class="hidden w-full px-4 lg:block"
+                  x-data="{ visible: false }"
+                  x-intersect="visible = true"
+                >
+                  <img
+                    src="../img/lenses-step.png"
+                    alt="step 1"
+                    class="transform rounded-lg object-cover shadow-lg shadow-gray-400 transition-all duration-1000 ease-in-out lg:relative"
+                    :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
+                  />
+                </div>
+                <div class="flex-auto px-4">
+                  <div class="font p-3 text-3xl font-bold text-slate-800">
+                    Choose Your Lenses
+                  </div>
+                  <div class="px-3 pb-6 text-lg leading-7">
+                    The next phase in your eyewear selection involves exploring
+                    our comprehensive range of lenses. As you navigate through
+                    our options, you'll discover that you can tailor your choice
+                    with our assortment of advanced coatings, which enhance
+                    visual clarity and comfort.
                   </div>
                 </div>
               </div>
-              <div class="pb-2 pt-1 lg:pb-8">
-                <p class="mb-2 text-lg font-bold">Step 1 - Size</p>
-                <p class="text-gray-700">
-                  At Spex4less, we recommend ensuring that the width of the frame matches the width of 
-                  your face to avoid any slipping or discomfort. If you already have a pair of glasses that 
-                  fit you well, take a look at the measurements on the inside of the arms to get an idea of 
-                  what size to look for in your new frames.
-                </p>
+            </div>
+          </div>
+          <div class="flex flex-row-reverse items-start">
+            <div class="border-l-4 border-t-4 border-transparent">
+              <div
+                class="mr-16 h-16 w-16 rounded-br-full border-b-4 border-r-4 border-solid border-gray-200"
+              ></div>
+            </div>
+            <div class="flex-auto border-t-4 border-transparent">
+              <div class="h-16 border-b-4 border-solid border-gray-200"></div>
+            </div>
+            <div
+              class="ml-16 mt-16 h-16 w-16 rounded-tl-full border-l-4 border-t-4 border-solid border-gray-200"
+            ></div>
+          </div>
+          <div class="flex flex-row">
+            <div class="hidden flex-col items-center md:flex">
+              <div
+                class="mr-4 flex w-32 flex-col items-center justify-center rounded-xl border border-gray-200 py-5 uppercase"
+              >
+                <div class="text-3xl font-black text-slate-800">Step 3</div>
+              </div>
+              <div class="h-full border-l-4 border-transparent">
+                <div
+                  class="mr-4 h-full border-l-4 border-solid border-gray-200"
+                ></div>
+              </div>
+            </div>
+            <div class="flex-auto">
+              <div class="flex flex-col items-center md:flex-row">
+                <div class="flex-auto">
+                  <div class="font p-3 text-3xl font-bold text-slate-800">
+                    Enter Your Prescription
+                  </div>
+                  <div class="px-3 pb-6 text-lg leading-7">
+                    For the next step, please forward your prescription to us.
+                    If you haven't received your prescription yet but are eager
+                    to place an order, that's completely fine. Initiate your
+                    order now, and when you do get your prescription, just send
+                    it over to us at info@spex4less.com.
+                  </div>
+                </div>
+                <div
+                  class="hidden w-full px-4 lg:block"
+                  x-data="{ visible: false }"
+                  x-intersect="visible = true"
+                >
+                  <img
+                    src="../img/prescription-step.png"
+                    alt="step 1"
+                    class="transform rounded-lg object-cover shadow-lg shadow-gray-400 transition-all duration-1000 ease-in-out lg:relative"
+                    :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
+                  />
+                </div>
               </div>
             </div>
           </div>
-          <!--graphics-->
-          <div class="hidden justify-center lg:block">
-            <div
-              class="mx-24 justify-center"
-              x-data="{ visible: false }"
-              x-intersect="visible = true"
-            >
-              <img
-                src="../img/step1-thin.png"
-                class="transform rounded-lg object-cover shadow-lg transition-all duration-1000 ease-in-out lg:relative"
-                :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
-              />
+          <div class="flex flex-row items-start">
+            <div class="border-r-4 border-t-4 border-transparent">
+              <div
+                class="ml-16 h-16 w-16 rounded-bl-full border-b-4 border-l-4 border-solid border-gray-200"
+              ></div>
             </div>
+            <div class="flex-auto border-t-4 border-transparent">
+              <div class="h-16 border-b-4 border-solid border-gray-200"></div>
+            </div>
+            <div
+              class="mr-16 mt-16 h-16 w-16 rounded-tr-full border-r-4 border-t-4 border-solid border-gray-200"
+            ></div>
           </div>
-        </div>
-      </div>
-      <hr />
-      <div class="container mx-auto py-4 md:px-4 lg:py-12">
-        <div class="row-gap-10 grid gap-6 lg:grid-cols-2">
-          <div class="lg:py-6">
-            <div class="flex">
-              <div class="mr-4 flex flex-col items-center">
-                <div>
-                  <div
-                    class="flex h-10 w-10 items-center justify-center rounded-full border"
-                  >
-                    <svg
-                      class="w-4 text-gray-600"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      viewBox="0 0 24 24"
-                    >
-                      <line
-                        fill="none"
-                        stroke-miterlimit="10"
-                        x1="12"
-                        y1="2"
-                        x2="12"
-                        y2="22"
-                      ></line>
-                      <polyline
-                        fill="none"
-                        stroke-miterlimit="10"
-                        points="19,15 12,22 5,15"
-                      ></polyline>
-                    </svg>
+          <div class="flex flex-row-reverse">
+            <div class="hidden flex-col items-center md:flex">
+              <div
+                class="ml-4 flex w-32 flex-col items-center justify-center rounded-xl border border-gray-200 py-5 uppercase"
+              >
+                <div class="text-3xl font-black text-slate-800">Step 4</div>
+              </div>
+              <div class="h-full border-r-4 border-transparent">
+                <div
+                  class="ml-4 h-full border-l-4 border-solid border-gray-200"
+                ></div>
+              </div>
+            </div>
+            <div class="flex-auto">
+              <div class="flex flex-col items-center md:flex-row">
+                <div
+                  class="hidden w-full px-4 lg:block"
+                  x-data="{ visible: false }"
+                  x-intersect="visible = true"
+                >
+                  <img
+                    src="../img/lenses-step.png"
+                    alt="step 1"
+                    class="transform rounded-lg object-cover shadow-lg shadow-gray-400 transition-all duration-1000 ease-in-out lg:relative"
+                    :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
+                  />
+                </div>
+                <div class="flex-auto px-4">
+                  <div class="font p-3 text-3xl font-bold text-slate-800">
+                    Choose Your Lenses
+                  </div>
+                  <div class="px-3 pb-6 text-lg leading-7">
+                    The next phase in your eyewear selection involves exploring
+                    our comprehensive range of lenses. As you navigate through
+                    our options, you'll discover that you can tailor your choice
+                    with our assortment of advanced coatings, which enhance
+                    visual clarity and comfort.
                   </div>
                 </div>
               </div>
-              <div class="pb-8 pt-1">
-                <p class="mb-2 text-lg font-bold">Step 2 - Face Shape</p>
-                <p class="text-gray-700">
-                  At Spex4less, we believe that your glasses should not only complement your face shape but also 
-                  enhance your unique style. Whether you have a round, square, oval, or heart-shaped face, 
-                  we have a wide range of frames to choose from that will make you look and feel great.
-                </p>
+            </div>
+          </div>
+          <div class="flex flex-row-reverse items-start">
+            <div class="border-l-4 border-t-4 border-transparent">
+              <div
+                class="mr-16 h-16 w-16 rounded-br-full border-b-4 border-r-4 border-solid border-gray-200"
+              ></div>
+            </div>
+            <div class="flex-auto border-t-4 border-transparent">
+              <div class="h-16 border-b-4 border-solid border-gray-200"></div>
+            </div>
+            <div
+              class="ml-16 mt-16 h-16 w-16 rounded-tl-full border-l-4 border-t-4 border-solid border-gray-200"
+            ></div>
+          </div>
+          <div class="flex flex-row">
+            <div class="hidden flex-col items-center md:flex">
+              <div
+                class="mr-4 flex w-32 flex-col items-center justify-center rounded-xl border border-gray-200 py-5 uppercase"
+              >
+                <div class="text-3xl font-black text-slate-800">Step 5</div>
               </div>
             </div>
-          </div>
-          <!--graphics-->
-          <div class="hidden justify-center lg:block">
-            <div
-              class="mx-24 justify-center"
-              x-data="{ visible: false }"
-              x-intersect="visible = true"
-            >
-              <img
-                src="../img/step1-thin.png"
-                class="transform rounded-lg object-cover shadow-lg transition-all duration-1000 ease-in-out lg:relative"
-                :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr />
-      <div class="container mx-auto py-4 md:px-4 lg:py-12">
-        <div class="row-gap-10 grid gap-6 lg:grid-cols-2">
-          <div class="lg:py-6">
-            <div class="flex">
-              <div class="mr-4 flex flex-col items-center">
-                <div>
-                  <div
-                    class="flex h-10 w-10 items-center justify-center rounded-full border"
-                  >
-                    <svg
-                      class="w-4 text-gray-600"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      viewBox="0 0 24 24"
-                    >
-                      <line
-                        fill="none"
-                        stroke-miterlimit="10"
-                        x1="12"
-                        y1="2"
-                        x2="12"
-                        y2="22"
-                      ></line>
-                      <polyline
-                        fill="none"
-                        stroke-miterlimit="10"
-                        points="19,15 12,22 5,15"
-                      ></polyline>
-                    </svg>
+            <div class="flex-auto">
+              <div class="flex flex-col items-center md:flex-row">
+                <div class="flex-auto">
+                  <div class="font p-3 text-3xl font-bold text-slate-800">
+                    Enter Your Prescription
+                  </div>
+                  <div class="px-3 pb-6 text-lg leading-7">
+                    For the next step, please forward your prescription to us.
+                    If you haven't received your prescription yet but are eager
+                    to place an order, that's completely fine. Initiate your
+                    order now, and when you do get your prescription, just send
+                    it over to us at info@spex4less.com.
                   </div>
                 </div>
-              </div>
-              <div class="pb-8 pt-1">
-                <p class="mb-2 text-lg font-bold">Step 3 - Colour</p>
-                <p class="text-gray-700">
-                  At Spex4less, we offer a wide range of frame colours to suit all tastes and preferences. 
-                  If you’re into versatility, darker colours like black, brown or havana are great options that match well 
-                  with pretty much any outfit. Feeling bold and adventurous? Try out brighter colours like red, pink, or green 
-                  that’ll really make a statement and show off your unique personality. Whatever your colour preference, we have 
-                  the perfect frames for you.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!--graphics-->
-          <div class="hidden justify-center lg:block">
-            <div
-              class="mx-24 justify-center"
-              x-data="{ visible: false }"
-              x-intersect="visible = true"
-            >
-              <img
-                src="../img/step1-thin.png"
-                class="transform rounded-lg object-cover shadow-lg transition-all duration-1000 ease-in-out lg:relative"
-                :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr />
-      <div class="container mx-auto py-4 md:px-4 lg:py-12">
-        <div class="row-gap-10 grid gap-6 lg:grid-cols-2">
-          <div class="lg:py-6">
-            <div class="flex">
-              <div class="mr-4 flex flex-col items-center">
-                <div>
-                  <div
-                    class="flex h-10 w-10 items-center justify-center rounded-full border"
-                  >
-                    <svg
-                      class="w-4 text-gray-600"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      viewBox="0 0 24 24"
-                    >
-                      <line
-                        fill="none"
-                        stroke-miterlimit="10"
-                        x1="12"
-                        y1="2"
-                        x2="12"
-                        y2="22"
-                      ></line>
-                      <polyline
-                        fill="none"
-                        stroke-miterlimit="10"
-                        points="19,15 12,22 5,15"
-                      ></polyline>
-                    </svg>
-                  </div>
+                <div
+                  class="hidden w-full px-4 lg:block"
+                  x-data="{ visible: false }"
+                  x-intersect="visible = true"
+                >
+                  <img
+                    src="../img/prescription-step.png"
+                    alt="step 1"
+                    class="transform rounded-lg object-cover shadow-lg shadow-gray-400 transition-all duration-1000 ease-in-out lg:relative"
+                    :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
+                  />
                 </div>
               </div>
-              <div class="pb-8 pt-1">
-                <p class="mb-2 text-lg font-bold">Step 4 - Brands</p>
-                <p class="text-gray-700">
-                  While brand choices can make a difference in the quality and design of your glasses, 
-                  it’s important to remember that this step is optional. At Spex4less, we offer a range 
-                  of affordable frames that provide great value without compromising on style or 
-                  functionality. However, if you’re interested in exploring brand options, look through 
-                  our designer glasses page and find a frame which matches your style and personality. 
-                </p>
-              </div>
-            </div>
-          </div>
-          <!--graphics-->
-          <div class="hidden justify-center lg:block">
-            <div
-              class="mx-24 justify-center"
-              x-data="{ visible: false }"
-              x-intersect="visible = true"
-            >
-              <img
-                src="../img/step1-thin.png"
-                class="transform rounded-lg object-cover shadow-lg transition-all duration-1000 ease-in-out lg:relative"
-                :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
-              />
             </div>
           </div>
         </div>
-      </div>
-      <hr />
-      <div class="container mx-auto py-4 md:px-4 lg:py-12">
-        <div class="row-gap-10 grid gap-6 lg:grid-cols-2">
-          <div class="lg:py-6">
-            <div class="flex">
-              <div class="mr-4 flex flex-col items-center">
-                <div>
-                  <div
-                    class="flex h-10 w-10 items-center justify-center rounded-full border"
-                  >
-                    <svg
-                      class="w-4 text-gray-600"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      viewBox="0 0 24 24"
-                    >
-                      <line
-                        fill="none"
-                        stroke-miterlimit="10"
-                        x1="12"
-                        y1="2"
-                        x2="12"
-                        y2="22"
-                      ></line>
-                      <polyline
-                        fill="none"
-                        stroke-miterlimit="10"
-                        points="19,15 12,22 5,15"
-                      ></polyline>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div class="pb-8 pt-1">
-                <p class="mb-2 text-lg font-bold">Step 5 - Lenses</p>
-                <p class="text-gray-700">
-                  As a fifth and final step in selecting your frames, it’s important to consider the lenses 
-                  that will be right for you. At Spex4less, we understand that this can be a daunting task, but we’re 
-                  here to help you every step of the way. We offer a variety of lenses, including single vision, bifocal, 
-                  and varifocal lenses, each designed to meet different visual needs. Our E-Book, is linked here, to 
-                  provide a helpful guide on the different types of lenses available and which ones are best suited 
-                  to your specific needs. With our expert guidance, you can be confident in selecting the perfect lenses 
-                  to complement your frames and enhance your vision.  
-                </p>
-              </div>
-            </div>
-          </div>
-          <!--graphics-->
-          <div class="hidden justify-center lg:block">
-            <div
-              class="mx-24 justify-center"
-              x-data="{ visible: false }"
-              x-intersect="visible = true"
-            >
-              <img
-                src="../img/step1-thin.png"
-                class="transform rounded-lg object-cover shadow-lg transition-all duration-1000 ease-in-out lg:relative"
-                :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
     </section>
     <section class="bg-l my-24 border-b-2 py-12 shadow-inner">
       <div class="mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
@@ -631,9 +582,9 @@
         </div>
       </div>
     </section>
-    <section class="mt-12 w-full bg-gray-100 py-12 shadow-inner">
+    <section class="my-12 w-full">
       <h2
-        class="mb-6 text-center text-2xl font-bold md:my-8 md:text-3xl lg:text-4xl"
+        class="mb-6 text-center text-2xl font-bold text-slate-800 md:my-8 md:text-3xl lg:text-5xl"
       >
         Frequently Asked Questions
       </h2>
@@ -1010,245 +961,6 @@
               </li>
             </ul>
           </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <h2
-          class="text-center text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl"
-        >
-          Read trusted reviews from our customers
-        </h2>
-
-        <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
-          <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
-            <div class="flex items-center gap-4">
-              <img
-                alt="Man"
-                src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
-                class="h-14 w-14 rounded-full object-cover"
-              />
-
-              <div>
-                <div class="flex justify-center gap-0.5 text-green-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    />
-                  </svg>
-                </div>
-
-                <p class="mt-0.5 text-lg font-medium text-gray-900">
-                  Paul Starr
-                </p>
-              </div>
-            </div>
-
-            <p class="mt-4 text-gray-700">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
-              sit rerum incidunt, a consequuntur recusandae ab saepe illo est
-              quia obcaecati neque quibusdam eius accusamus error officiis atque
-              voluptates magnam!
-            </p>
-          </blockquote>
-
-          <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
-            <div class="flex items-center gap-4">
-              <img
-                alt="Man"
-                src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
-                class="h-14 w-14 rounded-full object-cover"
-              />
-
-              <div>
-                <div class="flex justify-center gap-0.5 text-green-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    />
-                  </svg>
-                </div>
-
-                <p class="mt-0.5 text-lg font-medium text-gray-900">
-                  Paul Starr
-                </p>
-              </div>
-            </div>
-
-            <p class="mt-4 text-gray-700">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
-              sit rerum incidunt, a consequuntur recusandae ab saepe illo est
-              quia obcaecati neque quibusdam eius accusamus error officiis atque
-              voluptates magnam!
-            </p>
-          </blockquote>
-
-          <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
-            <div class="flex items-center gap-4">
-              <img
-                alt="Man"
-                src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
-                class="h-14 w-14 rounded-full object-cover"
-              />
-
-              <div>
-                <div class="flex justify-center gap-0.5 text-green-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    />
-                  </svg>
-                </div>
-
-                <p class="mt-0.5 text-lg font-medium text-gray-900">
-                  Paul Starr
-                </p>
-              </div>
-            </div>
-
-            <p class="mt-4 text-gray-700">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
-              sit rerum incidunt, a consequuntur recusandae ab saepe illo est
-              quia obcaecati neque quibusdam eius accusamus error officiis atque
-              voluptates magnam!
-            </p>
-          </blockquote>
         </div>
       </div>
     </section>
