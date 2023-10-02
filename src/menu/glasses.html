@@ -6,10 +6,12 @@
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
   <section class="border-b-2 border-t-2 border-gray-300 bg-white">
-    <div class="container mx-auto mt-4 flex max-w-6xl py-4">
+    <div
+      class="container mx-auto mt-4 flex max-w-6xl flex-col px-2 py-4 sm:flex-row md:px-0"
+    >
       <!-- Left Side: Tabs -->
-      <div class="mx-auto flex-1">
-        <div class="flex max-w-xl text-lg">
+      <div class="mx-auto mb-6 w-full sm:mb-0 sm:flex-1">
+        <div class="flex w-full max-w-xl text-lg">
           <!-- First tab: All -->
           <div
             class="bg-l hover:bg-p flex-1 cursor-pointer rounded-l-full px-6 py-4 text-center text-black transition duration-700 ease-in-out hover:text-white"
@@ -26,27 +28,27 @@
         </div>
 
         <!-- Two columns of text below the tabs -->
-        <div class="mt-6 grid max-w-lg grid-cols-2 text-lg">
+        <div class="mx-auto mt-6 grid max-w-lg grid-cols-2 text-lg">
           <!-- First Column -->
           <div class="ml-4 space-y-4">
-            <p><a href="#">Shop All</a></p>
-            <p><a href="#">New Frames</a></p>
-            <p><a href="#">Best Sellers</a></p>
-            <p><a href="#">Designer</a></p>
+            <p class="hover:underline"><a href="#">Shop All</a></p>
+            <p class="hover:underline"><a href="#">New Frames</a></p>
+            <p class="hover:underline"><a href="#">Best Sellers</a></p>
+            <p class="hover:underline"><a href="#">Designer</a></p>
           </div>
           <!-- Second Column -->
           <div class="space-y-4">
-            <p><a href="#">Clearance</a></p>
-            <p><a href="#">Reading Glasses</a></p>
-            <p><a href="#">Bifocal Glasses</a></p>
-            <p><a href="#">Blue-Light Glasses</a></p>
+            <p class="hover:underline"><a href="#">Clearance</a></p>
+            <p class="hover:underline"><a href="#">Reading Glasses</a></p>
+            <p class="hover:underline"><a href="#">Bifocal Glasses</a></p>
+            <p class="hover:underline"><a href="#">Blue-Light Glasses</a></p>
           </div>
         </div>
       </div>
 
       <!-- Right Side: SVG Grid -->
-      <div class="flex-1">
-        <div class="ml-4 grid grid-cols-3 gap-4">
+      <div class="w-full sm:flex-1">
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-3">
           <a href="#" class="group mx-auto flex flex-col items-center">
             <svg
               class="mt-3"
