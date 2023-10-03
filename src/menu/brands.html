@@ -5,11 +5,13 @@
     <link href="../output.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
-  <section class="border-b-2 border-t-2 border-gray-300 bg-white">
-    <div class="container mx-auto mt-4 flex max-w-6xl py-4">
+  <section class="border-gray-300 bg-white md:border-b-2 md:border-t-2">
+    <div
+      class="container mx-auto mt-4 flex max-w-6xl flex-col px-2 py-4 sm:flex-row"
+    >
       <!-- Left Side: Tabs -->
-      <div class="mx-auto flex-1">
-        <div class="flex max-w-xl text-lg">
+      <div class="mx-auto mb-6 w-full sm:mb-0 sm:flex-1">
+        <div class="flex w-full max-w-xl text-lg">
           <!-- First tab: All -->
           <div
             class="bg-l hover:bg-p flex-1 cursor-pointer rounded-l-full px-6 py-4 text-center text-black transition duration-700 ease-in-out hover:text-white"
@@ -26,9 +28,9 @@
         </div>
 
         <!-- Two columns of text below the tabs -->
-        <div class="mx-auto mt-6 grid max-w-lg grid-cols-3 gap-8 text-lg">
+        <div class="mx-auto mt-6 grid max-w-lg grid-cols-3 text-lg">
           <!-- First Column -->
-          <div class="space-y-4">
+          <div class="ml-4 space-y-4 px-2">
             <p>
               <a href="#" class="transition duration-300 hover:underline"
                 >Shop All</a
@@ -51,7 +53,7 @@
             </p>
           </div>
           <!-- Second Column -->
-          <div class="space-y-4">
+          <div class="ml-4 space-y-4 px-2">
             <p>
               <a href="#" class="transition duration-300 hover:underline"
                 >O'Neill</a
@@ -74,25 +76,25 @@
             </p>
           </div>
           <!-- Third Column -->
-          <div class="space-y-4">
+          <div class="ml-4 space-y-4 px-2">
             <p>
               <a href="#" class="transition duration-300 hover:underline"
-                >Brand A</a
+                >Kangol</a
               >
             </p>
             <p>
               <a href="#" class="transition duration-300 hover:underline"
-                >Brand B</a
+                >Givenchy</a
               >
             </p>
             <p>
               <a href="#" class="transition duration-300 hover:underline"
-                >Brand C</a
+                >Vogue</a
               >
             </p>
             <p>
               <a href="#" class="transition duration-300 hover:underline"
-                >Brand D</a
+                >Police</a
               >
             </p>
           </div>
@@ -100,8 +102,8 @@
       </div>
 
       <!-- Right Side: SVG Grid -->
-      <div class="flex-1">
-        <div class="ml-4 grid grid-cols-3 gap-4">
+      <div class="w-full px-2 sm:flex-1">
+        <div class="grid grid-cols-3 gap-4 md:grid-cols-3 lg:grid-cols-3">
           <a href="#" class="group mx-auto flex flex-col items-center">
             <svg
               class="mt-3"
@@ -118,7 +120,9 @@
                 fill="black"
               />
             </svg>
-            <p class="mt-3 group-hover:underline">Aviator Sunglasses</p>
+            <p class="mt-3 text-center group-hover:underline">
+              Aviator Sunglasses
+            </p>
           </a>
           <a href="#" class="group mx-auto flex flex-col items-center">
             <svg
@@ -136,7 +140,9 @@
                 fill="black"
               />
             </svg>
-            <p class="mt-3 group-hover:underline">Cat Eye Sunglasses</p>
+            <p class="mt-3 text-center group-hover:underline">
+              Cat Eye Sunglasses
+            </p>
           </a>
           <a href="#" class="group mx-auto flex flex-col items-center">
             <svg
@@ -154,7 +160,9 @@
                 fill="black"
               />
             </svg>
-            <p class="mt-3 group-hover:underline">Clubmaster Sunglasses</p>
+            <p class="mt-3 text-center group-hover:underline">
+              Clubmaster Sunglasses
+            </p>
           </a>
           <a href="#" class="group mx-auto flex flex-col items-center">
             <svg
@@ -172,7 +180,9 @@
                 fill="black"
               />
             </svg>
-            <p class="mt-3 group-hover:underline">Rectangle Sunglasses</p>
+            <p class="mt-3 text-center group-hover:underline">
+              Rectangle Sunglasses
+            </p>
           </a>
           <a href="#" class="group mx-auto flex flex-col items-center">
             <svg
@@ -190,7 +200,9 @@
                 fill="black"
               />
             </svg>
-            <p class="mt-3 group-hover:underline">Round Sunglasses</p>
+            <p class="mt-3 text-center group-hover:underline">
+              Round Sunglasses
+            </p>
           </a>
           <a href="#" class="group mx-auto flex flex-col items-center">
             <svg
@@ -208,7 +220,9 @@
                 fill="black"
               />
             </svg>
-            <p class="mt-3 group-hover:underline">Wayfarer Sunglasses</p>
+            <p class="mt-3 text-center group-hover:underline">
+              Wayfarer Sunglasses
+            </p>
           </a>
           <a href="#" class="group mx-auto flex flex-col items-center">
             <svg
@@ -226,7 +240,9 @@
                 fill="black"
               />
             </svg>
-            <p class="mt-3 group-hover:underline">Aviator Sunglasses</p>
+            <p class="mt-3 text-center group-hover:underline">
+              Aviator Sunglasses
+            </p>
           </a>
           <a href="#" class="group mx-auto flex flex-col items-center">
             <svg
@@ -244,7 +260,9 @@
                 fill="black"
               />
             </svg>
-            <p class="mt-3 group-hover:underline">Aviator Sunglasses</p>
+            <p class="mt-3 text-center group-hover:underline">
+              Aviator Sunglasses
+            </p>
           </a>
           <a href="#" class="group mx-auto flex flex-col items-center">
             <svg
@@ -262,7 +280,9 @@
                 fill="black"
               />
             </svg>
-            <p class="mt-3 group-hover:underline">Aviator Sunglasses</p>
+            <p class="mt-3 text-center group-hover:underline">
+              Aviator Sunglasses
+            </p>
           </a>
         </div>
       </div>
