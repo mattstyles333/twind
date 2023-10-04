@@ -945,7 +945,7 @@
                   @click="selected !== 1 ? selected = 1 : selected = null"
                 >
                   <div class="flex items-center justify-between">
-                    <span class="pr-2"> Should I use reCAPTCHA v2 or v3? </span>
+                    <span class="pr-2">Why are your prices so low? </span>
                     <div>
                       <span
                         class="block text-lg transition-all duration-700"
@@ -978,21 +978,10 @@
                 >
                   <div class="p-6">
                     <p>
-                      reCAPTCHA v2 is not going away! We will continue to fully
-                      support and improve security and usability for v2.
-                    </p>
-                    <p>
-                      reCAPTCHA v3 is intended for power users, site owners that
-                      want more data about their traffic, and for use cases in
-                      which it is not appropriate to show a challenge to the
-                      user.
-                    </p>
-                    <p>
-                      For example, a registration page might still use reCAPTCHA
-                      v2 for a higher-friction challenge, whereas more common
-                      actions like sign-in, searches, comments, or voting might
-                      use reCAPTCHA v3. To see more details, see the reCAPTCHA
-                      v3 developer guide.
+                      Quite simply - we do not have the same overhead costs as
+                      high-street opticians. Our laboratory and showroom are not
+                      located on the high street so, consequently, we avoid the
+                      high charges associated with such locations.
                     </p>
                   </div>
                 </div>
@@ -1006,8 +995,7 @@
                 >
                   <div class="flex items-center justify-between">
                     <span class="pr-2">
-                      I'd like to run automated tests with reCAPTCHA. What
-                      should I do?
+                      Do you sell prescription sunglasses?
                     </span>
                     <span
                       class="block text-lg transition-all duration-700"
@@ -1039,14 +1027,13 @@
                 >
                   <div class="p-6">
                     <p>
-                      For reCAPTCHA v3, create a separate key for testing
-                      environments. Scores may not be accurate as reCAPTCHA v3
-                      relies on seeing real traffic.
-                    </p>
-                    <p>
-                      For reCAPTCHA v2, use the following test keys. You will
-                      always get No CAPTCHA and all verification requests will
-                      pass.
+                      Yes, we offer prescription sunglasses in our standard grey
+                      or brown tints, as well as a selection of other colours,
+                      details of which are available on request. We also supply
+                      photochromic Drivewear lenses for driving and polarised
+                      lenses for outdoor use and watersports. All of our
+                      sunglass lenses provide full protection from UVA and UVB
+                      rays.
                     </p>
                   </div>
                 </div>
@@ -1060,7 +1047,7 @@
                 >
                   <div class="flex items-center justify-between">
                     <span class="pr-2">
-                      Can I run reCAPTCHA v2 and v3 on the same page?
+                      How do I take my varifocal Photograph?
                     </span>
                     <span
                       class="block text-lg transition-all duration-700"
@@ -1092,35 +1079,33 @@
                 >
                   <div class="p-6">
                     <p>
-                      To do this, load the v3 site key as documented, and then
-                      explicitly render v2 using grecaptcha.render.
+                      The key here is to get someone else to take the photograph
+                      for you! Self-taken photos on webcams and phones are not
+                      suitable. The most important factors in taking an
+                      acceptable varifocal photograph are:
                     </p>
-                    <p>
-                      You are allowed to hide the badge as long as you include
-                      the reCAPTCHA branding visibly in the user flow. Please
-                      include the following text:
-                    </p>
-                    <p>
-                      Yes, please use "www.recaptcha.net" in your code in
-                      circumstances when "www.google.com" is not accessible.
-                    </p>
-                    <ul>
+                    <ul class="ml-4 mt-2 list-disc leading-relaxed">
                       <li>
-                        First, replace &lt;script
-                        src="https://www.google.com/recaptcha/api.js" async
-                        defer&gt;&lt;/script&gt; with &lt;script
-                        src="https://www.recaptcha.net/recaptcha/api.js" async
-                        defer&gt;&lt;/script&gt;
+                        The photo must be taken from at least two metres away
+                        from your face and then zoomed in to produce a clear
+                        head and shoulders shot.
                       </li>
                       <li>
-                        After that, apply the same to everywhere else that uses
-                        "www.google.com/recaptcha/" on your site.
+                        Your eyes must be at the same level as the camera lens,
+                        ensuring that the camera is directly in front of you.
+                      </li>
+                      <li>
+                        The photograph must be as in focus as possible and clear
+                        of any reflections which may obstruct the view of your
+                        pupils. (Watch out for glare off bright objects,
+                        windows, white walls, camera flash, and sunlight).
+                      </li>
+                      <li>
+                        The minimum size of the photo should be normal postcard
+                        size. You can send it in a larger format – either
+                        electronically or a printed copy
                       </li>
                     </ul>
-                    <p>
-                      After that, apply the same to everywhere else that uses
-                      "www.google.com/recaptcha/" on your site.
-                    </p>
                   </div>
                 </div>
               </li>
@@ -1132,7 +1117,9 @@
                   @click="selected !== 4 ? selected = 4 : selected = null"
                 >
                   <div class="flex items-center justify-between">
-                    <span class="pr-2"> Should I use reCAPTCHA v2 or v3? </span>
+                    <span class="pr-2">
+                      Roughly how long does it take to deliver my glasses?
+                    </span>
                     <div>
                       <span
                         class="block text-lg transition-all duration-700"
@@ -1165,21 +1152,13 @@
                 >
                   <div class="p-6">
                     <p>
-                      reCAPTCHA v2 is not going away! We will continue to fully
-                      support and improve security and usability for v2.
-                    </p>
-                    <p>
-                      reCAPTCHA v3 is intended for power users, site owners that
-                      want more data about their traffic, and for use cases in
-                      which it is not appropriate to show a challenge to the
-                      user.
-                    </p>
-                    <p>
-                      For example, a registration page might still use reCAPTCHA
-                      v2 for a higher-friction challenge, whereas more common
-                      actions like sign-in, searches, comments, or voting might
-                      use reCAPTCHA v3. To see more details, see the reCAPTCHA
-                      v3 developer guide.
+                      The preparation time for your glasses varies depending on
+                      the specific frame and lenses selected. Once we receive
+                      the appropriate frame and lenses, they are usually
+                      assembled and dispatched within 1-2 days. The shipping
+                      duration then depends on the delivery method you've
+                      chosen. Please monitor your email for shipping updates.
+                      Thank you for your understanding!
                     </p>
                   </div>
                 </div>
@@ -1191,7 +1170,7 @@
                   @click="selected !== 5 ? selected = 5 : selected = null"
                 >
                   <div class="flex items-center justify-between">
-                    <span class="pr-2"> Should I use reCAPTCHA v2 or v3? </span>
+                    <span class="pr-2">How do i enter my prescription?</span>
                     <div>
                       <span
                         class="block text-lg transition-all duration-700"
@@ -1224,21 +1203,16 @@
                 >
                   <div class="p-6">
                     <p>
-                      reCAPTCHA v2 is not going away! We will continue to fully
-                      support and improve security and usability for v2.
-                    </p>
-                    <p>
-                      reCAPTCHA v3 is intended for power users, site owners that
-                      want more data about their traffic, and for use cases in
-                      which it is not appropriate to show a challenge to the
-                      user.
-                    </p>
-                    <p>
-                      For example, a registration page might still use reCAPTCHA
-                      v2 for a higher-friction challenge, whereas more common
-                      actions like sign-in, searches, comments, or voting might
-                      use reCAPTCHA v3. To see more details, see the reCAPTCHA
-                      v3 developer guide.
+                      If you are unsure about how to enter your prescription, we
+                      can help you out if you give us a call here on 0151 632
+                      6611. One of our trained staff will give you all the help
+                      you need - and even take the order for you over the phone
+                      if you so wish. If it is easier, you may upload your
+                      prescription instead of entering it yourself. Simply click
+                      on "Upload a Prescription" and we will take care of
+                      entering the information for you. You may also email or
+                      post us a copy of your prescription and we can do the rest
+                      for you if that makes it simpler.
                     </p>
                   </div>
                 </div>
@@ -1250,7 +1224,7 @@
                   @click="selected !== 6 ? selected = 6 : selected = null"
                 >
                   <div class="flex items-center justify-between">
-                    <span class="pr-2"> Should I use reCAPTCHA v2 or v3? </span>
+                    <span class="pr-2">How do i know they will fit?</span>
                     <div>
                       <span
                         class="block text-lg transition-all duration-700"
@@ -1283,21 +1257,12 @@
                 >
                   <div class="p-6">
                     <p>
-                      reCAPTCHA v2 is not going away! We will continue to fully
-                      support and improve security and usability for v2.
-                    </p>
-                    <p>
-                      reCAPTCHA v3 is intended for power users, site owners that
-                      want more data about their traffic, and for use cases in
-                      which it is not appropriate to show a challenge to the
-                      user.
-                    </p>
-                    <p>
-                      For example, a registration page might still use reCAPTCHA
-                      v2 for a higher-friction challenge, whereas more common
-                      actions like sign-in, searches, comments, or voting might
-                      use reCAPTCHA v3. To see more details, see the reCAPTCHA
-                      v3 developer guide.
+                      We provide detailed frame measurements such as lens width,
+                      bridge size, and temple length. You can compare these with
+                      a pair of glasses you currently own. If you have concerns
+                      about fit, our customer service team is here to assist.
+                      Should your glasses not fit as expected upon arrival, our
+                      customer service team will happily help.
                     </p>
                   </div>
                 </div>
