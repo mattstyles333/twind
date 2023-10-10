@@ -1,5 +1,3 @@
-
-
 <section>
     <head>
       <meta charset="UTF-8" />
@@ -11,7 +9,7 @@
     <h2
       class="mb-6 text-center text-2xl font-bold text-slate-800 md:my-8 md:text-3xl lg:text-5xl"
     >
-      Frequently Asked Questions: Prescriptions
+      Frequently Asked Questions: Payments
     </h2>
     <div class="container mx-auto px-4 lg:px-32">
       <div class="">
@@ -27,7 +25,7 @@
                 @click="selected !== 1 ? selected = 1 : selected = null"
               >
                 <div class="flex items-center justify-between">
-                  <span class="pr-2"> How do I understand my prescription? </span>
+                  <span class="pr-2"> What payment methods do you accept? </span>
                   <div>
                     <span
                       class="block text-lg transition-all"
@@ -58,9 +56,7 @@
                 x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
               >
                 <div class="p-6">
-                  <p>Your prescription's SPH indicates correction for either nearsightedness (-) or farsightedness (+). The CYL addresses astigmatism, while the 
-                    Axis denotes its angle. Don't overlook your Pupillary Distance (PD) as it's essential for ensuring your lenses align with your eyes correctly. 
-                    If you're ever unsure, it's best to consult an eye care professional for advice.
+                  <p>We accept most major credit/debit card payments such as VISA, Mastercard, Paypal and Stripe. We are currently in the process of adding apple pay and google pay. 
                   </p>
                 </div>
               </div>
@@ -74,7 +70,7 @@
               >
                 <div class="flex items-center justify-between">
                   <span class="pr-2">
-                    How do I get my prescription?
+                    Is my payment information secure?
                   </span>
                   <span
                     class="block text-lg transition-all"
@@ -106,8 +102,8 @@
               >
                 <div class="p-6">
                   <p>
-                    Your optician should've provided your glasses prescription after your last test. If lost, you can request another copy. You can order glasses without your 
-                    prescription by selecting "send prescription later" after you have chosen your lenses.
+                    Absolutely! Spex4less cares deeply about our customers’ privacy and security. We employ both digital and physical methods to protect your data. All 
+                    transactions that take place on our website occur securely using a Secure Socket Layer (SSL). 
                   </p>
                 </div>
               </div>
@@ -121,7 +117,7 @@
               >
                 <div class="flex items-center justify-between">
                   <span class="pr-2">
-                    Where do I find previous prescriptions that i have used at Spex4less?
+                    Do you accept insurance payments
                   </span>
                   <span
                     class="block text-lg transition-all"
@@ -152,7 +148,8 @@
               >
                 <div class="p-6">
                   <p>
-                    Click the top right of the website, log in, and select "My Account." Then, choose "My Prescriptions."
+                    While we do not accept payments by insurance, many customers are able to obtain reimbursement for a portion or all of the cost of their prescription 
+                    glasses through their insurance provider, and we are happy to provide a receipt for this purpose.
                 </div>
               </div>
             </li>

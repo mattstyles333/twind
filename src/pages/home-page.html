@@ -1267,6 +1267,53 @@
                   </div>
                 </div>
               </li>
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 7 ? selected = 7 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span class="pr-2">How do I earn reward points?</span>
+                    <div>
+                      <span
+                        class="block text-lg transition-all duration-700"
+                        :class="selected === 7 ? 'rotate-90' : ''"
+                      >
+                        <svg
+                          class="h-5 w-5"
+                          fill="#000000"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330"
+                          xml:space="preserve"
+                        >
+                          <path
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container7"
+                  x-bind:style="selected == 7 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      When you shop at Spex4less, your spending turns into rewards. 
+                      For every £10 you spend, you'll accumulate 1,000 points. 
+                      It's our way of valuing and appreciating your choice to shop with us.
+                    </p>
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
