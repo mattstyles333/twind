@@ -33,13 +33,13 @@
             class="flex flex-col justify-center gap-4 sm:flex-row lg:flex-wrap lg:justify-start"
           >
             <a
-              href="https://www.spex4less.com/glasses/mens"
+              href="/glasses/mens"
               class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-5 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl sm:gap-4 md:w-48"
             >
               <span class="mx-auto">Shop Men</span>
             </a>
             <a
-              href="https://www.spex4less.com/glasses/womens"
+              href="/glasses/womens"
               class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-5 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl sm:gap-4 md:w-48"
             >
               <span class="mx-auto">Shop Women</span>
@@ -373,7 +373,7 @@
             <div
               class="hover:bg-l group relative mb-12 rounded-lg bg-white shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl hover:shadow-gray-500 dark:border-gray-700 dark:bg-gray-800"
             >
-              <a href="https://www.spex4less.com/varifocal-glasses">
+              <a href="/varifocal-glasses">
                 <img
                   class="bg-p w-full rounded-t-lg opacity-100 filter transition-opacity duration-1000 duration-1000 ease-in-out group-hover:opacity-90"
                   src="../img/card.png"
@@ -530,7 +530,8 @@
                   x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
                 >
                   <div class="p-6">
-                    <p>Yes we do! Select frame only on any frame on our website.
+                    <p>
+                      Yes we do! Select frame only on any frame on our website.
                     </p>
                   </div>
                 </div>
@@ -543,9 +544,7 @@
                   @click="selected !== 2 ? selected = 2 : selected = null"
                 >
                   <div class="flex items-center justify-between">
-                    <span class="pr-2">
-                      How do I choose the right size?
-                    </span>
+                    <span class="pr-2"> How do I choose the right size? </span>
                     <span
                       class="block text-lg transition-all"
                       :class="selected === 2 ? 'rotate-90' : ''"
@@ -576,9 +575,14 @@
                 >
                   <div class="p-6">
                     <p>
-                      The best way is to order a similar size to a comfortable pair of glasses that you already have. All of our frames have measurements of the lens size, the distance 
-                      between the lenses (DBL) and the arm length. You can usually find these measurements on your current frames, and they're given in millimetres. For a detailed 
-                      guide please see ‘How To Choose The Right Glasses Size’ in our information section.
+                      The best way is to order a similar size to a comfortable
+                      pair of glasses that you already have. All of our frames
+                      have measurements of the lens size, the distance between
+                      the lenses (DBL) and the arm length. You can usually find
+                      these measurements on your current frames, and they're
+                      given in millimetres. For a detailed guide please see ‘How
+                      To Choose The Right Glasses Size’ in our information
+                      section.
                     </p>
                   </div>
                 </div>
@@ -624,10 +628,16 @@
                 >
                   <div class="p-6">
                     <p>
-                      If you need a minor adjustment most local Opticians will do this for you, though some may charge a small fee. We also have some useful information and 
-                      guides on how to make adjustments at home on our blog and send out an instruction sheet with each order. Of course, you may also bring or send them to 
-                      us for adjustment if you wish. If posting them to us for any adjustment, please be very specific (using a diagram if possible) in describing the adjustment 
-                      you require.
+                      If you need a minor adjustment most local Opticians will
+                      do this for you, though some may charge a small fee. We
+                      also have some useful information and guides on how to
+                      make adjustments at home on our blog and send out an
+                      instruction sheet with each order. Of course, you may also
+                      bring or send them to us for adjustment if you wish. If
+                      posting them to us for any adjustment, please be very
+                      specific (using a diagram if possible) in describing the
+                      adjustment you require.
+                    </p>
                   </div>
                 </div>
               </li>
@@ -639,7 +649,9 @@
                   @click="selected !== 4 ? selected = 4 : selected = null"
                 >
                   <div class="flex items-center justify-between">
-                    <span class="pr-2"> How do I order a pair of glasses? </span>
+                    <span class="pr-2">
+                      How do I order a pair of glasses?
+                    </span>
                     <div>
                       <span
                         class="block text-lg transition-all"
@@ -672,8 +684,11 @@
                 >
                   <div class="p-6">
                     <p>
-                      It’s simple! First select a frame you like from our extensive range. Next, click the ‘Select Lenses’ button and choose your lens 
-                      type. Finally, upload your prescription if you have it. If not, don’t worry you can send this to us later.
+                      It’s simple! First select a frame you like from our
+                      extensive range. Next, click the ‘Select Lenses’ button
+                      and choose your lens type. Finally, upload your
+                      prescription if you have it. If not, don’t worry you can
+                      send this to us later.
                     </p>
                   </div>
                 </div>
