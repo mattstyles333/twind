@@ -4,11 +4,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../output.css" rel="stylesheet" />
   </head>
-  <section class="bg-gray-lighter">
+  <div class="relative mb-24 shadow-xl shadow-gray-400 lg:grid lg:grid-cols-2">
+    <img
+      class="absolute h-96 w-full object-cover object-top lg:relative"
+      src="https://www.s4ltest2.co.uk:8443/media/wysiwyg/redesign/img/default-banner.jpg"
+      width="1228"
+      height="768"
+      loading="lazy"
+    />
+    <div class="from-p lg:bg-s relative h-96 bg-gradient-to-t px-8 pb-12 pt-24">
+      <div class="mx-auto flex max-w-2xl flex-col gap-10">
+        <div
+          class="text-left text-6xl font-bold leading-none text-white drop-shadow-lg md:text-center lg:text-left xl:text-6xl"
+        >
+          Frames FAQ's
+        </div>
+        <div
+          class="max-w-2xl text-left text-2xl font-semibold leading-8 text-white md:text-center lg:text-left"
+        >
+          Check out our range of glasses for Men, perfect for every face and
+          style.
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="">
     <div class="container mx-auto p-6 leading-6 text-gray-600">
-      <h2 class="my-12 text-center text-4xl font-semibold text-slate-900">
-        Frames FAQ's
-      </h2>
       <div class="grid gap-12 gap-y-4 md:grid-cols-2 lg:grid-cols-3">
         <div
           class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-lg hover:shadow-gray-500 dark:border-gray-700 dark:bg-gray-800"
@@ -225,6 +246,106 @@
           </a>
         </div>
       </div>
+    </div>
+  </section>
+  <h2
+    class="my-16 text-center text-4xl font-bold capitalize tracking-tight text-slate-800 md:text-5xl"
+  >
+    Got a Question we haven't answered?
+  </h2>
+  <section class="container mx-auto px-6">
+    <div
+      class="bg-l mb-8 flex w-full flex-col rounded-xl border p-4 dark:border-gray-700 sm:p-8 lg:p-8"
+    >
+      <h2 class="mb-8 text-xl font-semibold text-gray-800 dark:text-gray-200">
+        Fill in the form
+      </h2>
+
+      <form>
+        <div class="grid gap-4">
+          <!-- Grid -->
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+            <div>
+              <label for="hs-firstname-contacts-1" class="sr-only"
+                >First Name</label
+              >
+              <input
+                type="text"
+                name="hs-firstname-contacts-1"
+                id="hs-firstname-contacts-1"
+                class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
+                placeholder="First Name"
+              />
+            </div>
+
+            <div>
+              <label for="hs-lastname-contacts-1" class="sr-only"
+                >Last Name</label
+              >
+              <input
+                type="text"
+                name="hs-lastname-contacts-1"
+                id="hs-lastname-contacts-1"
+                class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
+                placeholder="Last Name"
+              />
+            </div>
+            <div>
+              <label for="hs-email-contacts-1" class="sr-only">Email</label>
+              <input
+                type="email"
+                name="hs-email-contacts-1"
+                id="hs-email-contacts-1"
+                autocomplete="email"
+                class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
+                placeholder="Email"
+              />
+            </div>
+          </div>
+          <!-- End Grid -->
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+            <div>
+              <label for="hs-phone-number-1" class="sr-only"
+                >Phone Number</label
+              >
+              <input
+                type="text"
+                name="hs-phone-number-1"
+                id="hs-phone-number-1"
+                class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
+                placeholder="Phone Number"
+              />
+            </div>
+
+            <div class="col-span-2">
+              <label for="hs-about-contacts-1" class="sr-only">Details</label>
+              <textarea
+                id="hs-about-contacts-1"
+                name="hs-about-contacts-1"
+                rows="4"
+                class="block h-11 w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
+                placeholder="Details"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <!-- End Grid -->
+
+        <div class="mt-6 grid">
+          <button
+            type="submit"
+            class="bg-p hover:bg-s inline-flex items-center justify-center gap-x-3 rounded-md border border-transparent px-4 py-3 text-center text-sm font-medium text-white transition duration-1000 ease-in-out lg:text-base"
+          >
+            Send inquiry
+          </button>
+        </div>
+
+        <div class="mt-3 text-center">
+          <p class="text-sm text-gray-500">
+            We'll get back to you as soon as we can.
+          </p>
+        </div>
+      </form>
     </div>
   </section>
 </section>
