@@ -228,9 +228,7 @@
       <div class="max-w-8xl container mx-auto">
         <div class="mt-4 md:mt-12 lg:my-24">
           <!-- 2 rows, 3 columns on large screens -->
-          <div
-            class="grid grid-cols-1 gap-4 gap-y-4 md:grid-cols-3 md:px-4 lg:gap-16"
-          >
+          <div class="grid grid-cols-1 gap-4 gap-y-4 md:grid-cols-4 lg:gap-8">
             <!-- Column 1 -->
             <div
               class="hover:bg-l group relative mb-12 flex flex-col rounded-lg bg-white shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl hover:shadow-gray-500 dark:border-gray-700 dark:bg-gray-800"
@@ -242,7 +240,7 @@
                   <div>
                     <img
                       class="rounded-t-lg"
-                      src="../img/man-glasses.jpeg"
+                      src="../img2/prescription-glasses.jpg"
                       alt=""
                     />
                   </div>
@@ -250,7 +248,7 @@
                     <h5
                       class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
                     >
-                      Single Vision Glasses
+                      Designer Glasses
                     </h5>
                     <p
                       class="mb-2 font-normal text-gray-700 dark:text-gray-400"
@@ -274,7 +272,7 @@
                   <div>
                     <img
                       class="rounded-t-lg"
-                      src="../img/reading-woman.jpeg"
+                      src="../img2/designer2.jpg"
                       alt=""
                     />
                   </div>
@@ -282,7 +280,7 @@
                     <h5
                       class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
                     >
-                      Reading Glasses
+                      Prescription Glasses
                     </h5>
                     <p
                       class="mb-2 font-normal text-gray-700 dark:text-gray-400"
@@ -306,7 +304,7 @@
                   <div>
                     <img
                       class="rounded-t-lg"
-                      src="../img/man-woman-varis.jpeg"
+                      src="../img2/sports2.jpg"
                       alt=""
                     />
                   </div>
@@ -314,7 +312,39 @@
                     <h5
                       class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
                     >
-                      Varifocal and Bifocal Glasses
+                      Sports Glasses
+                    </h5>
+                    <p
+                      class="mb-2 font-normal text-gray-700 dark:text-gray-400"
+                    >
+                      At Spex4less, we're proud to have a wide variety of single
+                      vision and reading glasses, all made to fit your personal
+                      needs and style.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!--4th column-->
+            <div
+              class="hover:bg-l group relative mb-12 flex flex-col rounded-lg bg-white shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl hover:shadow-gray-500 dark:border-gray-700 dark:bg-gray-800"
+            >
+              <a href="/glasses" class="flex-grow">
+                <div
+                  class="h-full rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800"
+                >
+                  <div>
+                    <img
+                      class="rounded-t-lg border-b border-gray-200"
+                      src="../img2/reglaze2.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="flex-grow p-5">
+                    <h5
+                      class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                    >
+                      Reglaze
                     </h5>
                     <p
                       class="mb-2 font-normal text-gray-700 dark:text-gray-400"
@@ -755,6 +785,11 @@
               >
                 <div class="text-3xl font-black text-slate-800">Step 4</div>
               </div>
+              <div class="h-full border-r-4 border-transparent">
+                <div
+                  class="ml-4 h-full border-l-4 border-solid border-gray-200"
+                ></div>
+              </div>
             </div>
             <div class="flex-auto">
               <div class="flex flex-col items-center md:flex-row">
@@ -784,6 +819,56 @@
               </div>
             </div>
           </div>
+          <div class="flex flex-row-reverse items-start">
+            <div class="border-l-4 border-t-4 border-transparent">
+              <div
+                class="mr-16 h-16 w-16 rounded-br-full border-b-4 border-r-4 border-solid border-gray-200"
+              ></div>
+            </div>
+            <div class="flex-auto border-t-4 border-transparent">
+              <div class="h-16 border-b-4 border-solid border-gray-200"></div>
+            </div>
+            <div
+              class="ml-16 mt-16 h-16 w-16 rounded-tl-full border-l-4 border-t-4 border-solid border-gray-200"
+            ></div>
+          </div>
+          <div class="flex flex-row">
+            <div class="hidden flex-col items-center md:flex">
+              <div
+                class="mr-4 flex w-32 flex-col items-center justify-center rounded-xl border border-gray-200 py-5 uppercase"
+              >
+                <div class="text-3xl font-black text-slate-800">Step 5</div>
+              </div>
+            </div>
+            <div class="flex-auto">
+              <div class="flex flex-col items-center md:flex-row">
+                <div class="flex-auto">
+                  <div class="font p-3 text-3xl font-bold text-slate-800">
+                    Receive Your Order
+                  </div>
+                  <div class="pb-6 text-lg leading-7 md:px-3">
+                    For the next step, please forward your prescription to us.
+                    If you haven't received your prescription yet but are eager
+                    to place an order, that's completely fine. Initiate your
+                    order now, and when you do get your prescription, just send
+                    it over to us at info@spex4less.com.
+                  </div>
+                </div>
+                <div
+                  class="hidden w-full px-4 lg:block"
+                  x-data="{ visible: false }"
+                  x-intersect="visible = true"
+                >
+                  <img
+                    src="../img/prescription-step.png"
+                    alt="step 1"
+                    class="transform rounded-lg object-cover shadow-lg shadow-gray-400 transition-all duration-1000 ease-in-out lg:relative"
+                    :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </section>
@@ -799,12 +884,12 @@
             class="grid grid-cols-1 gap-8 px-2 md:grid-cols-2 md:px-4 lg:grid-cols-4"
           >
             <a
-              href="/designer-glasses"
+              href="/glasses"
               class="relative h-80 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl"
             >
               <img
                 class="absolute h-full w-full rounded-xl object-cover"
-                src="../img/designer-glasses-girl.png"
+                src="../img2/single-vision2.jpg"
                 width="340"
                 height="610"
                 loading="lazy"
@@ -813,18 +898,18 @@
                 class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-7 pt-11"
               >
                 <div class="text-left text-lg font-bold leading-7 text-white">
-                  Designer Glasses
+                  Single-vision Glasses
                 </div>
               </div>
             </a>
             <a
-              href="/glasses"
+              href="/reading-glasses"
               class="relative h-80 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl"
             >
               <img
                 class="absolute h-full w-full rounded-xl object-cover"
                 alt="Sport shoes"
-                src="../img/prescription-glasses.png"
+                src="../img2/reading-glasses2.jpg"
                 width="340"
                 height="510"
                 loading="lazy"
@@ -833,18 +918,18 @@
                 class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-7 pt-11"
               >
                 <div class="text-left text-lg font-bold leading-7 text-white">
-                  Prescription Glasses
+                  Reading Glasses
                 </div>
               </div>
             </a>
             <a
-              href="/sports-glasses"
+              href="/varifocal-glasses"
               class="relative h-80 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl"
             >
               <img
                 class="absolute h-full w-full rounded-xl object-cover"
                 alt="Basketball hoop"
-                src="../img/sports-cat.png"
+                src="../img2/varifocal-home.jpg"
                 width="340"
                 height="510"
                 loading="lazy"
@@ -853,18 +938,18 @@
                 class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-7 pt-11"
               >
                 <div class="text-left text-lg font-bold leading-7 text-white">
-                  Sports Frames
+                  Varifocal Glasses
                 </div>
               </div>
             </a>
             <a
-              href="/reglaze-customer-frames"
+              href="/bifocal-glasses"
               class="relative h-80 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl"
             >
               <img
                 class="absolute h-full w-full rounded-xl object-cover"
                 alt="A person changing weights on a barbell set"
-                src="../img/reglaze.png"
+                src="../img2/bifocal-home.jpg"
                 width="480"
                 height="320"
                 loading="lazy"
@@ -873,7 +958,7 @@
                 class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-7 pt-11"
               >
                 <div class="text-left text-lg font-bold leading-7 text-white">
-                  Reglaze
+                  Bifocal Glasses
                 </div>
               </div>
             </a>
