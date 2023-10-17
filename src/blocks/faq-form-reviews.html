@@ -223,83 +223,79 @@
     class="bg-l mb-8 flex w-full flex-col rounded-xl border p-4 dark:border-gray-700 sm:p-8 lg:p-8"
   >
     <h2 class="mb-8 text-xl font-semibold text-gray-800 dark:text-gray-200">
-      Fill in the form
+      Contact Us
     </h2>
 
-    <form>
+    <form action="https://submit-form.com/Q9La1z5Y">
       <div class="grid gap-4">
         <!-- Grid -->
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
-            <label for="hs-firstname-contacts-1" class="sr-only"
-              >First Name</label
-            >
+            <label for="name" class="sr-only">First Name</label>
             <input
               type="text"
-              name="hs-firstname-contacts-1"
-              id="hs-firstname-contacts-1"
+              name="first_name"
+              id="first_name"
               class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
               placeholder="First Name"
+              required
             />
           </div>
-
           <div>
-            <label for="hs-lastname-contacts-1" class="sr-only"
-              >Last Name</label
-            >
+            <label for="email" class="sr-only">Last Name</label>
             <input
               type="text"
-              name="hs-lastname-contacts-1"
-              id="hs-lastname-contacts-1"
+              name="last_name"
+              id="last_name"
               class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
               placeholder="Last Name"
+              required
             />
           </div>
-          <div>
-            <label for="hs-email-contacts-1" class="sr-only">Email</label>
+          <div class="col-span-2">
+            <label for="email" class="sr-only">Email</label>
             <input
               type="email"
-              name="hs-email-contacts-1"
-              id="hs-email-contacts-1"
-              autocomplete="email"
+              name="email"
+              id="email"
               class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
               placeholder="Email"
+              required
             />
           </div>
-        </div>
-        <!-- End Grid -->
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
-          <div>
-            <label for="hs-phone-number-1" class="sr-only">Phone Number</label>
-            <input
-              type="text"
-              name="hs-phone-number-1"
-              id="hs-phone-number-1"
-              class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
-              placeholder="Phone Number"
-            />
-          </div>
-
           <div class="col-span-2">
-            <label for="hs-about-contacts-1" class="sr-only">Details</label>
+            <label for="email" class="sr-only">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="col-span-3">
+            <label for="message" class="sr-only">Message</label>
             <textarea
-              id="hs-about-contacts-1"
-              name="hs-about-contacts-1"
+              id="message"
+              name="message"
               rows="4"
-              class="block h-11 w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
-              placeholder="Details"
+              class="block h-24 w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
+              placeholder="Message"
+              required
             ></textarea>
           </div>
         </div>
+        <!-- End Grid -->
       </div>
       <!-- End Grid -->
 
       <div class="mt-6 grid">
         <button
           type="submit"
-          class="bg-p hover:bg-s inline-flex items-center justify-center gap-x-3 rounded-md border border-transparent px-4 py-3 text-center text-sm font-medium text-white transition duration-1000 ease-in-out lg:text-base"
+          class="bg-s hover:bg-p inline-flex items-center justify-center gap-x-3 rounded-md border border-transparent px-4 py-3 text-center text-sm font-medium text-white transition duration-1000 duration-300 ease-in-out ease-in-out hover:bg-blue-600 lg:text-base"
         >
-          Send inquiry
+          Send
         </button>
       </div>
 
