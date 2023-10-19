@@ -71,7 +71,7 @@
           <div
             class="hover:bg-l group relative mb-12 rounded-lg bg-white shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl hover:shadow-gray-500 dark:border-gray-700 dark:bg-gray-800"
           >
-            <a href="/home-page">
+            <a href="/glasses">
               <img
                 class="bg-p w-full rounded-t-lg opacity-100 filter transition-opacity duration-1000 duration-1000 ease-in-out group-hover:opacity-90"
                 src="../img2/damage-offer.jpg"
@@ -247,10 +247,328 @@
       </section>
     </div>
   </section>
+  <section class="my-12 w-full">
+    <h2
+      class="mb-6 text-center text-3xl font-bold text-slate-800 md:my-8 md:text-3xl lg:text-5xl"
+    >
+      Frequently Asked Questions
+    </h2>
+    <div class="container mx-auto max-w-7xl px-4">
+      <div class="">
+        <div
+          class="mx-auto border border-gray-200 bg-white"
+          x-data="{selected:0}"
+        >
+          <ul class="shadow-box">
+            <li class="relative border-b border-gray-200">
+              <button
+                type="button"
+                class="w-full px-8 py-6 text-left"
+                @click="selected !== 1 ? selected = 1 : selected = null"
+              >
+                <div class="flex items-center justify-between">
+                  <span class="pr-2"> Do you supply frames only? </span>
+                  <div>
+                    <span
+                      class="block text-lg transition-all"
+                      :class="selected === 1 ? 'rotate-90' : ''"
+                    >
+                      <svg
+                        class="h-5 w-5"
+                        fill="#000000"
+                        version="1.1"
+                        id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 330 330"
+                        xml:space="preserve"
+                      >
+                        <path
+                          id="XMLID_225_"
+                          d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </button>
+              <div
+                class="relative max-h-0 overflow-hidden transition-all duration-700"
+                x-ref="container1"
+                x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+              >
+                <div class="p-6">
+                  <p>
+                    Yes we do! Select frame only on any frame on our website.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="relative border-b border-gray-200">
+              <button
+                type="button"
+                class="w-full px-8 py-6 text-left"
+                @click="selected !== 2 ? selected = 2 : selected = null"
+              >
+                <div class="flex items-center justify-between">
+                  <span class="pr-2"> How do I choose the right size? </span>
+                  <span
+                    class="block text-lg transition-all"
+                    :class="selected === 2 ? 'rotate-90' : ''"
+                  >
+                    <svg
+                      class="h-5 w-5"
+                      fill="#000000"
+                      version="1.1"
+                      id="Layer_1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 330 330"
+                      xml:space="preserve"
+                    >
+                      <path
+                        id="XMLID_225_"
+                        d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </button>
+
+              <div
+                class="relative max-h-0 overflow-hidden transition-all duration-700"
+                x-ref="container2"
+                x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
+              >
+                <div class="p-6">
+                  <p>
+                    The best way is to order a similar size to a comfortable
+                    pair of glasses that you already have. All of our frames
+                    have measurements of the lens size, the distance between the
+                    lenses (DBL) and the arm length. You can usually find these
+                    measurements on your current frames, and they're given in
+                    millimetres. For a detailed guide please see ‘How To Choose
+                    The Right Glasses Size’ in our information section.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="relative border-b border-gray-200">
+              <button
+                type="button"
+                class="w-full px-8 py-6 text-left"
+                @click="selected !== 3 ? selected = 3 : selected = null"
+              >
+                <div class="flex items-center justify-between">
+                  <span class="pr-2">
+                    What if my frames need an adjustment?
+                  </span>
+                  <span
+                    class="block text-lg transition-all"
+                    :class="selected === 3 ? 'rotate-90' : ''"
+                  >
+                    <svg
+                      class="h-5 w-5"
+                      fill="#000000"
+                      version="1.1"
+                      id="Layer_1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 330 330"
+                      xml:space="preserve"
+                    >
+                      <path
+                        id="XMLID_225_"
+                        d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </button>
+
+              <div
+                class="relative max-h-0 overflow-hidden transition-all duration-700"
+                x-ref="container3"
+                x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
+              >
+                <div class="p-6">
+                  <p>
+                    If you need a minor adjustment most local Opticians will do
+                    this for you, though some may charge a small fee. We also
+                    have some useful information and guides on how to make
+                    adjustments at home on our blog and send out an instruction
+                    sheet with each order. Of course, you may also bring or send
+                    them to us for adjustment if you wish. If posting them to us
+                    for any adjustment, please be very specific (using a diagram
+                    if possible) in describing the adjustment you require.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="relative border-b border-gray-200">
+              <button
+                type="button"
+                class="w-full px-8 py-6 text-left"
+                @click="selected !== 4 ? selected = 4 : selected = null"
+              >
+                <div class="flex items-center justify-between">
+                  <span class="pr-2"> How do I order a pair of glasses? </span>
+                  <div>
+                    <span
+                      class="block text-lg transition-all"
+                      :class="selected === 4 ? 'rotate-90' : ''"
+                    >
+                      <svg
+                        class="h-5 w-5"
+                        fill="#000000"
+                        version="1.1"
+                        id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 330 330"
+                        xml:space="preserve"
+                      >
+                        <path
+                          id="XMLID_225_"
+                          d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </button>
+
+              <div
+                class="relative max-h-0 overflow-hidden transition-all duration-700"
+                x-ref="container4"
+                x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
+              >
+                <div class="p-6">
+                  <p>
+                    It’s simple! First select a frame you like from our
+                    extensive range. Next, click the ‘Select Lenses’ button and
+                    choose your lens type. Finally, upload your prescription if
+                    you have it. If not, don’t worry you can send this to us
+                    later.
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
   <section>
-    <div class="mx-auto px-4 py-16 sm:px-6 lg:px-8 lg:py-16">
+    <h2
+      class="mx-4 mb-4 text-center text-3xl font-bold capitalize tracking-tight text-slate-800 md:my-16 md:text-4xl lg:text-5xl"
+    >
+      Got a Question we haven't answered?
+    </h2>
+    <div class="container mx-auto max-w-7xl p-4">
+      <div
+        class="bg-l mb-6 flex w-full flex-col rounded-xl border p-3 dark:border-gray-700 sm:p-6 lg:p-8"
+      >
+        <h2
+          class="mb-6 text-lg font-semibold text-gray-800 dark:text-gray-200 md:text-xl"
+        >
+          Contact Us
+        </h2>
+        <!-- The Grid -->
+        <form action="https://submit-form.com/Q9La1z5Y">
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <!-- First row -->
+            <div>
+              <label for="first_name" class="sr-only">First Name</label>
+              <input
+                type="text"
+                name="first_name"
+                id="first_name"
+                class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
+                placeholder="First Name *"
+                required
+              />
+            </div>
+            <div>
+              <label for="last_name" class="sr-only">Last Name</label>
+              <input
+                type="text"
+                name="last_name"
+                id="last_name"
+                class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
+                placeholder="Last Name *"
+                required
+              />
+            </div>
+
+            <!-- Second row -->
+            <div>
+              <label for="phone" class="sr-only">Phone Number</label>
+              <input
+                type="number"
+                name="phone"
+                id="phone"
+                class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
+                placeholder="Phone Number"
+              />
+            </div>
+            <label for="email" class="sr-only">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
+              placeholder="Email *"
+              required
+            />
+          </div>
+
+          <!-- Third row -->
+          <div class="col-span-2 mt-4">
+            <label for="message" class="sr-only">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
+              placeholder="Message *"
+              required
+            ></textarea>
+          </div>
+
+          <input
+            type="hidden"
+            name="_redirect"
+            value="https://www.spex4less.com"
+          />
+
+          <div class="mt-4 grid">
+            <button
+              type="submit"
+              class="bg-p hover:bg-s inline-flex items-center justify-center gap-x-2 rounded-md border border-transparent py-2 text-center text-sm font-medium text-white transition duration-1000 ease-in-out md:gap-x-3 md:py-3 lg:text-base"
+            >
+              Submit
+            </button>
+          </div>
+
+          <div class="mt-2 text-center md:mt-3">
+            <p class="text-xs text-gray-500 md:text-sm">
+              We'll get back to you as soon as we can, usually within 1 business
+              day
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8 lg:py-16">
       <h2
-        class="text-center text-4xl font-bold tracking-tight text-slate-800 md:text-5xl"
+        class="text-center text-3xl font-bold tracking-tight text-slate-800 md:text-5xl"
       >
         Read trusted reviews from our customers
       </h2>
