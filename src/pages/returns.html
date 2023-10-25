@@ -84,7 +84,10 @@
                   @click="selected !== 1 ? selected = 1 : selected = null"
                 >
                   <div class="flex items-center justify-between">
-                    <span class="pr-2"> My glasses arrived damaged or they're not what I ordered. What should I do? </span>
+                    <span class="pr-2">
+                      My glasses arrived damaged or they're not what I ordered.
+                      What should I do?
+                    </span>
                     <div>
                       <span
                         class="block text-lg transition-all"
@@ -116,8 +119,9 @@
                 >
                   <div class="p-6">
                     <p>
-                      We have damage and warranty. Please get in touch with our customer service right away, and 
-                      they'll assist you with the return or exchange process.
+                      We have damage and warranty. Please get in touch with our
+                      customer service right away, and they'll assist you with
+                      the return or exchange process.
                     </p>
                   </div>
                 </div>
@@ -130,7 +134,9 @@
                   @click="selected !== 2 ? selected = 2 : selected = null"
                 >
                   <div class="flex items-center justify-between">
-                    <span class="pr-2"> How long do I have to return my glasses? </span>
+                    <span class="pr-2">
+                      How long do I have to return my glasses?
+                    </span>
                     <span
                       class="block text-lg transition-all"
                       :class="selected === 2 ? 'rotate-90' : ''"
@@ -160,9 +166,7 @@
                   x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
                 >
                   <div class="p-6">
-                    <p>
-                      You have 14 days from the dispatch of your glasses.
-                    </p>
+                    <p>You have 14 days from the dispatch of your glasses.</p>
                   </div>
                 </div>
               </li>
@@ -207,8 +211,9 @@
                 >
                   <div class="p-6">
                     <p>
-                      Visit the "Return Request" section on our website and follow the instructions. If you 
-                      encounter any issues, our customer support team is here to help.
+                      Visit the "Return Request" section on our website and
+                      follow the instructions. If you encounter any issues, our
+                      customer support team is here to help.
                     </p>
                   </div>
                 </div>
@@ -221,9 +226,7 @@
                   @click="selected !== 4 ? selected = 4 : selected = null"
                 >
                   <div class="flex items-center justify-between">
-                    <span class="pr-2">
-                      Where do i send my return too?
-                    </span>
+                    <span class="pr-2"> Where do i send my return too? </span>
                     <div>
                       <span
                         class="block text-lg transition-all"
@@ -256,7 +259,8 @@
                 >
                   <div class="p-6">
                     <p>
-                      Spex4Less, Everite House, Carr Lane, Hoylake, Wirral, CH47 4BG
+                      Spex4Less, Everite House, Carr Lane, Hoylake, Wirral, CH47
+                      4BG
                     </p>
                   </div>
                 </div>
@@ -312,7 +316,7 @@
               <div>
                 <label for="phone" class="sr-only">Phone Number</label>
                 <input
-                  type="number"
+                  type="tel"
                   name="phone"
                   id="phone"
                   class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
