@@ -1,0 +1,151 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../output.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<div
+  class="filter-options-content filter-card absolute left-0 z-10 mt-4 block w-full bg-white py-4 pl-4 pr-8 pt-3"
+  :class="{ 'hidden': !open[7] , 'block': open[7], 'absolute' : !isMobile }"
+>
+  <div class="flex w-full justify-center">
+    <div class="flex w-3/4 justify-center gap-x-4">
+      <div class="flex w-1/4 flex-col">
+        <div class="pb-2">Frame Type</div>
+        <div class="flex gap-x-4 gap-y-2">
+          <a
+            href="https://www.s4ltest2.co.uk:8443/glasses?a1_frame_type=Full+Rimmed"
+            class="filter-trigger flex min-w-[100px] flex-col items-center text-black no-underline"
+          >
+            <img src="../img2/aviator-glasses.svg" class="mb-2 max-w-[100px]" />
+            <span class="text-center">Full Rimmed</span>
+          </a>
+
+          <a
+            href="https://www.s4ltest2.co.uk:8443/glasses?a1_frame_type=Semi+Rimless"
+            class="filter-trigger flex min-w-[100px] flex-col items-center text-black no-underline"
+          >
+            <img src="../img2/aviator-glasses.svg" class="mb-2 max-w-[100px]" />
+            <span class="text-center">Semi Rimless</span>
+          </a>
+          <a
+            href="https://www.s4ltest2.co.uk:8443/glasses?a1_frame_type=Rimless"
+            class="filter-trigger flex min-w-[100px] flex-col items-center text-black no-underline"
+          >
+            <img src="../img2/aviator-glasses.svg" class="mb-2 max-w-[100px]" />
+            <span class="text-center">Rimless</span>
+          </a>
+        </div>
+      </div>
+      <div class="mx-auto flex w-1/2 flex-col px-6">
+        <div class="pb-2">Frame Shape</div>
+        <div class="flex flex-wrap gap-x-4 gap-y-4">
+          <a
+            href="https://www.s4ltest2.co.uk:8443/glasses?a1_frame_shape=Square"
+            class="filter-trigger flex min-w-[100px] flex-col items-center text-black no-underline"
+          >
+            <img src="../img2/aviator-glasses.svg" class="mb-2 max-w-[100px]" />
+            <span>Square</span>
+          </a>
+          <a
+            href="https://www.s4ltest2.co.uk:8443/glasses?a1_frame_shape=Aviator"
+            class="filter-trigger flex min-w-[100px] flex-col items-center text-black no-underline"
+          >
+            <img src="../img2/aviator-glasses.svg" class="mb-2 max-w-[100px]" />
+            <span>Aviator</span>
+          </a>
+          <a
+            href="https://www.s4ltest2.co.uk:8443/glasses?a1_frame_shape=Cateye"
+            class="filter-trigger flex min-w-[100px] flex-col items-center text-black no-underline"
+          >
+            <img src="../img2/aviator-glasses.svg" class="mb-2 max-w-[100px]" />
+            <span>Cateye</span>
+          </a>
+          <a
+            href="https://www.s4ltest2.co.uk:8443/glasses?a1_frame_shape=Chic"
+            class="filter-trigger flex min-w-[100px] flex-col items-center text-black no-underline"
+          >
+            <img src="../img2/aviator-glasses.svg" class="mb-2 max-w-[100px]" />
+            <span>Chic</span>
+          </a>
+          <a
+            href="https://www.s4ltest2.co.uk:8443/glasses?a1_frame_shape=Clubmaster"
+            class="filter-trigger flex min-w-[100px] flex-col items-center text-black no-underline"
+          >
+            <img src="../img2/aviator-glasses.svg" class="mb-2 max-w-[100px]" />
+            <span>Clubmaster</span>
+          </a>
+          <a
+            href="https://www.s4ltest2.co.uk:8443/glasses?a1_frame_shape=Keyhole"
+            class="filter-trigger flex min-w-[100px] flex-col items-center text-black no-underline"
+          >
+            <img src="../img2/aviator-glasses.svg" class="mb-2 max-w-[100px]" />
+            <span>Keyhole</span>
+          </a>
+          <a
+            href="https://www.s4ltest2.co.uk:8443/glasses?a1_frame_shape=Oversized"
+            class="filter-trigger flex min-w-[100px] flex-col items-center text-black no-underline"
+          >
+            <img src="../img2/aviator-glasses.svg" class="mb-2 max-w-[100px]" />
+            <span>Oversized</span>
+          </a>
+          <a
+            href="https://www.s4ltest2.co.uk:8443/glasses?a1_frame_shape=Regular"
+            class="filter-trigger flex min-w-[100px] flex-col items-center text-black no-underline"
+          >
+            <img src="../img2/aviator-glasses.svg" class="mb-2 max-w-[100px]" />
+            <span>Regular</span>
+          </a>
+          <a
+            href="https://www.s4ltest2.co.uk:8443/glasses?a1_frame_shape=Round"
+            class="filter-trigger flex min-w-[100px] flex-col items-center text-black no-underline"
+          >
+            <img src="../img2/aviator-glasses.svg" class="mb-2 max-w-[100px]" />
+            <span>Round</span>
+          </a>
+          <a
+            href="https://www.s4ltest2.co.uk:8443/glasses?a1_frame_shape=Wayfarer"
+            class="filter-trigger flex min-w-[100px] flex-col items-center text-black no-underline"
+          >
+            <img src="../img2/aviator-glasses.svg" class="mb-2 max-w-[100px]" />
+            <span>Wayfarer</span>
+          </a>
+        </div>
+      </div>
+      <div class="flex w-1/4 flex-col">
+        <div class="pb-2">Side Temples</div>
+
+        <div class="w-full flex-col">
+          <div
+            class="mb-3 flex cursor-pointer justify-center rounded-md border-transparent bg-gray-100 px-3 py-3 text-sm text-black focus:border-gray-500 focus:bg-white focus:ring-0"
+          >
+            <a
+              class="text-black no-underline"
+              href="https://www.s4ltest2.co.uk:8443/glasses?a1_sprung_sides=Hinged"
+              >Hinged</a
+            >
+          </div>
+          <div
+            class="mb-3 flex cursor-pointer justify-center rounded-md border-transparent bg-gray-100 px-3 py-3 text-sm focus:border-gray-500 focus:bg-white focus:ring-0"
+          >
+            <a
+              class="text-black no-underline"
+              href="https://www.s4ltest2.co.uk:8443/glasses?a1_sprung_sides=Hingless"
+              >Hingless</a
+            >
+          </div>
+          <div
+            class="mb-3 flex cursor-pointer justify-center rounded-md border-transparent bg-gray-100 px-3 py-3 text-sm focus:border-gray-500 focus:bg-white focus:ring-0"
+          >
+            <a
+              class="text-black no-underline"
+              href="https://www.s4ltest2.co.uk:8443/glasses?a1_sprung_sides=Sprung+Sides"
+              >Sprung Sides</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
