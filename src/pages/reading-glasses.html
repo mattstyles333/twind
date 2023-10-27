@@ -67,9 +67,9 @@
             Up to 70% Off High-Street Prices
           </h3>
           <p class="mt-3 text-lg dark:text-gray-400">
-            Catering to both men and women, we offer top-quality prescription
-            at up to 75% off high-street prices,
-            along with stylish stock frames at even lower prices.
+            Catering to both men and women, we offer top-quality prescription at
+            up to 75% off high-street prices, along with stylish stock frames at
+            even lower prices.
           </p>
           <div class="mt-12 space-y-12">
             <div class="jusitfy-center flex">
@@ -78,9 +78,9 @@
                   Highest Quality Lens Materials
                 </h4>
                 <p class="mt-3 text-lg dark:text-gray-400">
-                  Our lenses are crafted with the latest technology, 
-                  using high-quality materials like CR39 (Columbian Resin) 
-                  and Polycarbonate. This ensures both maximum clarity and 
+                  Our lenses are crafted with the latest technology, using
+                  high-quality materials like CR39 (Columbian Resin) and
+                  Polycarbonate. This ensures both maximum clarity and
                   durability.
                 </p>
               </div>
@@ -135,9 +135,9 @@
                   Our Lens Options
                 </h4>
                 <p class="mt-2 text-lg dark:text-gray-400">
-                  Our wide variety of lenses and lens coatings are priced affordably, 
-                  allowing you to choose the perfect lenses for your needs without 
-                  breaking the bank.
+                  Our wide variety of lenses and lens coatings are priced
+                  affordably, allowing you to choose the perfect lenses for your
+                  needs without breaking the bank.
                 </p>
               </div>
             </div>
@@ -158,10 +158,12 @@
           <p
             class="mx-auto mt-3 max-w-7xl text-center text-lg leading-loose dark:text-gray-400"
           >
-          We truly believe in the quality of our lenses, as reflected by our 4.9/5 Trustpilot rating. 
-          To back this up, we offer a 100% satisfaction guarantee. Additionally, all our frames 
-          come with a 12-month warranty, allowing you to claim a replacement if your glasses are 
-          broken. For more information on our 12 month warranty click here.
+            We truly believe in the quality of our lenses, as reflected by our
+            4.9/5 Trustpilot rating. To back this up, we offer a 100%
+            satisfaction guarantee. Additionally, all our frames come with a
+            12-month warranty, allowing you to claim a replacement if your
+            glasses are broken. For more information on our 12 month warranty
+            click here.
           </p>
         </div>
       </div>
@@ -338,29 +340,127 @@
                 >
                   <div class="p-6">
                     <p>
-                      Spectacle lenses come in various materials, including Columbia Resin 
-                      #39 (our standard lens material) and polycarbonate, which is ideal for 
-                      sports and safety glasses. Additionally, we offer lens coatings like 
-                      blue light protection, UV protection, scratch resistance, anti-reflective 
-                      treatments, and many more.
+                      Spectacle lenses come in various materials, including
+                      Columbia Resin #39 (our standard lens material) and
+                      polycarbonate, which is ideal for sports and safety
+                      glasses. Additionally, we offer lens coatings like blue
+                      light protection, UV protection, scratch resistance,
+                      anti-reflective treatments, and many more.
                     </p>
                   </div>
                 </div>
               </li>
 
-                <li class="relative border-b border-gray-200">
-                  <button
-                    type="button"
-                    class="w-full px-8 py-6 text-left"
-                    @click="selected !== 2 ? selected = 2 : selected = null"
-                  >
-                    <div class="flex items-center justify-between">
-                      <span class="pr-2">
-                        Can I buy ready readers?
-                      </span>
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 2 ? selected = 2 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span class="pr-2"> Can I buy ready readers? </span>
+                    <span
+                      class="block text-lg transition-all"
+                      :class="selected === 2 ? 'rotate-90' : ''"
+                    >
+                      <svg
+                        class="h-5 w-5"
+                        fill="#000000"
+                        version="1.1"
+                        id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 330 330"
+                        xml:space="preserve"
+                      >
+                        <path
+                          id="XMLID_225_"
+                          d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container2"
+                  x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      Yes! At Spex4less we have a range of ready readers in a
+                      variety of different styles. However if you can't pick
+                      from the styles we have then you can also turn any frame
+                      on the website into a ready reader!
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 3 ? selected = 3 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span class="pr-2">
+                      Can i customise my reading glasses
+                    </span>
+                    <span
+                      class="block text-lg transition-all"
+                      :class="selected === 3 ? 'rotate-90' : ''"
+                    >
+                      <svg
+                        class="h-5 w-5"
+                        fill="#000000"
+                        version="1.1"
+                        id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 330 330"
+                        xml:space="preserve"
+                      >
+                        <path
+                          id="XMLID_225_"
+                          d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container3"
+                  x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      Certainly! With thousands of lens combinations at your
+                      disposal, you can tailor your reading glasses to your
+                      preference. Consider our optician's top recommendation:
+                      1.6 index lenses paired with the honeycomb coating.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 4 ? selected = 4 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span class="pr-2">
+                      How do I order a pair of glasses?
+                    </span>
+                    <div>
                       <span
                         class="block text-lg transition-all"
-                        :class="selected === 2 ? 'rotate-90' : ''"
+                        :class="selected === 4 ? 'rotate-90' : ''"
                       >
                         <svg
                           class="h-5 w-5"
@@ -379,127 +479,29 @@
                         </svg>
                       </span>
                     </div>
-                  </button>
-
-                  <div
-                    class="relative max-h-0 overflow-hidden transition-all duration-700"
-                    x-ref="container2"
-                    x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
-                  >
-                    <div class="p-6">
-                      <p>
-                        Yes! At Spex4less we have a range of ready readers in a variety of 
-                        different styles. However if you can't pick from the styles we have 
-                        then you can also turn any frame on the website into a ready reader! 
-                      </p>
-                    </div>
                   </div>
-                </li>
+                </button>
 
-                <li class="relative border-b border-gray-200">
-                  <button
-                    type="button"
-                    class="w-full px-8 py-6 text-left"
-                    @click="selected !== 3 ? selected = 3 : selected = null"
-                  >
-                    <div class="flex items-center justify-between">
-                      <span class="pr-2">
-                        Can i customise my reading glasses
-                      </span>
-                      <span
-                        class="block text-lg transition-all"
-                        :class="selected === 3 ? 'rotate-90' : ''"
-                      >
-                        <svg
-                          class="h-5 w-5"
-                          fill="#000000"
-                          version="1.1"
-                          id="Layer_1"
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlns:xlink="http://www.w3.org/1999/xlink"
-                          viewBox="0 0 330 330"
-                          xml:space="preserve"
-                        >
-                          <path
-                            id="XMLID_225_"
-                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </button>
-
-                  <div
-                    class="relative max-h-0 overflow-hidden transition-all duration-700"
-                    x-ref="container3"
-                    x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
-                  >
-                    <div class="p-6">
-                      <p>
-                        Certainly! With thousands of lens combinations at your disposal, 
-                        you can tailor your reading glasses to your preference. Consider our 
-                        optician's top recommendation: 1.6 index lenses paired with the honeycomb coating. 
-                      </p>
-                    </div>
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container4"
+                  x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      It’s simple! First select a frame you like from our
+                      extensive range. Next, click the ‘Select Lenses’ button
+                      and choose your lens configuration. Finally, upload your
+                      prescription if you have it. If not, don’t worry you can
+                      send this to us later.
+                    </p>
                   </div>
-                </li>
-
-                <li class="relative border-b border-gray-200">
-                  <button
-                    type="button"
-                    class="w-full px-8 py-6 text-left"
-                    @click="selected !== 4 ? selected = 4 : selected = null"
-                  >
-                    <div class="flex items-center justify-between">
-                      <span class="pr-2">
-                        How do I order a pair of glasses?
-                      </span>
-                      <div>
-                        <span
-                          class="block text-lg transition-all"
-                          :class="selected === 4 ? 'rotate-90' : ''"
-                        >
-                          <svg
-                            class="h-5 w-5"
-                            fill="#000000"
-                            version="1.1"
-                            id="Layer_1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                            viewBox="0 0 330 330"
-                            xml:space="preserve"
-                          >
-                            <path
-                              id="XMLID_225_"
-                              d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </button>
-
-                  <div
-                    class="relative max-h-0 overflow-hidden transition-all duration-700"
-                    x-ref="container4"
-                    x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
-                  >
-                    <div class="p-6">
-                      <p>
-                        It’s simple! First select a frame you like from our
-                        extensive range. Next, click the ‘Select Lenses’ button
-                        and choose your lens configuration. Finally, upload your
-                        prescription if you have it. If not, don’t worry you can
-                        send this to us later.
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
+      </div>
       <section>
         <h2
           class="mx-4 mb-4 text-center text-3xl font-bold capitalize tracking-tight text-slate-800 md:my-16 md:text-4xl lg:text-5xl"
@@ -508,7 +510,7 @@
         </h2>
         <div class="container mx-auto max-w-7xl p-4">
           <div
-            class="bg-l mb-6 flex w-full flex-col rounded-xl border p-3 dark:border-gray-700 sm:p-6 lg:p-8"
+            class="mb-6 flex w-full flex-col rounded-xl border bg-white p-3 dark:border-gray-700 sm:p-6 lg:p-8"
           >
             <h2
               class="mb-6 text-lg font-semibold text-gray-800 dark:text-gray-200 md:text-xl"
@@ -519,7 +521,7 @@
             <form action="https://submit-form.com/Q9La1z5Y">
               <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <!-- First row -->
-                <div>
+                <div class="border border-gray-200">
                   <label for="first_name" class="sr-only">First Name</label>
                   <input
                     type="text"
@@ -530,7 +532,7 @@
                     required
                   />
                 </div>
-                <div>
+                <div class="border border-gray-200">
                   <label for="last_name" class="sr-only">Last Name</label>
                   <input
                     type="text"
@@ -543,7 +545,7 @@
                 </div>
 
                 <!-- Second row -->
-                <div>
+                <div class="border border-gray-200">
                   <label for="phone" class="sr-only">Phone Number</label>
                   <input
                     type="tel"
@@ -553,19 +555,21 @@
                     placeholder="Phone Number"
                   />
                 </div>
-                <label for="email" class="sr-only">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
-                  placeholder="Email *"
-                  required
-                />
+                <div class="border border-gray-200">
+                  <label for="email" class="sr-only">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400"
+                    placeholder="Email *"
+                    required
+                  />
+                </div>
               </div>
 
               <!-- Third row -->
-              <div class="col-span-2 mt-4">
+              <div class="col-span-2 mt-4 border border-gray-200">
                 <label for="message" class="sr-only">Message</label>
                 <textarea
                   id="message"
@@ -843,6 +847,5 @@
         </div>
       </section>
     </section>
-    <!--tablet sign-up-->
   </section>
 </section>
