@@ -1,13 +1,11 @@
-
-
 <section>
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link href="../output.css" rel="stylesheet" />
-      <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    </head>
-    <section class="my-24 w-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../output.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+  <section class="my-24 w-full">
     <h2
       class="mb-6 text-center text-2xl font-bold text-slate-800 md:my-8 md:text-3xl lg:text-5xl"
     >
@@ -27,7 +25,9 @@
                 @click="selected !== 1 ? selected = 1 : selected = null"
               >
                 <div class="flex items-center justify-between">
-                  <span class="pr-2"> How do I understand my prescription? </span>
+                  <span class="pr-2">
+                    How do I understand my prescription?
+                  </span>
                   <div>
                     <span
                       class="block text-lg transition-all"
@@ -58,9 +58,14 @@
                 x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
               >
                 <div class="p-6">
-                  <p>Your prescription's SPH indicates correction for either nearsightedness (-) or farsightedness (+). The CYL addresses astigmatism, while the 
-                    Axis denotes its angle. Don't overlook your Pupillary Distance (PD) as it's essential for ensuring your lenses align with your eyes correctly. 
-                    If you're ever unsure, it's best to consult an eye care professional for advice.
+                  <p>
+                    Your prescription's SPH indicates correction for either
+                    nearsightedness (-) or farsightedness (+). The CYL addresses
+                    astigmatism, while the Axis denotes its angle. Don't
+                    overlook your Pupillary Distance (PD) as it's essential for
+                    ensuring your lenses align with your eyes correctly. If
+                    you're ever unsure, it's best to consult an eye care
+                    professional for advice.
                   </p>
                 </div>
               </div>
@@ -73,9 +78,7 @@
                 @click="selected !== 2 ? selected = 2 : selected = null"
               >
                 <div class="flex items-center justify-between">
-                  <span class="pr-2">
-                    How do I get my prescription?
-                  </span>
+                  <span class="pr-2"> How do I get my prescription? </span>
                   <span
                     class="block text-lg transition-all"
                     :class="selected === 2 ? 'rotate-90' : ''"
@@ -106,8 +109,10 @@
               >
                 <div class="p-6">
                   <p>
-                    Your optician should've provided your glasses prescription after your last test. If lost, you can request another copy. You can order glasses without your 
-                    prescription by selecting "send prescription later" after you have chosen your lenses.
+                    Your optician should've provided your glasses prescription
+                    after your last test. If lost, you can request another copy.
+                    You can order glasses without your prescription by selecting
+                    "send prescription later" after you have chosen your lenses.
                   </p>
                 </div>
               </div>
@@ -121,7 +126,8 @@
               >
                 <div class="flex items-center justify-between">
                   <span class="pr-2">
-                    Where do I find previous prescriptions that i have used at Spex4less?
+                    Where do I find previous prescriptions that i have used at
+                    Spex4less?
                   </span>
                   <span
                     class="block text-lg transition-all"
@@ -152,7 +158,9 @@
               >
                 <div class="p-6">
                   <p>
-                    Click the top right of the website, log in, and select "My Account." Then, choose "My Prescriptions."
+                    Click the top right of the website, log in, and select "My
+                    Account." Then, choose "My Prescriptions."
+                  </p>
                 </div>
               </div>
             </li>
@@ -161,4 +169,4 @@
       </div>
     </div>
   </section>
-</section>  
+</section>
