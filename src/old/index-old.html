@@ -7,14 +7,33 @@
 
   <section class="dark:bg-p bg-white">
     <header>
-      <section class="bg-p text-l flex h-9 justify-between px-3 py-1">
-        <div aria-label="Offer">
-          <p>100% Satisfaction Guarantee & 365 Day Warranty</p>
+      <section
+        class="bg-p text-l flex h-9 w-full items-center justify-between px-3 py-1"
+      >
+        <div aria-label="Offer" class="flex flex-grow justify-between">
+          <p>100% Satisfaction Guarantee</p>
           <p>Up to 75% off high-street prices</p>
           <p>Support Available: 9-5 Mon-Fri & 9-12 Sat</p>
-        </div>
-        <div aria-label="User Actions">
-          <a href="#account" role="button">Account</a>
+
+          <!-- New flex container for SVG and Account link -->
+          <a href="#account" class="flex items-center space-x-2">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 427 512"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M193.295 1.04488C145.293 7.16388 102.521 45.0569 90.8692 91.7879C78.6212 140.912 95.8012 190.888 135.295 221.016C158.112 238.422 180.604 245.976 209.795 246.037C224.889 246.069 232.479 245.073 245.443 241.357C281.518 231.019 313.428 200.974 326.188 165.333C333.989 143.543 335.32 116.463 329.744 92.9589C322.933 64.2489 303.672 37.4579 276.991 19.5839C253.688 3.97188 223.241 -2.77212 193.295 1.04488ZM101.073 247.932C56.2012 252.471 24.7132 284.334 9.77516 340.318C0.377161 375.539 -2.85584 425.728 2.77916 448.9C3.91616 453.575 6.95116 461.675 9.52416 466.9C13.5202 475.017 15.5912 477.783 23.7482 485.902C36.6982 498.792 46.1102 504.101 65.0092 509.175L73.2952 511.4H213.295H353.295L362.295 509.056C393.89 500.829 415.946 479.466 423.888 449.4C427.829 434.479 427.502 398.618 423.168 370.4C411.485 294.333 378.213 253.054 324.482 247.963C309.405 246.535 307.572 247.178 284.765 261.901C268.918 272.131 266.27 273.541 254.295 278.131C238.457 284.202 229.174 285.987 213.295 286.014C199.443 286.038 188.607 284.003 173.658 278.57C161.497 274.151 160.348 273.549 142.795 262.394C118.811 247.153 116.544 246.367 101.073 247.932Z"
+                fill="#f3f4f6"
+              />
+            </svg>
+
+            <span>Account</span>
+          </div>
         </div>
       </section>
 
