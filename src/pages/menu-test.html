@@ -18,12 +18,12 @@
         <img
           src="../images/s4l-logo.jpg"
           alt="Spex4Less Logo"
-          class="mr-8 h-16"
+          class="mr-8 h-12 md:h-16"
         />
       </div>
 
       <!-- Navigation Section -->
-      <div class="flex items-center space-x-6">
+      <div class="flex items-center space-x-3">
         <!-- Search Icon -->
         <span class="cursor-pointer text-gray-600">
           <svg
@@ -80,7 +80,7 @@
           <!-- Dropdown content -->
           <div
             x-show="open"
-            class="absolute right-0 mt-2 w-64 overflow-hidden rounded-md bg-white shadow-lg"
+            class="absolute right-0 mt-2 overflow-hidden rounded-md bg-white shadow-lg md:w-64"
             x-transition:enter="transition ease-out duration-100"
             x-transition:enter-start="transform opacity-0 scale-95"
             x-transition:enter-end="transform opacity-100 scale-100"
