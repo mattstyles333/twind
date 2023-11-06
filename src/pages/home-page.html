@@ -12,52 +12,52 @@
       src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"
     ></script>
   </head>
-  <section class="dark:bg-p bg-white dark:text-gray-200">
+  <div
+    class="relative shadow-2xl shadow-gray-400 dark:shadow-none lg:grid lg:grid-cols-2"
+  >
+    <img
+      class="absolute h-full w-full object-cover lg:relative"
+      src="../images/glasses_banner.jpg"
+      width="1228"
+      height="500"
+      loading="lazy"
+    />
     <div
-      class="relative shadow-2xl shadow-gray-400 dark:shadow-none dark:shadow-none lg:grid lg:grid-cols-2"
+      class="from-p lg:bg-s relative bg-gradient-to-t px-8 pb-12 pt-24 dark:from-slate-900 lg:pt-48"
     >
-      <img
-        class="absolute h-full w-full object-cover lg:relative"
-        src="../images/glasses_banner.jpg"
-        width="1228"
-        height="500"
-        loading="lazy"
-      />
-      <div
-        class="from-p lg:bg-s relative bg-gradient-to-t px-8 pb-12 pt-24 dark:from-slate-900 lg:pt-48"
-      >
-        <div class="mx-auto flex max-w-2xl flex-col gap-10">
-          <div
-            class="text-left text-5xl font-bold leading-tight text-white drop-shadow-lg md:text-center md:text-5xl lg:text-left xl:text-7xl"
+      <div class="mx-auto flex max-w-2xl flex-col gap-10">
+        <div
+          class="text-left text-5xl font-bold leading-tight text-white drop-shadow-lg md:text-center md:text-5xl lg:text-left xl:text-7xl"
+        >
+          Buy Glasses Online
+        </div>
+        <div
+          class="max-w-2xl text-left text-3xl font-semibold leading-normal text-white md:text-center lg:text-left"
+        >
+          Superior convenience and choice, beyond the traditional optician.
+        </div>
+        <div
+          class="flex flex-col justify-center gap-4 sm:flex-row lg:flex-wrap lg:justify-start"
+        >
+          <a
+            href="/glasses/mens"
+            class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-5 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl sm:gap-4 md:w-48"
           >
-            Buy Glasses Online
-          </div>
-          <div
-            class="max-w-2xl text-left text-3xl font-semibold leading-normal text-white md:text-center lg:text-left"
+            <span class="mx-auto">Shop Men</span>
+          </a>
+          <a
+            href="/glasses/womens"
+            class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-5 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl sm:gap-4 md:w-48"
           >
-            Superior convenience and choice, beyond the traditional optician.
-          </div>
-          <div
-            class="flex flex-col justify-center gap-4 sm:flex-row lg:flex-wrap lg:justify-start"
-          >
-            <a
-              href="/glasses/mens"
-              class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-5 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl sm:gap-4 md:w-48"
-            >
-              <span class="mx-auto">Shop Men</span>
-            </a>
-            <a
-              href="/glasses/womens"
-              class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-5 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl sm:gap-4 md:w-48"
-            >
-              <span class="mx-auto">Shop Women</span>
-            </a>
-          </div>
+            <span class="mx-auto">Shop Women</span>
+          </a>
         </div>
       </div>
     </div>
+  </div>
+  <section class="dark:bg-p bg-white pt-8 dark:text-gray-200">
     <section class="">
-      <div class="container mx-auto mb-24 mt-6 px-2 py-8 md:px-6">
+      <div class="container mx-auto mb-24 px-2 py-8 md:px-6">
         <div class="container mx-auto text-center">
           <p class="mx-auto max-w-6xl text-lg leading-loose">
             Spex4less outshines high-street opticians as one of the UK's leading
@@ -1006,7 +1006,7 @@
     </section>
     <section class="my-12 w-full">
       <h2
-        class="mb-12 text-center text-4xl font-bold tracking-tight text-slate-800 dark:text-gray-300 dark:text-gray-300 md:text-5xl"
+        class="mb-12 text-center text-4xl font-bold tracking-tight text-slate-800 dark:text-gray-300 md:text-5xl"
       >
         Frequently Asked Questions
       </h2>
