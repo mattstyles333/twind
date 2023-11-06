@@ -49,7 +49,7 @@
           Lens Coatings
         </h2>
         <p class="mt-6 text-center text-lg leading-loose lg:px-6">
-          Selecting the perfect frames for your glasses can be a challenge in itself, and then there's the added decision of choosing the right lens coatings. Lens coatings are a special treatment designed to offer extra protection for your lenses, not only enhancing your vision but also elevating the overall quality of your new glasses.
+          Selecting the perfect frame can be a challenge in itself, and then there's the added decision of choosing the right lens coatings. Lens coatings are a special treatment designed to offer extra protection for your lenses, not only enhancing your vision but also elevating the overall quality of your new glasses.
         </p>
       </div>
     </section>
@@ -248,56 +248,6 @@
             x-data="{selected:0}"
           >
             <ul class="shadow-box">
-              <li class="relative border-b border-gray-200">
-                <button
-                  type="button"
-                  class="w-full px-8 py-6 text-left"
-                  @click="selected !== 1 ? selected = 1 : selected = null"
-                >
-                  <div class="flex items-center justify-between">
-                    <span class="pr-2">
-                      Can I get coatings on my Bifocal Glasses?
-                    </span>
-                    <div>
-                      <span
-                        class="block text-lg transition-all"
-                        :class="selected === 1 ? 'rotate-90' : ''"
-                      >
-                        <svg
-                          class="h-5 w-5"
-                          fill="#000000"
-                          version="1.1"
-                          id="Layer_1"
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlns:xlink="http://www.w3.org/1999/xlink"
-                          viewBox="0 0 330 330"
-                          xml:space="preserve"
-                        >
-                          <path
-                            id="XMLID_225_"
-                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </button>
-                <div
-                  class="relative max-h-0 overflow-hidden transition-all duration-700"
-                  x-ref="container1"
-                  x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
-                >
-                  <div class="p-6">
-                    <p>
-                      Yes! We offer a variety of coatings for
-                      <a href="/bifocal-glasses" class="text-link">bifocals</a>
-                      , including Blue Light protection, Multi Anti-Reflective
-                      and Hydrophobic+.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
               <li class="relative border-b border-gray-200">
                 <button
                   type="button"
