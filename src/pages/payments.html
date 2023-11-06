@@ -1,11 +1,11 @@
 <section>
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link href="../output.css" rel="stylesheet" />
-      <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    </head>
-    <section class="my-24 w-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../output.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+  <section class="my-24 w-full">
     <h2
       class="mb-6 text-center text-2xl font-bold text-slate-800 md:my-8 md:text-3xl lg:text-5xl"
     >
@@ -14,7 +14,7 @@
     <div class="container mx-auto px-4 lg:px-32">
       <div class="">
         <div
-          class="mx-auto border border-gray-200 bg-white"
+          class="dark:bg-p mx-auto border border-gray-200 bg-white"
           x-data="{selected:0}"
         >
           <ul class="shadow-box">
@@ -25,7 +25,9 @@
                 @click="selected !== 1 ? selected = 1 : selected = null"
               >
                 <div class="flex items-center justify-between">
-                  <span class="pr-2"> What payment methods do you accept? </span>
+                  <span class="pr-2">
+                    What payment methods do you accept?
+                  </span>
                   <div>
                     <span
                       class="block text-lg transition-all"
@@ -56,7 +58,10 @@
                 x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
               >
                 <div class="p-6">
-                  <p>We accept most major credit/debit card payments such as VISA, Mastercard, Paypal and Stripe. We are currently in the process of adding apple pay and google pay. 
+                  <p>
+                    We accept most major credit/debit card payments such as
+                    VISA, Mastercard, Paypal and Stripe. We are currently in the
+                    process of adding apple pay and google pay.
                   </p>
                 </div>
               </div>
@@ -69,9 +74,7 @@
                 @click="selected !== 2 ? selected = 2 : selected = null"
               >
                 <div class="flex items-center justify-between">
-                  <span class="pr-2">
-                    Is my payment information secure?
-                  </span>
+                  <span class="pr-2"> Is my payment information secure? </span>
                   <span
                     class="block text-lg transition-all"
                     :class="selected === 2 ? 'rotate-90' : ''"
@@ -102,8 +105,11 @@
               >
                 <div class="p-6">
                   <p>
-                    Absolutely! Spex4less cares deeply about our customers’ privacy and security. We employ both digital and physical methods to protect your data. All 
-                    transactions that take place on our website occur securely using a Secure Socket Layer (SSL). 
+                    Absolutely! Spex4less cares deeply about our customers’
+                    privacy and security. We employ both digital and physical
+                    methods to protect your data. All transactions that take
+                    place on our website occur securely using a Secure Socket
+                    Layer (SSL).
                   </p>
                 </div>
               </div>
@@ -116,9 +122,7 @@
                 @click="selected !== 3 ? selected = 3 : selected = null"
               >
                 <div class="flex items-center justify-between">
-                  <span class="pr-2">
-                    Do you accept insurance payments
-                  </span>
+                  <span class="pr-2"> Do you accept insurance payments </span>
                   <span
                     class="block text-lg transition-all"
                     :class="selected === 3 ? 'rotate-90' : ''"
@@ -148,8 +152,12 @@
               >
                 <div class="p-6">
                   <p>
-                    While we do not accept payments by insurance, many customers are able to obtain reimbursement for a portion or all of the cost of their prescription 
-                    glasses through their insurance provider, and we are happy to provide a receipt for this purpose.
+                    While we do not accept payments by insurance, many customers
+                    are able to obtain reimbursement for a portion or all of the
+                    cost of their prescription glasses through their insurance
+                    provider, and we are happy to provide a receipt for this
+                    purpose.
+                  </p>
                 </div>
               </div>
             </li>
@@ -158,4 +166,4 @@
       </div>
     </div>
   </section>
-</section>  
+</section>

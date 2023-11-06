@@ -4,9 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../output.css" rel="stylesheet" />
   </head>
-  <section>
+  <section class="dark:bg-p dark:text-gray-200 dark:shadow-none">
     <div
-      class="relative mb-12 shadow-xl shadow-gray-400 lg:grid lg:grid-cols-2"
+      class="relative mb-12 shadow-xl shadow-gray-400 dark:shadow-none lg:grid lg:grid-cols-2"
     >
       <img
         class="absolute h-96 w-full object-cover object-top lg:relative"
@@ -16,7 +16,7 @@
         loading="lazy"
       />
       <div
-        class="from-p lg:bg-s relative h-96 bg-gradient-to-t px-8 pb-12 pt-24"
+        class="from-p lg:bg-s relative h-96 bg-gradient-to-t px-8 pb-12 pt-24 dark:from-slate-900"
       >
         <div class="mx-auto flex max-w-2xl flex-col gap-10">
           <div
@@ -36,7 +36,7 @@
     <section class="container mx-auto">
       <div class="mb-16 mt-24">
         <h2
-          class="text-center text-4xl font-bold capitalize text-slate-800 md:text-5xl"
+          class="text-center text-4xl font-bold capitalize text-slate-800 dark:text-gray-200 md:text-5xl"
         >
           Learn more about us here at Spex4Less
         </h2>
@@ -72,9 +72,10 @@
                 <p class="text-lg leading-relaxed">
                   Every pair of prescription glasses is crafted in our advanced
                   on-site laboratory, ensuring a swift delivery time, typically
-                  between 5 to 10 working days. Should you have any inquiries, our
-                  responsive customer service team is always available, ensuring
-                  every question is answered with utmost care and efficiency.
+                  between 5 to 10 working days. Should you have any inquiries,
+                  our responsive customer service team is always available,
+                  ensuring every question is answered with utmost care and
+                  efficiency.
                 </p>
               </div>
             </div>
@@ -97,7 +98,7 @@
           <img
             src="../images/couple_working.jpeg"
             alt=""
-            class="mx-auto rounded-lg shadow-xl shadow-gray-500"
+            class="mx-auto rounded-lg shadow-xl shadow-gray-500 dark:shadow-none dark:shadow-none"
           />
         </div>
       </div>
@@ -110,7 +111,7 @@
           <img
             src="../images/sunglasses_car.jpeg"
             alt=""
-            class="mx-auto hidden rounded-lg shadow-xl shadow-gray-500 lg:block"
+            class="mx-auto hidden rounded-lg shadow-xl shadow-gray-500 dark:shadow-none lg:block"
           />
         </div>
         <div>
@@ -145,11 +146,15 @@
       <div class="container mx-auto my-12 px-6">
         <!-- Section: Design Block -->
         <section class="mb-32 text-center text-slate-800">
-          <h2 class="mb-20 text-4xl font-bold">What We Offer</h2>
+          <h2 class="mb-20 text-4xl font-bold dark:text-gray-200">
+            What We Offer
+          </h2>
 
           <div class="grid lg:grid-cols-3 lg:gap-x-12">
             <div class="mb-12 lg:mb-0">
-              <div class="block h-full rounded-lg bg-white shadow-lg">
+              <div
+                class="block h-full rounded-lg bg-white shadow-lg dark:bg-slate-900"
+              >
                 <div class="flex justify-center">
                   <div
                     class="-mt-8 inline-block rounded-full bg-blue-600 p-4 shadow-lg"
@@ -167,8 +172,9 @@
                   </div>
                 </div>
                 <div class="p-6">
-                  <h3 class="mb-4 text-2xl font-bold text-blue-600">1000</h3>
-                  <h5 class="mb-4 text-lg font-medium">Quality Control</h5>
+                  <h5 class="mb-4 text-lg font-medium dark:text-gray-200">
+                    Quality Control
+                  </h5>
                   <p class="text-gray-500">
                     Laudantium totam quas cumque pariatur at doloremque hic quos
                     quia eius
@@ -178,7 +184,9 @@
             </div>
 
             <div class="mb-12 lg:mb-0">
-              <div class="block h-full rounded-lg bg-white shadow-lg">
+              <div
+                class="dark:bg-p block h-full rounded-lg bg-white shadow-lg dark:bg-slate-900"
+              >
                 <div class="flex justify-center">
                   <div
                     class="-mt-8 inline-block rounded-full bg-blue-600 p-4 shadow-lg"
@@ -196,8 +204,9 @@
                   </div>
                 </div>
                 <div class="p-6">
-                  <h3 class="mb-4 text-2xl font-bold text-blue-600">70%</h3>
-                  <h5 class="mb-4 text-lg font-medium">High-Quality Frames</h5>
+                  <h5 class="mb-4 text-lg font-medium dark:text-gray-200">
+                    High-Quality Frames
+                  </h5>
                   <p class="text-gray-500">
                     Eum nostrum fugit numquam, voluptates veniam neque quibusdam
                     ullam
@@ -207,7 +216,9 @@
             </div>
 
             <div class="">
-              <div class="block h-full rounded-lg bg-white shadow-lg">
+              <div
+                class="dark:bg-p block h-full rounded-lg bg-white shadow-lg dark:bg-slate-900"
+              >
                 <div class="flex justify-center">
                   <div
                     class="-mt-8 inline-block rounded-full bg-blue-600 p-4 shadow-lg"
@@ -225,8 +236,7 @@
                   </div>
                 </div>
                 <div class="p-6">
-                  <h3 class="mb-4 text-2xl font-bold text-blue-600">49</h3>
-                  <h5 class="mb-4 text-lg font-medium">
+                  <h5 class="mb-4 text-lg font-medium dark:text-gray-200">
                     12 Months Frame Warranty
                   </h5>
                   <p class="text-gray-500">
@@ -241,9 +251,9 @@
       </div>
     </section>
     <section class="container mx-auto">
-      <div class="mx-auto mb-8 lg:mb-16">
+      <div class="mx-auto mb-8 dark:text-gray-200 lg:mb-16">
         <h2
-          class="mb-4 text-center text-4xl font-bold tracking-tight text-slate-800"
+          class="mb-4 text-center text-4xl font-bold tracking-tight text-slate-800 dark:text-gray-200"
         >
           Meet the Team
         </h2>
@@ -257,10 +267,12 @@
             src="../images/Sam_new.jpg"
             alt="Bonnie Avatar"
           />
-          <h3 class="text-1xl mb-1 font-bold tracking-tight text-gray-900">
+          <h3
+            class="text-1xl mb-1 font-bold tracking-tight text-gray-900 dark:text-gray-200"
+          >
             Sam Tickell
           </h3>
-          <p>Operations Manager</p>
+          <p class="dark:text-gray-300">Operations Manager</p>
         </div>
         <div class="text-center text-gray-500">
           <img
@@ -268,10 +280,12 @@
             src="../images/jacky.jpg"
             alt="Bonnie Avatar"
           />
-          <h3 class="text-1xl mb-1 font-bold tracking-tight text-gray-900">
+          <h3
+            class="text-1xl mb-1 font-bold tracking-tight text-gray-900 dark:text-gray-200"
+          >
             Jacky Burns
           </h3>
-          <p>Customer Service Manager</p>
+          <p class="dark:text-gray-300">Customer Service Manager</p>
         </div>
         <div class="text-center text-gray-500">
           <img
@@ -279,10 +293,12 @@
             src="../images/jess-photo.jpg"
             alt="Helene Avatar"
           />
-          <h3 class="text-1xl mb-1 font-bold tracking-tight text-gray-900">
+          <h3
+            class="text-1xl mb-1 font-bold tracking-tight text-gray-900 dark:text-gray-200"
+          >
             Jess Portsmouth
           </h3>
-          <p>Optician</p>
+          <p class="dark:text-gray-300">Optician</p>
         </div>
         <div class="text-center text-gray-500">
           <img
@@ -290,10 +306,12 @@
             src="../images/chloe.jpg"
             alt="Jese Avatar"
           />
-          <h3 class="text-1xl mb-1 font-bold tracking-tight text-gray-900">
+          <h3
+            class="text-1xl mb-1 font-bold tracking-tight text-gray-900 dark:text-gray-200"
+          >
             Chloe Hudson
           </h3>
-          <p>Optical Service Manager</p>
+          <p class="dark:text-gray-300">Optical Service Manager</p>
         </div>
         <div class="text-center text-gray-500">
           <img
@@ -301,10 +319,12 @@
             src="../images/Soph.jpg"
             alt="Joseph Avatar"
           />
-          <h3 class="text-1xl mb-1 font-bold tracking-tight text-gray-900">
+          <h3
+            class="text-1xl mb-1 font-bold tracking-tight text-gray-900 dark:text-gray-200"
+          >
             Sophie Swaine
           </h3>
-          <p>Customer Service Assistant Manager</p>
+          <p class="dark:text-gray-300">Customer Service Assistant Manager</p>
         </div>
         <div class="text-center text-gray-500">
           <img
@@ -312,10 +332,12 @@
             src="../images/Lewy.jpg"
             alt="Sofia Avatar"
           />
-          <h3 class="text-1xl mb-1 font-bold tracking-tight text-gray-900">
+          <h3
+            class="text-1xl mb-1 font-bold tracking-tight text-gray-900 dark:text-gray-200"
+          >
             Lewis Roper
           </h3>
-          <p>Lens Manager</p>
+          <p class="dark:text-gray-300">Lens Manager</p>
         </div>
         <div class="text-center text-gray-500">
           <img
@@ -323,10 +345,12 @@
             src="../images/dom.jpg"
             alt="Leslie Avatar"
           />
-          <h3 class="text-1xl mb-1 font-bold tracking-tight text-gray-900">
+          <h3
+            class="text-1xl mb-1 font-bold tracking-tight text-gray-900 dark:text-gray-200"
+          >
             Domenic Owens
           </h3>
-          <p>Lab Manager</p>
+          <p class="dark:text-gray-300">Lab Manager</p>
         </div>
         <div class="text-center text-gray-500">
           <img
@@ -334,10 +358,12 @@
             src="../images/james.jpg"
             alt="Bonnie Avatar"
           />
-          <h3 class="text-1xl mb-1 font-bold tracking-tight text-gray-900">
+          <h3
+            class="text-1xl mb-1 font-bold tracking-tight text-gray-900 dark:text-gray-200"
+          >
             James Tanner-Davies
           </h3>
-          <p>Digital Marketer</p>
+          <p class="dark:text-gray-300">Digital Marketer</p>
         </div>
         <div class="text-center text-gray-500">
           <img
@@ -345,10 +371,12 @@
             src="../images/finn.jpg"
             alt="Helene Avatar"
           />
-          <h3 class="text-1xl mb-1 font-bold tracking-tight text-gray-900">
+          <h3
+            class="text-1xl mb-1 font-bold tracking-tight text-gray-900 dark:text-gray-200"
+          >
             Finnian Bowyer
           </h3>
-          <p>Technical and Marketing Associate</p>
+          <p class="dark:text-gray-300">Technical and Marketing Associate</p>
         </div>
         <div class="text-center text-gray-500">
           <img
@@ -356,10 +384,12 @@
             src="../images/finn.jpg"
             alt="Helene Avatar"
           />
-          <h3 class="text-1xl mb-1 font-bold tracking-tight text-gray-900">
+          <h3
+            class="text-1xl mb-1 font-bold tracking-tight text-gray-900 dark:text-gray-200"
+          >
             Tom Gray
           </h3>
-          <p>Technical and Marketing Associate</p>
+          <p class="dark:text-gray-300">Technical and Marketing Associate</p>
         </div>
         <div class="text-center text-gray-500">
           <img
@@ -367,10 +397,12 @@
             src="../images/Rach.jpg"
             alt="Joseph Avatar"
           />
-          <h3 class="text-1xl mb-1 font-bold tracking-tight text-gray-900">
+          <h3
+            class="text-1xl mb-1 font-bold tracking-tight text-gray-900 dark:text-gray-200"
+          >
             Rachael Bayne
           </h3>
-          <p>Lab Technician</p>
+          <p class="dark:text-gray-300">Lab Technician</p>
         </div>
         <div class="text-center text-gray-500">
           <img
@@ -378,10 +410,12 @@
             src="../images/jake.jpg"
             alt="Sofia Avatar"
           />
-          <h3 class="text-1xl mb-1 font-bold tracking-tight text-gray-900">
+          <h3
+            class="text-1xl mb-1 font-bold tracking-tight text-gray-900 dark:text-gray-200"
+          >
             Jake Dodd
           </h3>
-          <p>Lab Technician</p>
+          <p class="dark:text-gray-300">Lab Technician</p>
         </div>
         <div class="text-center text-gray-500">
           <img
@@ -389,10 +423,12 @@
             src="../images/ella.jpg"
             alt="Bonnie Avatar"
           />
-          <h3 class="text-1xl mb-1 font-bold tracking-tight text-gray-900">
+          <h3
+            class="text-1xl mb-1 font-bold tracking-tight text-gray-900 dark:text-gray-200"
+          >
             Ella Dodd
           </h3>
-          <p>Optical Service Advisor</p>
+          <p class="dark:text-gray-300">Optical Service Advisor</p>
         </div>
         <div class="text-center text-gray-500">
           <img
@@ -400,10 +436,12 @@
             src="../images/Pip.jpg"
             alt="Helene Avatar"
           />
-          <h3 class="text-1xl mb-1 font-bold tracking-tight text-gray-900">
+          <h3
+            class="text-1xl mb-1 font-bold tracking-tight text-gray-900 dark:text-gray-200"
+          >
             Philippa Thornber
           </h3>
-          <p>Optical Service Advisor</p>
+          <p class="dark:text-gray-300">Optical Service Advisor</p>
         </div>
         <div class="text-center text-gray-500">
           <img
@@ -411,10 +449,12 @@
             src="../images/Steve.jpg"
             alt="Jese Avatar"
           />
-          <h3 class="text-1xl mb-1 font-bold tracking-tight text-gray-900">
+          <h3
+            class="text-1xl mb-1 font-bold tracking-tight text-gray-900 dark:text-gray-200"
+          >
             Steve Furness
           </h3>
-          <p>Customer Service Advisor</p>
+          <p class="dark:text-gray-300">Customer Service Advisor</p>
         </div>
         <div class="text-center text-gray-500">
           <img
@@ -422,10 +462,12 @@
             src="../images/Sam_new.jpg"
             alt="Joseph Avatar"
           />
-          <h3 class="text-1xl mb-1 font-bold tracking-tight text-gray-900">
+          <h3
+            class="text-1xl mb-1 font-bold tracking-tight text-gray-900 dark:text-gray-200"
+          >
             Emily
           </h3>
-          <p>Customer Service Advisor</p>
+          <p class="dark:text-gray-300">Customer Service Advisor</p>
         </div>
         <div class="text-center text-gray-500">
           <img
@@ -433,10 +475,12 @@
             src="../images/sue.jpg"
             alt="Sofia Avatar"
           />
-          <h3 class="text-1xl mb-1 font-bold tracking-tight text-gray-900">
+          <h3
+            class="text-1xl mb-1 font-bold tracking-tight text-gray-900 dark:text-gray-200"
+          >
             Susan Burns
           </h3>
-          <p>Despatch</p>
+          <p class="dark:text-gray-300">Despatch</p>
         </div>
         <div class="text-center text-gray-500">
           <img
@@ -444,10 +488,12 @@
             src="../images/hannah.jpg"
             alt="Leslie Avatar"
           />
-          <h3 class="text-1xl mb-1 font-bold tracking-tight text-gray-900">
+          <h3
+            class="text-1xl mb-1 font-bold tracking-tight text-gray-900 dark:text-gray-200"
+          >
             Hannah Cooper
           </h3>
-          <p>Customer Service & Brand Consultant</p>
+          <p class="dark:text-gray-300">Customer Service & Brand Consultant</p>
         </div>
       </div>
     </section>

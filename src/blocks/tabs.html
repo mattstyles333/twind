@@ -22,7 +22,7 @@
           <button
             id="tab-1"
             class="h-8 flex-1 whitespace-nowrap rounded-2xl px-4 text-sm font-medium transition-colors duration-150 ease-in-out focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300"
-            :class="activeTab === 1 ? 'bg-white text-slate-900' : 'text-slate-600 hover:text-slate-900'"
+            :class="activeTab === 1 ? 'bg-white dark:bg-p text-slate-900' : 'text-slate-600 hover:text-slate-900'"
             :tabindex="activeTab === 1 ? 0 : -1"
             :aria-selected="activeTab === 1"
             aria-controls="tabpanel-1"
@@ -35,7 +35,7 @@
           <button
             id="tab-2"
             class="h-8 flex-1 whitespace-nowrap rounded-2xl px-4 text-sm font-medium transition-colors duration-150 ease-in-out focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300"
-            :class="activeTab === 2 ? 'bg-white text-slate-900' : 'text-slate-600 hover:text-slate-900'"
+            :class="activeTab === 2 ? 'bg-white dark:bg-p text-slate-900' : 'text-slate-600 hover:text-slate-900'"
             :tabindex="activeTab === 2 ? 0 : -1"
             :aria-selected="activeTab === 2"
             aria-controls="tabpanel-2"
@@ -113,7 +113,7 @@
           <!-- Panel #2 -->
           <article
             id="tabpanel-2"
-            class="w-full items-stretch rounded-2xl bg-white shadow-xl focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 min-[480px]:flex"
+            class="dark:bg-p w-full items-stretch rounded-2xl bg-white shadow-xl focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 min-[480px]:flex"
             role="tabpanel"
             tabindex="0"
             aria-labelledby="tab-2"

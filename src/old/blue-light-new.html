@@ -5,8 +5,10 @@
     <link href="../output.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
-  <section class="bg-white">
-    <div class="relative shadow-2xl shadow-gray-400 lg:grid lg:grid-cols-2">
+  <section class="dark:bg-p bg-white">
+    <div
+      class="relative shadow-2xl shadow-gray-400 dark:shadow-none lg:grid lg:grid-cols-2"
+    >
       <img
         class="absolute h-full w-full object-cover lg:relative"
         src="../img/blue-light2.png"
@@ -15,7 +17,7 @@
         loading="lazy"
       />
       <div
-        class="from-p lg:bg-s relative bg-gradient-to-t px-8 pb-12 pt-24 lg:pt-48"
+        class="from-p lg:bg-s relative bg-gradient-to-t px-8 pb-12 pt-24 dark:from-slate-900 lg:pt-48"
       >
         <div class="mx-auto flex max-w-lg flex-col gap-10">
           <div
@@ -242,7 +244,7 @@
               <h3 class="font-heading mb-4 text-2xl font-bold">
                 Blue light blocking glasses
               </h3>
-              <p class="leading-loose text-gray-500">
+              <p class="leading-loose text-gray-500 dark:text-gray-200">
                 At Spex4Less, all of our glasses are designed to accommodate
                 blue light features. From stock to designer frames, you will
                 find the right frame for you. To add blue light protection,
@@ -258,7 +260,7 @@
               <h3 class="font-heading mb-4 text-2xl font-bold">
                 20-20-20 Rule
               </h3>
-              <p class="leading-loose text-gray-500">
+              <p class="leading-loose text-gray-500 dark:text-gray-200">
                 There are other methods you can use along with wearing blue
                 light glasses to help prevent eye strain such as the "20-20-20
                 Rule". Take a 20-second break every 20 minutes to gaze at
@@ -273,7 +275,7 @@
               <h3 class="font-heading mb-4 text-2xl font-bold">
                 Reduce screen time
               </h3>
-              <p class="leading-loose text-gray-500">
+              <p class="leading-loose text-gray-500 dark:text-gray-200">
                 To reduce the effects of blue-light, it's vital to cut down on
                 screen usage, take breaks, and consider using blue light
                 filters. Prioritizing these steps can help protect both eye
@@ -345,7 +347,7 @@
           >
             <!-- Column 1 -->
             <div
-              class="group relative mb-12 rounded-lg bg-white shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:bg-gray-50 hover:shadow-xl hover:shadow-gray-500 dark:border-gray-700 dark:bg-gray-800"
+              class="dark:hover:shadow-nonegroup relative mb-12 rounded-lg bg-white shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:bg-gray-50 hover:shadow-xl hover:shadow-gray-500 dark:border-gray-700 dark:bg-gray-300 dark:bg-gray-300 dark:bg-gray-800 dark:hover:shadow-none"
             >
               <a href="">
                 <img
@@ -355,7 +357,7 @@
                 />
                 <div class="p-3">
                   <h5
-                    class="border-b-2 border-gray-100 px-4 pb-1 text-2xl font-bold tracking-tight text-gray-900 duration-1000 ease-in-out group-hover:border-b-2 group-hover:border-blue-900 dark:text-white"
+                    class="group-hover:border-b-s border-b-2 border-gray-100 px-4 pb-1 text-2xl font-bold tracking-tight text-gray-900 duration-1000 ease-in-out group-hover:border-b-2 dark:text-white"
                   >
                     Varifocal Glasses
                   </h5>
@@ -370,7 +372,7 @@
                   </p>
                 </div>
                 <div
-                  class="bg-p group-hover:bg-s absolute inset-x-0 bottom-0 rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700"
+                  class="bg-p group-hover:bg-s absolute inset-x-0 bottom-0 rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700 dark:bg-slate-900"
                 >
                   <a
                     class="text-l inline-flex w-full justify-center p-3 px-4 align-middle text-sm font-medium shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:hover:bg-slate-800 dark:hover:text-white dark:focus:ring-offset-gray-800 sm:p-4"
@@ -382,7 +384,7 @@
               </a>
             </div>
             <div
-              class="group relative mb-12 rounded-lg bg-white shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:bg-gray-50 hover:shadow-xl hover:shadow-gray-500 dark:border-gray-700 dark:bg-gray-800"
+              class="dark:hover:shadow-nonegroup relative mb-12 rounded-lg bg-white shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:bg-gray-50 hover:shadow-xl hover:shadow-gray-500 dark:border-gray-700 dark:bg-gray-300 dark:bg-gray-300 dark:bg-gray-800 dark:hover:shadow-none"
             >
               <a href="">
                 <img
@@ -392,7 +394,7 @@
                 />
                 <div class="p-3">
                   <h5
-                    class="border-b-2 border-gray-100 px-4 pb-1 text-2xl font-bold tracking-tight text-gray-900 duration-1000 ease-in-out group-hover:border-b-2 group-hover:border-blue-900 dark:text-white"
+                    class="group-hover:border-b-s border-b-2 border-gray-100 px-4 pb-1 text-2xl font-bold tracking-tight text-gray-900 duration-1000 ease-in-out group-hover:border-b-2 dark:text-white"
                   >
                     Reading Glasses
                   </h5>
@@ -406,7 +408,7 @@
                   </p>
                 </div>
                 <div
-                  class="bg-p group-hover:bg-s absolute inset-x-0 bottom-0 rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700"
+                  class="bg-p group-hover:bg-s absolute inset-x-0 bottom-0 rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700 dark:bg-slate-900"
                 >
                   <a
                     class="text-l inline-flex w-full justify-center p-3 px-4 align-middle text-sm font-medium shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:hover:bg-slate-800 dark:hover:text-white dark:focus:ring-offset-gray-800 sm:p-4"
@@ -418,7 +420,7 @@
               </a>
             </div>
             <div
-              class="group relative mb-12 rounded-lg bg-white shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:bg-gray-50 hover:shadow-xl hover:shadow-gray-500 dark:border-gray-700 dark:bg-gray-800"
+              class="dark:hover:shadow-nonegroup relative mb-12 rounded-lg bg-white shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:bg-gray-50 hover:shadow-xl hover:shadow-gray-500 dark:border-gray-700 dark:bg-gray-300 dark:bg-gray-300 dark:bg-gray-800 dark:hover:shadow-none"
             >
               <a href="">
                 <img
@@ -428,7 +430,7 @@
                 />
                 <div class="p-3">
                   <h5
-                    class="border-b-2 border-gray-100 px-4 pb-1 text-2xl font-bold tracking-tight text-gray-900 duration-1000 ease-in-out group-hover:border-b-2 group-hover:border-blue-900 dark:text-white"
+                    class="group-hover:border-b-s border-b-2 border-gray-100 px-4 pb-1 text-2xl font-bold tracking-tight text-gray-900 duration-1000 ease-in-out group-hover:border-b-2 dark:text-white"
                   >
                     Bifocal Glasses
                   </h5>
@@ -443,7 +445,7 @@
                   </p>
                 </div>
                 <div
-                  class="bg-p group-hover:bg-s absolute inset-x-0 bottom-0 rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700"
+                  class="bg-p group-hover:bg-s absolute inset-x-0 bottom-0 rounded-b-lg duration-1000 ease-in-out dark:divide-gray-700 dark:border-gray-700 dark:bg-slate-900"
                 >
                   <a
                     class="text-l inline-flex w-full justify-center p-3 px-4 align-middle text-sm font-medium shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:hover:bg-slate-800 dark:hover:text-white dark:focus:ring-offset-gray-800 sm:p-4"

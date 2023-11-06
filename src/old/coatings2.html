@@ -13,7 +13,7 @@
     ></script>
   </head>
   <section>
-    <div class="relative shadow-2xl shadow-gray-400 lg:grid lg:grid-cols-2">
+    <div class="relative shadow-2xl shadow-gray-400 lg:grid lg:grid-cols-2 dark:shadow-none ">
       <img
         class="absolute h-full w-full object-cover lg:relative"
         src="https://unsplash.com/photos/d3bYmnZ0ank/download?force=true&auto=format&fit=crop&w=1228&q=80"
@@ -21,7 +21,7 @@
         height="768"
         loading="lazy"
       />
-      <div class="from-p lg:bg-s relative bg-gradient-to-t px-8 pb-12 pt-24 lg:pt-48">
+      <div class="from-p dark:from-slate-900 lg:bg-s relative bg-gradient-to-t px-8 pb-12 pt-24 lg:pt-48">
         <div class="mx-auto flex max-w-lg flex-col gap-10">
           <div
             class="text-center text-6xl font-bold leading-none text-white drop-shadow-lg lg:text-left xl:text-7xl"
@@ -38,13 +38,13 @@
           >
             <a
               href="{{store url='home'}}"
-              class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-5 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl sm:gap-4 md:w-48"
+              class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white dark:bg-p px-4 py-5 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl sm:gap-4 md:w-48"
             >
               <span class="mx-auto">Shop Men</span>
             </a>
             <a
               href="{{store url='home'}}"
-              class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-5 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl sm:gap-4 md:w-48"
+              class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white dark:bg-p px-4 py-5 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl sm:gap-4 md:w-48"
             >
               <span class="mx-auto">Shop Women</span>
             </a>
@@ -746,16 +746,16 @@
         </div>
       </div>
     </section>
-    <section class="mt-12 w-full bg-gray-100 py-12 shadow-inner">
+    <section class="mt-12 w-full bg-gray-100 py-12 shadow-inner dark:bg-slate-900">
       <h2
-        class="mb-12 text-center text-4xl font-bold tracking-tight text-slate-800 md:text-5xl"
+        class="mb-12 text-center text-4xl font-bold tracking-tight text-slate-800 md:text-5xl dark:text-gray-300"
       >
         Frequently Asked Questions
       </h2>
       <div class="container mx-auto px-4 lg:px-32">
         <div class="">
           <div
-            class="mx-auto border border-gray-200 bg-white"
+            class="mx-auto border border-gray-200 bg-white dark:bg-p"
             x-data="{selected:0}"
           >
             <ul class="shadow-box">

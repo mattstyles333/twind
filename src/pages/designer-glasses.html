@@ -5,8 +5,10 @@
     <link href="../output.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
-  <section class="bg-white">
-    <div class="relative shadow-2xl shadow-gray-400 lg:grid lg:grid-cols-2">
+  <section class="dark:bg-p bg-white dark:text-gray-200">
+    <div
+      class="relative shadow-2xl shadow-gray-400 dark:shadow-none lg:grid lg:grid-cols-2"
+    >
       <img
         class="absolute h-full w-full object-cover lg:relative"
         src="../images/clip_on_banner.jpg"
@@ -15,7 +17,7 @@
         loading="lazy"
       />
       <div
-        class="from-p lg:bg-s relative bg-gradient-to-t px-8 pb-12 pt-24 lg:pt-48"
+        class="from-p lg:bg-s relative bg-gradient-to-t px-8 pb-12 pt-24 dark:from-slate-900 lg:pt-48"
       >
         <div class="mx-auto flex max-w-2xl flex-col gap-10">
           <div
@@ -98,7 +100,7 @@
     <section class="container mx-auto">
       <div class="my-24">
         <p
-          class="mx-auto mt-6 max-w-7xl text-center text-lg leading-loose text-gray-700"
+          class="mx-auto mt-6 max-w-7xl text-center text-lg leading-loose text-gray-700 dark:text-gray-200"
         >
           Here at Spex4less you get so much more than great value designer
           glasses made to your prescription. We guarantee genuine designer
@@ -111,7 +113,9 @@
       </div>
     </section>
     <section class="container mx-auto my-12">
-      <h2 class="text-center text-5xl font-bold capitalize text-slate-800">
+      <h2
+        class="text-center text-5xl font-bold capitalize text-slate-800 dark:text-gray-300"
+      >
         Our Most Popular Brands
       </h2>
       <div class="mt-8 md:mt-12">
@@ -194,8 +198,12 @@
         </div>
       </div>
     </section>
-    <section class="bg-l justify-center border-b-2 py-12 shadow-inner">
-      <h2 class="my-4 px-2 text-center text-5xl font-bold text-slate-800">
+    <section
+      class="bg-l justify-center border-b-2 py-12 shadow-inner dark:border-none dark:bg-slate-900"
+    >
+      <h2
+        class="my-4 px-2 text-center text-5xl font-bold text-slate-800 dark:text-gray-300"
+      >
         Designer Brands A-Z
       </h2>
       <div
@@ -721,10 +729,12 @@
         </div>
       </div>
     </section>
-    <section class="bg-l my-12 border-b-2 py-12 shadow-inner lg:my-24 lg:py-24">
+    <section
+      class="bg-l my-12 border-b-2 py-12 shadow-inner dark:border-none dark:bg-slate-900 lg:my-24 lg:py-24"
+    >
       <div class="mx-auto px-4 sm:px-6 lg:px-8">
         <h2
-          class="text-center text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl"
+          class="text-center text-4xl font-bold tracking-tight text-slate-800 dark:text-gray-300 sm:text-5xl"
         >
           Read trusted reviews from our customers
         </h2>
@@ -798,7 +808,7 @@
               </div>
             </div>
 
-            <p class="mt-4 text-gray-700">
+            <p class="mt-4 text-gray-700 dark:text-gray-200">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
               sit rerum incidunt, a consequuntur recusandae ab saepe illo est
               quia obcaecati neque quibusdam eius accusamus error officiis atque
@@ -874,7 +884,7 @@
               </div>
             </div>
 
-            <p class="mt-4 text-gray-700">
+            <p class="mt-4 text-gray-700 dark:text-gray-200">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
               sit rerum incidunt, a consequuntur recusandae ab saepe illo est
               quia obcaecati neque quibusdam eius accusamus error officiis atque
@@ -950,7 +960,7 @@
               </div>
             </div>
 
-            <p class="mt-4 text-gray-700">
+            <p class="mt-4 text-gray-700 dark:text-gray-200">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
               sit rerum incidunt, a consequuntur recusandae ab saepe illo est
               quia obcaecati neque quibusdam eius accusamus error officiis atque
@@ -966,11 +976,13 @@
           <img
             src="../images/lense.jpeg"
             alt=""
-            class="mx-auto mb-8 hidden rounded-lg shadow-xl shadow-gray-500 lg:block"
+            class="mx-auto mb-8 hidden rounded-lg shadow-xl shadow-gray-500 dark:shadow-none lg:block"
           />
         </div>
         <div>
-          <h3 class="text-left text-4xl font-bold text-slate-800">
+          <h3
+            class="text-left text-4xl font-bold text-slate-800 dark:text-gray-300"
+          >
             Lenses customisation - make it your own
           </h3>
           <p class="mt-8 text-lg">
@@ -996,16 +1008,18 @@
         </div>
       </div>
     </section>
-    <section class="my-24 w-full bg-gray-100 py-12 shadow-inner">
+    <section
+      class="mt-24 w-full bg-gray-100 py-12 shadow-inner dark:border-none dark:bg-slate-900"
+    >
       <h2
-        class="mb-6 text-center text-2xl font-bold text-slate-800 md:my-8 md:text-3xl lg:text-5xl"
+        class="mb-6 text-center text-2xl font-bold text-slate-800 dark:text-gray-300 md:my-8 md:text-3xl lg:text-5xl"
       >
         Frequently Asked Questions
       </h2>
       <div class="container mx-auto px-4 lg:px-32">
         <div class="">
           <div
-            class="mx-auto border border-gray-200 bg-white"
+            class="dark:bg-p mx-auto border border-gray-200 bg-white"
             x-data="{selected:0}"
           >
             <ul class="shadow-box">
@@ -1204,22 +1218,24 @@
       </div>
       <section>
         <h2
-          class="mx-4 mb-4 text-center text-3xl font-bold capitalize tracking-tight text-slate-800 md:my-16 md:text-4xl lg:text-5xl"
+          class="mx-4 mb-4 text-center text-3xl font-bold capitalize tracking-tight text-slate-800 dark:text-gray-300 dark:text-gray-300 md:my-16 md:text-4xl lg:text-5xl"
         >
           Got a Question we haven't answered?
         </h2>
         <div class="container mx-auto max-w-7xl p-4">
           <div
-            class="mb-6 flex w-full flex-col rounded-xl border bg-white p-3 sm:p-6 lg:p-8"
+            class="dark:bg-p mb-6 flex w-full flex-col rounded-xl border bg-white p-3 sm:p-6 lg:p-8"
           >
-            <h2 class="mb-6 text-lg font-semibold text-gray-800 md:text-xl">
+            <h2
+              class="mb-6 text-lg font-semibold text-gray-800 dark:text-gray-300 md:text-xl"
+            >
               Contact Us
             </h2>
             <!-- The Grid -->
             <form action="https://submit-form.com/Q9La1z5Y">
               <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <!-- First row -->
-                <div class="border border-gray-200">
+                <div class="border border-gray-200 dark:border-none">
                   <label for="first_name" class="sr-only">First Name</label>
                   <input
                     type="text"
@@ -1230,7 +1246,7 @@
                     required
                   />
                 </div>
-                <div class="border border-gray-200">
+                <div class="border border-gray-200 dark:border-none">
                   <label for="last_name" class="sr-only">Last Name</label>
                   <input
                     type="text"
@@ -1243,7 +1259,7 @@
                 </div>
 
                 <!-- Second row -->
-                <div class="border border-gray-200">
+                <div class="border border-gray-200 dark:border-none">
                   <label for="phone" class="sr-only">Phone Number</label>
                   <input
                     type="tel"
@@ -1253,7 +1269,7 @@
                     placeholder="Phone Number"
                   />
                 </div>
-                <div class="border border-gray-200">
+                <div class="border border-gray-200 dark:border-none">
                   <label for="email" class="sr-only">Email</label>
                   <input
                     type="email"
@@ -1267,7 +1283,9 @@
               </div>
 
               <!-- Third row -->
-              <div class="col-span-2 mt-4 border border-gray-200">
+              <div
+                class="col-span-2 mt-4 border border-gray-200 dark:border-none"
+              >
                 <label for="message" class="sr-only">Message</label>
                 <textarea
                   id="message"
@@ -1288,14 +1306,14 @@
               <div class="mt-4 grid">
                 <button
                   type="submit"
-                  class="bg-p hover:bg-s inline-flex items-center justify-center gap-x-2 rounded-md border border-transparent py-2 text-center text-sm font-medium text-white transition duration-1000 ease-in-out md:gap-x-3 md:py-3 lg:text-base"
+                  class="bg-p hover:bg-s inline-flex items-center justify-center gap-x-2 rounded-md border border-transparent py-2 text-center text-sm font-medium text-white transition duration-1000 ease-in-out dark:bg-slate-900 md:gap-x-3 md:py-3 lg:text-base"
                 >
                   Submit
                 </button>
               </div>
 
               <div class="mt-2 text-center md:mt-3">
-                <p class="text-xs text-gray-500 md:text-sm">
+                <p class="text-xs text-gray-500 dark:text-gray-200 md:text-sm">
                   We'll get back to you as soon as we can, usually within 1
                   business day
                 </p>
@@ -1308,7 +1326,7 @@
       <section class="">
         <div class="mx-auto px-4 sm:px-6 lg:px-8 lg:py-16">
           <h2
-            class="text-center text-3xl font-bold tracking-tight text-slate-800 md:text-5xl"
+            class="text-center text-3xl font-bold tracking-tight text-slate-800 dark:text-gray-300 dark:text-gray-300 md:text-5xl"
           >
             Read trusted reviews from our customers
           </h2>
@@ -1382,7 +1400,7 @@
                 </div>
               </div>
 
-              <p class="mt-4 text-gray-700">
+              <p class="mt-4 text-gray-700 dark:text-gray-200">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
                 sit rerum incidunt, a consequuntur recusandae ab saepe illo est
                 quia obcaecati neque quibusdam eius accusamus error officiis
@@ -1458,7 +1476,7 @@
                 </div>
               </div>
 
-              <p class="mt-4 text-gray-700">
+              <p class="mt-4 text-gray-700 dark:text-gray-200">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
                 sit rerum incidunt, a consequuntur recusandae ab saepe illo est
                 quia obcaecati neque quibusdam eius accusamus error officiis
@@ -1534,7 +1552,7 @@
                 </div>
               </div>
 
-              <p class="mt-4 text-gray-700">
+              <p class="mt-4 text-gray-700 dark:text-gray-200">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
                 sit rerum incidunt, a consequuntur recusandae ab saepe illo est
                 quia obcaecati neque quibusdam eius accusamus error officiis
