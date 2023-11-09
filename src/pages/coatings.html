@@ -50,11 +50,8 @@
           Lens Coatings
         </h2>
         <p class="mt-6 text-center text-lg leading-loose lg:px-6">
-          Selecting the perfect frames for your glasses can be a challenge in
-          itself, and then there's the added decision of choosing the right lens
-          coatings. Lens coatings are a special treatment designed to offer
-          extra protection for your lenses, not only enhancing your vision but
-          also elevating the overall quality of your new glasses.
+          Selecting the perfect lenses for your frames can be a challenge in and of
+          itself. Lens coatings are an important and often undervalued way to improve your glasses.  Opting for the right lens coating is crucial as it not only enhances the durability and functionality of your glasses but also elevates your overall visual experience, making them an essential consideration for any eyewear choice.
         </p>
       </div>
     </section>
@@ -72,7 +69,7 @@
             >
               <div class="p-3">
                 <h5
-                  class="border-b-2 border-gray-100 px-2 pb-1 text-xl font-bold tracking-tight text-gray-900 duration-1000 ease-in-out group-hover:border-b-2 dark:text-gray-300"
+                  class="border-b-2 border-gray-100 px-2 pb-1 text-xl font-bold tracking-tight text-gray-900 duration-1000 ease-in-out group-hover:border-b-2 ark:text-gray-300"
                 >
                   UV and Durable+ Coating
                 </h5>
@@ -93,7 +90,7 @@
             >
               <div class="p-3">
                 <h5
-                  class="border-b-2 border-gray-100 px-2 pb-1 text-xl font-bold tracking-tight text-gray-900 duration-1000 ease-in-out group-hover:border-b-2 dark:text-gray-300"
+                  class="border-b-2 border-gray-100 px-2 pb-1 text-xl text-center font-bold tracking-tight text-gray-900 duration-1000 ease-in-out group-hover:border-b-2 ark:text-gray-300"
                 >
                   Anti-Reflective Coating
                 </h5>
@@ -115,7 +112,7 @@
             >
               <div class="p-3">
                 <h5
-                  class="border-b-2 border-gray-100 px-2 pb-1 text-xl font-bold tracking-tight text-gray-900 duration-1000 ease-in-out group-hover:border-b-2 dark:text-gray-300"
+                  class="border-b-2 border-gray-100 px-2 pb-1 text-xl font-bold tracking-tight text-gray-900 duration-1000 ease-in-out group-hover:border-b-2 ark:text-gray-300"
                 >
                   Blue Light Coating
                 </h5>
@@ -134,7 +131,7 @@
             >
               <div class="p-3">
                 <h5
-                  class="border-b-2 border-gray-100 px-4 pb-1 text-xl font-bold tracking-tight text-gray-900 duration-1000 ease-in-out group-hover:border-b-2 dark:text-gray-300"
+                  class="border-b-2 border-gray-100 px-4 pb-1 text-xl font-bold tracking-tight text-gray-900 duration-1000 ease-in-out group-hover:border-b-2 ark:text-gray-300"
                 >
                   Hydrophobic Coating
                 </h5>
@@ -153,7 +150,7 @@
             >
               <div class="p-3">
                 <h5
-                  class="border-b-2 border-gray-100 px-4 pb-1 text-xl font-bold tracking-tight text-gray-900 duration-1000 ease-in-out group-hover:border-b-2 dark:text-gray-300"
+                  class="border-b-2 border-gray-100 px-4 pb-1 text-xl font-bold tracking-tight text-gray-900 duration-1000 ease-in-out group-hover:border-b-2 ark:text-gray-300"
                 >
                   Honeycomb Coating
                 </h5>
@@ -175,7 +172,7 @@
             >
               <div class="p-3">
                 <h5
-                  class="border-b-2 border-gray-100 px-4 pb-1 text-xl font-bold tracking-tight text-gray-900 duration-1000 ease-in-out group-hover:border-b-2 dark:text-gray-300"
+                  class="border-b-2 border-gray-100 px-4 pb-1 text-xl font-bold tracking-tight text-gray-900 duration-1000 ease-in-out group-hover:border-b-2 ark:text-gray-300"
                 >
                   Zeiss Coatings
                 </h5>
@@ -186,7 +183,7 @@
                   coatings for our premium range of ZEISS lenses. Whether you're
                   in need of single vision lenses, varifocal solutions, glasses
                   tailored for office use, or specialised driving eyewear,
-                  ourselection is designed to cater to your every requirement.
+                  our selection is designed to cater to your every requirement.
                 </p>
               </div>
             </div>
@@ -205,7 +202,7 @@
             <h2
               class="font-heading mt-4 text-4xl font-bold text-slate-800 dark:text-gray-300 lg:text-5xl"
             >
-              Ordering Your Glasses
+              Customising Your Glasses
             </h2>
           </div>
           <div class="relative z-0 -mx-4 flex flex-wrap">
@@ -236,7 +233,7 @@
                 >2</span
               >
               <h3 class="font-heading mb-4 text-2xl font-bold">
-                Customise Your Lenses
+                Personalise Your Lenses
               </h3>
               <p class="leading-loose text-gray-500 dark:text-gray-200">
                 Customize your
@@ -418,6 +415,94 @@
                         Absolutely! Our UV and Durable+ coating effectively
                         blocks nearly 100% of UV light, ensuring enhanced
                         protection for your eyes.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="relative border-b border-gray-200">
+                  <button
+                    type="button"
+                    class="w-full px-8 py-6 text-left"
+                    @click="selected !== 4 ? selected = 4 : selected = null"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span class="pr-2">
+                        Are there coatings that can reduce glare from screens?
+                      </span>
+                      <span
+                        class="block text-lg transition-all"
+                        :class="selected === 4 ? 'rotate-90' : ''"
+                      >
+                        <svg
+                          class="h-5 w-5"
+                          fill="#000000"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330"
+                          xml:space="preserve"
+                        >
+                          <path
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+                  <div
+                    class="relative max-h-0 overflow-hidden transition-all duration-700"
+                    x-ref="container3"
+                    x-bind:style="selected == 4 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
+                  >
+                    <div class="p-6">
+                      <p>
+                        Yes, anti-reflective or <a href="/blue-light-glasses" class="text-link">blue light coatings</a> are available to reduce screen glare. These coatings minimize eye strain and improve comfort for those spending extended periods in front of digital devices.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="relative border-b border-gray-200">
+                  <button
+                    type="button"
+                    class="w-full px-8 py-6 text-left"
+                    @click="selected !== 5 ? selected = 5 : selected = null"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span class="pr-2">
+                        Do lens coatings affect the appearance of my glasses?
+                      </span>
+                      <span
+                        class="block text-lg transition-all"
+                        :class="selected === 5 ? 'rotate-90' : ''"
+                      >
+                        <svg
+                          class="h-5 w-5"
+                          fill="#000000"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330"
+                          xml:space="preserve"
+                        >
+                          <path
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+                  <div
+                    class="relative max-h-0 overflow-hidden transition-all duration-700"
+                    x-ref="container3"
+                    x-bind:style="selected == 5 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
+                  >
+                    <div class="p-6">
+                      <p>
+                        Lens coatings usually don't change the look of your glasses significantly. Anti-reflective coatings make lenses look clearer, while other coatings might have a subtle tint, but this doesn't greatly affect the appearance.
                       </p>
                     </div>
                   </div>

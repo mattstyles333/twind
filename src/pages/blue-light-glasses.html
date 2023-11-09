@@ -28,8 +28,7 @@
           <div
             class="max-w-2xl text-left text-2xl font-semibold leading-8 text-white md:text-center lg:text-left"
           >
-            Enhance your lenses with our Blue Light Coating, starting at just
-            £60!
+            Enhance your lenses with our blue light coating designed to reduce eye fatigue.
           </div>
         </div>
       </div>
@@ -225,25 +224,17 @@
                 <p class="mt-2 text-lg">
                   To further reduce eye fatigue, adopt habits like taking
                   regular breaks from the screen and adjusting the settings for
-                  optimal comfort.
+                  optimal comfort.  Additionally some devices even have a a setting to digitally filter out blue light via software.
                 </p>
               </div>
             </div>
             <div class="jusitfy-center flex">
               <div class="ml-6">
                 <h4 class="text-lg font-medium leading-6">
-                  Can I add the blue light coating to any coating?
+                  Blue light customization, can I combine it with other lens options?
                 </h4>
                 <p class="mt-2 text-lg">
-                  At Spex4Less, all of our
-                  <a href="/glasses" class="text-link">glasses</a> are designed
-                  to accommodate blue light features. From stock to
-                  <a href="/designer-glasses" class="text-link"
-                    >designer frames</a
-                  >, you will find the right frame for you. To add blue light
-                  protection, simply choose a
-                  <a href="/glasses" class="text-link">frame</a>, click 'add
-                  lenses', and select the blue light option.
+                  Customize Your Vision with Blue Light Coating: Tailor your eyewear to fit your lifestyle by adding our blue light coating to almost any prescription lens. This option is available to be combined with almost any other lens we offer including reading or varifocal lenses!  This versatile option allows you to adapt your favorite frames to the digital age, providing a perfect blend of personalized vision correction and modern eye protection.
                 </p>
               </div>
             </div>
@@ -486,6 +477,102 @@
                 >
                   <div class="p-6">
                     <p>Our blue light coatings start from only £60!</p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 3 ? selected = 3 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span class="pr-2">
+                      How can blue light glasses impact sleep quality?
+                    </span>
+                    <div>
+                      <span
+                        class="block text-lg transition-all"
+                        :class="selected === 1 ? 'rotate-90' : ''"
+                      >
+                        <svg
+                          class="h-5 w-5"
+                          fill="#000000"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330"
+                          xml:space="preserve"
+                        >
+                          <path
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container1"
+                  x-bind:style="selected == 3 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      Blue light glasses can improve sleep quality by filtering out blue light, which disrupts the body's circadian rhythm and melatonin production, essential for sleep. Wearing them in the evening can help reduce this disruption, leading to better sleep patterns.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 4 ? selected = 4 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span class="pr-2">
+                      Can blue light glasses be worn all day or just for screen time?
+                    </span>
+                    <div>
+                      <span
+                        class="block text-lg transition-all"
+                        :class="selected === 1 ? 'rotate-90' : ''"
+                      >
+                        <svg
+                          class="h-5 w-5"
+                          fill="#000000"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330"
+                          xml:space="preserve"
+                        >
+                          <path
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container1"
+                  x-bind:style="selected == 4 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      Blue light glasses can be worn all day, not just during screen time. They help reduce eye strain from various sources, including digital screens and indoor lighting. Whether to wear them throughout the day depends on your personal comfort and daily exposure to blue light.
+                    </p>
                   </div>
                 </div>
               </li>
