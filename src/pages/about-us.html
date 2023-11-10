@@ -503,7 +503,7 @@
                 >
                   <div class="flex items-center justify-between">
                     <span class="pr-2">
-                      Can I get a blue light coating on a wraparound frame?
+                      How long have you been operating?
                     </span>
                     <div>
                       <span
@@ -537,9 +537,10 @@
                 >
                   <div class="p-6">
                     <p>
-                      No, blue light coating is not available for wraparound
-                      frames. We recommend choosing a different frame style if
-                      you're interested in the blue light protection feature.
+                      "We are proud to have been serving our customers for over
+                      17 years. Since our founding in 2006, we have dedicated
+                      ourselves to delivering top-quality eyewear solutions and
+                      outstanding customer service.
                     </p>
                   </div>
                 </div>
@@ -552,9 +553,7 @@
                   @click="selected !== 2 ? selected = 2 : selected = null"
                 >
                   <div class="flex items-center justify-between">
-                    <span class="pr-2">
-                      How much do blue light glasses cost?
-                    </span>
+                    <span class="pr-2"> Where are you based? </span>
                     <span
                       class="block text-lg transition-all"
                       :class="selected === 2 ? 'rotate-90' : ''"
@@ -584,7 +583,63 @@
                   x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
                 >
                   <div class="p-6">
-                    <p>Our blue light coatings start from only £60!</p>
+                    <p>
+                      We are based in Hoylake, on the Wirral Peninsula in the
+                      North West of England. Our showroom is open to visitors
+                      from Monday to Friday, 9 am to 5 pm, and on Saturdays from
+                      9 am to 12 pm.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 3 ? selected = 3 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span class="pr-2">
+                      How do I get in touch with your optical service advisors?
+                    </span>
+                    <span
+                      class="block text-lg transition-all"
+                      :class="selected === 3 ? 'rotate-90' : ''"
+                    >
+                      <svg
+                        class="h-5 w-5"
+                        fill="#000000"
+                        version="1.1"
+                        id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 330 330"
+                        xml:space="preserve"
+                      >
+                        <path
+                          id="XMLID_225_"
+                          d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container3"
+                  x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      There are several ways to contact our optical service
+                      advisors. You can use our live chat feature, which you'll
+                      find in the bottom right corner of your screen, or call us
+                      directly at 0151 632 6611. Alternatively, you are always
+                      welcome to visit our store in person and speak with one of
+                      our advisors face-to-face.
+                    </p>
                   </div>
                 </div>
               </li>
@@ -934,162 +989,5 @@
         </div>
       </section>
     </section>
-    <section
-      class="ark:bg-slate-900 mt-12 w-full bg-gray-100 py-12 shadow-inner"
-    >
-      <h2
-        class="ark:text-gray-300 mb-12 text-center text-4xl font-bold tracking-tight text-slate-800 md:text-5xl"
-      >
-        Frequently Asked Questions
-      </h2>
-      <div class="container mx-auto px-4 lg:px-32">
-        <div class="">
-          <div
-            class="ark:bg-p mx-auto border border-gray-200 bg-white"
-            x-data="{selected:0}"
-          >
-            <ul class="shadow-box">
-              <li class="relative border-b border-gray-200">
-                <button
-                  type="button"
-                  class="w-full px-8 py-6 text-left"
-                  @click="selected !== 1 ? selected = 1 : selected = null"
-                >
-                  <div class="flex items-center justify-between">
-                    <span class="pr-2"> How long have you been operating? </span>
-                    <div>
-                      <span
-                        class="block text-lg transition-all"
-                        :class="selected === 1 ? 'rotate-90' : ''"
-                      >
-                        <svg
-                          class="h-5 w-5"
-                          fill="#000000"
-                          version="1.1"
-                          id="Layer_1"
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlns:xlink="http://www.w3.org/1999/xlink"
-                          viewBox="0 0 330 330"
-                          xml:space="preserve"
-                        >
-                          <path
-                            id="XMLID_225_"
-                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </button>
-
-                <div
-                  class="relative max-h-0 overflow-hidden transition-all duration-700"
-                  x-ref="container1"
-                  x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
-                >
-                  <div class="p-6">
-                    <p>
-                      "We are proud to have been serving our customers for over 17 years. Since our founding in 2006, we have dedicated ourselves to delivering top-quality eyewear solutions and outstanding customer service.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li class="relative border-b border-gray-200">
-                <button
-                  type="button"
-                  class="w-full px-8 py-6 text-left"
-                  @click="selected !== 2 ? selected = 2 : selected = null"
-                >
-                  <div class="flex items-center justify-between">
-                    <span class="pr-2">
-                      Where are you based?
-                    </span>
-                    <span
-                      class="block text-lg transition-all"
-                      :class="selected === 2 ? 'rotate-90' : ''"
-                    >
-                      <svg
-                        class="h-5 w-5"
-                        fill="#000000"
-                        version="1.1"
-                        id="Layer_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        viewBox="0 0 330 330"
-                        xml:space="preserve"
-                      >
-                        <path
-                          id="XMLID_225_"
-                          d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </button>
-
-                <div
-                  class="relative max-h-0 overflow-hidden transition-all duration-700"
-                  x-ref="container2"
-                  x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
-                >
-                  <div class="p-6">
-                    <p>
-                      We are based in Hoylake, on the Wirral Peninsula in the North West of England. Our showroom is open to visitors from Monday to Friday, 9 am to 5 pm, and on Saturdays from 9 am to 12 pm.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li class="relative border-b border-gray-200">
-                <button
-                  type="button"
-                  class="w-full px-8 py-6 text-left"
-                  @click="selected !== 3 ? selected = 3 : selected = null"
-                >
-                  <div class="flex items-center justify-between">
-                    <span class="pr-2">
-                      How do I get in touch with your optical service advisors?
-                    </span>
-                    <span
-                      class="block text-lg transition-all"
-                      :class="selected === 3 ? 'rotate-90' : ''"
-                    >
-                      <svg
-                        class="h-5 w-5"
-                        fill="#000000"
-                        version="1.1"
-                        id="Layer_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        viewBox="0 0 330 330"
-                        xml:space="preserve"
-                      >
-                        <path
-                          id="XMLID_225_"
-                          d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </button>
-
-                <div
-                  class="relative max-h-0 overflow-hidden transition-all duration-700"
-                  x-ref="container3"
-                  x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
-                >
-                  <div class="p-6">
-                    <p>
-                      There are several ways to contact our optical service advisors. You can use our live chat feature, which you'll find in the bottom right corner of your screen, or call us directly at 0151 632 6611. Alternatively, you are always welcome to visit our store in person and speak with one of our advisors face-to-face.
-                    </p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <section>
   </section>
 </section>
