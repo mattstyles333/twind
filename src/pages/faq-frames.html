@@ -135,7 +135,7 @@
                 class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out"
               >
                 <a
-                  class="text-l inline-flex w-full justify-center p-3 px-4 align-middle font-medium text-white shadow-sm sm:p-4"
+                  class="text-l inline-flex w-full justify-center p-3 px-4 align-middle font-medium text-white shadow-sm dark:bg-slate-900 dark:shadow-none sm:p-4"
                   href="#"
                 >
                   Designer Brands
@@ -144,7 +144,7 @@
             </a>
           </div>
           <div
-            class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-lg hover:shadow-xl hover:shadow-gray-500"
+            class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-lg hover:shadow-xl hover:shadow-gray-500 dark:hover:shadow-none"
           >
             <a href="reglaze-customer-frames#reglaze-faq">
               <svg
@@ -171,7 +171,7 @@
                 class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out"
               >
                 <a
-                  class="text-l inline-flex w-full justify-center p-3 px-4 align-middle font-medium text-white shadow-sm sm:p-4"
+                  class="text-l inline-flex w-full justify-center p-3 px-4 align-middle font-medium text-white shadow-sm dark:bg-slate-900 dark:shadow-none sm:p-4"
                   href="#"
                 >
                   Reglaze
@@ -180,7 +180,7 @@
             </a>
           </div>
           <div
-            class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-lg hover:shadow-xl hover:shadow-gray-500"
+            class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-lg hover:shadow-xl hover:shadow-gray-500 dark:hover:shadow-none"
           >
             <a href="sports-glasses#faq">
               <svg
@@ -207,7 +207,7 @@
                 class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out"
               >
                 <a
-                  class="text-l inline-flex w-full justify-center p-3 px-4 align-middle font-medium text-white shadow-sm sm:p-4"
+                  class="text-l inline-flex w-full justify-center p-3 px-4 align-middle font-medium text-white shadow-sm dark:bg-slate-900 dark:shadow-none sm:p-4"
                   href="#"
                 >
                   Sports
@@ -216,7 +216,7 @@
             </a>
           </div>
           <div
-            class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-lg hover:shadow-xl hover:shadow-gray-500"
+            class="bg-l group relative mb-12 rounded-lg shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-lg hover:shadow-xl hover:shadow-gray-500 dark:hover:shadow-none"
           >
             <a href="home-page#faq">
               <svg
@@ -243,7 +243,7 @@
                 class="bg-p group-hover:bg-s rounded-b-lg duration-1000 ease-in-out"
               >
                 <a
-                  class="text-l inline-flex w-full justify-center p-3 px-4 align-middle font-medium text-white shadow-sm sm:p-4"
+                  class="text-l inline-flex w-full justify-center p-3 px-4 align-middle font-medium text-white shadow-sm dark:bg-slate-900 dark:shadow-none sm:p-4"
                   href="#"
                 >
                   Help me choose
@@ -256,22 +256,24 @@
     </section>
     <section>
       <h2
-        class="mx-4 mb-4 text-center text-3xl font-bold capitalize tracking-tight text-slate-800 md:my-16 md:text-4xl lg:text-5xl"
+        class="mx-4 mb-4 text-center text-3xl font-bold capitalize tracking-tight text-slate-800 dark:text-gray-300 md:my-16 md:text-4xl lg:text-5xl"
       >
         Got a Question we haven't answered?
       </h2>
       <div class="container mx-auto max-w-7xl p-4">
         <div
-          class="bg-l mb-6 flex w-full flex-col rounded-xl border p-3 sm:p-6 lg:p-8"
+          class="mb-6 flex w-full flex-col rounded-xl border bg-gray-100 p-3 dark:bg-slate-900 sm:p-6 lg:p-8"
         >
-          <h2 class="mb-6 text-lg font-semibold text-gray-800 md:text-xl">
+          <h2
+            class="mb-6 text-lg font-semibold text-gray-800 dark:text-gray-300 md:text-xl"
+          >
             Contact Us
           </h2>
           <!-- The Grid -->
           <form action="https://submit-form.com/Q9La1z5Y">
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
               <!-- First row -->
-              <div>
+              <div class="border border-gray-200 dark:border-none">
                 <label for="first_name" class="sr-only">First Name</label>
                 <input
                   type="text"
@@ -282,7 +284,7 @@
                   required
                 />
               </div>
-              <div>
+              <div class="border border-gray-200 dark:border-none">
                 <label for="last_name" class="sr-only">Last Name</label>
                 <input
                   type="text"
@@ -295,7 +297,7 @@
               </div>
 
               <!-- Second row -->
-              <div>
+              <div class="border border-gray-200 dark:border-none">
                 <label for="phone" class="sr-only">Phone Number</label>
                 <input
                   type="tel"
@@ -305,19 +307,23 @@
                   placeholder="Phone Number"
                 />
               </div>
-              <label for="email" class="sr-only">Email</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500"
-                placeholder="Email *"
-                required
-              />
+              <div class="border border-gray-200 dark:border-none">
+                <label for="email" class="sr-only">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  class="block w-full rounded-md border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="Email *"
+                  required
+                />
+              </div>
             </div>
 
             <!-- Third row -->
-            <div class="col-span-2 mt-4">
+            <div
+              class="col-span-2 mt-4 border border-gray-200 dark:border-none"
+            >
               <label for="message" class="sr-only">Message</label>
               <textarea
                 id="message"
