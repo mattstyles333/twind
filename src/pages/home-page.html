@@ -57,7 +57,7 @@
       </div>
     </div>
   </div>
-  <section class="dark:bg-p bg-white pt-8 dark:text-gray-200">
+  <section class="dark:bg-p pt-8 dark:text-gray-200">
     <section class="">
       <div class="container mx-auto mb-12 px-2 py-8 md:px-6">
         <div class="container mx-auto text-center">
@@ -595,9 +595,9 @@
             </div>
             <div class="flex-auto text-lg">
               <div class="flex flex-col items-center md:flex-row">
-                <div class="flex-auto">
+                <div class="flex-auto px-4 md:w-2/3">
                   <div
-                    class="font p-3 text-3xl font-bold text-slate-800 dark:text-gray-300"
+                    class="font text-3xl font-bold text-slate-800 dark:text-gray-300 md:px-3"
                   >
                     Choose Your Frame
                   </div>
@@ -619,7 +619,7 @@
                   </div>
                 </div>
                 <div
-                  class="hidden w-full px-4 xl:block"
+                  class="hidden lg:flex lg:h-auto lg:w-1/3 lg:items-center lg:justify-center"
                   x-data="{ visible: false }"
                   x-intersect="visible = true"
                 >
@@ -666,7 +666,7 @@
             <div class="flex-auto">
               <div class="flex flex-col items-center md:flex-row">
                 <div
-                  class="hidden w-full px-4 xl:block"
+                  class="hidden lg:flex lg:h-auto lg:w-1/3 lg:items-center lg:justify-center"
                   x-data="{ visible: false }"
                   x-intersect="visible = true"
                 >
@@ -677,9 +677,9 @@
                     :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
                   />
                 </div>
-                <div class="flex-auto px-4">
+                <div class="flex-auto px-4 md:w-2/3">
                   <div
-                    class="font p-3 text-3xl font-bold text-slate-800 dark:text-gray-300"
+                    class="font text-3xl font-bold text-slate-800 dark:text-gray-300 md:px-3"
                   >
                     Select Your Lenses
                   </div>
@@ -727,9 +727,9 @@
             </div>
             <div class="flex-auto">
               <div class="flex flex-col items-center md:flex-row">
-                <div class="flex-auto">
+                <div class="flex-auto px-4 md:w-2/3">
                   <div
-                    class="font p-3 text-3xl font-bold text-slate-800 dark:text-gray-300"
+                    class="font text-3xl font-bold text-slate-800 dark:text-gray-300 md:px-3"
                   >
                     Add Your Prescription
                   </div>
@@ -744,7 +744,7 @@
                   </div>
                 </div>
                 <div
-                  class="hidden w-full px-4 xl:block"
+                  class="hidden lg:flex lg:h-auto lg:w-1/3 lg:items-center lg:justify-center"
                   x-data="{ visible: false }"
                   x-intersect="visible = true"
                 >
@@ -791,7 +791,7 @@
             <div class="flex-auto">
               <div class="flex flex-col items-center md:flex-row">
                 <div
-                  class="hidden w-full px-4 xl:block"
+                  class="hidden lg:flex lg:h-auto lg:w-1/3 lg:items-center lg:justify-center"
                   x-data="{ visible: false }"
                   x-intersect="visible = true"
                 >
@@ -802,9 +802,9 @@
                     :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
                   />
                 </div>
-                <div class="flex-auto px-4">
+                <div class="flex-auto px-4 md:w-2/3">
                   <div
-                    class="font p-3 text-3xl font-bold text-slate-800 dark:text-gray-300"
+                    class="font text-3xl font-bold text-slate-800 dark:text-gray-300 md:px-3"
                   >
                     Place Your Order
                   </div>
@@ -848,9 +848,9 @@
             </div>
             <div class="flex-auto">
               <div class="flex flex-col items-center md:flex-row">
-                <div class="flex-auto">
+                <div class="flex-auto px-4 md:w-2/3">
                   <div
-                    class="font p-3 text-3xl font-bold text-slate-800 dark:text-gray-300"
+                    class="font text-3xl font-bold text-slate-800 dark:text-gray-300 md:px-3"
                   >
                     Receive Your Glasses
                   </div>
@@ -863,7 +863,7 @@
                   </div>
                 </div>
                 <div
-                  class="hidden w-full px-4 xl:block"
+                  class="hidden lg:flex lg:h-auto lg:w-1/3 lg:items-center lg:justify-center"
                   x-data="{ visible: false }"
                   x-intersect="visible = true"
                 >
@@ -885,7 +885,7 @@
     >
       <div class="mx-auto px-6 py-8 lg:py-16">
         <h2
-          class="mb-8 text-center text-3xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white md:text-5xl lg:mb-8"
+          class="mb-8 text-center text-3xl font-extrabold leading-tight tracking-tight text-slate-900 dark:text-white md:text-5xl lg:mb-8"
         >
           Shop By Brands
         </h2>
@@ -1151,10 +1151,15 @@
         </div>
       </div>
     </section>
+    <p
+      class="mt-12 text-center text-3xl font-extrabold leading-tight tracking-tight text-slate-800 dark:text-white md:text-5xl lg:mb-12"
+    >
+      Staff Picks
+    </p>
     <section class="dark:bg-p">
       <div class="container mx-auto mx-auto px-4 py-8 lg:py-16">
         <h2
-          class="mb-8 text-center text-3xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white md:text-5xl lg:mb-12"
+          class="mb-8 text-center text-3xl font-extrabold leading-tight tracking-tight text-slate-800 dark:text-white md:text-5xl lg:mb-12"
         >
           Glasses by Style
         </h2>
@@ -1525,6 +1530,7 @@
                           xml:space="preserve"
                         >
                           <path
+                            class="dark:fill-gray-200"
                             id="XMLID_225_"
                             d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
                           />
@@ -1573,6 +1579,7 @@
                         xml:space="preserve"
                       >
                         <path
+                          class="dark:fill-gray-200"
                           id="XMLID_225_"
                           d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
                         />
@@ -1624,6 +1631,7 @@
                         xml:space="preserve"
                       >
                         <path
+                          class="dark:fill-gray-200"
                           id="XMLID_225_"
                           d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
                         />
@@ -1679,6 +1687,7 @@
                           xml:space="preserve"
                         >
                           <path
+                            class="dark:fill-gray-200"
                             id="XMLID_225_"
                             d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
                           />
@@ -1732,6 +1741,7 @@
                           xml:space="preserve"
                         >
                           <path
+                            class="dark:fill-gray-200"
                             id="XMLID_225_"
                             d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
                           />
@@ -1790,6 +1800,7 @@
                           xml:space="preserve"
                         >
                           <path
+                            class="dark:fill-gray-200"
                             id="XMLID_225_"
                             d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
                           />
@@ -1840,6 +1851,7 @@
                           xml:space="preserve"
                         >
                           <path
+                            class="dark:fill-gray-200"
                             id="XMLID_225_"
                             d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
                           />
@@ -1886,6 +1898,7 @@
                           xml:space="preserve"
                         >
                           <path
+                            class="dark:fill-gray-200"
                             id="XMLID_225_"
                             d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
                           />
@@ -1938,6 +1951,7 @@
                           xml:space="preserve"
                         >
                           <path
+                            class="dark:fill-gray-200"
                             id="XMLID_225_"
                             d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
                           />
