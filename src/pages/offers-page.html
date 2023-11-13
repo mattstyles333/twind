@@ -251,6 +251,32 @@
         </section>
       </div>
     </section>
+    <h2
+     class="text-center text-4xl font-bold capitalize mb-12 text-slate-800 dark:text-gray-300 md:text-5xl"
+     >
+      How To Claim Your Free 3in1 Lens Upgrade Worth £80
+    </h2>
+    <p
+     class="mb-16 ml-4 mt-3 font-normal text-center leading-relaxed text-gray-700"
+     >
+      <strong>Step 1:</strong> Order any pair of regular or designer brand glasses (excludes sunglasses, safety and sports glasses).
+    </p>
+    <p
+     class="mb-16 ml-4 mt-3 font-normal text-center leading-relaxed text-gray-700"
+     >
+      <strong>Step 2:</strong> Select the 1.6 Thin & Light lens option and the Multi Anti-Reflective and UV and durable+ coatings when customising your lenses.
+    </p>
+    <p
+     class="mb-16 ml-4 mt-3 font-normal text-center leading-relaxed text-gray-700"
+     >
+      <strong>Step 3:</strong> Once in the shopping cart, enter the coupon code box enter "threeinone" into the coupon box and click the "Apply Coupon" button. You will now see a 100% discount for these lens options and can continue to checkout normally.
+    </p>
+    <p
+     class="mb-16 ml-4 mt-3 font-normal text-center leading-relaxed text-gray-700"
+     >
+     Exclusions: This offer is excluded from prescriptions requiring a prism and those not falling inside our standard prescription range: SPH -6.00 to +6.00, CYL -3.00 to +3.00. Offer is also excluded from bifocals, safety glasses, sunglasses, tints, transitions xtractive and sports glasses/goggles. 
+    </p>
+
     <section class="my-12 w-full">
       <h2
         class="mb-6 text-center text-3xl font-bold text-slate-800 dark:text-gray-300 md:my-8 md:text-3xl lg:text-5xl"
@@ -271,7 +297,7 @@
                   @click="selected !== 1 ? selected = 1 : selected = null"
                 >
                   <div class="flex items-center justify-between">
-                    <span class="pr-2"> Do you supply frames only? </span>
+                    <span class="pr-2"> How can I stay informed about upcoming sales and special offers? </span>
                     <div>
                       <span
                         class="block text-lg transition-all"
@@ -303,7 +329,7 @@
                 >
                   <div class="p-6">
                     <p>
-                      Yes we do! Select frame only on any frame on our website.
+                      To stay informed about our best upcoming sales and special offers, we recommend subscribing to our mailer. To sign up click here!
                     </p>
                   </div>
                 </div>
@@ -316,7 +342,7 @@
                   @click="selected !== 2 ? selected = 2 : selected = null"
                 >
                   <div class="flex items-center justify-between">
-                    <span class="pr-2"> How do I choose the right size? </span>
+                    <span class="pr-2"> How do I redeem a promotional code on your website? </span>
                     <span
                       class="block text-lg transition-all"
                       :class="selected === 2 ? 'rotate-90' : ''"
@@ -347,120 +373,7 @@
                 >
                   <div class="p-6">
                     <p>
-                      The best way is to order a similar size to a comfortable
-                      pair of glasses that you already have. All of our frames
-                      have measurements of the lens size, the distance between
-                      the lenses (DBL) and the arm length. You can usually find
-                      these measurements on your current frames, and they're
-                      given in millimetres. For a detailed guide please see ‘How
-                      To Choose The Right Glasses Size’ in our information
-                      section.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li class="relative border-b border-gray-200">
-                <button
-                  type="button"
-                  class="w-full px-8 py-6 text-left"
-                  @click="selected !== 3 ? selected = 3 : selected = null"
-                >
-                  <div class="flex items-center justify-between">
-                    <span class="pr-2">
-                      What if my frames need an adjustment?
-                    </span>
-                    <span
-                      class="block text-lg transition-all"
-                      :class="selected === 3 ? 'rotate-90' : ''"
-                    >
-                      <svg
-                        class="h-5 w-5"
-                        fill="#000000"
-                        version="1.1"
-                        id="Layer_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        viewBox="0 0 330 330"
-                        xml:space="preserve"
-                      >
-                        <path
-                          id="XMLID_225_"
-                          d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </button>
-
-                <div
-                  class="relative max-h-0 overflow-hidden transition-all duration-700"
-                  x-ref="container3"
-                  x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
-                >
-                  <div class="p-6">
-                    <p>
-                      If you need a minor adjustment most local Opticians will
-                      do this for you, though some may charge a small fee. We
-                      also have some useful information and guides on how to
-                      make adjustments at home on our blog and send out an
-                      instruction sheet with each order. Of course, you may also
-                      bring or send them to us for adjustment if you wish. If
-                      posting them to us for any adjustment, please be very
-                      specific (using a diagram if possible) in describing the
-                      adjustment you require.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li class="relative border-b border-gray-200">
-                <button
-                  type="button"
-                  class="w-full px-8 py-6 text-left"
-                  @click="selected !== 4 ? selected = 4 : selected = null"
-                >
-                  <div class="flex items-center justify-between">
-                    <span class="pr-2">
-                      How do I order a pair of glasses?
-                    </span>
-                    <div>
-                      <span
-                        class="block text-lg transition-all"
-                        :class="selected === 4 ? 'rotate-90' : ''"
-                      >
-                        <svg
-                          class="h-5 w-5"
-                          fill="#000000"
-                          version="1.1"
-                          id="Layer_1"
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlns:xlink="http://www.w3.org/1999/xlink"
-                          viewBox="0 0 330 330"
-                          xml:space="preserve"
-                        >
-                          <path
-                            id="XMLID_225_"
-                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </button>
-
-                <div
-                  class="relative max-h-0 overflow-hidden transition-all duration-700"
-                  x-ref="container4"
-                  x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
-                >
-                  <div class="p-6">
-                    <p>
-                      It’s simple! First select a frame you like from our
-                      extensive range. Next, click the ‘Select Lenses’ button
-                      and choose your lens type. Finally, upload your
-                      prescription if you have it. If not, don’t worry you can
-                      send this to us later.
+                      To redeem a promotional code on our website, simply enter the code at checkout in the designated promo code field. The discount or offer will be automatically applied to your order total. If you encounter any issues or have questions about using a promotional code, please don’t hesitate to contact our customer service team for assistance.
                     </p>
                   </div>
                 </div>

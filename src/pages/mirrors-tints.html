@@ -817,6 +817,115 @@
         </div>
       </div>
     </section>
+    <section class="my-12 w-full">
+      <h2
+        class="mb-6 text-center text-2xl font-bold text-slate-800 dark:text-gray-300 md:my-8 md:text-3xl lg:text-5xl"
+      >
+        Frequently Asked Questions
+      </h2>
+      <div class="container mx-auto px-4 lg:px-32">
+        <div class="">
+          <div
+            class="dark:bg-p mx-auto border border-gray-200 bg-white dark:text-gray-200"
+            x-data="{selected:0}"
+          >
+            <ul class="shadow-box">
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 1 ? selected = 1 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span class="pr-2"> Are mirrored and tinted lenses suitable for all frame styles? </span>
+                    <div>
+                      <span
+                        class="block text-lg transition-all"
+                        :class="selected === 1 ? 'rotate-90' : ''"
+                      >
+                        <svg
+                          class="h-5 w-5"
+                          fill="#000000"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330"
+                          xml:space="preserve"
+                        >
+                          <path
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container1"
+                  x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      Mirrored and tinted lenses can be fitted to a wide variety of frame styles. However, the suitability can depend on the frame material and design. While most standard frame types can accommodate mirrored and tinted lenses, certain unique or very thin frame designs might pose some limitations. 
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="relative border-b border-gray-200">
+                <button
+                  type="button"
+                  class="w-full px-8 py-6 text-left"
+                  @click="selected !== 2 ? selected = 2 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span class="pr-2">
+                      Can I add mirror coatings to prescription lenses?
+                    </span>
+                    <span
+                      class="block text-lg transition-all"
+                      :class="selected === 2 ? 'rotate-90' : ''"
+                    >
+                      <svg
+                        class="h-5 w-5"
+                        fill="#000000"
+                        version="1.1"
+                        id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 330 330"
+                        xml:space="preserve"
+                      >
+                        <path
+                          id="XMLID_225_"
+                          d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container2"
+                  x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
+                >
+                  <div class="p-6">
+                    <p>
+                      Yes, you can add mirror coatings to prescription lenses. This option allows you to combine the visual clarity and correction provided by your prescription with the stylish and functional benefits of mirrored lenses. Whether you need them for fashion, sport, or everyday wear, we can customize your prescription lenses with a mirror coating to suit your preferences and needs.
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
     <section>
       <h2
         class="mx-4 mb-4 text-center text-3xl font-bold capitalize tracking-tight text-slate-800 dark:text-gray-300 md:my-16 md:text-4xl lg:text-5xl"
