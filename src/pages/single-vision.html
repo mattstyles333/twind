@@ -66,33 +66,42 @@
       </div>
     </section>
     <section class="container mx-auto">
-      <div class="grid lg:grid-cols-2 lg:items-center lg:gap-8 lg:px-12">
-        <div>
-          <h3
-            class="text-left text-3xl font-bold text-slate-800 dark:text-gray-300"
-          >
-            Why Choose Single Vision Glasses?
-          </h3>
-          <p class="mt-6 text-lg leading-relaxed">
-            When you require
-            <a href="/glasses" class="text-link">glasses</a> for a singular
-            vision purpose, your optometrist might suggest single-vision
-            eyewear. Typically, individuals below the age of 40 opt for these
-            lenses, as they often have just one specific visual need.
-          </p>
-          <p class="mt-6 text-lg leading-relaxed">
-            However, if you experience presbyopia, it might be necessary to have
-            distinct glasses for different tasks — one for distant activities
-            like driving and another for close-up tasks such as reading.
-          </p>
-        </div>
-        <div aria-hidden="true" class="my-10 md:px-12 lg:mt-0 lg:px-24">
-          <img
-            src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/closeup_glasses.webp"
-            alt="man wearing glasses"
-            class="mx-auto w-full rounded-lg shadow-xl shadow-gray-500 dark:shadow-none"
-          />
-        </div>
+          <div class="grid lg:grid-cols-2 lg:items-center lg:gap-8 lg:px-12">
+            <div>
+              <h3
+                class="text-left text-3xl font-bold my-4 text-slate-800 dark:text-gray-300"
+              >
+                Distance
+              </h3>
+              <p class="mt-6 text-lg leading-relaxed">
+                Tailored for nearsighted individuals, distance glasses correct vision for seeing far objects clearly, perfect for driving, watching TV, or enjoying views. They come in various stylish frames to improve vision and add a fashionable touch.
+              </p>
+              <h3
+                class="text-left text-3xl font-bold my-4 text-slate-800 dark:text-gray-300"
+              >
+                Intermediate
+              </h3>
+              <p class="mt-6 text-lg leading-relaxed">
+                Designed for clear vision at mid-range, intermediate glasses suit activities like computer work and cooking. They bridge near and far vision, reduce eye strain, and offer style and functionality in contemporary frames.
+              </p>
+              <h3
+                class="text-left text-3xl font-bold my-4 text-slate-800 dark:text-gray-300"
+              >
+                Reading
+              </h3>
+              <p class="mt-6 text-lg leading-relaxed">
+                Ideal for close-range tasks like reading or using smartphones, <a href="/reading-glasses" class="text-link">reading glasses</a> enhance visual comfort and reduce strain. They blend practicality and style, available in stylish frames to suit close-up vision needs and personal aesthetics.
+              </p>
+            </div>
+            <div aria-hidden="true" class="my-10 md:px-12 lg:mt-0 lg:px-24">
+            <img
+              src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/closeup_glasses.webp"
+              alt="man wearing glasses"
+              class="mx-auto w-full rounded-lg shadow-xl shadow-gray-500 dark:shadow-none"
+            />
+            </div>
+          </div>
+          
       </div>
     </section>
     <section class="container mx-auto mt-6 lg:mt-24">
@@ -108,36 +117,17 @@
           <h3
             class="text-left text-3xl font-bold text-slate-800 dark:text-gray-300"
           >
-            Understanding Single Vision Lenses
+            Coatings and Tints for Single-Vision Lenses
           </h3>
           <p class="mt-6 text-lg leading-relaxed">
-            Single vision implies that the lens provides one specific focal
-            length. For instance, if watching TV from your couch seems blurry
-            because of the room's length, glasses with a single-vision lens for
-            distance would be necessary for a clearer view.
+            Single vision lenses can greatly benefit from various <a href="/coatings" class="text-link">coatings</a>. Anti-reflective coatings are ideal for reducing glare from screens and bright environments, while scratch-resistant coatings enhance the lenses' durability. Additionally, <a href="/reading-glasses" class="text-link">blue light coatings</a> are especially beneficial for those who frequently use digital screens, as it helps reduce eye strain and improve overall eye comfort.
           </p>
           <p class="mt-6 text-lg leading-relaxed">
-            Similarly, if reading a book seems out of focus, glasses with a
-            single-vision lens catered to near-distance can enhance the clarity
-            of your close-range vision. For more specialized reading solutions,
-            explore our
-            <a class="text-link" href="/reading-glasses">reading glasses page</a
-            >. If you're seeking a lens that can cater to both near and far
-            vision seamlessly, consider checking out our
-            <a class="text-link" href="/varifocal/glasses">varifocals page</a>.
+            For adaptive functionality, photochromic lenses are a versatile choice. They automatically darken in bright sunlight and become clear indoors, providing convenient UV protection. Fixed <a href="/mirrors-tints" class="text-link">tints</a>, available in several colors, enhance contrast and are particularly useful for reducing glare during outdoor activities. These enhancements not only add practical benefits but also contribute to the style and personalization of your single vision glasses.
           </p>
         </div>
       </div>
     </section>
-    <section class="container mx-auto">
-      <div class="grid lg:grid-cols-2 lg:items-center lg:gap-8 lg:px-12">
-        <div>
-          <h3
-            class="text-left text-3xl font-bold text-slate-800 dark:text-gray-300"
-          >
-            Why Choose Single Vision Glasses?
-          </h3>
-     </section>
     <section
       class="bg-l my-24 border-b-2 py-16 shadow-inner dark:border-none dark:bg-slate-900"
     >
@@ -303,9 +293,13 @@
                     @click="selected !== 1 ? selected = 1 : selected = null"
                   >
                     <div class="flex items-center justify-between">
-                      <span class="pr-2"> Do you supply frames only? </span>
+                      <span class="pr-2"> What Types of Coatings Are Available for Single Vision Lenses? </span>
                       <div>
-                        <svg
+                        <span
+                          class="block text-lg transition-all"
+                          :class="selected === 1 ? 'rotate-90' : ''"
+                        >
+                          <svg
                             class="h-5 w-5"
                             fill="#000000"
                             version="1.1"
@@ -316,7 +310,6 @@
                             xml:space="preserve"
                           >
                             <path
-                              class="dark:fill-gray-200"
                               id="XMLID_225_"
                               d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
                             />
@@ -332,9 +325,7 @@
                   >
                     <div class="p-6">
                       <p>
-                        Yes we do! Select "frame only" on any pair of
-                        <a href="/glasses" class="text-link">glasses</a> on our
-                        website.
+                        Single vision lenses can be enhanced with key coatings: a honeycomb anti-reflective coating for reduced glare and clearer vision, scratch-resistant for durability, <a href="/reading-glasses" class="text-link">blue light filtering</a> to ease eye strain from screens, and UV protection for outdoor safety. These enhancements make the lenses more functional and durable, suitable for various lifestyle needs.
                       </p>
                     </div>
                   </div>
@@ -348,7 +339,7 @@
                   >
                     <div class="flex items-center justify-between">
                       <span class="pr-2">
-                        How do I choose the right size?
+                        What Are Single Vision Lenses?
                       </span>
                       <span
                         class="block text-lg transition-all"
@@ -365,7 +356,6 @@
                           xml:space="preserve"
                         >
                           <path
-                            class="dark:fill-gray-200"
                             id="XMLID_225_"
                             d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
                           />
@@ -381,72 +371,7 @@
                   >
                     <div class="p-6">
                       <p>
-                        The best way is to order a similar size to a comfortable
-                        pair of glasses that you already have. All of our frames
-                        have measurements of the lens size, the distance between
-                        the lenses (DBL) and the arm length. You can usually
-                        find these measurements on your current frames, and
-                        they're given in millimetres. For a detailed guide
-                        please see
-                        <a href="/how-to-choose-your-frame" class="text-link"
-                          >How To Choose Your Glasses</a
-                        >.
-                      </p>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="relative border-b border-gray-200">
-                  <button
-                    type="button"
-                    class="w-full px-8 py-6 text-left"
-                    @click="selected !== 3 ? selected = 3 : selected = null"
-                  >
-                    <div class="flex items-center justify-between">
-                      <span class="pr-2">
-                        What if my frames need an adjustment?
-                      </span>
-                      <span
-                        class="block text-lg transition-all"
-                        :class="selected === 3 ? 'rotate-90' : ''"
-                      >
-                        <svg
-                          class="h-5 w-5"
-                          fill="#000000"
-                          version="1.1"
-                          id="Layer_1"
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlns:xlink="http://www.w3.org/1999/xlink"
-                          viewBox="0 0 330 330"
-                          xml:space="preserve"
-                        >
-                          <path
-                            class="dark:fill-gray-200"
-                            id="XMLID_225_"
-                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </button>
-
-                  <div
-                    class="relative max-h-0 overflow-hidden transition-all duration-700"
-                    x-ref="container3"
-                    x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
-                  >
-                    <div class="p-6">
-                      <p>
-                        For any frame adjustments, simply follow the
-                        step-by-step instructions in our leaflet or take a look
-                        at our
-                        <a href="/blog" class="text-link"
-                          >how to adjust new glasses page</a
-                        >
-                        on our blog. If you wish, you may also bring or send
-                        them to us for adjustments. If posting them to us for
-                        any adjustment, please be very specific (using a diagram
-                        if possible) in describing the adjustment you require.
+                        Single vision lenses are designed to correct a single field of vision, either nearsightedness or farsightedness. They have the same lens power throughout and are the most common type of prescription eyeglasses for people who need vision correction for one distance.
                       </p>
                     </div>
                   </div>
@@ -460,7 +385,7 @@
                   >
                     <div class="flex items-center justify-between">
                       <span class="pr-2">
-                        How do I order a pair of glasses?
+                        How do I order a pair of single vision glasses?
                       </span>
                       <div>
                         <span
@@ -478,7 +403,6 @@
                             xml:space="preserve"
                           >
                             <path
-                            class="dark:fill-gray-200"
                               id="XMLID_225_"
                               d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
                             />
@@ -514,11 +438,13 @@
                     @click="selected !== 5 ? selected = 5 : selected = null"
                   >
                     <div class="flex items-center justify-between">
-                      <span class="pr-2"> What Lenses do you offer? </span>
+                      <span class="pr-2">
+                        Are standard single vision lenses included in the price of glasses frames?
+                      </span>
                       <div>
                         <span
                           class="block text-lg transition-all"
-                          :class="selected === 4 ? 'rotate-90' : ''"
+                          :class="selected === 5 ? 'rotate-90' : ''"
                         >
                           <svg
                             class="h-5 w-5"
@@ -531,7 +457,6 @@
                             xml:space="preserve"
                           >
                             <path
-                            class="dark:fill-gray-200"
                               id="XMLID_225_"
                               d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
                             />
@@ -548,26 +473,7 @@
                   >
                     <div class="p-6">
                       <p>
-                        We offer a diverse selection of
-                        <a href="/lenses" class="text-link">lenses</a> which we
-                        source from the industry's leading suppliers. From
-                        <a href="/bifocal-glasses" class="text-link"
-                          >bifocals</a
-                        >
-                        and
-                        <a href="/varifocal-glasses" class="text-link"
-                          >varifocals</a
-                        >
-                        to
-                        <a href="/single-vision" class="text-link"
-                          >single vision lenses</a
-                        >, we cater to your every need. To further improve your
-                        lenses, we offer lens indexing for thinner lenses and an
-                        array of specialised coatings, including the
-                        <a href="/blue-light-glasses" class="text-link"
-                          >blue light filter</a
-                        >
-                        and our optician-approved honeycomb coating.
+                        Yes, standard single vision lenses are included in the price of <a href="/glasses" class="text-link">glasses</a>!
                       </p>
                     </div>
                   </div>
