@@ -2,7 +2,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../output.css" rel="stylesheet" />
-</head>
+  <script
+  defer
+  src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+></script>
+<script
+  defer
+  src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"
+></script></head>
 
 <div
   class="relative shadow-2xl shadow-gray-400 dark:shadow-none lg:grid lg:grid-cols-2"
@@ -661,7 +668,7 @@
                 @click="selected !== 1 ? selected = 1 : selected = null"
               >
                 <div class="flex items-center justify-between">
-                  <span class="pr-2"> What colour tints can you provide? </span>
+                  <span class="pr-2"> Can I return or exchange my prescription ski goggles if they don’t fit? </span>
                   <div>
                     <svg
                       class="h-5 w-5"
@@ -689,12 +696,7 @@
               >
                 <div class="p-6">
                   <p>
-                    We provide Grey, Brown and Green (G15) colour
-                    <a href="/mirrors-tints" class="text-link">tints</a>. Also,
-                    we are able to offer these in
-                    <a href="/polarised" class="text-link">polarised</a>
-                    options alongside Gold, Silver, Blue, Green and Red Mirror
-                    coatings.
+                    If you need to return your prescription goggles for an exchange or a refund, please notify us within 7 days of receipt and ensure their return within 30 days. Non-prescription glasses and sunglasses should be returned within 14 days from the date of dispatch and must be in their original, unused condition, including any accessories, case, and attached security tag. Upon return, we can credit your account with the total cost of the glasses or exchange them, adjusting the price as necessary, based on your choice.
                   </p>
                 </div>
               </div>
@@ -760,7 +762,7 @@
               >
                 <div class="flex items-center justify-between">
                   <span class="pr-2">
-                    How do I order a pair of sunglasses?
+                    How do I get my prescription fitted into ski goggles?
                   </span>
                   <div>
                     <span
@@ -795,118 +797,7 @@
               >
                 <div class="p-6">
                   <p>
-                    It’s simple! First select a frame you like from our
-                    <a href="/sunglasses" class="text-link">sunglasses</a>
-                    page. Next, click the ‘Select Lenses’ button and choose your
-                    lens type. Finally, upload your prescription if you have it.
-                    If not, don’t worry you can send this to us later.
-                  </p>
-                </div>
-              </div>
-            </li>
-
-            <li class="relative border-b border-gray-200">
-              <button
-                type="button"
-                class="w-full px-8 py-6 text-left"
-                @click="selected !== 4 ? selected = 4 : selected = null"
-              >
-                <div class="flex items-center justify-between">
-                  <span class="pr-2">
-                    Are polarised lenses available for your sunglasses?
-                  </span>
-                  <div>
-                    <span
-                      class="block text-lg transition-all"
-                      :class="selected === 4 ? 'rotate-90' : ''"
-                    >
-                      <svg
-                        class="h-5 w-5"
-                        fill="#000000"
-                        version="1.1"
-                        id="Layer_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        viewBox="0 0 330 330"
-                        xml:space="preserve"
-                      >
-                        <path
-                          class="dark:fill-gray-200"
-                          id="XMLID_225_"
-                          d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-              </button>
-
-              <div
-                class="relative max-h-0 overflow-hidden transition-all duration-700"
-                x-ref="container4"
-                x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
-              >
-                <div class="p-6">
-                  <p>
-                    Certainly! We do offer
-                    <a href="/polarised" class="text-link">polarised</a>
-                    lenses for our sunglasses. Polarized lenses are designed to
-                    reduce glare from surfaces like water, roads, and snow,
-                    enhancing visual clarity and comfort, especially in bright
-                    outdoor conditions
-                  </p>
-                </div>
-              </div>
-            </li>
-
-            <li class="relative border-b border-gray-200">
-              <button
-                type="button"
-                class="w-full px-8 py-6 text-left"
-                @click="selected !== 5 ? selected = 5 : selected = null"
-              >
-                <div class="flex items-center justify-between">
-                  <span class="pr-2">
-                    Do you offer sunglasses suitable for sports activities?
-                  </span>
-                  <div>
-                    <span
-                      class="block text-lg transition-all"
-                      :class="selected === 4 ? 'rotate-90' : ''"
-                    >
-                      <svg
-                        class="h-5 w-5"
-                        fill="#000000"
-                        version="1.1"
-                        id="Layer_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        viewBox="0 0 330 330"
-                        xml:space="preserve"
-                      >
-                        <path
-                          class="dark:fill-gray-200"
-                          id="XMLID_225_"
-                          d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-              </button>
-
-              <div
-                class="relative max-h-0 overflow-hidden transition-all duration-700"
-                x-ref="container4"
-                x-bind:style="selected == 5 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
-              >
-                <div class="p-6">
-                  <p>
-                    Yes, we offer a range of sunglasses specifically designed
-                    for sports activities. These sunglasses are crafted to
-                    provide a secure fit, durability, and enhanced protection
-                    against the elements, making them ideal for various sports
-                    and outdoor activities.
+                    We use prescription inserts, which are custom-made to match your prescription. These inserts easily fit inside the ski goggles, ensuring you have clear vision while on the slopes without compromising the style or functionality of the goggles.
                   </p>
                 </div>
               </div>
