@@ -16,27 +16,47 @@
     <div class="relative lg:grid lg:grid-cols-2">
       <img
         class="absolute h-full w-full object-cover lg:relative"
-        src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/banner_default_short.webp"
-        alt="Spex4Less Default Banner"
+        src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/hp_banner.webp"
         width="1228"
         height="500"
         loading="lazy"
       />
       <div
-        class="from-p lg:bg-s relative bg-gradient-to-t px-8 pb-12 pt-24 dark:from-slate-900"
+        class="from-p lg:bg-s relative bg-gradient-to-t px-8 pt-12 dark:from-slate-900 md:pt-24"
       >
         <div class="mx-auto flex max-w-2xl flex-col gap-10">
           <div
-            class="text-left text-6xl font-bold leading-none text-white drop-shadow-lg md:text-center lg:text-left xl:text-7xl"
+            class="text-left text-5xl font-bold leading-tight text-white drop-shadow-lg md:text-center md:text-5xl lg:text-left xl:text-7xl"
           >
             Reglaze
           </div>
           <div
-            class="max-w-2xl text-left text-2xl font-semibold leading-8 text-white md:text-center lg:text-left"
+            class="max-w-2xl text-left text-3xl font-semibold leading-normal text-white md:text-center lg:text-left"
           >
             Breathe new life into your favourite frames with our reglaze
             service.
           </div>
+          <div class="text-center lg:text-left">
+            <button
+              x-data="initSaoAddToCartButton($root)"
+              disabled
+              :disabled="loading || processing || othersProcessing || added"
+              type="button"
+              class="text-p hover:text-s hover:bg-l text-p mx-auto mt-6 inline-flex w-full items-center justify-center rounded-md border-2 border-transparent bg-white bg-none px-12 py-3 text-center text-2xl font-bold capitalize transition-all duration-1000 duration-700 ease-in-out ease-in-out hover:-translate-y-2 hover:shadow-2xl focus:shadow md:mt-8 md:w-5/6"
+            >
+              <span
+                x-html="!processing && !added ? 'Click here to order your reglaze' : (processing ? 'Processing' : 'Redirecting')"
+              ></span>
+            </button>
+          </div>
+          <img
+            class="hidden pb-4 pt-2 lg:block lg:pt-8"
+            src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/tp_stars_long.webp"
+          />
+          <img
+            class="mx-auto block w-full pb-4 pt-2 md:w-1/2 lg:hidden"
+            src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/tp-stars.webp"
+          />
         </div>
       </div>
     </div>
@@ -85,6 +105,242 @@
         </div>
       </div>
     </section>
+    <section
+      class="bg-l border-b-2 py-8 shadow-inner dark:border-none dark:bg-slate-900"
+    >
+      <div class="mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <h2
+          class="mb-4 text-center text-4xl font-bold tracking-tight text-slate-800 dark:text-gray-300 sm:text-5xl"
+        >
+          Read trusted reviews from our customers
+        </h2>
+        <div class="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
+          <blockquote
+            class="dark:bg-p rounded-lg bg-white p-6 shadow-sm sm:p-8"
+          >
+            <div class="flex items-center gap-4">
+              <div>
+                <div class="justify-left flex gap-0.5 text-green-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </div>
+                <p
+                  class="mt-0.5 text-lg font-medium text-gray-900 dark:text-gray-300"
+                >
+                  Frances
+                </p>
+              </div>
+            </div>
+            <p
+              class="mt-4 line-clamp-4 text-gray-700 dark:text-gray-200 lg:line-clamp-none"
+            >
+              Excellent value and superb customer service. Have used Specs4less
+              twice now and been really impressed. They reglaze as well as
+              providing new spectacles. My presciption is for photochromatic
+              varifocals and I save a lot of money using their service.
+              Thoroughly recommend!
+            </p>
+          </blockquote>
+          <blockquote
+            class="dark:bg-p rounded-lg bg-white p-6 shadow-sm sm:p-8"
+          >
+            <div class="flex items-center gap-4">
+              <div>
+                <div class="justify-left flex gap-0.5 text-green-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </div>
+                <p
+                  class="mt-0.5 text-lg font-medium text-gray-900 dark:text-gray-300"
+                >
+                  Nick
+                </p>
+              </div>
+            </div>
+            <p
+              class="mt-4 line-clamp-4 text-gray-700 dark:text-gray-200 lg:line-clamp-none"
+            >
+              I broke my specsavers prescription sunglasses and did not want to
+              pay there exorbitant prices and be forced to do an eye test I
+              didn’t need. So used Spex4less, unbelievable service! Ordered and
+              received within 7 days, exactly to prescription and amazing value.
+              I really cannot recommend these guys enough. 5 stars, thanks.
+            </p>
+          </blockquote>
+          <blockquote
+            class="dark:bg-p rounded-lg bg-white p-6 shadow-sm sm:p-8"
+          >
+            <div class="flex items-center gap-4">
+              <div>
+                <div class="justify-left flex gap-0.5 text-green-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </div>
+                <p
+                  class="mt-0.5 text-lg font-medium text-gray-900 dark:text-gray-300"
+                >
+                  Mr Phillips
+                </p>
+              </div>
+            </div>
+            <p
+              class="mt-4 line-clamp-4 text-gray-700 dark:text-gray-200 lg:line-clamp-none"
+            >
+              Excellent service, fast delivery from order being placed, price is
+              very good compared to alternative high street shops. Glasses as
+              described, excellent quality, very pleased. Will 100% be ordering
+              from them again. Returns and refund policy is very clear, and
+              reassuring if you dont like them or entered prescription wrong.
+              Would definately recommend!
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
 
     <section class="container mx-auto">
       <h2
@@ -97,11 +353,9 @@
           <div class="flex flex-row">
             <div class="hidden flex-col items-center md:flex">
               <div
-                class="mr-4 flex w-32 flex-col items-center justify-center rounded-xl border border-gray-200 py-5 uppercase"
+                class="bg-p mr-4 flex w-32 flex-col items-center justify-center rounded-xl border border-gray-200 py-5 uppercase"
               >
-                <div
-                  class="text-3xl font-black text-slate-800 dark:text-gray-300"
-                >
+                <div class="text-3xl font-black text-white dark:text-gray-300">
                   Step 1
                 </div>
               </div>
@@ -157,11 +411,9 @@
           <div class="flex flex-row-reverse">
             <div class="hidden flex-col items-center md:flex">
               <div
-                class="ml-4 flex w-32 flex-col items-center justify-center rounded-xl border border-gray-200 py-5 uppercase"
+                class="bg-p ml-4 flex w-32 flex-col items-center justify-center rounded-xl border border-gray-200 py-5 uppercase"
               >
-                <div
-                  class="text-3xl font-black text-slate-800 dark:text-gray-300"
-                >
+                <div class="text-3xl font-black text-white dark:text-gray-300">
                   Step 2
                 </div>
               </div>
@@ -227,11 +479,9 @@
           <div class="flex flex-row">
             <div class="hidden flex-col items-center md:flex">
               <div
-                class="mr-4 flex w-32 flex-col items-center justify-center rounded-xl border border-gray-200 py-5 uppercase"
+                class="bg-p mr-4 flex w-32 flex-col items-center justify-center rounded-xl border border-gray-200 py-5 uppercase"
               >
-                <div
-                  class="text-3xl font-black text-slate-800 dark:text-gray-300"
-                >
+                <div class="text-3xl font-black text-white dark:text-gray-300">
                   Step 3
                 </div>
               </div>
@@ -288,11 +538,9 @@
           <div class="flex flex-row-reverse">
             <div class="hidden flex-col items-center md:flex">
               <div
-                class="ml-4 flex w-32 flex-col items-center justify-center rounded-xl border border-gray-200 py-5 uppercase"
+                class="bg-p ml-4 flex w-32 flex-col items-center justify-center rounded-xl border border-gray-200 py-5 uppercase"
               >
-                <div
-                  class="text-3xl font-black text-slate-800 dark:text-gray-300"
-                >
+                <div class="text-3xl font-black text-white dark:text-gray-300">
                   Step 4
                 </div>
               </div>
@@ -370,241 +618,6 @@
     <section
       class="bg-l mt-24 border-b-2 py-12 shadow-inner dark:border-none dark:bg-slate-900"
     >
-      <section>
-        <div class="mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-          <h2
-            class="text-center text-4xl font-bold tracking-tight text-slate-800 dark:text-gray-300 sm:text-5xl"
-          >
-            Read trusted reviews from our customers
-          </h2>
-          <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
-            <blockquote
-              class="dark:bg-p rounded-lg bg-white p-6 shadow-sm sm:p-8"
-            >
-              <div class="flex items-center gap-4">
-                <div>
-                  <div class="justify-left flex gap-0.5 text-green-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                      />
-                    </svg>
-                  </div>
-                  <p
-                    class="mt-0.5 text-lg font-medium text-gray-900 dark:text-gray-300"
-                  >
-                    Frances
-                  </p>
-                </div>
-              </div>
-              <p
-                class="mt-4 line-clamp-4 text-gray-700 dark:text-gray-200 lg:line-clamp-none"
-              >
-                Excellent value and superb customer service. Have used
-                Specs4less twice now and been really impressed. They reglaze as
-                well as providing new spectacles. My presciption is for
-                photochromatic varifocals and I save a lot of money using their
-                service. Thoroughly recommend!
-              </p>
-            </blockquote>
-            <blockquote
-              class="dark:bg-p rounded-lg bg-white p-6 shadow-sm sm:p-8"
-            >
-              <div class="flex items-center gap-4">
-                <div>
-                  <div class="justify-left flex gap-0.5 text-green-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                      />
-                    </svg>
-                  </div>
-                  <p
-                    class="mt-0.5 text-lg font-medium text-gray-900 dark:text-gray-300"
-                  >
-                    Nick
-                  </p>
-                </div>
-              </div>
-              <p
-                class="mt-4 line-clamp-4 text-gray-700 dark:text-gray-200 lg:line-clamp-none"
-              >
-                I broke my specsavers prescription sunglasses and did not want
-                to pay there exorbitant prices and be forced to do an eye test I
-                didn’t need. So used Spex4less, unbelievable service! Ordered
-                and received within 7 days, exactly to prescription and amazing
-                value. I really cannot recommend these guys enough. 5 stars,
-                thanks.
-              </p>
-            </blockquote>
-            <blockquote
-              class="dark:bg-p rounded-lg bg-white p-6 shadow-sm sm:p-8"
-            >
-              <div class="flex items-center gap-4">
-                <div>
-                  <div class="justify-left flex gap-0.5 text-green-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                      />
-                    </svg>
-                  </div>
-                  <p
-                    class="mt-0.5 text-lg font-medium text-gray-900 dark:text-gray-300"
-                  >
-                    Mr Phillips
-                  </p>
-                </div>
-              </div>
-              <p
-                class="mt-4 line-clamp-4 text-gray-700 dark:text-gray-200 lg:line-clamp-none"
-              >
-                Excellent service, fast delivery from order being placed, price
-                is very good compared to alternative high street shops. Glasses
-                as described, excellent quality, very pleased. Will 100% be
-                ordering from them again. Returns and refund policy is very
-                clear, and reassuring if you dont like them or entered
-                prescription wrong. Would definately recommend!
-              </p>
-            </blockquote>
-          </div>
-        </div>
-      </section>
       <section class="my-12 w-full">
         <h2
           class="mb-6 text-center text-3xl font-bold text-slate-800 dark:text-gray-300 md:my-8 md:text-3xl lg:text-5xl"

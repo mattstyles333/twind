@@ -14,32 +14,40 @@
   ></script>
 </head>
 
-<section>
+<section id="menu-desktop-glasses">
   <div
     class="container mx-auto mt-2 flex max-w-6xl flex-col px-2 py-4 sm:flex-row"
   >
     <!-- Left Side: Tabs -->
     <div
-      class="mx-auto w-full border-0 border-gray-100 sm:mb-0 sm:flex-1 md:border-r-2 md:px-2"
+      class="mx-auto w-full border-r-2 border-gray-100 sm:mb-0 sm:flex-1"
+      x-data="initMenuDesktopAdditional()"
+      x-init="initialize('#menu-desktop-glasses'); $nextTick(() => buildAll())"
     >
       <div class="mx-auto flex w-full max-w-lg text-lg">
         <!-- First tab: Men's -->
         <div
-          class="hover:bg-s focus:bg-s bg-l border-p flex-1 cursor-pointer rounded-l-full border-b-2 border-l-2 border-t-2 py-3 text-center text-xl text-black transition duration-700 ease-in-out hover:text-white"
+          @click="active_tab = (0 === active_tab ? 0 : 0)"
+          class="border-p flex-1 cursor-pointer rounded-l-full border-b-2 border-l-2 border-t-2 py-3 text-center transition duration-700 ease-in-out"
+          :class="{'hover:bg-s' : active_tab !== 0, 'bg-s' : active_tab === 0, 'bg-l' : active_tab !== 0,
+                        'hover:text-white' : active_tab !== 0, 'text-white' : active_tab === 0, 'text-black' : active_tab !== 0}"
         >
           Men's
         </div>
-
-        <!-- Second tab: All -->
         <div
-          class="hover:bg-s bg-l flex-2 focus:bg-s border-p cursor-pointer border-2 px-2 py-3 text-center text-black transition duration-700 ease-in-out hover:text-white md:px-8"
+          @click="active_tab = (1 === active_tab ? 0 : 1)"
+          class="border-p flex-2 cursor-pointer border-2 px-8 py-3 text-center transition duration-700 ease-in-out"
+          :class="{'hover:bg-s' : active_tab !== 1, 'bg-s' : active_tab === 1, 'bg-l' : active_tab !== 1,
+                        'hover:text-white' : active_tab !== 1, 'text-white' : active_tab === 1, 'text-black' : active_tab !== 1}"
         >
           All
         </div>
-
-        <!-- Third tab: Women's -->
+        <!-- Second tab: Women's -->
         <div
-          class="hover:bg-s bg-l focus:bg-s border-p flex-1 cursor-pointer rounded-r-full border-b-2 border-r-2 border-t-2 py-3 text-center text-xl text-black transition duration-700 ease-in-out hover:text-white"
+          @click="active_tab = (2 === active_tab ? 0 : 2)"
+          class="border-p flex-1 cursor-pointer rounded-r-full border-b-2 border-r-2 border-t-2 py-3 text-center transition duration-700 ease-in-out"
+          :class="{'hover:bg-s' : active_tab !== 2, 'bg-s' : active_tab === 2, 'bg-l' : active_tab !== 2,
+                        'hover:text-white' : active_tab !== 2, 'text-white' : active_tab === 2, 'text-black' : active_tab !== 2}"
         >
           Women's
         </div>
@@ -47,27 +55,141 @@
 
       <!-- Two columns of text below the tabs -->
       <div class="pb-4 text-left text-xl">
-        <div class="mx-auto grid max-w-md grid-cols-2 py-3">
+        <!-- All -->
+        <div
+          class="mx-auto grid max-w-md grid-cols-2 py-3"
+          x-show="active_tab === 1"
+        >
           <!-- First Column -->
           <div class="ml-4 space-y-6">
-            <p class="hover:underline"><a href="/glasses">Shop All</a></p>
-            <p class="hover:underline"><a href="/glasses">New Frames</a></p>
-            <p class="hover:underline"><a href="/glasses">Best Sellers</a></p>
             <p class="hover:underline">
-              <a href="/designer-glasses">Designer</a>
+              <a href="/glasses">Shop All [A]</a>
+            </p>
+            <p class="hover:underline">
+              <a
+                class="dynamic-link-item"
+                data-href='{"url" : "/glasses", "queryParts" : {"product_list_order" : "sort-by-date", "product_list_dir" : "desc"}}'
+              >
+                New Frames [A]
+              </a>
+            </p>
+            <p class="hover:underline">
+              <a
+                class="dynamic-link-item"
+                data-href='{"url" : "/glasses", "queryParts" : {"product_list_order" : "sort-by-rate", "product_list_dir" : "desc"}}'
+              >
+                Best Sellers [A]
+              </a>
+            </p>
+            <p class="hover:underline">
+              <a href="/designer-glasses">Designer [A]</a>
             </p>
           </div>
           <!-- Second Column -->
           <div class="ml-4 space-y-6">
-            <p class="hover:underline"><a href="/glasses">Clearance</a></p>
             <p class="hover:underline">
-              <a href="/reading-glasses">Reading Glasses</a>
+              <a href="/clearance-glasses">Clearance [A]</a>
             </p>
             <p class="hover:underline">
-              <a href="/bifocal-glasses">Bifocal Glasses</a>
+              <a href="/reading-glasses">Reading Glasses [A]</a>
             </p>
             <p class="hover:underline">
-              <a href="varifocal-glasses">Varifocal Glasses</a>
+              <a href="/bifocal-glasses">Bifocal Glasses [A]</a>
+            </p>
+            <p class="hover:underline">
+              <a href="/varifocal-glasses">Varifocal Glasses [A]</a>
+            </p>
+          </div>
+        </div>
+        <!-- Men's -->
+        <div
+          class="mx-auto grid max-w-md grid-cols-2 py-3"
+          x-show="active_tab === 0"
+        >
+          <!-- First Column -->
+          <div class="ml-4 space-y-6">
+            <p class="hover:underline">
+              <a href="/glasses/mens">Shop All [M]</a>
+            </p>
+            <p class="hover:underline">
+              <a
+                class="dynamic-link-item"
+                data-href='{"url" : "/glasses/mens", "queryParts" : {"product_list_order" : "sort-by-date", "product_list_dir" : "desc"}}'
+              >
+                New Frames [M]
+              </a>
+            </p>
+            <p class="hover:underline">
+              <a
+                class="dynamic-link-item"
+                data-href='{"url" : "/glasses/mens", "queryParts" : {"product_list_order" : "sort-by-rate", "product_list_dir" : "desc"}}'
+              >
+                Best Sellers [M]
+              </a>
+            </p>
+            <p class="hover:underline">
+              <a href="/designer-glasses/mens">Designer [M]</a>
+            </p>
+          </div>
+          <!-- Second Column -->
+          <div class="ml-4 space-y-6">
+            <p class="hover:underline">
+              <a href="/clearance-glasses/mens">Clearance [M]</a>
+            </p>
+            <p class="hover:underline">
+              <a href="/reading-glasses/mens">Reading Glasses [M]</a>
+            </p>
+            <p class="hover:underline">
+              <a href="/bifocal-glasses/mens">Bifocal Glasses [M]</a>
+            </p>
+            <p class="hover:underline">
+              <a href="/varifocal-glasses/mens">Varifocal Glasses [M]</a>
+            </p>
+          </div>
+        </div>
+        <!-- Women's -->
+        <div
+          class="mx-auto grid max-w-md grid-cols-2 py-3"
+          x-show="active_tab === 2"
+        >
+          <!-- First Column -->
+          <div class="ml-4 space-y-6">
+            <p class="hover:underline">
+              <a href="/glasses/womens">Shop All [W]</a>
+            </p>
+            <p class="hover:underline">
+              <a
+                class="dynamic-link-item"
+                data-href='{"url" : "/glasses/womens", "queryParts" : {"product_list_order" : "sort-by-date", "product_list_dir" : "desc"}}'
+              >
+                New Frames [W]
+              </a>
+            </p>
+            <p class="hover:underline">
+              <a
+                class="dynamic-link-item"
+                data-href='{"url" : "/glasses/womens", "queryParts" : {"product_list_order" : "sort-by-rate", "product_list_dir" : "desc"}}'
+              >
+                Best Sellers [W]
+              </a>
+            </p>
+            <p class="hover:underline">
+              <a href="/designer-glasses/womens">Designer [W]</a>
+            </p>
+          </div>
+          <!-- Second Column -->
+          <div class="ml-4 space-y-6">
+            <p class="hover:underline">
+              <a href="/clearance-glasses/womens">Clearance [W]</a>
+            </p>
+            <p class="hover:underline">
+              <a href="/reading-glasses/womens">Reading Glasses [W]</a>
+            </p>
+            <p class="hover:underline">
+              <a href="/bifocal-glasses/womens">Bifocal Glasses [W]</a>
+            </p>
+            <p class="hover:underline">
+              <a href="/varifocal-glasses/womens">Varifocal Glasses [M]</a>
             </p>
           </div>
         </div>
@@ -83,7 +205,7 @@
       <div class="grid grid-cols-3 gap-4 md:grid-cols-3 lg:grid-cols-3">
         <a
           href="/glasses/aviator"
-          class="group mx-auto flex flex-col items-center"
+          class="group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
         >
           <svg
             width="110"
@@ -100,11 +222,11 @@
             />
           </svg>
 
-          <p class="mt-3 text-center">Aviator Glasses</p>
+          <p class="mt-3 text-center group-hover:underline">Aviator Glasses</p>
         </a>
         <a
           href="/glasses/cat-eye"
-          class="group mx-auto flex flex-col items-center"
+          class="group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
         >
           <svg
             width="110"
@@ -121,11 +243,11 @@
             />
           </svg>
 
-          <p class="mt-3 text-center">Cat Eye Glasses</p>
+          <p class="mt-3 text-center group-hover:underline">Cat Eye Glasses</p>
         </a>
         <a
           href="/glasses/clubmaster"
-          class="group mx-auto flex flex-col items-center"
+          class="group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
         >
           <svg
             width="110"
@@ -142,11 +264,13 @@
             />
           </svg>
 
-          <p class="mt-3 text-center">Clubmaster Glasses</p>
+          <p class="mt-3 text-center group-hover:underline">
+            Clubmaster Glasses
+          </p>
         </a>
         <a
-          href="/glasses/regular"
-          class="group mx-auto flex flex-col items-center"
+          data-href='{"url" : "glasses", "queryParts" : {"a1_frame_shape" : "Regular"}}'
+          class="dynamic-link-item group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
         >
           <svg
             width="110"
@@ -163,11 +287,11 @@
             />
           </svg>
 
-          <p class="mt-3 text-center">Regular Glasses</p>
+          <p class="mt-3 text-center group-hover:underline">Regular Glasses</p>
         </a>
         <a
           href="/glasses/round"
-          class="group mx-auto flex flex-col items-center"
+          class="group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
         >
           <svg
             width="110"
@@ -184,11 +308,11 @@
             />
           </svg>
 
-          <p class="mt-3 text-center">Round Glasses</p>
+          <p class="mt-3 text-center group-hover:underline">Round Glasses</p>
         </a>
         <a
           href="/glasses/wayfarer"
-          class="group mx-auto flex flex-col items-center"
+          class="group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
         >
           <svg
             width="110"
@@ -205,11 +329,11 @@
             />
           </svg>
 
-          <p class="mt-3 text-center">Wayfarer Glasses</p>
+          <p class="mt-3 text-center group-hover:underline">Wayfarer Glasses</p>
         </a>
         <a
           href="/glasses/full-rimmed"
-          class="group mx-auto flex flex-col items-center"
+          class="group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
         >
           <svg
             width="110"
@@ -249,11 +373,13 @@
             />
           </svg>
 
-          <p class="mt-3 text-center">Full-rimmed Glasses</p>
+          <p class="mt-3 text-center group-hover:underline">
+            Full-rimmed Glasses
+          </p>
         </a>
         <a
           href="/glasses/semi-rimless"
-          class="group mx-auto flex flex-col items-center"
+          class="group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
         >
           <svg
             width="110"
@@ -278,11 +404,13 @@
             />
           </svg>
 
-          <p class="mt-3 text-center">Semi-rimless Glasses</p>
+          <p class="mt-3 text-center group-hover:underline">
+            Semi-rimless Glasses
+          </p>
         </a>
         <a
           href="/glasses/rimless"
-          class="group mx-auto flex flex-col items-center"
+          class="group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
         >
           <svg
             width="110"
@@ -318,7 +446,7 @@
             />
           </svg>
 
-          <p class="mt-3 text-center">Rimless Glasses</p>
+          <p class="mt-3 text-center group-hover:underline">Rimless Glasses</p>
         </a>
       </div>
     </div>
