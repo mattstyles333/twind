@@ -15,36 +15,34 @@
         loading="lazy"
       />
       <div
-        class="from-p lg:bg-s relative bg-gradient-to-t px-8 pb-12 pt-16 dark:from-slate-900 lg:pt-24"
+        class="from-p lg:bg-s relative bg-gradient-to-t px-8 pt-12 dark:from-slate-900 md:pt-24"
       >
         <div class="mx-auto flex max-w-2xl flex-col gap-10">
           <div
-            class="text-left text-6xl font-bold leading-none text-white drop-shadow-lg md:text-center lg:text-left xl:text-7xl"
+            class="text-left text-5xl font-bold leading-tight text-white drop-shadow-lg md:text-center md:text-5xl lg:text-left xl:text-7xl"
           >
             Clip on Sunglasses
           </div>
           <div
-            class="max-w-2xl text-left text-2xl font-semibold leading-8 text-white md:text-center lg:text-left"
+            class="max-w-2xl text-left text-3xl font-semibold leading-normal text-white md:text-center lg:text-left"
           >
             Transform your look with our collection of clip-on sunglasses
           </div>
-          <div
-            class="flex flex-col justify-center gap-4 sm:flex-row lg:flex-wrap lg:justify-start"
-          >
-            <a
-              href="{{store url='home'}}"
-              class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-5 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl sm:gap-4 md:w-48"
-            >
-              <span class="mx-auto">Shop Now</span>
-            </a>
-          </div>
+          <img
+            class="hidden pb-4 pt-2 lg:block lg:pt-8"
+            src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/tp_stars_long.webp"
+          />
+          <img
+            class="mx-auto block w-full pb-4 pt-2 md:w-1/2 lg:hidden"
+            src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/tp-stars.webp"
+          />
         </div>
       </div>
     </div>
     <section class="container mx-auto">
-      <div class="my-24">
+      <div class="my-12">
         <p
-          class="mx-auto mt-6 max-w-5xl text-center text-xl leading-loose text-gray-700 dark:text-gray-200"
+          class="mx-auto mt-6 max-w-5xl text-center text-xl leading-loose dark:text-gray-200"
         >
           Upgrade your frames with clip-on sunglasses from Spex4less. Our
           clip-on sunglasses offer the perfect blend of style and convenience,
@@ -52,9 +50,16 @@
         </p>
       </div>
     </section>
-    <section class="container mx-auto">
-      <div class="mt-24 grid lg:grid-cols-2 lg:items-center lg:gap-8 lg:px-12">
-        <div>
+    <section class="container mx-auto py-4">
+      <div class="lg:flex lg:flex-row lg:items-center lg:gap-8 lg:px-12">
+        <div aria-hidden="true" class="w-full px-4 lg:mt-0 lg:w-1/3">
+          <img
+            src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/clip_on.webp"
+            alt="clip on sunglasses"
+            class="hidden rounded-lg lg:block"
+          />
+        </div>
+        <div class="w-full lg:w-2/3">
           <h3
             class="text-left text-3xl font-bold text-slate-800 dark:text-gray-300"
           >
@@ -68,7 +73,7 @@
             instantly transforming them into fashionable and functional
             sunglasses.
           </p>
-          <div class="mt-12 space-y-12">
+          <div class="mt-8 space-y-8">
             <div class="jusitfy-center flex">
               <div class="">
                 <h4
@@ -102,25 +107,11 @@
             </div>
           </div>
         </div>
-        <div aria-hidden="true" class="mt-10 px-12 lg:mt-0">
-          <img
-            src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/clip_on.webp"
-            alt="clip on sunglasses"
-            class="mx-auto rounded-lg shadow-xl shadow-gray-500 dark:shadow-none"
-          />
-        </div>
       </div>
     </section>
-    <section class="container mx-auto lg:mt-24">
-      <div class="grid lg:grid-cols-2 lg:items-center lg:gap-8 lg:px-12">
-        <div aria-hidden="true" class="mb-12 px-12 lg:mt-0">
-          <img
-            src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/clipon_magnet.webp"
-            alt="clip on magnetic sunglasses"
-            class="mx-auto my-12 hidden rounded-lg shadow-xl shadow-gray-500 dark:shadow-none lg:block"
-          />
-        </div>
-        <div>
+    <section class="container mx-auto pt-8">
+      <div class="lg:flex lg:flex-row lg:items-center lg:gap-8 lg:px-12">
+        <div class="w-full lg:w-2/3">
           <h3
             class="text-left text-4xl font-bold text-slate-800 dark:text-gray-300"
           >
@@ -141,6 +132,13 @@
             microfibre cloth. Dive into our collection and explore the perfect
             pair for you!
           </p>
+        </div>
+        <div aria-hidden="true" class="w-full px-4 py-12 lg:mt-0 lg:w-1/3">
+          <img
+            src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/clipon_magnet.webp"
+            alt="clip on sunglasses"
+            class="mx-auto rounded-lg lg:mx-0"
+          />
         </div>
       </div>
     </section>

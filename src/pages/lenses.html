@@ -6,48 +6,37 @@
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
   <section class="dark:bg-p bg-white dark:text-gray-200">
-    <div
-      class="relative  lg:grid lg:grid-cols-2"
-    >
+    <div class="relative lg:grid lg:grid-cols-2">
       <img
         class="absolute h-full w-full object-cover lg:relative"
-        src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/banner_default_short.webp"
-        alt="spex4less default banner"
+        src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/banner_default_2.webp"
         width="1228"
         height="500"
         loading="lazy"
       />
       <div
-        class="from-p lg:bg-s relative bg-gradient-to-t px-8 pb-12 pt-24 dark:from-slate-900"
+        class="from-p lg:bg-s relative bg-gradient-to-t px-8 pt-12 dark:from-slate-900 md:pt-24"
       >
         <div class="mx-auto flex max-w-2xl flex-col gap-10">
           <div
-            class="text-left text-6xl font-bold leading-none text-white drop-shadow-lg md:text-center lg:text-left xl:text-7xl"
+            class="text-left text-5xl font-bold leading-tight text-white drop-shadow-lg md:text-center md:text-5xl lg:text-left xl:text-7xl"
           >
             Clear Vision: Premium Lenses
           </div>
           <div
-            class="max-w-2xl text-left text-2xl font-semibold leading-8 text-white md:text-center lg:text-left"
+            class="max-w-2xl text-left text-3xl font-semibold leading-normal text-white md:text-center lg:text-left"
           >
             Discover our range of quality lenses designed for clarity, comfort,
             and style, suited for every vision need.
           </div>
-          <div
-            class="flex flex-col justify-center gap-4 sm:flex-row lg:flex-wrap lg:justify-start"
-          >
-            <a
-              href="/glasses/mens"
-              class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-5 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl sm:gap-4 md:w-48"
-            >
-              <span class="mx-auto">Shop Men</span>
-            </a>
-            <a
-              href="/glasses/womens"
-              class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-5 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl sm:gap-4 md:w-48"
-            >
-              <span class="mx-auto">Shop Women</span>
-            </a>
-          </div>
+          <img
+            class="hidden pb-4 pt-2 lg:block lg:pt-8"
+            src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/tp_stars_long.webp"
+          />
+          <img
+            class="mx-auto block w-full pb-4 pt-2 md:w-1/2 lg:hidden"
+            src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/tp-stars.webp"
+          />
         </div>
       </div>
     </div>
@@ -426,7 +415,7 @@
         <div class="mt-4 md:mt-12">
           <!-- 2 rows, 3 columns on large screens -->
           <div
-            class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 md:px-2 lg:gap-8 xl:gap-16"
+            class="grid grid-cols-1 gap-4 md:grid-cols-2 md:px-2 lg:grid-cols-3 lg:gap-8 xl:gap-16"
           >
             <!-- Column 1 -->
             <div
@@ -501,7 +490,7 @@
               </a>
             </div>
             <div
-              class="group md:col-span-2 lg:col-span-1 relative mb-12 rounded-lg bg-white shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:bg-gray-50 hover:shadow-xl hover:shadow-gray-500 dark:bg-gray-300 dark:bg-gray-300 dark:hover:shadow-none dark:hover:shadow-none"
+              class="group relative mb-12 rounded-lg bg-white shadow-lg filter duration-1000 ease-in-out hover:-translate-y-6 hover:bg-gray-50 hover:shadow-xl hover:shadow-gray-500 dark:bg-gray-300 dark:bg-gray-300 dark:hover:shadow-none dark:hover:shadow-none md:col-span-2 lg:col-span-1"
             >
               <a href="/sunglasses">
                 <img
@@ -567,22 +556,21 @@
                       </span>
                       <div>
                         <svg
-                            class="h-5 w-5"
-                            fill="#000000"
-                            version="1.1"
-                            id="Layer_1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                            viewBox="0 0 330 330"
-                            xml:space="preserve"
-                          >
-                            <path
-                              class="dark:fill-gray-200"
-                              id="XMLID_225_"
-                              d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-                            />
-                          </svg>
-                        </span>
+                          class="h-5 w-5"
+                          fill="#000000"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330"
+                          xml:space="preserve"
+                        >
+                          <path
+                            class="dark:fill-gray-200"
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                          />
+                        </svg>
                       </div>
                     </div>
                   </button>
@@ -681,7 +669,7 @@
                             xml:space="preserve"
                           >
                             <path
-                            class="dark:fill-gray-200"
+                              class="dark:fill-gray-200"
                               id="XMLID_225_"
                               d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
                             />
@@ -725,7 +713,9 @@
 
           <div class="mt-12 grid items-center gap-6 lg:grid-cols-2 lg:gap-16">
             <!-- Card -->
-            <div class="flex flex-col rounded-xl border p-4 sm:p-6 lg:p-8 bg-white dark:bg-p">
+            <div
+              class="dark:bg-p flex flex-col rounded-xl border bg-white p-4 sm:p-6 lg:p-8"
+            >
               <section>
                 <div class="container mx-auto max-w-7xl">
                   <div class="mb-6 flex w-full flex-col rounded-xl">
@@ -932,31 +922,31 @@
       </div>
 
       <section class="">
-        <div class="mx-auto px-4 max-w-screen-2xllg:py-16">
+        <div class="max-w-screen-2xllg:py-16 mx-auto px-4">
           <div class="mx-auto flex justify-center text-center">
-          <svg
-            class="pb-2"
-            width="50"
-            height="50"
-            viewBox="0 0 864 822"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M863.38 314.017H533.685L431.849 0L329.695 314.017L0 313.699L267.002 507.969L164.847 821.668L431.849 627.716L698.532 821.668L596.696 507.969L863.38 314.017Z"
-              fill="#00B67A"
-            />
-            <path
-              d="M619.609 578.989L596.696 507.969L431.849 627.716L619.609 578.989Z"
-              fill="#005128"
-            />
-          </svg>
-          <span
-            class="text-left text-4xl font-bold tracking-tight text-slate-800 dark:text-gray-300 md:text-5xl lg:text-center"
-          >
-            Trustpilot reviews from our customers
-          </span>
-        </div>
+            <svg
+              class="pb-2"
+              width="50"
+              height="50"
+              viewBox="0 0 864 822"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M863.38 314.017H533.685L431.849 0L329.695 314.017L0 313.699L267.002 507.969L164.847 821.668L431.849 627.716L698.532 821.668L596.696 507.969L863.38 314.017Z"
+                fill="#00B67A"
+              />
+              <path
+                d="M619.609 578.989L596.696 507.969L431.849 627.716L619.609 578.989Z"
+                fill="#005128"
+              />
+            </svg>
+            <span
+              class="text-left text-4xl font-bold tracking-tight text-slate-800 dark:text-gray-300 md:text-5xl lg:text-center"
+            >
+              Trustpilot reviews from our customers
+            </span>
+          </div>
 
           <div class="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
             <blockquote
