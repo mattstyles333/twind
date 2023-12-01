@@ -28,7 +28,7 @@
         <!-- First tab: Men's -->
         <div
           @click="active_tab = (0 === active_tab ? 0 : 0)"
-          class="border-p flex-1 cursor-pointer rounded-l-full border-b-2 border-l-2 border-t-2 py-3 text-center transition duration-700 ease-in-out"
+          class="border-p flex-1 cursor-pointer rounded-l-full border-b-2 border-l-2 border-t-2 py-2 text-center transition duration-700 ease-in-out"
           :class="{'hover:bg-s' : active_tab !== 0, 'bg-s' : active_tab === 0, 'bg-l' : active_tab !== 0,
                         'hover:text-white' : active_tab !== 0, 'text-white' : active_tab === 0, 'text-black' : active_tab !== 0}"
         >
@@ -36,7 +36,7 @@
         </div>
         <div
           @click="active_tab = (1 === active_tab ? 0 : 1)"
-          class="border-p flex-2 cursor-pointer border-2 px-8 py-3 text-center transition duration-700 ease-in-out"
+          class="border-p flex-2 cursor-pointer border-2 px-8 py-2 text-center transition duration-700 ease-in-out"
           :class="{'hover:bg-s' : active_tab !== 1, 'bg-s' : active_tab === 1, 'bg-l' : active_tab !== 1,
                         'hover:text-white' : active_tab !== 1, 'text-white' : active_tab === 1, 'text-black' : active_tab !== 1}"
         >
@@ -45,7 +45,7 @@
         <!-- Second tab: Women's -->
         <div
           @click="active_tab = (2 === active_tab ? 0 : 2)"
-          class="border-p flex-1 cursor-pointer rounded-r-full border-b-2 border-r-2 border-t-2 py-3 text-center transition duration-700 ease-in-out"
+          class="border-p flex-1 cursor-pointer rounded-r-full border-b-2 border-r-2 border-t-2 py-2 text-center transition duration-700 ease-in-out"
           :class="{'hover:bg-s' : active_tab !== 2, 'bg-s' : active_tab === 2, 'bg-l' : active_tab !== 2,
                         'hover:text-white' : active_tab !== 2, 'text-white' : active_tab === 2, 'text-black' : active_tab !== 2}"
         >
