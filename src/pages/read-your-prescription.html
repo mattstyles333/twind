@@ -5,55 +5,57 @@
     <link href="../output.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
-  <section class="dark:bg-p bg-white dark:text-gray-200">
-    <div class="relative lg:grid lg:grid-cols-2">
-      <img
-        class="absolute h-full w-full object-cover lg:relative"
-        src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/banner_default_2.webp"
-        width="1228"
-        height="500"
-        loading="lazy"
-      />
-      <div
-        class="from-p to-p/75 lg:bg-s dark:tp-slate-900 relative bg-gradient-to-t px-8 pt-8 dark:to-slate-900/75 md:pt-16 lg:to-transparent lg:pt-24"
-      >
-        <div class="mx-auto flex max-w-3xl flex-col gap-6 md:gap-8 lg:gap-10">
-          <div
-            class="text-left text-3xl font-extrabold leading-tight text-white drop-shadow-lg md:text-center md:text-3xl lg:text-left lg:text-4xl lg:text-4xl xl:text-6xl"
+  <div class="relative lg:grid lg:grid-cols-2">
+    <img
+      class="absolute h-full w-full object-cover lg:relative"
+      src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/banner_default_2.webp"
+      width="1228"
+      height="500"
+      loading="lazy"
+    />
+    <div
+      class="from-p to-p/75 lg:bg-s dark:tp-slate-900 relative bg-gradient-to-t px-8 pt-8 dark:to-slate-900/75 md:pt-16 lg:to-transparent lg:pt-24"
+    >
+      <div class="mx-auto flex max-w-3xl flex-col gap-6 md:gap-8 lg:gap-10">
+        <div
+          class="text-left text-3xl font-extrabold leading-tight text-white drop-shadow-lg md:text-center md:text-3xl lg:text-left lg:text-4xl lg:text-4xl xl:text-6xl"
+        >
+          How to read your prescription
+        </div>
+        <div
+          class="max-w-2xl text-left text-xl font-medium leading-normal text-white md:text-center md:text-2xl lg:text-left lg:text-3xl lg:text-4xl"
+        >
+          Got your glasses prescription? Here's a quick guide to understanding
+          it!
+        </div>
+        <div class="pb-4">
+          <a
+            href="https://uk.trustpilot.com/review/www.spex4less.com"
+            target="_blank"
           >
-            How to read your prescription
-          </div>
-          <div
-            class="max-w-2xl text-left text-xl font-medium leading-normal text-white md:text-center md:text-2xl lg:text-left lg:text-3xl lg:text-4xl"
+            <img
+              class="hidden lg:block"
+              src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/tp_stars_long.webp"
+            />
+          </a>
+          <a
+            href="https://uk.trustpilot.com/review/www.spex4less.com"
+            target="_blank"
           >
-            Got your glasses prescription? Here's a quick guide to understanding
-            it!
-          </div>
-          <div class="pb-4">
-            <a
-              href="https://uk.trustpilot.com/review/www.spex4less.com"
-              target="_blank"
-            >
-              <img
-                class="hidden lg:block"
-                src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/tp_stars_long.webp"
-              />
-            </a>
-            <a
-              href="https://uk.trustpilot.com/review/www.spex4less.com"
-              target="_blank"
-            >
-              <img
-                class="mx-auto block w-full md:w-1/2 lg:hidden"
-                src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/tp-stars.webp"
-              />
-            </a>
-          </div>
+            <img
+              class="mx-auto block w-full md:w-1/2 lg:hidden"
+              src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/tp-stars.webp"
+            />
+          </a>
         </div>
       </div>
     </div>
-    <section class="px-2 md:px-4">
-      <div class="container mx-auto mb-8 mt-24">
+  </div>
+  <section
+    class="dark:bg-p container mx-auto max-w-6xl bg-white dark:text-gray-200"
+  >
+    <section class="std-section">
+      <div class="container mx-auto mb-8">
         <h1 class="mb-4 text-3xl font-semibold lg:text-4xl">
           What Do The Values On Your Prescription Mean?
         </h1>
@@ -188,7 +190,7 @@
         </div>
       </div>
       <section class="md:px-4">
-        <div class="container mx-auto mb-8 mt-24">
+        <div class="container mx-auto mb-8 mt-8">
           <h1 class="mb-4 text-3xl font-semibold lg:text-4xl">
             Different Prescriptions and How to Enter Your Values On Our Site.
           </h1>
@@ -201,8 +203,8 @@
               and how they would be entered on our website.
             </p>
           </div>
-          <div class="container mx-auto mb-8 mt-24">
-            <div class="justify-left flex flex-col gap-4 lg:flex-row">
+          <div class="container mx-auto mb-8 mt-8">
+            <div class="justify-left flex flex-col gap-4 py-8 lg:flex-row">
               <!-- First image container -->
               <div aria-hidden="true" class="p-0 md:p-2">
                 <h1 class="mb-4 text-2xl font-semibold">NHS Prescription</h1>
@@ -212,25 +214,23 @@
                   class="rounded-lg border-2 border-gray-300 bg-white shadow-md duration-1000 ease-in-out hover:shadow-lg"
                 />
               </div>
-
-              <!-- Second image container -->
-              <div aria-hidden="true" class="p-0 md:p-2">
-                <div class="mb-6">
-                  <p class="mb-2">
-                    This prescription could be entered on our website as shown.
-                  </p>
-                </div>
-                <img
-                  src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/nhs_prescription2.webp"
-                  alt="nhs prescription on our website"
-                  class="rounded-lg border-2 border-gray-300 bg-white shadow-md duration-1000 ease-in-out hover:shadow-lg"
-                />
+            </div>
+            <div aria-hidden="true" class="p-0 md:p-2">
+              <div class="mb-6">
+                <p class="mb-2">
+                  This prescription could be entered on our website as shown.
+                </p>
               </div>
+              <img
+                src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/nhs_prescription2.webp"
+                alt="nhs prescription on our website"
+                class="rounded-lg border-2 border-gray-300 bg-white shadow-md duration-1000 ease-in-out hover:shadow-lg"
+              />
             </div>
           </div>
 
-          <div class="container mx-auto mb-8 mt-24">
-            <div class="flex flex-col justify-center gap-4 md:flex-row">
+          <div class="container mx-auto mb-8">
+            <div class="justify-left flex flex-col gap-4 py-8 md:flex-row">
               <!-- First image container -->
               <div aria-hidden="true" class="px-0 md:px-2">
                 <h1 class="mb-4 text-2xl font-semibold">Boots Prescription</h1>
@@ -241,25 +241,23 @@
                   class="rounded-lg border-2 border-gray-300 bg-white shadow-md duration-1000 ease-in-out hover:shadow-lg"
                 />
               </div>
-
-              <!-- Second image container -->
-              <div aria-hidden="true" class="px-0 md:px-2">
-                <div class="mb-6">
-                  <p class="mb-2">
-                    This prescription could be entered on our website as shown.
-                  </p>
-                </div>
-                <img
-                  src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/boots_prescription.webp"
-                  alt="boots prescription on our website"
-                  class="rounded-lg border-2 border-gray-300 bg-white shadow-md duration-1000 ease-in-out hover:shadow-lg"
-                />
+            </div>
+            <div aria-hidden="true" class="px-0 md:px-2">
+              <div class="mb-6">
+                <p class="mb-2">
+                  This prescription could be entered on our website as shown.
+                </p>
               </div>
+              <img
+                src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/boots_prescription.webp"
+                alt="boots prescription on our website"
+                class="rounded-lg border-2 border-gray-300 bg-white shadow-md duration-1000 ease-in-out hover:shadow-lg"
+              />
             </div>
           </div>
 
-          <div class="container mx-auto mb-8 mt-24">
-            <div class="flex flex-col justify-center gap-4 md:flex-row">
+          <div class="container mx-auto mb-8">
+            <div class="justify-left flex flex-col gap-4 py-8 md:flex-row">
               <!-- First image container -->
               <div aria-hidden="true" class="px-0 md:px-2">
                 <h1 class="mb-4 text-2xl font-semibold">
@@ -272,24 +270,22 @@
                   class="rounded-lg border-2 border-gray-300 bg-white shadow-md duration-1000 ease-in-out hover:shadow-lg"
                 />
               </div>
-
-              <!-- Second image container -->
-              <div aria-hidden="true" class="px-0 md:px-2">
-                <div class="mb-6">
-                  <p class="mb-2">
-                    This prescription could be entered on our website as shown.
-                  </p>
-                </div>
-                <img
-                  src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/specsavers_site.webp"
-                  alt="specsavers prescription on our website"
-                  class="rounded-lg border-2 border-gray-300 bg-white shadow-md duration-1000 ease-in-out hover:shadow-lg"
-                />
+            </div>
+            <div aria-hidden="true" class="px-0 md:px-2">
+              <div class="mb-6">
+                <p class="mb-2">
+                  This prescription could be entered on our website as shown.
+                </p>
               </div>
+              <img
+                src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/specsavers_site.webp"
+                alt="specsavers prescription on our website"
+                class="rounded-lg border-2 border-gray-300 bg-white shadow-md duration-1000 ease-in-out hover:shadow-lg"
+              />
             </div>
           </div>
 
-          <div class="container mx-auto mb-8 mt-24">
+          <div class="container mx-auto mb-8">
             <h1 class="mb-4 text-3xl font-semibold lg:text-4xl">
               What if my prescription does not follow the format on your
               website?
@@ -343,7 +339,7 @@
                   class="rounded-lg border-2 border-gray-300 bg-white px-1 shadow-md duration-1000 ease-in-out hover:shadow-lg"
                 />
               </div>
-              <div class="container mx-auto mb-8 mt-24">
+              <div class="container mx-auto my-8">
                 <h1 class="mb-4 text-2xl font-semibold">
                   Entering an INTER ADD prescription.
                 </h1>
@@ -370,7 +366,7 @@
                   class="rounded-lg border-2 border-gray-300 bg-white shadow-md duration-1000 ease-in-out hover:shadow-lg"
                 />
 
-                <section class="my-12 w-full px-2">
+                <section class="my-12 w-full">
                   <h2
                     class="mb-8 text-center text-3xl font-bold tracking-tight text-slate-800 dark:text-gray-300 md:text-5xl"
                   >
@@ -695,7 +691,7 @@
                   </div>
                 </section>
                 <section>
-                  <div class="mx-auto max-w-7xl px-2 py-12">
+                  <div class="mx-auto max-w-7xl py-12">
                     <div class="mx-auto">
                       <div class="text-center">
                         <h2
@@ -823,7 +819,7 @@
                         </div>
                         <!-- End Card -->
 
-                        <div class="divide-y divide-gray-200 px-4">
+                        <div class="divide-y divide-gray-200">
                           <!-- Icon Block -->
                           <div class="flex gap-6 py-6">
                             <svg

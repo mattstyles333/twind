@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../output.css" rel="stylesheet" />
   </head>
-  <section class="dark:bg-p px-2 dark:text-gray-200">
+  <section class="dark:bg-p std-section px-2 dark:text-gray-200">
     <section class="container mx-auto py-12">
       <h1 class="my-6 text-4xl font-bold text-slate-800 dark:text-gray-300">
         Privacy Policy
@@ -122,7 +122,9 @@
           person.
         </li>
       </ul>
-      <h2 class="my-4 text-2xl font-semibold text-slate-800 dark:text-gray-300">
+      <h2
+        class="my-4 break-all text-2xl font-semibold text-slate-800 dark:text-gray-300"
+      >
         3. Providing your personal data to others
       </h2>
       <ul class="ml-2 mt-4 text-lg leading-relaxed">
@@ -176,156 +178,166 @@
           process your data in accordance with the current law.
         </li>
       </ul>
-      <table
-        class="my-8 w-full table-auto border-separate border border-white text-left text-xs text-gray-500 md:text-lg"
-      >
-        <thead
-          class="bg-p text-xxs text-center uppercase text-gray-700 text-white"
+      <div class="overflow-x-auto">
+        <table
+          class="my-8 min-w-full table-auto border-separate border border-white text-xs text-gray-500 md:text-base"
         >
-          <tr>
-            <th scope="col" class="rounded-tl-lg px-2 py-2 md:px-6 md:py-3">
-              Corporate Entity
-            </th>
-            <th scope="col" class="px-2 py-2 md:px-6 md:py-3">Data Category</th>
-            <th scope="col" class="rounded-tr-lg px-2 py-2 md:px-6 md:py-3">
-              Use
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              Google
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
-              Usage Data,
-            </td>
-            <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
-              Anonymous data for tracking website usage, page views. Used for
-              advertising to show or not show ads to visitors.
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              Brevo
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
-              Correspondence Data,
-            </td>
-            <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
-              Used to communicate with you through the live chat help system
-              should you wish to use this.
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              Stripe
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
-              Transaction Data,
-            </td>
-            <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
-              Used to process your payment to us for orders.
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              PayPal
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
-              Transaction Data,
-            </td>
-            <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
-              Used to process your payment to us for orders.
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              Amazon AWS
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
-              Usage Data, Notification Data, Account Data, Transaction Data,
-              Correspondence Data,
-            </td>
-            <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
-              Our hosting provider used to serve our website and retain off site
-              data back ups.
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              Brevo
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
-              Notification Data, Account Data,
-            </td>
-            <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
-              Used to send you email notifications and email newsletters if you
-              are subscribed to our newsletter.
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              Facebook
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
-              Usage Data,
-            </td>
-            <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
-              Used for advertising to show or not show ads to visitors.
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              Bing
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
-              Usage Data,
-            </td>
-            <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
-              Used for advertising to show or not show ads to visitors.
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              TrustPilot
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
-              Account Data,
-            </td>
-            <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
-              Used to request service and product reviews.
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          <thead
+            class="bg-p text-xxs text-center uppercase text-gray-700 md:text-sm"
+          >
+            <tr>
+              <th
+                scope="col"
+                class="rounded-tl-lg px-2 py-2 text-white md:px-6 md:py-3"
+              >
+                Corporate Entity
+              </th>
+              <th scope="col" class="px-2 py-2 text-white md:px-6 md:py-3">
+                Data Category
+              </th>
+              <th
+                scope="col"
+                class="rounded-tr-lg px-2 py-2 text-white md:px-6 md:py-3"
+              >
+                Use
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                Google
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
+                Usage Data,
+              </td>
+              <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
+                Anonymous data for tracking website usage, page views. Used for
+                advertising to show or not show ads to visitors.
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                Brevo
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
+                Correspondence Data,
+              </td>
+              <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
+                Used to communicate with you through the live chat help system
+                should you wish to use this.
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                Stripe
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
+                Transaction Data,
+              </td>
+              <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
+                Used to process your payment to us for orders.
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                PayPal
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
+                Transaction Data,
+              </td>
+              <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
+                Used to process your payment to us for orders.
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                Amazon AWS
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
+                Usage Data, Notification Data, Account Data, Transaction Data,
+                Correspondence Data,
+              </td>
+              <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
+                Our hosting provider used to serve our website and retain off
+                site data back ups.
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                Brevo
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
+                Notification Data, Account Data,
+              </td>
+              <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
+                Used to send you email notifications and email newsletters if
+                you are subscribed to our newsletter.
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                Facebook
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
+                Usage Data,
+              </td>
+              <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
+                Used for advertising to show or not show ads to visitors.
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                Bing
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
+                Usage Data,
+              </td>
+              <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
+                Used for advertising to show or not show ads to visitors.
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                TrustPilot
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
+                Account Data,
+              </td>
+              <td class="bg-l px-2 py-2 text-gray-900 md:px-6 md:py-4">
+                Used to request service and product reviews.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <h2 class="my-4 text-2xl font-semibold text-slate-800 dark:text-gray-300">
         5. Retaining and deleting personal data
       </h2>
@@ -575,191 +587,193 @@
       <ul class="ml-2 mt-4 text-lg leading-relaxed">
         <li class="mt-2">12.1 We use cookies for the following purposes:</li>
       </ul>
-      <table
-        class="mt-4 w-full table-auto border-separate border border-white text-left text-xs text-gray-500 md:text-lg"
-      >
-        <thead
-          class="bg-p text-xxs text-center uppercase text-gray-700 text-white"
+      <div class="overflow-x-auto">
+        <table
+          class="mt-4 min-w-full table-auto border-separate border border-white text-left text-xs text-gray-500 md:text-lg"
         >
-          <tr>
-            <th scope="col" class="rounded-tl-lg px-2 py-2 md:px-6 md:py-3">
-              Name
-            </th>
-            <th scope="col" class="rounded-tr-lg px-2 py-2 md:px-6 md:py-3">
-              Use
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              AJAXBOOKMARKS_MARKED_PRODUCTS
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Saves frames that you add to favourites your page when not logged
-              in to your account.
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              frontend
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Stores your session ID
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              frontend_cid
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Stores your session ID on secured pages
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              cookies_accepted
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Indicated that you have accepted our cookie policy.
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              saw_hoveradd
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Used to prevent our hover ad newsletter optin form from being
-              displayed more than once.
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              epc-initiated
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Used for page caching purposes.
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              epc-no-primary-cache
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Used for page caching purposes.
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              epc-ic
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Used for page caching purposes.
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              external_no_cache
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              A flag that indicates if caching is disabled.
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              rewardpoints_offer_key
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Stores reward points offer coupon key.
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              _uetsid
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Google analytics
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              _gid
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Google analytics
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              __zlcmid
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Google analytics
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              _ga
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Google analytics
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              _gat
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Google analytics
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          <thead
+            class="bg-p text-xxs text-center uppercase text-gray-700 md:text-sm"
+          >
+            <tr>
+              <th scope="col" class="rounded-tl-lg px-2 py-2 md:px-6 md:py-3">
+                Name
+              </th>
+              <th scope="col" class="rounded-tr-lg px-2 py-2 md:px-6 md:py-3">
+                Use
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l break-all px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                AJAXBOOKMARKS_MARKED_PRODUCTS
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Saves frames that you add to favourites your page when not
+                logged in to your account.
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                frontend
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Stores your session ID
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                frontend_cid
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Stores your session ID on secured pages
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                cookies_accepted
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Indicated that you have accepted our cookie policy.
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                saw_hoveradd
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Used to prevent our hover ad newsletter optin form from being
+                displayed more than once.
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                epc-initiated
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Used for page caching purposes.
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                epc-no-primary-cache
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Used for page caching purposes.
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                epc-ic
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Used for page caching purposes.
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                external_no_cache
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                A flag that indicates if caching is disabled.
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                rewardpoints_offer_key
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Stores reward points offer coupon key.
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                _uetsid
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Google analytics
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                _gid
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Google analytics
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                __zlcmid
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Google analytics
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                _ga
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Google analytics
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                _gat
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Google analytics
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <h2 class="my-4 text-2xl font-semibold text-slate-800 dark:text-gray-300">
         13. Cookies used by our service providers
       </h2>
@@ -769,85 +783,87 @@
           on your computer when you visit our website.
         </li>
       </ul>
-      <table
-        class="mt-4 w-full table-auto border-separate border border-white text-left text-xs text-gray-500 md:text-lg"
-      >
-        <thead
-          class="bg-p text-xxs text-center uppercase text-gray-700 text-white"
+      <div class="overflow-x-auto">
+        <table
+          class="mt-4 min-w-full table-auto border-separate border border-white text-left text-xs text-gray-500 md:text-lg"
         >
-          <tr>
-            <th scope="col" class="rounded-tl-lg px-2 py-2 md:px-6 md:py-3">
-              Name
-            </th>
-            <th scope="col" class="rounded-tr-lg px-2 py-2 md:px-6 md:py-3">
-              Use
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              MUID, MUIDB
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Bing analytics service that connects data from the Bing
-              advertising network with actions performed on the Website.
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              _cfduid
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Zopim allows us to live chat in order to provide support. The
-              cookie “__cfduid” internally identifies the Zopim user and saves
-              their preferences regarding Zopim’s internal unit use.
-              “__zprivacy” and “__zlcid” might also be created.
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              1P_JAR
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Google advertising cookie used for user tracking and ad targeting
-              purposes
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              NID
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Google tracking cookie
-            </td>
-          </tr>
-          <tr class="dark:bg-p border-b bg-white">
-            <th
-              scope="row"
-              class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
-            >
-              fr
-            </th>
-            <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
-              Used to control online advertising and for re-targeting,
-              optimization, and reporting of online adverts on Facebook
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          <thead
+            class="bg-p text-xxs text-center uppercase text-gray-700 md:text-sm"
+          >
+            <tr>
+              <th scope="col" class="rounded-tl-lg px-2 py-2 md:px-6 md:py-3">
+                Name
+              </th>
+              <th scope="col" class="rounded-tr-lg px-2 py-2 md:px-6 md:py-3">
+                Use
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                MUID, MUIDB
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Bing analytics service that connects data from the Bing
+                advertising network with actions performed on the Website.
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                _cfduid
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Zopim allows us to live chat in order to provide support. The
+                cookie “__cfduid” internally identifies the Zopim user and saves
+                their preferences regarding Zopim’s internal unit use.
+                “__zprivacy” and “__zlcid” might also be created.
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                1P_JAR
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Google advertising cookie used for user tracking and ad
+                targeting purposes
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                NID
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Google tracking cookie
+              </td>
+            </tr>
+            <tr class="dark:bg-p border-b bg-white">
+              <th
+                scope="row"
+                class="bg-l px-2 py-2 font-medium text-gray-900 md:px-6 md:py-4"
+              >
+                fr
+              </th>
+              <td class="bg-l px-2 py-2 text-gray-600 md:px-6 md:py-4">
+                Used to control online advertising and for re-targeting,
+                optimization, and reporting of online adverts on Facebook
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <h2 class="my-4 text-2xl font-semibold text-slate-800 dark:text-gray-300">
         14. Managing cookies
       </h2>
@@ -858,20 +874,52 @@
           from version to version. You can however obtain up-to-date information
           about blocking and deleting cookies via these links:
         </li>
-        <p class="ml-4 mt-2 leading-8">
-          (a) https://support.google.com/chrome/answer/95647?hl=en (Chrome);
-          <br />(b)
-          https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences
-          (Firefox); <br />(c)
-          http://www.opera.com/help/tutorials/security/cookies/ (Opera);
-          <br />(d)
-          https://support.microsoft.com/en-gb/help/17442/windows-internet-explorer-delete-manage-cookies
-          (Internet Explorer); <br />(e)
-          https://support.apple.com/en-us/HT201265 (Safari, iPad & iPhone); and
-          <br />(f)
-          https://privacy.microsoft.com/en-us/windows-10-microsoft-edge-and-privacy
+        <p class="mt-2 break-all leading-8">
+          (a)
+          <a href="https://support.google.com/chrome/answer/95647?hl=en"
+            >https://support.google.com/chrome/answer/95647?hl=en</a
+          >
+          (Chrome);
+        </p>
+        <p class="mt-2 break-all leading-8">
+          (b)
+          <a
+            href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences"
+            >https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences</a
+          >
+          (Firefox);
+        </p>
+        <p class="mt-2 break-all leading-8">
+          (c)
+          <a href="http://www.opera.com/help/tutorials/security/cookies/"
+            >http://www.opera.com/help/tutorials/security/cookies/</a
+          >
+          (Opera);
+        </p>
+        <p class="mt-2 break-all leading-8">
+          (d)
+          <a
+            href="https://support.microsoft.com/en-gb/help/17442/windows-internet-explorer-delete-manage-cookies"
+            >https://support.microsoft.com/en-gb/help/17442/windows-internet-explorer-delete-manage-cookies</a
+          >
+          (Internet Explorer);
+        </p>
+        <p class="mt-2 break-all leading-8">
+          (e)
+          <a href="https://support.apple.com/en-us/HT201265"
+            >https://support.apple.com/en-us/HT201265</a
+          >
+          (Safari, iPad & iPhone);
+        </p>
+        <p class="mt-2 break-all leading-8">
+          (f)
+          <a
+            href="https://privacy.microsoft.com/en-us/windows-10-microsoft-edge-and-privacy"
+            >https://privacy.microsoft.com/en-us/windows-10-microsoft-edge-and-privacy</a
+          >
           (Edge).
         </p>
+
         <li class="mt-2">
           14.2 Blocking all cookies will have a negative impact upon the
           usability of many websites.

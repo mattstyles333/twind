@@ -6,4 +6,7 @@
   .text-link {
     @apply text-blue-600 underline visited:text-purple-600 hover:text-blue-800;
   }
+  .std-section {
+    @apply px-3 py-8 leading-relaxed;
+  }
 }
