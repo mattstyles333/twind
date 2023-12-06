@@ -71,7 +71,7 @@
     </div>
 
     <section
-      class="std-section mx-auto sm:max-w-2xl md:max-w-full lg:max-w-screen-2xl"
+      class="mx-auto px-3 py-8 sm:max-w-2xl md:max-w-full lg:max-w-screen-2xl"
     >
       <div class="lg:flex lg:flex-row lg:items-center lg:gap-8 lg:px-12">
         <div class="w-full lg:w-2/3">
@@ -136,7 +136,7 @@
     <section
       class="bg-l border-b-2 py-12 shadow-inner dark:border-none dark:bg-slate-900 lg:py-20"
     >
-      <div class="container mx-auto px-4">
+      <div class="mx-auto px-3 md:md:container">
         <div>
           <h3
             class="text-center text-5xl font-bold text-slate-800 dark:text-gray-300"
@@ -405,14 +405,14 @@
       </div>
     </section>
     <section
-      class="std-section my-12 w-full border-b-2 border-gray-200 bg-gray-100 shadow-inner dark:bg-slate-900"
+      class="my-12 w-full border-b-2 border-gray-200 bg-gray-100 px-3 py-8 shadow-inner dark:bg-slate-900"
     >
       <h2
         class="mb-8 text-center text-3xl font-bold tracking-tight text-slate-800 dark:text-gray-300 md:text-5xl"
       >
         Frequently Asked Questions
       </h2>
-      <div class="container mx-auto lg:px-32">
+      <div class="mx-auto md:md:container lg:px-32">
         <div class="">
           <div
             class="dark:bg-p mx-auto border border-gray-200 bg-white"
@@ -429,24 +429,29 @@
                     <span class="pr-2">
                       Do you supply glasses frames without lenses?
                     </span>
-                    <div>
-                      <svg
-                        class="h-5 w-5"
-                        fill="#000000"
-                        version="1.1"
-                        id="Layer_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        viewBox="0 0 330 330"
-                        xml:space="preserve"
-                      >
-                        <path
-                          class="dark:fill-gray-200"
-                          id="XMLID_225_"
-                          d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-                        />
-                      </svg>
-                    </div>
+                    <span
+                      class="block text-lg transition-all"
+                      :class="selected === 1 ? 'rotate-90' : ''"
+                    >
+                      <div>
+                        <svg
+                          class="h-5 w-5"
+                          fill="#000000"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330"
+                          xml:space="preserve"
+                        >
+                          <path
+                            class="dark:fill-gray-200"
+                            id="XMLID_225_"
+                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                          />
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                 </button>
                 <div
@@ -632,7 +637,7 @@
                     <div>
                       <span
                         class="block text-lg transition-all"
-                        :class="selected === 4 ? 'rotate-90' : ''"
+                        :class="selected === 5 ? 'rotate-90' : ''"
                       >
                         <svg
                           class="h-5 w-5"
@@ -708,7 +713,7 @@
               class="dark:bg-p flex flex-col rounded-xl border bg-white p-4 sm:p-6 lg:p-8"
             >
               <section>
-                <div class="container mx-auto max-w-7xl">
+                <div class="mx-auto max-w-7xl md:md:container">
                   <div class="mb-6 flex w-full flex-col rounded-xl">
                     <!-- The Grid -->
                     <form action="https://submit-form.com/Q9La1z5Y">
@@ -913,54 +918,50 @@
       </div>
     </section>
   </section>
-  <section class="std-section">
-    <div class="mx-auto max-w-screen-2xl">
-      <div>
-        <div class="mx-auto flex justify-center pb-16 text-center">
-          <svg
-            class="pb-2"
-            width="50"
-            height="50"
-            viewBox="0 0 864 822"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M863.38 314.017H533.685L431.849 0L329.695 314.017L0 313.699L267.002 507.969L164.847 821.668L431.849 627.716L698.532 821.668L596.696 507.969L863.38 314.017Z"
-              fill="#00B67A"
-            />
-            <path
-              d="M619.609 578.989L596.696 507.969L431.849 627.716L619.609 578.989Z"
-              fill="#005128"
-            />
-          </svg>
-          <span
-            class="text-left text-4xl font-bold tracking-tight text-slate-800 dark:text-gray-300 md:text-5xl lg:text-center"
-          >
-            Trustpilot reviews from our customers
-          </span>
-        </div>
-        <!-- TrustBox widget - Carousel -->
-        <div
-          class="trustpilot-widget"
-          data-locale="en-GB"
-          data-template-id="53aa8912dec7e10d38f59f36"
-          data-businessunit-id="4be440aa000064000508db50"
-          data-style-height="140px"
-          data-style-width="100%"
-          data-theme="light"
-          data-stars="1,2,3,4,5"
-          data-review-languages="en"
-        >
-          <a
-            href="https://uk.trustpilot.com/review/www.spex4less.com"
-            target="_blank"
-            rel="noopener"
-            >Trustpilot</a
-          >
-        </div>
-        <!-- End TrustBox widget -->
-      </div>
+  <div class="mx-auto max-w-screen-2xl px-3 py-12">
+    <div class="mx-auto flex justify-center pb-16 text-center">
+      <svg
+        class="pb-2"
+        width="50"
+        height="50"
+        viewBox="0 0 864 822"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M863.38 314.017H533.685L431.849 0L329.695 314.017L0 313.699L267.002 507.969L164.847 821.668L431.849 627.716L698.532 821.668L596.696 507.969L863.38 314.017Z"
+          fill="#00B67A"
+        />
+        <path
+          d="M619.609 578.989L596.696 507.969L431.849 627.716L619.609 578.989Z"
+          fill="#005128"
+        />
+      </svg>
+      <span
+        class="text-left text-3xl font-bold tracking-tight text-slate-800 dark:text-gray-300 md:text-5xl lg:text-center"
+      >
+        Trustpilot reviews from our customers
+      </span>
     </div>
-  </section>
+    <!-- TrustBox widget - Slider -->
+    <div
+      class="trustpilot-widget"
+      data-locale="en-GB"
+      data-template-id="54ad5defc6454f065c28af8b"
+      data-businessunit-id="4be440aa000064000508db50"
+      data-style-height="240px"
+      data-style-width="100%"
+      data-theme="light"
+      data-stars="1,2,3,4,5"
+      data-review-languages="en"
+    >
+      <a
+        href="https://uk.trustpilot.com/review/www.spex4less.com"
+        target="_blank"
+        rel="noopener"
+        >Trustpilot</a
+      >
+    </div>
+    <!-- End TrustBox widget -->
+  </div>
 </section>
