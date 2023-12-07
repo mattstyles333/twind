@@ -21,7 +21,7 @@
   <div class="relative lg:grid lg:grid-cols-2">
     <img
       class="absolute h-full w-full object-cover lg:relative"
-      src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/hp_banner.webp"
+      src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/homepage_banner.webp"
       width="1228"
       height="500"
       loading="lazy"
@@ -38,8 +38,8 @@
         <div
           class="max-w-2xl text-left text-xl font-medium leading-normal text-white md:text-center md:text-2xl lg:text-left lg:text-3xl"
         >
-          Superior convenience, affordability and choice. <br />Ranked #1 for
-          glasses in the UK.
+          Superior convenience, affordability and choice. Ranked #1 for glasses
+          in the UK.
         </div>
         <div
           class="flex flex-col justify-center gap-4 sm:flex-row lg:flex-wrap lg:justify-start"
@@ -63,7 +63,7 @@
             target="_blank"
           >
             <img
-              class="hidden pb-4 lg:block"
+              class="hidden lg:block"
               src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/tp_stars_long.webp"
             />
           </a>
@@ -478,17 +478,15 @@
               <li class="" :class="{'': currentTab === 1}">
                 <button
                   @click="currentTab = 1"
-                  href="#"
                   class="bg-l hover:bg-s text-p inline-flex w-28 w-full items-center justify-center rounded-l-full px-8 py-3 font-semibold hover:text-white md:px-16"
                   :class="{'text-white bg-p border-blue-500': currentTab === 1}"
                 >
                   Glasses
                 </button>
               </li>
-              <li :class="{' currentTab === 2}">
+              <li class="" :class="{'': currentTab === 2}">
                 <button
                   @click="currentTab = 2"
-                  href="#"
                   class="bg-l hover:bg-s text-p inline-flex w-28 w-full items-center justify-center rounded-r-full px-8 py-3 font-semibold hover:text-white md:px-16"
                   :class="{'text-white bg-p border-blue-500': currentTab === 2}"
                 >
@@ -1374,6 +1372,11 @@
       class="bg-l my-12 border-b-2 shadow-inner dark:border-none dark:bg-slate-900"
     >
       <div class="mx-auto max-w-screen-2xl px-3 py-8">
+        <p
+          class="pt-2 text-left text-xl font-bold tracking-tight text-slate-800 dark:text-gray-300 md:text-xl lg:text-center"
+        >
+          Ranked #1 With 4.9 Stars
+        </p>
         <div class="mx-auto flex justify-center text-center">
           <svg
             class="pb-2"
