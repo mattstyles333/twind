@@ -478,8 +478,9 @@
               <li class="" :class="{'': currentTab === 1}">
                 <button
                   @click="currentTab = 1"
-                  class="bg-l hover:bg-s text-p inline-flex w-28 w-full items-center justify-center rounded-l-full px-8 py-3 font-semibold hover:text-white md:px-16"
-                  :class="{'text-white bg-p border-blue-500': currentTab === 1}"
+                  class="bg-l text-p ease-in-outd inline-flex w-28 w-full items-center justify-center rounded-l-full px-8 py-3 font-semibold duration-500 hover:bg-gray-200 md:px-16"
+                  :class="{'hover:bg-gray-200' : currentTab !== 1, 'bg-s' : currentTab === 1, 'bg-l' : currentTab !== 1,
+                        'hover:text-p' : currentTab !== 1, 'text-white' : currentTab === 1, 'text-black' : currentTab !== 1}"
                 >
                   Glasses
                 </button>
@@ -487,8 +488,9 @@
               <li class="" :class="{'': currentTab === 2}">
                 <button
                   @click="currentTab = 2"
-                  class="bg-l hover:bg-s text-p inline-flex w-28 w-full items-center justify-center rounded-r-full px-8 py-3 font-semibold hover:text-white md:px-16"
-                  :class="{'text-white bg-p border-blue-500': currentTab === 2}"
+                  class="bg-l text-p inline-flex w-28 w-full items-center justify-center rounded-r-full px-8 py-3 font-semibold duration-500 ease-in-out hover:bg-gray-200 md:px-16"
+                  :class="{'hover:bg-gray-200' : currentTab !== 2, 'bg-s' : currentTab === 2, 'bg-l' : currentTab !== 2,
+                        'hover:text-p' : currentTab !== 2, 'text-white' : currentTab === 2, 'text-black' : currentTab !== 2}"
                 >
                   Sunglasses
                 </button>

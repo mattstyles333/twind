@@ -14,23 +14,25 @@
       Shop by Style
     </h2>
     <div class="mx-auto mt-4 justify-center px-4 md:container">
-      <div x-data="{ currentTab: 1 }" class="py-4">
+      <div x-data="{ currentTab: 0 }" class="py-4">
         <div class="flex justify-center">
           <ul class="flex py-8">
-            <li class="" :class="{'': currentTab === 1}">
+            <li class="" :class="{'': currentTab === 0}">
               <button
-                @click="currentTab = 1"
-                class="bg-l hover:bg-s text-p inline-flex w-28 w-full items-center justify-center rounded-l-full px-8 py-3 font-semibold hover:text-white md:px-16"
-                :class="{'text-white bg-p border-blue-500': currentTab === 1}"
+                @click="currentTab = 0"
+                class="bg-l text-p ease-in-outd inline-flex w-28 w-full items-center justify-center rounded-l-full px-8 py-3 font-semibold duration-500 hover:bg-gray-200 md:px-16"
+                :class="{'hover:bg-gray-200' : currentTab !== 0, 'bg-s' : currentTab === 0, 'bg-l' : currentTab !== 0,
+                        'hover:text-p' : currentTab !== 0, 'text-white' : currentTab === 0, 'text-black' : currentTab !== 0}"
               >
                 Glasses
               </button>
             </li>
-            <li class="" :class="{'': currentTab === 2}">
+            <li class="" :class="{'': currentTab === 1}">
               <button
-                @click="currentTab = 2"
-                class="bg-l hover:bg-s text-p inline-flex w-28 w-full items-center justify-center rounded-r-full px-8 py-3 font-semibold hover:text-white md:px-16"
-                :class="{'text-white bg-p border-blue-500': currentTab === 2}"
+                @click="currentTab = 1"
+                class="bg-l text-p inline-flex w-28 w-full items-center justify-center rounded-r-full px-8 py-3 font-semibold duration-500 ease-in-out hover:bg-gray-200 md:px-16"
+                :class="{'hover:bg-gray-200' : currentTab !== 1, 'bg-s' : currentTab === 1, 'bg-l' : currentTab !== 1,
+                        'hover:text-p' : currentTab !== 1, 'text-white' : currentTab === 1, 'text-black' : currentTab !== 1}"
               >
                 Sunglasses
               </button>
@@ -39,7 +41,7 @@
         </div>
         <!--glasses logos-->
         <div class="mx-auto justify-center text-center">
-          <div x-show="currentTab === 1">
+          <div x-show="currentTab === 0">
             <div
               class="mx-auto grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-5"
             >
@@ -289,7 +291,7 @@
         </div>
         <!--Sunglasses logos-->
         <div class="mx-auto justify-center text-center">
-          <div x-show="currentTab === 2">
+          <div x-show="currentTab === 1">
             <div
               class="mx-auto grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-5"
             >
