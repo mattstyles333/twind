@@ -20,7 +20,7 @@
             <li class="bg-l rounded-l-full" :class="{'bg-s': currentTab === 0}">
               <button
                 @click="currentTab = 0"
-                class="hover:bg-s border-p inline-flex w-28 w-full items-center justify-center rounded-l-full border-x-2 border-y-2 px-8 py-3 font-semibold duration-500 ease-in-out hover:text-white md:px-16"
+                class="hover:bg-s border-p inline-flex w-36 items-center justify-center rounded-l-full border-x-2 border-y-2 py-3 font-semibold duration-500 ease-in-out hover:text-white md:w-48"
                 :class="{'hover:bg-gray-200' : currentTab !== 1, 'bg-s' : currentTab === 0, 'bg-l' : currentTab !== 0, 'text-white' : currentTab === 0, 'text-p' : currentTab !== 0}"
               >
                 Glasses
@@ -29,7 +29,7 @@
             <li class="bg-l rounded-r-full" :class="{'bg-s': currentTab === 1}">
               <button
                 @click="currentTab = 1"
-                class="hover:bg-s border-p inline-flex w-28 w-full items-center justify-center rounded-r-full border-y-2 border-r-2 px-8 py-3 font-semibold duration-500 ease-in-out hover:text-white md:px-16"
+                class="hover:bg-s border-p inline-flex w-36 items-center justify-center rounded-r-full border-y-2 border-r-2 py-3 font-semibold duration-500 ease-in-out hover:text-white md:w-48"
                 :class="{'hover:bg-gray-200' : currentTab !== 1, 'bg-s' : currentTab === 1, 'bg-l' : currentTab !== 1, 'text-white' : currentTab === 1, 'text-p' : currentTab !== 1}"
               >
                 Sunglasses

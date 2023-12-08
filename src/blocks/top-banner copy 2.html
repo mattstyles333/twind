@@ -1,0 +1,39 @@
+<div
+  class="header-top-bar bg-p flex h-9 w-full items-center justify-between px-1 py-1 sm:px-4"
+>
+  <div
+    class="text-l flex flex-grow cursor-default justify-between space-x-4 text-white"
+  >
+    <p>100% Satisfaction Guarantee</p>
+    <a
+      href="https://uk.trustpilot.com/review/www.spex4less.com"
+      target="_blank"
+      class="hidden items-center justify-between md:flex"
+    >
+      <p class="mb-2 md:mb-0">Ranked #1 On</p>
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 916 871"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="mx-1"
+      >
+        <path
+          d="M915.223 332.762H565.566L457.93 0L349.657 332.762L0 332.124L282.783 538.028L174.51 870.79L457.293 664.886L740.076 870.79L632.44 538.028L915.223 332.762Z"
+          fill="#00B67A"
+        />
+        <path
+          d="M656.643 613.251L632.44 538.028L457.93 664.886L656.643 613.251Z"
+          fill="#005128"
+        />
+      </svg>
+      <p class="pl-px font-bold">Trustpilot</p>
+    </a>
+    <span>Account</span>
+  </div>
+  <div class="flex items-center">
+    <!--Customer Icon & Dropdown-->
+    <?= $block->getChildHtml('customer') ?>
+  </div>
+</div>

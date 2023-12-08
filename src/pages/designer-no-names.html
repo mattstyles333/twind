@@ -5,40 +5,39 @@
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <section class="dark:bg-p px-3 py-8">
-  <div class="mx-auto md:container">
+  <div class="mx-auto max-w-screen-2xl">
     <h2
       class="text-center text-3xl font-extrabold leading-tight tracking-tight text-slate-800 dark:text-white md:text-5xl lg:mb-4"
     >
       Shop by brand
     </h2>
     <div class="mx-auto mt-4 justify-center">
-      <div
-        class="mx-auto w-full border-r-2 border-gray-100 sm:mb-0 sm:flex-1"
-        x-data="initDesignerAdditional()"
-        x-init="initialize('#designer-glasses'); $nextTick(() => buildAll())"
-      >
-        <div class="mx-auto flex w-full max-w-lg text-lg">
-          <!-- First tab: Men's -->
-          <div
-            @click="active_tab = (0 === active_tab ? 0 : 0)"
-            class="border-p flex-1 cursor-pointer rounded-l-full border-b-2 border-l-2 border-t-2 py-2 text-center transition duration-700 ease-in-out"
-            :class="{'hover:bg-s' : active_tab !== 0, 'bg-s' : active_tab === 0, 'bg-l' : active_tab !== 0,
-                        'hover:text-white' : active_tab !== 0, 'text-white' : active_tab === 0, 'text-black' : active_tab !== 0}"
-          >
-            Glasses
-          </div>
-          <div
-            @click="active_tab = (1 === active_tab ? 0 : 1)"
-            class="border-p flex-2 cursor-pointer border-2 px-4 py-2 text-center transition duration-700 ease-in-out md:px-8"
-            :class="{'hover:bg-s' : active_tab !== 1, 'bg-s' : active_tab === 1, 'bg-l' : active_tab !== 1,
-                        'hover:text-white' : active_tab !== 1, 'text-white' : active_tab === 1, 'text-black' : active_tab !== 1}"
-          >
-            Sunglasses
-          </div>
+      <div x-data="{ currentTab: 0 }" class="py-4">
+        <div class="flex justify-center">
+          <ul class="flex py-8">
+            <li class="bg-l rounded-l-full" :class="{'bg-s': currentTab === 0}">
+              <button
+                @click="currentTab = 0"
+                class="hover:bg-s border-p inline-flex w-28 w-full items-center justify-center rounded-l-full border-x-2 border-y-2 px-8 py-3 font-semibold duration-500 ease-in-out hover:text-white md:px-16"
+                :class="{'hover:bg-gray-200' : currentTab !== 1, 'bg-s' : currentTab === 0, 'bg-l' : currentTab !== 0, 'text-white' : currentTab === 0, 'text-p' : currentTab !== 0}"
+              >
+                Glasses
+              </button>
+            </li>
+            <li class="bg-l rounded-r-full" :class="{'bg-s': currentTab === 1}">
+              <button
+                @click="currentTab = 1"
+                class="hover:bg-s border-p inline-flex w-28 w-full items-center justify-center rounded-r-full border-y-2 border-r-2 px-8 py-3 font-semibold duration-500 ease-in-out hover:text-white md:px-16"
+                :class="{'hover:bg-gray-200' : currentTab !== 1, 'bg-s' : currentTab === 1, 'bg-l' : currentTab !== 1, 'text-white' : currentTab === 1, 'text-p' : currentTab !== 1}"
+              >
+                Sunglasses
+              </button>
+            </li>
+          </ul>
         </div>
         <!--glasses logos-->
         <div class="mx-auto justify-center text-center">
-          <div x-show="active_tab === 0">
+          <div x-show="currentTab === 0">
             <div
               class="grid grid-cols-2 items-center gap-x-4 gap-y-8 sm:gap-x-8 md:grid-cols-4 lg:max-w-none lg:grid-cols-6"
             >
@@ -48,7 +47,7 @@
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 43.938 9.11"
                   class="mx-auto"
@@ -65,7 +64,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 600 245"
                   fill="none"
@@ -93,7 +92,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 592 166"
                   fill="none"
@@ -115,7 +114,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 371 70"
                   fill="none"
@@ -167,7 +166,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 1147 185"
                   fill="none"
@@ -189,7 +188,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 631 191"
                   fill="none"
@@ -211,7 +210,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 624 88"
                   fill="none"
@@ -234,7 +233,7 @@
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 56.425 30.089"
                   class="mx-auto"
@@ -258,7 +257,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2280 468"
                   fill="none"
@@ -280,7 +279,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2172 696"
                   fill="none"
@@ -302,7 +301,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 1500 629"
                   fill="none"
@@ -324,7 +323,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 1500 615"
                   fill="none"
@@ -346,7 +345,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 829 107"
                   fill="none"
@@ -367,7 +366,7 @@
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 400.492 38.241"
                   class="mx-auto"
@@ -387,7 +386,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 620 131"
                   fill="none"
@@ -421,7 +420,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2428 1212"
                   fill="none"
@@ -443,7 +442,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2294 1112"
                   fill="none"
@@ -471,7 +470,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 1171 494"
                   fill="none"
@@ -493,7 +492,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 939 80"
                   fill="none"
@@ -515,7 +514,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 300 54"
                   fill="none"
@@ -537,7 +536,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 846 118"
                   fill="none"
@@ -559,7 +558,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 890 153"
                   fill="none"
@@ -581,7 +580,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 655 756"
                   fill="none"
@@ -605,7 +604,7 @@
                 <svg
                   height="45"
                   viewBox="4.597 3.075 110.807 33.849"
-                  width="110"
+                  width="120"
                   xmlns="http://www.w3.org/2000/svg"
                   class="mx-auto"
                 >
@@ -624,7 +623,7 @@
                 <svg
                   height="45"
                   viewBox="0 .75 334 80"
-                  width="110"
+                  width="120"
                   xmlns="http://www.w3.org/2000/svg"
                   class="mx-auto"
                 >
@@ -729,7 +728,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 923 114"
                   fill="none"
@@ -764,7 +763,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 1159 715"
                   fill="none"
@@ -786,7 +785,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 1243 81"
                   fill="none"
@@ -808,7 +807,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 601 99"
                   fill="none"
@@ -828,7 +827,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2280 418"
                   fill="none"
@@ -850,7 +849,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 601 396"
                   fill="none"
@@ -876,7 +875,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 721 501"
                   fill="none"
@@ -900,7 +899,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 5842 1547"
                   fill="none"
@@ -950,7 +949,7 @@
                 <svg
                   height="45"
                   viewBox=".265 .264 93.749 29.48950184"
-                  width="110"
+                  width="120"
                   xmlns="http://www.w3.org/2000/svg"
                   class="mx-auto"
                 >
@@ -968,7 +967,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 776 405"
                   fill="none"
@@ -1010,7 +1009,7 @@
                 <svg
                   height="45"
                   viewBox="-1.4 0 901.4 315.4"
-                  width="110"
+                  width="120"
                   xmlns="http://www.w3.org/2000/svg"
                   class="mx-auto"
                 >
@@ -1026,7 +1025,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 314 117"
                   fill="none"
@@ -1048,7 +1047,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 999 624"
                   fill="none"
@@ -1070,7 +1069,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 1276 643"
                   fill="none"
@@ -1092,7 +1091,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2901 559"
                   fill="none"
@@ -1192,7 +1191,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 3432 437"
                   fill="none"
@@ -1214,7 +1213,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2280 354"
                   fill="none"
@@ -1236,7 +1235,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 601 147"
                   fill="none"
@@ -1300,7 +1299,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 983 127"
                   fill="none"
@@ -1322,7 +1321,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2500 735"
                   fill="none"
@@ -1358,7 +1357,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2428 1200"
                   fill="none"
@@ -1392,7 +1391,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 601 115"
                   fill="none"
@@ -1428,7 +1427,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 304 75"
                   fill="none"
@@ -1536,7 +1535,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 110 25"
                   fill="none"
@@ -1558,7 +1557,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 4927 593"
                   fill="none"
@@ -1618,7 +1617,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 487 72"
                   fill="none"
@@ -1640,7 +1639,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2428 1592"
                   fill="none"
@@ -1680,7 +1679,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 300 176"
                   fill="none"
@@ -1744,7 +1743,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 3129 1539"
                   fill="none"
@@ -1800,7 +1799,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2320 514"
                   fill="none"
@@ -1819,7 +1818,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 490 99"
                   fill="none"
@@ -1840,7 +1839,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 3493 965"
                   fill="none"
@@ -1861,7 +1860,7 @@
         </div>
         <!--Sunglasses logos-->
         <div class="mx-auto justify-center text-center">
-          <div x-show="active_tab === 1">
+          <div x-show="currentTab === 1">
             <div
               class="grid grid-cols-2 items-center gap-x-4 gap-y-8 sm:gap-x-8 md:grid-cols-4 lg:max-w-none lg:grid-cols-6"
             >
@@ -1870,7 +1869,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 592 166"
                   fill="none"
@@ -1891,7 +1890,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 371 70"
                   fill="none"
@@ -1943,7 +1942,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 1147 185"
                   fill="none"
@@ -1965,7 +1964,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 631 191"
                   fill="none"
@@ -1987,7 +1986,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 624 88"
                   fill="none"
@@ -2010,7 +2009,7 @@
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 56.425 30.089"
                   class="mx-auto"
@@ -2034,7 +2033,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2280 468"
                   fill="none"
@@ -2056,7 +2055,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2172 696"
                   fill="none"
@@ -2078,7 +2077,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 1500 629"
                   fill="none"
@@ -2100,7 +2099,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 1500 615"
                   fill="none"
@@ -2122,7 +2121,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 829 107"
                   fill="none"
@@ -2143,7 +2142,7 @@
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 400.492 38.241"
                   class="mx-auto"
@@ -2163,7 +2162,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2428 1212"
                   fill="none"
@@ -2185,7 +2184,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 939 80"
                   fill="none"
@@ -2207,7 +2206,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 846 118"
                   fill="none"
@@ -2231,7 +2230,7 @@
                 <svg
                   height="45"
                   viewBox="4.597 3.075 110.807 33.849"
-                  width="110"
+                  width="120"
                   xmlns="http://www.w3.org/2000/svg"
                   class="mx-auto"
                 >
@@ -2248,7 +2247,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 1243 81"
                   fill="none"
@@ -2270,7 +2269,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 601 396"
                   fill="none"
@@ -2296,7 +2295,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 721 501"
                   fill="none"
@@ -2320,7 +2319,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 5842 1547"
                   fill="none"
@@ -2370,7 +2369,7 @@
                 <svg
                   height="45"
                   viewBox=".265 .264 93.749 29.48950184"
-                  width="110"
+                  width="120"
                   xmlns="http://www.w3.org/2000/svg"
                   class="mx-auto"
                 >
@@ -2388,7 +2387,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 776 405"
                   fill="none"
@@ -2430,7 +2429,7 @@
                 <svg
                   height="45"
                   viewBox="-1.4 0 901.4 315.4"
-                  width="110"
+                  width="120"
                   xmlns="http://www.w3.org/2000/svg"
                   class="mx-auto"
                 >
@@ -2446,7 +2445,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 314 117"
                   fill="none"
@@ -2468,7 +2467,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 999 624"
                   fill="none"
@@ -2490,7 +2489,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 1276 643"
                   fill="none"
@@ -2512,7 +2511,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2901 559"
                   fill="none"
@@ -2612,7 +2611,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 3432 437"
                   fill="none"
@@ -2634,7 +2633,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2280 354"
                   fill="none"
@@ -2656,7 +2655,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 601 147"
                   fill="none"
@@ -2720,7 +2719,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 983 127"
                   fill="none"
@@ -2742,7 +2741,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2500 735"
                   fill="none"
@@ -2778,7 +2777,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2428 1200"
                   fill="none"
@@ -2812,7 +2811,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 601 115"
                   fill="none"
@@ -2848,7 +2847,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 110 25"
                   fill="none"
@@ -2870,7 +2869,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 4927 593"
                   fill="none"
@@ -2930,7 +2929,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 487 72"
                   fill="none"
@@ -2952,7 +2951,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 2428 1592"
                   fill="none"
@@ -2992,7 +2991,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 300 176"
                   fill="none"
@@ -3056,7 +3055,7 @@
                 class="items-center justify-center rounded-lg border-2 border-gray-300 bg-white p-3 shadow-md duration-1000 ease-in-out hover:-translate-y-4 hover:border-gray-600 hover:shadow-lg"
               >
                 <svg
-                  width="110"
+                  width="120"
                   height="45"
                   viewBox="0 0 3129 1539"
                   fill="none"
