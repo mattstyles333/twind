@@ -15,22 +15,20 @@
       <div x-data="{ currentTab: 1 }" class="py-4">
         <div class="flex justify-center">
           <ul class="flex py-8">
-            <li class="" :class="{'': currentTab === 1}">
+            <li class="bg-l rounded-l-full" :class="{'bg-s': currentTab === 0}">
               <button
-                @click="currentTab = 1"
-                href="#"
-                class="bg-l hover:bg-s text-p inline-flex w-full items-center justify-center rounded-l-full px-8 py-3 font-semibold hover:text-white md:px-16"
-                :class="{'text-white bg-p ': currentTab === 1}"
+                @click="currentTab = 0"
+                class="border-p inline-flex w-36 items-center justify-center rounded-l-full border-x-2 border-y-2 px-8 py-3 font-semibold duration-500 ease-in-out hover:bg-blue-950 hover:text-white md:w-48"
+                :class="{'hover:bg-gray-200' : currentTab !== 1, 'bg-s' : currentTab === 0, 'bg-l' : currentTab !== 0, 'text-white' : currentTab === 0, 'text-p' : currentTab !== 0}"
               >
                 Glasses
               </button>
             </li>
-            <li class="" :class="{'': currentTab === 2}">
+            <li class="bg-l rounded-r-full" :class="{'bg-s': currentTab === 1}">
               <button
-                @click="currentTab = 2"
-                href="#"
-                class="bg-l hover:bg-s text-p inline-flex w-full items-center justify-center rounded-r-full px-8 py-3 font-semibold hover:text-white md:px-16"
-                :class="{'text-white bg-p ': currentTab === 2}"
+                @click="currentTab = 1"
+                class="border-p inline-flex w-36 items-center justify-center rounded-r-full border-y-2 border-r-2 px-8 py-3 font-semibold duration-500 ease-in-out hover:bg-blue-950 hover:text-white md:w-48"
+                :class="{'hover:bg-gray-200' : currentTab !== 1, 'bg-s' : currentTab === 1, 'bg-l' : currentTab !== 1, 'text-white' : currentTab === 1, 'text-p' : currentTab !== 1}"
               >
                 Sunglasses
               </button>

@@ -21,7 +21,7 @@
     x-init="initialize('#menu-desktop-brands'); $nextTick(() => buildAll())"
   >
     <!-- Left Side: Tabs -->
-    <div class="mx-auto w-full border-gray-100 sm:mb-0 sm:flex-1 md:border-r-2">
+    <div class="mx-auto w-full sm:mb-0 sm:flex-1">
       <div class="mx-auto flex w-full max-w-lg text-lg">
         <!-- First tab: Glasses -->
         <div
@@ -56,8 +56,8 @@
               <a
                 href="/designer-glasses"
                 class="transition duration-300 hover:underline"
-                >Shop All [G]</a
-              >
+                >Shop All
+              </a>
             </p>
             <p>
               <a
@@ -156,8 +156,8 @@
               <a
                 href="/designer-sunglasses/"
                 class="transition duration-300 hover:underline"
-                >Shop All [S]</a
-              >
+                >Shop All
+              </a>
             </p>
             <p>
               <a
@@ -248,19 +248,21 @@
     </div>
 
     <!-- Right Side: SVG Grid -->
-    <div class="w-full px-2 sm:flex-1">
-      <div class="mb-4 mt-4 text-center text-xl font-bold lg:mt-0">
+    <div class="w-full border-gray-200 px-2 sm:flex-1 md:border-l-2">
+      <div class="mb-2 mt-4 text-center text-xl font-bold lg:mt-0">
         Shop by Brand
       </div>
       <div class="" x-show="active_tab === 0">
-        <div class="grid grid-cols-3 gap-4 md:grid-cols-3 lg:grid-cols-3">
+        <div
+          class="grid grid-cols-3 gap-4 md:grid-cols-3 md:gap-3 lg:grid-cols-3"
+        >
           <a
-            href="/glasses/prada"
-            class="group mx-auto mb-4 flex flex-col items-center duration-700 ease-in-out hover:-translate-y-2"
+            href="/designer-glasses/prada"
+            class="mx-auto rounded-lg border-2 border-gray-300 bg-white p-1 shadow-md duration-1000 ease-in-out hover:-translate-y-1 hover:border-gray-600 hover:shadow-lg md:p-3"
           >
             <svg
-              width="110"
-              height="45"
+              width="100"
+              height="30"
               viewBox="0 0 2280 354"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -274,12 +276,12 @@
             </svg>
           </a>
           <a
-            href="/glasses/oakley"
-            class="group mx-auto mb-4 flex flex-col items-center duration-700 ease-in-out hover:-translate-y-2"
+            href="/designer-glasses/oakley"
+            class="mx-auto rounded-lg border-2 border-gray-300 bg-white p-1 shadow-md duration-1000 ease-in-out hover:-translate-y-1 hover:border-gray-600 hover:shadow-lg md:p-3"
           >
             <svg
-              width="110"
-              height="45"
+              width="100"
+              height="30"
               viewBox="0 0 314 117"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -293,12 +295,12 @@
             </svg>
           </a>
           <a
-            href="/glasses/ray-ban"
-            class="group mx-auto mb-4 flex flex-col items-center duration-700 duration-700 ease-in-out ease-in-out hover:-translate-y-2"
+            href="/designer-glasses/ray-ban"
+            class="mx-auto rounded-lg border-2 border-gray-300 bg-white p-1 shadow-md duration-1000 ease-in-out hover:-translate-y-1 hover:border-gray-600 hover:shadow-lg md:p-3"
           >
             <svg
-              width="110"
-              height="45"
+              width="100"
+              height="30"
               viewBox="0 0 2428 1200"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -324,12 +326,12 @@
             </svg>
           </a>
           <a
-            href="/glasses/superdry"
-            class="group mx-auto mb-4 flex flex-col items-center duration-700 ease-in-out hover:-translate-y-2"
+            href="/designer-glasses/superdry"
+            class="mx-auto rounded-lg border-2 border-gray-300 bg-white p-1 shadow-md duration-1000 ease-in-out hover:-translate-y-1 hover:border-gray-600 hover:shadow-lg md:p-3"
           >
             <svg
-              width="110"
-              height="45"
+              width="100"
+              height="30"
               viewBox="0 0 525 121"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -343,12 +345,12 @@
             </svg>
           </a>
           <a
-            href="/glasses/persol"
-            class="group mx-auto mb-4 flex flex-col items-center duration-700 ease-in-out hover:-translate-y-2"
+            href="/designer-glasses/persol"
+            class="mx-auto rounded-lg border-2 border-gray-300 bg-white p-1 shadow-md duration-1000 ease-in-out hover:-translate-y-1 hover:border-gray-600 hover:shadow-lg md:p-3"
           >
             <svg
-              width="110"
-              height="45"
+              width="100"
+              height="30"
               viewBox="0 0 999 624"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -362,12 +364,12 @@
             </svg>
           </a>
           <a
-            href="/glasses/polaroid"
-            class="group mx-auto mb-4 flex flex-col items-center duration-700 ease-in-out hover:-translate-y-2"
+            href="/designer-glasses/polaroid"
+            class="mx-auto rounded-lg border-2 border-gray-300 bg-white p-1 shadow-md duration-1000 ease-in-out hover:-translate-y-1 hover:border-gray-600 hover:shadow-lg md:p-3"
           >
             <svg
-              width="110"
-              height="45"
+              width="100"
+              height="30"
               viewBox="0 0 2901 559"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -459,12 +461,12 @@
             </svg>
           </a>
           <a
-            href="/glasses/tiffany"
-            class="group mx-auto mb-4 flex flex-col items-center duration-700 ease-in-out hover:-translate-y-2"
+            href="/designer-glasses/tiffany"
+            class="mx-auto rounded-lg border-2 border-gray-300 bg-white p-1 shadow-md duration-1000 ease-in-out hover:-translate-y-1 hover:border-gray-600 hover:shadow-lg md:p-3"
           >
             <svg
-              width="110"
-              height="45"
+              width="100"
+              height="30"
               viewBox="0 0 4927 593"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -516,12 +518,12 @@
             </svg>
           </a>
           <a
-            href="/glasses/tom-ford"
-            class="group mx-auto mb-4 flex flex-col items-center duration-700 ease-in-out hover:-translate-y-2"
+            href="/designer-glasses/tom-ford"
+            class="mx-auto rounded-lg border-2 border-gray-300 bg-white p-1 shadow-md duration-1000 ease-in-out hover:-translate-y-1 hover:border-gray-600 hover:shadow-lg md:p-3"
           >
             <svg
-              width="110"
-              height="45"
+              width="100"
+              height="30"
               viewBox="0 0 487 72"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -535,12 +537,12 @@
             </svg>
           </a>
           <a
-            href="/glasses/boss-hugo-boss"
-            class="group mx-auto mb-4 flex flex-col items-center duration-700 ease-in-out hover:-translate-y-2"
+            href="/designer-glasses/boss-hugo-boss"
+            class="mx-auto rounded-lg border-2 border-gray-300 bg-white p-1 shadow-md duration-1000 ease-in-out hover:-translate-y-1 hover:border-gray-600 hover:shadow-lg md:p-3"
           >
             <svg
-              width="110"
-              height="45"
+              width="100"
+              height="30"
               viewBox="0 0 592 166"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -554,7 +556,7 @@
             </svg>
           </a>
         </div>
-        <div class="mx-auto text-center">
+        <div class="mx-auto pt-2 text-center">
           <a href="/designer-glasses" class="underline">All Brands</a>
         </div>
       </div>
@@ -562,11 +564,11 @@
         <div class="grid grid-cols-3 gap-4 md:grid-cols-3 lg:grid-cols-3">
           <a
             href="/sunglasses/prada"
-            class="group mx-auto mb-4 flex flex-col items-center duration-700 ease-in-out hover:-translate-y-2"
+            class="mx-auto rounded-lg border-2 border-gray-300 bg-white p-1 shadow-md duration-1000 ease-in-out hover:-translate-y-1 hover:border-gray-600 hover:shadow-lg md:p-3"
           >
             <svg
-              width="110"
-              height="45"
+              width="100"
+              height="30"
               viewBox="0 0 2280 354"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -581,11 +583,11 @@
           </a>
           <a
             href="/sunglasses/oakley"
-            class="group mx-auto mb-4 flex flex-col items-center duration-700 ease-in-out hover:-translate-y-2"
+            class="mx-auto rounded-lg border-2 border-gray-300 bg-white p-1 shadow-md duration-1000 ease-in-out hover:-translate-y-1 hover:border-gray-600 hover:shadow-lg md:p-3"
           >
             <svg
-              width="110"
-              height="45"
+              width="100"
+              height="30"
               viewBox="0 0 314 117"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -600,11 +602,11 @@
           </a>
           <a
             href="/sunglasses/ray-ban"
-            class="group mx-auto mb-4 flex flex-col items-center duration-700 duration-700 ease-in-out ease-in-out hover:-translate-y-2"
+            class="mx-auto rounded-lg border-2 border-gray-300 bg-white p-1 shadow-md duration-1000 ease-in-out hover:-translate-y-1 hover:border-gray-600 hover:shadow-lg md:p-3"
           >
             <svg
-              width="110"
-              height="45"
+              width="100"
+              height="30"
               viewBox="0 0 2428 1200"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -631,11 +633,11 @@
           </a>
           <a
             href="/sunglasses/superdry"
-            class="group mx-auto mb-4 flex flex-col items-center duration-700 ease-in-out hover:-translate-y-2"
+            class="mx-auto rounded-lg border-2 border-gray-300 bg-white p-1 shadow-md duration-1000 ease-in-out hover:-translate-y-1 hover:border-gray-600 hover:shadow-lg md:p-3"
           >
             <svg
-              width="110"
-              height="45"
+              width="100"
+              height="30"
               viewBox="0 0 525 121"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -650,11 +652,11 @@
           </a>
           <a
             href="/sunglasses/persol"
-            class="group mx-auto mb-4 flex flex-col items-center duration-700 ease-in-out hover:-translate-y-2"
+            class="mx-auto rounded-lg border-2 border-gray-300 bg-white p-1 shadow-md duration-1000 ease-in-out hover:-translate-y-1 hover:border-gray-600 hover:shadow-lg md:p-3"
           >
             <svg
-              width="110"
-              height="45"
+              width="100"
+              height="30"
               viewBox="0 0 999 624"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -669,11 +671,11 @@
           </a>
           <a
             href="/sunglasses/polaroid"
-            class="group mx-auto mb-4 flex flex-col items-center duration-700 ease-in-out hover:-translate-y-2"
+            class="mx-auto rounded-lg border-2 border-gray-300 bg-white p-1 shadow-md duration-1000 ease-in-out hover:-translate-y-1 hover:border-gray-600 hover:shadow-lg md:p-3"
           >
             <svg
-              width="110"
-              height="45"
+              width="100"
+              height="30"
               viewBox="0 0 2901 559"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -766,11 +768,11 @@
           </a>
           <a
             href="/sunglasses/moschino"
-            class="group mx-auto mb-4 flex flex-col items-center duration-700 ease-in-out hover:-translate-y-2"
+            class="mx-auto rounded-lg border-2 border-gray-300 bg-white p-1 shadow-md duration-1000 ease-in-out hover:-translate-y-1 hover:border-gray-600 hover:shadow-lg md:p-3"
           >
             <svg
-              width="110"
-              height="45"
+              width="100"
+              height="30"
               viewBox="0 0 5842 1547"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -811,11 +813,11 @@
           </a>
           <a
             href="/sunglasses/tom-ford"
-            class="group mx-auto mb-4 flex flex-col items-center duration-700 ease-in-out hover:-translate-y-2"
+            class="mx-auto rounded-lg border-2 border-gray-300 bg-white p-1 shadow-md duration-1000 ease-in-out hover:-translate-y-1 hover:border-gray-600 hover:shadow-lg md:p-3"
           >
             <svg
-              width="110"
-              height="45"
+              width="100"
+              height="30"
               viewBox="0 0 487 72"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -830,11 +832,11 @@
           </a>
           <a
             href="/sunglasses/boss-hugo-boss"
-            class="group mx-auto mb-4 flex flex-col items-center duration-700 ease-in-out hover:-translate-y-2"
+            class="mx-auto rounded-lg border-2 border-gray-300 bg-white p-1 shadow-md duration-1000 ease-in-out hover:-translate-y-1 hover:border-gray-600 hover:shadow-lg md:p-3"
           >
             <svg
-              width="110"
-              height="45"
+              width="100"
+              height="30"
               viewBox="0 0 592 166"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -848,7 +850,7 @@
             </svg>
           </a>
         </div>
-        <div class="mx-auto text-center">
+        <div class="mx-auto pt-2 text-center">
           <a href="/designer-sunglasses" class="underline">All Brands</a>
         </div>
       </div>
