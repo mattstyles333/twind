@@ -66,17 +66,28 @@
             <span class="block"> Sign up for newsletter </span>
           </div>
           <div class="flex items-center">
+            <!-- Small square icon -->
             <span
               class="mr-2 inline-block h-4 w-4 rounded border border-gray-300 bg-white"
             ></span>
+
+            <!-- Text label -->
             <span class=""> Allow remote shopping assistance </span>
+
+            <!-- Question mark inside a circle to the right -->
+            <span
+              class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-gray-200 font-bold"
+            >
+              ?
+            </span>
           </div>
         </div>
 
         <div class="flex flex-col space-y-4">
-          <div class="flex justify-between">
+          <div class="flex flex-col justify-between sm:flex-row">
+            <!-- Sign in with Google button -->
             <button
-              class="flex items-center justify-center rounded border border-gray-600 px-4 py-2 shadow-sm"
+              class="mb-4 flex items-center justify-center rounded border border-gray-600 px-4 py-2 shadow-sm sm:mb-0"
             >
               <div class="gsi-material-button-icon mr-3">
                 <svg
@@ -106,20 +117,21 @@
               </div>
               <span class="text-bold">Sign in with Google</span>
             </button>
+
+            <!-- Create an Account button -->
             <button
               class="bg-s hover:bg-p rounded px-4 py-2 font-bold text-white duration-700 ease-in-out"
             >
               Create an Account
             </button>
           </div>
-
-          <div class="text-sm">
-            This form is protected by reCAPTCHA - the Google Privacy Policy and
-            Terms of Service apply.
-          </div>
-          <div class="flex justify-start">
-            <button class="text-sm font-medium">Back</button>
-          </div>
+        </div>
+        <div class="text-sm">
+          This form is protected by reCAPTCHA - the Google Privacy Policy and
+          Terms of Service apply.
+        </div>
+        <div class="flex justify-start">
+          <button class="text-sm font-medium">Back</button>
         </div>
       </div>
     </div>
