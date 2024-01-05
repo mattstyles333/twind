@@ -4,7 +4,7 @@
   <link href="../output.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body class="bg-zinc-50 py-8">
+<body class="bg-zinc-50 lg:py-8">
   <div>
     <div
       class="mx-auto flex max-w-screen-2xl flex-col space-x-0 md:flex-row md:space-x-4"
@@ -349,42 +349,49 @@
                 <p class="mb-3 text-2xl">Shipping Methods</p>
                 <hr class="mb-4" />
 
-                <div class="space-y-2">
-                  <div>
-                    <input
-                      type="radio"
-                      id="standard-delivery"
-                      name="shipping"
-                      class="border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                    />
-                    <label for="standard-delivery" class="ml-2 font-bold"
-                      >Standard Delivery</label
-                    >
-                    <span class="float-right">£4.95</span>
+                <div class="flex flex-row space-x-4">
+                  <!-- Shipping options -->
+                  <div class="flex-1 space-y-2">
+                    <div class="flex items-center space-x-2">
+                      <input
+                        type="radio"
+                        id="standard-delivery"
+                        name="shipping"
+                        class="border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                      />
+                      <label for="standard-delivery" class="font-bold"
+                        >Standard Delivery</label
+                      >
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <input
+                        type="radio"
+                        id="express-tracked"
+                        name="shipping"
+                        class="border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                      />
+                      <label for="express-tracked" class="font-bold"
+                        >Express Tracked</label
+                      >
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <input
+                        type="radio"
+                        id="royal-mail-express"
+                        name="shipping"
+                        class="border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                      />
+                      <label for="royal-mail-express" class="font-bold"
+                        >Royal Mail Express Saturday (Tracked)</label
+                      >
+                    </div>
                   </div>
-                  <div>
-                    <input
-                      type="radio"
-                      id="express-tracked"
-                      name="shipping"
-                      class="border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                    />
-                    <label for="express-tracked" class="ml-2 font-bold"
-                      >Express Tracked</label
-                    >
-                    <span class="float-right">£5.95</span>
-                  </div>
-                  <div>
-                    <input
-                      type="radio"
-                      id="royal-mail-express"
-                      name="shipping"
-                      class="border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                    />
-                    <label for="royal-mail-express" class="ml-2 font-bold"
-                      >Royal Mail Express Saturday (Tracked)</label
-                    >
-                    <span class="float-right">£9.99</span>
+
+                  <!-- Prices -->
+                  <div class="flex-1 space-y-2 text-right">
+                    <div>£4.95</div>
+                    <div>£5.95</div>
+                    <div>£9.99</div>
                   </div>
                 </div>
               </div>
