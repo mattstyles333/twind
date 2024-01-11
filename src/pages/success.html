@@ -23,7 +23,14 @@
           </div>
         </div>
         <div class="mt-4 py-3 text-left text-lg">
-          <h3 class="mb-6 text-2xl font-bold">Thank you for your purchase!</h3>
+          <h3 class="mb-6 flex items-center text-2xl font-bold">
+            <span
+              class="mr-4 flex h-14 w-14 items-center justify-center rounded-full border border-green-500 bg-white text-4xl text-green-500 shadow-md md:text-5xl"
+            >
+              ✓
+            </span>
+            Thank you for your purchase!
+          </h3>
           <p class="mb-2">
             Your order number is: <span class="font-bold">10056758</span>
           </p>
@@ -32,6 +39,7 @@
             info.
           </p>
         </div>
+
         <div class="space-y-6">
           <div
             class="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0"
@@ -77,7 +85,7 @@
               <div
                 class="grid grid-cols-1 gap-6 leading-relaxed md:grid-cols-2"
               >
-                <div class="space-y-4">
+                <div class="space-y-4 md:mx-auto">
                   <h2 class="text-xl font-bold text-gray-800">
                     Shipping Address
                   </h2>
@@ -87,7 +95,7 @@
                     Wirral, CH47 4BG.
                   </p>
                 </div>
-                <div class="space-y-4">
+                <div class="space-y-4 md:mx-auto">
                   <h2 class="text-xl font-bold text-gray-800">
                     Billing Address
                   </h2>
@@ -101,19 +109,37 @@
             </div>
           </div>
           <div
-            class="flex w-full flex-col space-y-4 rounded-xl bg-white p-4 shadow-md"
+            class="flex w-full flex-col rounded-xl bg-white shadow-md md:flex-row"
           >
-            <h3 class="text-xl font-semibold leading-5 text-gray-800">
-              Have you heard about our reglaze service?
-            </h3>
-            <div
-              class="flex w-full flex-col items-center justify-center leading-relaxed dark:text-gray-700"
-            >
-              <p>
-                Discover the magic of 50% off reglaze! Transform your eyeglasses
-                with unbeatable savings. Share the offer with friends and family
-                and save together. Don't wait, upgrade your frames now!
-              </p>
+            <!-- Image container -->
+            <div class="w-full md:w-1/2">
+              <img
+                src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/hp_banner.webp"
+                alt="Description of Image"
+                class="h-64 w-full rounded-t-xl object-cover md:rounded-none md:rounded-l-xl"
+              />
+            </div>
+
+            <!-- Text container -->
+            <div class="flex w-full flex-col space-y-4 px-4 py-4 md:w-2/3">
+              <h3 class="text-2xl font-semibold leading-6 text-gray-800">
+                Have you heard about our reglaze service?
+              </h3>
+              <div
+                class="flex flex-col items-center justify-center text-lg leading-relaxed dark:text-gray-700"
+              >
+                <p>
+                  Why buy new frames when you can revitalise the ones you
+                  already adore? Our Reglaze Service breathes new life into your
+                  favorite frames by fitting them with lenses updated to your
+                  latest prescription. This service is not only cost-effective
+                  but also an eco-friendly alternative, allowing you to update
+                  your current frames with a new prescription, retaining the
+                  style you love while embracing new vision needs. Check out our
+                  reglaze service
+                  <a href="/reglaze-customer-frames" class="text-link">here</a>.
+                </p>
+              </div>
             </div>
           </div>
         </div>
