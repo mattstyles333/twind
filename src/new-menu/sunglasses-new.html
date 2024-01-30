@@ -16,11 +16,11 @@
 
 <section id="menu-desktop-sunglasses">
   <div
-    class="container mx-auto mt-2 flex max-w-6xl flex-col px-2 py-4 sm:flex-row"
+    class="container mx-auto mt-2 flex max-w-7xl flex-col px-2 pb-3 pt-4 sm:flex-row"
   >
     <!-- Left Side: Tabs -->
     <div
-      class="mx-auto w-full border-gray-100 sm:mb-0 sm:flex-1"
+      class="mx-auto w-full sm:mb-0 md:w-7/12"
       x-data="initMenuDesktopAdditional()"
       x-init="initialize('#menu-desktop-sunglasses'); $nextTick(() => buildAll())"
     >
@@ -54,152 +54,233 @@
       </div>
 
       <!-- Two columns of text below the tabs -->
-      <div class="pb-4 text-left text-lg lg:text-xl">
+      <div class="pb-4 text-left text-lg lg:text-lg">
         <!-- All -->
         <div
-          class="mx-auto grid max-w-md grid-cols-2 py-3"
+          class="mx-auto grid max-w-4xl grid-cols-3 py-3"
           x-show="active_tab === 0"
         >
           <!-- First Column -->
-          <div class="ml-4 space-y-6">
-            <p class="hover:underline">
-              <a href="/sunglasses">Shop All </a>
-            </p>
-            <p class="hover:underline">
-              <a href="/new-sunglasses"> New Frames </a>
-            </p>
-            <p class="hover:underline">
-              <a href="/sunglasses-bestsellers"> Best Sellers </a>
-            </p>
-            <p class="hover:underline">
-              <a href="/designer-sunglasses">Designer </a>
-            </p>
+          <div class="mx-auto">
+            <div class="ml-4 space-y-6">
+              <p class="hover:underline">
+                <a href="/sunglasses">Shop All </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/new-sunglasses"> New Frames </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/sunglasses-bestsellers"> Best Sellers </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/designer-sunglasses">Designer </a>
+              </p>
+            </div>
           </div>
           <!-- Second Column -->
-          <div class="space-y-6">
-            <p class="hover:underline">
-              <a href="/reading-sunglasses">Reading Sunglasses </a>
-            </p>
-            <p class="hover:underline">
-              <a href="/polarised-sunglasses">Polarised Sunglasses </a>
-            </p>
-            <p class="hover:underline">
-              <a href="/clip-on-sunglasses">Clip on Sunglasses </a>
-            </p>
-            <p class="hover:underline">
-              <a href="/sports-glasses">Sports Sunglasses </a>
-            </p>
+          <div class="mx-auto">
+            <div class="space-y-6">
+              <p class="hover:underline">
+                <a href="/reading-sunglasses">Reading Sunglasses </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/polarised-sunglasses">Polarised Sunglasses </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/clip-on-sunglasses">Clip on Sunglasses </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/sports-glasses">Sports Sunglasses </a>
+              </p>
+            </div>
+          </div>
+          <!-- Third Column -->
+          <div class="mx-auto">
+            <div class="space-y-6">
+              <p class="hover:underline">
+                <a href="/clip-on-sunglasses">Clip-on Sunglasses</a>
+              </p>
+              <p class="hover:underline">
+                <a href="/sunglasses/prada">Prada Sunglasses</a>
+              </p>
+              <p class="hover:underline">
+                <a href="/sunglasses/oakley">Oakley Sunglasses</a>
+              </p>
+              <p class="hover:underline">
+                <a href="/sunglasses/ray-ban">Ray-ban Sunglasses</a>
+              </p>
+            </div>
           </div>
         </div>
         <!-- Mens -->
         <div
-          class="mx-auto grid max-w-md grid-cols-2 py-3"
+          class="mx-auto grid max-w-4xl grid-cols-3 py-3"
           x-show="active_tab === 1"
         >
           <!-- First Column -->
-          <div class="ml-4 space-y-6">
-            <p class="hover:underline">
-              <a href="/sunglasses/mens">Shop All </a>
-            </p>
-            <p class="hover:underline">
-              <a
-                href="/new-sunglasses?a1_frame_gender%5B0%5D=Mens&a1_frame_gender%5B1%5D=Unisex"
-              >
-                New Frames
-              </a>
-            </p>
-            <p class="hover:underline">
-              <a
-                href="/sunglasses-bestsellers?a1_frame_gender%5B0%5D=Mens&a1_frame_gender%5B1%5D=Unisex"
-              >
-                Best Sellers
-              </a>
-            </p>
-            <p class="hover:underline">
-              <a href="/designer-sunglasses/mens">Designer </a>
-            </p>
+          <div class="mx-auto">
+            <div class="ml-4 space-y-6">
+              <p class="hover:underline">
+                <a href="/sunglasses/mens">Shop All </a>
+              </p>
+              <p class="hover:underline">
+                <a
+                  href="/new-sunglasses?a1_frame_gender%5B0%5D=Mens&a1_frame_gender%5B1%5D=Unisex"
+                >
+                  New Frames
+                </a>
+              </p>
+              <p class="hover:underline">
+                <a
+                  href="/sunglasses-bestsellers?a1_frame_gender%5B0%5D=Mens&a1_frame_gender%5B1%5D=Unisex"
+                >
+                  Best Sellers
+                </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/designer-sunglasses/mens">Designer </a>
+              </p>
+            </div>
           </div>
           <!-- Second Column -->
-          <div class="space-y-6">
-            <p class="hover:underline">
-              <a href="/reading-sunglasses/mens">Reading Sunglasses </a>
-            </p>
-            <p class="hover:underline">
-              <a
-                href="/polarised-sunglasses?a1_frame_gender%5B0%5D=Mens&a1_frame_gender%5B1%5D=Unisex"
-                >Polarised Sunglasses
-              </a>
-            </p>
-            <p class="hover:underline">
-              <a href="/clip-on-sunglasses/mens">Clip on Sunglasses </a>
-            </p>
-            <p class="hover:underline">
-              <a
-                href="/sports-glasses?a1_frame_gender%5B0%5D=Mens&a1_frame_gender%5B1%5D=Unisex"
-                >Sports Sunglasses
-              </a>
-            </p>
+          <div class="mx-auto">
+            <div class="space-y-6">
+              <p class="hover:underline">
+                <a href="/reading-sunglasses/mens">Reading Sunglasses </a>
+              </p>
+              <p class="hover:underline">
+                <a
+                  href="/polarised-sunglasses?a1_frame_gender%5B0%5D=Mens&a1_frame_gender%5B1%5D=Unisex"
+                  >Polarised Sunglasses
+                </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/clip-on-sunglasses/mens">Clip on Sunglasses </a>
+              </p>
+              <p class="hover:underline">
+                <a
+                  href="/sports-glasses?a1_frame_gender%5B0%5D=Mens&a1_frame_gender%5B1%5D=Unisex"
+                  >Sports Sunglasses
+                </a>
+              </p>
+            </div>
+          </div>
+          <!-- Third Column -->
+          <div class="mx-auto">
+            <div class="space-y-6">
+              <p class="hover:underline">
+                <a href="/clip-on-sunglasses?a1_frame_gender=Mens"
+                  >Clip-on Sunglasses</a
+                >
+              </p>
+              <p class="hover:underline">
+                <a href="/sunglasses/prada?a1_frame_gender=Mens"
+                  >Prada Sunglasses</a
+                >
+              </p>
+              <p class="hover:underline">
+                <a href="/sunglasses/oakley?a1_frame_gender=Mens"
+                  >Oakley Sunglasses</a
+                >
+              </p>
+              <p class="hover:underline">
+                <a href="/sunglasses/ray-ban?a1_frame_gender=Mens"
+                  >Ray-ban Sunglasses</a
+                >
+              </p>
+            </div>
           </div>
         </div>
         <!-- Womens -->
         <div
-          class="mx-auto grid max-w-md grid-cols-2 py-3"
+          class="mx-auto grid max-w-4xl grid-cols-3 py-3"
           x-show="active_tab === 2"
         >
           <!-- First Column -->
-          <div class="ml-4 space-y-6">
-            <p class="hover:underline">
-              <a href="/sunglasses/womens">Shop All </a>
-            </p>
-            <p class="hover:underline">
-              <a
-                href="/new-sunglasses?a1_frame_gender%5B0%5D=Womens&a1_frame_gender%5B1%5D=Unisex"
-              >
-                New Frames
-              </a>
-            </p>
-            <p class="hover:underline">
-              <a
-                href="/sunglasses-bestsellers?a1_frame_gender%5B0%5D=Womens&a1_frame_gender%5B1%5D=Unisex"
-              >
-                Best Sellers
-              </a>
-            </p>
-            <p class="hover:underline">
-              <a href="/designer-sunglasses/womens">Designer </a>
-            </p>
+          <div class="mx-auto">
+            <div class="ml-4 space-y-6">
+              <p class="hover:underline">
+                <a href="/sunglasses/womens">Shop All </a>
+              </p>
+              <p class="hover:underline">
+                <a
+                  href="/new-sunglasses?a1_frame_gender%5B0%5D=Womens&a1_frame_gender%5B1%5D=Unisex"
+                >
+                  New Frames
+                </a>
+              </p>
+              <p class="hover:underline">
+                <a
+                  href="/sunglasses-bestsellers?a1_frame_gender%5B0%5D=Womens&a1_frame_gender%5B1%5D=Unisex"
+                >
+                  Best Sellers
+                </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/designer-sunglasses/womens">Designer </a>
+              </p>
+            </div>
           </div>
           <!-- Second Column -->
-          <div class="space-y-6">
-            <p class="hover:underline">
-              <a href="/reading-sunglasses/womens">Reading Sunglasses </a>
-            </p>
-            <p class="hover:underline">
-              <a
-                href="/polarised-sunglasses?a1_frame_gender%5B0%5D=Womens&a1_frame_gender%5B1%5D=Unisex"
-                >Polarised Sunglasses
-              </a>
-            </p>
-            <p class="hover:underline">
-              <a href="/clip-on-sunglasses/womens">Clip on Sunglasses </a>
-            </p>
-            <p class="hover:underline">
-              <a
-                href="/sports-glasses?a1_frame_gender%5B0%5D=Unisex&a1_frame_gender%5B1%5D=Womens"
-                >Sports Sunglasses
-              </a>
-            </p>
+          <div class="mx-auto">
+            <div class="space-y-6">
+              <p class="hover:underline">
+                <a href="/reading-sunglasses/womens">Reading Sunglasses </a>
+              </p>
+              <p class="hover:underline">
+                <a
+                  href="/polarised-sunglasses?a1_frame_gender%5B0%5D=Womens&a1_frame_gender%5B1%5D=Unisex"
+                  >Polarised Sunglasses
+                </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/clip-on-sunglasses/womens">Clip on Sunglasses </a>
+              </p>
+              <p class="hover:underline">
+                <a
+                  href="/sports-glasses?a1_frame_gender%5B0%5D=Unisex&a1_frame_gender%5B1%5D=Womens"
+                  >Sports Sunglasses
+                </a>
+              </p>
+            </div>
+          </div>
+          <!-- Third Column -->
+          <div class="mx-auto">
+            <div class="space-y-6">
+              <p class="hover:underline">
+                <a href="/clip-on-sunglasses?a1_frame_gender=womens"
+                  >Clip-on Sunglasses</a
+                >
+              </p>
+              <p class="hover:underline">
+                <a href="/sunglasses/prada?a1_frame_gender=womens"
+                  >Prada Sunglasses</a
+                >
+              </p>
+              <p class="hover:underline">
+                <a href="/sunglasses/oakley?a1_frame_gender=womens"
+                  >Oakley Sunglasses</a
+                >
+              </p>
+              <p class="hover:underline">
+                <a href="/sunglasses/ray-ban?a1_frame_gender=womens"
+                  >Ray-ban Sunglasses</a
+                >
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Right Side: SVG Grid -->
-    <div class="mx-4 w-full px-2 sm:flex-1 md:border-l-2 lg:mx-0">
+    <div class="w-full border-gray-200 px-2 md:w-5/12 md:border-l-2">
       <div class="mb-4 mt-4 text-center text-xl font-bold lg:mt-0">
         Shop by Style
       </div>
-      <div class="grid grid-cols-3 gap-4 md:grid-cols-3 lg:grid-cols-3">
+      <div
+        class="grid grid-cols-3 gap-x-1 gap-y-4 md:grid-cols-3 lg:grid-cols-3"
+      >
         <a
           href="/sunglasses/aviator"
           class="group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
