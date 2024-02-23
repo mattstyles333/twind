@@ -1,8 +1,10 @@
+<link href="../output.css" rel="stylesheet" />
+
 <div
   class="header-top-bar bg-p flex h-9 w-full items-center justify-between px-1 py-1 sm:px-4"
 >
   <div
-    class="text-l flex flex-grow cursor-default justify-between space-x-4 text-white"
+    class="text-l hidden flex-grow cursor-default justify-between space-x-4 text-white md:flex"
   >
     <p>100% Satisfaction Guarantee</p>
     <a
@@ -30,10 +32,93 @@
       </svg>
       <p class="pl-px font-bold">Trustpilot</p>
     </a>
-    <span>Account</span>
+    <div class="flex items-center gap-4">
+      <div class="flex items-center space-x-2">
+        <svg
+          class="h-6 w-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2a8 8 0 100 16 8 8 0 000-16zm0 3a5 5 0 015 5H7a5 5 0 015-5zm-1 3v2h2v-2h-2z"
+          />
+        </svg>
+        <span class="flex items-center pr-1"
+          >Spex4Less UK
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            stroke="white"
+            viewBox="0 0 24 24"
+            class="ml-1 h-4 w-4 text-slate-500"
+            width="25"
+            height="25"
+            role="img"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m19 9-7 7-7-7"
+            ></path>
+            <title>chevron-down</title>
+          </svg>
+        </span>
+      </div>
+
+      <div class="flex items-center">
+        <span>Account</span>
+        <svg
+          class="mx-1 h-5 w-5"
+          viewBox="0 0 427 512"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M193.295 1.04488C145.293 7.16388 102.521 45.0569 90.8692 91.7879C78.6212 140.912 95.8012 190.888 135.295 221.016C158.112 238.422 180.604 245.976 209.795 246.037C224.889 246.069 232.479 245.073 245.443 241.357C281.518 231.019 313.428 200.974 326.188 165.333C333.989 143.543 335.32 116.463 329.744 92.9589C322.933 64.2489 303.672 37.4579 276.991 19.5839C253.688 3.97188 223.241 -2.77212 193.295 1.04488ZM101.073 247.932C56.2012 252.471 24.7132 284.334 9.77516 340.318C0.377161 375.539 -2.85584 425.728 2.77916 448.9C3.91616 453.575 6.95116 461.675 9.52416 466.9C13.5202 475.017 15.5912 477.783 23.7482 485.902C36.6982 498.792 46.1102 504.101 65.0092 509.175L73.2952 511.4H213.295H353.295L362.295 509.056C393.89 500.829 415.946 479.466 423.888 449.4C427.829 434.479 427.502 398.618 423.168 370.4C411.485 294.333 378.213 253.054 324.482 247.963C309.405 246.535 307.572 247.178 284.765 261.901C268.918 272.131 266.27 273.541 254.295 278.131C238.457 284.202 229.174 285.987 213.295 286.014C199.443 286.038 188.607 284.003 173.658 278.57C161.497 274.151 160.348 273.549 142.795 262.394C118.811 247.153 116.544 246.367 101.073 247.932Z"
+            fill="#f3f4f6"
+          ></path>
+        </svg>
+      </div>
+    </div>
   </div>
   <div class="flex items-center">
-    <!--Customer Icon & Dropdown-->
-    <?= $block->getChildHtml('customer') ?>
+    <nav
+      class="bg-container-lighter absolute right-0 z-20 mt-2 w-40 origin-top-right overflow-auto rounded-sm px-1 py-2 shadow-lg sm:w-48 lg:mt-3"
+      x-show="open"
+      aria-labelledby="customer-menu"
+      @click.outside="open = false"
+      style="display: none"
+    >
+      <a
+        id="customer.header.sign.in.link"
+        class="block px-4 py-2 hover:bg-gray-100 lg:px-5 lg:py-2"
+        onclick="hyva.setCookie &amp;&amp; hyva.setCookie(
+       'login_redirect',
+       window.location.href,
+       1
+   )"
+        href="https://test.spex4less.com/customer/account/index/"
+        title="Sign In"
+      >
+        Sign In</a
+      >
+
+      <a
+        id="customer.header.register.link"
+        class="block px-4 py-2 hover:bg-gray-100 lg:px-5 lg:py-2"
+        href="https://test.spex4less.com/customer/account/create/"
+        title="Create an Account"
+      >
+        Create an Account
+      </a>
+    </nav>
   </div>
 </div>
