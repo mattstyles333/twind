@@ -1,12 +1,33 @@
-<link href="../output.css" rel="stylesheet" />
-
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../output.css" rel="stylesheet" />
+  <script
+    defer
+    src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+  ></script>
+  <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+  <script
+    type="text/javascript"
+    src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
+    async
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+    async
+    defer
+  ></script>
+</head>
 <div
   class="header-top-bar bg-p flex h-9 w-full items-center justify-between px-1 py-1 sm:px-4"
 >
   <div
     class="text-l hidden flex-grow cursor-default justify-between space-x-4 text-white md:flex"
   >
-    <p>100% Satisfaction Guarantee</p>
+    <!-- This paragraph will be hidden on mobile and visible on md screens and larger -->
+    <p class="hidden md:block">100% Satisfaction Guarantee</p>
+    <!-- This anchor tag (and its contents) will be hidden on mobile and visible on md screens and larger -->
     <a
       href="https://uk.trustpilot.com/review/www.spex4less.com"
       target="_blank"
@@ -88,37 +109,5 @@
         </svg>
       </div>
     </div>
-  </div>
-  <div class="flex items-center">
-    <nav
-      class="bg-container-lighter absolute right-0 z-20 mt-2 w-40 origin-top-right overflow-auto rounded-sm px-1 py-2 shadow-lg sm:w-48 lg:mt-3"
-      x-show="open"
-      aria-labelledby="customer-menu"
-      @click.outside="open = false"
-      style="display: none"
-    >
-      <a
-        id="customer.header.sign.in.link"
-        class="block px-4 py-2 hover:bg-gray-100 lg:px-5 lg:py-2"
-        onclick="hyva.setCookie &amp;&amp; hyva.setCookie(
-       'login_redirect',
-       window.location.href,
-       1
-   )"
-        href="https://test.spex4less.com/customer/account/index/"
-        title="Sign In"
-      >
-        Sign In</a
-      >
-
-      <a
-        id="customer.header.register.link"
-        class="block px-4 py-2 hover:bg-gray-100 lg:px-5 lg:py-2"
-        href="https://test.spex4less.com/customer/account/create/"
-        title="Create an Account"
-      >
-        Create an Account
-      </a>
-    </nav>
   </div>
 </div>
