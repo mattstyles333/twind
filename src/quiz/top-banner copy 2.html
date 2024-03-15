@@ -1,0 +1,157 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../output.css" rel="stylesheet" />
+  <script
+    defer
+    src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+  ></script>
+  <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+  <script
+    type="text/javascript"
+    src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
+    async
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+    async
+    defer
+  ></script>
+</head>
+<div
+  class="header-top-bar bg-p flex h-9 w-full items-center justify-between px-1 py-1 sm:px-4"
+>
+  <div
+    class="text-l hidden flex-grow cursor-default justify-between space-x-4 text-white md:flex"
+  >
+    <!-- This paragraph will be hidden on mobile and visible on md screens and larger -->
+    <p class="hidden md:block">100% Satisfaction Guarantee</p>
+    <!-- This anchor tag (and its contents) will be hidden on mobile and visible on md screens and larger -->
+    <a
+      href="https://uk.trustpilot.com/review/www.spex4less.com"
+      target="_blank"
+      class="hidden items-center justify-between md:flex"
+    >
+      <p class="mb-2 md:mb-0">Ranked #1 On</p>
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 916 871"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="mx-1"
+      >
+        <path
+          d="M915.223 332.762H565.566L457.93 0L349.657 332.762L0 332.124L282.783 538.028L174.51 870.79L457.293 664.886L740.076 870.79L632.44 538.028L915.223 332.762Z"
+          fill="#00B67A"
+        />
+        <path
+          d="M656.643 613.251L632.44 538.028L457.93 664.886L656.643 613.251Z"
+          fill="#005128"
+        />
+      </svg>
+      <p class="pl-px font-bold">Trustpilot</p>
+    </a>
+    <div class="flex items-center gap-4">
+      <div class="relative" x-data="{ open: false }">
+        <!-- Dropdown button -->
+        <button
+          @click="open = !open"
+          class="mx-4 flex items-center justify-between gap-4 px-4 text-white"
+        >
+          <!-- Globe icon -->
+          <div class="flex">
+            <svg
+              class="mr-2 h-5 w-5"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 0 20"></path>
+              <path d="M12 22a15.3 15.3 0 0 0 0-20"></path>
+            </svg>
+            UK
+            <img
+              src="../images/union_jack.png "
+              alt="EU Flag"
+              class="ml-4 h-6 w-8"
+            />
+          </div>
+          <!-- Icon indicating dropdown -->
+          <svg
+            class="h-4 w-4 transform fill-current"
+            :class="{'rotate-180': open}"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M5.95 7.05a.5.5 0 01.7 0L10 10.348l3.35-3.3a.5.5 0 111.3.75l-4 4a.5.5 0 01-.7 0l-4-4a.5.5 0 010-.7z"
+            />
+          </svg>
+        </button>
+
+        <!-- Dropdown menu -->
+        <div
+          x-show="open"
+          @click.away="open = false"
+          class="absolute z-50 mx-4 mt-2 w-48 bg-white shadow-lg"
+        >
+          <div class="py-1">
+            <div>
+              <a
+                href="#"
+                class="flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >
+                EU
+                <!-- Slot for an image -->
+                <img
+                  src="../images/eu-flag.png"
+                  alt="EU Flag"
+                  class="ml-2 h-6 w-8"
+                />
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                class="flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >
+                US
+                <!-- Slot for an image -->
+                <img
+                  src="../images/us-flag.png"
+                  alt="US Flag"
+                  class="ml-2 h-6 w-8"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center">
+        <span>Account</span>
+        <svg
+          class="mx-1 h-5 w-5"
+          viewBox="0 0 427 512"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M193.295 1.04488C145.293 7.16388 102.521 45.0569 90.8692 91.7879C78.6212 140.912 95.8012 190.888 135.295 221.016C158.112 238.422 180.604 245.976 209.795 246.037C224.889 246.069 232.479 245.073 245.443 241.357C281.518 231.019 313.428 200.974 326.188 165.333C333.989 143.543 335.32 116.463 329.744 92.9589C322.933 64.2489 303.672 37.4579 276.991 19.5839C253.688 3.97188 223.241 -2.77212 193.295 1.04488ZM101.073 247.932C56.2012 252.471 24.7132 284.334 9.77516 340.318C0.377161 375.539 -2.85584 425.728 2.77916 448.9C3.91616 453.575 6.95116 461.675 9.52416 466.9C13.5202 475.017 15.5912 477.783 23.7482 485.902C36.6982 498.792 46.1102 504.101 65.0092 509.175L73.2952 511.4H213.295H353.295L362.295 509.056C393.89 500.829 415.946 479.466 423.888 449.4C427.829 434.479 427.502 398.618 423.168 370.4C411.485 294.333 378.213 253.054 324.482 247.963C309.405 246.535 307.572 247.178 284.765 261.901C268.918 272.131 266.27 273.541 254.295 278.131C238.457 284.202 229.174 285.987 213.295 286.014C199.443 286.038 188.607 284.003 173.658 278.57C161.497 274.151 160.348 273.549 142.795 262.394C118.811 247.153 116.544 246.367 101.073 247.932Z"
+            fill="#f3f4f6"
+          ></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
