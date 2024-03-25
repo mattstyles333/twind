@@ -1,0 +1,426 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Interactive product quiz to help you find the perfect product based on your preferences."
+  />
+  <title>Product Quiz</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/alpinejs@latest/dist/alpine.js"
+    defer
+  ></script>
+</head>
+<body class="bg-gray-50">
+  <div x-data="quizApp()" class="rounded-lg p-4">
+    <div class="text-center">
+      <p class="text-lg font-semibold text-gray-700">Select your gender:</p>
+      <div class="mx-auto mt-2 flex max-w-3xl justify-center gap-4">
+        <button
+          @click="selectGender('Mens')"
+          :class="{'bg-gray-200 outline-none text-black hover:text-black hover:bg-gray-100': selectedGender === 'Mens', 'bg-white text-black hover:bg-gray-100': selectedGender !== 'Mens'}"
+          class="btn mx-auto w-full rounded border-2 border-gray-400 px-4 py-2 text-center font-bold outline-none"
+        >
+          <p class="mx-auto text-center">Mens</p>
+        </button>
+
+        <button
+          @click="selectGender('Womens')"
+          :class="{'bg-gray-200 outline-none text-black hover:text-black hover:bg-gray-100': selectedGender === 'Womens', 'bg-white text-black hover:bg-gray-100': selectedGender !== 'Womens'}"
+          class="btn mx-auto w-full rounded border-2 border-gray-400 px-4 py-2 text-center font-bold outline-none"
+        >
+          <p class="mx-auto text-center">Womens</p>
+        </button>
+      </div>
+    </div>
+
+    <div class="mx-auto mt-2 grid max-w-3xl">
+      <div>
+        <div x-show="selectedGender" class="text-center">
+          <p class="text-lg font-semibold text-gray-700">
+            Select your frame width/face size:
+          </p>
+          <div class="mx-auto mt-2 flex max-w-3xl justify-center gap-4">
+            <button
+              @click="selectFrameSize('125-135')"
+              :class="{'bg-gray-200 outline-none text-black hover:text-black hover:bg-gray-100': selectedFrameSize === '125-135', 'bg-white text-black hover:bg-gray-100 outline-none': selectedFrameSize !== '115-130'}"
+              class="btn w-full rounded border-2 border-gray-400 px-4 py-2 text-center font-bold"
+            >
+              <p class="mx-auto text-center">Small</p>
+            </button>
+            <button
+              @click="selectFrameSize('135-145')"
+              :class="{'bg-gray-200 outline-none text-black hover:text-black hover:bg-gray-100': selectedFrameSize === '135-145', 'bg-white text-black hover:bg-gray-100 outline-none': selectedFrameSize !== '125-140'}"
+              class="btn w-full rounded border-2 border-gray-400 px-4 py-2 text-center font-bold"
+            >
+              <p class="mx-auto text-center">Medium</p>
+            </button>
+            <button
+              @click="selectFrameSize('145-155')"
+              :class="{'bg-gray-200 outline-none text-black hover:text-black hover:bg-gray-100': selectedFrameSize === '145-155', 'bg-white text-black hover:bg-gray-100 outline-none': selectedFrameSize !== '135-150'}"
+              class="btn w-full rounded border-2 border-gray-400 px-4 py-2 text-center font-bold"
+            >
+              <p class="mx-auto text-center">Large</p>
+            </button>
+          </div>
+          <div x-show="selectedFrameSize" class="py-2 text-center">
+            <div class="mx-auto mt-2 grid max-w-3xl">
+              <p class="text-lg font-semibold text-gray-700">
+                Select your face shape:
+              </p>
+              <div class="mt-2 grid grid-cols-2 gap-4 md:grid-cols-3">
+                <!-- Face Shape Buttons Start Here -->
+                <div class="flex">
+                  <button
+                    @click="selectFaceShape('Oval')"
+                    :class="{'bg-gray-200 outline-none text-black hover:text-black hover:bg-gray-100': selectedFaceShape === 'Oval', 'bg-white text-black hover:bg-gray-100 outline-none': selectedFaceShape !== 'Oval'}"
+                    class="flex w-full flex-col items-center justify-between rounded border-2 border-gray-400 px-4 py-2 font-bold md:flex-row"
+                  >
+                    <span class="mx-auto w-2/3 text-center">Oval</span>
+                    <span class="mx-auto flex w-1/3 items-center justify-end">
+                      <img
+                        src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/quiz/Oval.webp"
+                        alt="Oval Face Shape"
+                        class="mx-auto h-auto w-full"
+                      />
+                    </span>
+                  </button>
+                </div>
+                <div class="flex">
+                  <button
+                    @click="selectFaceShape('Round')"
+                    :class="{'bg-gray-200 outline-none text-black hover:text-black hover:bg-gray-100': selectedFaceShape === 'Round', 'bg-white text-black hover:bg-gray-100 outline-none': selectedFaceShape !== 'Round'}"
+                    class="flex w-full flex-col items-center justify-between rounded border-2 border-gray-400 px-4 py-2 font-bold md:flex-row"
+                  >
+                    <span class="mx-auto w-2/3 text-center">Round</span>
+                    <span class="flex w-1/3 items-center justify-end">
+                      <img
+                        src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/quiz/Round.webp"
+                        alt="Round Face Shape"
+                        class="h-auto w-full"
+                      />
+                    </span>
+                  </button>
+                </div>
+                <div class="flex">
+                  <button
+                    @click="selectFaceShape('Square')"
+                    :class="{'bg-gray-200 outline-none text-black hover:text-black hover:bg-gray-100': selectedFaceShape === 'Square', 'bg-white text-black hover:bg-gray-100 outline-none': selectedFaceShape !== 'Square'}"
+                    class="flex w-full flex-col items-center justify-between rounded border-2 border-gray-400 px-4 py-2 font-bold md:flex-row"
+                  >
+                    <span class="mx-auto w-2/3 text-center">Square</span>
+                    <span class="flex w-1/3 items-center justify-end">
+                      <img
+                        src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/quiz/Square.webp"
+                        alt="Square Face Shape"
+                        class="h-auto w-full"
+                      />
+                    </span>
+                  </button>
+                </div>
+                <div class="flex">
+                  <button
+                    @click="selectFaceShape('Heart')"
+                    :class="{'bg-gray-200 outline-none text-black hover:text-black hover:bg-gray-100': selectedFaceShape === 'Heart', 'bg-white text-black hover:bg-gray-100 outline-none': selectedFaceShape !== 'Heart'}"
+                    class="flex w-full flex-col items-center justify-between rounded border-2 border-gray-400 px-4 py-2 font-bold md:flex-row"
+                  >
+                    <span class="mx-auto w-2/3 text-center">Heart</span>
+                    <span class="flex w-1/3 items-center justify-end">
+                      <img
+                        src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/quiz/Heart.webp"
+                        alt="Heart Face Shape"
+                        class="h-auto w-full"
+                      />
+                    </span>
+                  </button>
+                </div>
+                <div class="flex">
+                  <button
+                    @click="selectFaceShape('Diamond')"
+                    :class="{'bg-gray-200 outline-none text-black hover:text-black hover:bg-gray-100': selectedFaceShape === 'Diamond', 'bg-white text-black hover:bg-gray-100 outline-none': selectedFaceShape !== 'Diamond'}"
+                    class="flex w-full flex-col items-center justify-between rounded border-2 border-gray-400 px-4 py-2 font-bold md:flex-row"
+                  >
+                    <span class="mx-auto w-2/3 text-center">Diamond</span>
+                    <span class="flex w-1/3 items-center justify-end">
+                      <img
+                        src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/quiz/Diamond.webp"
+                        alt="Diamond Face Shape"
+                        class="h-auto w-full"
+                      />
+                    </span>
+                  </button>
+                </div>
+                <div class="flex">
+                  <button
+                    @click="selectFaceShape('Rectangular')"
+                    :class="{'bg-gray-200 outline-none text-black hover:text-black hover:bg-gray-100': selectedFaceShape === 'Rectangular', 'bg-white text-black hover:bg-gray-100 outline-none': selectedFaceShape !== 'Rectangular'}"
+                    class="flex w-full flex-col items-center justify-between rounded border-2 border-gray-400 px-4 py-2 font-bold md:flex-row"
+                  >
+                    <span class="mx-auto w-2/3 text-center">Rectangular</span>
+                    <span class="flex w-1/3 items-center justify-end">
+                      <img
+                        src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/quiz/Rectangle.webp"
+                        alt="Rectangular Face Shape"
+                        class="h-auto w-full"
+                      />
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div x-show="selectedFaceShape" class="pt-4 text-center">
+          <h2 class="text-xl font-semibold text-gray-800">
+            Recommended Styles for
+            <span x-text="selectedFaceShape" class="text-blue-800"></span> Faces
+          </h2>
+          <div class="mx-auto mt-2 max-w-3xl">
+            <a
+              :href="`https://www.spex4less.com/all-frames?a1_frame_gender=${selectedGender}&${getStylesQueryParam()}&width=${selectedFrameSize}&price=${getBudgetQueryParam()}&${getColorQueryParam()}${getMaterialQueryParam()}`"
+              class="inline-block rounded border-2 border-gray-400 bg-white px-4 py-2 font-semibold text-gray-800 shadow hover:bg-gray-100"
+              target="_blank"
+            >
+              Show Results
+            </a>
+          </div>
+        </div>
+
+        <div x-show="selectedFaceShape" class="pt-4 text-center">
+          <button
+            @click="showAdditionalFilters = !showAdditionalFilters"
+            class="mt-4 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+          >
+            Additional Filters
+          </button>
+        </div>
+        <div>
+          <div
+            x-show="selectedFaceShape && showAdditionalFilters"
+            class="text-center"
+          >
+            <p class="text-lg font-semibold text-gray-700">
+              Select your budget:
+            </p>
+            <div class="mx-auto mt-2 flex max-w-3xl justify-center gap-4">
+              <button
+                @click="selectBudget('Under £50')"
+                :class="{'bg-gray-200 outline-none text-black hover:text-black hover:bg-gray-100': selectedBudget === 'Under £50', 'bg-white text-black hover:bg-gray-100 outline-none': selectedBudget !== 'Under £50'}"
+                class="btn w-full rounded border-2 border-gray-400 px-4 py-2 text-center font-bold"
+              >
+                <p class="mx-auto text-center">Under £50</p>
+              </button>
+              <button
+                @click="selectBudget('£50 - £100')"
+                :class="{'bg-gray-200 outline-none text-black hover:text-black hover:bg-gray-100': selectedBudget === '£50 - £100', 'bg-white text-black hover:bg-gray-100 outline-none': selectedBudget !== '£50 - £100'}"
+                class="btn w-full rounded border-2 border-gray-400 px-4 py-2 text-center font-bold"
+              >
+                <p class="mx-auto text-center">£50 - £100</p>
+              </button>
+              <button
+                @click="selectBudget('Over £100')"
+                :class="{'bg-gray-200 outline-none text-black hover:text-black hover:bg-gray-100': selectedBudget === 'Over £100', 'bg-white text-black hover:bg-gray-100 outline-none': selectedBudget !== 'Over £100'}"
+                class="btn w-full rounded border-2 border-gray-400 px-4 py-2 text-center font-bold"
+              >
+                <p class="mx-auto text-center">Over £100</p>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            x-show="selectedBudget && showAdditionalFilters"
+            class="pt-4 text-center"
+          >
+            <p class="text-lg font-semibold text-gray-700">
+              Select your preferred material (optional):
+            </p>
+            <div class="mx-auto mt-2 flex max-w-3xl justify-center gap-4">
+              <button
+                @click="selectMaterial('Metal')"
+                :class="{'bg-gray-200 outline-none text-black hover:text-black hover:bg-gray-100': selectedMaterial === 'Metal', 'bg-white text-black hover:bg-gray-100 outline-none': selectedMaterial !== 'Metal'}"
+                class="btn w-full rounded border-2 border-gray-400 px-4 py-2 text-center font-bold"
+              >
+                <p class="mx-auto text-center">Metal</p>
+              </button>
+              <button
+                @click="selectMaterial('Plastic')"
+                :class="{'bg-gray-200 outline-none text-black hover:text-black hover:bg-gray-100': selectedMaterial === 'Plastic', 'bg-white text-black hover:bg-gray-100 outline-none': selectedMaterial !== 'Plastic'}"
+                class="btn w-full rounded border-2 border-gray-400 px-4 py-2 text-center font-bold"
+              >
+                <p class="mx-auto text-center">Plastic</p>
+              </button>
+              <button
+                @click="selectMaterial('Metal/Plastic')"
+                :class="{'bg-gray-200 outline-none text-black hover:text-black hover:bg-gray-100': selectedMaterial === 'Metal/Plastic', 'bg-white text-black hover:bg-gray-100 outline-none': selectedMaterial !== 'Metal/Plastic'}"
+                class="btn w-full rounded border-2 border-gray-400 px-4 py-2 text-center font-bold"
+              >
+                <p class="mx-auto text-center">Metal/Plastic</p>
+              </button>
+              <!-- Apply similar modifications for any additional material buttons -->
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            x-show="selectedMaterial && showAdditionalFilters"
+            class="pt-4 text-center"
+          >
+            <p class="text-lg font-semibold text-gray-700">
+              Select your preferred colours (optional):
+            </p>
+            <div
+              class="mx-auto mt-2 flex max-w-3xl flex-wrap justify-center gap-4"
+            >
+              <template x-for="color in colors" :key="color.name">
+                <div class="relative h-8 w-12">
+                  <button
+                    @click="toggleColorSelection(color.name)"
+                    :class="[
+        'transition-all duration-300 ease-in-out border-2',
+        'h-full w-full',
+        selectedColors.includes(color.name) ? 'border-gray-400 -mt-2 shadow-md shadow-slate-900' : 'border-gray-400',
+      ]"
+                    :style="`background-color: ${color.hex};`"
+                    :title="color.name"
+                  ></button>
+                  <div
+                    :class="{
+        'absolute bottom-0 left-0 right-0 h-1 bg-blue-600': selectedColors.includes(color.name),
+      }"
+                    :style="{ display: selectedColors.includes(color.name) ? 'block' : 'none' }"
+                  ></div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+        <script>
+          function quizApp() {
+            return {
+              selectedGender: "",
+              selectedFaceShape: "",
+              selectedFrameSize: "",
+              selectedBudget: "",
+              selectedMaterial: "",
+              showAdditionalFilters: false, // Variable to control the visibility of additional filters
+
+              faceShapes: {
+                Oval: ["Oversized", "Wayfarer", "Aviator"],
+                Round: ["Regular", "Square", "Clubmaster"],
+                Square: ["Oval", "Round", "Cateye"],
+                Heart: ["Cateye", "Round", "Oval"],
+                Diamond: ["Oval", "Cateye", "Round"],
+                Rectangular: ["Round", "Oval", "Cateye"],
+              },
+              selectedColors: [],
+              colors: [
+                { name: "Black", hex: "#000000" },
+                { name: "White", hex: "#FFFFFF" },
+                { name: "Grey", hex: "#808080" },
+                { name: "Blue", hex: "#6495ED" },
+                { name: "Green", hex: "#008000" },
+                { name: "Purple", hex: "#800080" },
+                { name: "Red", hex: "#FF0000" },
+                { name: "Brown", hex: "#662505" },
+                { name: "Tortoise / Havana", hex: "#9d5428" },
+                { name: "Crystal", hex: "#f2f2f2" },
+                { name: "Gold", hex: "#d3aa31" },
+                { name: "Silver", hex: "#C0C0C0" },
+                // Add more colors as needed
+              ],
+
+              toggleColorSelection(color) {
+                const index = this.selectedColors.indexOf(color);
+                if (index > -1) {
+                  this.selectedColors.splice(index, 1);
+                } else {
+                  this.selectedColors.push(color);
+                }
+              },
+
+              getColorQueryParam() {
+                return this.selectedColors
+                  .map(
+                    (color, index) =>
+                      `color%5B${index}%5D=${encodeURIComponent(color)}`,
+                  )
+                  .join("&");
+              },
+
+              recommendedStyles: [],
+              selectGender(gender) {
+                this.selectedGender = gender;
+              },
+              selectFaceShape(shape) {
+                this.selectedFaceShape = shape;
+                this.updateRecommendedStyles();
+              },
+              selectFrameSize(size) {
+                this.selectedFrameSize = size;
+                // Size selection no longer impacts recommended styles directly
+                // but we'll keep this method call if other logic depends on size change
+                this.updateRecommendedStyles();
+              },
+              selectBudget(budget) {
+                this.selectedBudget = budget;
+              },
+              getBudgetQueryParam() {
+                switch (this.selectedBudget) {
+                  case "Under £50":
+                    return "0-49.99";
+                  case "£50 - £100":
+                    return "50-100";
+                  case "Over £100":
+                    return "100-";
+                  default:
+                    return "";
+                }
+              },
+              selectMaterial(material) {
+                this.selectedMaterial =
+                  this.selectedMaterial === material ? "" : material;
+              },
+
+              getMaterialQueryParam() {
+                return this.selectedMaterial
+                  ? `&a1_frame_material=${encodeURIComponent(
+                      this.selectedMaterial,
+                    )}`
+                  : "";
+              },
+
+              getStylesQueryParam() {
+                return this.recommendedStyles
+                  .map(
+                    (style, index) =>
+                      `a1_frame_style%5B${index}%5D=${encodeURIComponent(
+                        style,
+                      )}`,
+                  )
+                  .join("&");
+              },
+
+              updateRecommendedStyles() {
+                // Directly use faceShapes mapping without considering frame size
+                if (this.selectedFaceShape) {
+                  let styles = this.faceShapes[this.selectedFaceShape];
+                  if (this.selectedGender.toLowerCase() === "mens") {
+                    styles = styles.map((style) =>
+                      style.toLowerCase() === "cateye" ? "Regular" : style,
+                    );
+                  }
+                  this.recommendedStyles = styles;
+                }
+              },
+            };
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
