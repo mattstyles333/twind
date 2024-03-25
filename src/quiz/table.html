@@ -1,0 +1,77 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Interactive product quiz to help you find the perfect product based on your preferences."
+  />
+  <title>Product Quiz</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/alpinejs@latest/dist/alpine.js"
+    defer
+  ></script>
+</head>
+
+<table
+  class="w-full table-auto border-separate border border-white text-left text-xs text-gray-500 md:text-base"
+>
+  <thead class="bg-p text-center uppercase text-gray-700 text-white">
+    <tr>
+      <!-- This is the empty cell on the top-left corner of the table -->
+      <th scope="col" class="rounded-tl-lg px-2 py-2 md:px-6 md:py-3"></th>
+
+      <!-- Y-axis labels -->
+      <th scope="col" class="px-2 py-2 md:px-6 md:py-3">Stock Lenses</th>
+      <th scope="col" class="rounded-tr-lg px-2 py-2 md:px-6 md:py-3">
+        Specialist Lenses
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- First row with X-axis label -->
+    <tr class="dark:bg-p border-b bg-white">
+      <th
+        scope="row"
+        class="bg-l px-2 py-2 font-semibold uppercase text-gray-900 md:px-6 md:py-4"
+      >
+        Stock Frames
+      </th>
+      <!-- These are the cells for Stock Lenses x Stock Frames and Specialist Lenses x Stock Frames -->
+      <td
+        class="bg-l px-2 py-2 text-center font-medium text-gray-900 md:px-6 md:py-4"
+      >
+        1-2 business days
+      </td>
+      <td
+        class="bg-l px-2 py-2 text-center font-medium text-gray-900 md:px-6 md:py-4"
+      >
+        3-8 business days
+      </td>
+    </tr>
+
+    <!-- Second row with X-axis label -->
+    <tr class="dark:bg-p border-b bg-white">
+      <th
+        scope="row"
+        class="bg-l px-2 py-2 font-semibold uppercase text-gray-900 md:px-6 md:py-4"
+      >
+        Designer Frames
+      </th>
+      <!-- These are the cells for Stock Lenses x Designer Frames and Specialist Lenses x Designer Frames -->
+      <td
+        class="bg-l px-2 py-2 text-center font-medium text-gray-900 md:px-6 md:py-4"
+      >
+        2-9 business days
+      </td>
+      <td
+        class="bg-l px-2 py-2 text-center font-medium text-gray-900 md:px-6 md:py-4"
+      >
+        3-9 business days
+      </td>
+    </tr>
+  </tbody>
+</table>

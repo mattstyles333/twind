@@ -48,21 +48,39 @@
         <div x-data="quizApp()" class="space-y-6 rounded-lg p-4">
           <div class="text-center">
             <p class="text-lg font-semibold text-gray-700">
+              Choose your eyewear type:
+            </p>
+            <div class="mx-auto mt-2 flex justify-center gap-4">
+              <button
+                @click="selectEyewearType('Glasses')"
+                class="btn focus:shadow-outline rounded border-2 border-gray-400 px-4 py-2 font-bold hover:bg-gray-200 focus:outline-none"
+                :class="{'text-white bg-purple-500': selectedEyewearType === 'Glasses'}"
+              >
+                Glasses
+              </button>
+
+              <button
+                @click="selectEyewearType('Sunglasses')"
+                class="btn focus:shadow-outline rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-200 focus:outline-none"
+              >
+                Sunglasses
+              </button>
+            </div>
+          </div>
+          <div x-show="selectedEyewearType" class="text-center">
+            <p class="text-lg font-semibold text-gray-700">
               Select your gender:
             </p>
             <div class="mx-auto mt-2 flex max-w-3xl justify-center gap-4">
               <button
                 @click="selectGender('Mens')"
-                class="btn focus:shadow-outline w-full rounded border-2 border-gray-400 px-4 py-2 font-bold hover:bg-gray-100 hover:text-black focus:outline-none"
-                :class="{' bg-gray-200': selectedGender === 'Mens'}"
+                class="btn focus:shadow-outline w-full rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-200 focus:outline-none"
               >
                 Mens
               </button>
-
               <button
                 @click="selectGender('Womens')"
-                class="btn focus:shadow-outline w-full rounded border-2 border-gray-400 px-4 py-2 font-bold hover:bg-gray-100 hover:text-black focus:outline-none"
-                :class="{' bg-gray-200 ': selectedGender === 'Womens'}"
+                class="btn focus:shadow-outline w-full rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-200 focus:outline-none"
               >
                 Womens
               </button>
@@ -76,8 +94,7 @@
             <div class="mx-auto mt-2 grid max-w-3xl grid-cols-3 gap-4">
               <button
                 @click="selectFaceShape('Oval')"
-                class="focus:shadow-outline flex w-full items-center justify-between rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-100 focus:outline-none"
-                :class="{'text-white bg-gray-200': selectedFaceShape === 'Oval'}"
+                class="focus:shadow-outline flex w-full items-center justify-between rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-200 focus:outline-none"
               >
                 <span class="mx-auto w-2/3 text-center">Oval</span>
                 <span class="mx-auto flex w-1/3 items-center justify-end">
@@ -91,8 +108,7 @@
 
               <button
                 @click="selectFaceShape('Round')"
-                class="focus:shadow-outline flex w-full items-center justify-between rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-100 focus:outline-none"
-                :class="{'text-white bg-gray-200': selectedFaceShape === 'Round'}"
+                class="focus:shadow-outline flex w-full items-center justify-between rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-200 focus:outline-none"
               >
                 <span class="w-2/3 px-2 text-center">Round</span>
                 <span class="flex w-1/3 items-center justify-end">
@@ -106,8 +122,7 @@
 
               <button
                 @click="selectFaceShape('Square')"
-                class="focus:shadow-outline flex w-full items-center justify-between rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-100 focus:outline-none"
-                :class="{'text-white bg-gray-200': selectedFaceShape === 'Square'}"
+                class="focus:shadow-outline flex w-full items-center justify-between rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-200 focus:outline-none"
               >
                 <span class="w-2/3 px-2 text-center">Square</span>
                 <span class="flex w-1/3 items-center justify-end">
@@ -121,8 +136,7 @@
 
               <button
                 @click="selectFaceShape('Heart')"
-                class="focus:shadow-outline flex w-full items-center justify-between rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-100 focus:outline-none"
-                :class="{'text-white bg-gray-200': selectedFaceShape === 'Heart'}"
+                class="focus:shadow-outline flex w-full items-center justify-between rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-200 focus:outline-none"
               >
                 <span class="w-2/3 px-2 text-center">Heart</span>
                 <span class="flex w-1/3 items-center justify-end">
@@ -136,8 +150,7 @@
 
               <button
                 @click="selectFaceShape('Diamond')"
-                class="focus:shadow-outline flex w-full items-center justify-between rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-100 focus:outline-none"
-                :class="{'text-white bg-gray-200': selectedFaceShape === 'Diamond'}"
+                class="focus:shadow-outline flex w-full items-center justify-between rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-200 focus:outline-none"
               >
                 <span class="w-2/3 px-2 text-center">Diamond</span>
                 <span class="flex w-1/3 items-center justify-end">
@@ -150,15 +163,14 @@
               </button>
 
               <button
-                @click="selectFaceShape('Rectangular')"
-                class="focus:shadow-outline flex w-full items-center justify-between rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-100 focus:outline-none"
-                :class="{'text-white bg-gray-200': selectedFaceShape === 'Regular'}"
+                @click="selectFaceShape('Rectangle')"
+                class="focus:shadow-outline flex w-full items-center justify-between rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-200 focus:outline-none"
               >
-                <span class="w-2/3 px-2 text-center">Rectangular</span>
+                <span class="w-2/3 px-2 text-center">Rectangle</span>
                 <span class="flex w-1/3 items-center justify-end">
                   <img
                     src="../images/Rectangle.png"
-                    alt="Regular Face Shape"
+                    alt="Rectangle Face Shape"
                     class="h-auto w-full"
                   />
                 </span>
@@ -173,22 +185,19 @@
             <div class="mx-auto mt-2 flex max-w-3xl justify-center gap-4">
               <button
                 @click="selectFrameSize('115-130')"
-                class="btn focus:shadow-outline w-full rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-100 focus:outline-none"
-                :class="{'text-white bg-gray-200': selectedFrameSize === '115-130'}"
+                class="btn focus:shadow-outline w-full rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-200 focus:outline-none"
               >
                 Small
               </button>
               <button
                 @click="selectFrameSize('125-140')"
-                class="btn focus:shadow-outline w-full rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-100 focus:outline-none"
-                :class="{'text-white bg-gray-200': selectedFrameSize === '125-140'}"
+                class="btn focus:shadow-outline w-full rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-200 focus:outline-none"
               >
                 Medium
               </button>
               <button
                 @click="selectFrameSize('135-150')"
-                class="btn focus:shadow-outline w-full rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-100 focus:outline-none"
-                :class="{'text-white bg-gray-200': selectedFrameSize === '135-150'}"
+                class="btn focus:shadow-outline w-full rounded border-2 border-gray-400 bg-white px-4 py-2 font-bold text-gray-800 hover:bg-gray-200 focus:outline-none"
               >
                 Large
               </button>
@@ -199,7 +208,7 @@
             <h2 class="text-xl font-semibold text-gray-800">
               Recommended Styles for
               <span x-text="selectedFaceShape" class="text-blue-600"></span>
-              Faces
+              Face
             </h2>
             <div class="mx-auto mt-2 grid max-w-3xl grid-cols-3 gap-4">
               <template x-for="style in recommendedStyles" :key="style">
@@ -220,70 +229,33 @@
   <script>
     function quizApp() {
       return {
+        selectedEyewearType: "",
         selectedGender: "",
         selectedFaceShape: "",
         selectedFrameSize: "",
         faceShapes: {
-          Oval: {
-            "115-130": ["Oval", "Cateye", "Round"],
-            "125-140": ["Oversized", "Wayfarer", "Aviator"],
-            "135-150": ["Regular", "Square", "Clubmaster"],
-          },
-          Round: {
-            "115-130": ["Regular", "Square", "Keyhole"],
-            "125-140": ["Regular", "Square", "Clubmaster"],
-            "135-150": ["Regular", "Oversized", "Square"],
-          },
-          Square: {
-            "115-130": ["Oval", "Round", "Cateye"],
-            "125-140": ["Round", "Oval", "Cateye"],
-            "135-150": ["Oval", "Round", "Aviator"],
-          },
-          Heart: {
-            "115-130": ["Oval", "Round", "Cateye"],
-            "125-140": ["Cateye", "Round", "Oval"],
-            "135-150": ["Round", "Oval", "Cateye"],
-          },
-          Diamond: {
-            "115-130": ["Oval", "Round", "Cateye"],
-            "125-140": ["Oval", "Cateye", "Round"],
-            "135-150": ["Oval", "Cateye", "Round"],
-          },
-          Rectangular: {
-            "115-130": ["Round", "Oval", "Cateye"],
-            "125-140": ["Round", "Oval", "Cateye"],
-            "135-150": ["Oval", "Round", "Cateye"],
-          },
+          Oval: ["Oversized", "Wayfarer", "Aviator"],
+          Round: ["Square", "Rectangular", "Keyhole"],
+          Square: ["Round", "Oversized", "Aviator"],
+          Heart: ["Cateye", "Round", "Wayfarer"],
+          Diamond: ["Oval", "Cateye", "Clubmaster"],
+          Rectangle: ["Square", "Chic", "Aviator"],
         },
-
         recommendedStyles: [],
+        selectEyewearType(type) {
+          this.selectedEyewearType = type;
+        },
         selectGender(gender) {
           this.selectedGender = gender;
         },
         selectFaceShape(shape) {
           this.selectedFaceShape = shape;
-          // Update recommendedStyles right after selecting a new face shape
-          this.updateRecommendedStyles();
+          // Logic for face shape selection remains unchanged
         },
         selectFrameSize(size) {
           this.selectedFrameSize = size;
-          // Update recommendedStyles when selecting a new frame size (if necessary)
-          this.updateRecommendedStyles();
-        },
-        updateRecommendedStyles() {
-          if (this.selectedFaceShape && this.selectedFrameSize) {
-            let styles =
-              this.faceShapes[this.selectedFaceShape][this.selectedFrameSize];
-
-            // Replace "Cateye" with "Regular" if the selected gender is "mens"
-            if (this.selectedGender.toLowerCase() === "mens") {
-              styles = styles.map((style) =>
-                style.toLowerCase() === "cateye" ? "Regular" : style,
-              );
-            }
-
-            this.recommendedStyles = styles;
-          }
+          this.recommendedStyles = this.faceShapes[this.selectedFaceShape];
+          // Logic for frame size selection remains unchanged
         },
       };
     }
