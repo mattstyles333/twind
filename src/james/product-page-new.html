@@ -1,0 +1,188 @@
+<section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../output.css" rel="stylesheet" />
+    <script
+      defer
+      src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
+      async
+    ></script>
+  </head>
+  <body class="bg-gray-50">
+    <section class="">
+      <div class="container mx-auto mt-5 max-w-screen-2xl bg-white p-3 md:p-8">
+        <div class="flex flex-col items-center md:flex-row md:items-start">
+          <div class="w-full pb-4 md:w-1/2">
+            <!-- Large image container -->
+            <img
+              class="mx-auto h-auto"
+              src="../images/product-image.jpg"
+              alt="Large image"
+            />
+
+            <!-- Thumbnail images container -->
+            <div class="justify-left mt-4 flex gap-x-4">
+              <img
+                class="h-16 w-24 border p-1"
+                src="../images/product-image.jpg"
+                alt="Thumbnail image 1"
+              />
+              <img
+                class="h-16 w-24 border-2 border-blue-500 p-1"
+                src="../images/product-image.jpg"
+                alt="Thumbnail image 2"
+              />
+            </div>
+          </div>
+
+          <div class="w-full md:w-1/2 md:pl-10">
+            <h1 class="mb-3 text-4xl font-bold">
+              Blake Salvini Glasses | A71E
+            </h1>
+            <p class="mb-3 text-3xl font-bold text-gray-900">£47.97</p>
+            <div class="mb-6">
+              <!-- Color options as swatches -->
+              <div x-data="{ showAll: false }" class="max-w-xl">
+                <p class="mb-2 block text-lg font-bold text-gray-700">
+                  Colour Option
+                </p>
+                <div class="flex flex-wrap gap-x-2">
+                  <!-- Always visible swatches (first eight) -->
+                  <button
+                    class="h-6 w-12 rounded-md bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                    title="Black"
+                  ></button>
+                  <button
+                    class="h-6 w-12 rounded-md bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2"
+                    title="Gray"
+                  ></button>
+                  <button
+                    class="h-6 w-12 rounded-md bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+                    title="Blue"
+                  ></button>
+                  <button
+                    class="h-6 w-12 rounded-md bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2"
+                    title="Red"
+                  ></button>
+                  <button
+                    class="h-6 w-12 rounded-md bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
+                    title="Green"
+                  ></button>
+                  <button
+                    class="h-6 w-12 rounded-md bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2"
+                    title="Orange"
+                  ></button>
+                  <!-- Repeat for other colors as needed -->
+
+                  <!-- Conditionally visible swatches, based on 'showAll' -->
+                  <div x-show="showAll">
+                    <div class="flex flex-wrap gap-x-2 pt-2">
+                      <button
+                        class="h-6 w-12 rounded-md bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2"
+                        title="Yellow"
+                      ></button>
+                      <button
+                        class="h-6 w-12 rounded-md bg-purple-600 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2"
+                        title="Purple"
+                      ></button>
+                      <button
+                        class="h-6 w-12 rounded-md bg-yellow-900 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2"
+                        title="Brown"
+                      ></button>
+                      <button
+                        class="h-6 w-12 rounded-md bg-pink-950 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2"
+                        title="Burgundy"
+                      ></button>
+                      <button
+                        class="h-6 w-12 rounded-md bg-zinc-400 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2"
+                        title="Silver"
+                      ></button>
+                    </div>
+                  </div>
+
+                  <!-- The '+ More' button -->
+                  <button
+                    class="mt-2 flex h-6 w-12 items-center justify-center rounded-md bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 md:mt-0"
+                    x-show="!showAll"
+                    @click="showAll = true"
+                  >
+                    <!-- Plus icon, you can use an SVG or a text-based representation like '+' -->
+                    <svg
+                      class="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M12 4v16m8-8H4"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Size options as buttons -->
+              <div class="mb-4 pt-2">
+                <label
+                  for="size"
+                  class="mb-2 block text-lg font-bold text-gray-700"
+                  >Size Option</label
+                >
+                <div class="flex space-x-2">
+                  <!-- Size buttons here -->
+                  <button
+                    class="rounded border border-gray-400 bg-white px-3 py-1 text-base font-bold text-gray-700 hover:bg-gray-100 focus:outline-none"
+                  >
+                    52-18-140
+                  </button>
+                  <button
+                    class="rounded border border-gray-400 bg-white px-3 py-1 text-base font-bold text-gray-700 hover:bg-gray-100 focus:outline-none"
+                  >
+                    54-18-140
+                  </button>
+                  <button
+                    class="rounded border border-gray-400 bg-white px-3 py-1 text-base font-bold text-gray-700 hover:bg-gray-100 focus:outline-none"
+                  >
+                    56-18-140
+                  </button>
+                  <!-- Add more size buttons as needed -->
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <!-- This container ensures space between the buttons -->
+              <!-- First Button -->
+              <div>
+                <button
+                  class="focus:shadow-outline bg-s w-full rounded px-4 py-3 text-lg font-bold text-white shadow-md duration-700 ease-in-out hover:bg-blue-700 focus:outline-none"
+                  type="button"
+                >
+                  Select Lenses
+                </button>
+              </div>
+
+              <!-- Second Button -->
+              <div>
+                <button
+                  class="w-full rounded border border-gray-300 bg-transparent px-4 py-2 text-gray-700 shadow-md duration-700 ease-in-out hover:bg-gray-100"
+                  type="button"
+                >
+                  Order Frame Only
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</section>
