@@ -1,0 +1,69 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonial Slider</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
+  <!-- Updated the Alpine.js CDN link to the correct version for browsers -->
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"
+  ></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+</head>
+
+<li
+  class="glide__slide relative rounded-lg border-2 border-gray-300 bg-gray-100 p-4 pt-8 shadow-lg"
+>
+  <!-- SVG positioned in the center top -->
+  <div class="absolute left-1/2 top-0 -mt-3 -translate-x-1/2 transform">
+    <svg
+      width="150"
+      height="25"
+      viewBox="0 0 512 96"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <!-- Rectangular fills with unique color -->
+      <rect width="96" height="96" fill="#00B67A" />
+      <rect x="104" width="96" height="96" fill="#00B67A" />
+      <rect x="208" width="96" height="96" fill="#00B67A" />
+      <rect x="312" width="96" height="96" fill="#00B67A" />
+      <rect x="416" width="96" height="96" fill="#00B67A" />
+      <!-- White decorative paths -->
+      <path
+        fill="white"
+        d="M48 64.7L62.6 61L68.7 79.8L48 64.7ZM81.6 40.4H55.9L48 16.2L40.1 40.4H14.4L35.2 55.4L27.3 79.6L48.1 64.6L60.9 55.4L81.6 40.4Z"
+      />
+      <path
+        fill="white"
+        d="M152 64.7L166.6 61L172.7 79.8L152 64.7ZM185.6 40.4H159.9L152 16.2L144.1 40.4H118.4L139.2 55.4L131.3 79.6L152.1 64.6L164.9 55.4L185.6 40.4Z"
+      />
+      <path
+        fill="white"
+        d="M256 64.7L270.6 61L276.7 79.8L256 64.7ZM289.6 40.4H263.9L256 16.2L248.1 40.4H222.4L243.2 55.4L235.3 79.6L256.1 64.6L268.9 55.4L289.6 40.4Z"
+      />
+      <path
+        fill="white"
+        d="M360 64.7L374.6 61L380.7 79.8L360 64.7ZM393.6 40.4H367.9L360 16.2L352.1 40.4H326.4L347.2 55.4L339.3 79.6L360.1 64.6L372.9 55.4L393.6 40.4Z"
+      />
+      <path
+        fill="white"
+        d="M464 64.7L478.6 61L484.7 79.8L464 64.7ZM497.6 40.4H471.9L464 16.2L456.1 40.4H430.4L451.2 55.4L443.3 79.6L464.1 64.6L476.9 55.4L497.6 40.4Z"
+      />
+    </svg>
+  </div>
+  <!-- Blockquote for the main content -->
+  <blockquote class="text-center italic text-gray-500">
+    "Absolutely loved the service! Highly recommend to anyone looking to get
+    professional service."
+  </blockquote>
+  <!-- Attribution for the quote -->
+  <div class="pt-2 text-center text-gray-800">- Jane Doe</div>
+</li>

@@ -5,6 +5,7 @@
     "tailwindcss": "^3.3.3"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.6.0",
     "@preline/carousel": "^2.0.2",
     "i": "^0.3.7"
   }
