@@ -68,8 +68,8 @@
         </div>
       </div>
 
-      <div x-data="slider()" x-init="init">
-        <div class="glide mx-auto py-6 md:container">
+      <div x-data="slider1()" x-init="init">
+        <div class="glide1 mx-auto py-6 md:container">
           <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides py-4">
               <li
@@ -1225,9 +1225,9 @@
 
     <script>
       document.addEventListener("alpine:init", () => {
-        Alpine.data("slider", () => ({
+        Alpine.data("slider1", () => ({
           init() {
-            new Glide(".glide", {
+            new Glide(".glide1", {
               type: "carousel",
               startAt: 0,
               perView: 3, // default number of slides for larger screens
@@ -1238,15 +1238,12 @@
 
               breakpoints: {
                 640: {
-                  // breakpoint for tablets and below (typically for mobile devices)
                   perView: 1,
                 },
                 768: {
-                  // breakpoint for tablets and below (typically for mobile devices)
                   perView: 2,
                 },
                 1024: {
-                  // breakpoint for small desktops/large tablets
                   perView: 3,
                 },
               },

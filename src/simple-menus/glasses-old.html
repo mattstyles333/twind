@@ -1,122 +1,263 @@
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="../output.css" rel="stylesheet" />
-  <script
-    defer
-    src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
-  ></script>
-  <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
-  <script
-    type="text/javascript"
-    src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
-    async
-  ></script>
-</head>
-
-<div class="bg-white">
-  <div class="container mx-auto flex max-w-7xl flex-col px-2 sm:flex-row">
-    <!-- Grid container for distinct sections -->
-    <div class="grid w-5/12 grid-cols-3 gap-4 px-4 py-4">
-      <!-- Section 1 -->
-      <div class="space-y-1">
-        <div class="text-lg font-semibold text-slate-800">Men's</div>
-        <a
-          href="/sunglasses/mens"
-          class="block rounded-md py-2 text-base font-medium text-slate-800 hover:text-gray-900 hover:underline lg:text-base"
-          >Men's Sunglasses</a
+<section id="menu-desktop-glasses">
+  <div
+    class="container mx-auto mt-2 flex max-w-7xl flex-col px-2 pb-3 pt-4 sm:flex-row"
+  >
+    <!-- Left Side: Tabs -->
+    <div
+      class="mx-auto w-full sm:mb-0 md:w-7/12"
+      x-data="initMenuDesktopAdditional()"
+      x-init="initialize('#menu-desktop-glasses'); $nextTick(() => buildAll())"
+    >
+      <div class="mx-auto flex w-full max-w-lg text-lg">
+        <!-- First tab: Men's -->
+        <div
+          @click="active_tab = (1 === active_tab ? 0 : 1)"
+          class="border-p flex-1 cursor-pointer rounded-l-full border-b-2 border-l-2 border-t-2 py-2 text-center transition duration-700 ease-in-out"
+          :class="{'hover:bg-s' : active_tab !== 1, 'bg-s' : active_tab === 1, 'bg-l' : active_tab !== 1,
+                        'hover:text-white' : active_tab !== 1, 'text-white' : active_tab === 1, 'text-black' : active_tab !== 1}"
         >
-        <a
-          href="/new-sunglasses?a1_frame_gender=Mens"
-          class="block rounded-md py-2 text-base font-medium text-slate-800 hover:text-gray-900 hover:underline lg:text-base"
-          >New Frames</a
+          Men's
+        </div>
+        <div
+          @click="active_tab = (0 === active_tab ? 0 : 0)"
+          class="border-p flex-2 cursor-pointer border-2 px-4 py-2 text-center transition duration-700 ease-in-out md:px-8"
+          :class="{'hover:bg-s' : active_tab !== 0, 'bg-s' : active_tab === 0, 'bg-l' : active_tab !== 0,
+                        'hover:text-white' : active_tab !== 0, 'text-white' : active_tab === 0, 'text-black' : active_tab !== 0}"
         >
-        <a
-          href="/sunglasses-bestsellers?a1_frame_gender=Mens"
-          class="block rounded-md py-2 text-base font-medium text-slate-800 hover:text-gray-900 hover:underline lg:text-base"
-          >Best Sellers</a
+          All
+        </div>
+        <!-- Second tab: Women's -->
+        <div
+          @click="active_tab = (2 === active_tab ? 0 : 2)"
+          class="border-p flex-1 cursor-pointer rounded-r-full border-b-2 border-r-2 border-t-2 py-2 text-center transition duration-700 ease-in-out"
+          :class="{'hover:bg-s' : active_tab !== 2, 'bg-s' : active_tab === 2, 'bg-l' : active_tab !== 2,
+                        'hover:text-white' : active_tab !== 2, 'text-white' : active_tab === 2, 'text-black' : active_tab !== 2}"
         >
-        <a
-          href="/designer-sunglasses?a1_frame_gender=Mens"
-          class="block rounded-md py-2 text-base font-medium text-slate-800 hover:text-gray-900 hover:underline lg:text-base"
-          >Designer</a
-        >
-        <a
-          href="/fast-shipping?a1_brand=Our+Sunglasses&a1_frame_gender=Mens"
-          class="block rounded-md py-2 text-base font-medium text-slate-800 hover:text-gray-900 hover:underline lg:text-base"
-          >Fast Shipping</a
-        >
+          Women's
+        </div>
       </div>
 
-      <!-- Section 2 -->
-      <div class="space-y-1">
-        <div class="text-lg font-semibold text-slate-800">Women's</div>
-        <a
-          href="/sunglasses/womens"
-          class="block rounded-md py-2 text-base font-medium text-slate-800 hover:text-gray-900 hover:underline lg:text-base"
-          >Women's Sunglasses</a
+      <!-- Two columns of text below the tabs -->
+      <div class="pb-4 text-left text-lg">
+        <!-- All -->
+        <div
+          class="mx-auto grid max-w-4xl grid-cols-3 py-3"
+          x-show="active_tab === 0"
         >
-        <a
-          href="/new-sunglasses?a1_frame_gender=womens"
-          class="block rounded-md py-2 text-base font-medium text-slate-800 hover:text-gray-900 hover:underline lg:text-base"
-          >New Frames</a
+          <!-- First Column -->
+          <div class="mx-auto">
+            <div class="mx-auto ml-4 max-w-md space-y-6">
+              <p class="hover:underline">
+                <a href="/glasses">Shop All </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/new-glasses"> New Frames </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/glasses-bestsellers"> Best Sellers </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/designer-glasses">Designer </a>
+              </p>
+            </div>
+          </div>
+          <!-- Second Column -->
+          <div class="mx-auto">
+            <div class="ml-4 space-y-6">
+              <p class="hover:underline">
+                <a href="/fast-shipping?a1_brand=Our+Glasses">Fast Shipping </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/reading-glasses">Reading Glasses </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/sports-glasses">Sports Glasses </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/varifocal-glasses">Varifocal Glasses </a>
+              </p>
+            </div>
+          </div>
+          <!-- Third Column -->
+          <div class="mx-auto">
+            <div class="ml-4 space-y-6">
+              <p class="hover:underline">
+                <a href="/blue-light-glasses">Blue Light Glasses </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/bifocal-glasses">Bifocal Glasses </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/reglaze-customer-frames">Reglaze Glasses </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/designer-glasses/oakley">Oakley Glasses </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Men's -->
+        <div
+          class="mx-auto grid max-w-4xl grid-cols-3 py-3"
+          x-show="active_tab === 1"
         >
-        <a
-          href="/sunglasses-bestsellers?a1_frame_gender=womens"
-          class="block rounded-md py-2 text-base font-medium text-slate-800 hover:text-gray-900 hover:underline lg:text-base"
-          >Best Sellers</a
+          <!-- First Column -->
+          <div class="mx-auto">
+            <div class="ml-4 space-y-6">
+              <p class="hover:underline">
+                <a href="/glasses/mens">Shop All </a>
+              </p>
+              <p class="hover:underline">
+                <a
+                  href="/new-glasses?a1_frame_gender%5B0%5D=Mens&a1_frame_gender%5B1%5D=Unisex"
+                >
+                  New Frames
+                </a>
+              </p>
+              <p class="hover:underline">
+                <a
+                  href="/glasses-bestsellers?a1_frame_gender%5B0%5D=Mens&a1_frame_gender%5B1%5D=Unisex"
+                >
+                  Best Sellers
+                </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/designer-glasses/mens">Designer </a>
+              </p>
+            </div>
+          </div>
+          <!-- Second Column -->
+          <div class="mx-auto">
+            <div class="ml-4 space-y-6">
+              <p class="hover:underline">
+                <a
+                  href="/fast-shipping?a1_brand=Our+Glasses&a1_frame_gender%5B0%5D=Unisex&a1_frame_gender%5B1%5D=Mens"
+                  >Fast Shipping
+                </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/reading-glasses-mens">Reading Glasses </a>
+              </p>
+              <p class="hover:underline">
+                <a
+                  href="/sports-glasses?a1_frame_gender%5B0%5D=Mens&a1_frame_gender%5B1%5D=Unisex"
+                  >Sports Glasses
+                </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/varifocal-glasses/mens">Varifocal Glasses </a>
+              </p>
+            </div>
+          </div>
+          <!-- Third Column -->
+          <div class="mx-auto">
+            <div class="ml-4 space-y-6">
+              <p class="hover:underline">
+                <a href="/blue-light-glasses?a1_frame_gender=Mens"
+                  >Blue Light Glasses
+                </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/bifocal-glasses/mens">Bifocal Glasses </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/reglaze-customer-frames">Reglaze Glasses </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/designer-glasses/oakley?a1_frame_gender=Mens"
+                  >Oakley Glasses
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Women's -->
+        <div
+          class="mx-auto grid max-w-4xl grid-cols-3 py-3"
+          x-show="active_tab === 2"
         >
-        <a
-          href="/designer-sunglasses?a1_frame_gender=womens"
-          class="block rounded-md py-2 text-base font-medium text-slate-800 hover:text-gray-900 hover:underline lg:text-base"
-          >Designer</a
-        >
-        <a
-          href="/fast-shipping?a1_brand=Our+Sunglasses&a1_frame_gender=Mens"
-          class="block rounded-md py-2 text-base font-medium text-slate-800 hover:text-gray-900 hover:underline lg:text-base"
-          >Fast Shipping</a
-        >
-      </div>
-
-      <!-- Section 4 -->
-      <div class="space-y-1">
-        <div class="text-lg font-semibold text-slate-800">Popular</div>
-        <a
-          href="/sunglasses"
-          class="block rounded-md py-2 text-base font-medium text-slate-800 hover:text-gray-900 hover:underline lg:text-base"
-          >All Sunglasses</a
-        >
-        <a
-          href="/reading-sunglasses"
-          class="block rounded-md py-2 text-base font-medium text-slate-800 hover:text-gray-900 hover:underline lg:text-base"
-          >Reading Sunglasses</a
-        >
-        <a
-          href="/sunglasses/ray-ban"
-          class="block rounded-md py-2 text-base font-medium text-slate-800 hover:text-gray-900 hover:underline lg:text-base"
-          >Ray-Ban Sunglasses</a
-        >
-        <a
-          href="/sunglasses/oakley"
-          class="block rounded-md py-2 text-base font-medium text-slate-800 hover:text-gray-900 hover:underline lg:text-base"
-          >Oakley Sunglasses</a
-        >
-        <a
-          href="/sports-sunglasses"
-          class="block rounded-md py-2 text-base font-medium text-slate-800 hover:text-gray-900 hover:underline lg:text-base"
-          >Sports Sunglasses</a
-        >
+          <!-- First Column -->
+          <div class="mx-auto">
+            <div class="ml-4 space-y-6">
+              <p class="hover:underline">
+                <a href="/glasses/womens">Shop All </a>
+              </p>
+              <p class="hover:underline">
+                <a
+                  href="/new-glasses?a1_frame_gender%5B0%5D=Womens&a1_frame_gender%5B1%5D=Unisex"
+                >
+                  New Frames
+                </a>
+              </p>
+              <p class="hover:underline">
+                <a
+                  href="/glasses-bestsellers?a1_frame_gender%5B0%5D=Womens&a1_frame_gender%5B1%5D=Unisex"
+                >
+                  Best Sellers
+                </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/designer-glasses/womens">Designer </a>
+              </p>
+            </div>
+          </div>
+          <!-- Second Column -->
+          <div class="mx-auto">
+            <div class="ml-4 space-y-6">
+              <p class="hover:underline">
+                <a
+                  href="/fast-shipping?a1_brand=Our+Glasses&a1_frame_gender%5B0%5D=Unisex&a1_frame_gender%5B1%5D=Womens"
+                  >Fast Shipping
+                </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/reading-glasses-womens">Reading Glasses </a>
+              </p>
+              <p class="hover:underline">
+                <a
+                  href="/sports-glasses?a1_frame_gender%5B0%5D=Unisex&a1_frame_gender%5B1%5D=Womens"
+                  >Sports Glasses
+                </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/varifocal-glasses/womens">Varifocal Glasses </a>
+              </p>
+            </div>
+          </div>
+          <!-- Third Column -->
+          <div class="mx-auto">
+            <div class="ml-4 space-y-6">
+              <p class="hover:underline">
+                <a href="/blue-light-glasses?a1_frame_gender=womens"
+                  >Blue Light Glasses
+                </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/bifocal-glasses/womens">Bifocal Glasses </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/reglaze-customer-frames">Reglaze Glasses </a>
+              </p>
+              <p class="hover:underline">
+                <a href="/designer-glasses/oakley?a1_frame_gender=Womens"
+                  >Oakley Glasses
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="w-full border-gray-200 px-2 py-4 md:w-7/12 md:border-l-2">
-      <div class="mb-4 mt-4 text-center text-lg font-bold lg:mt-0">
+
+    <!-- Right Side: SVG Grid -->
+    <div class="w-full border-gray-200 px-2 md:w-5/12 md:border-l-2">
+      <div class="mb-4 mt-4 text-center text-xl font-bold lg:mt-0">
         Shop by Style
       </div>
-      <div
-        class="grid grid-cols-3 gap-x-1 gap-y-4 px-4 text-sm md:grid-cols-3 lg:grid-cols-3 lg:text-base"
-      >
+
+      <div class="grid grid-cols-3 gap-4 md:grid-cols-3 lg:grid-cols-3">
         <a
-          href="/sunglasses/aviator"
+          href="/glasses/aviator"
           class="group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
         >
           <svg
@@ -134,13 +275,11 @@
             />
           </svg>
 
-          <p class="mt-2 text-center text-sm group-hover:underline">
-            Aviator Sunglasses
-          </p>
+          <p class="mt-3 text-center group-hover:underline">Aviator Glasses</p>
         </a>
         <a
-          data-href='{"url" : "sunglasses", "queryParts" : {"a1_frame_shape" : "Cateye"}}'
-          class="dynamic-link-item group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
+          href="/glasses/cat-eye"
+          class="group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
         >
           <svg
             width="110"
@@ -157,12 +296,10 @@
             />
           </svg>
 
-          <p class="mt-2 text-center text-sm group-hover:underline">
-            Cat Eye Sunglasses
-          </p>
+          <p class="mt-3 text-center group-hover:underline">Cat Eye Glasses</p>
         </a>
         <a
-          href="/sunglasses/clubmaster"
+          href="/glasses/clubmaster"
           class="group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
         >
           <svg
@@ -180,12 +317,12 @@
             />
           </svg>
 
-          <p class="mt-2 text-center text-sm group-hover:underline">
-            Clubmaster Sunglasses
+          <p class="mt-3 text-center group-hover:underline">
+            Clubmaster Glasses
           </p>
         </a>
         <a
-          data-href='{"url" : "sunglasses", "queryParts" : {"a1_frame_shape" : "Regular"}}'
+          href="/glasses/regular"
           class="dynamic-link-item group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
         >
           <svg
@@ -203,12 +340,10 @@
             />
           </svg>
 
-          <p class="mt-2 text-center text-sm group-hover:underline">
-            Regular Sunglasses
-          </p>
+          <p class="mt-3 text-center group-hover:underline">Regular Glasses</p>
         </a>
         <a
-          href="/sunglasses/round"
+          href="/glasses/round"
           class="group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
         >
           <svg
@@ -226,12 +361,10 @@
             />
           </svg>
 
-          <p class="mt-2 text-center text-sm group-hover:underline">
-            Round Sunglasses
-          </p>
+          <p class="mt-3 text-center group-hover:underline">Round Glasses</p>
         </a>
         <a
-          href="/sunglasses/wayfarer"
+          href="/glasses/wayfarer"
           class="group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
         >
           <svg
@@ -249,80 +382,126 @@
             />
           </svg>
 
-          <p class="mt-2 text-center text-sm group-hover:underline">
-            Wayfarer Sunglasses
-          </p>
+          <p class="mt-3 text-center group-hover:underline">Wayfarer Glasses</p>
         </a>
         <a
-          href="/sunglasses/wraparound"
-          class="group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
-        >
-          <svg
-            width="100"
-            height="25"
-            viewBox="0 0 273 97"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M50.2326 0.790642C39.8643 2.95494 17.3141 12.0737 11.8172 16.3254C10.1678 17.6014 10.936 17.6722 17.9796 16.8947C22.4042 16.4064 28.3366 15.3243 31.161 14.4893C33.9854 13.6554 42.7668 12.5117 50.6752 11.9496C69.2056 10.6305 69.676 10.5208 69.676 7.52049C69.676 3.08213 66.6492 0.702427 60.4324 0.251104C57.3255 0.0254416 52.7355 0.268542 50.2326 0.790642ZM208.843 0.457277C204.591 1.46352 201.728 7.54716 204.478 9.73403C205.185 10.2961 212.988 11.247 221.819 11.8481C231.706 12.521 239.351 13.5559 241.716 14.5427C243.827 15.4238 247.463 16.1654 249.795 16.19C252.126 16.2146 256.114 16.6352 258.656 17.1265C261.198 17.6168 263.41 17.8876 263.572 17.7286C264.046 17.2599 248.463 9.40067 241.196 6.44245C228.775 1.38659 215.386 -1.09056 208.843 0.457277ZM22.9445 18.261C11.655 19.138 2.16589 21.8172 0.436311 24.6164C-1.03547 26.9982 1.34321 31.3124 5.66202 34.0953C8.45975 35.8975 8.98972 37.0196 10.025 43.3382C14.9518 73.4035 46.416 92.7232 96.9908 96.7359C103.518 97.2529 105.976 97.0488 108.423 95.7851C114.674 92.5571 120.162 83.7778 124.01 70.8576C127.427 59.3807 133.988 54.7967 141.469 58.6606C145.386 60.6834 147.01 63.4477 149.986 73.1563C152.963 82.867 158.738 92.0924 163.792 95.2127C167.273 97.3606 167.759 97.3903 180.407 96.2046C212.621 93.1879 233.618 85.2497 248.385 70.5089C257.279 61.6311 261.411 54.1186 263.185 43.5966C264.169 37.7664 264.842 36.2749 267.178 34.7445C275.782 29.1071 274.765 23.1517 264.688 20.1822C250.344 15.9551 197.035 17.7378 172.383 23.2696C167.581 24.3467 157.529 26.0432 150.044 27.0392C137.071 28.7666 135.821 28.7676 123.292 27.0597C116.063 26.075 107.167 24.6093 103.521 23.802C91.725 21.1894 75.7531 19.3288 55.8106 18.2435C45.0777 17.6589 35.603 17.2445 34.7557 17.3214C33.9084 17.3994 28.5933 17.822 22.9445 18.261ZM94.3255 31.0663C101.387 31.8694 113.634 33.5332 121.543 34.763C134.299 36.7468 136.849 36.8596 144.138 35.7631C193.769 28.2916 220.338 27.0382 242.979 31.1001C251.667 32.6582 259.947 35.6226 261.181 37.6156C261.564 38.2341 261.329 41.3882 260.659 44.6234C255.26 70.7058 228.944 87.9772 186.043 93.5931C179.601 94.4362 172.845 95.1265 171.028 95.1265C163.521 95.1265 156.011 85.9093 151.804 71.5346C150.567 67.3035 148.645 62.5656 147.535 61.0054C142.021 53.256 131.009 53.3268 125.525 61.146C124.67 62.3645 122.7 67.3927 121.148 72.3203C117.869 82.7254 114.355 88.7177 109.256 92.6022C105.77 95.2578 105.277 95.343 97.15 94.6855C51.6653 91.0051 22.8479 75.5678 14.1086 50.1993C13.0364 47.0893 12.1603 42.8273 12.1603 40.7287C12.1603 37.1478 12.4612 36.7858 17.0388 34.8594C28.4988 30.0374 42.1434 28.4024 65.0542 29.104C74.0923 29.381 87.2645 30.2641 94.3255 31.0663Z"
-              fill="#1F2937"
-            />
-          </svg>
-
-          <p class="mt-2 text-center text-sm group-hover:underline">
-            Wrapped Sunglasses
-          </p>
-        </a>
-        <a
-          data-href='{"url" : "sunglasses", "queryParts" : {"a1_frame_shape" : "Square"}}'
-          class="dynamic-link-item group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
-        >
-          <svg
-            width="110"
-            height="25"
-            viewBox="0 0 528 200"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M30.3747 4.8398C3.05067 11.4817 0 15.0601 0 40.4692C0 52.3592 1.44833 62.0867 3.223 62.0867C8.85133 62.0867 14.0213 81.3982 16.4193 111.397C19.5617 150.715 28.6147 176.029 42.4343 184.12C68.2367 199.235 168.417 202.913 193.307 189.662C208.582 181.531 211.68 175.367 226.013 124.607C246.891 50.6932 244.959 54.2495 263.512 55.4963C279.099 56.5407 279.701 57.0556 286.249 74.9586C289.949 85.0722 297.198 110.629 302.361 131.749C318.461 197.639 322.084 200 407 200C453.446 200 470.056 198.72 478.5 194.483C494.538 186.44 504.995 162.032 510.008 120.93C512.732 98.5988 516.743 82.3949 521.132 76.0251C525.844 69.192 528 59.5969 528 45.4782V24.8979L512.417 18.0317C481.565 4.43893 414.524 -0.264835 356.18 7.07583C320.588 11.5516 299.464 19.1717 290.319 30.83C285.003 37.608 280.17 39.171 264.528 39.171C248.534 39.171 244.354 37.7551 239.8 30.7785C232.133 19.043 204.912 8.24534 171.153 3.5526C133.254 -1.71385 54.3767 -0.993017 30.3747 4.8398ZM164.71 21.8123C198.535 26.0674 213.924 32.3084 220.37 44.3897C231.642 65.518 209.645 155.132 189.49 170.2C180.33 177.048 173.18 178.07 127.156 179.122C68.3833 180.464 51.1133 176.764 38.852 160.196C32.2227 151.245 30.987 143.522 29.8723 104.038C29.1573 78.8606 29.5973 54.1797 30.844 49.189C37.29 23.4342 90.717 12.5078 164.71 21.8123ZM442.501 26.7993C464.915 28.9029 489.339 40.4472 495.4 51.8002C501.604 63.429 497.427 149.689 489.955 164.176C481.155 181.247 466.345 185.326 414.333 185.01C361.999 184.686 340.938 180.012 330.209 166.334C319.601 152.804 307.278 109.172 305.155 77.6286C303.248 49.2589 306.559 41.3776 324.46 31.6575C331.951 27.59 392.429 22.386 412.5 24.0851C418.55 24.5963 432.051 25.8173 442.501 26.7993Z"
-              fill="#1F2937"
-            />
-          </svg>
-
-          <p class="mt-2 text-center text-sm group-hover:underline">
-            Square Sunglasses
-          </p>
-        </a>
-        <a
-          href="/sunglasses/keyhole"
+          href="/glasses/full-rimmed"
           class="group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
         >
           <svg
             width="110"
             height="25"
-            viewBox="0 0 183 63"
+            viewBox="0 0 818 319"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              x1="349"
+              y1="154"
+              x2="466"
+              y2="154"
+              stroke="black"
+              stroke-width="14"
+            />
+            <line
+              x1="756"
+              y1="154"
+              x2="818"
+              y2="154"
+              stroke="black"
+              stroke-width="14"
+            />
+            <line y1="153" x2="62" y2="153" stroke="black" stroke-width="14" />
+            <path
+              d="M365 160C365 244.5 296.5 313 212 313C127.5 313 59 244.5 59 160C59 75.5004 127.5 7 212 7C296.5 7 365 75.5004 365 160Z"
+              fill="#F3F4F6"
+              stroke="black"
+              stroke-width="12"
+            />
+            <path
+              d="M759 159C759 243.5 690.5 312 606 312C521.5 312 453 243.5 453 159C453 74.5004 521.5 6 606 6C690.5 6 759 74.5004 759 159Z"
+              fill="#F3F4F6"
+              stroke="black"
+              stroke-width="12"
+            />
+          </svg>
+
+          <p class="mt-3 text-center group-hover:underline">
+            Full-rimmed Glasses
+          </p>
+        </a>
+        <a
+          href="/glasses/semi-rimless"
+          class="group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
+        >
+          <svg
+            width="110"
+            height="25"
+            viewBox="0 0 818 329"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M133.512 0.0470592C123.086 0.814526 115.507 2.59037 107.305 6.18734C104.353 7.48219 104.004 7.51792 100.373 6.90051C95.5614 6.08257 86.6629 6.11395 82.3324 6.96463C80.6495 7.29503 78.8649 7.55176 78.3662 7.53512C77.8678 7.5182 75.5522 6.79329 73.2204 5.92379C63.8398 2.42531 56.7929 1.15392 46.7292 1.1441C36.8562 1.13428 32.2223 1.97896 21.4175 5.75791C13.4402 8.54785 7.0027 10.1837 1.80797 10.7409L0 10.9346L0.0253126 14.7531C0.0392201 16.8533 0.14297 19.5164 0.256177 20.671L0.46173 22.7704L2.31699 23.3603C4.8615 24.1695 6.11679 25.027 7.20241 26.6989C8.3762 28.5061 9.10412 30.5567 10.0315 34.6685C12.0614 43.668 14.8496 49.3966 19.5467 54.2191C25.3303 60.1569 32.9524 62.9638 43.3914 62.9995C49.3107 63.02 53.1191 62.3854 58.7608 60.4388C67.4138 57.4532 74.3926 51.191 78.255 42.9461C80.9269 37.2423 83.0108 29.0313 83.0216 24.1646C83.0258 22.3625 83.0172 22.3407 81.2907 19.8247C80.6226 18.8507 80.6454 16.6899 81.3338 15.7415C83.8221 12.3137 97.1118 12.006 100.469 15.2984C101.278 16.0921 101.386 16.3698 101.385 17.6576C101.385 18.9181 101.229 19.3407 100.243 20.7542L99.1023 22.3912L99.2822 24.5694C99.4853 27.0235 100.686 32.2111 101.809 35.4869C102.489 37.4712 105.69 44.2993 106.094 44.6267C106.186 44.7017 106.948 45.8061 107.787 47.0811C109.856 50.2243 113.918 54.1803 117.379 56.4235C123.98 60.701 130.716 62.617 139.192 62.6285C143.467 62.6342 146.538 62.1677 150.201 60.956C159.088 58.016 165.601 52.4501 169.317 44.6199C170.594 41.9282 172.361 36.6091 173.436 32.2187C175.002 25.8242 176.813 23.0397 180.556 21.274C182.417 20.3957 182.603 20.2323 182.791 19.3074C183.12 17.6873 183.042 9.91364 182.69 9.29322C182.424 8.82314 181.815 8.67991 178.39 8.28212C173.6 7.7261 168.98 6.57585 161.86 4.16677C152.523 1.00769 148.094 0.168195 140.048 0.0317809C137.218 -0.0159641 134.277 -0.00914346 133.512 0.0470592ZM144.863 4.14822C146.573 4.39322 148.974 4.87149 150.199 5.21089C152.268 5.7841 156.518 7.40143 157.155 7.85787C160.753 10.4386 162.04 11.4731 162.787 12.3871C163.721 13.5283 163.928 13.9731 163.37 13.6347C163.169 13.5131 163.125 13.56 163.25 13.7594C163.361 13.9351 163.552 14.0175 163.676 13.9428C164.007 13.742 165.249 15.6182 166.022 17.4857C167.375 20.7553 168.001 24.4464 167.99 29.0755C167.984 31.5118 167.824 33.9981 167.614 34.9413C166.399 40.3878 163.321 46.2454 159.851 49.7122C155.89 53.6704 151.972 55.8378 146.26 57.2295C144.193 57.7328 142.987 57.8302 138.658 57.8433C131.935 57.8635 128.759 57.1656 122.635 54.3214C116.304 51.3817 112.746 47.8196 108.809 40.4811C106.952 37.0197 105.003 30.1313 105.003 27.0293C105.004 23.1556 106.104 18.8305 107.877 15.7301C109.595 12.7276 114.192 8.79967 117.68 7.35368C121.858 5.62177 127.062 4.33429 131.704 3.88412C134.691 3.59438 142.029 3.74171 144.863 4.14822ZM52.31 4.91923C59.0356 5.8002 62.1181 6.62005 65.8684 8.52549C71.2904 11.2802 74.5583 15.0854 76.5148 20.9223C77.2202 23.0266 77.2823 23.5589 77.2906 27.5749C77.2984 31.248 77.2008 32.3079 76.6753 34.2592C74.2157 43.3924 70.4951 48.971 64.1503 53.0394C59.6534 55.9229 56.4444 57.0639 49.4542 58.264C45.4875 58.9453 36.6585 58.4176 33.2862 57.2979C27.8926 55.5074 23.3549 52.276 20.5589 48.2351C19.9645 47.376 19.3868 46.6069 19.2752 46.5261C18.767 46.1586 16.8072 41.5099 16.1741 39.1701C15.049 35.0139 14.7798 32.6823 14.965 28.7121C15.2215 23.2214 15.9385 20.3897 18.0166 16.6618C21.6045 10.2258 30.965 5.54592 41.7225 4.81038C46.6735 4.4718 49.0823 4.49662 52.31 4.91923Z"
-              fill="#1f2937"
+              d="M212 329C299.813 329 371 257.813 371 170C371 82.1867 299.813 11 212 11C124.187 11 53 82.1867 53 170C53 257.813 124.187 329 212 329Z"
+              fill="#F3F4F6"
+            />
+            <path
+              d="M606 328C693.813 328 765 256.813 765 169C765 81.1867 693.813 10 606 10C518.187 10 447 81.1867 447 169C447 256.813 518.187 328 606 328Z"
+              fill="#F3F4F6"
+            />
+            <path
+              d="M0 170H53C53 170 56 12 212 11C368 10 371 170 371 170L447 169C447 169 454 10 606 10C758 10 765 169 765 169H818"
+              stroke="black"
+              stroke-width="20"
+              stroke-miterlimit="10"
             />
           </svg>
 
-          <p class="mt-2 text-center text-sm group-hover:underline">
-            Keyhole Sunglasses
+          <p class="mt-3 text-center group-hover:underline">
+            Semi-rimless Glasses
           </p>
+        </a>
+        <a
+          href="/glasses/rimless"
+          class="group mx-auto flex flex-col items-center duration-700 ease-in-out hover:-translate-y-1"
+        >
+          <svg
+            width="110"
+            height="25"
+            viewBox="0 0 818 319"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              x1="349"
+              y1="154"
+              x2="466"
+              y2="154"
+              stroke="black"
+              stroke-width="14"
+            />
+            <line
+              x1="756"
+              y1="154"
+              x2="818"
+              y2="154"
+              stroke="black"
+              stroke-width="14"
+            />
+            <line y1="153" x2="62" y2="153" stroke="black" stroke-width="14" />
+            <path
+              d="M212 319C299.813 319 371 247.813 371 160C371 72.1867 299.813 1 212 1C124.187 1 53 72.1867 53 160C53 247.813 124.187 319 212 319Z"
+              fill="#F3F4F6"
+            />
+            <path
+              d="M606 318C693.813 318 765 246.813 765 159C765 71.1867 693.813 0 606 0C518.187 0 447 71.1867 447 159C447 246.813 518.187 318 606 318Z"
+              fill="#F3F4F6"
+            />
+          </svg>
+
+          <p class="mt-3 text-center group-hover:underline">Rimless Glasses</p>
         </a>
       </div>
     </div>
   </div>
-</div>
+</section>
