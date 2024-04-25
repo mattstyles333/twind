@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion Side Menu</title>
+    <link href="../output.css" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
+  </head>
+</html>
+<div
+  class="mx-auto my-8 flex max-w-2xl flex-col space-y-4 rounded-xl border-2 border-gray-300 bg-gray-100 p-6 shadow-md"
+>
+  <div>
+    <h2 class="text-lg font-semibold text-gray-900">Right eye</h2>
+    <div class="mt-2 flex items-end space-x-4">
+      <!-- Smaller select box for + or - -->
+      <div class="w-12">
+        <label class="block text-sm font-medium text-gray-700">+/-</label>
+        <select
+          class="mt-1 block w-full rounded-md border border-gray-300 bg-white px-2 py-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm md:text-lg"
+        >
+          <option>+</option>
+          <option>-</option>
+        </select>
+      </div>
+
+      <!-- Select box for SPH -->
+      <div class="flex-grow">
+        <label class="block text-sm font-medium text-gray-700">SPH</label>
+        <select
+          x-data="{ options: Array.from({ length: (6.00 / 0.25) + 1 }, (_, index) => (index * 0.25).toFixed(2)) }"
+          class="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm md:text-lg"
+        >
+          <template x-for="option in options" :key="option">
+            <option x-text="option"></option>
+          </template>
+        </select>
+      </div>
+
+      <!-- Select box for CYL -->
+      <div class="flex-grow">
+        <label class="block text-sm font-medium text-gray-700">CYL</label>
+        <select
+          x-data="{ options: Array.from({ length: (3.00 / 0.25) + 1 }, (_, index) => (index * 0.25).toFixed(2)) }"
+          class="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm md:text-lg"
+        >
+          <template x-for="option in options" :key="option">
+            <option x-text="option"></option>
+          </template>
+        </select>
+      </div>
+
+      <!-- Container for Axis label and question mark button -->
+      <div x-data="{ open: false }">
+        <div class="flex-grow">
+          <div class="flex">
+            <label class="block text-sm font-medium text-gray-700">Axis</label>
+            <button
+              x-on:click="open = true"
+              class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              aria-label="Help"
+            >
+              <span class="sr-only">Help</span>
+              ?
+            </button>
+          </div>
+          <select
+            x-data="{ options: Array.from({ length: 181 }, (_, index) => index) }"
+            class="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm md:text-lg"
+          >
+            <template x-for="option in options" :key="option">
+              <option x-text="option"></option>
+            </template>
+          </select>
+        </div>
+
+        <!-- Modal Code -->
+        <div
+          id="modal"
+          class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+          :class="{ 'hidden': !open }"
+          aria-labelledby="modalTitle"
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            class="flex min-h-screen items-end justify-center px-4 pb-20 pt-4 text-center sm:block sm:p-0"
+          >
+            <div
+              class="relative inline-block transform overflow-hidden rounded-lg bg-white text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:align-middle"
+            >
+              <button
+                type="button"
+                class="absolute right-0 top-0 mr-4 mt-4 rounded-md bg-white text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                x-on:click="open = false"
+                aria-label="Close"
+              >
+                <span class="sr-only">Close</span>
+                &#215;
+              </button>
+              <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                <h3
+                  class="text-lg font-medium leading-6 text-gray-900"
+                  id="modalTitle"
+                >
+                  Axis Information
+                </h3>
+                <!-- Modal content goes here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="text-lg font-semibold text-gray-900">Left eye</h2>
+    <div class="mt-2 flex items-end space-x-4">
+      <!-- Smaller select box for + or - -->
+      <div class="w-12">
+        <label class="block text-sm font-medium text-gray-700">+/-</label>
+        <select
+          class="mt-1 block w-full rounded-md border border-gray-300 bg-white px-2 py-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm md:text-lg"
+        >
+          <option>+</option>
+          <option>-</option>
+        </select>
+      </div>
+
+      <!-- Select box for SPH -->
+      <div class="flex-grow">
+        <label class="block text-sm font-medium text-gray-700">SPH</label>
+        <select
+          x-data="{ options: Array.from({ length: (6.00 / 0.25) + 1 }, (_, index) => (index * 0.25).toFixed(2)) }"
+          class="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm md:text-lg"
+        >
+          <template x-for="option in options" :key="option">
+            <option x-text="option"></option>
+          </template>
+        </select>
+      </div>
+
+      <!-- Select box for CYL -->
+      <div class="flex-grow">
+        <label class="block text-sm font-medium text-gray-700">CYL</label>
+        <select
+          x-data="{ options: Array.from({ length: (3.00 / 0.25) + 1 }, (_, index) => (index * 0.25).toFixed(2)) }"
+          class="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm md:text-lg"
+        >
+          <template x-for="option in options" :key="option">
+            <option x-text="option"></option>
+          </template>
+        </select>
+      </div>
+
+      <!-- Container for Axis label and question mark button -->
+      <div x-data="{ open: false }">
+        <div class="flex-grow">
+          <div class="flex">
+            <label class="block text-sm font-medium text-gray-700">Axis</label>
+          </div>
+          <select
+            x-data="{ options: Array.from({ length: 181 }, (_, index) => index) }"
+            class="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm md:text-lg"
+          >
+            <template x-for="option in options" :key="option">
+              <option x-text="option"></option>
+            </template>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div x-data="{ showSecondPD: false }">
+    <h2 class="text-lg font-semibold text-gray-900">PD</h2>
+    <div class="flex gap-4">
+      <!-- Single PD input -->
+      <div class="flex w-1/5 flex-col" x-show="!showSecondPD">
+        <label for="pd" class="mb-1 text-sm font-medium text-gray-700"
+          >PD</label
+        >
+        <select
+          id="rightPd"
+          x-data="{ options: Array.from({ length: ((80 - 55) / 0.5) + 1 }, (_, index) => (55 + index * 0.5).toFixed(1)) }"
+          class="block w-full rounded-md border border-gray-300 bg-white px-3 py-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm md:text-lg"
+        >
+          <option>Default</option>
+          <template x-for="option in options" :key="option">
+            <option x-text="option"></option>
+          </template>
+        </select>
+      </div>
+
+      <!-- Right PD -->
+      <div class="flex w-1/5 flex-col" x-show="showSecondPD">
+        <label for="rightPd" class="mb-1 text-sm font-medium text-gray-700"
+          >Right PD</label
+        >
+        <select
+          id="rightPd"
+          x-data="{ options: Array.from({ length: ((40 - 25) / 0.5) + 1 }, (_, index) => (25 + index * 0.5).toFixed(1)) }"
+          class="block w-full rounded-md border border-gray-300 bg-white px-3 py-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm md:text-lg"
+        >
+          <option>Default</option>
+          <template x-for="option in options" :key="option">
+            <option x-text="option"></option>
+          </template>
+        </select>
+      </div>
+
+      <!-- Left PD -->
+      <div class="flex w-1/5 flex-col" x-show="showSecondPD">
+        <label for="leftPd" class="mb-1 text-sm font-medium text-gray-700"
+          >Left PD</label
+        >
+        <select
+          id="leftPd"
+          x-data="{ options: Array.from({ length: ((40 - 25) / 0.5) + 1 }, (_, index) => (25 + index * 0.5).toFixed(1)) }"
+          class="block w-full rounded-md border border-gray-300 bg-white px-3 py-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm md:text-lg"
+        >
+          <option>Default</option>
+          <template x-for="option in options" :key="option">
+            <option x-text="option"></option>
+          </template>
+        </select>
+      </div>
+    </div>
+
+    <!-- Checkbox toggle for PD number -->
+    <label class="mt-4 block text-sm font-medium text-gray-700">
+      <input
+        type="checkbox"
+        x-model="showSecondPD"
+        class="mr-2 leading-tight"
+        @click="showSecondPD = !showSecondPD"
+      />
+      <span
+        x-text="showSecondPD ? 'I have 1 PD number' : 'I have 2 PD numbers'"
+      ></span>
+    </label>
+
+    <!-- Modal -->
+    <div x-data="{ showModal: false, isChecked: false }" class="mt-3">
+      <label class="block text-sm font-medium text-gray-700">
+        <input
+          type="checkbox"
+          x-model="isChecked"
+          @click="showModal = true; isChecked = true"
+          class="mr-2 leading-tight"
+        />
+        My values don't appear
+      </label>
+
+      <!-- Modal -->
+      <template x-if="showModal">
+        <div
+          class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75 p-4"
+        >
+          <div
+            class="relative mx-auto grid w-full max-w-3xl grid-cols-2 gap-6 rounded-lg bg-white p-6 shadow-lg"
+            @click.self="showModal = false; isChecked = false"
+          >
+            <button
+              @click="showModal = false; isChecked = false"
+              class="absolute right-2 top-2 text-gray-800 hover:text-gray-600"
+            >
+              &#x2715;
+              <!-- Unicode X symbol -->
+            </button>
+
+            <!-- Left column for image uploader -->
+            <div class="flex flex-col justify-between px-4">
+              <div>
+                <h2 class="mb-2 text-lg font-semibold">
+                  Upload your prescription.
+                </h2>
+                <p class="mb-4 text-sm text-gray-600">
+                  Please give your prescription a Name and select the file from
+                  your device to upload.
+                </p>
+              </div>
+
+              <div class="flex w-full flex-col items-center justify-center">
+                <!-- Name input -->
+                <div class="mb-4 w-full">
+                  <label
+                    for="name"
+                    class="block text-sm font-medium text-gray-700"
+                  >
+                    Name Your Prescription
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="mt-1 block w-full rounded-md border border-gray-300 py-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  />
+                </div>
+
+                <!-- File upload input -->
+                <div class="flex w-full flex-col items-center justify-center">
+                  <label
+                    class="flex h-32 w-full flex-col items-center justify-center rounded-md border-2 border-dashed hover:border-gray-400 hover:bg-gray-100"
+                  >
+                    <div class="p-2 text-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="mx-auto h-10 w-10 text-gray-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M7 8h10M12 5v6m8 5H4v6h16v-6z"
+                        />
+                      </svg>
+                      <p class="text-sm text-gray-500">
+                        Drag and drop file or
+                        <span class="text-blue-500 hover:underline">
+                          click to upload
+                        </span>
+                      </p>
+                    </div>
+                    <input
+                      type="file"
+                      class="left-0 top-0 h-full w-full cursor-pointer opacity-0"
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right column for additional text -->
+            <div class="flex flex-col justify-between">
+              <div>
+                <h2 class="pb-4 text-xl font-semibold">
+                  Upload Your prescription
+                </h2>
+                <p class="py-4 leading-loose text-gray-600">
+                  If you don't see your values in our form, please upload your
+                  prescription here. You can upload it now, or send it to us via
+                  email after completing your order.
+                </p>
+              </div>
+              <div class="mt-6 flex flex-col gap-4">
+                <button
+                  class="w-full rounded bg-blue-800 px-4 py-2 text-sm font-medium text-white duration-500 ease-in-out hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                >
+                  Confirm
+                </button>
+                <button
+                  class="bg-l w-full rounded px-4 py-2 text-sm font-medium text-gray-700 duration-500 ease-in-out hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+                >
+                  Send later
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+    <div x-data="{ showModalPrism: false, isPrismChecked: false }" class="mt-3">
+      <label class="block text-sm font-medium text-gray-700">
+        <input
+          type="checkbox"
+          x-model="isPrismChecked"
+          @click="showModalPrism = true; isPrismChecked = true"
+          class="mr-2 leading-tight"
+        />
+        My prescription includes a prism (£25)
+      </label>
+
+      <!-- Modal for Prism -->
+      <template x-if="showModalPrism">
+        <div
+          class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75 p-4"
+        >
+          <div
+            class="relative mx-auto grid w-full max-w-3xl grid-cols-2 gap-6 rounded-lg bg-white p-6 shadow-lg"
+            @click.self="showModalPrism = false; isPrismChecked = false"
+          >
+            <button
+              @click="showModalPrism = false; isPrismChecked = false"
+              class="absolute right-2 top-2 text-gray-800 hover:text-gray-600"
+            >
+              &#x2715;
+              <!-- Unicode X symbol -->
+            </button>
+
+            <!-- Left column for image uploader -->
+            <div class="flex flex-col justify-between px-4">
+              <div>
+                <h2 class="mb-2 text-lg font-semibold">
+                  Upload your prescription.
+                </h2>
+                <p class="mb-4 text-sm text-gray-600">
+                  Please give your prescription a Name and select the file from
+                  your device to upload.
+                </p>
+              </div>
+
+              <div class="flex w-full flex-col items-center justify-center">
+                <!-- Name input -->
+                <div class="mb-4 w-full">
+                  <label
+                    for="name"
+                    class="block text-sm font-medium text-gray-700"
+                  >
+                    Name Your Prescription
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="mt-1 block w-full rounded-md border border-gray-300 py-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  />
+                </div>
+
+                <!-- File upload input -->
+                <div class="flex w-full flex-col items-center justify-center">
+                  <label
+                    class="flex h-32 w-full flex-col items-center justify-center rounded-md border-2 border-dashed hover:border-gray-400 hover:bg-gray-100"
+                  >
+                    <div class="p-2 text-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="mx-auto h-10 w-10 text-gray-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M7 8h10M12 5v6m8 5H4v6h16v-6z"
+                        />
+                      </svg>
+                      <p class="text-sm text-gray-500">
+                        Drag and drop file or
+                        <span class="text-blue-500 hover:underline">
+                          click to upload
+                        </span>
+                      </p>
+                    </div>
+                    <input
+                      type="file"
+                      class="left-0 top-0 h-full w-full cursor-pointer opacity-0"
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right column for additional text -->
+            <div class="flex flex-col justify-between">
+              <div>
+                <h2 class="pb-4 text-xl font-semibold">
+                  Upload Your prescription
+                </h2>
+                <p class="py-4 leading-loose text-gray-600">
+                  Please upload your prescription for orders that include prism.
+                  You can upload it now, or send it to us via email after
+                  completing your order.
+                </p>
+              </div>
+              <div class="mt-6 flex flex-col gap-4">
+                <button
+                  class="w-full rounded bg-blue-800 px-4 py-2 text-sm font-medium text-white duration-500 ease-in-out hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                >
+                  Confirm
+                </button>
+                <button
+                  class="bg-l w-full rounded px-4 py-2 text-sm font-medium text-gray-700 duration-500 ease-in-out hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+                >
+                  Send later
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <!-- Add additional form elements as needed -->
+</div>
+<script>
+  document.getElementById("modalOpen").addEventListener("click", function () {
+    document.getElementById("modal").classList.remove("hidden");
+  });
+
+  // You'd also need a way to close the modal, which typically involves an overlay or a close button.
+</script>
