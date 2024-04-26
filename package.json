@@ -2,7 +2,7 @@
   "devDependencies": {
     "prettier": "^3.0.2",
     "prettier-plugin-tailwindcss": "^0.5.3",
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.4.3"
   },
   "dependencies": {
     "@glidejs/glide": "^3.6.0",

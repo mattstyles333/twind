@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Triggered Image Gallery</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body x-data="{ activeImage: 0 }">
+    <div class="container mx-auto flex min-h-screen max-w-4xl flex-wrap">
+      <div class="relative w-full md:w-1/2">
+        <div class="sticky top-0 h-screen">
+          <img
+            x-show="activeImage === 0"
+            src="https://test.s4l.link/media/mf_webp/jpg/media/wysiwyg/redesign/reading_block_2.webp"
+            alt="Feature 1"
+            class="object-cover"
+          />
+          <img
+            x-show="activeImage === 1"
+            src="https://test.s4l.link/media/mf_webp/jpg/media/wysiwyg/redesign/varifocal_block2.webp"
+            alt="Feature 2"
+            class="object-cover"
+          />
+          <img
+            x-show="activeImage === 2"
+            src="https://dummyimage.com/600x400/222/fff"
+            alt="Feature 3"
+            class="object-cover"
+          />
+          <img
+            x-show="activeImage === 3"
+            src="https://dummyimage.com/600x400/333/fff"
+            alt="Feature 4"
+            class="object-cover"
+          />
+          <img
+            x-show="activeImage === 4"
+            src="https://dummyimage.com/600x400/444/fff"
+            alt="Feature 5"
+            class="object-cover"
+          />
+          <img
+            x-show="activeImage === 5"
+            src="https://dummyimage.com/600x400/555/fff"
+            alt="Feature 6"
+            class="object-cover"
+          />
+        </div>
+      </div>
+      <div class="w-full md:w-1/2">
+        <div
+          x-on:scroll.window="activeImage = Math.min(5, Math.floor(window.scrollY / (window.innerHeight / 2)))"
+        >
+          <section
+            class="flex h-96 items-center justify-center p-10 text-center"
+          >
+            <div>
+              <h2 class="mb-3 text-2xl font-bold">Add Your Prescription</h2>
+              <p class="mb-5">
+                We make it easy to add your prescription during the checkout
+                process.
+              </p>
+            </div>
+          </section>
+          <section
+            class="flex min-h-screen items-center justify-center p-10 text-center"
+          >
+            <div>
+              <h2 class="mb-3 text-2xl font-bold">Add Your Prescription</h2>
+              <p class="mb-5">
+                We make it easy to add your prescription during the checkout
+                process.
+              </p>
+            </div>
+          </section>
+          <section
+            class="flex min-h-screen items-center justify-center p-10 text-center"
+          >
+            <div>
+              <h2 class="mb-3 text-2xl font-bold">Add Your Prescription</h2>
+              <p class="mb-5">
+                We make it easy to add your prescription during the checkout
+                process.
+              </p>
+            </div>
+          </section>
+          <section
+            class="flex min-h-screen items-center justify-center p-10 text-center"
+          >
+            <div>
+              <h2 class="mb-3 text-2xl font-bold">Place Your Order</h2>
+              <p class="mb-5">
+                Choose your payment method and complete your purchase securely
+                online.
+              </p>
+            </div>
+          </section>
+          <section
+            class="flex min-h-screen items-center justify-center p-10 text-center"
+          >
+            <div>
+              <h2 class="mb-3 text-2xl font-bold">Receive Your Glasses</h2>
+              <p class="mb-5">
+                Your new glasses will be delivered right to your doorstep, ready
+                to wear!
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

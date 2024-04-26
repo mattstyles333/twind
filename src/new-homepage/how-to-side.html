@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizontal Scrolling on Vertical Scroll</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"
+    ></script>
+    <style>
+      body,
+      html {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        overflow-y: hidden; /* Initially disable vertical scrolling */
+      }
+      .container {
+        height: 100vh; /* Match the viewport height to contain horizontal scroll */
+      }
+    </style>
+  </head>
+  <body class="py-80">
+    <p>Test</p>
+    <div
+      x-data="scrollController()"
+      x-init="init()"
+      class="container relative flex h-screen overflow-hidden"
+      @wheel.prevent="handleWheel($event)"
+    >
+      <div
+        class="absolute flex h-full w-full transition-transform duration-1000 ease-linear"
+        :style="'transform: translateX(-' + position + 'vw);'"
+      >
+        <!-- Your image elements -->
+        <img
+          src="https://dummyimage.com/600x400/222/fff"
+          class="h-full w-full object-cover"
+        />
+        <img
+          src="https://dummyimage.com/600x400/333/fff"
+          class="h-full w-full object-cover"
+        />
+        <img
+          src="https://dummyimage.com/600x400/444/fff"
+          class="h-full w-full object-cover"
+        />
+      </div>
+    </div>
+
+    <!-- Additional content to scroll into view -->
+    <div class="flex h-screen items-center justify-center bg-blue-200">
+      <h1 class="text-5xl text-white">More Content Below</h1>
+    </div>
+
+    <script>
+      function scrollController() {
+        return {
+          position: 0,
+          maxTranslate: 200, // 100 * (number of images - 1)
+          init() {
+            this.$nextTick(() => {
+              // Ensure body has sufficient height to scroll into after horizontal scroll
+              document.body.style.height = "200vh";
+            });
+          },
+          handleWheel(event) {
+            const deltaY = event.deltaY;
+            const newPosition = this.position + deltaY * 0.1; // Adjust the sensitivity
+
+            if (newPosition <= this.maxTranslate) {
+              this.position = Math.max(0, newPosition);
+              event.preventDefault(); // Prevent the default scroll action
+            }
+
+            // Automatically enable vertical scrolling once the last image is reached
+            if (this.position >= this.maxTranslate) {
+              document.body.style.overflowY = "auto";
+            }
+          },
+        };
+      }
+    </script>
+  </body>
+</html>
