@@ -178,7 +178,8 @@
                   </div>
                 </div>
               </li>
-              <li class="relative border-b border-gray-300">
+
+              <li class="relative border-b border-gray-200">
                 <button
                   type="button"
                   class="w-full px-4 py-4 text-left"
@@ -209,162 +210,209 @@
                   x-ref="container3"
                   x-bind:style="selected == 3 ? `max-height: ${showAll ? '1000px' : $refs.container3.scrollHeight + 'px'}` : 'max-height: 0px'"
                 >
-                  <div class="grid grid-cols-2 gap-2 p-4">
+                  <div class="mx-auto grid grid-cols-4 gap-2 gap-y-4 p-3">
                     <!-- Always visible rows (most popular colors) -->
-                    <button
-                      class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                    >
-                      <span
-                        class="mr-2 h-6 w-6 rounded-full bg-black text-gray-800"
-                      ></span>
-                      Black
-                    </button>
-                    <button
-                      class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                    >
-                      <span
-                        class="mr-2 h-6 w-6 rounded-full bg-orange-700 text-gray-800"
-                      ></span>
-                      Tortoise
-                    </button>
-                    <button
-                      class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                    >
-                      <span
-                        class="mr-2 h-6 w-6 rounded-full bg-gray-700 text-gray-800"
-                      ></span>
-                      Grey
-                    </button>
-                    <button
-                      class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                    >
-                      <span
-                        class="mr-2 h-6 w-6 rounded-full bg-blue-700 text-gray-800"
-                      ></span>
-                      Blue
-                    </button>
-                    <button
-                      class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                    >
-                      <span
-                        class="mr-2 h-6 w-6 rounded-full bg-red-700 text-gray-800"
-                      ></span>
-                      Red
-                    </button>
-                    <button
-                      class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                    >
-                      <span
-                        class="mr-2 h-6 w-6 rounded-full bg-yellow-500 text-gray-800"
-                      ></span>
-                      Gold
-                    </button>
+                    <div class="mx-auto text-center">
+                      <div
+                        class="mx-auto h-8 w-8 rounded-full bg-red-500"
+                      ></div>
+                      <div class="mt-1 break-words text-sm text-gray-700">
+                        Red
+                      </div>
+                    </div>
+                    <div class="mx-auto text-center">
+                      <div
+                        class="mx-auto h-8 w-8 rounded-full bg-green-500"
+                      ></div>
+                      <div class="mt-1 break-words text-sm text-gray-700">
+                        Green
+                      </div>
+                    </div>
+                    <div class="mx-auto text-center">
+                      <div
+                        class="mx-auto h-8 w-8 rounded-full bg-blue-500"
+                      ></div>
+                      <div class="mt-1 break-words text-sm text-gray-700">
+                        Blue
+                      </div>
+                    </div>
+                    <div class="mx-auto text-center">
+                      <div
+                        class="mx-auto h-8 w-8 rounded-full bg-yellow-500"
+                      ></div>
+                      <div class="mt-1 break-words text-sm text-gray-700">
+                        Yellow
+                      </div>
+                    </div>
+                    <div class="mx-auto text-center">
+                      <div
+                        class="mx-auto h-8 w-8 rounded-full bg-purple-500"
+                      ></div>
+                      <div class="mt-1 break-words text-sm text-gray-700">
+                        Purple
+                      </div>
+                    </div>
+                    <div class="mx-auto text-center">
+                      <div
+                        class="mx-auto h-8 w-8 rounded-full bg-pink-500"
+                      ></div>
+                      <div class="mt-1 break-words text-sm text-gray-700">
+                        Pink
+                      </div>
+                    </div>
+                    <div class="mx-auto text-center">
+                      <div
+                        class="mx-auto h-8 w-8 rounded-full bg-orange-500"
+                      ></div>
+                      <div class="mt-1 break-words text-sm text-gray-700">
+                        Tortoise / Havana
+                      </div>
+                    </div>
+                    <div class="mx-auto text-center">
+                      <div
+                        class="mx-auto h-8 w-8 rounded-full bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500"
+                      ></div>
+                      <div class="mt-1 break-words text-sm text-gray-700">
+                        Multi-Colour
+                      </div>
+                    </div>
+                    <div class="mx-auto text-center">
+                      <div
+                        class="mx-auto h-8 w-8 rounded-full bg-indigo-500"
+                      ></div>
+                      <div class="mt-1 break-words text-sm text-gray-700">
+                        Indigo
+                      </div>
+                    </div>
+                    <div class="mx-auto text-center">
+                      <div
+                        class="mx-auto h-8 w-8 rounded-full bg-gray-500"
+                      ></div>
+                      <div class="mt-1 break-words text-sm text-gray-700">
+                        Gray
+                      </div>
+                    </div>
+                    <div class="mx-auto text-center">
+                      <div
+                        class="mx-auto h-8 w-8 rounded-full bg-lime-500"
+                      ></div>
+                      <div class="mt-1 break-words text-sm text-gray-700">
+                        Lime
+                      </div>
+                    </div>
+                    <div class="mx-auto text-center">
+                      <div
+                        class="mx-auto h-8 w-8 rounded-full bg-cyan-500"
+                      ></div>
+                      <div class="mt-1 break-words text-sm text-gray-700">
+                        Cyan
+                      </div>
+                    </div>
 
                     <!-- Toggleable rows (extra colors) -->
                     <template x-if="showAll">
                       <div class="contents">
-                        <!-- White Button -->
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full border border-gray-300 bg-white text-gray-800"
-                          ></span>
-                          White
-                        </button>
-                        <!-- Pink Button -->
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-pink-700 text-gray-800"
-                          ></span>
-                          Pink
-                        </button>
-                        <!-- Burgundy Button -->
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-red-900 text-gray-800"
-                          ></span>
-                          Burgundy
-                        </button>
-                        <!-- Beige Button -->
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-yellow-600 text-gray-800"
-                          ></span>
-                          Beige
-                        </button>
-                        <!-- Crystal Button -->
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-gray-200 text-gray-800"
-                          ></span>
-                          Crystal
-                        </button>
-                        <!-- MultiColour Button -->
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 text-gray-800"
-                          ></span>
-                          MultiColour
-                        </button>
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-blue-900 text-gray-800"
-                          ></span>
-                          Navy
-                        </button>
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-zinc-300 text-gray-800"
-                          ></span>
-                          Silver
-                        </button>
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-gradient-to-r from-black to-red-500 text-gray-800"
-                          ></span>
-                          Black/Red
-                        </button>
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-gradient-to-r from-black to-blue-500 text-gray-800"
-                          ></span>
-                          Black/Blue
-                        </button>
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-gradient-to-r from-black to-green-500 text-gray-800"
-                          ></span>
-                          Black/Green
-                        </button>
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-gradient-to-r from-black to-gray-50 text-gray-800"
-                          ></span>
-                          Black/Clear
-                        </button>
+                        <div class="mx-auto text-center">
+                          <div
+                            class="mx-auto h-8 w-8 rounded-full bg-red-700"
+                          ></div>
+                          <div class="mt-1 break-words text-sm text-gray-700">
+                            Dark Red
+                          </div>
+                        </div>
+                        <div class="mx-auto text-center">
+                          <div
+                            class="mx-auto h-8 w-8 rounded-full bg-green-700"
+                          ></div>
+                          <div class="mt-1 break-words text-sm text-gray-700">
+                            Dark Green
+                          </div>
+                        </div>
+                        <div class="mx-auto text-center">
+                          <div
+                            class="mx-auto h-8 w-8 rounded-full bg-blue-700"
+                          ></div>
+                          <div class="mt-1 break-words text-sm text-gray-700">
+                            Dark Blue
+                          </div>
+                        </div>
+                        <div class="mx-auto text-center">
+                          <div
+                            class="mx-auto h-8 w-8 rounded-full bg-yellow-700"
+                          ></div>
+                          <div class="mt-1 break-words text-sm text-gray-700">
+                            Dark Yellow
+                          </div>
+                        </div>
+                        <div class="mx-auto text-center">
+                          <div
+                            class="mx-auto h-8 w-8 rounded-full bg-purple-700"
+                          ></div>
+                          <div class="mt-1 break-words text-sm text-gray-700">
+                            Dark Purple
+                          </div>
+                        </div>
+                        <div class="mx-auto text-center">
+                          <div
+                            class="mx-auto h-8 w-8 rounded-full bg-pink-700"
+                          ></div>
+                          <div class="mt-1 break-words text-sm text-gray-700">
+                            Dark Pink
+                          </div>
+                        </div>
+                      </div>
+                    </template>
+
+                    <template x-if="showAll">
+                      <div class="contents">
+                        <div class="mx-auto text-center">
+                          <div
+                            class="mx-auto h-8 w-8 rounded-full bg-orange-700"
+                          ></div>
+                          <div class="mt-1 break-words text-sm text-gray-700">
+                            Dark Orange
+                          </div>
+                        </div>
+                        <div class="mx-auto text-center">
+                          <div
+                            class="mx-auto h-8 w-8 rounded-full bg-teal-700"
+                          ></div>
+                          <div class="mt-1 break-words text-sm text-gray-700">
+                            Dark Teal
+                          </div>
+                        </div>
+                        <div class="mx-auto text-center">
+                          <div
+                            class="mx-auto h-8 w-8 rounded-full bg-indigo-700"
+                          ></div>
+                          <div class="mt-1 break-words text-sm text-gray-700">
+                            Dark Indigo
+                          </div>
+                        </div>
+                        <div class="mx-auto text-center">
+                          <div
+                            class="mx-auto h-8 w-8 rounded-full bg-gray-700"
+                          ></div>
+                          <div class="mt-1 break-words text-sm text-gray-700">
+                            Dark Gray
+                          </div>
+                        </div>
+                        <div class="mx-auto text-center">
+                          <div
+                            class="mx-auto h-8 w-8 rounded-full bg-lime-700"
+                          ></div>
+                          <div class="mt-1 break-words text-sm text-gray-700">
+                            Dark Lime
+                          </div>
+                        </div>
+                        <div class="mx-auto text-center">
+                          <div
+                            class="mx-auto h-8 w-8 rounded-full bg-cyan-700"
+                          ></div>
+                          <div class="mt-1 break-words text-sm text-gray-700">
+                            Dark Cyan
+                          </div>
+                        </div>
                       </div>
                     </template>
                   </div>
@@ -408,7 +456,7 @@
                   x-bind:style="selected == 4 ? 'max-height: 500px' : 'max-height: 0px'"
                 >
                   <div
-                    class="mx-3 mb-4 flex items-center rounded rounded-md border-2 border-gray-300 p-2"
+                    class="mx-3 mb-4 flex items-center rounded-md border-2 border-gray-300 p-2"
                   >
                     <input
                       class="border-none pl-2 outline-none"
@@ -419,8 +467,26 @@
 
                   <div
                     class="flex flex-col gap-y-3 overflow-y-auto px-3 py-2"
-                    style="max-height: 250px"
+                    style="
+                      max-height: 250px;
+                      scrollbar-gutter: stable both-edges;
+                      overflow-y: scroll;
+                    "
                   >
+                    <style>
+                      /* For browsers that do not support scrollbar-gutter, use pseudo-elements for scrollbar customization */
+                      .flex.flex-col.overflow-y-auto::-webkit-scrollbar {
+                        width: 8px; /* Control the width of the scrollbar */
+                      }
+
+                      .flex.flex-col.overflow-y-auto::-webkit-scrollbar-track {
+                        background: #f0f0f0; /* Color of the track */
+                      }
+
+                      .flex.flex-col.overflow-y-auto::-webkit-scrollbar-thumb {
+                        background-color: darkgrey; /* Color of the scroll thumb */
+                      }
+                    </style>
                     <button
                       class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
                     >
@@ -493,62 +559,64 @@
                   <div class="grid grid-cols-2 gap-4 px-3 pb-4">
                     <!-- Plastic -->
                     <div
-                      class="mx-auto rounded-md border-2 border-gray-300 px-2 py-6 duration-500 ease-in-out hover:border-gray-500"
+                      class="mx-auto w-full max-w-full rounded-md border-2 border-gray-300 px-2 py-2 duration-500 ease-in-out hover:border-gray-500"
                     >
-                      <label class="flex items-center">
-                        <span class="pr-1 text-base font-medium text-gray-800"
-                          >Plastic</span
-                        >
+                      <label class="flex w-full flex-col items-center">
+                        <span class="pr-1 text-base font-medium text-gray-800">
+                          Plastic
+                        </span>
                         <img
                           src="../images/plastic.jpg"
                           alt="Description of the image"
-                          class="flex w-20 px-2"
+                          class="h-auto w-3/4 p-2"
                         />
                       </label>
                     </div>
 
                     <!-- Metal -->
                     <div
-                      class="mx-auto rounded-md border-2 border-gray-300 px-2 py-6 duration-500 ease-in-out hover:border-gray-500"
+                      class="mx-auto w-full max-w-full rounded-md border-2 border-gray-300 px-2 py-2 duration-500 ease-in-out hover:border-gray-500"
                     >
-                      <label class="flex items-center">
-                        <span class="pr-1 text-base font-medium text-gray-800"
-                          >Metal</span
-                        >
+                      <label class="flex w-full flex-col items-center">
+                        <span class="pr-1 text-base font-medium text-gray-800">
+                          Metal
+                        </span>
                         <img
                           src="../images/metal2.jpg"
                           alt="Description of the image"
-                          class="flex w-20 px-2"
+                          class="h-auto w-3/4 p-2"
                         />
                       </label>
                     </div>
+
                     <!-- Mixed -->
                     <div
-                      class="mx-auto rounded-md border-2 border-gray-300 px-2 py-6 duration-500 ease-in-out hover:border-gray-500"
+                      class="mx-auto w-full max-w-full rounded-md border-2 border-gray-300 px-2 py-2 duration-500 ease-in-out hover:border-gray-500"
                     >
-                      <label class="flex items-center">
-                        <span class="pr-1 text-base font-medium text-gray-800"
-                          >Mixed</span
-                        >
+                      <label class="flex w-full flex-col items-center">
+                        <span class="pr-1 text-base font-medium text-gray-800">
+                          Mixed
+                        </span>
                         <img
                           src="../images/mixed.jpg"
                           alt="Description of the image"
-                          class="flex w-20 px-2"
+                          class="h-auto w-3/4 p-2"
                         />
                       </label>
                     </div>
+
                     <!-- Other -->
                     <div
-                      class="mx-auto rounded-md border-2 border-gray-300 px-2 py-6 duration-500 ease-in-out hover:border-gray-500"
+                      class="mx-auto w-full max-w-full rounded-md border-2 border-gray-300 px-2 py-2 duration-500 ease-in-out hover:border-gray-500"
                     >
-                      <label class="flex items-center">
-                        <span class="pr-1 text-base font-medium text-gray-800"
-                          >Other</span
-                        >
+                      <label class="flex w-full flex-col items-center">
+                        <span class="pr-1 text-base font-medium text-gray-800">
+                          Other
+                        </span>
                         <img
                           src="../images/other.jpg"
                           alt="Description of the image"
-                          class="flex w-20 px-2"
+                          class="h-auto w-3/4 p-2"
                         />
                       </label>
                     </div>
@@ -587,9 +655,7 @@
                   x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''"
                 >
                   <div class="px-3">
-                    <div
-                      class="grid grid-cols-1 gap-2 py-2 sm:grid-cols-2 md:grid-cols-2"
-                    >
+                    <div class="grid grid-cols-2 gap-2 py-2">
                       <button
                         class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
                       >
@@ -1075,7 +1141,7 @@
         </div>
       </div>
       <div class="container mx-auto hidden px-4 py-3">
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           <!-- Product Card 1 -->
           <div
             class="flex flex-col items-center justify-between rounded-lg bg-white p-4 shadow"
