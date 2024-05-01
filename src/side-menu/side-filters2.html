@@ -408,7 +408,7 @@
                   x-bind:style="selected == 4 ? 'max-height: 500px' : 'max-height: 0px'"
                 >
                   <div
-                    class="mx-3 mb-4 flex items-center rounded rounded-md border-2 border-gray-300 p-2"
+                    class="mx-3 mb-4 flex items-center rounded-md border-2 border-gray-300 p-2"
                   >
                     <input
                       class="border-none pl-2 outline-none"
@@ -493,62 +493,72 @@
                   <div class="grid grid-cols-2 gap-4 px-3 pb-4">
                     <!-- Plastic -->
                     <div
-                      class="mx-auto rounded-md border-2 border-gray-300 px-2 py-6 duration-500 ease-in-out hover:border-gray-500"
+                      class="mx-auto w-full max-w-full rounded-md border-2 border-gray-300 px-2 py-2 duration-500 ease-in-out hover:border-gray-500"
                     >
-                      <label class="flex items-center">
-                        <span class="pr-1 text-base font-medium text-gray-800"
-                          >Plastic</span
-                        >
+                      <label
+                        class="flex h-full flex-col items-center justify-between gap-2 px-2 py-2 text-base font-medium text-gray-800"
+                      >
+                        <span class="pr-1 text-base font-medium text-gray-800">
+                          Plastic
+                        </span>
                         <img
                           src="../images/plastic.jpg"
                           alt="Description of the image"
-                          class="flex w-20 px-2"
+                          class="h-auto w-16"
                         />
                       </label>
                     </div>
 
                     <!-- Metal -->
                     <div
-                      class="mx-auto rounded-md border-2 border-gray-300 px-2 py-6 duration-500 ease-in-out hover:border-gray-500"
+                      class="mx-auto w-full max-w-full rounded-md border-2 border-gray-300 px-2 py-2 duration-500 ease-in-out hover:border-gray-500"
                     >
-                      <label class="flex items-center">
-                        <span class="pr-1 text-base font-medium text-gray-800"
-                          >Metal</span
-                        >
+                      <label
+                        class="flex h-full flex-col items-center justify-between gap-2 px-2 py-2 text-base font-medium text-gray-800"
+                      >
+                        <span class="pr-1 text-base font-medium text-gray-800">
+                          Metal
+                        </span>
                         <img
                           src="../images/metal2.jpg"
                           alt="Description of the image"
-                          class="flex w-20 px-2"
+                          class="h-auto w-16"
                         />
                       </label>
                     </div>
+
                     <!-- Mixed -->
                     <div
-                      class="mx-auto rounded-md border-2 border-gray-300 px-2 py-6 duration-500 ease-in-out hover:border-gray-500"
+                      class="mx-auto w-full max-w-full rounded-md border-2 border-gray-300 px-2 py-2 duration-500 ease-in-out hover:border-gray-500"
                     >
-                      <label class="flex items-center">
-                        <span class="pr-1 text-base font-medium text-gray-800"
-                          >Mixed</span
-                        >
+                      <label
+                        class="flex h-full flex-col items-center justify-between gap-2 px-2 py-2 text-base font-medium text-gray-800"
+                      >
+                        <span class="pr-1 text-base font-medium text-gray-800">
+                          Mixed
+                        </span>
                         <img
                           src="../images/mixed.jpg"
                           alt="Description of the image"
-                          class="flex w-20 px-2"
+                          class="h-auto w-16"
                         />
                       </label>
                     </div>
+
                     <!-- Other -->
                     <div
-                      class="mx-auto rounded-md border-2 border-gray-300 px-2 py-6 duration-500 ease-in-out hover:border-gray-500"
+                      class="mx-auto w-full max-w-full rounded-md border-2 border-gray-300 px-2 py-2 duration-500 ease-in-out hover:border-gray-500"
                     >
-                      <label class="flex items-center">
-                        <span class="pr-1 text-base font-medium text-gray-800"
-                          >Other</span
-                        >
+                      <label
+                        class="flex h-full flex-col items-center justify-between gap-2 px-2 py-2 text-base font-medium text-gray-800"
+                      >
+                        <span class="pr-1 text-base font-medium text-gray-800">
+                          Other
+                        </span>
                         <img
                           src="../images/other.jpg"
                           alt="Description of the image"
-                          class="flex w-20 px-2"
+                          class="h-auto w-16"
                         />
                       </label>
                     </div>
@@ -587,9 +597,7 @@
                   x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''"
                 >
                   <div class="px-3">
-                    <div
-                      class="grid grid-cols-1 gap-2 py-2 sm:grid-cols-2 md:grid-cols-2"
-                    >
+                    <div class="grid grid-cols-2 gap-2 py-2">
                       <button
                         class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
                       >
@@ -1061,7 +1069,7 @@
                     </template>
                     <button
                       @click="showSizes = !showSizes"
-                      class="px-3 py-2 text-black underline"
+                      class="px-3 py-2 text-gray-800 underline"
                     >
                       <span
                         x-text="showSizes ? 'Less Options' : 'More Options'"
