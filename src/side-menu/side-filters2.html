@@ -74,7 +74,10 @@
           >
             <ul class="shadow-box">
               <!-- Accordion Item 1 -->
-              <li class="relative border-b border-gray-300">
+              <li
+                class="relative border-b border-gray-300"
+                x-data="{ selected: 1 }"
+              >
                 <button
                   type="button"
                   class="w-full px-4 py-4 text-left"
@@ -121,706 +124,10 @@
                   </div>
                 </div>
               </li>
-              <li class="relative border-b border-gray-300">
-                <button
-                  type="button"
-                  class="w-full px-4 py-4 text-left"
-                  @click="selected !== 2 ? selected = 2 : selected = null"
-                >
-                  <div class="flex items-center justify-between">
-                    <span>Price</span>
-                    <svg
-                      :class="{'rotate-180': selected == 2}"
-                      class="h-7 w-6 transform transition-transform duration-500"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M19 9l-7 7-7-7"
-                      ></path>
-                    </svg>
-                  </div>
-                </button>
-
-                <div
-                  class="relative max-h-0 overflow-hidden transition-all duration-700"
-                  x-ref="container2"
-                  x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
-                >
-                  <div class="flex flex-col items-center p-3">
-                    <!-- Price Range Indicators -->
-                    <div class="mb-2 flex w-full justify-between px-2">
-                      <span>£0.00</span>
-                      <span>£430.00</span>
-                    </div>
-
-                    <!-- Slider -->
-                    <input
-                      type="range"
-                      min="0"
-                      max="500"
-                      class="w-full accent-blue-800"
-                    />
-
-                    <!-- Number of items and OK Button -->
-                    <div class="mt-4 w-full items-center justify-between">
-                      <button
-                        class="bg-s hover:bg-p rounded px-12 py-2 text-white transition duration-300 focus:outline-none"
-                      >
-                        OK
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="relative border-b border-gray-300">
-                <button
-                  type="button"
-                  class="w-full px-4 py-4 text-left"
-                  @click="selected !== 3 ? selected = 3 : selected = null"
-                >
-                  <div class="flex items-center justify-between">
-                    <span>Colour</span>
-                    <svg
-                      :class="{'rotate-180': selected == 3}"
-                      class="h-7 w-6 transform transition-transform duration-500"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M19 9l-7 7-7-7"
-                      ></path>
-                    </svg>
-                  </div>
-                </button>
-
-                <div
-                  class="relative overflow-hidden transition-all duration-700"
-                  x-ref="container3"
-                  x-bind:style="selected == 3 ? `max-height: ${showAll ? '1000px' : $refs.container3.scrollHeight + 'px'}` : 'max-height: 0px'"
-                >
-                  <div class="grid grid-cols-2 gap-2 p-4">
-                    <!-- Always visible rows (most popular colors) -->
-                    <button
-                      class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                    >
-                      <span
-                        class="mr-2 h-6 w-6 rounded-full bg-black text-gray-800"
-                      ></span>
-                      Black
-                    </button>
-                    <button
-                      class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                    >
-                      <span
-                        class="mr-2 h-6 w-6 rounded-full bg-orange-700 text-gray-800"
-                      ></span>
-                      Tortoise
-                    </button>
-                    <button
-                      class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                    >
-                      <span
-                        class="mr-2 h-6 w-6 rounded-full bg-gray-700 text-gray-800"
-                      ></span>
-                      Grey
-                    </button>
-                    <button
-                      class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                    >
-                      <span
-                        class="mr-2 h-6 w-6 rounded-full bg-blue-700 text-gray-800"
-                      ></span>
-                      Blue
-                    </button>
-                    <button
-                      class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                    >
-                      <span
-                        class="mr-2 h-6 w-6 rounded-full bg-red-700 text-gray-800"
-                      ></span>
-                      Red
-                    </button>
-                    <button
-                      class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                    >
-                      <span
-                        class="mr-2 h-6 w-6 rounded-full bg-yellow-500 text-gray-800"
-                      ></span>
-                      Gold
-                    </button>
-
-                    <!-- Toggleable rows (extra colors) -->
-                    <template x-if="showAll">
-                      <div class="contents">
-                        <!-- White Button -->
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full border border-gray-300 bg-white text-gray-800"
-                          ></span>
-                          White
-                        </button>
-                        <!-- Pink Button -->
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-pink-700 text-gray-800"
-                          ></span>
-                          Pink
-                        </button>
-                        <!-- Burgundy Button -->
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-red-900 text-gray-800"
-                          ></span>
-                          Burgundy
-                        </button>
-                        <!-- Beige Button -->
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-yellow-600 text-gray-800"
-                          ></span>
-                          Beige
-                        </button>
-                        <!-- Crystal Button -->
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-gray-200 text-gray-800"
-                          ></span>
-                          Crystal
-                        </button>
-                        <!-- MultiColour Button -->
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 text-gray-800"
-                          ></span>
-                          MultiColour
-                        </button>
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-blue-900 text-gray-800"
-                          ></span>
-                          Navy
-                        </button>
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-zinc-300 text-gray-800"
-                          ></span>
-                          Silver
-                        </button>
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-gradient-to-r from-black to-red-500 text-gray-800"
-                          ></span>
-                          Black/Red
-                        </button>
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-gradient-to-r from-black to-blue-500 text-gray-800"
-                          ></span>
-                          Black/Blue
-                        </button>
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-gradient-to-r from-black to-green-500 text-gray-800"
-                          ></span>
-                          Black/Green
-                        </button>
-                        <button
-                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
-                        >
-                          <span
-                            class="mr-2 h-6 w-6 rounded-full bg-gradient-to-r from-black to-gray-50 text-gray-800"
-                          ></span>
-                          Black/Clear
-                        </button>
-                      </div>
-                    </template>
-                  </div>
-                  <button
-                    @click="showAll = !showAll"
-                    class="px-4 pb-2 text-black"
-                  >
-                    <span x-text="showAll ? 'Show Less' : 'Show More'"></span>
-                  </button>
-                </div>
-              </li>
-              <li class="relative border-b border-gray-300">
-                <button
-                  type="button"
-                  class="w-full px-4 py-4 text-left"
-                  @click="selected !== 4 ? selected = 4 : selected = null"
-                >
-                  <div class="flex items-center justify-between">
-                    <span>Brand</span>
-                    <svg
-                      :class="{'rotate-180': selected == 4}"
-                      class="h-7 w-6 transform transition-transform duration-500"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M19 9l-7 7-7-7"
-                      ></path>
-                    </svg>
-                  </div>
-                </button>
-
-                <div
-                  class="relative overflow-hidden transition-all duration-700"
-                  x-ref="container4"
-                  x-bind:style="selected == 4 ? 'max-height: 500px' : 'max-height: 0px'"
-                >
-                  <div
-                    class="mx-3 mb-4 flex items-center rounded-md border-2 border-gray-300 p-2"
-                  >
-                    <input
-                      class="border-none pl-2 outline-none"
-                      type="text"
-                      placeholder="Search (Calvin Klein, Ray-Ban, ...)"
-                    />
-                  </div>
-
-                  <div
-                    class="flex flex-col gap-y-3 overflow-y-auto px-3 py-2"
-                    style="max-height: 250px"
-                  >
-                    <button
-                      class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                    >
-                      Ray-Ban
-                    </button>
-                    <button
-                      class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                    >
-                      Oakley
-                    </button>
-                    <button
-                      class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                    >
-                      Salvatore Ferragamo
-                    </button>
-                    <button
-                      class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                    >
-                      Superdry
-                    </button>
-                    <button
-                      class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                    >
-                      Nike
-                    </button>
-                    <button
-                      class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                    >
-                      Cat
-                    </button>
-                    <button
-                      class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                    >
-                      Boss
-                    </button>
-                  </div>
-                </div>
-              </li>
-              <li class="relative border-b border-gray-300">
-                <button
-                  type="button"
-                  class="w-full px-4 py-4 text-left"
-                  @click="selected !== 5 ? selected = 5 : selected = null"
-                >
-                  <div class="flex items-center justify-between">
-                    <span>Material</span>
-                    <svg
-                      :class="{'rotate-180': selected == 5}"
-                      class="h-7 w-6 transform transition-transform duration-500"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M19 9l-7 7-7-7"
-                      ></path>
-                    </svg>
-                  </div>
-                </button>
-
-                <div
-                  class="relative max-h-0 overflow-hidden transition-all duration-700"
-                  x-ref="container5"
-                  x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''"
-                >
-                  <div class="grid grid-cols-2 gap-4 px-3 pb-4">
-                    <!-- Plastic -->
-                    <div
-                      class="mx-auto w-full max-w-full rounded-md border-2 border-gray-300 px-2 py-2 duration-500 ease-in-out hover:border-gray-500"
-                    >
-                      <label
-                        class="flex h-full flex-col items-center justify-between gap-2 px-2 py-2 text-base font-medium text-gray-800"
-                      >
-                        <span class="pr-1 text-base font-medium text-gray-800">
-                          Plastic
-                        </span>
-                        <img
-                          src="../images/plastic.jpg"
-                          alt="Description of the image"
-                          class="h-auto w-16"
-                        />
-                      </label>
-                    </div>
-
-                    <!-- Metal -->
-                    <div
-                      class="mx-auto w-full max-w-full rounded-md border-2 border-gray-300 px-2 py-2 duration-500 ease-in-out hover:border-gray-500"
-                    >
-                      <label
-                        class="flex h-full flex-col items-center justify-between gap-2 px-2 py-2 text-base font-medium text-gray-800"
-                      >
-                        <span class="pr-1 text-base font-medium text-gray-800">
-                          Metal
-                        </span>
-                        <img
-                          src="../images/metal2.jpg"
-                          alt="Description of the image"
-                          class="h-auto w-16"
-                        />
-                      </label>
-                    </div>
-
-                    <!-- Mixed -->
-                    <div
-                      class="mx-auto w-full max-w-full rounded-md border-2 border-gray-300 px-2 py-2 duration-500 ease-in-out hover:border-gray-500"
-                    >
-                      <label
-                        class="flex h-full flex-col items-center justify-between gap-2 px-2 py-2 text-base font-medium text-gray-800"
-                      >
-                        <span class="pr-1 text-base font-medium text-gray-800">
-                          Mixed
-                        </span>
-                        <img
-                          src="../images/mixed.jpg"
-                          alt="Description of the image"
-                          class="h-auto w-16"
-                        />
-                      </label>
-                    </div>
-
-                    <!-- Other -->
-                    <div
-                      class="mx-auto w-full max-w-full rounded-md border-2 border-gray-300 px-2 py-2 duration-500 ease-in-out hover:border-gray-500"
-                    >
-                      <label
-                        class="flex h-full flex-col items-center justify-between gap-2 px-2 py-2 text-base font-medium text-gray-800"
-                      >
-                        <span class="pr-1 text-base font-medium text-gray-800">
-                          Other
-                        </span>
-                        <img
-                          src="../images/other.jpg"
-                          alt="Description of the image"
-                          class="h-auto w-16"
-                        />
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="relative border-b border-gray-300">
-                <button
-                  type="button"
-                  class="w-full px-4 py-4 text-left"
-                  @click="selected !== 6 ? selected = 6 : selected = null"
-                >
-                  <div class="flex items-center justify-between">
-                    <span>Style</span>
-                    <svg
-                      :class="{'rotate-180': selected == 6}"
-                      class="h-7 w-6 transform transition-transform duration-500"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M19 9l-7 7-7-7"
-                      ></path>
-                    </svg>
-                  </div>
-                </button>
-
-                <div
-                  class="relative max-h-0 overflow-hidden transition-all duration-700"
-                  x-ref="container6"
-                  x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''"
-                >
-                  <div class="px-3">
-                    <div class="grid grid-cols-2 gap-2 py-2">
-                      <button
-                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                      >
-                        <span>Regular</span>
-
-                        <img
-                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-regular.svg"
-                          class="mx-auto w-16 pt-2"
-                        />
-                      </button>
-                      <button
-                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                      >
-                        <span>Square</span>
-
-                        <img
-                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-square.svg"
-                          class="mx-auto w-16 pt-2"
-                        />
-                      </button>
-                      <button
-                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                      >
-                        <span>Round</span>
-                        <img
-                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-round.svg"
-                          class="mx-auto w-16 pt-2"
-                        />
-                      </button>
-
-                      <button
-                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                      >
-                        <span>Cat-Eye</span>
-                        <img
-                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-cateye.svg"
-                          class="mx-auto w-16 pt-2"
-                        />
-                      </button>
-
-                      <button
-                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                      >
-                        <span>Chic</span>
-                        <img
-                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-chic.svg"
-                          class="mx-auto w-16 pt-2"
-                        />
-                      </button>
-
-                      <button
-                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                      >
-                        <span>Aviator</span>
-                        <img
-                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-aviator.svg"
-                          class="mx-auto w-16 pt-2"
-                        />
-                      </button>
-
-                      <button
-                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                      >
-                        <span>Oversized</span>
-                        <img
-                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-oversized.svg"
-                          class="mx-auto w-16 pt-2"
-                        />
-                      </button>
-
-                      <button
-                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                      >
-                        <span>Wayfarer</span>
-                        <img
-                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-wayfarer.svg"
-                          class="mx-auto w-16 pt-2"
-                        />
-                      </button>
-
-                      <button
-                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                      >
-                        <span>Keyhole</span>
-                        <img
-                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-keyhole.svg"
-                          class="mx-auto w-16 pt-2"
-                        />
-                      </button>
-
-                      <button
-                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                      >
-                        <span>Clubmaster</span>
-                        <img
-                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-clubmaster.svg"
-                          class="mx-auto w-16 pt-2"
-                        />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="relative border-b border-gray-300">
-                <button
-                  type="button"
-                  class="w-full px-4 py-4 text-left"
-                  @click="selected !== 7 ? selected = 7 : selected = null"
-                >
-                  <div class="flex items-center justify-between">
-                    <span>Frame Type</span>
-                    <svg
-                      :class="{'rotate-180': selected == 7}"
-                      class="h-7 w-6 transform transition-transform duration-500"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M19 9l-7 7-7-7"
-                      ></path>
-                    </svg>
-                  </div>
-                </button>
-
-                <div
-                  class="relative max-h-0 overflow-hidden transition-all duration-700"
-                  x-ref="container7"
-                  x-bind:style="selected == 7 ? 'max-height: ' + $refs.container7.scrollHeight + 'px' : ''"
-                >
-                  <div class="px-3">
-                    <div
-                      class="grid grid-cols-1 items-center justify-center gap-3 py-2 md:grid-cols-2"
-                    >
-                      <!-- Top button (Full-Rimmed) on one row -->
-                      <button
-                        class="w-full rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                      >
-                        <img
-                          src="https://test.s4l.link/media/wysiwyg/redesign/a1_frame_type-full-rimmed_1.png"
-                          class="mx-auto w-16"
-                        />
-                        <span>Full-Rimmed</span>
-                      </button>
-
-                      <!-- Second button (Semi Rimless) -->
-                      <button
-                        class="w-full rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                      >
-                        <img
-                          src="https://test.s4l.link/media/wysiwyg/redesign/a1_frame_type-semi-rimless_1.png"
-                          class="mx-auto w-16"
-                        />
-                        <span>Semi Rimless</span>
-                      </button>
-                      <!-- Third button (Rimless) -->
-                      <button
-                        class="w-full rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                      >
-                        <img
-                          src="https://test.s4l.link/media/wysiwyg/redesign/a1_frame_type-rimless_1.png"
-                          class="mx-auto w-16"
-                        />
-                        <span>Rimless</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="relative border-b border-gray-300">
-                <button
-                  type="button"
-                  class="w-full px-4 py-4 text-left"
-                  @click="selected !== 8 ? selected = 8 : selected = null"
-                >
-                  <div class="flex items-center justify-between">
-                    <span>Hinge Type</span>
-                    <svg
-                      :class="{'rotate-180': selected == 8}"
-                      class="h-7 w-6 transform transition-transform duration-500"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M19 9l-7 7-7-7"
-                      ></path>
-                    </svg>
-                  </div>
-                </button>
-
-                <div
-                  class="relative max-h-0 overflow-hidden transition-all duration-700"
-                  x-ref="container8"
-                  x-bind:style="selected == 8 ? 'max-height: ' + $refs.container8.scrollHeight + 'px' : ''"
-                >
-                  <div class="px-3">
-                    <div
-                      class="flex flex-row items-center justify-center gap-4 py-2"
-                    >
-                      <button
-                        class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-300 duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                      >
-                        Hinged
-                      </button>
-                      <button
-                        class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-300 duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
-                      >
-                        Sprung Sides
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="relative border-b border-gray-300">
+              <li
+                class="relative border-b border-gray-300"
+                x-data="{ selected: 'sizePanel' }"
+              >
                 <button
                   type="button"
                   class="w-full px-4 py-4 text-left"
@@ -1078,11 +385,715 @@
                   </div>
                 </div>
               </li>
+              <li
+                class="relative border-b border-gray-300"
+                x-data="{ selected: 'colourPanel', showAll: false }"
+              >
+                <button
+                  type="button"
+                  class="w-full px-4 py-4 text-left"
+                  @click="selected !== 'colourPanel' ? selected = 'colourPanel' : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span>Colour</span>
+                    <svg
+                      :class="{'rotate-180': selected == 3}"
+                      class="h-7 w-6 transform transition-transform duration-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
+
+                <div
+                  class="relative overflow-hidden transition-all duration-700"
+                  x-ref="colourPanel"
+                  x-bind:style="selected == 'colourPanel' ? `max-height: ${showAll ? '1000px' : $refs.colourPanel.scrollHeight + 'px'}` : 'max-height: 0px'"
+                >
+                  <div class="grid grid-cols-2 gap-2 p-4">
+                    <!-- Always visible rows (most popular colors) -->
+                    <button
+                      class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
+                    >
+                      <span
+                        class="mr-2 h-6 w-6 rounded-full bg-black text-gray-800"
+                      ></span>
+                      Black
+                    </button>
+                    <button
+                      class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
+                    >
+                      <span
+                        class="mr-2 h-6 w-6 rounded-full bg-orange-700 text-gray-800"
+                      ></span>
+                      Tortoise
+                    </button>
+                    <button
+                      class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
+                    >
+                      <span
+                        class="mr-2 h-6 w-6 rounded-full bg-gray-700 text-gray-800"
+                      ></span>
+                      Grey
+                    </button>
+                    <button
+                      class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
+                    >
+                      <span
+                        class="mr-2 h-6 w-6 rounded-full bg-blue-700 text-gray-800"
+                      ></span>
+                      Blue
+                    </button>
+                    <button
+                      class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
+                    >
+                      <span
+                        class="mr-2 h-6 w-6 rounded-full bg-red-700 text-gray-800"
+                      ></span>
+                      Red
+                    </button>
+                    <button
+                      class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
+                    >
+                      <span
+                        class="mr-2 h-6 w-6 rounded-full bg-yellow-500 text-gray-800"
+                      ></span>
+                      Gold
+                    </button>
+
+                    <!-- Toggleable rows (extra colors) -->
+                    <template x-if="showAll">
+                      <div class="contents">
+                        <!-- White Button -->
+                        <button
+                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
+                        >
+                          <span
+                            class="mr-2 h-6 w-6 rounded-full border border-gray-300 bg-white text-gray-800"
+                          ></span>
+                          White
+                        </button>
+                        <!-- Pink Button -->
+                        <button
+                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
+                        >
+                          <span
+                            class="mr-2 h-6 w-6 rounded-full bg-pink-700 text-gray-800"
+                          ></span>
+                          Pink
+                        </button>
+                        <!-- Burgundy Button -->
+                        <button
+                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
+                        >
+                          <span
+                            class="mr-2 h-6 w-6 rounded-full bg-red-900 text-gray-800"
+                          ></span>
+                          Burgundy
+                        </button>
+                        <!-- Beige Button -->
+                        <button
+                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
+                        >
+                          <span
+                            class="mr-2 h-6 w-6 rounded-full bg-yellow-600 text-gray-800"
+                          ></span>
+                          Beige
+                        </button>
+                        <!-- Crystal Button -->
+                        <button
+                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
+                        >
+                          <span
+                            class="mr-2 h-6 w-6 rounded-full bg-gray-200 text-gray-800"
+                          ></span>
+                          Crystal
+                        </button>
+                        <!-- MultiColour Button -->
+                        <button
+                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
+                        >
+                          <span
+                            class="mr-2 h-6 w-6 rounded-full bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 text-gray-800"
+                          ></span>
+                          MultiColour
+                        </button>
+                        <button
+                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
+                        >
+                          <span
+                            class="mr-2 h-6 w-6 rounded-full bg-blue-900 text-gray-800"
+                          ></span>
+                          Navy
+                        </button>
+                        <button
+                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
+                        >
+                          <span
+                            class="mr-2 h-6 w-6 rounded-full bg-zinc-300 text-gray-800"
+                          ></span>
+                          Silver
+                        </button>
+                        <button
+                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
+                        >
+                          <span
+                            class="mr-2 h-6 w-6 rounded-full bg-gradient-to-r from-black to-red-500 text-gray-800"
+                          ></span>
+                          Black/Red
+                        </button>
+                        <button
+                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
+                        >
+                          <span
+                            class="mr-2 h-6 w-6 rounded-full bg-gradient-to-r from-black to-blue-500 text-gray-800"
+                          ></span>
+                          Black/Blue
+                        </button>
+                        <button
+                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
+                        >
+                          <span
+                            class="mr-2 h-6 w-6 rounded-full bg-gradient-to-r from-black to-green-500 text-gray-800"
+                          ></span>
+                          Black/Green
+                        </button>
+                        <button
+                          class="flex items-center rounded-md border-2 border-gray-300 px-1 py-1 text-center text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500"
+                        >
+                          <span
+                            class="mr-2 h-6 w-6 rounded-full bg-gradient-to-r from-black to-gray-50 text-gray-800"
+                          ></span>
+                          Black/Clear
+                        </button>
+                      </div>
+                    </template>
+                  </div>
+                  <button
+                    @click="showAll = !showAll"
+                    class="px-4 pb-2 text-black"
+                  >
+                    <span x-text="showAll ? 'Show Less' : 'Show More'"></span>
+                  </button>
+                </div>
+              </li>
+              <li class="relative border-b border-gray-300">
+                <button
+                  type="button"
+                  class="w-full px-4 py-4 text-left"
+                  @click="selected !== 2 ? selected = 2 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span>Price</span>
+                    <svg
+                      :class="{'rotate-180': selected == 2}"
+                      class="h-7 w-6 transform transition-transform duration-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container2"
+                  x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
+                >
+                  <div class="flex flex-col items-center p-3">
+                    <!-- Price Range Indicators -->
+                    <div class="mb-2 flex w-full justify-between px-2">
+                      <span>£0.00</span>
+                      <span>£430.00</span>
+                    </div>
+
+                    <!-- Slider -->
+                    <input
+                      type="range"
+                      min="0"
+                      max="500"
+                      class="w-full accent-blue-800"
+                    />
+
+                    <!-- Number of items and OK Button -->
+                    <div class="mt-4 w-full items-center justify-between">
+                      <button
+                        class="bg-s hover:bg-p rounded px-12 py-2 text-white transition duration-300 focus:outline-none"
+                      >
+                        OK
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="relative border-b border-gray-300">
+                <button
+                  type="button"
+                  class="w-full px-4 py-4 text-left"
+                  @click="selected !== 4 ? selected = 4 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span>Brand</span>
+                    <svg
+                      :class="{'rotate-180': selected == 4}"
+                      class="h-7 w-6 transform transition-transform duration-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
+
+                <div
+                  class="relative overflow-hidden transition-all duration-700"
+                  x-ref="container4"
+                  x-bind:style="selected == 4 ? 'max-height: 500px' : 'max-height: 0px'"
+                >
+                  <div
+                    class="mx-3 mb-4 flex items-center rounded-md border-2 border-gray-300 p-2"
+                  >
+                    <input
+                      class="border-none pl-2 outline-none"
+                      type="text"
+                      placeholder="Search (Calvin Klein, Ray-Ban, ...)"
+                    />
+                  </div>
+
+                  <div
+                    class="flex flex-col gap-y-3 overflow-y-auto px-3 py-2"
+                    style="max-height: 250px"
+                  >
+                    <button
+                      class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                    >
+                      Ray-Ban
+                    </button>
+                    <button
+                      class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                    >
+                      Oakley
+                    </button>
+                    <button
+                      class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                    >
+                      Salvatore Ferragamo
+                    </button>
+                    <button
+                      class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                    >
+                      Superdry
+                    </button>
+                    <button
+                      class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                    >
+                      Nike
+                    </button>
+                    <button
+                      class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                    >
+                      Cat
+                    </button>
+                    <button
+                      class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                    >
+                      Boss
+                    </button>
+                  </div>
+                </div>
+              </li>
+              <li class="relative border-b border-gray-300">
+                <button
+                  type="button"
+                  class="w-full px-4 py-4 text-left"
+                  @click="selected !== 6 ? selected = 6 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span>Style</span>
+                    <svg
+                      :class="{'rotate-180': selected == 6}"
+                      class="h-7 w-6 transform transition-transform duration-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container6"
+                  x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''"
+                >
+                  <div class="px-3">
+                    <div class="grid grid-cols-2 gap-2 py-2">
+                      <button
+                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                      >
+                        <span>Regular</span>
+
+                        <img
+                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-regular.svg"
+                          class="mx-auto w-16 pt-2"
+                        />
+                      </button>
+                      <button
+                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                      >
+                        <span>Square</span>
+
+                        <img
+                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-square.svg"
+                          class="mx-auto w-16 pt-2"
+                        />
+                      </button>
+                      <button
+                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                      >
+                        <span>Round</span>
+                        <img
+                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-round.svg"
+                          class="mx-auto w-16 pt-2"
+                        />
+                      </button>
+
+                      <button
+                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                      >
+                        <span>Cat-Eye</span>
+                        <img
+                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-cateye.svg"
+                          class="mx-auto w-16 pt-2"
+                        />
+                      </button>
+
+                      <button
+                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                      >
+                        <span>Chic</span>
+                        <img
+                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-chic.svg"
+                          class="mx-auto w-16 pt-2"
+                        />
+                      </button>
+
+                      <button
+                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                      >
+                        <span>Aviator</span>
+                        <img
+                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-aviator.svg"
+                          class="mx-auto w-16 pt-2"
+                        />
+                      </button>
+
+                      <button
+                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                      >
+                        <span>Oversized</span>
+                        <img
+                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-oversized.svg"
+                          class="mx-auto w-16 pt-2"
+                        />
+                      </button>
+
+                      <button
+                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                      >
+                        <span>Wayfarer</span>
+                        <img
+                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-wayfarer.svg"
+                          class="mx-auto w-16 pt-2"
+                        />
+                      </button>
+
+                      <button
+                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                      >
+                        <span>Keyhole</span>
+                        <img
+                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-keyhole.svg"
+                          class="mx-auto w-16 pt-2"
+                        />
+                      </button>
+
+                      <button
+                        class="rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                      >
+                        <span>Clubmaster</span>
+                        <img
+                          src="https://test.s4l.link/media/attribute_option_images/hyva-spex4less/default/a1_frame_style-clubmaster.svg"
+                          class="mx-auto w-16 pt-2"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="relative border-b border-gray-300">
+                <button
+                  type="button"
+                  class="w-full px-4 py-4 text-left"
+                  @click="selected !== 5 ? selected = 5 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span>Material</span>
+                    <svg
+                      :class="{'rotate-180': selected == 5}"
+                      class="h-7 w-6 transform transition-transform duration-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container5"
+                  x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''"
+                >
+                  <div class="grid grid-cols-2 gap-4 px-3 pb-4">
+                    <!-- Plastic -->
+                    <div
+                      class="mx-auto w-full max-w-full rounded-md border-2 border-gray-300 px-2 py-2 duration-500 ease-in-out hover:border-gray-500"
+                    >
+                      <label
+                        class="flex h-full flex-col items-center justify-between gap-2 px-2 py-2 text-base font-medium text-gray-800"
+                      >
+                        <span class="pr-1 text-base font-medium text-gray-800">
+                          Plastic
+                        </span>
+                        <img
+                          src="../images/plastic.jpg"
+                          alt="Description of the image"
+                          class="h-auto w-16"
+                        />
+                      </label>
+                    </div>
+
+                    <!-- Metal -->
+                    <div
+                      class="mx-auto w-full max-w-full rounded-md border-2 border-gray-300 px-2 py-2 duration-500 ease-in-out hover:border-gray-500"
+                    >
+                      <label
+                        class="flex h-full flex-col items-center justify-between gap-2 px-2 py-2 text-base font-medium text-gray-800"
+                      >
+                        <span class="pr-1 text-base font-medium text-gray-800">
+                          Metal
+                        </span>
+                        <img
+                          src="../images/metal2.jpg"
+                          alt="Description of the image"
+                          class="h-auto w-16"
+                        />
+                      </label>
+                    </div>
+
+                    <!-- Mixed -->
+                    <div
+                      class="mx-auto w-full max-w-full rounded-md border-2 border-gray-300 px-2 py-2 duration-500 ease-in-out hover:border-gray-500"
+                    >
+                      <label
+                        class="flex h-full flex-col items-center justify-between gap-2 px-2 py-2 text-base font-medium text-gray-800"
+                      >
+                        <span class="pr-1 text-base font-medium text-gray-800">
+                          Mixed
+                        </span>
+                        <img
+                          src="../images/mixed.jpg"
+                          alt="Description of the image"
+                          class="h-auto w-16"
+                        />
+                      </label>
+                    </div>
+
+                    <!-- Other -->
+                    <div
+                      class="mx-auto w-full max-w-full rounded-md border-2 border-gray-300 px-2 py-2 duration-500 ease-in-out hover:border-gray-500"
+                    >
+                      <label
+                        class="flex h-full flex-col items-center justify-between gap-2 px-2 py-2 text-base font-medium text-gray-800"
+                      >
+                        <span class="pr-1 text-base font-medium text-gray-800">
+                          Other
+                        </span>
+                        <img
+                          src="../images/other.jpg"
+                          alt="Description of the image"
+                          class="h-auto w-16"
+                        />
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="relative border-b border-gray-300">
+                <button
+                  type="button"
+                  class="w-full px-4 py-4 text-left"
+                  @click="selected !== 7 ? selected = 7 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span>Frame Type</span>
+                    <svg
+                      :class="{'rotate-180': selected == 7}"
+                      class="h-7 w-6 transform transition-transform duration-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container7"
+                  x-bind:style="selected == 7 ? 'max-height: ' + $refs.container7.scrollHeight + 'px' : ''"
+                >
+                  <div class="px-3">
+                    <div
+                      class="grid grid-cols-1 items-center justify-center gap-3 py-2 md:grid-cols-2"
+                    >
+                      <!-- Top button (Full-Rimmed) on one row -->
+                      <button
+                        class="w-full rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                      >
+                        <img
+                          src="https://test.s4l.link/media/wysiwyg/redesign/a1_frame_type-full-rimmed_1.png"
+                          class="mx-auto w-16"
+                        />
+                        <span>Full-Rimmed</span>
+                      </button>
+
+                      <!-- Second button (Semi Rimless) -->
+                      <button
+                        class="w-full rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                      >
+                        <img
+                          src="https://test.s4l.link/media/wysiwyg/redesign/a1_frame_type-semi-rimless_1.png"
+                          class="mx-auto w-16"
+                        />
+                        <span>Semi Rimless</span>
+                      </button>
+                      <!-- Third button (Rimless) -->
+                      <button
+                        class="w-full rounded-md border-2 border-gray-300 py-2 text-base font-medium text-gray-800 transition duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                      >
+                        <img
+                          src="https://test.s4l.link/media/wysiwyg/redesign/a1_frame_type-rimless_1.png"
+                          class="mx-auto w-16"
+                        />
+                        <span>Rimless</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="relative border-b border-gray-300">
+                <button
+                  type="button"
+                  class="w-full px-4 py-4 text-left"
+                  @click="selected !== 8 ? selected = 8 : selected = null"
+                >
+                  <div class="flex items-center justify-between">
+                    <span>Hinge Type</span>
+                    <svg
+                      :class="{'rotate-180': selected == 8}"
+                      class="h-7 w-6 transform transition-transform duration-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
+
+                <div
+                  class="relative max-h-0 overflow-hidden transition-all duration-700"
+                  x-ref="container8"
+                  x-bind:style="selected == 8 ? 'max-height: ' + $refs.container8.scrollHeight + 'px' : ''"
+                >
+                  <div class="px-3">
+                    <div
+                      class="flex flex-row items-center justify-center gap-4 py-2"
+                    >
+                      <button
+                        class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-300 duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                      >
+                        Hinged
+                      </button>
+                      <button
+                        class="w-full rounded border-2 border-gray-300 px-4 py-2 text-gray-800 transition duration-300 duration-500 ease-in-out hover:border-gray-500 focus:outline-none"
+                      >
+                        Sprung Sides
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="container mx-auto hidden px-4 py-3">
+      <div class="container mx-auto px-4 py-3">
         <div class="grid grid-cols-3 gap-4">
           <!-- Product Card 1 -->
           <div
