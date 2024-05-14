@@ -508,6 +508,7 @@
                 <select
                   x-data="{ options: Array.from({ length: (3.50 / 0.25) + 1 }, (_, index) => (index * 0.25).toFixed(2)) }"
                   class="mt-1 block w-full bg-white"
+                  id="rightInterAdd"
                 >
                   <option>None</option>
                   <template x-for="option in options" :key="option">
@@ -946,6 +947,7 @@
                 <select
                   x-data="{ options: Array.from({ length: (3.50 / 0.25) + 1 }, (_, index) => (index * 0.25).toFixed(2)) }"
                   class="mt-1 block w-full bg-white"
+                  id="leftInterAdd"
                 >
                   <option>None</option>
                   <template x-for="option in options" :key="option">
@@ -961,10 +963,12 @@
       <!-- Parent container with x-data -->
       <div x-data="{ showSecondPD: false }">
         <div>
-          <div class="flex flex-col gap-4 md:flex-row md:items-end">
+          <div
+            class="flex flex-col justify-normal gap-4 md:flex-row md:items-end md:justify-between"
+          >
             <!-- Single PD input -->
             <div
-              class="flex w-1/2 flex-col justify-start pr-1 md:w-1/5"
+              class="flex w-1/2 flex-col pr-1 md:w-1/5"
               x-show="!showSecondPD"
             >
               <label for="pd" class="mb-1 text-base font-medium text-gray-700"
@@ -1029,12 +1033,125 @@
               prescription)
             </p>
             <!-- Confirm Button -->
-            <button
-              class="bg-s hover:bg-p w-full rounded px-4 py-4 text-base font-semibold leading-tight text-white shadow-md duration-500 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 max-sm:mt-4 md:ml-auto md:mt-0 md:w-2/5"
-              type="button"
+            <div
+              x-data="{ showPrescriptionModal: false }"
+              class="w-full md:ml-auto md:w-80"
             >
-              Save Prescription & Proceed
-            </button>
+              <button
+                id="saveProceedBtn"
+                @click="showPrescriptionModal = true"
+                class="bg-s hover:bg-p w-full rounded px-4 py-4 text-base font-semibold leading-tight text-white shadow-md duration-500 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 max-sm:mt-4 md:ml-auto md:mt-0 md:w-80"
+              >
+                Save Prescription & Proceed
+              </button>
+
+              <!-- Prescription Mismatch Modal -->
+              <div
+                x-show="showPrescriptionModal"
+                class="fixed inset-0 h-full w-full overflow-y-auto bg-gray-600 bg-opacity-50"
+                id="interAddModal"
+              >
+                <div
+                  class="relative top-40 mx-auto w-full max-w-3xl rounded-lg bg-white p-3 shadow-lg sm:flex sm:justify-between md:p-6"
+                  @click.self="showPrescriptionModal = false"
+                >
+                  <button
+                    @click="showPrescriptionModal = false"
+                    class="absolute right-2 top-2 text-gray-800 hover:text-gray-600"
+                  >
+                    &#x2715;
+                    <!-- Close icon -->
+                  </button>
+
+                  <!-- Left column for uploading prescription -->
+                  <div class="px-4 sm:w-1/2">
+                    <h2 class="mb-2 text-lg font-semibold">
+                      Upload Your Prescription
+                    </h2>
+                    <p class="mb-4 text-sm text-gray-600">
+                      Please provide a name for your prescription and select the
+                      file from your device to upload.
+                    </p>
+
+                    <!-- Name input -->
+                    <div class="mb-4">
+                      <label
+                        for="interAddName"
+                        class="block text-sm font-medium text-gray-700"
+                        >Name Your Near Add Prescription</label
+                      >
+                      <!-- Updated label -->
+                      <input
+                        type="text"
+                        id="interAddName"
+                        name="interAddName"
+                        class="mt-1 block w-full rounded-md border border-gray-300 py-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                      />
+                    </div>
+
+                    <!-- File upload input -->
+                    <div class="mb-4 flex items-center justify-center">
+                      <label
+                        class="flex h-32 w-full items-center justify-center rounded-md border-2 border-dashed hover:border-gray-400 hover:bg-gray-100"
+                      >
+                        <div class="p-2 text-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="mx-auto h-10 w-10 text-gray-400"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M7 8h10M12 5v6m8 5H4v6h16v-6z"
+                            />
+                          </svg>
+                          <p class="text-sm text-gray-500">
+                            Drag and drop file or
+                            <span class="text-blue-500 hover:underline"
+                              >click to upload</span
+                            >
+                          </p>
+                        </div>
+                        <input
+                          type="file"
+                          class="absolute left-0 top-0 cursor-pointer opacity-0"
+                        />
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Right column for additional text -->
+                  <div class="px-4 sm:w-1/2">
+                    <h2 class="hidden pb-4 text-xl font-semibold md:block">
+                      Verify Your Inter Add Values
+                    </h2>
+                    <p class="pb-4 leading-loose text-gray-600 md:pb-8">
+                      The Inter Add values on your prescription appear to be
+                      mismatched. Please double-check these values, and if they
+                      are accurate to your prescription, upload a photo for
+                      accurate processing.
+                    </p>
+
+                    <div class="flex flex-col gap-4">
+                      <button
+                        class="bg-s w-full rounded px-4 py-2 text-sm font-medium text-white duration-500 ease-in-out hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                      >
+                        Confirm
+                      </button>
+                      <button
+                        class="w-full rounded bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 duration-500 ease-in-out hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300"
+                      >
+                        Send later
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1420,12 +1537,25 @@
     </div>
     <script>
       document
-        .getElementById("modalOpen")
+        .getElementById("saveProceedBtn")
         .addEventListener("click", function () {
-          document.getElementById("modal").classList.remove("hidden");
+          var rightinterAdd = document.getElementById("rightInterAdd").value;
+          var leftinterAdd = document.getElementById("leftInterAdd").value;
+          if (rightinterAdd !== leftinterAdd) {
+            document.getElementById("myPrescriptionModal").style.display =
+              "block";
+          } else {
+            // Proceed with saving the form data
+            // Optionally, you can submit the form or perform other actions here
+          }
         });
 
-      // You'd also need a way to close the modal, which typically involves an overlay or a close button.
+      // To close the modal if needed
+      document
+        .getElementById("closeModalBtn")
+        .addEventListener("click", function () {
+          document.getElementById("myPrescriptionModal").style.display = "none";
+        });
     </script>
   </div>
 </body>

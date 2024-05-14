@@ -339,11 +339,112 @@
         <!-- Step 4: Select Face Shape -->
         <div x-show="currentStep === 4">
           <div class="mx-auto max-w-3xl text-center">
-            <p
-              class="text-lg font-semibold text-gray-700 dark:text-gray-200 lg:text-2xl"
+            <div
+              x-data="{ showModalFaceShape: false }"
+              class="flex items-center justify-center"
             >
-              Select your face shape:
-            </p>
+              <!-- Trigger Button -->
+              <div class="">
+                <p
+                  class="flex max-w-2xl items-center text-lg font-semibold text-gray-700 dark:text-gray-200 lg:text-2xl"
+                >
+                  Select your face shape:
+
+                  <button
+                    @click="showModalFaceShape = true"
+                    class="ml-2 flex h-5 w-5 cursor-pointer items-center justify-center rounded-full border-2 border-black p-3 font-semibold dark:border-gray-400"
+                  >
+                    ?
+                  </button>
+                </p>
+              </div>
+
+              <!-- Modal -->
+              <div
+                x-show="showModalFaceShape"
+                class="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+              >
+                <!-- Modal Inner -->
+                <div
+                  class="w-full overflow-hidden rounded-lg bg-white shadow md:w-1/2"
+                >
+                  <!-- Close Button -->
+                  <div class="flex justify-end p-2">
+                    <button
+                      @click="showModalFaceShape = false"
+                      class="text-black hover:text-gray-700 dark:text-gray-200"
+                    >
+                      <svg
+                        class="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <!-- Modal Content -->
+                  <div class="px-4 pb-8 text-left">
+                    <p class="pb-2 text-lg font-semibold lg:text-2xl">
+                      Understanding Face Shapes:
+                    </p>
+                    <p class="text-black">
+                      Choosing the right glasses involves considering your face
+                      shape to ensure they enhance your best features. Different
+                      frame shapes can accentuate or soften your facial
+                      features, depending on the shape of your face:
+                    </p>
+                    <ul class="mt-2 list-disc pl-5 text-black">
+                      <li>
+                        <strong>Oval Faces:</strong> Almost any frame style
+                        works well. Look for frames that are as wide as (or
+                        wider than) the broadest part of the face.
+                      </li>
+                      <li>
+                        <strong>Round Faces:</strong> Opt for angular frames
+                        that add structure, such as rectangular frames, to make
+                        your face appear longer and thinner.
+                      </li>
+                      <li>
+                        <strong>Square Faces:</strong> Round or oval frames can
+                        soften the angularity and balance your strong jawline.
+                      </li>
+                      <li>
+                        <strong>Heart-Shaped Faces:</strong> Consider frames
+                        that are wider at the bottom or light-colored frames to
+                        balance the width of your forehead.
+                      </li>
+                      <li>
+                        <strong>Diamond Faces:</strong> Cat-eye styles or frames
+                        that have detailing at the top can draw attention to
+                        your eyes, balancing the face.
+                      </li>
+                    </ul>
+                    <p class="mt-4 text-black">
+                      Your choice of glasses can transform how your face is
+                      perceived by others. It's not just about clear vision—it's
+                      about showcasing your personality and style. For more
+                      personalized advice, consider consulting with an eyewear
+                      specialist who can recommend frames that suit your
+                      specific face shape.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="mt-4 grid grid-cols-2 gap-4 md:grid-cols-3">
               <!-- Face Shape Buttons Start Here -->
               <button
@@ -581,11 +682,116 @@
 
         <div x-show="currentStep === 6" class="">
           <div class="text-center">
-            <p
-              class="text-lg font-semibold text-gray-700 dark:text-gray-200 lg:text-2xl"
+            <div
+              x-data="{ showModalColor: false }"
+              class="flex items-center justify-center"
             >
-              Select your preferred colours:
-            </p>
+              <!-- Trigger Button -->
+              <div class="">
+                <p
+                  class="flex max-w-2xl items-center text-lg font-semibold text-gray-700 dark:text-gray-200 lg:text-2xl"
+                >
+                  Select your preferred colours:
+
+                  <button
+                    @click="showModalColor = true"
+                    class="ml-2 flex h-5 w-5 cursor-pointer items-center justify-center rounded-full border-2 border-black p-3 font-semibold dark:border-gray-400"
+                  >
+                    ?
+                  </button>
+                </p>
+              </div>
+
+              <!-- Modal -->
+              <div
+                x-show="showModalColor"
+                class="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+              >
+                <!-- Modal Inner -->
+                <div
+                  class="w-full overflow-hidden rounded-lg bg-white shadow md:w-1/2"
+                >
+                  <!-- Close Button -->
+                  <div class="flex justify-end p-2">
+                    <button
+                      @click="showModalColor = false"
+                      class="text-black hover:text-gray-700 dark:text-gray-200"
+                    >
+                      <svg
+                        class="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <!-- Modal Content -->
+                  <div class="px-4 pb-8 text-left">
+                    <p class="pb-2 text-lg font-semibold lg:text-2xl">
+                      Choosing the Right Frame Color:
+                    </p>
+                    <p class="text-black">
+                      Selecting the right color for your glasses frames is
+                      crucial as it enhances your overall appearance and ensures
+                      your glasses complement your style. The color you choose
+                      can affect how your complexion looks, match with different
+                      outfits, and even reflect seasonal trends:
+                    </p>
+                    <ul class="mt-2 list-disc pl-5 text-black">
+                      <li>
+                        <strong>Skin Tone:</strong> Consider your skin's
+                        undertones. Warmer undertones may look better with
+                        colors like gold, brown, or warm reds, while cooler
+                        undertones are complemented by black, silver, and pink
+                        frames.
+                      </li>
+                      <li>
+                        <strong>Outfits:</strong> Think about your wardrobe.
+                        Neutral-colored frames like black or gray offer
+                        versatility, while bold colors like red or blue can add
+                        a pop of color to a simple outfit.
+                      </li>
+                      <li>
+                        <strong>Seasonal Choices:</strong> Lighter shades such
+                        as pastels can be great for spring and summer, while
+                        richer tones like burgundy or dark green might suit
+                        autumn and winter better.
+                      </li>
+                    </ul>
+                    <p class="mt-4 text-black">
+                      Frame color isn’t just a matter of personal taste but also
+                      functionality. Some colors may be better suited for
+                      certain settings or times of day. Consulting with an
+                      eyewear specialist can provide personalized advice to
+                      choose the best color that matches your lifestyle and
+                      preferences.
+                    </p>
+                    <p class="mt-4">
+                      <a
+                        href="/how-to-choose-the-right-colour-frames"
+                        class="text-blue-600 hover:text-blue-800"
+                      >
+                        Learn more
+                      </a>
+                      with our help frame colour guide!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <!-- Wrap the color selection grid with a parent div with grid layout -->
             <div
@@ -622,21 +828,8 @@
             <button
               @click="nextStep"
               class="focus:shadow-outline mx-2 w-48 rounded bg-blue-900 px-6 py-2 font-bold text-white duration-500 ease-in-out hover:bg-gray-800 focus:outline-none dark:hover:bg-slate-900"
-              :disabled="!selectedColors.length"
             >
               Continue
-            </button>
-          </div>
-          <div class="mx-auto flex">
-            <button
-              @click="nextStep"
-              class="focus:shadow-outline mx-auto px-6 py-2 font-bold text-gray-500 dark:text-gray-300"
-            >
-              <p
-                class="duration-500 ease-in-out hover:text-gray-700 dark:hover:text-gray-500"
-              >
-                Skip
-              </p>
             </button>
           </div>
         </div>
@@ -689,7 +882,7 @@
           </div>
           <div class="mx-auto flex">
             <button
-              @click="loading = true; setTimeout(() => buildAndNavigateToResultsUrl(), 2000)"
+              @click="loading = true; setTimeout(() => buildAndNavigateToResultsUrl(), )"
               class="focus:shadow-outline mx-auto px-6 py-4 font-bold text-gray-500 dark:text-gray-300"
             >
               <p
@@ -841,7 +1034,7 @@
           },
           buildAndNavigateToResultsUrl() {
             const url = this.buildResultsUrl();
-            window.open(url, "_blank"); // This will open the URL in a new tab
+            window.location.href = url; // Navigates in the current tab
           },
 
           buildResultsUrl() {
@@ -914,19 +1107,6 @@
             return this.selectedMaterial
               ? `a1_frame_material=${encodeURIComponent(this.selectedMaterial)}`
               : "";
-          },
-          submitQuiz() {
-            console.log("Quiz results:", {
-              Gender: this.selectedGender,
-              Type: this.selectedType,
-              FrameSize: this.selectedFrameSize,
-              FaceShape: this.selectedFaceShape,
-              Budget: this.selectedBudget,
-              Material: this.selectedMaterial,
-              Colors: this.selectedColors,
-              RecommendedStyles: this.recommendedStyles,
-            });
-            alert("Quiz Submitted!");
           },
         };
       }

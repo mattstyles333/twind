@@ -1192,73 +1192,86 @@
       <!-- Repeat the above div three more times for a total of four blocks -->
     </div>
   </section>
-  <div class="container mx-auto flex w-full rounded-l-lg px-12 py-16">
-    <div class="flex w-2/5 items-center justify-start rounded-l-lg bg-gray-100">
-      <!-- Image container -->
+  <div
+    class="shadow-l mx-auto flex w-full flex-col overflow-hidden px-3 py-16 md:container md:flex-row"
+  >
+    <!-- Image container -->
+    <div class="g flex w-full items-center justify-center bg-gray-100 md:w-3/5">
       <img
-        src="https://test.s4l.link/media/mf_webp/jpg/media/wysiwyg/redesign/style-quiz-banner2.webp"
+        src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/style-quiz-banner4.webp"
         alt="Woman with glasses"
-        class="boject-cover h-full w-full rounded-l-lg object-center shadow-lg"
+        class="hidden h-full w-full object-cover object-center max-sm:rounded-t-lg md:rounded-l-lg lg:block"
+      />
+      <img
+        src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/glasses_choice.webp"
+        alt="Woman with glasses"
+        class="block h-full w-full object-cover object-center max-sm:rounded-t-lg md:rounded-l-lg lg:hidden"
       />
     </div>
 
+    <!-- Text and button container -->
     <div
-      class="mx-auto flex w-3/5 items-center justify-center rounded-r-lg bg-gray-100 p-10"
+      class="flex w-full items-center justify-start rounded-b-lg bg-gray-100 px-3 py-6 md:w-2/5 md:rounded-r-lg"
     >
-      <!-- Text and button container -->
-      <div>
-        <h2 class="mb-6 text-center text-6xl font-semibold text-blue-800">
+      <div class="w-full">
+        <h2
+          class="mb-6 text-left text-4xl font-semibold text-blue-800 md:text-6xl"
+        >
           Style Finder Quiz
         </h2>
-        <p class="mb-6 text-center text-2xl">
+        <p class="mb-6 text-left text-2xl">
           Find your perfect pair in seconds!
         </p>
-        <button
-          class="focus:shadow-outline bg-s hover:bg-p mx-auto flex justify-center rounded px-8 py-2 text-center text-xl font-bold text-white duration-500 ease-in-out focus:outline-none"
-        >
-          Take the Quiz
-        </button>
+        <!-- Button container with alignment adjustments -->
+        <div class="flex justify-start md:justify-start">
+          <a
+            href="/product-quiz"
+            class="focus:shadow-outline flex justify-start rounded bg-gradient-to-r from-blue-800 to-blue-500 px-10 py-3 text-xl font-bold text-white transition-all duration-500 ease-in-out hover:-translate-y-1 hover:shadow-lg focus:outline-none"
+          >
+            Take the Quiz
+          </a>
+        </div>
       </div>
     </div>
   </div>
 
-  <section class="my-16 bg-sky-100 py-8 shadow-inner dark:bg-slate-900">
+  <section class="my-16 bg-gray-100 py-8 shadow-inner dark:bg-slate-900">
     <div class="mx-auto lg:container">
-      <h2
-        class="text-center text-3xl font-extrabold leading-tight tracking-tight text-slate-800 dark:text-white md:text-3xl"
-      >
-        Shop by Style
-      </h2>
       <div class="mx-auto justify-center px-4 lg:container">
         <div x-data="{currentTab : 0 }" class="pb-4">
           <div class="flex justify-center">
-            <ul class="flex py-8">
-              <li
-                class="bg-l rounded-l-full"
-                :class="{'bg-s': currentTab === 0}"
-              >
+            <ul class="flex pb-12 text-slate-800 dark:text-gray-300">
+              <li>
                 <button
                   @click="currentTab = 0"
-                  class="border-p inline-flex w-36 items-center justify-center rounded-l-full border-x-2 border-y-2 py-3 font-semibold duration-500 ease-in-out hover:bg-blue-950 hover:text-white md:w-48"
-                  :class="{'hover:bg-gray-200' : currentTab !== 1, 'bg-s' : currentTab === 0, 'bg-l' : currentTab !== 0, 'text-white' : currentTab === 0, 'text-p' : currentTab !== 0}"
+                  class="inline-flex w-36 items-center justify-center border-b-2 py-3 text-2xl font-semibold duration-500 ease-in-out md:w-48"
+                  :class="{
+          'border-gray-200': currentTab !== 0, 
+          'border-blue-800': currentTab === 0,
+          'text-gray-700': currentTab !== 0,
+          'hover:border-gray-400': currentTab !== 0
+        }"
                 >
                   Glasses
                 </button>
               </li>
-              <li
-                class="bg-l rounded-r-full"
-                :class="{'bg-s': currentTab === 1}"
-              >
+              <li>
                 <button
                   @click="currentTab = 1"
-                  class="border-p inline-flex w-36 items-center justify-center rounded-r-full border-y-2 border-r-2 py-3 font-semibold duration-500 ease-in-out hover:bg-blue-950 hover:text-white md:w-48"
-                  :class="{'hover:bg-gray-200' : currentTab !== 1, 'bg-s' : currentTab === 1, 'bg-l' : currentTab !== 1, 'text-white' : currentTab === 1, 'text-p' : currentTab !== 1}"
+                  class="inline-flex w-36 items-center justify-center border-b-2 py-3 text-2xl font-semibold duration-500 ease-in-out md:w-48"
+                  :class="{
+          'border-gray-200': currentTab !== 1,
+          'border-blue-800': currentTab === 1,
+          'text-gray-700': currentTab !== 1,
+          'hover:border-gray-400': currentTab !== 1
+        }"
                 >
                   Sunglasses
                 </button>
               </li>
             </ul>
           </div>
+
           <!--glasses logos-->
           <div class="mx-auto justify-center text-center">
             <div x-show="currentTab === 0">
@@ -1880,7 +1893,7 @@
     </div>
   </div>
 
-  <section class="my-12 bg-sky-100 py-12 shadow-inner dark:bg-slate-900">
+  <section class="my-12 bg-gray-100 py-12 shadow-inner dark:bg-slate-900">
     <div class="mx-auto px-3 lg:container">
       <div
         class="flex flex-col items-center justify-center space-x-0 text-xl md:flex-row md:items-end md:space-x-4"
