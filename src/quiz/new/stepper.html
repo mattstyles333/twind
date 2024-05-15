@@ -800,7 +800,7 @@
               <!-- Loop through each color to render individual color selectors -->
               <template x-for="color in colors" :key="color.name">
                 <div
-                  x-show="!(selectedMaterial === 'Metal' && ['White', 'Grey', 'Brown', 'Tortoise / Havana', 'Green', 'Crystal', 'Purple / Violet'].includes(color.name))"
+                  x-show="!(selectedMaterial === 'Metal' && ['White', 'Grey', 'Brown', 'Tortoise', 'Green', 'Crystal', 'Purple / Violet'].includes(color.name))"
                   :class="{
           'border-2 border-blue-600 dark:border-blue-500': selectedColors.includes(color.name),
           'border-2 border-gray-400 dark:border-slate-500': !selectedColors.includes(color.name)
@@ -964,7 +964,7 @@
             { name: "Red", hex: "#FF0000" },
             { name: "Brown", hex: "#662505" },
             {
-              name: "Tortoise / Havana",
+              name: "Tortoise",
               image:
                 "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/quiz/tortoise.webp",
             },
