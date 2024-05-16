@@ -41,7 +41,7 @@
     </div>
 
     <div
-      class="mx-auto flex max-w-4xl items-center justify-between px-3 py-4 max-md:space-y-4 max-sm:flex-col md:space-x-8"
+      class="mx-auto flex max-w-5xl items-center justify-between px-3 py-4 max-md:space-y-4 max-sm:flex-col md:space-x-8"
     >
       <!-- Name your prescription input group -->
       <div class="w-full flex-1">
@@ -76,7 +76,7 @@
       </div>
     </div>
     <div
-      class="bg-gray mx-auto flex max-w-4xl flex-col space-y-4 rounded-t-xl px-3 pb-4"
+      class="bg-gray mx-auto flex max-w-5xl flex-col space-y-4 rounded-t-xl px-3 pb-4"
     >
       <div class="overflow-hidden md:rounded-t-lg">
         <table class="min-w-full divide-y divide-gray-300 border-2">
@@ -220,6 +220,15 @@
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </th>
+              <th class="border-r">
+                <div class="flex-grow">
+                  <div
+                    class="flex flex-col items-center justify-center py-4 text-center text-sm font-normal text-gray-900 md:flex-row md:px-4 md:font-semibold"
+                  >
+                    <label class="block">+/-</label>
                   </div>
                 </div>
               </th>
@@ -400,7 +409,15 @@
                   </template>
                 </select>
               </td>
-
+              <td
+                class="border-r px-2 py-4 text-sm text-gray-900 md:px-4 md:font-medium lg:text-base"
+              >
+                <select class="mt-1 block w-full bg-white">
+                  <option>None</option>
+                  <option>+</option>
+                  <option>-</option>
+                </select>
+              </td>
               <td
                 class="border-r px-2 py-4 text-sm text-gray-900 md:px-4 md:font-medium lg:text-base"
               >
@@ -573,7 +590,15 @@
                   </div>
                 </div>
               </th>
-
+              <th class="border-r">
+                <div class="flex-grow">
+                  <div
+                    class="flex flex-col items-center justify-center py-4 text-center text-sm font-normal text-gray-900 md:flex-row md:px-4 md:font-semibold"
+                  >
+                    <label class="block">+/-</label>
+                  </div>
+                </div>
+              </th>
               <!-- Cylinder (CYL) Column with Modal -->
               <th x-data="{ openCylModal: false }" class="border-r">
                 <div class="flex-grow">
@@ -753,7 +778,15 @@
                   </template>
                 </select>
               </td>
-
+              <td
+                class="border-r px-2 py-4 text-sm text-gray-900 md:px-4 md:font-medium lg:text-base"
+              >
+                <select class="mt-1 block w-full bg-white">
+                  <option>None</option>
+                  <option>+</option>
+                  <option>-</option>
+                </select>
+              </td>
               <td
                 class="border-r px-2 py-4 text-sm text-gray-900 md:px-4 md:font-medium lg:text-base"
               >
