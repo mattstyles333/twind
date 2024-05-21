@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "@glidejs/glide": "^3.6.0",
+    "@midudev/tailwind-animations": "^0.0.7",
     "@preline/carousel": "^2.0.2",
     "i": "^0.3.7"
   }

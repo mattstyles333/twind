@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popup Modal</title>
+    <link href="../output.css" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.2/dist/cdn.min.js"
+      defer
+    ></script>
+  </head>
+  <body class="flex min-h-screen items-center justify-center bg-gray-100">
+    <div
+      x-data="{ open: true }"
+      x-show="open"
+      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+    >
+      <div
+        class="relative w-full max-w-md overflow-hidden rounded-lg bg-white shadow-lg"
+      >
+        <div class="relative">
+          <img
+            src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/mail/save30-image.webp"
+            alt="Glasses"
+            class="h-64 w-full object-cover object-center"
+          />
+          <button
+            @click="open = false"
+            class="absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-full text-3xl text-black"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="p-4">
+          <h2 class="mb-2 text-center text-4xl font-extrabold">
+            30% OFF LENSES
+          </h2>
+          <p class="mb-4 text-center">
+            New Customers: Enjoy this offer to enhance your lenses!
+          </p>
+          <form class="w-full items-center">
+            <input
+              type="email"
+              placeholder="Your email"
+              class="mb-4 w-full rounded border border-gray-300 p-2"
+            />
+            <button
+              class="bg-s hover:bg-p w-full rounded px-4 py-3 text-white duration-500 ease-in-out"
+            >
+              Claim Your Discount
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

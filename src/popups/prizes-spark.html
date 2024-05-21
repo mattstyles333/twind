@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popup Modal</title>
+    <link href="../output.css" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.2/dist/cdn.min.js"
+      defer
+    ></script>
+  </head>
+  <body class="flex min-h-screen items-center justify-center bg-gray-100">
+    <div
+      x-data="modal()"
+      x-show="showModal"
+      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+    >
+      <div
+        class="relative w-full max-w-2xl overflow-hidden rounded-lg bg-gray-50 px-8 py-12 shadow-lg"
+      >
+        <!-- Close button -->
+        <button
+          @click="showModal = false"
+          class="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+
+        <!-- Step 1: Prize Selection -->
+        <template x-if="step === 1">
+          <div class="p-3 text-center">
+            <h2 class="mb-12 pb-8 text-4xl font-extrabold text-gray-700">
+              Pick a gift for a chance to win a prize for your next order!
+            </h2>
+            <div class="grid grid-cols-4 gap-8 border-y-2 border-gray-300 py-6">
+              <div
+                @click="selectPrize('Prize 1')"
+                class="relative cursor-pointer"
+              >
+                <div class="h-32 w-full bg-yellow-400"></div>
+                <p class="mt-2 text-center">Prize 1</p>
+              </div>
+              <div
+                @click="selectPrize('Prize 2')"
+                class="relative cursor-pointer"
+              >
+                <div class="h-32 w-full bg-green-400"></div>
+                <p class="mt-2 text-center">Prize 2</p>
+              </div>
+              <div
+                @click="selectPrize('Prize 3')"
+                class="relative cursor-pointer"
+              >
+                <div class="h-32 w-full bg-blue-400"></div>
+                <p class="mt-2 text-center">Prize 3</p>
+              </div>
+              <div
+                @click="selectPrize('Prize 4')"
+                class="relative cursor-pointer"
+              >
+                <div class="h-32 w-full bg-red-400"></div>
+                <p class="mt-2 text-center">Prize 4</p>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <!-- Step 2: Form Submission -->
+        <template x-if="step === 2">
+          <div class="p-6 text-center">
+            <h2 class="mb-8 text-4xl font-extrabold text-gray-700">
+              Thanks For Playing!
+            </h2>
+            <p class="mb-8 text-2xl font-bold text-gray-700">
+              Enter your email to claim your prize
+            </p>
+            <form @submit.prevent="submitForm" class="space-y-4">
+              <div class="mb-4 flex justify-center">
+                <input
+                  type="email"
+                  x-model="email"
+                  placeholder="Email address"
+                  class="w-2/3 rounded border border-gray-300 p-2 focus:border-blue-500 focus:outline-none"
+                  aria-label="Email address"
+                  required
+                />
+              </div>
+              <div class="flex justify-center">
+                <button
+                  type="submit"
+                  class="bg-s hover:bg-p w-2/3 rounded px-4 py-2 text-white duration-500 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                  role="button"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </template>
+
+        <!-- Step 3: Confirmation -->
+        <template x-if="step === 3">
+          <div class="p-3 text-center">
+            <h2 class="mb-12 pb-8 text-4xl font-extrabold text-gray-700">
+              Thank you!
+            </h2>
+            <p class="text-lg text-gray-500">
+              You have chosen
+              <span class="font-bold text-gray-700" x-text="prize"></span> and
+              submitted your email
+              <span class="font-bold text-gray-700" x-text="email"></span>.
+            </p>
+            <p class="text-lg text-gray-500">We will contact you if you win.</p>
+            <button
+              @click="showModal = false"
+              class="mt-8 inline-flex justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
+              Close
+            </button>
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <script>
+      function modal() {
+        return {
+          step: 1,
+          prize: "",
+          email: "",
+          showModal: true,
+          prizeSelected: false,
+          selectPrize(prize) {
+            if (!this.prizeSelected) {
+              this.prize = prize;
+              this.prizeSelected = true;
+              setTimeout(() => {
+                this.step = 2;
+              }, 2000);
+            }
+          },
+          submitForm() {
+            const formData = new FormData();
+            formData.append("email", this.email);
+            formData.append("prize", this.prize);
+
+            fetch("https://submit-form.com/T8x1oU7yU", {
+              method: "POST",
+              body: formData,
+            })
+              .then((response) => {
+                if (response.ok) {
+                  this.step = 3;
+                } else {
+                  alert(
+                    "There was an error submitting your form. Please try again.",
+                  );
+                }
+              })
+              .catch((error) => {
+                alert(
+                  "There was an error submitting your form. Please try again.",
+                );
+              });
+          },
+        };
+      }
+    </script>
+  </body>
+</html>
