@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gift Modal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.min.js"
+      integrity="sha512-R+pL8EpOivONqRoD9ErJPA2Zt/4h2ZorY12AMb02RW2k8FzXOGyzzX6S5E+K4M7dBdcvI0dgt2b5sVE/bvFV+A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Trigger button to open modal -->
+    <button
+      @click="openModal = true"
+      class="rounded bg-blue-500 px-4 py-2 text-white"
+    >
+      Pick a Gift
+    </button>
+
+    <!-- Modal -->
+    <div
+      x-data="{ openModal: false, page: 1, email: '', prize: '' }"
+      x-show="openModal"
+      class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75"
+    >
+      <div class="w-1/3 rounded-lg bg-white p-6 shadow-lg">
+        <!-- Page 1: Select a Gift -->
+        <div x-show="page === 1">
+          <h2 class="mb-4 text-xl font-bold">Choose your gift</h2>
+          <div class="grid grid-cols-3 gap-4">
+            <div
+              @click="prize = 'Prize 1'; page = 2;"
+              class="cursor-pointer rounded bg-red-200 p-4"
+            >
+              Gift 1
+            </div>
+            <div
+              @click="prize = 'Prize 2'; page = 2;"
+              class="cursor-pointer rounded bg-green-200 p-4"
+            >
+              Gift 2
+            </div>
+            <div
+              @click="prize = 'Prize 3'; page = 2;"
+              class="cursor-pointer rounded bg-blue-200 p-4"
+            >
+              Gift 3
+            </div>
+          </div>
+        </div>
+
+        <!-- Page 2: Enter Email -->
+        <div x-show="page === 2">
+          <h2 class="mb-4 text-xl font-bold">Enter your email</h2>
+          <form @submit.prevent="submitForm">
+            <label for="email" class="block text-gray-700">Email</label>
+            <input
+              type="email"
+              id="email"
+              x-model="email"
+              class="mb-4 w-full rounded border border-gray-300 p-2"
+              required
+            />
+            <button
+              type="submit"
+              class="rounded bg-blue-500 px-4 py-2 text-white"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+
+        <!-- Page 3: Show Prize -->
+        <div x-show="page === 3">
+          <h2 class="mb-4 text-xl font-bold">Congratulations!</h2>
+          <p class="mb-4">
+            You have won: <span class="font-bold" x-text="prize"></span>
+          </p>
+          <p class="mb-4">
+            A confirmation has been sent to your email:
+            <span class="font-bold" x-text="email"></span>
+          </p>
+          <button
+            @click="openModal = false"
+            class="rounded bg-blue-500 px-4 py-2 text-white"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function submitForm() {
+        fetch("https://submit-form.com/T8x1oU7yU", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: this.email,
+            prize: this.prize,
+          }),
+        })
+          .then((response) => {
+            if (response.ok) {
+              this.page = 3;
+            } else {
+              alert(
+                "There was an issue submitting your email. Please try again.",
+              );
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert(
+              "There was an issue submitting your email. Please try again.",
+            );
+          });
+      }
+    </script>
+  </body>
+</html>
