@@ -78,260 +78,319 @@
     <div
       class="bg-gray mx-auto flex max-w-5xl flex-col space-y-4 rounded-t-xl px-3 pb-4"
     >
-      <div class="overflow-hidden md:rounded-t-lg">
-        <table class="min-w-full divide-y divide-gray-300 border-2">
-          <p class="py-3 text-base font-bold">Right Eye</p>
-          <thead class="border-t border-gray-200 bg-gray-50">
-            <tr>
-              <!-- New +/- Button and Modal -->
-              <th x-data="{ openNewModal: false }" class="border-r">
-                <div class="flex-grow">
+      <div class="overflow-hidden">
+        <div class="mb-6 min-w-full border-gray-300 max-sm:border">
+          <p
+            class="border-b border-gray-200 py-2 text-left text-base font-bold max-sm:border-b max-sm:px-3"
+          >
+            Right Eye
+          </p>
+
+          <div
+            class="grid grid-cols-2 max-sm:gap-y-4 md:grid-cols-7 md:gap-x-4 md:pt-4"
+          >
+            <!-- +/- Section -->
+            <div class="col-span-3 border border-gray-200">
+              <div class="flex flex-row">
+                <!-- +/- Section -->
+                <div
+                  x-data="{ openNewModal: false }"
+                  class="flex flex-1 flex-col items-center justify-center border-r border-gray-300 text-center text-sm font-semibold text-gray-900"
+                >
                   <div
-                    class="flex flex-col items-center justify-center py-4 text-center text-sm font-normal text-gray-900 md:flex-row md:px-4 md:font-semibold"
+                    class="flex h-10 w-full items-center justify-center border-b border-gray-300 bg-gray-50 px-2 md:h-12"
                   >
                     <label class="block">+/-</label>
                     <button
                       x-on:click="openNewModal = true"
-                      class="inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 md:ml-2"
+                      class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                       aria-label="Help"
                     >
-                      <span class="sr-only">Help</span>
-                      ?
+                      <span class="sr-only">Help</span>?
                     </button>
                   </div>
-                </div>
-
-                <!-- New Modal Code -->
-                <div
-                  id="newModal"
-                  class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75"
-                  :class="{ 'hidden': !openNewModal }"
-                  aria-labelledby="newModalTitle"
-                  role="dialog"
-                  aria-modal="true"
-                >
+                  <select
+                    class="block w-full bg-white px-2 py-2 text-base font-normal md:py-4"
+                  >
+                    <option>None</option>
+                    <option>+</option>
+                    <option>-</option>
+                  </select>
+                  <!-- New Modal Code -->
                   <div
-                    class="flex items-center justify-center p-4 text-center sm:block sm:p-0"
+                    id="newModal"
+                    class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75"
+                    :class="{ 'hidden': !openNewModal }"
+                    aria-labelledby="newModalTitle"
+                    role="dialog"
+                    aria-modal="true"
                   >
                     <div
-                      class="relative inline-block transform overflow-hidden rounded-lg bg-white text-left align-middle shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:align-middle"
+                      class="flex items-center justify-center p-4 text-center sm:block sm:p-0"
                     >
-                      <button
-                        type="button"
-                        class="absolute right-0 top-0 rounded-md bg-white px-2 text-3xl text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                        x-on:click="openNewModal = false"
-                        aria-label="Close"
+                      <div
+                        class="relative inline-block transform overflow-hidden rounded-lg bg-white text-left align-middle shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:align-middle"
                       >
-                        <span class="sr-only">Close</span>
-                        &#215;
-                      </button>
-                      <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                        <h3
-                          class="text-lg font-bold leading-6 text-gray-900"
-                          id="newModalTitle"
+                        <button
+                          type="button"
+                          class="absolute right-0 top-0 rounded-md bg-white p-2 text-3xl text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                          x-on:click="openNewModal = false"
+                          aria-label="Close"
                         >
-                          Understanding +/-
-                        </h3>
-                        <div class="flex flex-col gap-6 py-4 font-normal">
-                          <p>
-                            **Important Reminder:** Avoid the common mistake of
-                            selecting a "+" value instead of a "-" value or vice
-                            versa when entering prescriptions online.
-                            Double-check your prescription details to ensure the
-                            correct value is chosen.
-                          </p>
+                          <span class="sr-only">Close</span>&#215;
+                        </button>
+                        <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                          <h3
+                            class="text-lg font-bold leading-6 text-gray-900"
+                            id="newModalTitle"
+                          >
+                            Understanding +/-
+                          </h3>
+                          <div class="flex flex-col gap-6 py-4 font-normal">
+                            <p>
+                              **Important Reminder:** Avoid the common mistake
+                              of selecting a "+" value instead of a "-" value or
+                              vice versa when entering prescriptions online.
+                              Double-check your prescription details to ensure
+                              the correct value is chosen.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </th>
 
-              <th x-data="{ openSphModal: false }" class="border-r">
-                <div class="flex-grow">
+                <!-- Sphere (SPH) Section -->
+                <div
+                  x-data="{ openSphModal: false }"
+                  class="flex flex-1 flex-col items-center justify-center text-center text-sm font-semibold text-gray-900"
+                >
                   <div
-                    class="flex flex-col items-center justify-center px-2 py-4 text-center text-sm font-normal text-gray-900 md:flex-row md:font-semibold"
+                    class="flex h-10 w-full items-center justify-center border-b border-gray-300 bg-gray-50 px-2 md:h-12"
                   >
                     <label class="block">Sphere (SPH)</label>
                     <button
                       x-on:click="openSphModal = true"
-                      class="inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 md:ml-2"
+                      class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                       aria-label="Help"
                     >
-                      <span class="sr-only">Help</span>
-                      ?
+                      <span class="sr-only">Help</span>?
                     </button>
                   </div>
-                </div>
-
-                <!-- SPH Modal Code -->
-                <div
-                  id="sphModal"
-                  class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75"
-                  :class="{ 'hidden': !openSphModal }"
-                  aria-labelledby="sphModalTitle"
-                  role="dialog"
-                  aria-modal="true"
-                >
+                  <select
+                    x-data="{ options: Array.from({ length: (6.00 / 0.25) + 1 }, (_, index) => (index * 0.25).toFixed(2)) }"
+                    class="block w-full bg-white px-2 py-2 text-base font-normal md:py-4"
+                  >
+                    <option>None</option>
+                    <template x-for="option in options" :key="option">
+                      <option x-text="option"></option>
+                    </template>
+                  </select>
+                  <!-- SPH Modal Code -->
                   <div
-                    class="flex items-center justify-center p-4 text-center sm:block sm:p-0"
+                    id="sphModal"
+                    class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75"
+                    :class="{ 'hidden': !openSphModal }"
+                    aria-labelledby="sphModalTitle"
+                    role="dialog"
+                    aria-modal="true"
                   >
                     <div
-                      class="relative inline-block transform overflow-hidden rounded-lg bg-white text-left align-middle shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:align-middle"
+                      class="flex items-center justify-center p-4 text-center sm:block sm:p-0"
                     >
-                      <button
-                        type="button"
-                        class="absolute right-0 top-0 rounded-md bg-white px-2 text-3xl text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                        x-on:click="openSphModal = false"
-                        aria-label="Close"
+                      <div
+                        class="relative inline-block transform overflow-hidden rounded-lg bg-white text-left align-middle shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:align-middle"
                       >
-                        <span class="sr-only">Close</span>
-                        &#215;
-                      </button>
-                      <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                        <h3
-                          class="text-lg font-bold leading-6 text-gray-900"
-                          id="sphModalTitle"
+                        <button
+                          type="button"
+                          class="absolute right-0 top-0 rounded-md bg-white p-2 text-3xl text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                          x-on:click="openSphModal = false"
+                          aria-label="Close"
                         >
-                          Understanding Sphere (SPH)
-                        </h3>
-                        <div class="flex flex-col gap-6 py-4 font-normal">
-                          <p>
-                            The Sphere (SPH) value on your prescription
-                            indicates the lens power required, typically in
-                            increments of 0.25 (e.g., -0.25, -0.50, -0.75,
-                            -1.00, -1.25). A "+" or "−" sign will denote whether
-                            it’s for farsightedness or nearsightedness,
-                            respectively. Opticians often place a dash above the
-                            value for a minus sign or add a "+" next to positive
-                            values.
-                          </p>
-                          <p>
-                            If your SPH values exceed +6.00 or fall below -6.00,
-                            we can often still create your glasses, but a
-                            surcharge might apply. If your prescription is
-                            beyond this range, please call us at 0151 632 6611.
-                          </p>
-                          <p>
-                            Occasionally, your SPH might include terms like
-                            "Plano," "Infinity," or symbols such as "~" or "∞,"
-                            which all signify a value of 0.00.
-                          </p>
+                          <span class="sr-only">Close</span>&#215;
+                        </button>
+                        <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                          <h3
+                            class="text-lg font-bold leading-6 text-gray-900"
+                            id="sphModalTitle"
+                          >
+                            Understanding Sphere (SPH)
+                          </h3>
+                          <div class="flex flex-col gap-6 py-4 font-normal">
+                            <p>
+                              The Sphere (SPH) value on your prescription
+                              indicates the lens power required, typically in
+                              increments of 0.25 (e.g., -0.25, -0.50, -0.75,
+                              -1.00, -1.25). A "+" or "−" sign will denote
+                              whether it’s for farsightedness or
+                              nearsightedness, respectively. Opticians often
+                              place a dash above the value for a minus sign or
+                              add a "+" next to positive values.
+                            </p>
+                            <p>
+                              If your SPH values exceed +6.00 or fall below
+                              -6.00, we can often still create your glasses, but
+                              a surcharge might apply. If your prescription is
+                              beyond this range, please call us at 0151 632
+                              6611.
+                            </p>
+                            <p>
+                              Occasionally, your SPH might include terms like
+                              "Plano," "Infinity," or symbols such as "~" or
+                              "∞," which all signify a value of 0.00.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </th>
-              <th class="border-r">
-                <div class="flex-grow">
+              </div>
+            </div>
+            <div class="col-span-3 border border-gray-200">
+              <div class="flex flex-row">
+                <!-- +/- Section -->
+                <div
+                  x-data="{ openNewModal: false }"
+                  class="flex flex-1 flex-col items-center justify-center border-r border-gray-300 text-center text-sm font-semibold text-gray-900"
+                >
                   <div
-                    class="flex flex-col items-center justify-center py-4 text-center text-sm font-normal text-gray-900 md:flex-row md:px-4 md:font-semibold"
+                    class="flex h-10 w-full items-center justify-center border-b border-gray-300 bg-gray-50 px-2 md:h-12"
                   >
                     <label class="block">+/-</label>
                   </div>
+                  <select
+                    class="block w-full bg-white px-2 py-2 text-base font-normal md:py-4"
+                  >
+                    <option>None</option>
+                    <option>+</option>
+                    <option>-</option>
+                  </select>
                 </div>
-              </th>
-              <th x-data="{ openCylModal: false }" class="border-r">
-                <div class="flex-grow">
+
+                <!-- Cylinder (CYL) Section -->
+                <div
+                  x-data="{ openCylModal: false }"
+                  class="flex flex-1 flex-col items-center justify-center text-center text-sm font-semibold text-gray-900"
+                >
                   <div
-                    class="flex flex-col items-center justify-center px-2 py-4 text-center text-sm font-normal text-gray-900 md:flex-row md:font-semibold"
+                    class="flex h-10 w-full items-center justify-center border-b border-gray-300 bg-gray-50 px-2 md:h-12"
                   >
                     <label class="block">Cylinder (CYL)</label>
                     <button
                       x-on:click="openCylModal = true"
-                      class="inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 md:ml-2"
+                      class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                       aria-label="Help"
                     >
-                      <span class="sr-only">Help</span>
-                      ?
+                      <span class="sr-only">Help</span>?
                     </button>
                   </div>
-                </div>
-
-                <!-- Cylinder (CYL) Modal Code -->
-                <div
-                  id="cylModal"
-                  class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75"
-                  :class="{ 'hidden': !openCylModal }"
-                  aria-labelledby="cylModalTitle"
-                  role="dialog"
-                  aria-modal="true"
-                >
+                  <select
+                    x-data="{ options: Array.from({ length: (3.00 / 0.25) + 1 }, (_, index) => (index * 0.25).toFixed(2)) }"
+                    class="block w-full bg-white px-2 py-2 text-base font-normal md:py-4"
+                  >
+                    <option>None</option>
+                    <template x-for="option in options" :key="option">
+                      <option x-text="option"></option>
+                    </template>
+                  </select>
+                  <!-- Cylinder (CYL) Modal Code -->
                   <div
-                    class="flex items-center justify-center p-4 text-center sm:block sm:p-0"
+                    id="cylModal"
+                    class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75"
+                    :class="{ 'hidden': !openCylModal }"
+                    aria-labelledby="cylModalTitle"
+                    role="dialog"
+                    aria-modal="true"
                   >
                     <div
-                      class="relative inline-block transform overflow-hidden rounded-lg bg-white text-left align-middle shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:align-middle"
+                      class="flex items-center justify-center p-4 text-center sm:block sm:p-0"
                     >
-                      <button
-                        type="button"
-                        class="absolute right-0 top-0 rounded-md bg-white px-2 text-3xl text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                        x-on:click="openCylModal = false"
-                        aria-label="Close"
+                      <div
+                        class="relative inline-block transform overflow-hidden rounded-lg bg-white text-left align-middle shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:align-middle"
                       >
-                        <span class="sr-only">Close</span>
-                        &#215;
-                      </button>
-                      <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                        <h3
-                          class="text-lg font-bold leading-6 text-gray-900"
-                          id="cylModalTitle"
+                        <button
+                          type="button"
+                          class="absolute right-0 top-0 rounded-md bg-white p-2 text-3xl text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                          x-on:click="openCylModal = false"
+                          aria-label="Close"
                         >
-                          Understanding Cylinder (CYL)
-                        </h3>
-                        <div class="flex flex-col gap-6 py-4 font-normal">
-                          <p>
-                            The Cylinder (CYL) value is specified in increments
-                            of 0.25 and can be either positive (+) or negative
-                            (-), such as -0.25, -0.50, -0.75, -1.00, -1.25, and
-                            so forth. Opticians typically write a dash above the
-                            value for a negative sign or a "+" next to positive
-                            values.
-                          </p>
-                          <p>
-                            If your CYL value exceeds +3.00 or is below -3.00,
-                            we can often still manufacture your glasses, but a
-                            surcharge may apply. If your prescription is beyond
-                            this range, please contact us at 0151 632 6611.
-                          </p>
-                          <p>
-                            If a CYL value is not specified for one or both
-                            eyes, it means there is no astigmatism present and
-                            no CYL correction is required. In such cases, there
-                            will be no AXIS value for the respective eye(s).
-                          </p>
-                          <p>
-                            Sometimes, when no CYL correction is needed, the
-                            optician may write "DS" (Dioptre Spheres) in the CYL
-                            field, indicating that no CYL correction is
-                            required. In this case, you can leave the CYL option
-                            blank.
-                          </p>
+                          <span class="sr-only">Close</span>&#215;
+                        </button>
+                        <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                          <h3
+                            class="text-lg font-bold leading-6 text-gray-900"
+                            id="cylModalTitle"
+                          >
+                            Understanding Cylinder (CYL)
+                          </h3>
+                          <div class="flex flex-col gap-6 py-4 font-normal">
+                            <p>
+                              The Cylinder (CYL) value is specified in
+                              increments of 0.25 and can be either positive (+)
+                              or negative (-), such as -0.25, -0.50, -0.75,
+                              -1.00, -1.25, and so forth. Opticians typically
+                              write a dash above the value for a negative sign
+                              or a "+" next to positive values.
+                            </p>
+                            <p>
+                              If your CYL value exceeds +3.00 or is below -3.00,
+                              we can often still manufacture your glasses, but a
+                              surcharge may apply. If your prescription is
+                              beyond this range, please contact us at 0151 632
+                              6611.
+                            </p>
+                            <p>
+                              If a CYL value is not specified for one or both
+                              eyes, it means there is no astigmatism present and
+                              no CYL correction is required. In such cases,
+                              there will be no AXIS value for the respective
+                              eye(s).
+                            </p>
+                            <p>
+                              Sometimes, when no CYL correction is needed, the
+                              optician may write "DS" (Dioptre Spheres) in the
+                              CYL field, indicating that no CYL correction is
+                              required. In this case, you can leave the CYL
+                              option blank.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </th>
-              <th x-data="{ open: false }" class="border-r">
-                <div class="flex-grow">
-                  <div
-                    class="flex flex-col items-center justify-center py-4 text-center text-sm font-normal text-gray-900 md:flex-row md:px-4 md:font-semibold"
-                  >
-                    <label class="block">Axis</label>
-                    <button
-                      x-on:click="open = true"
-                      class="inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 md:ml-2"
-                      aria-label="Help"
-                    >
-                      <span class="sr-only">Help</span>
-                      ?
-                    </button>
-                  </div>
-                </div>
+              </div>
+            </div>
 
-                <!-- Modal Code -->
+            <!-- Axis Section -->
+            <div class="col-span-2 border border-gray-200 md:col-span-1">
+              <div
+                x-data="{ open: false }"
+                class="flex flex-col items-center justify-center text-center text-sm font-semibold text-gray-900"
+              >
+                <div
+                  class="flex h-10 w-full items-center justify-center border-b border-gray-300 bg-gray-50 px-2 md:h-12"
+                >
+                  <label class="block">Axis</label>
+                  <button
+                    x-on:click="open = true"
+                    class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    aria-label="Help"
+                  >
+                    <span class="sr-only">Help</span>?
+                  </button>
+                </div>
+                <select
+                  x-data="{ options: Array.from({ length: 181 }, (_, index) => index) }"
+                  class="block w-full bg-white px-2 py-2 text-base font-normal md:py-4"
+                >
+                  <template x-for="option in options" :key="option">
+                    <option x-text="option"></option>
+                  </template>
+                </select>
+                <!-- Axis Modal Code -->
                 <div
                   id="modal"
                   class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75"
@@ -348,12 +407,11 @@
                     >
                       <button
                         type="button"
-                        class="absolute right-0 top-0 rounded-md bg-white px-2 text-3xl text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                        class="absolute right-0 top-0 rounded-md bg-white p-2 text-3xl text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                         x-on:click="open = false"
                         aria-label="Close"
                       >
-                        <span class="sr-only">Close</span>
-                        &#215;
+                        <span class="sr-only">Close</span>&#215;
                       </button>
                       <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                         <h3
@@ -382,325 +440,323 @@
                     </div>
                   </div>
                 </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody class="bg-white">
-            <tr>
-              <td
-                class="border-r px-2 py-4 text-sm text-gray-900 md:px-4 md:font-medium lg:text-base"
-              >
-                <select class="mt-1 block w-full bg-white">
-                  <option>None</option>
-                  <option>+</option>
-                  <option>-</option>
-                </select>
-              </td>
-              <td
-                class="border-r px-2 py-4 text-sm text-gray-900 md:px-4 md:font-medium lg:text-base"
-              >
-                <select
-                  x-data="{ options: Array.from({ length: (6.00 / 0.25) + 1 }, (_, index) => (index * 0.25).toFixed(2)) }"
-                  class="mt-1 block w-full bg-white"
-                >
-                  <option>None</option>
-                  <template x-for="option in options" :key="option">
-                    <option x-text="option"></option>
-                  </template>
-                </select>
-              </td>
-              <td
-                class="border-r px-2 py-4 text-sm text-gray-900 md:px-4 md:font-medium lg:text-base"
-              >
-                <select class="mt-1 block w-full bg-white">
-                  <option>None</option>
-                  <option>+</option>
-                  <option>-</option>
-                </select>
-              </td>
-              <td
-                class="border-r px-2 py-4 text-sm text-gray-900 md:px-4 md:font-medium lg:text-base"
-              >
-                <select
-                  x-data="{ options: Array.from({ length: (3.00 / 0.25) + 1 }, (_, index) => (index * 0.25).toFixed(2)) }"
-                  class="mt-1 block w-full bg-white"
-                >
-                  <option>None</option>
-                  <template x-for="option in options" :key="option">
-                    <option x-text="option"></option>
-                  </template>
-                </select>
-              </td>
+              </div>
+            </div>
+          </div>
+        </div>
 
-              <td
-                class="border-r px-2 py-4 text-sm text-gray-900 md:px-4 md:font-medium lg:text-base"
-              >
-                <select
-                  x-data="{ options: Array.from({ length: 181 }, (_, index) => index) }"
-                  class="mt-1 block w-full bg-white"
+        <div class="mb-6 min-w-full border-gray-300 max-sm:border">
+          <p
+            class="border-b border-gray-200 py-2 text-left text-base font-bold max-sm:border-b max-sm:px-3"
+          >
+            Left Eye
+          </p>
+
+          <div
+            class="grid grid-cols-2 max-sm:gap-y-4 md:grid-cols-7 md:gap-x-4 md:pt-4"
+          >
+            <!-- +/- Section -->
+            <div class="col-span-2 border border-gray-200 md:col-span-3">
+              <div class="flex flex-row">
+                <!-- +/- Section -->
+                <div
+                  x-data="{ openNewModal: false }"
+                  class="flex flex-1 flex-col items-center justify-center border-r border-gray-300 text-center text-sm font-semibold text-gray-900"
                 >
-                  <template x-for="option in options" :key="option">
-                    <option x-text="option"></option>
-                  </template>
-                </select>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <table class="min-w-full divide-y divide-gray-300 border-2">
-          <p class="py-3 text-base font-bold">Left Eye</p>
-          <thead class="border-t border-gray-200 bg-gray-50">
-            <tr>
-              <th x-data="{ openNewModal: false }" class="border-r">
-                <div class="flex-grow">
                   <div
-                    class="flex flex-col items-center justify-center py-4 text-center text-sm font-normal text-gray-900 md:flex-row md:px-4 md:font-semibold"
+                    class="flex h-10 w-full items-center justify-center border-b border-gray-300 bg-gray-50 px-2 md:h-12"
                   >
                     <label class="block">+/-</label>
                     <button
                       x-on:click="openNewModal = true"
-                      class="inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 md:ml-2"
+                      class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                       aria-label="Help"
                     >
-                      <span class="sr-only">Help</span>
-                      ?
+                      <span class="sr-only">Help</span>?
                     </button>
                   </div>
-                </div>
-
-                <!-- New Modal Code -->
-                <div
-                  id="newModal"
-                  class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75"
-                  :class="{ 'hidden': !openNewModal }"
-                  aria-labelledby="newModalTitle"
-                  role="dialog"
-                  aria-modal="true"
-                >
+                  <select
+                    class="block w-full bg-white px-2 py-2 text-base font-normal md:py-4"
+                  >
+                    <option>None</option>
+                    <option>+</option>
+                    <option>-</option>
+                  </select>
+                  <!-- New Modal Code -->
                   <div
-                    class="flex items-center justify-center p-4 text-center sm:block sm:p-0"
+                    id="newModal"
+                    class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75"
+                    :class="{ 'hidden': !openNewModal }"
+                    aria-labelledby="newModalTitle"
+                    role="dialog"
+                    aria-modal="true"
                   >
                     <div
-                      class="relative inline-block transform overflow-hidden rounded-lg bg-white text-left align-middle shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:align-middle"
+                      class="flex items-center justify-center p-4 text-center sm:block sm:p-0"
                     >
-                      <button
-                        type="button"
-                        class="absolute right-0 top-0 rounded-md bg-white px-2 text-3xl text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                        x-on:click="openNewModal = false"
-                        aria-label="Close"
+                      <div
+                        class="relative inline-block transform overflow-hidden rounded-lg bg-white text-left align-middle shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:align-middle"
                       >
-                        <span class="sr-only">Close</span>
-                        &#215;
-                      </button>
-                      <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                        <h3
-                          class="text-lg font-bold leading-6 text-gray-900"
-                          id="newModalTitle"
+                        <button
+                          type="button"
+                          class="absolute right-0 top-0 rounded-md bg-white p-2 text-3xl text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                          x-on:click="openNewModal = false"
+                          aria-label="Close"
                         >
-                          Understanding +/-
-                        </h3>
-                        <div class="flex flex-col gap-6 py-4 font-normal">
-                          <p>
-                            **Important Reminder:** Avoid the common mistake of
-                            selecting a "+" value instead of a "-" value or vice
-                            versa when entering prescriptions online.
-                            Double-check your prescription details to ensure the
-                            correct value is chosen.
-                          </p>
+                          <span class="sr-only">Close</span>&#215;
+                        </button>
+                        <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                          <h3
+                            class="text-lg font-bold leading-6 text-gray-900"
+                            id="newModalTitle"
+                          >
+                            Understanding +/-
+                          </h3>
+                          <div class="flex flex-col gap-6 py-4 font-normal">
+                            <p>
+                              **Important Reminder:** Avoid the common mistake
+                              of selecting a "+" value instead of a "-" value or
+                              vice versa when entering prescriptions online.
+                              Double-check your prescription details to ensure
+                              the correct value is chosen.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </th>
-              <!-- Sphere (SPH) Column with Modal -->
-              <th x-data="{ openSphModal: false }" class="border-r">
-                <div class="flex-grow">
+
+                <!-- Sphere (SPH) Section -->
+                <div
+                  x-data="{ openSphModal: false }"
+                  class="flex flex-1 flex-col items-center justify-center text-center text-sm font-semibold text-gray-900"
+                >
                   <div
-                    class="flex flex-col items-center justify-center px-2 py-4 text-center text-sm font-normal text-gray-900 md:flex-row md:font-semibold"
+                    class="flex h-10 w-full items-center justify-center border-b border-gray-300 bg-gray-50 px-2 md:h-12"
                   >
                     <label class="block">Sphere (SPH)</label>
                     <button
                       x-on:click="openSphModal = true"
-                      class="inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 md:ml-2"
+                      class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                       aria-label="Help"
                     >
-                      <span class="sr-only">Help</span>
-                      ?
+                      <span class="sr-only">Help</span>?
                     </button>
                   </div>
-                </div>
-
-                <!-- SPH Modal Code -->
-                <div
-                  id="sphModal"
-                  class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75"
-                  :class="{ 'hidden': !openSphModal }"
-                  aria-labelledby="sphModalTitle"
-                  role="dialog"
-                  aria-modal="true"
-                >
+                  <select
+                    x-data="{ options: Array.from({ length: (6.00 / 0.25) + 1 }, (_, index) => (index * 0.25).toFixed(2)) }"
+                    class="block w-full bg-white px-2 py-2 text-base font-normal md:py-4"
+                  >
+                    <option>None</option>
+                    <template x-for="option in options" :key="option">
+                      <option x-text="option"></option>
+                    </template>
+                  </select>
+                  <!-- SPH Modal Code -->
                   <div
-                    class="flex items-center justify-center p-4 text-center sm:block sm:p-0"
+                    id="sphModal"
+                    class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75"
+                    :class="{ 'hidden': !openSphModal }"
+                    aria-labelledby="sphModalTitle"
+                    role="dialog"
+                    aria-modal="true"
                   >
                     <div
-                      class="relative inline-block transform overflow-hidden rounded-lg bg-white text-left align-middle shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:align-middle"
+                      class="flex items-center justify-center p-4 text-center sm:block sm:p-0"
                     >
-                      <button
-                        type="button"
-                        class="absolute right-0 top-0 rounded-md bg-white px-2 text-3xl text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                        x-on:click="openSphModal = false"
-                        aria-label="Close"
+                      <div
+                        class="relative inline-block transform overflow-hidden rounded-lg bg-white text-left align-middle shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:align-middle"
                       >
-                        <span class="sr-only">Close</span>
-                        &#215;
-                      </button>
-                      <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                        <h3
-                          class="text-lg font-bold leading-6 text-gray-900"
-                          id="sphModalTitle"
+                        <button
+                          type="button"
+                          class="absolute right-0 top-0 rounded-md bg-white p-2 text-3xl text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                          x-on:click="openSphModal = false"
+                          aria-label="Close"
                         >
-                          Understanding Sphere (SPH)
-                        </h3>
-                        <div class="flex flex-col gap-6 py-4 font-normal">
-                          <p>
-                            The Sphere (SPH) value on your prescription
-                            indicates the lens power required, typically in
-                            increments of 0.25 (e.g., -0.25, -0.50, -0.75,
-                            -1.00, -1.25). A "+" or "−" sign will denote whether
-                            it’s for farsightedness or nearsightedness,
-                            respectively. Opticians often place a dash above the
-                            value for a minus sign or add a "+" next to positive
-                            values.
-                          </p>
-                          <p>
-                            If your SPH values exceed +6.00 or fall below -6.00,
-                            we can often still create your glasses, but a
-                            surcharge might apply. If your prescription is
-                            beyond this range, please call us at 0151 632 6611.
-                          </p>
-                          <p>
-                            Occasionally, your SPH might include terms like
-                            "Plano," "Infinity," or symbols such as "~" or "∞,"
-                            which all signify a value of 0.00.
-                          </p>
+                          <span class="sr-only">Close</span>&#215;
+                        </button>
+                        <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                          <h3
+                            class="text-lg font-bold leading-6 text-gray-900"
+                            id="sphModalTitle"
+                          >
+                            Understanding Sphere (SPH)
+                          </h3>
+                          <div class="flex flex-col gap-6 py-4 font-normal">
+                            <p>
+                              The Sphere (SPH) value on your prescription
+                              indicates the lens power required, typically in
+                              increments of 0.25 (e.g., -0.25, -0.50, -0.75,
+                              -1.00, -1.25). A "+" or "−" sign will denote
+                              whether it’s for farsightedness or
+                              nearsightedness, respectively. Opticians often
+                              place a dash above the value for a minus sign or
+                              add a "+" next to positive values.
+                            </p>
+                            <p>
+                              If your SPH values exceed +6.00 or fall below
+                              -6.00, we can often still create your glasses, but
+                              a surcharge might apply. If your prescription is
+                              beyond this range, please call us at 0151 632
+                              6611.
+                            </p>
+                            <p>
+                              Occasionally, your SPH might include terms like
+                              "Plano," "Infinity," or symbols such as "~" or
+                              "∞," which all signify a value of 0.00.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </th>
-              <th class="border-r">
-                <div class="flex-grow">
+              </div>
+            </div>
+            <div class="col-span-2 border border-gray-200 md:col-span-3">
+              <div class="flex flex-row">
+                <!-- +/- Section -->
+                <div
+                  x-data="{ openNewModal: false }"
+                  class="flex flex-1 flex-col items-center justify-center border-r border-gray-300 text-center text-sm font-semibold text-gray-900"
+                >
                   <div
-                    class="flex flex-col items-center justify-center py-4 text-center text-sm font-normal text-gray-900 md:flex-row md:px-4 md:font-semibold"
+                    class="flex h-10 w-full items-center justify-center border-b border-gray-300 bg-gray-50 px-2 md:h-12"
                   >
                     <label class="block">+/-</label>
                   </div>
+                  <select
+                    class="block w-full bg-white px-2 py-2 text-base font-normal md:py-4"
+                  >
+                    <option>None</option>
+                    <option>+</option>
+                    <option>-</option>
+                  </select>
                 </div>
-              </th>
-              <!-- Cylinder (CYL) Column with Modal -->
-              <th x-data="{ openCylModal: false }" class="border-r">
-                <div class="flex-grow">
+
+                <!-- Cylinder (CYL) Section -->
+                <div
+                  x-data="{ openCylModal: false }"
+                  class="flex flex-1 flex-col items-center justify-center text-center text-sm font-semibold text-gray-900"
+                >
                   <div
-                    class="flex flex-col items-center justify-center px-2 py-4 text-center text-sm font-normal text-gray-900 md:flex-row md:font-semibold"
+                    class="flex h-10 w-full items-center justify-center border-b border-gray-300 bg-gray-50 px-2 md:h-12"
                   >
                     <label class="block">Cylinder (CYL)</label>
                     <button
                       x-on:click="openCylModal = true"
-                      class="inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 md:ml-2"
+                      class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                       aria-label="Help"
                     >
-                      <span class="sr-only">Help</span>
-                      ?
+                      <span class="sr-only">Help</span>?
                     </button>
                   </div>
-                </div>
-
-                <!-- Cylinder (CYL) Modal Code -->
-                <div
-                  id="cylModal"
-                  class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75"
-                  :class="{ 'hidden': !openCylModal }"
-                  aria-labelledby="cylModalTitle"
-                  role="dialog"
-                  aria-modal="true"
-                >
+                  <select
+                    x-data="{ options: Array.from({ length: (3.00 / 0.25) + 1 }, (_, index) => (index * 0.25).toFixed(2)) }"
+                    class="block w-full bg-white px-2 py-2 text-base font-normal md:py-4"
+                  >
+                    <option>None</option>
+                    <template x-for="option in options" :key="option">
+                      <option x-text="option"></option>
+                    </template>
+                  </select>
+                  <!-- Cylinder (CYL) Modal Code -->
                   <div
-                    class="flex items-center justify-center p-4 text-center sm:block sm:p-0"
+                    id="cylModal"
+                    class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75"
+                    :class="{ 'hidden': !openCylModal }"
+                    aria-labelledby="cylModalTitle"
+                    role="dialog"
+                    aria-modal="true"
                   >
                     <div
-                      class="relative inline-block transform overflow-hidden rounded-lg bg-white text-left align-middle shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:align-middle"
+                      class="flex items-center justify-center p-4 text-center sm:block sm:p-0"
                     >
-                      <button
-                        type="button"
-                        class="absolute right-0 top-0 rounded-md bg-white px-2 text-3xl text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                        x-on:click="openCylModal = false"
-                        aria-label="Close"
+                      <div
+                        class="relative inline-block transform overflow-hidden rounded-lg bg-white text-left align-middle shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:align-middle"
                       >
-                        <span class="sr-only">Close</span>
-                        &#215;
-                      </button>
-                      <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                        <h3
-                          class="text-lg font-bold leading-6 text-gray-900"
-                          id="cylModalTitle"
+                        <button
+                          type="button"
+                          class="absolute right-0 top-0 rounded-md bg-white p-2 text-3xl text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                          x-on:click="openCylModal = false"
+                          aria-label="Close"
                         >
-                          Understanding Cylinder (CYL)
-                        </h3>
-                        <div class="flex flex-col gap-6 py-4 font-normal">
-                          <p>
-                            The Cylinder (CYL) value is specified in increments
-                            of 0.25 and can be either positive (+) or negative
-                            (-), such as -0.25, -0.50, -0.75, -1.00, -1.25, and
-                            so forth. Opticians typically write a dash above the
-                            value for a negative sign or a "+" next to positive
-                            values.
-                          </p>
-                          <p>
-                            If your CYL value exceeds +3.00 or is below -3.00,
-                            we can often still manufacture your glasses, but a
-                            surcharge may apply. If your prescription is beyond
-                            this range, please contact us at 0151 632 6611.
-                          </p>
-                          <p>
-                            If a CYL value is not specified for one or both
-                            eyes, it means there is no astigmatism present and
-                            no CYL correction is required. In such cases, there
-                            will be no AXIS value for the respective eye(s).
-                          </p>
-                          <p>
-                            Sometimes, when no CYL correction is needed, the
-                            optician may write "DS" (Dioptre Spheres) in the CYL
-                            field, indicating that no CYL correction is
-                            required. In this case, you can leave the CYL option
-                            blank.
-                          </p>
+                          <span class="sr-only">Close</span>&#215;
+                        </button>
+                        <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                          <h3
+                            class="text-lg font-bold leading-6 text-gray-900"
+                            id="cylModalTitle"
+                          >
+                            Understanding Cylinder (CYL)
+                          </h3>
+                          <div class="flex flex-col gap-6 py-4 font-normal">
+                            <p>
+                              The Cylinder (CYL) value is specified in
+                              increments of 0.25 and can be either positive (+)
+                              or negative (-), such as -0.25, -0.50, -0.75,
+                              -1.00, -1.25, and so forth. Opticians typically
+                              write a dash above the value for a negative sign
+                              or a "+" next to positive values.
+                            </p>
+                            <p>
+                              If your CYL value exceeds +3.00 or is below -3.00,
+                              we can often still manufacture your glasses, but a
+                              surcharge may apply. If your prescription is
+                              beyond this range, please contact us at 0151 632
+                              6611.
+                            </p>
+                            <p>
+                              If a CYL value is not specified for one or both
+                              eyes, it means there is no astigmatism present and
+                              no CYL correction is required. In such cases,
+                              there will be no AXIS value for the respective
+                              eye(s).
+                            </p>
+                            <p>
+                              Sometimes, when no CYL correction is needed, the
+                              optician may write "DS" (Dioptre Spheres) in the
+                              CYL field, indicating that no CYL correction is
+                              required. In this case, you can leave the CYL
+                              option blank.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </th>
+              </div>
+            </div>
 
-              <th x-data="{ open: false }" class="border-r">
-                <div class="flex-grow">
-                  <div
-                    class="flex flex-col items-center justify-center py-4 text-center text-sm font-normal text-gray-900 md:flex-row md:px-4 md:font-semibold"
+            <!-- Axis Section -->
+            <div class="col-span-2 border border-gray-200 md:col-span-1">
+              <div
+                x-data="{ open: false }"
+                class="flex flex-col items-center justify-center text-center text-sm font-semibold text-gray-900"
+              >
+                <div
+                  class="flex h-10 w-full items-center justify-center border-b border-gray-300 bg-gray-50 px-2 md:h-12"
+                >
+                  <label class="block">Axis</label>
+                  <button
+                    x-on:click="open = true"
+                    class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    aria-label="Help"
                   >
-                    <label class="block">Axis</label>
-                    <button
-                      x-on:click="open = true"
-                      class="inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 md:ml-2"
-                      aria-label="Help"
-                    >
-                      <span class="sr-only">Help</span>
-                      ?
-                    </button>
-                  </div>
+                    <span class="sr-only">Help</span>?
+                  </button>
                 </div>
-
-                <!-- Modal Code -->
+                <select
+                  x-data="{ options: Array.from({ length: 181 }, (_, index) => index) }"
+                  class="block w-full bg-white px-2 py-2 text-base font-normal md:py-4"
+                >
+                  <template x-for="option in options" :key="option">
+                    <option x-text="option"></option>
+                  </template>
+                </select>
+                <!-- Axis Modal Code -->
                 <div
                   id="modal"
                   class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75"
@@ -717,12 +773,11 @@
                     >
                       <button
                         type="button"
-                        class="absolute right-0 top-0 rounded-md bg-white px-2 text-3xl text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                        class="absolute right-0 top-0 rounded-md bg-white p-2 text-3xl text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                         x-on:click="open = false"
                         aria-label="Close"
                       >
-                        <span class="sr-only">Close</span>
-                        &#215;
+                        <span class="sr-only">Close</span>&#215;
                       </button>
                       <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                         <h3
@@ -751,71 +806,10 @@
                     </div>
                   </div>
                 </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody class="bg-white">
-            <tr>
-              <td
-                class="border-r px-2 py-4 text-sm text-gray-900 md:px-4 md:font-medium lg:text-base"
-              >
-                <select class="mt-1 block w-full bg-white">
-                  <option>None</option>
-                  <option>+</option>
-                  <option>-</option>
-                </select>
-              </td>
-              <td
-                class="border-r px-2 py-4 text-sm text-gray-900 md:px-4 md:font-medium lg:text-base"
-              >
-                <select
-                  x-data="{ options: Array.from({ length: (6.00 / 0.25) + 1 }, (_, index) => (index * 0.25).toFixed(2)) }"
-                  class="mt-1 block w-full bg-white"
-                >
-                  <option>None</option>
-                  <template x-for="option in options" :key="option">
-                    <option x-text="option"></option>
-                  </template>
-                </select>
-              </td>
-              <td
-                class="border-r px-2 py-4 text-sm text-gray-900 md:px-4 md:font-medium lg:text-base"
-              >
-                <select class="mt-1 block w-full bg-white">
-                  <option>None</option>
-                  <option>+</option>
-                  <option>-</option>
-                </select>
-              </td>
-              <td
-                class="border-r px-2 py-4 text-sm text-gray-900 md:px-4 md:font-medium lg:text-base"
-              >
-                <select
-                  x-data="{ options: Array.from({ length: (3.00 / 0.25) + 1 }, (_, index) => (index * 0.25).toFixed(2)) }"
-                  class="mt-1 block w-full bg-white"
-                >
-                  <option>None</option>
-                  <template x-for="option in options" :key="option">
-                    <option x-text="option"></option>
-                  </template>
-                </select>
-              </td>
-
-              <td
-                class="border-r px-2 py-4 text-sm text-gray-900 md:px-4 md:font-medium lg:text-base"
-              >
-                <select
-                  x-data="{ options: Array.from({ length: 181 }, (_, index) => index) }"
-                  class="mt-1 block w-full bg-white"
-                >
-                  <template x-for="option in options" :key="option">
-                    <option x-text="option"></option>
-                  </template>
-                </select>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Parent container with x-data -->

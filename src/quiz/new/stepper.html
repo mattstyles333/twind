@@ -63,12 +63,12 @@
       <!-- Step 1: Select Gender -->
       <div class="px-3 pt-6 md:pt-12">
         <div
-          class="mx-auto flex max-w-screen-xl flex-col items-center px-4 lg:flex-row"
+          class="mx-auto flex max-w-screen-xl flex-col items-center px-4 md:flex-row"
           x-show="currentStep === 0"
         >
-          <div class="w-full text-center lg:w-1/2 lg:text-left">
+          <div class="w-full text-center md:text-left lg:w-1/2">
             <h1
-              class="mb-4 text-4xl font-bold tracking-tight dark:text-white md:text-5xl xl:text-6xl"
+              class="mb-4 text-4xl font-bold tracking-tight dark:text-white md:text-4xl xl:text-6xl"
             >
               Welcome to Our Style Finder Quiz!
             </h1>
@@ -80,7 +80,7 @@
             </p>
             <button
               @click="nextStep"
-              class="flex w-full items-center justify-center space-x-2 rounded bg-blue-900 px-6 py-3 text-lg font-bold text-white duration-500 ease-in-out hover:bg-gray-800 dark:hover:bg-slate-900 max-md:mx-auto md:w-1/2"
+              class="flex w-full items-center justify-center space-x-2 rounded bg-blue-900 px-6 py-3 text-lg font-bold text-white duration-500 ease-in-out hover:bg-gray-800 dark:hover:bg-slate-900 max-md:mx-auto md:w-2/3 lg:w-1/2"
             >
               <span>Start Quiz</span>
               <svg
@@ -110,7 +110,9 @@
             </button>
           </div>
 
-          <div class="mt-8 lg:mt-0 lg:flex lg:w-1/2 lg:justify-center">
+          <div
+            class="mt-8 md:w-full lg:mt-0 lg:flex lg:w-1/2 lg:justify-center"
+          >
             <img
               class="p-8"
               src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/quiz/quiz-hero-image6.webp"

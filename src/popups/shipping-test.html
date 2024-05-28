@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popup Modal</title>
+    <link href="../output.css" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.2/dist/cdn.min.js"
+      defer
+    ></script>
+  </head>
+
+  <!-- Trigger Button -->
+  <div class="size-filters-lead w-full pb-4 italic text-gray-500">
+    <span
+      class="cursor-pointer underline"
+      @click.prevent="$dispatch('hyva-modal-show', {dialog: 'help_choose-frame-size'})"
+    >
+      Not sure on your size? Check out our guide
+    </span>
+  </div>
+
+  <!-- Modal Definition -->
+  <div
+    x-data="{ open: false }"
+    @hyva-modal-show.window="if ($event.detail.dialog === 'help_choose-frame-size') open = true"
+  >
+    <div x-show="open" class="fixed inset-0 z-10 overflow-y-auto">
+      <div
+        class="flex min-h-screen items-end justify-center px-4 pb-20 pt-4 text-center sm:block sm:p-0"
+      >
+        <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+          <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+        </div>
+        <span
+          class="hidden sm:inline-block sm:h-screen sm:align-middle"
+          aria-hidden="true"
+          >​</span
+        >
+        <div
+          class="inline-block transform overflow-hidden rounded-lg bg-white text-left align-bottom shadow-xl transition-all sm:w-full sm:max-w-lg sm:align-middle"
+        >
+          <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+            <div class="sm:flex sm:items-start">
+              <div
+                class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 sm:mx-0 sm:h-10 sm:w-10"
+              >
+                <!-- Icon or Image -->
+                <svg
+                  class="h-6 w-6 text-blue-600"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 16h-1v-4h-1m-1 4h-1m2-4h-1m1-4h-1m-1 4h-1m2-4h-1m-1 4h-1m2-4h-1m1 4h-1m-1-4h-1"
+                  />
+                </svg>
+              </div>
+              <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                <h3
+                  class="text-lg font-medium leading-6 text-gray-900"
+                  id="modal-title"
+                >
+                  Help Choosing Frame Size
+                </h3>
+                <div class="mt-2">
+                  <p class="text-sm text-gray-500">
+                    Here you can add the content of your guide for choosing the
+                    right frame size.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+            <button
+              type="button"
+              class="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:ml-3 sm:mt-0 sm:w-auto sm:text-sm"
+              @click="open = false"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
+            >
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</html>

@@ -12,46 +12,124 @@
   </head>
   <body class="flex min-h-screen items-center justify-center bg-gray-100">
     <div
-      x-data="{ open: true }"
-      x-show="open"
-      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+      x-data="{ step: 1, email: '', showModal: true }"
+      x-show="showModal"
+      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-3"
     >
       <div
-        class="relative w-full max-w-md overflow-hidden rounded-lg bg-white shadow-lg"
+        class="relative w-full max-w-lg overflow-hidden rounded-lg bg-white shadow-lg"
       >
-        <div class="relative">
-          <img
-            src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/mail/save30-image.webp"
-            alt="Glasses"
-            class="h-64 w-full object-cover object-center"
-          />
-          <button
-            @click="open = false"
-            class="absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-full text-3xl text-black"
+        <!-- Close button -->
+        <button
+          @click="showModal = false"
+          class="absolute right-4 top-4 text-white duration-500 ease-in-out hover:text-gray-900"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
           >
-            &times;
-          </button>
-        </div>
-        <div class="p-4">
-          <h2 class="mb-2 text-center text-4xl font-extrabold">
-            30% OFF LENSES
-          </h2>
-          <p class="mb-4 text-center">
-            New Customers: Enjoy this offer to enhance your lenses!
-          </p>
-          <form class="w-full items-center">
-            <input
-              type="email"
-              placeholder="Your email"
-              class="mb-4 w-full rounded border border-gray-300 p-2"
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
             />
-            <button
-              class="bg-s hover:bg-p w-full rounded px-4 py-3 text-white duration-500 ease-in-out"
+          </svg>
+        </button>
+
+        <template x-if="step === 1">
+          <div class="pb-6 text-center">
+            <img
+              src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/mail/save30-image.webp"
+              alt="Glasses"
+              class="h-64 w-full object-cover object-center"
+            />
+            <h2 class="my-4 text-2xl font-extrabold text-gray-700 md:text-4xl">
+              30% OFF LENSES
+            </h2>
+            <p class="mb-4 text-center">
+              New Customers: Enjoy this offer to enhance your lenses!
+            </p>
+            <form
+              @submit.prevent="submitForm"
+              x-data="{ 
+                email: '', 
+                isValidEmail() { 
+                  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                  return emailPattern.test(this.email);
+                },
+                submitForm() { 
+                  if (!this.isValidEmail()) {
+                    alert('Please enter a valid email address.');
+                    return;
+                  }
+                  fetch('https://n8n.s4l.link/webhook/save-popup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: this.email })
+                  })
+                  .then(response => {
+                    if (response.ok) {
+                      this.$dispatch('next-step');
+                    } else {
+                      alert('Failed to subscribe.');
+                    }
+                  })
+                  .catch(() => {
+                    alert('An error occurred. Please try again.');
+                  });
+                }
+              }"
+              @next-step.window="step = 2"
+              class="w-full items-center"
             >
-              Claim Your Discount
+              <div class="mb-4 flex justify-center px-4">
+                <input
+                  type="email"
+                  x-model="email"
+                  placeholder="Your email"
+                  class="mb-2 w-full rounded border border-gray-300 p-2 md:w-2/3"
+                  aria-label="Email address"
+                  required
+                />
+              </div>
+              <div class="flex justify-center px-4">
+                <button
+                  @click="submitForm()"
+                  :disabled="!isValidEmail()"
+                  class="w-full rounded px-4 py-2 text-white duration-500 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 md:w-2/3"
+                  :class="{ 'bg-gray-400': !isValidEmail(), ' bg-s hover:bg-p duration-500 ease-in-out': isValidEmail() }"
+                >
+                  Claim Your Discount
+                </button>
+              </div>
+            </form>
+          </div>
+        </template>
+
+        <template x-if="step === 2">
+          <div class="p-8 text-center">
+            <p class="mx-auto px-4 py-6 text-xl">
+              Here's your 30% off code for lenses! For assistance or inquiries,
+              call us at 0151 632 6611.
+            </p>
+            <p
+              class="mx-auto w-1/2 cursor-pointer border border-gray-400 p-3 text-3xl font-bold"
+              @click="navigator.clipboard.writeText('Save30'); alert('Copied to clipboard!');"
+            >
+              Save30
+            </p>
+
+            <button
+              @click="showModal = false"
+              class="bg-s hover:bg-p mt-8 w-full rounded px-4 py-2 font-bold text-white duration-500 ease-in-out md:w-2/3"
+            >
+              Close
             </button>
-          </form>
-        </div>
+          </div>
+        </template>
       </div>
     </div>
   </body>
