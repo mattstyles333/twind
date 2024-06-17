@@ -12,32 +12,21 @@
   </head>
   <body class="flex min-h-screen items-center justify-center bg-gray-100">
     <div
-      x-data="{ step: 1, email: '', showModal: true }"
-      x-show="showModal"
+      x-data="modal"
+      x-init="init()"
       class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-3"
+      x-show="showModal"
+      x-cloak
     >
       <div
         class="relative w-full max-w-lg overflow-hidden rounded-lg bg-white shadow-lg"
       >
         <!-- Close button -->
-        <button
+        <span
+          class="absolute right-2 top-2 cursor-pointer"
           @click="showModal = false"
-          class="absolute right-4 top-4 text-white duration-500 ease-in-out hover:text-gray-900"
+          >X</span
         >
-          <svg
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
 
         <template x-if="step === 1">
           <div class="pb-6 text-center">
@@ -52,39 +41,7 @@
             <p class="mb-4 text-center">
               New Customers: Enjoy this offer to enhance your lenses!
             </p>
-            <form
-              @submit.prevent="submitForm"
-              x-data="{ 
-                email: '', 
-                isValidEmail() { 
-                  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                  return emailPattern.test(this.email);
-                },
-                submitForm() { 
-                  if (!this.isValidEmail()) {
-                    alert('Please enter a valid email address.');
-                    return;
-                  }
-                  fetch('https://n8n.s4l.link/webhook/save-popup', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email: this.email })
-                  })
-                  .then(response => {
-                    if (response.ok) {
-                      this.$dispatch('next-step');
-                    } else {
-                      alert('Failed to subscribe.');
-                    }
-                  })
-                  .catch(() => {
-                    alert('An error occurred. Please try again.');
-                  });
-                }
-              }"
-              @next-step.window="step = 2"
-              class="w-full items-center"
-            >
+            <form @submit.prevent="submitForm" class="w-full items-center">
               <div class="mb-4 flex justify-center px-4">
                 <input
                   type="email"
@@ -97,10 +54,10 @@
               </div>
               <div class="flex justify-center px-4">
                 <button
-                  @click="submitForm()"
+                  type="submit"
                   :disabled="!isValidEmail()"
                   class="w-full rounded px-4 py-2 text-white duration-500 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 md:w-2/3"
-                  :class="{ 'bg-gray-400': !isValidEmail(), ' bg-s hover:bg-p duration-500 ease-in-out': isValidEmail() }"
+                  :class="{ 'bg-gray-400': !isValidEmail(), 'bg-s hover:bg-p': isValidEmail() }"
                 >
                   Claim Your Discount
                 </button>
@@ -116,12 +73,11 @@
               call us at 0151 632 6611.
             </p>
             <p
-              class="mx-auto w-1/2 cursor-pointer border border-gray-400 p-3 text-3xl font-bold"
-              @click="navigator.clipboard.writeText('Save30'); alert('Copied to clipboard!');"
+              class="mx-auto w-1/2 cursor-pointer border-2 border-dashed border-gray-400 p-3 text-3xl font-bold"
+              @click="navigator.clipboard.writeText('Save30').then(() => { alert('Copied to clipboard!'); }).catch(err => { console.error('Failed to copy: ', err); });"
             >
               Save30
             </p>
-
             <button
               @click="showModal = false"
               class="bg-s hover:bg-p mt-8 w-full rounded px-4 py-2 font-bold text-white duration-500 ease-in-out md:w-2/3"
@@ -132,5 +88,47 @@
         </template>
       </div>
     </div>
+
+    <script>
+      function modal() {
+        return {
+          step: 1,
+          email: "",
+          showModal: true,
+          init() {
+            console.log("Modal initialized");
+          },
+          isValidEmail() {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(this.email);
+          },
+          submitForm() {
+            if (!this.isValidEmail()) {
+              alert("Please enter a valid email address.");
+              return;
+            }
+            fetch("https://n8n.s4l.link/webhook/save-popup", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email: this.email }),
+            })
+              .then((response) => {
+                if (response.ok) {
+                  this.step = 2;
+                } else {
+                  alert("Failed to subscribe.");
+                }
+              })
+              .catch(() => {
+                alert("An error occurred. Please try again.");
+              });
+          },
+        };
+      }
+
+      document.addEventListener("alpine:init", () => {
+        Alpine.data("modal", modal);
+      });
+    </script>
   </body>
 </html>
