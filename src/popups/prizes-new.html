@@ -15,12 +15,15 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
   </head>
-  <div class="relative p-4 text-center">
+  <div id="prize-form-modal" class="relative p-3 text-center">
     <span class="absolute right-2 top-2 cursor-pointer" @click="hide()">X</span>
-    <div x-data="prizeForm()" class="mx-auto max-w-xl">
+    <div x-data="prizeForm()" class="mx-auto max-w-xl p-4">
       <template x-if="step === 1">
         <div class="text-center">
-          <h2 class="pb-8 text-2xl font-extrabold text-gray-700 md:text-4xl">
+          <h2 class="pb-4 text-2xl font-extrabold text-gray-700 md:text-6xl">
+            WAIT!
+          </h2>
+          <h2 class="pb-8 text-xl font-bold text-gray-700 md:text-3xl">
             Pick a gift for a chance to win a prize for your next order!
           </h2>
           <div class="grid grid-cols-4 gap-8 border-y-2 border-gray-300 py-6">
@@ -265,7 +268,7 @@
           </p>
 
           <div
-            class="mx-auto flex w-2/3 flex-row items-center justify-center space-x-4"
+            class="mx-auto flex w-full flex-row items-center justify-center space-x-4"
           >
             <input
               type="email"
@@ -291,7 +294,7 @@
 
           <!-- Coupon Code Display -->
           <div
-            class="mx-auto w-2/3 space-y-3 pt-6 text-center"
+            class="mx-auto w-full space-y-3 pt-6 text-center"
             x-show="showCoupon"
             style="display: none"
           >
@@ -322,14 +325,9 @@
               Secure free accidental damage cover for your glasses when you add
               it to your cart. Great for peace of mind!
             </p>
-            <p
-              x-show="couponCode === 'TRIPLESTACK'"
-              class="text-md text-gray-500"
-            >
-              Take advantage of a free 3-in-1 lens coating upgrade. More details
-              <a href="link-to-more-info" class="text-blue-500 hover:underline"
-                >here</a
-              >.
+            <p x-show="couponCode === 'FREE16'" class="text-md text-gray-500">
+              Enjoy a free 1.6 lens upgrade with your next order using code
+              FREE16!
             </p>
           </div>
         </div>
@@ -345,6 +343,27 @@
           couponCode: "",
           isValid: false,
           isClicked: false,
+          exitIntentShown: false, // to ensure the form shows only once
+
+          init() {
+            document.addEventListener(
+              "mouseleave",
+              this.handleExitIntent.bind(this),
+            );
+          },
+
+          handleExitIntent(event) {
+            if (event.clientY <= 0 && !this.exitIntentShown) {
+              this.exitIntentShown = true;
+              this.showPrizeForm();
+            }
+          },
+
+          showPrizeForm() {
+            // Add logic to display the prize form modal
+            document.getElementById("prize-form-modal").style.display = "block";
+          },
+
           selectPrize(element) {
             if (!this.prizeSelected) {
               this.prizeSelected = true;
@@ -365,9 +384,11 @@
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailPattern.test(email);
           },
+
           checkEmailValidity() {
             this.isValid = this.isValidEmail(this.email);
           },
+
           submitForm() {
             if (this.isClicked) return;
             this.isClicked = true;
@@ -398,12 +419,13 @@
                 alert("An error occurred. Please try again.");
               });
           },
+
           generateCouponCode() {
             const couponCodes = [
-              { code: "SHIP43", probability: 0.5 },
+              { code: "SHIP43", probability: 0.4 },
               { code: "FREEMAR", probability: 0.3 },
-              { code: "FreeCover", probability: 0.15 },
-              { code: "TRIPLESTACK", probability: 0.05 },
+              { code: "FreeCover", probability: 0.2 },
+              { code: "FREE16", probability: 0.1 },
             ];
             let random = Math.random();
             let sum = 0;
@@ -415,6 +437,7 @@
             }
             return couponCodes[couponCodes.length - 1].code;
           },
+
           copyCouponCode() {
             navigator.clipboard
               .writeText(this.couponCode)
@@ -425,8 +448,9 @@
                 console.error("Failed to copy coupon code: ", err);
               });
           },
+
           hide() {
-            // Add logic to hide the modal if needed
+            document.getElementById("prize-form-modal").style.display = "none";
           },
         };
       }

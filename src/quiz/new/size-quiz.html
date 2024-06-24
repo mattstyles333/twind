@@ -17,7 +17,7 @@
     <!-- Main Container -->
     <div
       x-data="frameSizeCalculator()"
-      class="relative mx-auto max-w-lg rounded-lg bg-white p-12 text-center shadow-xl"
+      class="relative mx-auto max-w-lg rounded-lg bg-white p-6 text-center shadow-xl"
     >
       <span class="absolute right-2 top-2 cursor-pointer" @click="reset()"
         >X</span
@@ -25,10 +25,11 @@
       <template x-if="step === 1">
         <div>
           <div class="mb-4 text-2xl font-semibold">Find your frame size</div>
-          <p class="mb-4 text-sm text-gray-600">
-            Enter your frame measurements below (they're usually on the inside
-            of the temple arm).
+          <p class="mb-4 text-base text-gray-600">
+            Use our glasses size calculator to find your ideal size. Enter your
+            frame measurements below (usually found inside the temple arm).
           </p>
+
           <div class="mb-4 flex justify-center">
             <img
               src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/frame_size_2.webp"
