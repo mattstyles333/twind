@@ -1,0 +1,110 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../output.css" rel="stylesheet" />
+  <script
+    defer
+    src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.6/dist/cdn.min.js"
+    defer
+  ></script>
+</head>
+<body class="bg-gray-100 p-4">
+  <div
+    class="mx-auto max-w-2xl rounded bg-white p-6 shadow"
+    x-data="{ selectedColor: '', selectedSize: '' }"
+  >
+    <div>
+      <h1 class="text-2xl font-bold">RX 5228 Ray-Ban Glasses</h1>
+      <div class="mt-4 text-3xl font-semibold">£81.00</div>
+      <div class="mt-4">
+        <span class="font-semibold">Product Options:</span>
+        <div class="mt-2">
+          <div class="flex items-center">
+            <div class="flex w-1/2 gap-4">
+              <span class="block">Colour</span>
+              <span class="mr-2 font-bold">Black</span>
+            </div>
+            <div class="flex w-1/2 justify-start gap-4">
+              <template
+                x-for="color in ['black', 'red', 'gray', 'pink', 'blue']"
+                :key="color"
+              >
+                <div
+                  class="cursor-pointer"
+                  :class="{ 'ring ring-offset-2 ring-blue-700': selectedColor === color, 'border border-gray-300': selectedColor !== color }"
+                  @click="selectedColor = color"
+                >
+                  <div :class="'h-6 w-10 ' + getColorClass(color)"></div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6">
+          <div class="flex items-center">
+            <div class="flex w-1/2 gap-4">
+              <span class="block">Size Option</span>
+              <span class="mr-2 font-bold">53-17-140</span>
+            </div>
+            <div class="mt-2">
+              <div class="flex gap-4">
+                <div
+                  class="cursor-pointer p-2"
+                  :class="{ 'ring ring-offset-2 ring-blue-800 border border-gray-300': selectedSize === '53-17-140', 'border border-gray-300': selectedSize !== '53-17-140' }"
+                  @click="selectedSize = '53-17-140'"
+                >
+                  53-17-140
+                </div>
+                <div
+                  class="cursor-pointer p-2"
+                  :class="{ 'ring ring-offset-2 ring-blue-800 border border-gray-300': selectedSize === '55-17-145', 'border border-gray-300': selectedSize !== '55-17-145' }"
+                  @click="selectedSize = '55-17-145'"
+                >
+                  55-17-145
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4">
+        <span class="text-sm">RX5228-2000-53-17-140</span>
+      </div>
+      <div class="mt-6 cursor-pointer underline">
+        <a href="#">Need help choosing your size?</a>
+      </div>
+      <div class="mt-4 flex flex-col gap-4">
+        <button class="rounded bg-blue-900 px-4 py-2 text-white">
+          Select Lenses
+        </button>
+        <button
+          class="rounded border-2 border-gray-300 px-4 py-2 text-gray-800"
+        >
+          Order Frame Only
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function getColorClass(color) {
+      switch (color) {
+        case "black":
+          return "bg-black";
+        case "red":
+          return "bg-red-500";
+        case "gray":
+          return "bg-gray-500";
+        case "pink":
+          return "bg-pink-500";
+        case "blue":
+          return "bg-blue-500";
+        default:
+          return "";
+      }
+    }
+  </script>
+</body>

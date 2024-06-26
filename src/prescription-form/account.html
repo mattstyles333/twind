@@ -1,0 +1,149 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account Prescription</title>
+  <link href="../output.css" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+    defer
+  ></script>
+</head>
+<div class="mx-auto w-full md:w-2/3">
+  <div class="block-dashboard-info block w-11/12">
+    <div
+      class="border-container block-title mb-6 border-b border-gray-300 pb-2 text-2xl font-light"
+    >
+      <h2>Default Prescription</h2>
+    </div>
+    <div x-data="{expanded: true}" class="flex flex-col">
+      <div class="flex w-full justify-between" @click="expanded = expanded">
+        <div class="max-w-max">
+          <span class="font-semibold">New Prescription</span>
+        </div>
+      </div>
+      <div
+        class="border-t-1 mt-2 flex grid w-full flex-col items-center border-t pb-8 pt-2"
+        :class="{'hidden': !expanded, 'grid' : 'expanded'}"
+      >
+        <span>Added: 2022-07-25</span>
+        <div class="mt-4 flex w-full justify-start">
+          <div
+            class="flex w-full flex-col gap-4 md:flex-row lg:w-full lg:items-start lg:justify-start lg:gap-8"
+          >
+            <div class="w-full lg:w-1/3">
+              <div class="text-center font-semibold">Right Eye</div>
+              <table class="prescription-info mt-2 w-full">
+                <thead>
+                  <tr class="border">
+                    <th class="border px-2"></th>
+                    <th class="border px-2">SPH</th>
+                    <th class="border px-2">CYL</th>
+                    <th class="border px-2">AXIS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border">
+                    <td class="border px-2">Distance</td>
+                    <td class="border px-2">+1.25</td>
+                    <td class="border px-2">+0.50</td>
+                    <td class="border px-2">12</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="w-full lg:w-1/3">
+              <div class="text-center font-semibold">Left Eye</div>
+              <table class="prescription-info mt-2 w-full">
+                <thead>
+                  <tr class="border">
+                    <th class="border px-2"></th>
+                    <th class="border px-2">SPH</th>
+                    <th class="border px-2">CYL</th>
+                    <th class="border px-2">AXIS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border">
+                    <td class="border px-2">Distance</td>
+                    <td class="border px-2">+3.25</td>
+                    <td class="border px-2">+1.00</td>
+                    <td class="border px-2">17</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="w-full lg:w-1/3">
+              <div class="text-center font-semibold">
+                Interpupillary Distance
+              </div>
+              <table class="prescription-info mt-2 w-full">
+                <tbody>
+                  <tr class="border">
+                    <th class="border px-2">Single PD</th>
+                    <td class="border px-2">64</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-4 pt-4 md:flex-row">
+        <a
+          href="https://test.s4l.link/prescription/customer/edit/id/353579/"
+          class="rounded-md border border-gray-400 px-2 py-2"
+        >
+          Edit Default Prescription
+        </a>
+        <a
+          href="https://test.s4l.link/prescription/customer/add/"
+          class="rounded-md border border-gray-400 px-2 py-2"
+        >
+          Add a New Prescription
+        </a>
+      </div>
+    </div>
+    <div class="block-content mt-6 flex flex-col gap-6 xl:flex-row">
+      <div class="box box-information w-full xl:w-1/2">
+        <strong class="box-title block pb-4">
+          <span>testphone</span>
+        </strong>
+
+        <div class="box-content text-left">
+          +4.00 +3.00 15.0 (0 0 ) &lt;R <strong>Distance</strong> L&gt; +3.00
+          +3.00 13.0 (0 0 )<br />
+          15.0 (0 0 ) &lt;R <strong>Near</strong> L&gt; .0 (0 0 )<br />Inter
+          Add: 0.00 | 0.00 Near Add:0.00 | 0.00 PD: 58 (0, 0)
+        </div>
+        <div class="box-actions text-sm text-blue-800 hover:underline">
+          <a
+            href="https://test.s4l.link/prescription/customer/edit/id/353579/"
+            class="action"
+          >
+            Edit Default Prescription
+          </a>
+        </div>
+      </div>
+      <div class="box box-information w-full xl:w-1/2">
+        <strong class="box-title block pb-4">
+          <span>Add new prescription</span>
+        </strong>
+        <div class="box-content">
+          <p class="text-justify">
+            You can add as many prescription as you want. Please name them
+            accordingly and make sure your default prescription is correct.
+          </p>
+        </div>
+        <div class="box-actions" style="text-align: right">
+          <a
+            class="action edit text-sm text-blue-800 hover:underline"
+            href="https://test.s4l.link/prescription/customer/add/"
+            ><span>Add New Prescription</span></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
