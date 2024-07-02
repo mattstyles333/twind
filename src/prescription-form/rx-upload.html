@@ -11,43 +11,60 @@
   ></script>
 </head>
 
-<body class="bg-gray-100">
-  <img src="../images/rx-menu2.png" class="mb-8 w-full shadow-lg" />
+<body class="bg-gray-100 px-3">
+  <img
+    src="../images/rx-menu2.png"
+    class="mb-8 hidden w-full shadow-lg lg:block"
+  />
   <h1 class="mx-auto mb-6 max-w-7xl justify-start text-3xl font-bold">
     Attach prescription
   </h1>
   <div
-    class="mx-auto max-w-7xl rounded-lg bg-white p-6 shadow-md"
+    class="mx-auto max-w-7xl rounded-lg bg-white p-4 shadow-md"
     x-data="prescriptionForm()"
   >
     <div class="mb-12">
-      <nav class="mx-auto -mb-px flex max-w-4xl justify-between space-x-8">
+      <nav
+        class="mx-auto -mb-px flex max-w-4xl flex-wrap justify-center md:flex-row md:flex-nowrap md:justify-between"
+      >
+        <a
+          href="#"
+          @click.prevent="tab = 'send_later'"
+          :class="tab === 'send_later' ? 'border-indigo-500' : 'border-transparent text-gray-500'"
+          class="w-1/2 border-b-2 px-1 pb-4 text-center text-sm"
+        >
+          SEND LATER
+        </a>
         <a
           href="#"
           @click.prevent="tab = 'upload_photo'"
-          :class="tab === 'upload_photo' ? 'border-indigo-500 ' : 'border-transparent text-gray-500'"
-          class="whitespace-nowrap border-b-2 px-1 pb-4 text-sm"
-          >UPLOAD / TAKE A PHOTO</a
+          :class="tab === 'upload_photo' ? 'border-indigo-500' : 'border-transparent text-gray-500'"
+          class="w-1/2 border-b-2 px-1 pb-4 text-center text-sm"
         >
+          UPLOAD / TAKE A PHOTO
+        </a>
         <a
           href="#"
           @click.prevent="tab = 'enter_details'"
-          :class="tab === 'enter_details' ? 'border-indigo-500 ' : 'border-transparent text-gray-500'"
-          class="whitespace-nowrap border-b-2 px-1 pb-4 text-sm"
-          >ENTER DETAILS MANUALLY</a
+          :class="tab === 'enter_details' ? 'border-indigo-500' : 'border-transparent text-gray-500'"
+          class="w-1/2 border-b-2 px-1 pb-4 text-center text-sm"
         >
+          ENTER DETAILS MANUALLY
+        </a>
         <a
           href="#"
           @click.prevent="tab = 'load_saved'"
-          :class="tab === 'load_saved' ? 'border-indigo-500 ' : 'border-transparent text-gray-500'"
-          class="whitespace-nowrap border-b-2 px-1 pb-4 text-sm"
-          >LOAD A SAVED PRESCRIPTION</a
+          :class="tab === 'load_saved' ? 'border-indigo-500' : 'border-transparent text-gray-500'"
+          class="w-1/2 border-b-2 px-1 pb-4 text-center text-sm"
         >
+          LOAD A SAVED PRESCRIPTION
+        </a>
       </nav>
     </div>
+
     <div class="mx-auto max-w-5xl">
       <div x-show="tab === 'upload_photo'">
-        <p class="mb-8">
+        <p class="mb-8 text-sm md:text-base">
           <strong>Please Note:</strong> Please give your prescription a Name and
           select the file from your device to upload. Note: If your prescription
           values fall outside of our standard prescription range additional
@@ -97,16 +114,18 @@
             </div>
           </template>
 
-          <div class="flex items-center justify-between pt-6">
+          <div
+            class="flex flex-col items-center justify-between gap-4 space-y-4 pt-6 sm:flex-row sm:space-y-0"
+          >
             <button
               type="submit"
-              class="rounded border-2 border-gray-300 px-4 py-2"
+              class="order-2 w-full rounded border-2 border-gray-300 px-4 py-2 sm:order-1 sm:w-auto"
             >
               Send Prescription Later
             </button>
             <button
               type="submit"
-              class="bg-s rounded px-4 py-2 font-semibold text-white"
+              class="bg-s order-1 w-full rounded px-4 py-2 font-semibold text-white sm:order-2 sm:w-auto"
             >
               Save Prescription & Proceed
             </button>
