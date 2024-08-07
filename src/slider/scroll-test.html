@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizontal Scroll on Vertical Scroll</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js"
+      defer
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        height: 200vh; /* 50vh for each step */
+      }
+      .horizontal-scroll {
+        display: flex;
+        overflow-x: hidden; /* hide the scrollbar */
+        height: 100vh;
+        scroll-behavior: smooth; /* smooth scrolling */
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div
+      x-data="scrollContainer"
+      @scroll.window="handleScroll"
+      class="relative h-full"
+    >
+      <div class="horizontal-scroll fixed inset-0">
+        <div
+          class="flex w-screen flex-shrink-0 items-center justify-center bg-blue-300"
+        >
+          <h2 class="text-3xl">Step 1</h2>
+        </div>
+        <div
+          class="flex w-screen flex-shrink-0 items-center justify-center bg-green-300"
+        >
+          <h2 class="text-3xl">Step 2</h2>
+        </div>
+        <div
+          class="flex w-screen flex-shrink-0 items-center justify-center bg-yellow-300"
+        >
+          <h2 class="text-3xl">Step 3</h2>
+        </div>
+        <div
+          class="flex w-screen flex-shrink-0 items-center justify-center bg-red-300"
+        >
+          <h2 class="text-3xl">Step 4</h2>
+        </div>
+      </div>
+    </div>
+    <script>
+      function scrollContainer() {
+        return {
+          handleScroll(event) {
+            const scrollPos = window.scrollY;
+            const container = document.querySelector(".horizontal-scroll");
+            const stepWidth = window.innerWidth;
+            const steps = Math.round(scrollPos / (window.innerHeight / 2)); // Adjust threshold here
+            container.scrollTo({
+              left: steps * stepWidth,
+              behavior: "smooth",
+            });
+          },
+        };
+      }
+    </script>
+  </body>
+</html>

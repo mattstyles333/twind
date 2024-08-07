@@ -1,0 +1,335 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonial Slider</title>
+  <link href="../output.css" rel="stylesheet" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
+  <!-- Updated the Alpine.js CDN link to the correct version for browsers -->
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"
+  ></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+</head>
+
+<section class="px-3 py-4 md:py-8">
+  <div class="pb-4 text-left md:pb-8 md:text-center lg:pb-12">
+    <h2
+      class="text-xl font-bold capitalize text-slate-800 dark:text-gray-300 md:text-3xl"
+    >
+      Discover Our Collection of Eyewear for All Occasions
+    </h2>
+    <p
+      class="mt-2 text-base text-gray-600 dark:text-gray-200 sm:text-lg md:text-xl"
+    >
+      Check Out Our Featured Categories
+    </p>
+  </div>
+
+  <div
+    class="mx-auto grid grid-cols-2 gap-4 lg:container md:grid-cols-2 md:gap-8 lg:grid-cols-4"
+  >
+    <a href="/glasses" class="block">
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-slate-900"
+      >
+        <div class="relative">
+          <img
+            class="w-full object-cover max-sm:h-48 max-sm:rounded-lg md:rounded-t-lg"
+            src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/single_vision_block_3.webp"
+            alt=""
+          />
+          <div
+            class="absolute inset-0 block rounded-lg bg-gradient-to-t from-black via-transparent to-transparent md:hidden md:rounded-t-lg"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+          >
+            <h2 class="block text-left text-lg font-bold md:hidden">Glasses</h2>
+          </div>
+        </div>
+
+        <div class="hidden p-5 md:block">
+          <h5
+            class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+          >
+            Glasses
+          </h5>
+          <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+            Explore our wide selection of stylish eyewear to find the perfect
+            pair that complements your look.
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <a href="/sunglasses" class="block">
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-slate-900"
+      >
+        <div class="relative">
+          <img
+            class="w-full object-cover max-sm:h-48 max-sm:rounded-lg md:rounded-t-lg"
+            src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/prescription_sunglasses_block.webp"
+            alt=""
+          />
+          <div
+            class="absolute inset-0 block bg-gradient-to-t from-black via-transparent to-transparent max-sm:rounded-lg md:hidden md:rounded-t-lg"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+          >
+            <h2 class="block text-left text-lg font-bold md:hidden">
+              Sunglasses
+            </h2>
+          </div>
+        </div>
+
+        <div class="hidden p-5 md:block">
+          <h5
+            class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+          >
+            Prescription Sunglasses
+          </h5>
+          <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+            Enjoy clear vision and protection from the sun with our prescription
+            sunglasses, perfect for any outdoor adventure.
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <a href="/varifocal-glasses" class="block">
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-slate-900"
+      >
+        <div class="relative">
+          <img
+            class="w-full object-cover max-sm:h-48 max-sm:rounded-lg md:rounded-t-lg"
+            src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/varifocal_block2.webp"
+            alt="Varifocal Glasses"
+          />
+          <div
+            class="absolute inset-0 block rounded-lg bg-gradient-to-t from-black via-transparent to-transparent md:hidden md:rounded-t-lg"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+          >
+            <h2 class="block text-left text-lg font-bold md:hidden">
+              Varifocals
+            </h2>
+          </div>
+        </div>
+
+        <div class="hidden p-5 md:block">
+          <h5
+            class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+          >
+            Varifocal Glasses
+          </h5>
+          <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+            Achieve smooth and seamless vision at any distance with our advanced
+            varifocal glasses, tailored to your needs.
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <a href="/sports" class="block">
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-slate-900"
+      >
+        <div class="relative">
+          <img
+            class="w-full object-cover max-sm:h-48 max-sm:rounded-lg md:rounded-t-lg"
+            src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/sports_bike.webp"
+            alt="Sports Glasses"
+          />
+          <div
+            class="absolute inset-0 block rounded-lg bg-gradient-to-t from-black via-transparent to-transparent md:hidden md:rounded-t-lg"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+          >
+            <h2 class="block text-left text-lg font-bold md:hidden">
+              Sports Glasses
+            </h2>
+          </div>
+        </div>
+
+        <div class="hidden p-5 md:block">
+          <h5
+            class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+          >
+            Sports Glasses
+          </h5>
+          <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+            Elevate your game with our high-performance sports glasses, designed
+            to provide maximum protection and clarity.
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+<section class="bg-l px-3 py-4 shadow-inner dark:bg-slate-900 md:py-8">
+  <div class="pb-4 text-left md:pb-8 md:text-center lg:pb-12">
+    <h2
+      class="text-xl font-bold capitalize text-slate-800 dark:text-gray-300 md:text-3xl"
+    >
+      A Frame for Every Face
+    </h2>
+  </div>
+
+  <div
+    class="mx-auto grid grid-cols-2 gap-4 lg:container md:grid-cols-2 md:gap-8 lg:grid-cols-4"
+  >
+    <a href="/product-quiz" class="block">
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-slate-900"
+      >
+        <div class="relative">
+          <img
+            class="w-full object-cover max-sm:h-48 max-sm:rounded-lg md:rounded-t-lg"
+            src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/new/style-finder-block.webp"
+            alt=""
+          />
+          <div
+            class="absolute inset-0 block rounded-lg bg-gradient-to-t from-black via-transparent to-transparent md:hidden md:rounded-t-lg"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+          >
+            <h2 class="block text-left text-lg font-bold md:hidden">
+              Style Finder
+            </h2>
+          </div>
+        </div>
+
+        <div class="hidden p-5 md:block">
+          <h5
+            class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+          >
+            Style Finder Quiz
+          </h5>
+          <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+            Discover your new favourite pair of glasses in seconds with just a
+            few quick and easy questions!
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <a href="/reading-glasses" class="block">
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-slate-900"
+      >
+        <div class="relative">
+          <img
+            class="w-full object-cover max-sm:h-48 max-sm:rounded-lg md:rounded-t-lg"
+            src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/reading_block_2.webp"
+            alt=""
+          />
+          <div
+            class="absolute inset-0 block bg-gradient-to-t from-black via-transparent to-transparent max-sm:rounded-lg md:hidden md:rounded-t-lg"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+          >
+            <h2 class="block text-left text-lg font-bold md:hidden">Reading</h2>
+          </div>
+        </div>
+
+        <div class="hidden p-5 md:block">
+          <h5
+            class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+          >
+            Reading Glasses
+          </h5>
+          <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+            Boost your reading clarity and comfort with our precision-crafted
+            reading glasses, designed for all-day use.
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <a href="/bifocal-glasses" class="block">
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-slate-900"
+      >
+        <div class="relative">
+          <img
+            class="w-full object-cover max-sm:h-48 max-sm:rounded-lg md:rounded-t-lg"
+            src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/bifocal_block_3.webp"
+            alt="Bifocal Glasses"
+          />
+          <div
+            class="absolute inset-0 block rounded-lg bg-gradient-to-t from-black via-transparent to-transparent md:hidden md:rounded-t-lg"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+          >
+            <h2 class="block text-left text-lg font-bold md:hidden">
+              Bifocals
+            </h2>
+          </div>
+        </div>
+
+        <div class="hidden p-5 md:block">
+          <h5
+            class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+          >
+            Bifocal Glasses
+          </h5>
+          <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+            Experience the best of both worlds with our bifocal glasses,
+            offering clear vision for both near and distant viewing.
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <a href="/customer-reviews" class="block">
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-slate-900"
+      >
+        <div class="relative">
+          <img
+            class="w-full object-cover max-sm:h-48 max-sm:rounded-lg md:rounded-t-lg"
+            src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/reviews_block.webp"
+            alt="Sports Glasses"
+          />
+          <div
+            class="absolute inset-0 block rounded-lg bg-gradient-to-t from-black via-transparent to-transparent md:hidden md:rounded-t-lg"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+          >
+            <h2 class="block text-left text-lg font-bold md:hidden">Reviews</h2>
+          </div>
+        </div>
+
+        <div class="hidden p-5 md:block">
+          <h5
+            class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+          >
+            Customer Reviews
+          </h5>
+          <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+            Discover what our satisfied customers have to say by visiting our
+            reviews page and see why we are trusted by so many.
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>

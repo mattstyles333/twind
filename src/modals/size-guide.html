@@ -1,0 +1,186 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+  <link href="../../output.css" rel="stylesheet" />
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/alpinejs@latest/dist/alpine.js"
+    defer
+  ></script>
+</head>
+
+<div @close-size-calculator.window="hide()">
+  <div
+    x-data="frameSizeCalculator()"
+    class="relative mx-auto max-w-lg rounded-lg bg-white p-6 text-center shadow-xl"
+  >
+    <span
+      class="absolute right-2 top-2 cursor-pointer"
+      @click="reset(); $dispatch('close-size-calculator');"
+      >X</span
+    >
+    <template x-if="step === 1">
+      <div>
+        <div class="mb-4 text-2xl font-semibold">Find your frame size</div>
+        <p class="mb-4 text-base text-gray-600">
+          Use our glasses size calculator to find your ideal size. Enter your
+          frame measurements below (usually found inside the temple arm or nose
+          bridge).
+        </p>
+
+        <div class="mb-4 flex justify-center">
+          <img
+            src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/frame_size_2.webp"
+            alt="Frame size diagram"
+          />
+        </div>
+        <div class="flex flex-row gap-4">
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Lens*</label>
+            <input
+              x-model="lens"
+              type="text"
+              class="mt-1 block w-full rounded-md border border-gray-400 p-3 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              placeholder="e.g. 54"
+              @input="validateInputs"
+            />
+            <p x-show="lensError" class="text-sm text-red-600">
+              Lens must be between 40 and 70
+            </p>
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700"
+              >Bridge*</label
+            >
+            <input
+              x-model="bridge"
+              type="text"
+              class="mt-1 block w-full rounded-md border border-gray-400 p-3 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              placeholder="e.g. 16"
+              @input="validateInputs"
+            />
+            <p x-show="bridgeError" class="text-sm text-red-600">
+              Bridge must be between 10 and 20
+            </p>
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700"
+              >Arm Size</label
+            >
+            <input
+              x-model="armSize"
+              type="text"
+              class="mt-1 block w-full rounded-md border border-gray-400 p-3 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              placeholder="e.g. 145"
+            />
+          </div>
+        </div>
+        <button
+          @click.prevent.stop="calculateSize"
+          :disabled="!isValid"
+          :class="{'bg-gray-400 cursor-not-allowed': !isValid, 'bg-blue-900 hover:bg-blue-700 duration-500 ease-in-out': isValid}"
+          class="w-full rounded-lg px-4 py-2 text-white"
+        >
+          Find My Size
+        </button>
+      </div>
+    </template>
+
+    <!-- Result Display -->
+    <template x-if="step === 2">
+      <div class="text-center">
+        <p class="text-2xl font-semibold">
+          Your Recommended Size is <br />
+          <span class="underline" x-text="size"></span>
+        </p>
+        <p class="py-4 text-base text-gray-600" x-text="sizeBlurb"></p>
+        <button
+          @click="shopNow"
+          class="mt-4 w-full rounded-lg bg-blue-900 px-4 py-2 text-white duration-500 ease-in-out hover:bg-blue-700"
+        >
+          Shop Now
+        </button>
+      </div>
+    </template>
+  </div>
+</div>
+
+<script>
+  function frameSizeCalculator() {
+    return {
+      step: 1,
+      lens: "",
+      bridge: "",
+      armSize: "", // Optional input for arm size
+      size: "",
+      sizeBlurb: "",
+      sizeRange: "",
+      lensError: false,
+      bridgeError: false,
+      isValid: false,
+      validateInputs() {
+        const lensValue = parseFloat(this.lens);
+        const bridgeValue = parseFloat(this.bridge);
+        this.lensError = isNaN(lensValue) || lensValue < 40 || lensValue > 70;
+        this.bridgeError =
+          isNaN(bridgeValue) || bridgeValue < 10 || bridgeValue > 20;
+        this.isValid =
+          !this.lensError && !this.bridgeError && this.lens && this.bridge;
+      },
+      calculateSize() {
+        let lens = parseFloat(this.lens) || 0;
+        let bridge = parseFloat(this.bridge) || 0;
+        let total = lens * 2 + bridge + 11;
+
+        if (total >= 115 && total < 130) {
+          this.size = "Small";
+          this.sizeBlurb =
+            "A small frame size is perfect for individuals with narrow faces, offering a snug fit without slipping.";
+          this.sizeRange = "115-130";
+        } else if (total >= 130 && total < 135) {
+          this.size = "Medium";
+          this.sizeBlurb =
+            "A medium frame size is versatile and fits most face shapes comfortably.";
+          this.sizeRange = "130-135";
+        } else if (total >= 135 && total < 140) {
+          this.size = "Large";
+          this.sizeBlurb =
+            "A large frame size provides extra room for wider faces, ensuring a comfortable fit.";
+          this.sizeRange = "135-140";
+        } else if (total >= 140 && total <= 155) {
+          this.size = "Extra Large";
+          this.sizeBlurb =
+            "An extra-large frame size is ideal for those with very broad faces, offering maximum comfort.";
+          this.sizeRange = "140-155";
+        } else {
+          this.size = "Invalid size";
+          this.sizeBlurb =
+            "The measurements provided do not fall within the standard size ranges.";
+          this.sizeRange = "";
+        }
+
+        this.step = 2;
+      },
+      shopNow() {
+        const currentUrl = window.location.href.split("?")[0];
+        window.location.href = `${currentUrl}?width=${this.sizeRange}`;
+      },
+      reset() {
+        this.step = 1;
+        this.lens = "";
+        this.bridge = "";
+        this.armSize = ""; // Reset optional arm size
+        this.size = "";
+        this.sizeBlurb = "";
+        this.sizeRange = "";
+        this.lensError = false;
+        this.bridgeError = false;
+        this.isValid = false;
+      },
+    };
+  }
+</script>
