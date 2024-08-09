@@ -3,6 +3,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../output.css" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
   </head>
   <body class="dark:bg-p bg-gray-100">
     <section class="py-8">
@@ -165,7 +169,7 @@
           <!--Order Summary-->
           <div
             class="dark:bg-p sticky top-0 flex w-full flex-col items-start justify-start rounded-xl bg-white px-4 py-4 shadow-lg md:w-full md:py-6 lg:w-1/3 xl:w-1/3"
-            style="height: 580px; overflow-y: auto"
+            style="overflow-y: auto"
           >
             <div class="flex w-full items-center pb-3">
               <input
@@ -207,8 +211,68 @@
             >
               <p class="font-bold">Order Total</p>
               <p class="text-right font-bold">£104.95</p>
-              <!-- Add price here -->
             </div>
+
+            <!-- Dropdown for selecting Reward Points -->
+            <div
+              x-data="{ open: false }"
+              class="border-1 w-full cursor-pointer border-b border-gray-200 py-3"
+            >
+              <div
+                class="flex items-center justify-between"
+                @click="open = !open"
+              >
+                <p class="font-bold">Reward Points</p>
+                <span
+                  x-text="open ? '▲' : '▼'"
+                  class="text-right font-bold"
+                ></span>
+              </div>
+
+              <!-- Content that shows when the dropdown is expanded -->
+              <div x-show="open" class="mt-3">
+                <div
+                  class="border-1 flex w-full items-center justify-between border-b border-gray-200 py-3"
+                >
+                  <p>You Earn</p>
+                  <p class="font-bold">680 Reward Points</p>
+                </div>
+
+                <!-- Existing Reward Points section -->
+                <div
+                  class="border-1 flex w-full flex-col border-b border-gray-200 py-3"
+                >
+                  <p>
+                    You have
+                    <span class="font-bold">17 Reward Points</span> available.
+                  </p>
+                  <label for="points-input" class="mt-2"
+                    >Enter amount of points to spend:</label
+                  >
+                  <input
+                    id="points-input"
+                    type="text"
+                    class="mt-2 rounded border border-gray-300 p-2"
+                  />
+                  <div class="mt-2 flex justify-between">
+                    <button class="rounded bg-blue-500 p-2 text-white">
+                      Apply Points
+                    </button>
+                    <button class="rounded bg-gray-500 p-2 text-white">
+                      Cancel Points
+                    </button>
+                  </div>
+                  <div class="mt-2 flex items-center">
+                    <input type="checkbox" id="max-points" />
+                    <label for="max-points" class="ml-2"
+                      >Use maximum
+                      <span class="font-bold">17 Reward Points</span></label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="space-y-3 py-3">
               <p class="flex items-center">
                 <svg
