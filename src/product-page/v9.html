@@ -14,24 +14,15 @@
     ></script>
   </head>
   <body class="bg-gray-100 text-gray-900">
-    <div class="container mx-auto p-4">
+    <div class="mx-auto p-4 md:container">
       <!-- First Row -->
-      <div class="flex space-x-4">
+      <div class="flex flex-col md:flex-row lg:space-x-4">
         <!-- Left Div (2/3 width) -->
-        <div class="w-2/3 rounded-lg bg-white p-4">
+        <div class="w-full rounded-lg bg-white p-4 lg:w-2/3">
           <div class="relative flex h-full flex-col">
-            <!-- Logo -->
-            <div class="absolute left-0 top-0 p-4">
-              <img
-                src="../images/rayban-logo.png"
-                alt="Logo"
-                class="w-16 object-contain md:w-24"
-              />
-            </div>
-
             <!-- Product Labels -->
             <div
-              class="absolute right-0 top-0 flex flex-row items-end space-x-4 p-4"
+              class="absolute right-0 top-0 flex flex-row items-end space-x-4 lg:p-4"
             >
               <div class="h-9 w-12">
                 <svg
@@ -53,6 +44,9 @@
                 Sale
               </span>
             </div>
+            <div class="absolute left-0 top-0 block w-1/4 lg:hidden">
+              <img src="../images/rayban-logo.png" alt="Logo" class="" />
+            </div>
 
             <!-- Product Image -->
             <div>
@@ -67,7 +61,7 @@
             >
             <!-- Slogans -->
             <div
-              class="mt-4 flex items-center justify-center space-x-8 border-t-2 pt-4 text-center text-gray-700"
+              class="mt-4 hidden items-center justify-center space-x-8 border-t-2 pt-4 text-center text-gray-700 lg:flex"
             >
               <p class="flex items-center text-lg">
                 <!-- Insert SVG for satisfaction guarantee here -->
@@ -143,75 +137,84 @@
 
         <!-- Right Div (1/3 width, sticky) -->
         <div
-          class="sticky top-0 h-full w-1/3 space-y-2 rounded-lg bg-white p-4"
+          class="sticky top-0 h-full w-full space-y-2 rounded-lg bg-white p-4 lg:w-1/3"
         >
-          <div class="space-y-2">
-            <!-- Product Title -->
-            <h1 class="text-3xl font-bold">Ray-Ban Glasses</h1>
-            <!-- Product Subtitle -->
-            <p class="text-xl text-gray-800">RX 7047 Aviator</p>
+          <div class="flex">
+            <div class="w-full space-y-1 lg:w-2/3">
+              <div class="space-y-1">
+                <!-- Product Title -->
+                <h1 class="text-3xl font-bold">Ray-Ban Glasses</h1>
+                <!-- Product Subtitle -->
+                <p class="text-xl text-gray-800">RX 7047 Aviator</p>
 
-            <!-- Additional Content for the right div goes here -->
-          </div>
-          <div class="flex items-center space-x-2">
-            <svg
-              width="80"
-              height="16"
-              viewBox="0 0 222 41"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M176.159 2C176.159 0.89543 175.264 0 174.159 0H137C135.895 0 135 0.895431 135 2V39C135 40.1046 135.895 41 137 41H174.159C175.264 41 176.159 40.1046 176.159 39V2Z"
-                fill="#0091AD"
-              />
-              <path
-                d="M155.406 27.7135L160.936 23.7417L164.281 34.1625L155.406 27.7135ZM169.811 17.3354H158.793L155.406 7L152.019 17.3354H141L149.918 23.7417L146.531 34.0771L155.406 27.7135L160.936 23.7417L169.811 17.3354Z"
-                fill="white"
-              />
-              <path
-                d="M131.159 2C131.159 0.89543 130.264 0 129.159 0H92C90.8954 0 90 0.895431 90 2V39C90 40.1046 90.8954 41 92 41H129.159C130.264 41 131.159 40.1046 131.159 39V2Z"
-                fill="#0091AD"
-              />
-              <path
-                d="M110.406 27.7135L115.936 23.7417L119.281 34.1625L110.406 27.7135ZM124.811 17.3354H113.793L110.406 7L107.019 17.3354H96L104.918 23.7417L101.531 34.0771L110.406 27.7135L115.936 23.7417L124.811 17.3354Z"
-                fill="white"
-              />
-              <path
-                d="M86.1589 2C86.1589 0.89543 85.2635 0 84.1589 0H47C45.8954 0 45 0.895431 45 2V39C45 40.1046 45.8954 41 47 41H84.1589C85.2635 41 86.1589 40.1046 86.1589 39V2Z"
-                fill="#0091AD"
-              />
-              <path
-                d="M65.4056 27.7135L70.9364 23.7417L74.2805 34.1625L65.4056 27.7135ZM79.8112 17.3354H68.7927L65.4056 7L62.0186 17.3354H51L59.9178 23.7417L56.5307 34.0771L65.4056 27.7135L70.9364 23.7417L79.8112 17.3354Z"
-                fill="white"
-              />
-              <path
-                d="M41.1589 2C41.1589 0.89543 40.2635 0 39.1589 0H2C0.895431 0 0 0.895431 0 2V39C0 40.1046 0.895432 41 2 41H39.1589C40.2635 41 41.1589 40.1046 41.1589 39V2Z"
-                fill="#0091AD"
-              />
-              <path
-                d="M20.4056 27.7135L25.9364 23.7417L29.2805 34.1625L20.4056 27.7135ZM34.8112 17.3354H23.7927L20.4056 7L17.0186 17.3354H6L14.9178 23.7417L11.5307 34.0771L20.4056 27.7135L25.9364 23.7417L34.8112 17.3354Z"
-                fill="white"
-              />
-              <path
-                d="M221.159 2C221.159 0.89543 220.264 0 219.159 0H182C180.895 0 180 0.895431 180 2V39C180 40.1046 180.895 41 182 41H219.159C220.264 41 221.159 40.1046 221.159 39V2Z"
-                fill="#0091AD"
-              />
-              <path
-                d="M200.406 27.7135L205.936 23.7417L209.281 34.1625L200.406 27.7135ZM214.811 17.3354H203.793L200.406 7L197.019 17.3354H186L194.918 23.7417L191.531 34.0771L200.406 27.7135L205.936 23.7417L214.811 17.3354Z"
-                fill="white"
-              />
-            </svg>
-            <p>(90 Reviews)</p>
-          </div>
-          <div>
-            <span class="text-sm text-gray-500">RRP:</span>
-            <!-- RRP Label -->
+                <!-- Additional Content for the right div goes here -->
+              </div>
+              <div class="flex items-center space-x-2">
+                <svg
+                  width="80"
+                  height="16"
+                  viewBox="0 0 222 41"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M176.159 2C176.159 0.89543 175.264 0 174.159 0H137C135.895 0 135 0.895431 135 2V39C135 40.1046 135.895 41 137 41H174.159C175.264 41 176.159 40.1046 176.159 39V2Z"
+                    fill="#0091AD"
+                  />
+                  <path
+                    d="M155.406 27.7135L160.936 23.7417L164.281 34.1625L155.406 27.7135ZM169.811 17.3354H158.793L155.406 7L152.019 17.3354H141L149.918 23.7417L146.531 34.0771L155.406 27.7135L160.936 23.7417L169.811 17.3354Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M131.159 2C131.159 0.89543 130.264 0 129.159 0H92C90.8954 0 90 0.895431 90 2V39C90 40.1046 90.8954 41 92 41H129.159C130.264 41 131.159 40.1046 131.159 39V2Z"
+                    fill="#0091AD"
+                  />
+                  <path
+                    d="M110.406 27.7135L115.936 23.7417L119.281 34.1625L110.406 27.7135ZM124.811 17.3354H113.793L110.406 7L107.019 17.3354H96L104.918 23.7417L101.531 34.0771L110.406 27.7135L115.936 23.7417L124.811 17.3354Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M86.1589 2C86.1589 0.89543 85.2635 0 84.1589 0H47C45.8954 0 45 0.895431 45 2V39C45 40.1046 45.8954 41 47 41H84.1589C85.2635 41 86.1589 40.1046 86.1589 39V2Z"
+                    fill="#0091AD"
+                  />
+                  <path
+                    d="M65.4056 27.7135L70.9364 23.7417L74.2805 34.1625L65.4056 27.7135ZM79.8112 17.3354H68.7927L65.4056 7L62.0186 17.3354H51L59.9178 23.7417L56.5307 34.0771L65.4056 27.7135L70.9364 23.7417L79.8112 17.3354Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M41.1589 2C41.1589 0.89543 40.2635 0 39.1589 0H2C0.895431 0 0 0.895431 0 2V39C0 40.1046 0.895432 41 2 41H39.1589C40.2635 41 41.1589 40.1046 41.1589 39V2Z"
+                    fill="#0091AD"
+                  />
+                  <path
+                    d="M20.4056 27.7135L25.9364 23.7417L29.2805 34.1625L20.4056 27.7135ZM34.8112 17.3354H23.7927L20.4056 7L17.0186 17.3354H6L14.9178 23.7417L11.5307 34.0771L20.4056 27.7135L25.9364 23.7417L34.8112 17.3354Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M221.159 2C221.159 0.89543 220.264 0 219.159 0H182C180.895 0 180 0.895431 180 2V39C180 40.1046 180.895 41 182 41H219.159C220.264 41 221.159 40.1046 221.159 39V2Z"
+                    fill="#0091AD"
+                  />
+                  <path
+                    d="M200.406 27.7135L205.936 23.7417L209.281 34.1625L200.406 27.7135ZM214.811 17.3354H203.793L200.406 7L197.019 17.3354H186L194.918 23.7417L191.531 34.0771L200.406 27.7135L205.936 23.7417L214.811 17.3354Z"
+                    fill="white"
+                  />
+                </svg>
+                <p>(90 Reviews)</p>
+              </div>
+              <div>
+                <span class="text-sm text-gray-500">RRP:</span>
+                <!-- RRP Label -->
 
-            <span class="text-lg text-gray-500 line-through">£99.99</span>
-            <!-- RRP Price -->
-            <span class="ml-2 text-2xl font-bold text-gray-900">£79.99</span>
-            <!-- Actual Price -->
+                <span class="text-lg text-gray-500 line-through">£99.99</span>
+                <!-- RRP Price -->
+                <span class="ml-2 text-2xl font-bold text-gray-900"
+                  >£79.99</span
+                >
+                <!-- Actual Price -->
+              </div>
+            </div>
+            <div class="hidden w-1/3 lg:block">
+              <img src="../images/rayban-logo.png" alt="Logo" class="" />
+            </div>
           </div>
           <hr class="px-4 py-0" />
           <div x-data="{ selectedSize: '' }" class="pb-2">
@@ -297,7 +300,7 @@
               x-transition:leave="transition ease-in duration-300"
               x-transition:leave-start="transform translate-x-0"
               x-transition:leave-end="transform translate-x-full"
-              class="fixed right-0 top-0 z-50 h-full w-1/3 overflow-y-auto bg-white shadow-lg"
+              class="fixed right-0 top-0 z-50 h-full w-full overflow-y-auto bg-white shadow-lg lg:w-1/3"
             >
               <div class="flex items-center justify-between border-b-2 p-4">
                 <h2 class="text-lg font-bold text-gray-700">
@@ -311,47 +314,47 @@
                   <!-- Close Button (X) -->
                 </button>
               </div>
-              <div class="p-4">
+              <div class="lg:p-4">
                 <!-- List of Products -->
                 <div class="space-y-4">
                   <div
                     @click="selectedColour = 'Black'; showColours = false"
-                    class="flex cursor-pointer items-center space-x-4 rounded p-2 hover:bg-gray-100"
+                    class="flex cursor-pointer items-center rounded p-2 hover:bg-gray-100"
                   >
                     <img
                       src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__2000_hvrukewcnx8fogxr.webp"
                       alt="Frame Colour: Black"
-                      class="w-30 h-40 rounded"
+                      class="w-2/3 lg:w-1/2"
                     />
-                    <div class="flex flex-col">
+                    <div class="flex flex-col p-2">
                       <span class="text-xl font-bold text-gray-900">£120</span>
                       <span class="text-gray-700">Frame Colour: Black</span>
                     </div>
                   </div>
                   <div
                     @click="selectedColour = 'Blue'; showColours = false"
-                    class="flex cursor-pointer items-center space-x-4 rounded p-2 hover:bg-gray-100"
+                    class="flex cursor-pointer items-center p-2 hover:bg-gray-100"
                   >
                     <img
                       src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp"
                       alt="Frame Colour: Blue"
-                      class="w-30 h-40 rounded"
+                      class="w-2/3 lg:w-1/2"
                     />
-                    <div class="flex flex-col">
+                    <div class="flex flex-col p-2">
                       <span class="text-xl font-bold text-gray-900">£130</span>
                       <span class="text-gray-700">Frame Colour: Blue</span>
                     </div>
                   </div>
                   <div
                     @click="selectedColour = 'Havana'; showColours = false"
-                    class="flex cursor-pointer items-center space-x-4 rounded p-2 hover:bg-gray-100"
+                    class="flex cursor-pointer items-center rounded p-2 hover:bg-gray-100"
                   >
                     <img
                       src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__5574_lfa32i6jtnvj3mdk.webp"
                       alt="Frame Colour: Havana"
-                      class="w-30 h-40 rounded"
+                      class="w-2/3 lg:w-1/2"
                     />
-                    <div class="flex flex-col">
+                    <div class="flex flex-col p-2">
                       <span class="text-xl font-bold text-gray-900">£125</span>
                       <span class="text-gray-700">Frame Colour: Havana</span>
                     </div>
@@ -441,9 +444,166 @@
       </div>
 
       <!-- Second Row (aligned with the left div) -->
-      <div class="pr-4">
-        <div class="mr-4 mt-4 w-2/3 rounded-lg bg-white p-4">
-          <!-- Content for the third div goes here -->
+      <div class="lg:pr-4">
+        <div
+          class="mr-4 mt-4 flex w-full flex-col rounded-lg bg-white p-4 lg:w-2/3 lg:flex-row"
+        >
+          <div class="w-full py-8 lg:w-2/3">
+            <div class="relative flex flex-col items-center">
+              <!-- Frame Width -->
+              <div class="absolute top-0 -translate-y-full transform pb-2">
+                <span
+                  class="size-detail-frame-width bg-gray-100 px-3 py-1 text-sm text-gray-700"
+                >
+                  19 mm
+                </span>
+              </div>
+
+              <!-- Lens Depth and Bridge Width -->
+              <div class="relative w-full max-w-lg">
+                <!-- Lens Depth Measurement - Centered in the Left Lens -->
+                <div
+                  class="absolute left-[30%] top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+                >
+                  <span
+                    class="size-detail-lens-depth bg-gray-100 px-2 py-1 text-sm text-gray-700"
+                  >
+                    42 mm
+                  </span>
+                </div>
+
+                <!-- Right Lens Depth Measurement - Centered in the Right Lens -->
+                <div
+                  class="absolute right-[30%] top-1/2 -translate-y-1/2 translate-x-1/2 transform"
+                >
+                  <span
+                    class="size-detail-lens-depth bg-gray-100 px-2 py-1 text-sm text-gray-700"
+                  >
+                    48 mm
+                  </span>
+                </div>
+
+                <!-- Frame Illustration using SVG -->
+                <div class="flex justify-center">
+                  <svg
+                    class="w-96"
+                    viewBox="0 0 125 69"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M48.8478 3.00342H74M48.5 0.814819V6M74.5 0.814819V6M24.9966 13L24.9966 48.9999M28 12.5H22M28 49.5H22M80.4976 14.5024L111.525 45.5299M82.5962 12.3536L78.3536 16.5962M114.002 43.7598L109.76 48.0024M2 65.5L122 65.5M1.5 63L1.5 68.1852M122.5 63V68.1852M21.7838 8.0487C19.1504 8.2397 14.3897 9.15674 12.1028 9.9138C7.55393 11.4195 4.79824 13.7272 2.97874 17.5553C1.52724 20.6086 1 23.5597 1 28.6314C1 35.7737 2.19813 41.6167 4.60874 46.2311C6.19932 49.2753 9.69467 52.6738 12.6655 54.0644C17.113 56.1461 23.3414 56.5616 28.508 55.1207C35.4098 53.1959 44.05 47.0662 49.014 40.5731C50.6902 38.3805 50.82 38.2754 50.82 39.1126C50.82 40.2528 51.6569 40.5686 52.9418 39.9136C54.7867 38.9734 57.0613 33.7191 56.8749 30.8288C56.7856 29.4469 56.7306 29.3611 55.9396 29.3722C55.4775 29.3788 55.1009 29.3111 55.103 29.2216C55.1052 29.1324 55.3784 27.7713 55.7104 26.1972C56.0423 24.6231 56.3155 22.2094 56.3177 20.8333L56.3217 18.331L58.0275 17.5613C59.5762 16.8627 60.0199 16.8021 62.8435 16.9052C65.2715 16.9937 66.1882 17.1531 67.0213 17.6318L68.089 18.2449L68.4466 21.7726C68.769 24.9569 69.108 26.9555 69.6374 28.7962C69.7966 29.3496 69.7171 29.4177 69.0588 29.2936C67.5348 29.0065 67.316 30.8945 68.4576 34.4819C69.4323 37.5448 70.7594 39.5545 72.1586 40.0872C73.0474 40.4255 73.9717 39.9736 74.104 39.1364C74.1826 38.6402 74.472 38.8842 75.5653 40.3688C78.9011 44.8977 86.5245 51.0286 91.8161 53.4387C98.8166 56.6267 106.23 56.8306 112.255 54.0015C119.952 50.3869 124.321 40.0832 123.785 26.8073C123.325 15.3726 118.794 10.5058 106.766 8.5262C104.209 8.10534 98.8582 8.04177 63.3515 8.00863C41.0776 7.98784 22.3722 8.00592 21.7838 8.0487ZM39.4904 9.63664C45.8258 10.1895 49.5388 11.4668 52.1893 14.0058C54.1543 15.8881 54.7785 17.3787 54.7867 20.2079C54.805 26.4476 52.2199 33.7652 48.0873 39.1725C45.8053 42.1586 40.5804 46.9526 37.166 49.1927C31.3514 53.0082 27.2964 54.35 21.631 54.3329C18.4532 54.3232 17.6411 54.2124 15.5514 53.5029C10.8928 51.921 8.00843 49.3398 5.74177 44.7248C3.40634 39.9691 2.33139 33.8764 2.61227 26.9871C2.85526 21.0363 4.06684 17.5511 6.86837 14.746C9.67633 11.9344 13.8093 10.5844 22.8536 9.52427C24.9546 9.27814 36.2552 9.35436 39.4904 9.63664ZM106.439 10.0578C109.853 10.6453 114.217 12.0308 115.839 13.0421C117.518 14.0887 119.538 16.3716 120.369 18.1611C121.85 21.3515 122.175 23.2702 122.162 28.7579C122.141 38.6462 120.069 45.2366 115.573 49.7188C111.845 53.4357 105.439 55.227 99.5502 54.1991C93.7185 53.1811 87.9473 50.1306 82.1058 44.9781C74.5243 38.291 70.0922 29.277 70.0796 20.5188C70.075 17.179 70.4687 16.1547 72.5483 14.0965C75.0335 11.6373 79.0038 10.1557 84.4837 9.64327C89.1054 9.21096 103.047 9.47426 106.439 10.0578ZM74.6603 10.5501C72.6382 11.6464 70.2462 13.8781 69.4335 15.4272C69.1074 16.0487 68.8091 16.5569 68.7705 16.5566C68.7317 16.5566 67.9438 16.2659 67.0192 15.911C65.7285 15.4151 64.6639 15.2636 62.4345 15.2582C59.7592 15.2515 58.8732 15.422 56.5903 16.3831C56.222 16.5379 55.8901 16.2475 55.299 15.2533C54.2848 13.5476 51.8687 11.4029 49.8371 10.4052L48.2548 9.62791L76.3414 9.63875L74.6603 10.5501Z"
+                      stroke="black"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Bridge Width -->
+              <div
+                class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full transform"
+              >
+                <span
+                  class="size-detail-bridge-width bg-gray-100 px-3 py-1 text-sm text-gray-700"
+                >
+                  144 mm
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="w-full justify-end rounded-lg bg-gray-100 p-4 max-sm:mt-4 lg:ml-4 lg:w-1/3"
+          >
+            <h3 class="mb-2 text-lg font-bold">Frame Details:</h3>
+            <ul class="list-disc pl-4 leading-8 text-gray-700">
+              <li><strong>Gender:</strong> Mens, Womens</li>
+              <li><strong>Material:</strong> Acetate</li>
+              <li><strong>Hinge Type:</strong> Sprung Sides</li>
+              <li><strong>Multifocal:</strong> Yes</li>
+              <li><strong>Frame Type:</strong> Full Rimmed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="lg:pr-4">
+        <div
+          class="mr-4 mt-4 flex w-full flex-col rounded-lg bg-white p-4 lg:w-2/3 lg:flex-row"
+        >
+          <div class="w-full py-8 lg:w-2/3">
+            <div class="relative flex flex-col items-center">
+              <!-- Frame Width -->
+              <div class="absolute top-0 -translate-y-full transform pb-2">
+                <span
+                  class="size-detail-frame-width bg-gray-100 px-3 py-1 text-sm text-gray-700"
+                >
+                  19 mm
+                </span>
+              </div>
+
+              <!-- Lens Depth and Bridge Width -->
+              <div class="relative w-full max-w-lg">
+                <!-- Lens Depth Measurement - Centered in the Left Lens -->
+                <div
+                  class="absolute left-[30%] top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+                >
+                  <span
+                    class="size-detail-lens-depth bg-gray-100 px-2 py-1 text-sm text-gray-700"
+                  >
+                    42 mm
+                  </span>
+                </div>
+
+                <!-- Right Lens Depth Measurement - Centered in the Right Lens -->
+                <div
+                  class="absolute right-[30%] top-1/2 -translate-y-1/2 translate-x-1/2 transform"
+                >
+                  <span
+                    class="size-detail-lens-depth bg-gray-100 px-2 py-1 text-sm text-gray-700"
+                  >
+                    48 mm
+                  </span>
+                </div>
+
+                <!-- Frame Illustration using SVG -->
+                <div class="flex justify-center">
+                  <svg
+                    class="w-96"
+                    viewBox="0 0 125 69"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M48.8478 3.00342H74M48.5 0.814819V6M74.5 0.814819V6M24.9966 13L24.9966 48.9999M28 12.5H22M28 49.5H22M80.4976 14.5024L111.525 45.5299M82.5962 12.3536L78.3536 16.5962M114.002 43.7598L109.76 48.0024M2 65.5L122 65.5M1.5 63L1.5 68.1852M122.5 63V68.1852M21.7838 8.0487C19.1504 8.2397 14.3897 9.15674 12.1028 9.9138C7.55393 11.4195 4.79824 13.7272 2.97874 17.5553C1.52724 20.6086 1 23.5597 1 28.6314C1 35.7737 2.19813 41.6167 4.60874 46.2311C6.19932 49.2753 9.69467 52.6738 12.6655 54.0644C17.113 56.1461 23.3414 56.5616 28.508 55.1207C35.4098 53.1959 44.05 47.0662 49.014 40.5731C50.6902 38.3805 50.82 38.2754 50.82 39.1126C50.82 40.2528 51.6569 40.5686 52.9418 39.9136C54.7867 38.9734 57.0613 33.7191 56.8749 30.8288C56.7856 29.4469 56.7306 29.3611 55.9396 29.3722C55.4775 29.3788 55.1009 29.3111 55.103 29.2216C55.1052 29.1324 55.3784 27.7713 55.7104 26.1972C56.0423 24.6231 56.3155 22.2094 56.3177 20.8333L56.3217 18.331L58.0275 17.5613C59.5762 16.8627 60.0199 16.8021 62.8435 16.9052C65.2715 16.9937 66.1882 17.1531 67.0213 17.6318L68.089 18.2449L68.4466 21.7726C68.769 24.9569 69.108 26.9555 69.6374 28.7962C69.7966 29.3496 69.7171 29.4177 69.0588 29.2936C67.5348 29.0065 67.316 30.8945 68.4576 34.4819C69.4323 37.5448 70.7594 39.5545 72.1586 40.0872C73.0474 40.4255 73.9717 39.9736 74.104 39.1364C74.1826 38.6402 74.472 38.8842 75.5653 40.3688C78.9011 44.8977 86.5245 51.0286 91.8161 53.4387C98.8166 56.6267 106.23 56.8306 112.255 54.0015C119.952 50.3869 124.321 40.0832 123.785 26.8073C123.325 15.3726 118.794 10.5058 106.766 8.5262C104.209 8.10534 98.8582 8.04177 63.3515 8.00863C41.0776 7.98784 22.3722 8.00592 21.7838 8.0487ZM39.4904 9.63664C45.8258 10.1895 49.5388 11.4668 52.1893 14.0058C54.1543 15.8881 54.7785 17.3787 54.7867 20.2079C54.805 26.4476 52.2199 33.7652 48.0873 39.1725C45.8053 42.1586 40.5804 46.9526 37.166 49.1927C31.3514 53.0082 27.2964 54.35 21.631 54.3329C18.4532 54.3232 17.6411 54.2124 15.5514 53.5029C10.8928 51.921 8.00843 49.3398 5.74177 44.7248C3.40634 39.9691 2.33139 33.8764 2.61227 26.9871C2.85526 21.0363 4.06684 17.5511 6.86837 14.746C9.67633 11.9344 13.8093 10.5844 22.8536 9.52427C24.9546 9.27814 36.2552 9.35436 39.4904 9.63664ZM106.439 10.0578C109.853 10.6453 114.217 12.0308 115.839 13.0421C117.518 14.0887 119.538 16.3716 120.369 18.1611C121.85 21.3515 122.175 23.2702 122.162 28.7579C122.141 38.6462 120.069 45.2366 115.573 49.7188C111.845 53.4357 105.439 55.227 99.5502 54.1991C93.7185 53.1811 87.9473 50.1306 82.1058 44.9781C74.5243 38.291 70.0922 29.277 70.0796 20.5188C70.075 17.179 70.4687 16.1547 72.5483 14.0965C75.0335 11.6373 79.0038 10.1557 84.4837 9.64327C89.1054 9.21096 103.047 9.47426 106.439 10.0578ZM74.6603 10.5501C72.6382 11.6464 70.2462 13.8781 69.4335 15.4272C69.1074 16.0487 68.8091 16.5569 68.7705 16.5566C68.7317 16.5566 67.9438 16.2659 67.0192 15.911C65.7285 15.4151 64.6639 15.2636 62.4345 15.2582C59.7592 15.2515 58.8732 15.422 56.5903 16.3831C56.222 16.5379 55.8901 16.2475 55.299 15.2533C54.2848 13.5476 51.8687 11.4029 49.8371 10.4052L48.2548 9.62791L76.3414 9.63875L74.6603 10.5501Z"
+                      stroke="black"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Bridge Width -->
+              <div
+                class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full transform"
+              >
+                <span
+                  class="size-detail-bridge-width bg-gray-100 px-3 py-1 text-sm text-gray-700"
+                >
+                  144 mm
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="w-full justify-end rounded-lg bg-gray-100 p-4 max-sm:mt-4 lg:ml-4 lg:w-1/3"
+          >
+            <h3 class="mb-2 text-lg font-bold">Frame Details:</h3>
+            <ul class="list-disc pl-4 leading-8 text-gray-700">
+              <li><strong>Gender:</strong> Mens, Womens</li>
+              <li><strong>Material:</strong> Acetate</li>
+              <li><strong>Hinge Type:</strong> Sprung Sides</li>
+              <li><strong>Multifocal:</strong> Yes</li>
+              <li><strong>Frame Type:</strong> Full Rimmed</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
