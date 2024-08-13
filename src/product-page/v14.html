@@ -457,7 +457,7 @@
               <!-- SVG and Text Section -->
               <div class="space-y-4 lg:flex lg:flex-col lg:space-y-0">
                 <div
-                  class="max-xxxsm:space-x-2 flex flex-row justify-center space-x-4"
+                  class="max-xxxsm:space-x-2 flex flex-row justify-center space-x-4 md:space-x-8"
                 >
                   <!-- SVG 1 and Text -->
                   <div class="flex items-center space-x-2">
@@ -515,24 +515,21 @@
         <div class="order-3 lg:order-3 lg:col-span-2">
           <div class="grid grid-cols-1 gap-y-4">
             <div class="bg-white p-4 shadow-sm dark:bg-slate-900 md:rounded-lg">
-              <div class="hidden pb-3 text-xl font-bold dark:text-gray-200">
-                Frame & Measurements
-              </div>
               <div
-                class="flex w-full flex-col rounded-lg bg-white dark:bg-slate-900 lg:flex-row"
+                class="flex w-full flex-col rounded-lg bg-white dark:bg-slate-900 lg:flex-col"
               >
-                <div class="flex w-full flex-col pb-4 md:flex-row lg:w-2/3">
+                <div class="flex w-full flex-col pb-4 md:flex-row lg:w-full">
                   <!-- First SVG Block -->
-                  <div class="w-full py-8 lg:w-1/2">
-                    <div class="relative z-10 flex flex-col items-center">
+                  <div class="w-full py-8 lg:w-1/3">
+                    <div class="relative flex flex-col items-center">
                       <!-- Bridge Width -->
                       <div
                         class="absolute top-0 -translate-y-full transform pb-2"
                       >
                         <span
-                          x-text="`${selectedSize.bridge || '19'} mm`"
+                          x-text="`${selectedSize.bridge || '18'} mm`"
                           class="size-detail-frame-width dark:bg-p bg-gray-100 px-3 py-1 text-sm text-gray-700 dark:text-gray-200"
-                          >19 mm</span
+                          >18 mm</span
                         >
                       </div>
 
@@ -540,7 +537,7 @@
                       <div class="relative w-full max-w-lg">
                         <!-- Lens Depth Measurement - Centered in the Left Lens -->
                         <div
-                          class="absolute left-[30%] top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+                          class="absolute left-[30%] top-1/2 -translate-x-1/2 -translate-y-1/2 transform pr-2"
                         >
                           <span
                             class="size-detail-lens-depth dark:bg-p bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:text-gray-200"
@@ -564,7 +561,7 @@
                         <!-- Frame Illustration using SVG -->
                         <div class="z-0 flex justify-center">
                           <svg
-                            class="w-72"
+                            class="w-64"
                             viewBox="0 0 125 69"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -590,14 +587,57 @@
                       </div>
                     </div>
                   </div>
+                  <div class="w-full py-8 lg:w-1/3">
+                    <div class="relative flex flex-col items-center">
+                      <!-- Bridge Width -->
+                      <div
+                        class="absolute top-0 -translate-y-full transform pb-2"
+                      >
+                        <span
+                          x-text="`${selectedSize.bridge || '18'} mm`"
+                          class="size-detail-frame-width dark:bg-p bg-gray-100 px-3 py-1 text-sm text-gray-700 dark:text-gray-200"
+                          >18 mm</span
+                        >
+                      </div>
+
+                      <!-- Lens Depth and Bridge Width -->
+                      <div class="relative w-full max-w-lg">
+                        <!-- Lens Depth Measurement - Centered in the Left Lens -->
+                        <div
+                          class="absolute left-[30%] top-1/2 -translate-x-1/2 -translate-y-1/2 transform pr-2"
+                        >
+                          <span
+                            class="size-detail-lens-depth dark:bg-p bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:text-gray-200"
+                          >
+                            42 mm
+                          </span>
+                        </div>
+
+                        <!-- Frame Illustration using SVG -->
+                        <div class="z-0 flex justify-center">
+                          <svg
+                            class="w-64"
+                            viewBox="0 0 125 56"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M48.8478 2.1886H74M48.5 9.95021e-09V5.18518M74.5 0V5.18518M24.9966 12.1852L24.9966 48.1851M28 11.6852H22M28 48.6852H22M21.7838 7.23388C19.1504 7.42488 14.3897 8.34192 12.1028 9.09898C7.55393 10.6047 4.79824 12.9123 2.97874 16.7405C1.52724 19.7937 1 22.7449 1 27.8166C1 34.9589 2.19813 40.8018 4.60874 45.4162C6.19932 48.4605 9.69467 51.859 12.6655 53.2496C17.113 55.3313 23.3414 55.7468 28.508 54.3058C35.4098 52.3811 44.05 46.2513 49.014 39.7583C50.6902 37.5657 50.82 37.4606 50.82 38.2978C50.82 39.438 51.6569 39.7537 52.9418 39.0988C54.7867 38.1586 57.0613 32.9043 56.8749 30.014C56.7856 28.6321 56.7306 28.5463 55.9396 28.5574C55.4775 28.564 55.1009 28.4962 55.103 28.4068C55.1052 28.3176 55.3784 26.9565 55.7104 25.3824C56.0423 23.8083 56.3155 21.3946 56.3177 20.0185L56.3217 17.5162L58.0275 16.7465C59.5762 16.0479 60.0199 15.9873 62.8435 16.0903C65.2715 16.1789 66.1882 16.3383 67.0213 16.817L68.089 17.43L68.4466 20.9578C68.769 24.1421 69.108 26.1407 69.6374 27.9814C69.7966 28.5348 69.7171 28.6029 69.0588 28.4788C67.5348 28.1917 67.316 30.0797 68.4576 33.6671C69.4323 36.73 70.7594 38.7397 72.1586 39.2723C73.0474 39.6107 73.9717 39.1588 74.104 38.3216C74.1826 37.8254 74.472 38.0694 75.5653 39.554C78.9011 44.0829 86.5245 50.2138 91.8161 52.6239C98.8166 55.8118 106.23 56.0158 112.255 53.1867C119.952 49.5721 124.321 39.2684 123.785 25.9925C123.325 14.5578 118.794 9.69096 106.766 7.71138C104.209 7.29052 98.8582 7.22695 63.3515 7.19381C41.0776 7.17303 22.3722 7.1911 21.7838 7.23388ZM39.4904 8.82182C45.8258 9.37464 49.5388 10.652 52.1893 13.191C54.1543 15.0733 54.7785 16.5639 54.7867 19.3931C54.805 25.6328 52.2199 32.9504 48.0873 38.3577C45.8053 41.3438 40.5804 46.1378 37.166 48.3779C31.3514 52.1934 27.2964 53.5352 21.631 53.518C18.4532 53.5084 17.6411 53.3975 15.5514 52.6881C10.8928 51.1061 8.00843 48.5249 5.74177 43.9099C3.40634 39.1542 2.33139 33.0615 2.61227 26.1723C2.85526 20.2215 4.06684 16.7362 6.86837 13.9312C9.67633 11.1195 13.8093 9.76959 22.8536 8.70945C24.9546 8.46332 36.2552 8.53954 39.4904 8.82182ZM106.439 9.24299C109.853 9.83044 114.217 11.2159 115.839 12.2273C117.518 13.2739 119.538 15.5568 120.369 17.3463C121.85 20.5366 122.175 22.4554 122.162 27.9431C122.141 37.8314 120.069 44.4218 115.573 48.9039C111.845 52.6209 105.439 54.4122 99.5502 53.3843C93.7185 52.3663 87.9473 49.3158 82.1058 44.1633C74.5243 37.4762 70.0922 28.4622 70.0796 19.704C70.075 16.3642 70.4687 15.3399 72.5483 13.2817C75.0335 10.8225 79.0038 9.3409 84.4837 8.82845C89.1054 8.39614 103.047 8.65945 106.439 9.24299ZM74.6603 9.73525C72.6382 10.8315 70.2462 13.0633 69.4335 14.6124C69.1074 15.2339 68.8091 15.7421 68.7705 15.7418C68.7317 15.7418 67.9438 15.4511 67.0192 15.0962C65.7285 14.6003 64.6639 14.4488 62.4345 14.4433C59.7592 14.4367 58.8732 14.6072 56.5903 15.5683C56.222 15.7231 55.8901 15.4327 55.299 14.4385C54.2848 12.7328 51.8687 10.5881 49.8371 9.59034L48.2548 8.81309L76.3414 8.82393L74.6603 9.73525Z"
+                              stroke="black"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
                   <!-- Second SVG Block -->
-                  <div class="w-full py-8 max-sm:mt-6 lg:w-1/2">
+                  <div class="w-full py-8 max-sm:mt-6 lg:w-1/3">
                     <div class="relative z-10 flex flex-col items-center">
                       <!-- New SVG for the arm length -->
                       <div class="relative flex w-full justify-center">
                         <svg
-                          class="w-72"
+                          class="w-64"
                           viewBox="0 0 125 45"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
@@ -624,7 +664,7 @@
 
                 <!-- Frame Details Section with 1/3 Width -->
                 <div
-                  class="dark:bg-p w-full justify-end rounded-lg bg-gray-50 p-4 lg:ml-4 lg:w-1/3"
+                  class="dark:bg-p llg:w-full w-full justify-end rounded-lg bg-gray-50 p-4"
                 >
                   <h3 class="mb-2 text-lg font-bold dark:text-gray-300">
                     Frame Details:
