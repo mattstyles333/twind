@@ -16,7 +16,15 @@
   <body class="dark:bg-p bg-gray-50">
     <div
       class="mx-auto md:container"
-      x-data="{ selectedSize: { eye: '52', bridge: '18', arm: '140' }, selectedColour: '' }"
+      x-data="{ 
+        selectedSize: { eye: '52', bridge: '18', arm: '140' }, 
+        selectedColour: 'Black',
+        images: {
+          'Black': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__2000_hvrukewcnx8fogxr.webp',
+          'Blue': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp',
+          'Havana': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__5574_lfa32i6jtnvj3mdk.webp',
+        }
+      }"
     >
       <div class="grid grid-cols-1 gap-y-4 pt-4 xl:grid-cols-3 xl:gap-4">
         <!-- First left-hand div (shown first on mobile and top left on desktop) -->
@@ -56,7 +64,7 @@
               <!-- Product Image -->
               <div>
                 <img
-                  src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__2000_hvrukewcnx8fogxr.webp"
+                  :src="images[selectedColour]"
                   alt="Large image"
                   class="mx-auto rounded-xl dark:border"
                 />
@@ -145,6 +153,8 @@
         <!-- Right-hand sticky div (shown second on mobile and top right on desktop) -->
         <div
           class="order-2 lg:top-4 lg:order-2 lg:col-span-1 lg:flex lg:flex-col xl:sticky"
+          x-data="{ sticky: false }"
+          @scroll.window="sticky = (window.pageYOffset > $el.querySelector('.pb-5').offsetTop)"
         >
           <div
             class="flex-grow bg-white shadow-sm dark:bg-slate-900 max-sm:px-2 max-sm:py-4 md:rounded-lg md:p-4"
@@ -255,7 +265,7 @@
                   <button
                     @click="selectedSize = { eye: '52', bridge: '18', arm: '140' }"
                     :class="selectedSize.eye === '52' ? 'ring-2 ring-blue-800' : ''"
-                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200 md:text-base"
+                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200"
                   >
                     <span class="block md:hidden">52</span>
                     <span class="hidden md:block">52-18-140</span>
@@ -263,7 +273,7 @@
                   <button
                     @click="selectedSize = { eye: '54', bridge: '20', arm: '140' }"
                     :class="selectedSize.eye === '54' ? 'ring-2 ring-blue-800' : ''"
-                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200 md:text-base"
+                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200"
                   >
                     <span class="block md:hidden">54</span>
                     <span class="hidden md:block">54-20-140</span>
@@ -271,20 +281,20 @@
                   <button
                     @click="selectedSize = { eye: '56', bridge: '20', arm: '145' }"
                     :class="selectedSize.eye === '56' ? 'ring-2 ring-blue-800' : ''"
-                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200 md:text-base"
+                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200"
                   >
                     <span class="block md:hidden">56</span>
                     <span class="hidden md:block">56-20-145</span>
                   </button>
                   <button
-                    class="w-full whitespace-nowrap rounded border border-gray-400 bg-white px-1 py-1 text-sm font-bold hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200 md:text-base"
+                    class="w-full whitespace-nowrap rounded border border-gray-400 bg-white px-1 py-1 text-sm font-bold hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200"
                   >
                     Size Guide
                   </button>
                 </div>
               </div>
 
-              <div x-data="{ showColours: false, selectedColour: '' }">
+              <div x-data="{ showColours: false }">
                 <!-- Colours Section -->
                 <div class="flex items-center justify-between">
                   <div class="space-x-2">
@@ -428,54 +438,74 @@
               </div>
             </div>
 
-            <div class="pb-5">
-              <button
-                class="bg-s hover:bg-p w-full rounded px-4 py-2 text-lg font-bold text-white duration-700 ease-in-out focus:outline-none"
-              >
-                Buy Now
-              </button>
-            </div>
-            <div class="space-y-4">
-              <div class="flex items-center space-x-2">
-                <svg
-                  width="30"
-                  height="30"
-                  viewBox="0 0 767 767"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+            <div
+              :class="sticky ? 'fixed inset-x-0 bottom-0 bg-white dark:bg-slate-900 z-50 p-2 md:p-4' : 'pb-5'"
+              x-data="{ sticky: false }"
+              x-init="window.addEventListener('scroll', () => { 
+    sticky = window.innerWidth < 1280; // Ensure sticky only on screens smaller than 1280
+  })"
+            >
+              <!-- Buy Now Button -->
+              <div class="pb-4">
+                <button
+                  class="bg-s hover:bg-p w-full rounded px-4 py-2 text-lg font-bold text-white duration-700 ease-in-out focus:outline-none"
                 >
-                  <path
-                    d="M767 383.5C767 595.301 595.301 767 383.5 767C171.699 767 0 595.301 0 383.5C0 171.699 171.699 0 383.5 0C595.301 0 767 171.699 767 383.5Z"
-                    fill="#FFB3C7"
-                  ></path>
-                  <path
-                    d="M208 584.693H299.15V183.001H208V584.693ZM526.812 183.001C526.812 269.963 493.295 350.861 433.57 410.992L559.565 584.708H446.983L310.055 395.916L345.394 369.157C403.999 324.769 437.614 256.92 437.614 183L526.812 183.001Z"
-                    fill="#0A0B09"
-                  ></path>
-                </svg>
-                <p class="text-md text-gray-700 dark:text-gray-200">
-                  Pay with Klarna.
-                </p>
+                  Buy Now
+                </button>
               </div>
-              <div class="flex items-center space-x-2">
-                <svg
-                  width="30"
-                  height="30"
-                  viewBox="0 0 512 488"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M263.015 2.68698C259.012 4.80498 256.717 6.90498 254.515 10.463L251.5 15.337L251 48.469L250.5 81.601L245.061 88.55C233.508 103.312 201.572 139.408 160.61 184L150.047 195.5L150.023 327.082L150 458.664L168.25 465.484C202.757 478.379 215.351 482.142 235.953 485.714C244.265 487.155 257.64 487.416 339.362 487.732C404.052 487.983 434.841 487.76 438.427 487.015C445.833 485.478 455.557 480.622 461.644 475.421C480.007 459.733 484.587 432.273 472.355 411.202L469.86 406.905L475.934 400.412C485.772 389.895 490.008 379.391 489.988 365.568C489.974 355.922 488.36 349.332 484.017 341.183L480.79 335.129L486.295 329.489C492.488 323.147 497.005 315.333 499.524 306.606C502.863 295.04 500.19 276.907 493.707 267.137L491.397 263.656L497.449 257.513C520.979 233.624 515.11 194.022 485.593 177.515C474.145 171.113 473.149 171.031 406.183 171.015C349.197 171.001 345.896 170.903 346.42 169.25C346.726 168.287 350.386 155.8 354.555 141.5L362.135 115.5L361.676 95C361.194 73.445 360.582 69.662 355.301 55.598C349.893 41.197 335.767 23.991 321.696 14.667C308.837 6.14698 294.017 1.23598 278.5 0.35298C268.863 -0.19502 268.301 -0.110019 263.015 2.68698ZM0 319.5V478H60H120V319.5V161H60H0V319.5Z"
-                    fill="#1E3A8A"
-                  />
-                </svg>
 
-                <p class="text-md text-gray-700 dark:text-gray-200">
-                  Best Price Guarantee
-                </p>
+              <!-- SVG and Text Section -->
+              <div class="space-y-4 lg:flex lg:flex-col lg:space-y-0">
+                <div
+                  class="max-xxxsm:space-x-2 flex flex-row justify-center space-x-4"
+                >
+                  <!-- SVG 1 and Text -->
+                  <div class="flex items-center space-x-2">
+                    <svg
+                      viewBox="0 0 767 767"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6 sm:h-8 sm:w-8"
+                    >
+                      <path
+                        d="M767 383.5C767 595.301 595.301 767 383.5 767C171.699 767 0 595.301 0 383.5C0 171.699 171.699 0 383.5 0C595.301 0 767 171.699 767 383.5Z"
+                        fill="#FFB3C7"
+                      ></path>
+                      <path
+                        d="M208 584.693H299.15V183.001H208V584.693ZM526.812 183.001C526.812 269.963 493.295 350.861 433.57 410.992L559.565 584.708H446.983L310.055 395.916L345.394 369.157C403.999 324.769 437.614 256.92 437.614 183L526.812 183.001Z"
+                        fill="#0A0B09"
+                      ></path>
+                    </svg>
+                    <p
+                      class="text-sm text-gray-700 dark:text-gray-200 md:text-base"
+                    >
+                      Pay with Klarna
+                    </p>
+                  </div>
+                  <!-- SVG 2 and Text -->
+                  <div class="flex items-center space-x-2">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 512 488"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6 sm:h-8 sm:w-8"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M263.015 2.68698C259.012 4.80498 256.717 6.90498 254.515 10.463L251.5 15.337L251 48.469L250.5 81.601L245.061 88.55C233.508 103.312 201.572 139.408 160.61 184L150.047 195.5L150.023 327.082L150 458.664L168.25 465.484C202.757 478.379 215.351 482.142 235.953 485.714C244.265 487.155 257.64 487.416 339.362 487.732C404.052 487.983 434.841 487.76 438.427 487.015C445.833 485.478 455.557 480.622 461.644 475.421C480.007 459.733 484.587 432.273 472.355 411.202L469.86 406.905L475.934 400.412C485.772 389.895 490.008 379.391 489.988 365.568C489.974 355.922 488.36 349.332 484.017 341.183L480.79 335.129L486.295 329.489C492.488 323.147 497.005 315.333 499.524 306.606C502.863 295.04 500.19 276.907 493.707 267.137L491.397 263.656L497.449 257.513C520.979 233.624 515.11 194.022 485.593 177.515C474.145 171.113 473.149 171.031 406.183 171.015C349.197 171.001 345.896 170.903 346.42 169.25C346.726 168.287 350.386 155.8 354.555 141.5L362.135 115.5L361.676 95C361.194 73.445 360.582 69.662 355.301 55.598C349.893 41.197 335.767 23.991 321.696 14.667C308.837 6.14698 294.017 1.23598 278.5 0.35298C268.863 -0.19502 268.301 -0.110019 263.015 2.68698ZM0 319.5V478H60H120V319.5V161H60H0V319.5Z"
+                        fill="#1E3A8A"
+                      />
+                    </svg>
+                    <p
+                      class="text-sm text-gray-700 dark:text-gray-200 md:text-base"
+                    >
+                      Best Price Guarantee
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
