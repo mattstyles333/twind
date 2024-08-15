@@ -15,7 +15,7 @@
   </head>
   <body class="bg-zinc-50">
     <div
-      class="mx-auto md:container"
+      class="mx-auto pb-20 md:container"
       x-data="{ 
         selectedSize: { eye: '52', bridge: '18', arm: '140' }, 
         selectedColour: 'Black',
@@ -156,12 +156,12 @@
           <div
             class="flex-grow bg-white shadow-sm max-sm:px-2 max-sm:py-4 md:rounded-lg md:p-4"
           >
-            <div class="flex border-b-2 p-4">
+            <div class="flex border-b-2 pb-4">
               <div class="w-full space-y-2 lg:w-3/4">
                 <div class="space-y-2">
                   <!-- Product Title -->
                   <h1 class="text-2xl font-bold lg:text-3xl">
-                    Bailey 235 Rimless Glasses | 2004
+                    Ray-Ban Glasses
                   </h1>
                   <!-- Product Subtitle -->
                   <p class="text-xl text-gray-800">RX 7047 Aviator</p>
@@ -218,13 +218,24 @@
                   </svg>
                   <p class="">(90 Reviews)</p>
                 </div>
-                <div>
-                  <span class="text-sm text-gray-500">RRP:</span>
-                  <!-- RRP Label -->
-                  <span class="text-lg text-gray-500 line-through">£99.99</span>
-                  <!-- RRP Price -->
-                  <span class="text-2xl font-bold text-gray-900">£79.99</span>
-                  <!-- Actual Price -->
+                <div class="">
+                  <div class="flex items-baseline gap-2">
+                    <span
+                      class="text-xl font-semibold text-gray-500 line-through"
+                      >£79.99</span
+                    >
+                    <!-- Actual Price -->
+                    <span class="text-2xl font-bold">£69.99</span>
+                    <!-- Sale Price -->
+                  </div>
+                  <div class="">
+                    <span class="text-sm text-gray-500">RRP:</span>
+                    <!-- RRP Label -->
+                    <span class="text-lg text-gray-500 line-through"
+                      >£99.99</span
+                    >
+                    <!-- RRP Price -->
+                  </div>
                 </div>
               </div>
               <div class="hidden w-1/4 md:block">
@@ -430,12 +441,14 @@
               </div>
 
               <!-- SVG and Text Section -->
-              <div class="space-y-4 lg:flex lg:flex-col lg:space-y-0">
+              <div class="space-y-4 lg:space-y-0">
                 <div
-                  class="max-xxxsm:space-x-2 flex flex-row justify-center space-x-4 md:space-x-8"
+                  class="max-xxxsm:space-x-2 flex flex-row justify-center space-x-4 md:space-x-8 xl:flex-col xl:space-x-0 xl:space-y-5"
                 >
                   <!-- SVG 1 and Text -->
-                  <div class="flex items-center space-x-2">
+                  <div
+                    class="flex items-center space-x-2 xl:space-x-2 xl:space-y-2"
+                  >
                     <svg
                       viewBox="0 0 767 767"
                       fill="none"
@@ -458,8 +471,6 @@
                   <!-- SVG 2 and Text -->
                   <div class="flex items-center space-x-2">
                     <svg
-                      width="24"
-                      height="24"
                       viewBox="0 0 512 488"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -484,7 +495,7 @@
 
         <!-- Remaining left-hand divs (shown last on mobile and below Left Div 1 on desktop) -->
         <div class="order-3 rounded-xl bg-white lg:order-3 lg:col-span-2">
-          <div class="mx-4 border-b-2 py-8 md:mx-6 lg:py-12 xl:rounded-t-xl">
+          <div class="mx-4 border-b-2 py-8 md:mx-6 lg:py-16 xl:rounded-t-xl">
             <div class="flex w-full flex-col gap-8 lg:flex-row">
               <div
                 class="w-full justify-end rounded-lg bg-gray-50 p-4 lg:w-1/3"
@@ -493,13 +504,12 @@
                 <ul class="list-disc pl-4 leading-8 text-gray-700">
                   <li><strong>Gender:</strong> Mens, Womens</li>
                   <li><strong>Material:</strong> Acetate</li>
-                  <li><strong>Hinge Type:</strong> Sprung Sides</li>
                   <li><strong>Multifocal:</strong> Yes</li>
                   <li><strong>Frame Type:</strong> Full Rimmed</li>
                 </ul>
               </div>
               <div
-                class="flex w-full flex-col gap-8 pb-4 max-lg:pt-8 md:flex-row lg:w-2/3"
+                class="flex w-full flex-col gap-4 pb-4 max-lg:pt-8 md:flex-row lg:w-2/3 xl:gap-8"
               >
                 <!-- First SVG Block -->
                 <div class="w-full py-8 lg:w-1/2">
@@ -519,7 +529,7 @@
                     <div class="relative w-full max-w-lg">
                       <!-- Lens Depth Measurement - Centered in the Left Lens -->
                       <div
-                        class="absolute left-[30%] top-1/2 -translate-x-1/2 -translate-y-1/2 transform pr-2"
+                        class="absolute left-[25%] top-1/2 -translate-x-1/2 -translate-y-1/2 transform pr-2"
                       >
                         <span
                           class="size-detail-lens-depth bg-gray-200 px-2 py-1 text-sm text-gray-700"
@@ -530,20 +540,20 @@
 
                       <!-- Eye Size - Centered in the Right Lens -->
                       <div
-                        class="absolute right-[30%] top-1/2 -translate-y-1/2 translate-x-1/2 transform"
+                        class="absolute right-[25%] top-1/2 -translate-y-1/2 translate-x-1/2 transform"
                       >
                         <span
-                          x-text="`${selectedSize.eye || '48'} mm`"
+                          x-text="`${selectedSize.eye || '52'} mm`"
                           class="size-detail-lens-depth bg-gray-200 px-2 py-1 text-sm text-gray-700"
                         >
-                          48 mm
+                          52 mm
                         </span>
                       </div>
 
                       <!-- Frame Illustration using SVG -->
                       <div class="z-0 flex justify-center">
                         <svg
-                          class="w-72"
+                          class="w-64"
                           viewBox="0 0 125 69"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
@@ -576,7 +586,7 @@
                     <!-- New SVG for the arm length -->
                     <div class="relative flex w-full justify-center">
                       <svg
-                        class="w-72"
+                        class="w-64"
                         viewBox="0 0 125 45"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -602,7 +612,7 @@
               </div>
             </div>
           </div>
-          <div class="mx-4 border-b-2 py-8 md:mx-6 lg:py-12 xl:rounded-t-xl">
+          <div class="mx-4 border-b-2 py-8 md:mx-6 lg:py-16">
             <div class="mb-4">
               <div class="pb-3 text-xl font-bold">Customer Reviews</div>
               <div
@@ -1067,7 +1077,7 @@
               </div>
             </div>
           </div>
-          <div class="mx-4 border-b-2 py-8 md:mx-6 lg:py-12 xl:rounded-t-xl">
+          <div class="mx-4 border-b-2 py-8 md:mx-6 lg:py-16">
             <div class="pb-3 text-xl font-bold">Description</div>
 
             <div x-data="{ expanded: false }">
@@ -1098,7 +1108,7 @@
               </button>
             </div>
           </div>
-          <div class="mx-4 border-b-2 py-8 md:mx-6 lg:py-12 xl:rounded-t-xl">
+          <div class="mx-4 border-b-2 py-8 md:mx-6 lg:py-16">
             <div
               class="flex w-full flex-wrap items-center justify-center lg:justify-between"
             >
@@ -1133,7 +1143,7 @@
           </div>
 
           <!--Lenses-->
-          <div class="mx-4 border-b-2 py-8 md:mx-6 lg:py-12 xl:rounded-t-xl">
+          <div class="mx-4 py-8 md:mx-6 lg:py-16">
             <div class="container mx-auto text-left">
               <h2 class="pb-3 text-xl font-bold">
                 Explore Our Range of Lens Options

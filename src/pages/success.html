@@ -100,19 +100,23 @@
             </div>
           </div>
           <div
-            class="flex w-full flex-col rounded-xl bg-white shadow-md md:flex-row"
+            class="flex w-full flex-col overflow-hidden rounded-xl bg-white shadow-md md:flex-row"
           >
-            <!-- Image container -->
             <div class="w-full md:w-1/2">
-              <img
-                src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/hp_banner.webp"
-                alt="Description of Image"
-                class="h-64 w-full rounded-t-xl object-cover md:rounded-none md:rounded-l-xl"
-              />
+              <picture class="mfwebp">
+                <source
+                  type="image/webp"
+                  srcset="
+                    https://test.s4l.link/media/mf_webp/jpg/media/wysiwyg/redesign/hp_banner.webp
+                  " />
+                <img
+                  data-webpconverted="1"
+                  src="https://test.s4l.link/media/wysiwyg/redesign/hp_banner.jpg"
+                  alt=""
+              /></picture>
             </div>
 
-            <!-- Text container -->
-            <div class="flex w-full flex-col space-y-4 px-8 py-4 md:w-2/3">
+            <div class="flex w-full flex-col space-y-6 px-8 py-4 md:w-2/3">
               <h3 class="text-2xl font-semibold leading-6 text-gray-800">
                 Have you heard about our reglaze service?
               </h3>
@@ -120,16 +124,22 @@
                 class="flex flex-col items-center justify-center text-lg leading-relaxed dark:text-gray-700"
               >
                 <p>
-                  Why buy new frames when you can revitalise the ones you
-                  already adore? Our Reglaze Service breathes new life into your
-                  favorite frames by fitting them with lenses updated to your
-                  latest prescription. This service is not only cost-effective
-                  but also an eco-friendly alternative, allowing you to update
-                  your current frames with a new prescription, retaining the
-                  style you love while embracing new vision needs. Check out our
-                  reglaze service
-                  <a href="/reglaze-customer-frames" class="text-link">here</a>.
+                  Why buy new frames when you can revitalise your favourites?
+                  Our Reglaze Service breathes new life into your favorite
+                  frames by fitting them with lenses updated to your latest
+                  prescription. This service is not only cost-effective but also
+                  an eco-friendly alternative, allowing you to update your
+                  current frames with a new prescription, retaining the style
+                  you love while embracing new vision needs.
                 </p>
+              </div>
+              <div>
+                <a
+                  href="/reglaze-customer-frames"
+                  class="bg-s hover:bg-p inline-block rounded-lg px-6 py-3 text-center font-semibold text-white duration-700 ease-in-out"
+                >
+                  Check Out Our Reglaze Service
+                </a>
               </div>
             </div>
           </div>
