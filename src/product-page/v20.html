@@ -154,14 +154,14 @@
           @scroll.window="sticky = (window.pageYOffset > $el.querySelector('.pb-5').offsetTop)"
         >
           <div
-            class="flex-grow bg-white shadow-sm max-sm:px-2 max-sm:py-4 md:rounded-lg md:p-4"
+            class="flex-grow bg-white shadow-sm max-sm:px-4 max-sm:py-4 md:rounded-lg md:p-4"
           >
             <div class="flex border-b-2 pb-4">
               <div class="w-full space-y-3">
                 <div class="relative flex">
-                  <div class="w-3/4 space-y-2">
+                  <div class="w-full space-y-2 md:w-3/4">
                     <!-- Product Title -->
-                    <h1 class="text-2xl font-bold lg:text-2xl">
+                    <h1 class="text-3xl font-bold lg:text-2xl">
                       Ray-Ban RX7047 | Aviator
                     </h1>
                   </div>
@@ -227,29 +227,31 @@
                   </svg>
                   <p class="">(90 Reviews)</p>
                 </div>
-                <div class="flex w-full items-baseline justify-between">
-                  <div class="flex items-baseline gap-2">
-                    <span
-                      class="text-xl font-semibold text-gray-500 line-through"
-                      >£75.00</span
+                <div class="flex w-full items-baseline md:justify-between">
+                  <div
+                    class="flex w-full flex-col items-start gap-1 md:flex-row md:items-baseline md:justify-between"
+                  >
+                    <div class="flex items-baseline gap-2">
+                      <span
+                        class="text-xl font-semibold text-gray-500 line-through"
+                        >£75.00</span
+                      >
+                      <!-- Actual Price -->
+                      <span class="text-3xl font-bold">£64.97</span>
+                    </div>
+                    <div
+                      class="mt-2 flex items-baseline gap-1 md:ml-auto md:mt-0"
                     >
-                    <!-- Actual Price -->
-                    <span class="text-3xl font-bold text-amber-500"
-                      >£64.97</span
-                    >
-                    <!-- Sale Price -->
-                  </div>
-                  <div class="flex items-baseline gap-1">
-                    <span class="text-sm text-gray-500">RRP:</span>
-                    <!-- RRP Label -->
-                    <span class="text-lg text-gray-500">£124.00</span>
-                    <!-- RRP Price -->
+                      <span class="text-sm text-gray-500">RRP:</span>
+                      <!-- RRP Label -->
+                      <span class="text-lg text-gray-500">£124.00</span>
+                    </div>
                   </div>
                 </div>
 
                 <div class="space-y-2">
                   <div
-                    class="max-xxxsm:space-x-2 flex flex-col justify-center space-y-4 xl:flex-col xl:space-x-0 xl:space-y-4"
+                    class="flex flex-col justify-center space-y-4 xl:flex-col xl:space-x-0 xl:space-y-4"
                   >
                     <!-- SVG 1 and Text -->
                     <div class="flex items-center space-x-2 xl:space-x-2">
@@ -270,50 +272,62 @@
                         />
                       </svg>
                     </div>
-                    <div class="flex items-center space-x-3">
-                      <p class="text-sm text-gray-700">
-                        Standard Lenses Included
-                      </p>
-                      <svg
-                        class="w-5"
-                        viewBox="0 0 92 92"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M65.1001 28.126C64.8826 28.1949 64.5237 28.3609 64.3025 28.4947C64.0813 28.6284 58.3689 34.3563 51.6083 41.2232L39.3163 53.7086L33.6845 48.0069C27.5688 41.8153 27.6902 41.9207 26.4135 41.6924C24.9394 41.4288 23.2857 42.2227 22.5101 43.5662C21.8239 44.7551 21.8304 46.2708 22.5274 47.5104C22.6802 47.7822 25.4531 50.6705 29.8703 55.1589C36.6032 62.0003 37.0015 62.3868 37.6246 62.6853C38.2377 62.979 38.3471 63 39.2668 63C40.1855 63 40.2965 62.9788 40.909 62.6863C41.5404 62.3847 42.1057 61.8245 55.4739 48.2526C68.8422 34.6807 69.394 34.1068 69.691 33.4658C69.9761 32.8507 70 32.7251 70 31.8462C70 30.9759 69.7055 30.2625 69.7055 30.2625C69.7055 30.2625 68.3759 28.4433 67.3645 28.1319C66.802 27.9586 65.6371 27.9555 65.1001 28.126Z"
-                          fill="#1E3A8A"
-                        />
-                        <path
-                          d="M46 89.5C70.0244 89.5 89.5 70.0244 89.5 46C89.5 21.9756 70.0244 2.5 46 2.5C21.9756 2.5 2.5 21.9756 2.5 46C2.5 70.0244 21.9756 89.5 46 89.5Z"
-                          stroke="#1E3A8A"
-                          stroke-width="5"
-                        />
-                      </svg>
-                    </div>
-                    <!-- SVG 2 and Text -->
-                    <div class="flex items-center space-x-3">
-                      <p class="text-sm text-gray-700">Best Price Guarantee</p>
-                      <svg
-                        class="w-5"
-                        viewBox="0 0 92 92"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M65.1001 28.126C64.8826 28.1949 64.5237 28.3609 64.3025 28.4947C64.0813 28.6284 58.3689 34.3563 51.6083 41.2232L39.3163 53.7086L33.6845 48.0069C27.5688 41.8153 27.6902 41.9207 26.4135 41.6924C24.9394 41.4288 23.2857 42.2227 22.5101 43.5662C21.8239 44.7551 21.8304 46.2708 22.5274 47.5104C22.6802 47.7822 25.4531 50.6705 29.8703 55.1589C36.6032 62.0003 37.0015 62.3868 37.6246 62.6853C38.2377 62.979 38.3471 63 39.2668 63C40.1855 63 40.2965 62.9788 40.909 62.6863C41.5404 62.3847 42.1057 61.8245 55.4739 48.2526C68.8422 34.6807 69.394 34.1068 69.691 33.4658C69.9761 32.8507 70 32.7251 70 31.8462C70 30.9759 69.7055 30.2625 69.7055 30.2625C69.7055 30.2625 68.3759 28.4433 67.3645 28.1319C66.802 27.9586 65.6371 27.9555 65.1001 28.126Z"
-                          fill="#1E3A8A"
-                        />
-                        <path
-                          d="M46 89.5C70.0244 89.5 89.5 70.0244 89.5 46C89.5 21.9756 70.0244 2.5 46 2.5C21.9756 2.5 2.5 21.9756 2.5 46C2.5 70.0244 21.9756 89.5 46 89.5Z"
-                          stroke="#1E3A8A"
-                          stroke-width="5"
-                        />
-                      </svg>
+                    <div
+                      class="max-xxsm:flex-col max-xxsm:space-y-3 max-xxsm:space-x-0 flex flex-row items-start space-x-3 md:flex-col md:space-x-0 md:space-y-3"
+                    >
+                      <div class="flex items-center">
+                        <p class="hidden pr-3 text-sm text-gray-700 md:block">
+                          Standard Lenses Included
+                        </p>
+                        <svg
+                          class="w-5"
+                          viewBox="0 0 92 92"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M65.1001 28.126C64.8826 28.1949 64.5237 28.3609 64.3025 28.4947C64.0813 28.6284 58.3689 34.3563 51.6083 41.2232L39.3163 53.7086L33.6845 48.0069C27.5688 41.8153 27.6902 41.9207 26.4135 41.6924C24.9394 41.4288 23.2857 42.2227 22.5101 43.5662C21.8239 44.7551 21.8304 46.2708 22.5274 47.5104C22.6802 47.7822 25.4531 50.6705 29.8703 55.1589C36.6032 62.0003 37.0015 62.3868 37.6246 62.6853C38.2377 62.979 38.3471 63 39.2668 63C40.1855 63 40.2965 62.9788 40.909 62.6863C41.5404 62.3847 42.1057 61.8245 55.4739 48.2526C68.8422 34.6807 69.394 34.1068 69.691 33.4658C69.9761 32.8507 70 32.7251 70 31.8462C70 30.9759 69.7055 30.2625 69.7055 30.2625C69.7055 30.2625 68.3759 28.4433 67.3645 28.1319C66.802 27.9586 65.6371 27.9555 65.1001 28.126Z"
+                            fill="#1E3A8A"
+                          />
+                          <path
+                            d="M46 89.5C70.0244 89.5 89.5 70.0244 89.5 46C89.5 21.9756 70.0244 2.5 46 2.5C21.9756 2.5 2.5 21.9756 2.5 46C2.5 70.0244 21.9756 89.5 46 89.5Z"
+                            stroke="#1E3A8A"
+                            stroke-width="5"
+                          />
+                        </svg>
+                        <p class="pl-2 text-sm text-gray-700 md:hidden">
+                          Standard Lenses Included
+                        </p>
+                      </div>
+                      <!-- SVG 2 and Text -->
+                      <div class="flex items-center">
+                        <p class="hidden pr-3 text-sm text-gray-700 md:block">
+                          Best Price Guarantee
+                        </p>
+                        <svg
+                          class="w-5"
+                          viewBox="0 0 92 92"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M65.1001 28.126C64.8826 28.1949 64.5237 28.3609 64.3025 28.4947C64.0813 28.6284 58.3689 34.3563 51.6083 41.2232L39.3163 53.7086L33.6845 48.0069C27.5688 41.8153 27.6902 41.9207 26.4135 41.6924C24.9394 41.4288 23.2857 42.2227 22.5101 43.5662C21.8239 44.7551 21.8304 46.2708 22.5274 47.5104C22.6802 47.7822 25.4531 50.6705 29.8703 55.1589C36.6032 62.0003 37.0015 62.3868 37.6246 62.6853C38.2377 62.979 38.3471 63 39.2668 63C40.1855 63 40.2965 62.9788 40.909 62.6863C41.5404 62.3847 42.1057 61.8245 55.4739 48.2526C68.8422 34.6807 69.394 34.1068 69.691 33.4658C69.9761 32.8507 70 32.7251 70 31.8462C70 30.9759 69.7055 30.2625 69.7055 30.2625C69.7055 30.2625 68.3759 28.4433 67.3645 28.1319C66.802 27.9586 65.6371 27.9555 65.1001 28.126Z"
+                            fill="#1E3A8A"
+                          />
+                          <path
+                            d="M46 89.5C70.0244 89.5 89.5 70.0244 89.5 46C89.5 21.9756 70.0244 2.5 46 2.5C21.9756 2.5 2.5 21.9756 2.5 46C2.5 70.0244 21.9756 89.5 46 89.5Z"
+                            stroke="#1E3A8A"
+                            stroke-width="5"
+                          />
+                        </svg>
+                        <p class="pl-2 text-sm text-gray-700 md:hidden">
+                          Best Price Guarantee
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -323,15 +337,56 @@
             <div class="space-y-4 pb-6">
               <div class="space-y-4">
                 <!-- Size Selector Section -->
-                <div class="flex items-center space-x-2">
+                <div
+                  x-data="{ open: false }"
+                  class="flex items-center space-x-2"
+                >
                   <label for="size" class="text-xl font-bold text-gray-700"
                     >Size</label
                   >
+
+                  <!-- Selected Size Display -->
                   <p
                     class="text-md text-gray-600"
                     x-text="`${selectedSize.eye}-${selectedSize.bridge}-${selectedSize.arm}`"
                   ></p>
+
+                  <!-- Question Mark Button -->
+                  <button
+                    @click="open = true"
+                    class="rounded-xl bg-gray-400 px-2 font-bold text-white"
+                    aria-label="Size Information"
+                  >
+                    ?
+                  </button>
+
+                  <!-- Modal -->
+                  <div
+                    x-show="open"
+                    @click.away="open = false"
+                    class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+                    x-cloak
+                  >
+                    <div
+                      class="w-full max-w-sm rounded-lg bg-white p-6 shadow-lg"
+                    >
+                      <h3 class="mb-4 text-lg font-bold">Size Information</h3>
+                      <p class="text-gray-700">
+                        The size consists of three measurements: Eye (lens
+                        width), Bridge (distance between lenses), and Arm
+                        (length of the temple).
+                      </p>
+                      <button
+                        @click="open = false"
+                        class="mt-4 rounded bg-blue-500 px-4 py-2 text-white"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
                 </div>
+
+                <!-- Size Buttons -->
                 <div
                   class="grid w-full grid-cols-4 gap-3 px-2 md:grid-cols-4 md:gap-4 lg:grid-cols-4 xl:grid-cols-4"
                 >
@@ -366,6 +421,8 @@
                     <span class="hidden sm:inline">Size Guide</span>
                   </button>
                 </div>
+
+                <!-- Always Display Selected Size on Mobile -->
               </div>
 
               <div x-data="{ showColours: false }">
@@ -389,7 +446,7 @@
                       <span>Show colours</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6 transform text-amber-500 transition-transform duration-200 ease-in-out group-hover:scale-150"
+                        class="h-6 w-6 transform text-cyan-600 transition-transform duration-200 ease-in-out group-hover:scale-150"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -502,7 +559,7 @@
             </div>
 
             <div
-              :class="sticky ? 'fixed inset-x-0 bottom-0 bg-white  z-50 p-2 md:p-4' : 'pb-5'"
+              :class="sticky ? 'fixed inset-x-0 bottom-0 border-t-2 border-gray-300 bg-white  z-50 p-2 md:p-4' : 'pb-5'"
               x-data="{ sticky: false }"
               x-init="window.addEventListener('scroll', () => { 
     sticky = window.innerWidth < 1280; // Ensure sticky only on screens smaller than 1280
@@ -1156,34 +1213,32 @@
             </div>
           </div>
           <div class="mx-4 border-b-2 py-8 md:mx-6 lg:py-16">
-            <div
-              class="flex w-full flex-wrap items-center justify-center lg:justify-between"
-            >
-              <div class="order-2 w-full lg:order-1 lg:w-5/12">
-                <div class="flex">
-                  <img
-                    src="../images/case_and_cloth4.png"
-                    class="w-full"
-                    alt="Frame case and lens cloth"
-                  />
-                </div>
-              </div>
-
-              <div class="order-1 w-full lg:order-2 lg:-ml-20 lg:w-7/12">
-                <div
-                  class="flex items-center rounded-lg bg-gray-50 p-4 text-left"
-                >
-                  <div>
-                    <h2 class="mb-3 text-xl font-bold lg:mb-6">
-                      Plus a frame case and lens cloth
+            <div class="mx-auto">
+              <div
+                class="flex grid items-center md:grid-cols-2 md:px-6 2xl:px-12"
+              >
+                <div class="sm:mt-12 md:mb-0 md:mt-0">
+                  <div
+                    class="bg-l relative block bg-gradient-to-r from-gray-100 via-slate-50 to-white p-6 md:-mr-14 md:rounded-xl md:shadow-xl xl:px-6 2xl:py-16"
+                  >
+                    <h2 class="mb-6 text-xl font-bold 2xl:text-3xl">
+                      Includes case and lens cloth
                     </h2>
-                    <p class="mb-3 pb-2 leading-loose lg:mb-6 lg:pb-0">
+                    <p class="mb-6 leading-relaxed 2xl:leading-loose">
                       Every pair of glasses comes with a case and cloth to keep
                       your frames safe and clean. Stock frames come with a
                       Spex4Less branded case and cloth, while designer frames
                       include a branded case and cloth from the designer.
                     </p>
                   </div>
+                </div>
+
+                <div class="md:mb-12 md:rounded-xl md:shadow-lg lg:mb-0">
+                  <img
+                    src="../images/case_and_cloth11.png"
+                    class="h-48 w-full object-cover md:h-full md:rounded-xl"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
