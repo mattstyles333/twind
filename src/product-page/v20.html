@@ -233,7 +233,7 @@
                   >
                     <div class="flex items-baseline gap-2">
                       <span
-                        class="text-xl font-semibold text-gray-500 line-through"
+                        class="hidden text-xl font-semibold text-gray-500 line-through"
                         >£75.00</span
                       >
                       <!-- Actual Price -->
@@ -338,7 +338,7 @@
               <div class="space-y-4">
                 <!-- Size Selector Section -->
                 <div
-                  x-data="{ open: false }"
+                  x-data="{ open: false, selectedSize: { eye: '54', bridge: '20', arm: '140' }, selectedColour: 'Black', colours: { '52-18-140': ['Black', 'Havana'], '54-20-140': ['Black', 'Havana', 'Blue'], '56-20-145': ['Black', 'Blue'] } }"
                   class="flex items-center space-x-2"
                 >
                   <label for="size" class="text-xl font-bold text-gray-700"
@@ -423,122 +423,193 @@
                 </div>
 
                 <!-- Always Display Selected Size on Mobile -->
-              </div>
+                <div x-data="{ showColours: false }">
+                  <!-- Colours Section -->
+                  <div class="flex items-center justify-between">
+                    <div class="space-x-2">
+                      <label
+                        for="colours"
+                        class="text-xl font-bold text-gray-700"
+                        >Colour</label
+                      >
+                      <span
+                        class="text-md text-gray-700"
+                        x-text="selectedColour"
+                      ></span>
+                    </div>
 
-              <div x-data="{ showColours: false }">
-                <!-- Colours Section -->
-                <div class="flex items-center justify-between">
-                  <div class="space-x-2">
-                    <label for="colours" class="text-xl font-bold text-gray-700"
-                      >Colour</label
-                    >
-                    <span
-                      class="text-md text-gray-700"
-                      x-text="selectedColour"
-                    ></span>
+                    <div class="flex items-center">
+                      <button
+                        @click="showColours = true"
+                        class="group flex items-center text-lg font-bold text-gray-700"
+                      >
+                        <span>Show colours</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-6 w-6 transform text-cyan-600 transition-transform duration-200 ease-in-out group-hover:scale-150"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
 
-                  <div class="flex items-center">
-                    <button
-                      @click="showColours = true"
-                      class="group flex items-center text-lg font-bold text-gray-700"
+                  <!-- Side Menu -->
+                  <div
+                    x-show="showColours"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="transform translate-x-full"
+                    x-transition:enter-end="transform translate-x-0"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="transform translate-x-0"
+                    x-transition:leave-end="transform translate-x-full"
+                    class="bg-l fixed right-0 top-0 z-50 h-full w-full overflow-y-auto shadow-lg lg:w-1/2 xl:w-1/3"
+                  >
+                    <div
+                      class="flex items-center justify-between border-b-2 p-4"
                     >
-                      <span>Show colours</span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6 transform text-cyan-600 transition-transform duration-200 ease-in-out group-hover:scale-150"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
+                      <h2 class="text-lg font-bold text-gray-700">
+                        Available Colours
+                      </h2>
+                      <button
+                        @click="showColours = false"
+                        class="text-gray-500 hover:text-gray-700"
                       >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
+                        &#10005;
+                      </button>
+                    </div>
+                    <div class="p-3 lg:p-4">
+                      <!-- List of Products -->
+                      <div class="space-y-4">
+                        <div
+                          @click="selectedColour = 'Black'; selectedSize = { eye: '52', bridge: '18', arm: '140' }; showColours = false"
+                          :class="selectedSize.eye !== '52' ? 'opacity-50' : ''"
+                          class="flex cursor-pointer items-center rounded-lg border-2 border-gray-200 border-transparent bg-white p-4 shadow-sm duration-500 ease-in-out hover:border-2 hover:border-gray-500"
+                        >
+                          <img
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__2000_hvrukewcnx8fogxr.webp"
+                            alt="Frame Colour: Black"
+                            class="w-1/2 rounded-lg"
+                          />
+                          <div class="ml-4 flex flex-col">
+                            <span class="text-2xl font-bold text-gray-900"
+                              >£120</span
+                            >
+                            <span class="text-gray-700"
+                              >Frame Colour: Black</span
+                            >
+                            <span class="text-gray-500">Size: 52-18-140</span>
+                          </div>
+                        </div>
+                        <div
+                          @click="selectedColour = 'Havana'; selectedSize = { eye: '54', bridge: '20', arm: '140' }; showColours = false"
+                          :class="selectedSize.eye !== '54' ? 'opacity-50' : ''"
+                          class="flex cursor-pointer items-center rounded-lg border-2 border-gray-200 border-transparent bg-white p-4 shadow-sm duration-500 ease-in-out hover:border-2 hover:border-gray-500"
+                        >
+                          <img
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__5574_lfa32i6jtnvj3mdk.webp"
+                            alt="Frame Colour: Havana"
+                            class="w-1/2 rounded-lg"
+                          />
+                          <div class="ml-4 flex flex-col">
+                            <span class="text-2xl font-bold text-gray-900"
+                              >£125</span
+                            >
+                            <span class="text-gray-700"
+                              >Frame Colour: Havana</span
+                            >
+                            <span class="text-gray-500">Size: 54-20-140</span>
+                          </div>
+                        </div>
+                        <div
+                          @click="selectedColour = 'Blue'; selectedSize = { eye: '56', bridge: '20', arm: '145' }; showColours = false"
+                          :class="selectedSize.eye !== '56' ? 'opacity-50' : ''"
+                          class="flex cursor-pointer items-center rounded-lg border-2 border-gray-200 border-transparent bg-white p-4 shadow-sm duration-500 ease-in-out hover:border-2 hover:border-gray-500"
+                        >
+                          <img
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp"
+                            alt="Frame Colour: Blue"
+                            class="w-1/2 rounded-lg"
+                          />
+                          <div class="ml-4 flex flex-col">
+                            <span class="text-2xl font-bold text-gray-900"
+                              >£130</span
+                            >
+                            <span class="text-gray-700"
+                              >Frame Colour: Blue</span
+                            >
+                            <span class="text-gray-500">Size: 56-20-145</span>
+                          </div>
+                        </div>
+                        <div
+                          @click="selectedColour = 'Black'; selectedSize = { eye: '54', bridge: '20', arm: '140' }; showColours = false"
+                          :class="selectedSize.eye !== '54' ? 'opacity-50' : ''"
+                          class="flex cursor-pointer items-center rounded-lg border-2 border-gray-200 border-transparent bg-white p-4 shadow-sm duration-500 ease-in-out hover:border-2 hover:border-gray-500"
+                        >
+                          <img
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__2000_hvrukewcnx8fogxr.webp"
+                            alt="Frame Colour: Black"
+                            class="w-1/2 rounded-lg"
+                          />
+                          <div class="ml-4 flex flex-col">
+                            <span class="text-2xl font-bold text-gray-900"
+                              >£120</span
+                            >
+                            <span class="text-gray-700"
+                              >Frame Colour: Black</span
+                            >
+                            <span class="text-gray-500">Size: 54-20-140</span>
+                          </div>
+                        </div>
 
-                <!-- Side Menu -->
-                <div
-                  x-show="showColours"
-                  x-transition:enter="transition ease-out duration-300"
-                  x-transition:enter-start="transform translate-x-full"
-                  x-transition:enter-end="transform translate-x-0"
-                  x-transition:leave="transition ease-in duration-300"
-                  x-transition:leave-start="transform translate-x-0"
-                  x-transition:leave-end="transform translate-x-full"
-                  class="fixed right-0 top-0 z-50 h-full w-full overflow-y-auto bg-white shadow-lg lg:w-1/2 xl:w-1/3"
-                >
-                  <div class="flex items-center justify-between border-b-2 p-4">
-                    <h2 class="text-lg font-bold text-gray-700">
-                      Available Colours (3)
-                    </h2>
-                    <button
-                      @click="showColours = false"
-                      class="text-gray-500 hover:text-gray-700"
-                    >
-                      &#10005;
-                      <!-- Close Button (X) -->
-                    </button>
-                  </div>
-                  <div class="lg:p-4">
-                    <!-- List of Products -->
-                    <div>
-                      <div
-                        @click="selectedColour = 'Black'; showColours = false"
-                        class="flex cursor-pointer items-center rounded hover:bg-gray-100"
-                      >
-                        <img
-                          src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__2000_hvrukewcnx8fogxr.webp"
-                          alt="Frame Colour: Black"
-                          class="w-2/3 lg:w-1/2"
-                        />
-                        <div class="flex flex-col p-2">
-                          <span class="text-xl font-bold text-gray-900"
-                            >£120</span
-                          >
-                          <span class="text-gray-700">Frame Colour: Black</span>
+                        <div
+                          @click="selectedColour = 'Black'; selectedSize = { eye: '56', bridge: '20', arm: '145' }; showColours = false"
+                          :class="selectedSize.eye !== '56' ? 'opacity-50' : ''"
+                          class="flex cursor-pointer items-center rounded-lg border-2 border-gray-200 border-transparent bg-white p-4 shadow-sm duration-500 ease-in-out hover:border-2 hover:border-gray-500"
+                        >
+                          <img
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__2000_hvrukewcnx8fogxr.webp"
+                            alt="Frame Colour: Black"
+                            class="w-1/2 rounded-lg"
+                          />
+                          <div class="ml-4 flex flex-col">
+                            <span class="text-2xl font-bold text-gray-900"
+                              >£120</span
+                            >
+                            <span class="text-gray-700"
+                              >Frame Colour: Black</span
+                            >
+                            <span class="text-gray-500">Size: 56-20-145</span>
+                          </div>
+                        </div>
+
+                        <div
+                          class="flex cursor-pointer items-center rounded-lg border-2 border-gray-300 bg-gray-100 p-4 opacity-50 shadow-sm duration-500 ease-in-out"
+                        >
+                          <img
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__2000_hvrukewcnx8fogxr.webp"
+                            alt="Frame Colour: Black"
+                            class="w-1/2 rounded-lg"
+                          />
+                          <div class="ml-4 flex flex-col">
+                            <span class="text-2xl font-bold text-gray-900"
+                              >£120</span
+                            >
+                            <span class="text-gray-700"
+                              >Frame Colour: Black</span
+                            >
+                            <span class="text-gray-500">Size: 54-20-140</span>
+                          </div>
                         </div>
                       </div>
-                      <div
-                        @click="selectedColour = 'Blue'; showColours = false"
-                        class="flex cursor-pointer items-center hover:bg-gray-100"
-                      >
-                        <img
-                          src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp"
-                          alt="Frame Colour: Blue"
-                          class="w-2/3 lg:w-1/2"
-                        />
-                        <div class="flex flex-col p-2">
-                          <span class="text-xl font-bold text-gray-900"
-                            >£130</span
-                          >
-                          <span class="text-gray-700">Frame Colour: Blue</span>
-                        </div>
-                      </div>
-                      <div
-                        @click="selectedColour = 'Havana'; showColours = false"
-                        class="flex cursor-pointer items-center rounded hover:bg-gray-100"
-                      >
-                        <img
-                          src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__5574_lfa32i6jtnvj3mdk.webp"
-                          alt="Frame Colour: Havana"
-                          class="w-2/3 lg:w-1/2"
-                        />
-                        <div class="flex flex-col p-2">
-                          <span class="text-xl font-bold text-gray-900"
-                            >£125</span
-                          >
-                          <span class="text-gray-700"
-                            >Frame Colour: Havana</span
-                          >
-                        </div>
-                      </div>
-                      <!-- Add more products as needed -->
                     </div>
                   </div>
                 </div>
@@ -559,7 +630,7 @@
             </div>
 
             <div
-              :class="sticky ? 'fixed inset-x-0 bottom-0 border-t-2 border-gray-300 bg-white  z-50 p-2 md:p-4' : 'pb-5'"
+              :class="sticky ? 'fixed inset-x-0 bottom-0 border-t-2 border-gray-300 bg-white  z-40 p-2 md:p-4' : 'pb-5'"
               x-data="{ sticky: false }"
               x-init="window.addEventListener('scroll', () => { 
     sticky = window.innerWidth < 1280; // Ensure sticky only on screens smaller than 1280
@@ -570,11 +641,11 @@
                 <button
                   class="bg-s hover:bg-p w-full rounded px-4 py-2 text-lg font-bold text-white duration-700 ease-in-out focus:outline-none"
                 >
-                  Personalise Your Lenses
+                  Customise Your Lenses
                 </button>
               </div>
               <div class="text-base">
-                Estimated Delivery: 4 Days
+                Estimated Delivery: 4-11 Days
                 <span class="text-sm text-gray-700">(Subject to Lenses)</span>
               </div>
             </div>
@@ -636,6 +707,7 @@
                         class="absolute left-[25%] top-1/2 -translate-x-1/2 -translate-y-1/2 transform pr-2"
                       >
                         <span
+                          x-text="`${selectedSize.eye || '52'} mm`"
                           class="size-detail-lens-depth bg-gray-200 px-2 py-1 text-sm text-gray-700"
                         >
                           42 mm
@@ -647,25 +719,29 @@
                         class="absolute right-[25%] top-1/2 -translate-y-1/2 translate-x-1/2 transform"
                       >
                         <span
-                          x-text="`${selectedSize.eye || '52'} mm`"
                           class="size-detail-lens-depth bg-gray-200 px-2 py-1 text-sm text-gray-700"
                         >
-                          52 mm
+                          42 mm
                         </span>
                       </div>
 
                       <!-- Frame Illustration using SVG -->
                       <div class="z-0 flex justify-center">
                         <svg
-                          class="w-64"
-                          viewBox="0 0 125 69"
+                          class="w-72"
+                          viewBox="0 0 566 228"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M48.8478 3.00342H74M48.5 0.814819V6M74.5 0.814819V6M24.9966 13L24.9966 48.9999M28 12.5H22M28 49.5H22M80.4976 14.5024L111.525 45.5299M82.5962 12.3536L78.3536 16.5962M114.002 43.7598L109.76 48.0024M2 65.5L122 65.5M1.5 63L1.5 68.1852M122.5 63V68.1852M21.7838 8.0487C19.1504 8.2397 14.3897 9.15674 12.1028 9.9138C7.55393 11.4195 4.79824 13.7272 2.97874 17.5553C1.52724 20.6086 1 23.5597 1 28.6314C1 35.7737 2.19813 41.6167 4.60874 46.2311C6.19932 49.2753 9.69467 52.6738 12.6655 54.0644C17.113 56.1461 23.3414 56.5616 28.508 55.1207C35.4098 53.1959 44.05 47.0662 49.014 40.5731C50.6902 38.3805 50.82 38.2754 50.82 39.1126C50.82 40.2528 51.6569 40.5686 52.9418 39.9136C54.7867 38.9734 57.0613 33.7191 56.8749 30.8288C56.7856 29.4469 56.7306 29.3611 55.9396 29.3722C55.4775 29.3788 55.1009 29.3111 55.103 29.2216C55.1052 29.1324 55.3784 27.7713 55.7104 26.1972C56.0423 24.6231 56.3155 22.2094 56.3177 20.8333L56.3217 18.331L58.0275 17.5613C59.5762 16.8627 60.0199 16.8021 62.8435 16.9052C65.2715 16.9937 66.1882 17.1531 67.0213 17.6318L68.089 18.2449L68.4466 21.7726C68.769 24.9569 69.108 26.9555 69.6374 28.7962C69.7966 29.3496 69.7171 29.4177 69.0588 29.2936C67.5348 29.0065 67.316 30.8945 68.4576 34.4819C69.4323 37.5448 70.7594 39.5545 72.1586 40.0872C73.0474 40.4255 73.9717 39.9736 74.104 39.1364C74.1826 38.6402 74.472 38.8842 75.5653 40.3688C78.9011 44.8977 86.5245 51.0286 91.8161 53.4387C98.8166 56.6267 106.23 56.8306 112.255 54.0015C119.952 50.3869 124.321 40.0832 123.785 26.8073C123.325 15.3726 118.794 10.5058 106.766 8.5262C104.209 8.10534 98.8582 8.04177 63.3515 8.00863C41.0776 7.98784 22.3722 8.00592 21.7838 8.0487ZM39.4904 9.63664C45.8258 10.1895 49.5388 11.4668 52.1893 14.0058C54.1543 15.8881 54.7785 17.3787 54.7867 20.2079C54.805 26.4476 52.2199 33.7652 48.0873 39.1725C45.8053 42.1586 40.5804 46.9526 37.166 49.1927C31.3514 53.0082 27.2964 54.35 21.631 54.3329C18.4532 54.3232 17.6411 54.2124 15.5514 53.5029C10.8928 51.921 8.00843 49.3398 5.74177 44.7248C3.40634 39.9691 2.33139 33.8764 2.61227 26.9871C2.85526 21.0363 4.06684 17.5511 6.86837 14.746C9.67633 11.9344 13.8093 10.5844 22.8536 9.52427C24.9546 9.27814 36.2552 9.35436 39.4904 9.63664ZM106.439 10.0578C109.853 10.6453 114.217 12.0308 115.839 13.0421C117.518 14.0887 119.538 16.3716 120.369 18.1611C121.85 21.3515 122.175 23.2702 122.162 28.7579C122.141 38.6462 120.069 45.2366 115.573 49.7188C111.845 53.4357 105.439 55.227 99.5502 54.1991C93.7185 53.1811 87.9473 50.1306 82.1058 44.9781C74.5243 38.291 70.0922 29.277 70.0796 20.5188C70.075 17.179 70.4687 16.1547 72.5483 14.0965C75.0335 11.6373 79.0038 10.1557 84.4837 9.64327C89.1054 9.21096 103.047 9.47426 106.439 10.0578ZM74.6603 10.5501C72.6382 11.6464 70.2462 13.8781 69.4335 15.4272C69.1074 16.0487 68.8091 16.5569 68.7705 16.5566C68.7317 16.5566 67.9438 16.2659 67.0192 15.911C65.7285 15.4151 64.6639 15.2636 62.4345 15.2582C59.7592 15.2515 58.8732 15.422 56.5903 16.3831C56.222 16.5379 55.8901 16.2475 55.299 15.2533C54.2848 13.5476 51.8687 11.4029 49.8371 10.4052L48.2548 9.62791L76.3414 9.63875L74.6603 10.5501Z"
-                            stroke="black"
-                            class=""
+                            d="M53.6669 51.5374C52.8592 51.7214 52.3535 52.5253 52.5374 53.3331L55.5349 66.4961C55.7188 67.3038 56.5228 67.8095 57.3305 67.6256C58.1383 67.4416 58.644 66.6377 58.46 65.83L55.7956 54.1295L67.4961 51.4651C68.3038 51.2812 68.8095 50.4772 68.6256 49.6695C68.4416 48.8617 67.6377 48.356 66.83 48.54L53.6669 51.5374ZM205.357 149.463C206.165 149.279 206.671 148.475 206.487 147.667L203.489 134.504C203.306 133.696 202.502 133.19 201.694 133.374C200.886 133.558 200.38 134.362 200.564 135.17L203.229 146.87L191.528 149.535C190.721 149.719 190.215 150.523 190.399 151.331C190.583 152.138 191.387 152.644 192.194 152.46L205.357 149.463ZM432.061 39.9393C431.475 39.3536 430.525 39.3536 429.939 39.9393L420.393 49.4853C419.808 50.0711 419.808 51.0208 420.393 51.6066C420.979 52.1924 421.929 52.1924 422.515 51.6066L431 43.1213L439.485 51.6066C440.071 52.1924 441.021 52.1924 441.607 51.6066C442.192 51.0208 442.192 50.0711 441.607 49.4853L432.061 39.9393ZM429.939 164.061C430.525 164.646 431.475 164.646 432.061 164.061L441.607 154.515C442.192 153.929 442.192 152.979 441.607 152.393C441.021 151.808 440.071 151.808 439.485 152.393L431 160.879L422.515 152.393C421.929 151.808 420.979 151.808 420.393 152.393C419.808 152.979 419.808 153.929 420.393 154.515L429.939 164.061ZM244.939 10.9393C244.354 11.5251 244.354 12.4749 244.939 13.0607L254.485 22.6066C255.071 23.1924 256.021 23.1924 256.607 22.6066C257.192 22.0208 257.192 21.0711 256.607 20.4853L248.121 12L256.607 3.51472C257.192 2.92893 257.192 1.97918 256.607 1.3934C256.021 0.807612 255.071 0.807612 254.485 1.3934L244.939 10.9393ZM321.061 13.0607C321.646 12.4749 321.646 11.5251 321.061 10.9393L311.515 1.3934C310.929 0.807612 309.979 0.807612 309.393 1.3934C308.808 1.97918 308.808 2.92893 309.393 3.51472L317.879 12L309.393 20.4853C308.808 21.0711 308.808 22.0208 309.393 22.6066C309.979 23.1924 310.929 23.1924 311.515 22.6066L321.061 13.0607ZM0.93934 214.939C0.353553 215.525 0.353553 216.475 0.93934 217.061L10.4853 226.607C11.0711 227.192 12.0208 227.192 12.6066 226.607C13.1924 226.021 13.1924 225.071 12.6066 224.485L4.12132 216L12.6066 207.515C13.1924 206.929 13.1924 205.979 12.6066 205.393C12.0208 204.808 11.0711 204.808 10.4853 205.393L0.93934 214.939ZM565.061 217.061C565.646 216.475 565.646 215.525 565.061 214.939L555.515 205.393C554.929 204.808 553.979 204.808 553.393 205.393C552.808 205.979 552.808 206.929 553.393 207.515L561.879 216L553.393 224.485C552.808 225.071 552.808 226.021 553.393 226.607C553.979 227.192 554.929 227.192 555.515 226.607L565.061 217.061ZM53.2013 54.2697L204.226 149.27L205.823 146.73L54.7987 51.7303L53.2013 54.2697ZM429.5 41V163H432.5V41H429.5ZM246 13.5H320V10.5H246V13.5ZM2 217.5L564 217.5L564 214.5L2 214.5L2 217.5Z"
+                            fill="black"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M110.198 17.2296C109.028 17.312 104.88 17.6032 100.98 17.8764C87.1773 18.8427 71.1888 20.8095 54.8926 23.5443C38.1184 26.36 5.99586 33.0809 3.7444 34.2466C2.88551 34.6912 2.36885 35.4241 2.17127 36.4795C2.0096 37.3436 1.95193 44.6407 2.04364 52.6949C2.17316 64.0662 2.35893 67.6343 2.87464 68.6613C3.24003 69.3885 5.15587 71.1186 7.13222 72.5058C14.8187 77.9006 15.6048 79.6008 20.1805 100.719C24.77 121.9 31.7711 146.172 35.9615 155.429C40.9286 166.402 51.5024 176.572 62.4628 180.919C71.8775 184.653 95.9491 190.18 112.193 192.338C117.183 193.002 121.004 193.101 134.646 192.921C152.763 192.682 157.063 192.221 175.194 188.579C194.651 184.671 206.665 179.89 216.21 172.256C221.281 168.199 229.516 159.412 232.37 155.01C240.986 141.723 245.824 129.636 257.029 93.4077C263.621 72.0958 263.691 71.8913 265.17 69.7199C267.055 66.9539 270.012 64.9005 273.15 64.1784C274.929 63.7694 279.17 63.5511 285.332 63.5511C293.948 63.5511 294.977 63.6396 296.937 64.5482C299.767 65.8597 302.42 68.2351 303.566 70.4841C304.074 71.4817 306.917 80.7703 309.883 91.1246C319.096 123.287 324.204 136.53 333.337 151.937C336.987 158.093 339.787 161.591 345.247 166.815C353.059 174.29 361.098 179.061 372.171 182.794C383.878 186.741 400.665 190.125 413.739 191.174C424.545 192.041 446.662 191.547 455.503 190.241C474.566 187.425 494.705 182.071 504.191 177.296C511.792 173.47 518.383 167.669 522.746 160.964C529.223 151.011 537.588 128.066 543.242 104.743C547.244 88.235 547.89 85.9046 549.161 83.3701C550.745 80.2111 553.854 76.6814 557.902 73.4462C559.685 72.0205 561.461 70.2422 561.847 69.4946C562.906 67.4435 563.523 60.9764 563.84 48.6017C564.124 37.5415 564.117 37.4316 563.089 36.4724C561.772 35.2442 557.819 34.0776 544.932 31.1146C520.529 25.5044 498.383 22.0803 466.375 18.9691C453.692 17.7362 405.168 17.722 393.58 18.9483C368.154 21.6381 349.483 25.4988 327.875 32.5341L319.366 35.3043L286.041 35.1561C245.517 34.9753 248.752 35.3673 223.409 27.5692C204.87 21.8649 186.875 18.8721 162.195 17.3877C155.237 16.9692 115.601 16.8489 110.198 17.2296ZM158.516 30.4034C195.101 33.169 224.119 39.5192 235.737 47.3025C242.143 51.5941 246.462 58.4111 247.256 65.4819C248.313 74.9026 244.957 94.9607 239.446 112.164C229.009 144.744 214.56 163.52 193.616 171.723C185.107 175.054 175.364 176.964 157.228 178.852C144.943 180.132 117.288 180.263 106.18 179.094C84.3278 176.795 65.7518 170.997 56.2714 163.515C51.5997 159.829 46.2814 151.619 43.7492 144.185C43.1011 142.283 41.9317 137.105 41.1498 132.678C40.3685 128.251 38.896 120.474 37.8778 115.396C35.4401 103.24 35.0426 98.2555 35.0407 79.8134L35.0393 64.3532L36.7396 59.4598C37.675 56.7691 38.7665 53.925 39.1655 53.1409C39.5644 52.3564 42.2503 49.311 45.1342 46.3736L50.3778 41.0328L58.4255 38.4098C62.8518 36.9676 67.7499 35.4937 69.3098 35.1353C75.677 33.6718 97.3998 30.9536 110.198 30.019C117.198 29.5076 150.131 29.7699 158.516 30.4034ZM455.976 31.1013C474.61 31.8949 498.408 35.3313 508.777 38.7251C519.408 42.2052 526.289 49.3721 529.066 59.858C529.865 62.8721 530.091 65.5122 530.297 74.2203C530.692 90.8902 529.345 102.222 524.755 120.876C520.199 139.388 516.141 148.47 508.181 157.965C499.329 168.526 488.826 172.52 459.285 176.559C451.872 177.572 449.617 177.657 430.214 177.65C407.678 177.642 404.466 177.415 389.346 174.761C369.876 171.344 360.121 166.87 350.1 156.765C343.058 149.664 338.07 141.076 332.921 127.192C325.615 107.489 321.126 87.8576 320.678 73.6559C320.455 66.5799 320.531 65.4365 321.415 62.5293C324.987 50.7764 334.782 43.6848 354.346 38.6849C366.262 35.64 381.197 33.3868 401.143 31.6255C412.406 30.6307 438.972 30.3769 455.976 31.1013Z"
+                            fill="black"
                           />
                         </svg>
                       </div>
@@ -690,18 +766,23 @@
                     <!-- New SVG for the arm length -->
                     <div class="relative flex w-full justify-center">
                       <svg
-                        class="w-64"
-                        viewBox="0 0 125 45"
+                        class="w-72"
+                        viewBox="0 0 570 226"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M1.50827 1.89413L123.492 1.89413M1 0V3.92857M124 0V3.92857M124 8.64286H26.2477C22.6512 8.85512 14.6383 10.9353 11.3583 17.5579L3.15833 34.1144L1.43202 37.9351C0.353007 40.4822 1.43202 43.369 3.15833 43.8784C5.31621 44.5152 7.90563 42.6049 9.63196 39.2087C11.013 36.4917 15.9618 27.888 18.2635 23.9258C19.3425 21.3786 23.5719 16.4117 31.8582 16.9211C40.1445 17.4305 79.1878 18.69 97.6737 19.256C104.004 19.4682 118.001 20.4447 123.353 22.6522"
-                          stroke="black"
+                          d="M379.942 38.1695L491.757 38.6047C492.829 38.6047 502.629 36.4389 503.5 35.5684C509.602 29.4737 508.5 30.4895 510 28.9658L513 25.4105L515.5 22.8711C517 20.8395 516.5 21.3474 517.465 20.3124C518.284 19.4347 518.406 18.9876 519.04 18.5122L536.738 3.2071L538.548 1.82891C539.419 1.10355 540.425 0.813406 541.497 0.595797C548.536 -0.56478 555.709 -0.854928 562.814 -1L565.027 -0.78239C566.302 -0.50697 567.46 0.206709 568.33 1.25235C569.2 2.298 569.734 3.61966 569.853 5.0205C570.121 7.70433 570.054 10.4607 569.384 13.1445C569.25 13.7974 569.183 14.5227 569.25 15.1755C569.719 20.108 569.518 24.9679 569.049 29.9004C568.915 31.4236 568.982 33.0194 569.049 34.6152C570.318 69.0183 568.228 103.47 562.814 137.399C560.736 151.292 557.848 165.028 554.167 178.527C553.564 180.703 552.759 182.879 551.955 185.055C550.882 187.811 548.938 189.19 546.123 189.552C541.229 190.205 536.402 191.076 531.509 191.728C529.23 192.019 526.883 192.091 524.604 191.873C520.984 191.583 518.973 189.625 518.169 185.78C517.767 183.677 517.365 181.573 517.365 179.47C517.365 162.859 517.364 146.248 517.499 129.565L517.968 79.0073C518.035 75.0178 516.895 71.2459 516.024 67.4015L515.487 65.3705C514.951 63.7747 514.348 63.267 512.739 63.267C508.315 63.267 503.823 63.1944 499.399 63.412C490.187 63.8597 480.981 64.4158 471.78 65.0804C461.993 65.7332 452.206 66.6036 442.419 67.329L419.158 69.2149L393.215 71.4636L367.741 73.7122L342.268 76.0333L320.146 77.9193C312.303 78.5721 304.46 79.2975 296.617 79.8052C286.294 80.5306 275.97 80.8207 265.58 80.458C260.15 80.2404 254.653 80.0953 249.223 79.5876C232.492 78.4664 215.864 75.9687 199.483 72.1164C195.796 71.3185 192.042 71.0283 188.355 70.5931C182.054 69.8677 175.752 69.1424 169.451 68.6346C160.27 67.6921 151.034 67.5466 141.832 68.1994C136.469 68.6347 131.241 69.7952 126.146 71.7537L121.454 73.4946C119.211 74.3208 117.122 75.5735 115.286 77.1939C111.331 80.6756 107.242 84.1574 103.555 88.0018C96.3823 95.4005 89.4776 103.089 82.4389 110.633L69.3 124.705C67.8923 126.301 66.5515 127.969 65.2779 129.637C58.1051 138.85 51.0664 148.062 43.8266 157.129C41.2122 160.465 38.1956 163.512 35.3801 166.703C31.5591 171.056 26.7325 172.942 21.4367 173.812C17.8366 174.511 14.1283 174.135 10.7111 172.724C5.01307 170.258 1.32613 165.833 0.11949 159.16C-0.215687 157.419 0.186523 155.823 0.923912 154.3C1.92944 152.341 3.33719 150.745 4.879 149.367L19.0905 137.109C30.6876 127.244 42.3518 117.524 53.8819 107.587C58.8425 103.307 63.4679 98.6646 68.2945 94.2399C79.417 83.8533 91.1505 74.2584 103.421 65.5156C108.65 61.8888 114.08 58.5521 119.711 55.7232C127.42 51.8063 135.531 49.5577 143.91 48.6147L162.412 46.4386C168.177 45.7858 173.942 45.3506 179.707 44.8428L199.751 43.247L215.638 42.0864L239.838 40.4906C252.055 39.7412 264.279 39.1126 276.506 38.6047C286.629 38.3871 296.751 38.3146 306.873 38.242L379.942 38.1695ZM564.49 18.2946C562.881 18.4397 561.608 19.165 560.468 19.9629C556.312 22.7193 553.161 26.4912 550.614 30.9884C545.027 40.9642 542.06 52.4001 542.033 64.0649C541.765 78.7897 541.162 93.442 540.492 108.167C539.888 120.57 539.218 132.902 538.682 145.305C538.347 152.704 538.28 160.103 538.145 167.501C538.162 171.719 539.673 175.77 542.369 178.817C543.039 179.615 543.843 180.34 544.715 180.848C546.123 181.646 547.463 181.283 548.402 179.832C549.005 178.962 549.474 177.947 549.81 176.931C555.635 157.05 559.874 136.665 562.479 116.001C566.068 87.7429 567.123 59.1758 565.63 30.6983C565.496 27.7243 565.228 24.8228 565.027 21.8489C564.96 20.6883 564.691 19.5277 564.49 18.2946Z"
+                          fill="black"
+                        />
+                        <path
+                          d="M0.93934 213.939C0.353553 214.525 0.353553 215.475 0.93934 216.061L10.4853 225.607C11.0711 226.192 12.0208 226.192 12.6066 225.607C13.1924 225.021 13.1924 224.071 12.6066 223.485L4.12132 215L12.6066 206.515C13.1924 205.929 13.1924 204.979 12.6066 204.393C12.0208 203.808 11.0711 203.808 10.4853 204.393L0.93934 213.939ZM516.561 216.061C517.146 215.475 517.146 214.525 516.561 213.939L507.015 204.393C506.429 203.808 505.479 203.808 504.893 204.393C504.308 204.979 504.308 205.929 504.893 206.515L513.379 215L504.893 223.485C504.308 224.071 504.308 225.021 504.893 225.607C505.479 226.192 506.429 226.192 507.015 225.607L516.561 216.061ZM2 216.5H515.5V213.5H2V216.5Z"
+                          fill="black"
                         />
                       </svg>
+
                       <div
-                        class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-full transform pb-2"
+                        class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full transform"
                       >
                         <span
                           x-text="`${selectedSize.arm || '145'} mm`"
@@ -1246,47 +1327,91 @@
             </div>
           </div>
           <div class="mx-4 border-b-2 py-8 md:mx-6 lg:py-16">
-            <div class="mx-auto my-8">
-              <h3 class="mb-4 text-xl font-bold">Delivery Schedule</h3>
+            <div class="mx-auto my-8 max-w-full">
+              <h3 class="mb-4 text-lg font-bold sm:text-xl">
+                Delivery & Returns
+              </h3>
               <div class="overflow-x-auto">
-                <table class="w-full border-collapse text-left">
+                <table
+                  class="w-full border-separate border-spacing-0 rounded-lg border border-gray-300 text-left text-sm sm:text-base"
+                >
                   <thead>
                     <tr class="bg-gray-800 text-white">
-                      <th class="p-4">Frame Type</th>
-                      <th class="p-4">Non-Prescription Lenses</th>
-                      <th class="p-4">Standard Lenses</th>
-                      <th class="p-4">Specialist Lenses</th>
+                      <th
+                        class="rounded-tl-lg border border-gray-300 p-2 sm:p-4"
+                      >
+                        Frame Type
+                      </th>
+                      <th class="border border-gray-300 p-2 sm:p-4">
+                        Non-Prescription Lenses
+                      </th>
+                      <th class="border border-gray-300 p-2 sm:p-4">
+                        Standard Lenses
+                      </th>
+                      <th
+                        class="rounded-tr-lg border border-gray-300 p-2 sm:p-4"
+                      >
+                        Specialist Lenses
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr class="bg-gray-100">
-                      <td class="p-4 font-bold text-gray-800">Stock Frames</td>
-                      <td class="p-4">1-2 Days</td>
-                      <td class="p-4">2-4 Days</td>
-                      <td class="p-4">5-10 Days</td>
+                      <td
+                        class="border border-gray-300 p-2 font-bold text-gray-800 sm:p-4"
+                      >
+                        Stock Frames
+                      </td>
+                      <td class="border border-gray-300 p-2 sm:p-4">
+                        1-2 Days
+                      </td>
+                      <td class="border border-gray-300 p-2 sm:p-4">
+                        1-4 Days
+                      </td>
+                      <td class="border border-gray-300 p-2 sm:p-4">
+                        5-10 Days
+                      </td>
                     </tr>
                     <tr class="bg-white">
-                      <td class="p-4 font-bold text-gray-800">
+                      <td
+                        class="border border-gray-300 p-2 font-bold text-gray-800 sm:p-4"
+                      >
                         Designer Frames
                       </td>
-                      <td class="p-4">5-14 Days</td>
-                      <td class="p-4">5-14 Days</td>
-                      <td class="p-4">5-21 Days</td>
+                      <td class="border border-gray-300 p-2 sm:p-4">
+                        1-14 Days
+                      </td>
+                      <td class="border border-gray-300 p-2 sm:p-4">
+                        1-14 Days
+                      </td>
+                      <td class="border border-gray-300 p-2 sm:p-4">
+                        5-21 Days
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
 
-              <p class="mt-4 text-sm text-blue-600">
-                <a
-                  href="https://www.spex4less.com/glasses-delivery-schedule"
-                  target="_blank"
-                >
+              <p class="text-link mt-4 text-sm">
+                <a href="/glasses-delivery-schedule" target="_blank">
                   View Full Delivery Schedule
                 </a>
               </p>
+              <p class="mt-4 text-gray-700">
+                If you're not satisfied with your purchase from Spex4Less, you
+                can request a return or exchange within 7 days for prescription
+                glasses or 14 days for non-prescription items. Items must be
+                returned in their original condition. For more details, visit
+                the
+                <a
+                  href="https://www.spex4less.com/exchange-or-return"
+                  class="text-link"
+                  >Exchanges & Returns page</a
+                >.
+              </p>
             </div>
           </div>
+
           <!--Lenses-->
           <div class="mx-4 py-8 md:mx-6 lg:py-16">
             <div class="container mx-auto text-left">
