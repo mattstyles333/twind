@@ -20,49 +20,92 @@
   />
 </head>
 
-<div class="relative hidden w-full md:flex">
-  <!-- Image container with the first image -->
+<div class="relative w-full">
+  <!-- Image container with different images for desktop and mobile -->
   <div class="w-full bg-gray-300">
     <img
       src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/hero-banner.webp"
-      class="h-full w-full object-cover"
+      class="hidden w-full object-cover md:block"
+      alt=""
+    />
+    <img
+      src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/hero-banner-tall.webp"
+      class="w-full object-cover object-bottom md:hidden"
       alt=""
     />
     <div class="absolute inset-0"></div>
   </div>
 
-  <!-- Text overlay positioned over the middle of the images -->
+  <!-- Desktop version of the content -->
   <div
-    class="absolute inset-0 hidden items-center justify-end px-12 md:flex md:px-12 2xl:px-48"
+    class="absolute inset-0 hidden flex-col items-end justify-center text-center md:flex md:px-32"
   >
-    <div class="max-w-5xl text-center">
+    <div class="mt-8 max-w-5xl md:text-center">
       <h1
-        class="p-2 font-bold text-white md:text-xl lg:p-4 lg:text-5xl xl:text-7xl"
+        class="mb-2 p-2 text-3xl font-bold text-white md:text-4xl lg:p-4 lg:text-4xl xl:text-6xl 2xl:text-7xl"
       >
         Prescription Glasses Online
       </h1>
       <p
-        class="md:text-md text-md p-2 font-semibold text-white lg:text-xl xl:text-3xl"
+        class="md:text-md px-6 text-lg font-semibold text-white lg:text-xl xl:text-2xl"
       >
         Free Standard Single Vision Lenses with All Glasses!
       </p>
-      <div class="mx-auto mt-6 space-x-8">
+      <div class="flex flex-col items-center">
+        <div class="flex justify-center space-x-4 py-4">
+          <a
+            href="/glasses"
+            class="bg-s w-40 rounded px-3 py-2 text-center text-base font-bold text-white duration-1000 ease-in-out hover:bg-gray-200 md:w-48 md:px-4 md:py-3 lg:w-64 xl:text-2xl"
+          >
+            Shop Glasses
+          </a>
+          <a
+            href="/sunglasses"
+            class="bg-s w-40 rounded px-3 py-2 text-center text-base font-bold text-white duration-1000 ease-in-out hover:bg-gray-200 md:w-48 md:px-4 md:py-3 lg:w-64 xl:text-2xl"
+          >
+            Shop Sunglasses
+          </a>
+        </div>
+        <p
+          class="pb-4 text-center text-lg font-bold text-white underline lg:text-2xl xl:text-3xl"
+        >
+          <a href="/product-quiz" class="hover:text-white">
+            Try Our Style Finder Quiz
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile version of the content -->
+  <div
+    class="absolute inset-0 flex flex-col items-center justify-end text-center md:hidden"
+  >
+    <div class="mb-auto mt-8 max-w-5xl">
+      <h1 class="mb-2 p-2 text-4xl font-bold text-white">
+        Prescription Glasses Online
+      </h1>
+      <p class="px-6 text-lg font-semibold text-white">
+        Free Standard Single Vision Lenses with All Glasses!
+      </p>
+    </div>
+
+    <div class="absolute bottom-0 flex w-full flex-col items-center">
+      <div class="flex justify-center space-x-4 py-4">
         <a
           href="/glasses"
-          class="hover:bg-p bg-s mt-4 w-48 rounded px-6 py-2 text-lg font-bold text-white duration-1000 ease-in-out hover:text-white lg:w-64 xl:text-2xl"
+          class="bg-s w-40 rounded px-3 py-2 text-center text-base font-bold text-white duration-1000 ease-in-out hover:bg-gray-200"
         >
           Shop Glasses
         </a>
         <a
           href="/sunglasses"
-          class="hover:bg-p bg-s mt-4 w-48 rounded px-6 py-2 text-lg font-bold text-white duration-1000 ease-in-out hover:text-white lg:w-64 xl:text-2xl"
+          class="bg-s w-40 rounded px-3 py-2 text-center text-base font-bold text-white duration-1000 ease-in-out hover:bg-gray-200"
         >
           Shop Sunglasses
         </a>
       </div>
-      <p
-        class="pt-2 text-lg font-bold text-white underline lg:pt-6 lg:text-2xl xl:text-3xl"
-      >
+      <p class="pb-4 text-center text-lg font-bold text-white underline">
         <a href="/product-quiz" class="hover:text-white">
           Try Our Style Finder Quiz
         </a>
@@ -70,45 +113,7 @@
     </div>
   </div>
 </div>
-<div class="relative flex flex-col items-center justify-center md:hidden">
-  <img
-    src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/hero-banner-tall.webp"
-    class="h-full w-full object-cover object-bottom"
-    alt=""
-  />
 
-  <div
-    class="absolute inset-0 flex flex-col items-center bg-gradient-to-t from-black via-transparent to-transparent p-4"
-  >
-    <h1 class="mb-2 text-center text-4xl font-semibold text-white">
-      Prescription<br />
-      Glasses Online
-    </h1>
-    <p class="px-6 text-center text-lg font-semibold text-white">
-      Free Standard Single Vision Lenses with All Glasses!
-    </p>
-    <div class="absolute bottom-8 flex space-x-4 py-3">
-      <a
-        href="/glasses"
-        class="bg-s w-40 rounded px-3 py-2 text-center text-base font-bold text-white hover:bg-gray-200 md:w-48 md:px-4 md:py-3"
-      >
-        Shop Glasses
-      </a>
-      <a
-        href="/sunglasses"
-        class="bg-s w-40 rounded px-3 py-2 text-center text-base font-bold text-white hover:bg-gray-200 md:w-48 md:px-4 md:py-3"
-      >
-        Shop Sunglasses
-      </a>
-    </div>
-    <a
-      href="/product-quiz"
-      class="absolute bottom-0 justify-center py-2 text-center text-lg font-semibold text-white underline"
-    >
-      Try Our Style Finder Quiz
-    </a>
-  </div>
-</div>
 <div
   class="hidden bg-gray-200 px-4 py-3 dark:bg-slate-900 dark:text-gray-300 md:block"
 >
