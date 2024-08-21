@@ -569,7 +569,8 @@
                             class="w-1/2 rounded-lg"
                           />
                           <div class="ml-4 flex flex-col">
-                            <span class="text-2xl font-bold text-gray-900"
+                            <span
+                              class="text-xl font-bold text-gray-900 md:text-2xl"
                               >£120</span
                             >
                             <span class="text-gray-700 dark:text-gray-200"
@@ -596,7 +597,8 @@
                             class="w-1/2 rounded-lg"
                           />
                           <div class="ml-4 flex flex-col">
-                            <span class="text-2xl font-bold text-gray-900"
+                            <span
+                              class="text-xl font-bold text-gray-900 md:text-2xl"
                               >£125</span
                             >
                             <span class="text-gray-700 dark:text-gray-200"
@@ -623,7 +625,8 @@
                             class="w-1/2 rounded-lg"
                           />
                           <div class="ml-4 flex flex-col">
-                            <span class="text-2xl font-bold text-gray-900"
+                            <span
+                              class="text-xl font-bold text-gray-900 md:text-2xl"
                               >£130</span
                             >
                             <span class="text-gray-700 dark:text-gray-200"
@@ -650,7 +653,8 @@
                             class="w-1/2 rounded-lg"
                           />
                           <div class="ml-4 flex flex-col">
-                            <span class="text-2xl font-bold text-gray-900"
+                            <span
+                              class="text-xl font-bold text-gray-900 md:text-2xl"
                               >£120</span
                             >
                             <span class="text-gray-700 dark:text-gray-200"
@@ -677,7 +681,8 @@
                             class="w-1/2 rounded-lg"
                           />
                           <div class="ml-4 flex flex-col">
-                            <span class="text-2xl font-bold text-gray-900"
+                            <span
+                              class="text-xl font-bold text-gray-900 md:text-2xl"
                               >£120</span
                             >
                             <span class="text-gray-700 dark:text-gray-200"
@@ -751,7 +756,20 @@
                   <li><strong>Hinge Type:</strong> Standard</li>
                   <li><strong>Size:</strong> M (52-18-140)</li>
                   <li><strong>Material:</strong> Acetate</li>
-                  <li><strong>Delivery:</strong> Free UK Delivery</li>
+                  <li>
+                    <strong>Delivery:</strong>
+                    <span>
+                      <span
+                        x-text="selectedColour === 'Havana' && selectedSize.eye === '54' ? '1-2 Days' : '5-14 days'"
+                      ></span>
+                      <template
+                        x-if="!(selectedColour === 'Havana' && selectedSize.eye === '54')"
+                      >
+                        <span> (Sourced from Italy)</span>
+                      </template>
+                    </span>
+                  </li>
+
                   <li><strong>Price:</strong> £120</li>
 
                   <template x-if="showMore">
@@ -767,7 +785,6 @@
                           ?
                         </button>
                       </li>
-
                       <li><strong>Frame Type:</strong> Full Rimmed</li>
                       <li><strong>RRP:</strong> £124.00</li>
                       <li><strong>Nose Pad:</strong> Moulded</li>
@@ -1424,7 +1441,7 @@
                 <!-- Text Section First -->
                 <div class="sm:mt-12 md:mb-0 md:mt-0">
                   <div
-                    class="bg-s relative block text-white md:-mr-14 md:rounded-xl md:shadow-xl xl:px-6 2xl:py-16"
+                    class="bg-s relative block p-2 text-white md:-mr-14 md:rounded-xl md:shadow-xl xl:px-6 2xl:py-16"
                   >
                     <h2 class="mb-6 text-xl font-bold 2xl:text-3xl">
                       Includes case and lens cloth
@@ -1542,8 +1559,7 @@
                     </h3>
                     <p class="">
                       Enjoy clear vision with our standard single-vision lenses,
-                      designed to suit your everyday needs or add tints for as
-                      little as £3!
+                      designed to suit your everyday needs.
                     </p>
                   </div>
                 </div>
