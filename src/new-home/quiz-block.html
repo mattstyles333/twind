@@ -1,0 +1,53 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand Slider</title>
+  <link href="../output.css" rel="stylesheet" />
+
+  <!-- Include Glide.js and Tailwind CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.core.min.css"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
+  <!-- Alpine.js for additional functionality (if needed) -->
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"
+  ></script>
+</head>
+
+<div class="my-8 px-3 lg:my-16">
+  <div
+    class="bg-l mx-auto flex flex-col items-center rounded-lg border border-gray-200 shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 md:max-w-6xl md:flex-row"
+  >
+    <div class="md:w-full">
+      <img
+        class="h-60 w-full rounded-t-lg object-cover object-right md:h-96 md:w-full md:rounded-none md:rounded-s-lg"
+        src="https://test.s4l.link/media/mf_webp/jpg/media/wysiwyg/redesign/how-to-buy-2.webp"
+        alt=""
+      />
+    </div>
+    <div class="flex flex-col justify-between p-3 leading-normal md:p-8">
+      <h5
+        class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        Check Out our Style Finder!
+      </h5>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        Find your perfect frames with our quick Style Finder Quiz. Start your
+        journey to stylish eyewear today!
+      </p>
+      <button
+        class="bg-s hover:bg-p mt-4 w-full rounded px-4 py-2 font-semibold text-white duration-500 ease-in-out md:w-2/3 lg:w-1/2"
+        onclick="window.location.href='/product-quiz';"
+      >
+        Try Our Style Finder
+      </button>
+    </div>
+  </div>
+</div>
