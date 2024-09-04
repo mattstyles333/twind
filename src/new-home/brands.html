@@ -22,7 +22,7 @@
 </head>
 <body>
   <!-- Slider Container -->
-  <div x-data="brandSlider()" x-init="init()" class="glide py-6 md:block">
+  <div x-data="brandSlider()" x-init="init()" class="glide py-6 md:hidden">
     <!-- Glide Track Container -->
     <div class="glide__track" data-glide-el="track">
       <!-- Brand Buttons as Glide Slides -->
@@ -297,11 +297,12 @@
       </div>
     </div>
 
-    <!-- Glide Controls (optional) -->
-    <div data-glide-el="controls" class="block md:hidden">
-      <button data-glide-dir="<">Prev</button>
-      <button data-glide-dir=">">Next</button>
+    <!-- Glide Controls (optional) 
+    <div data-glide-el="controls" class="block space-x-3 px-3 md:hidden">
+      <button data-glide-dir="<" class="text-xl font-bold"><</button>
+      <button data-glide-dir=">" class="text-xl font-bold">></button>
     </div>
+    -->
   </div>
 
   <script>
@@ -313,7 +314,7 @@
             // Adjust breakpoint as needed
             this.glide = new Glide(".glide", {
               type: "carousel",
-              perView: 3, // Number of slides to show
+              perView: 3.2, // Number of slides to show
               gap: 12,
             }).mount();
           }
@@ -325,16 +326,5 @@
         },
       };
     }
-
-    // Optionally reinitialize on window resize
-    window.addEventListener("resize", function () {
-      if (window.innerWidth < 768) {
-        if (!document.querySelector(".glide").__x.$data.glide) {
-          brandSlider().init();
-        }
-      } else {
-        brandSlider().destroy();
-      }
-    });
   </script>
 </body>

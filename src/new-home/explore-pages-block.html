@@ -1,0 +1,460 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonial Slider</title>
+  <link href="../output.css" rel="stylesheet" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
+  <!-- Updated the Alpine.js CDN link to the correct version for browsers -->
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"
+  ></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+</head>
+<div class="glide-explore block px-3 py-3 md:hidden">
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      <!-- Slide 1 -->
+      <div class="glide__slide">
+        <div class="block">
+          <div
+            class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-slate-900"
+          >
+            <div class="relative">
+              <img
+                class="w-full object-cover max-sm:h-56 max-sm:rounded-lg md:rounded-t-lg"
+                src="https://test.s4l.link/media/mf_webp/png/media/wysiwyg/redesign/blue-light-block.webp"
+                alt="Bifocal Glasses"
+              />
+              <div
+                class="absolute inset-0 block rounded-lg bg-gradient-to-t from-black via-transparent to-transparent md:hidden md:rounded-t-lg"
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+              >
+                <h2 class="block text-left text-sm font-bold md:hidden">
+                  Blue-Light Glasses
+                </h2>
+                <div class="flex justify-start space-x-3 py-2 md:hidden">
+                  <a
+                    href="/bifocal-glasses"
+                    class="rounded-lg border-2 border-white px-2 py-1 text-center text-sm font-medium duration-500 ease-in-out hover:bg-gray-100 md:text-base"
+                    >Shop Blue-light</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="hidden py-3 pl-5 pr-2 md:block">
+              <h5
+                class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+              >
+                Blue-Light Glasses
+              </h5>
+              <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+                Achieve smooth and seamless vision at any distance with our
+                advanced varifocal glasses, tailored to your needs.
+              </p>
+              <div class="mt-4 flex justify-start space-x-2">
+                <a
+                  href="/bifocal-glasses"
+                  class="rounded-lg border-2 border-gray-400 px-3 py-1 text-center font-medium duration-500 ease-in-out hover:bg-gray-100"
+                  >Shop Blue-light</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 (Duplicate) -->
+      <div class="glide__slide">
+        <!-- Duplicate of Slide 1 -->
+        <div class="block">
+          <div
+            class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-slate-900"
+          >
+            <div class="relative">
+              <img
+                class="w-full object-cover max-sm:h-56 max-sm:rounded-lg md:rounded-t-lg"
+                src="https://test.s4l.link/media/mf_webp/png/media/wysiwyg/redesign/coatings-block.webp"
+                alt="Bifocal Glasses"
+              />
+              <div
+                class="absolute inset-0 block rounded-lg bg-gradient-to-t from-black via-transparent to-transparent md:hidden md:rounded-t-lg"
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+              >
+                <h2 class="block text-left text-sm font-bold md:hidden">
+                  Coatings
+                </h2>
+                <div class="flex justify-start space-x-3 py-2 md:hidden">
+                  <a
+                    href="/bifocal-glasses"
+                    class="rounded-lg border-2 border-white px-2 py-1 text-center text-sm font-medium duration-500 ease-in-out hover:bg-gray-100 md:text-base"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="hidden py-3 pl-5 pr-2 md:block">
+              <h5
+                class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+              >
+                Bifocal Glasses
+              </h5>
+              <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+                Achieve smooth and seamless vision at any distance with our
+                advanced varifocal glasses, tailored to your needs.
+              </p>
+              <div class="mt-4 flex justify-start space-x-2">
+                <a
+                  href="/bifocal-glasses"
+                  class="rounded-lg border-2 border-gray-400 px-3 py-1 text-center font-medium duration-500 ease-in-out hover:bg-gray-100"
+                  >Shop Bifocals</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 (Duplicate) -->
+      <div class="glide__slide">
+        <!-- Duplicate of Slide 1 -->
+        <div class="block">
+          <div
+            class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-slate-900"
+          >
+            <div class="relative">
+              <img
+                class="w-full object-cover max-sm:h-56 max-sm:rounded-lg md:rounded-t-lg"
+                src="https://test.s4l.link/media/mf_webp/png/media/wysiwyg/redesign/mirrors-block.webp"
+                alt="Bifocal Glasses"
+              />
+              <div
+                class="absolute inset-0 block rounded-lg bg-gradient-to-t from-black via-transparent to-transparent md:hidden md:rounded-t-lg"
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+              >
+                <h2 class="block text-left text-sm font-bold md:hidden">
+                  Mirrors & Tints
+                </h2>
+                <div class="flex justify-start space-x-3 py-2 md:hidden">
+                  <a
+                    href="/bifocal-glasses"
+                    class="rounded-lg border-2 border-white px-2 py-1 text-center text-sm font-medium duration-500 ease-in-out hover:bg-gray-100 md:text-base"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="hidden py-3 pl-5 pr-2 md:block">
+              <h5
+                class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+              >
+                Mirrors & Tints
+              </h5>
+              <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+                Achieve smooth and seamless vision at any distance with our
+                advanced varifocal glasses, tailored to your needs.
+              </p>
+              <div class="mt-4 flex justify-start space-x-2">
+                <a
+                  href="/bifocal-glasses"
+                  class="rounded-lg border-2 border-gray-400 px-3 py-1 text-center font-medium duration-500 ease-in-out hover:bg-gray-100"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 (Duplicate) -->
+      <div class="glide__slide">
+        <!-- Duplicate of Slide 1 -->
+        <div class="block">
+          <div
+            class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-slate-900"
+          >
+            <div class="relative">
+              <img
+                class="w-full object-cover max-sm:h-56 max-sm:rounded-lg md:rounded-t-lg"
+                src="https://test.s4l.link/media/mf_webp/png/media/wysiwyg/redesign/single-vision-block.webp"
+                alt="Bifocal Glasses"
+              />
+              <div
+                class="absolute inset-0 block rounded-lg bg-gradient-to-t from-black via-transparent to-transparent md:hidden md:rounded-t-lg"
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+              >
+                <h2 class="block text-left text-sm font-bold md:hidden">
+                  Single Vision
+                </h2>
+                <div class="flex justify-start space-x-3 py-2 md:hidden">
+                  <a
+                    href="/bifocal-glasses"
+                    class="rounded-lg border-2 border-white px-2 py-1 text-center text-sm font-medium duration-500 ease-in-out hover:bg-gray-100 md:text-base"
+                    >Shop Now</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="hidden py-3 pl-5 pr-2 md:block">
+              <h5
+                class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+              >
+                Single Vision
+              </h5>
+              <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+                Achieve smooth and seamless vision at any distance with our
+                advanced varifocal glasses, tailored to your needs.
+              </p>
+              <div class="mt-4 flex justify-start space-x-2">
+                <a
+                  href="/bifocal-glasses"
+                  class="rounded-lg border-2 border-gray-400 px-3 py-1 text-center font-medium duration-500 ease-in-out hover:bg-gray-100"
+                  >Shop Now</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ul>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Glide(".glide-explore", {
+      type: "carousel",
+      perView: 1.2,
+      gap: 10,
+      hoverpause: true,
+      animationDuration: 800,
+    }).mount();
+  });
+</script>
+
+<div class="mx-auto hidden px-4 py-8 lg:container md:block">
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
+    <!-- Block 1 -->
+    <div class="flex-none">
+      <div class="block">
+        <div
+          class="mx-auto max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-slate-900"
+        >
+          <div class="relative">
+            <img
+              class="w-full object-cover max-sm:h-56 max-sm:rounded-lg md:rounded-t-lg"
+              src="https://test.s4l.link/media/mf_webp/png/media/wysiwyg/redesign/blue-light-block.webp"
+              alt="Blue-Light Glasses"
+            />
+            <div
+              class="absolute inset-0 block rounded-lg bg-gradient-to-t from-black via-transparent to-transparent md:hidden md:rounded-t-lg"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+            >
+              <h2 class="block text-left text-sm font-bold md:hidden">
+                Blue-Light Glasses
+              </h2>
+              <div class="flex justify-start space-x-3 py-2 md:hidden">
+                <a
+                  href="/bifocal-glasses"
+                  class="rounded-lg border-2 border-white px-2 py-1 text-center text-sm font-medium duration-500 ease-in-out hover:bg-gray-100 md:text-base"
+                  >Shop Blue-light</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="hidden p-5 md:block">
+            <h5
+              class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+            >
+              Blue-Light Glasses
+            </h5>
+            <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+              Achieve smooth and seamless vision at any distance with our
+              advanced varifocal glasses, tailored to your needs.
+            </p>
+            <div class="mt-4 flex justify-start space-x-2">
+              <a
+                href="/bifocal-glasses"
+                class="rounded-lg border-2 border-gray-400 px-3 py-1 text-center font-medium duration-500 ease-in-out hover:bg-gray-100"
+                >Shop Blue-light</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 2 -->
+    <div class="flex-none">
+      <div class="block">
+        <div
+          class="mx-auto max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-slate-900"
+        >
+          <div class="relative">
+            <img
+              class="w-full object-cover max-sm:h-56 max-sm:rounded-lg md:rounded-t-lg"
+              src="https://test.s4l.link/media/mf_webp/png/media/wysiwyg/redesign/coatings-block.webp"
+              alt="Coatings"
+            />
+            <div
+              class="absolute inset-0 block rounded-lg bg-gradient-to-t from-black via-transparent to-transparent md:hidden md:rounded-t-lg"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+            >
+              <h2 class="block text-left text-sm font-bold md:hidden">
+                Coatings
+              </h2>
+              <div class="flex justify-start space-x-3 py-2 md:hidden">
+                <a
+                  href="/bifocal-glasses"
+                  class="rounded-lg border-2 border-white px-2 py-1 text-center text-sm font-medium duration-500 ease-in-out hover:bg-gray-100 md:text-base"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="hidden p-5 md:block">
+            <h5
+              class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+            >
+              Bifocal Glasses
+            </h5>
+            <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+              Achieve smooth and seamless vision at any distance with our
+              advanced varifocal glasses, tailored to your needs.
+            </p>
+            <div class="mt-4 flex justify-start space-x-2">
+              <a
+                href="/bifocal-glasses"
+                class="rounded-lg border-2 border-gray-400 px-3 py-1 text-center font-medium duration-500 ease-in-out hover:bg-gray-100"
+                >Shop Bifocals</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 3 -->
+    <div class="flex-none">
+      <div class="block">
+        <div
+          class="mx-auto max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-slate-900"
+        >
+          <div class="relative">
+            <img
+              class="w-full object-cover max-sm:h-56 max-sm:rounded-lg md:rounded-t-lg"
+              src="https://test.s4l.link/media/mf_webp/png/media/wysiwyg/redesign/mirrors-block.webp"
+              alt="Mirrors & Tints"
+            />
+            <div
+              class="absolute inset-0 block rounded-lg bg-gradient-to-t from-black via-transparent to-transparent md:hidden md:rounded-t-lg"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+            >
+              <h2 class="block text-left text-sm font-bold md:hidden">
+                Mirrors & Tints
+              </h2>
+              <div class="flex justify-start space-x-3 py-2 md:hidden">
+                <a
+                  href="/bifocal-glasses"
+                  class="rounded-lg border-2 border-white px-2 py-1 text-center text-sm font-medium duration-500 ease-in-out hover:bg-gray-100 md:text-base"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="hidden p-5 md:block">
+            <h5
+              class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+            >
+              Mirrors & Tints
+            </h5>
+            <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+              Achieve smooth and seamless vision at any distance with our
+              advanced varifocal glasses, tailored to your needs.
+            </p>
+            <div class="mt-4 flex justify-start space-x-2">
+              <a
+                href="/bifocal-glasses"
+                class="rounded-lg border-2 border-gray-400 px-3 py-1 text-center font-medium duration-500 ease-in-out hover:bg-gray-100"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 4 -->
+    <div class="flex-none">
+      <div class="block">
+        <div
+          class="mx-auto max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-slate-900"
+        >
+          <div class="relative">
+            <img
+              class="w-full object-cover max-sm:h-56 max-sm:rounded-lg md:rounded-t-lg"
+              src="https://test.s4l.link/media/mf_webp/png/media/wysiwyg/redesign/single-vision-block.webp"
+              alt="Single Vision"
+            />
+            <div
+              class="absolute inset-0 block rounded-lg bg-gradient-to-t from-black via-transparent to-transparent md:hidden md:rounded-t-lg"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+            >
+              <h2 class="block text-left text-sm font-bold md:hidden">
+                Single Vision
+              </h2>
+              <div class="flex justify-start space-x-3 py-2 md:hidden">
+                <a
+                  href="/bifocal-glasses"
+                  class="rounded-lg border-2 border-white px-2 py-1 text-center text-sm font-medium duration-500 ease-in-out hover:bg-gray-100 md:text-base"
+                  >Shop Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="hidden p-5 md:block">
+            <h5
+              class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+            >
+              Single Vision
+            </h5>
+            <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+              Achieve smooth and seamless vision at any distance with our
+              advanced varifocal glasses, tailored to your needs.
+            </p>
+            <div class="mt-4 flex justify-start space-x-2">
+              <a
+                href="/bifocal-glasses"
+                class="rounded-lg border-2 border-gray-400 px-3 py-1 text-center font-medium duration-500 ease-in-out hover:bg-gray-100"
+                >Shop Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

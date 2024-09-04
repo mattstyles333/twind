@@ -1,0 +1,527 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonial Slider</title>
+  <link href="../output.css" rel="stylesheet" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
+  <!-- Updated the Alpine.js CDN link to the correct version for browsers -->
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"
+  ></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+</head>
+
+<section
+  class="mx-auto w-full px-3 py-8 md:container lg:px-32"
+  id="faq"
+  x-data="{ selected: 0, showAll: false }"
+>
+  <h2
+    class="mb-8 text-left text-3xl font-bold tracking-tight text-slate-800 dark:text-gray-300 md:text-4xl"
+  >
+    Frequently Asked Questions
+  </h2>
+  <div class="">
+    <div
+      class="dark:bg-p mx-auto border-gray-200 bg-white dark:text-gray-200 md:border"
+    >
+      <ul class="shadow-box">
+        <li
+          class="relative border-b border-gray-200"
+          x-show="showAll || selected < 5"
+        >
+          <button
+            type="button"
+            class="w-full px-4 py-6 text-left md:px-8"
+            @click="selected !== 1 ? selected = 1 : selected = null"
+          >
+            <div class="flex items-center justify-between">
+              <span class="pr-2">How are your prices so low? </span>
+              <div>
+                <span
+                  class="block text-lg transition-all duration-700"
+                  :class="selected === 1 ? 'rotate-90' : ''"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="#000000"
+                    version="1.1"
+                    id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 330 330"
+                    xml:space="preserve"
+                  >
+                    <path
+                      class="dark:fill-gray-200"
+                      id="XMLID_225_"
+                      d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <div
+            class="relative max-h-0 overflow-hidden transition-all duration-700"
+            x-ref="container1"
+            x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+          >
+            <div class="p-6">
+              <p>
+                We negotiate, purchase and stock frames in large quantities and
+                pass the savings onto you.
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li
+          class="relative border-b border-gray-200"
+          x-show="showAll || selected < 5"
+        >
+          <button
+            type="button"
+            class="w-full px-4 py-6 text-left md:px-8"
+            @click="selected !== 2 ? selected = 2 : selected = null"
+          >
+            <div class="flex items-center justify-between">
+              <span class="pr-2"> Do you sell prescription sunglasses? </span>
+              <span
+                class="block text-lg transition-all duration-700"
+                :class="selected === 2 ? 'rotate-90' : ''"
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="#000000"
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 330 330"
+                  xml:space="preserve"
+                >
+                  <path
+                    class="dark:fill-gray-200"
+                    id="XMLID_225_"
+                    d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </button>
+
+          <div
+            class="relative max-h-0 overflow-hidden transition-all duration-700"
+            x-ref="container2"
+            x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
+          >
+            <div class="p-6">
+              <p>
+                Yes, we specialise in
+                <a href="/sunglasses" class="text-link"
+                  >prescription sunglasses</a
+                >, in fact any frames you come across on the site can be
+                customised with nearly any lenses- so a pair of glasses can be
+                transformed into sunglasses or vice versa. We pride ourselves on
+                offering the largest range of lenses including 9 prescription
+                mirror colours!
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li
+          class="relative border-b border-gray-200"
+          x-show="showAll || selected < 5"
+        >
+          <button
+            type="button"
+            class="w-full px-4 py-6 text-left md:px-8"
+            @click="selected !== 3 ? selected = 3 : selected = null"
+          >
+            <div class="flex items-center justify-between">
+              <span class="pr-2"> Do you offer varifocal lenses? </span>
+              <span
+                class="block text-lg transition-all duration-700"
+                :class="selected === 3 ? 'rotate-90' : ''"
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="#000000"
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 330 330"
+                  xml:space="preserve"
+                >
+                  <path
+                    class="dark:fill-gray-200"
+                    id="XMLID_225_"
+                    d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </button>
+
+          <div
+            class="relative max-h-0 overflow-hidden transition-all duration-700"
+            x-ref="container3"
+            x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
+          >
+            <div class="p-6">
+              <p>
+                We have a wide range of varifocal lenses from standard to elite
+                that are dramatically less expensive without needing to
+                compromise on quality. We have a proprietary process for
+                measuring and fitting the perfect pair of varifocal glasses
+                without needing to leave the comfort of your own home. If for
+                any reason you cannot find a specific lens please contact us,
+                and our lens experts will be happy to help. As always our
+                varifocals are also covered by our 100% satisfaction guarantee!
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li
+          class="relative border-b border-gray-200"
+          x-show="showAll || selected < 5"
+        >
+          <button
+            type="button"
+            class="w-full px-4 py-6 text-left md:px-8"
+            @click="selected !== 4 ? selected = 4 : selected = null"
+          >
+            <div class="flex items-center justify-between">
+              <span class="pr-2">
+                Roughly how long does it take to deliver my glasses?
+              </span>
+              <div>
+                <span
+                  class="block text-lg transition-all duration-700"
+                  :class="selected === 4 ? 'rotate-90' : ''"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="#000000"
+                    version="1.1"
+                    id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 330 330"
+                    xml:space="preserve"
+                  >
+                    <path
+                      class="dark:fill-gray-200"
+                      id="XMLID_225_"
+                      d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <div
+            class="relative max-h-0 overflow-hidden transition-all duration-700"
+            x-ref="container4"
+            x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
+          >
+            <div class="p-6">
+              <p>
+                The manufacturing time for your glasses varies depending on the
+                specific frame and lenses selected - read more about our
+                estimates
+                <a href="/dispatch-times" class="text-link">here</a>. Once we
+                receive the appropriate frame and lenses, they are usually
+                assembled, checked, and dispatched the same day. Please monitor
+                your email for order updates as we pride ourselves on keeping
+                you well informed throughout the whole process.
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li class="relative border-b border-gray-200" x-show="showAll">
+          <button
+            type="button"
+            class="w-full px-4 py-6 text-left md:px-8"
+            @click="selected !== 5 ? selected = 5 : selected = null"
+          >
+            <div class="flex items-center justify-between">
+              <span class="pr-2">How do I enter my prescription?</span>
+              <div>
+                <span
+                  class="block text-lg transition-all duration-700"
+                  :class="selected === 5 ? 'rotate-90' : ''"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="#000000"
+                    version="1.1"
+                    id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 330 330"
+                    xml:space="preserve"
+                  >
+                    <path
+                      class="dark:fill-gray-200"
+                      id="XMLID_225_"
+                      d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <div
+            class="relative max-h-0 overflow-hidden transition-all duration-700"
+            x-ref="container5"
+            x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''"
+          >
+            <div class="p-6">
+              <p>
+                If you are unsure about how to enter your prescription give us a
+                call here
+                <a href="tel:01516326611" class="text-link">0151 632 6611</a>
+                and our optical service advisors can help. Prescriptions don't
+                need to be difficult. We offer 4 different methods of adding
+                your prescription to your lenses. Our opticians double check and
+                verify every order for accuracy. Read more
+                <a href="/about-your-prescription" class="text-link">here</a>
+                to learn more about how to decipher your prescription.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="relative border-b border-gray-200" x-show="showAll">
+          <button
+            type="button"
+            class="w-full px-4 py-6 text-left md:px-8"
+            @click="selected !== 6 ? selected = 6 : selected = null"
+          >
+            <div class="flex items-center justify-between">
+              <span class="pr-2">How do I know they will fit?</span>
+              <div>
+                <span
+                  class="block text-lg transition-all duration-700"
+                  :class="selected === 6 ? 'rotate-90' : ''"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="#000000"
+                    version="1.1"
+                    id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 330 330"
+                    xml:space="preserve"
+                  >
+                    <path
+                      class="dark:fill-gray-200"
+                      id="XMLID_225_"
+                      d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <div
+            class="relative max-h-0 overflow-hidden transition-all duration-700"
+            x-ref="container6"
+            x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''"
+          >
+            <div class="p-6">
+              <p>
+                We provide detailed frame measurements such as lens width,
+                bridge size, and temple length for every single frame. You can
+                compare these with the size imprinted on the inside arm of your
+                current specs - read more
+                <a href="/choosing-the-right-size-glasses" class="text-link"
+                  >here</a
+                >
+                about how to choose the perfect size glasses. As always our 100%
+                satisfaction guarantee applies.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="relative border-b border-gray-200" x-show="showAll">
+          <button
+            type="button"
+            class="w-full px-4 py-6 text-left md:px-8"
+            @click="selected !== 7 ? selected = 7 : selected = null"
+          >
+            <div class="flex items-center justify-between">
+              <span class="pr-2">How do I earn reward points?</span>
+              <div>
+                <span
+                  class="block text-lg transition-all duration-700"
+                  :class="selected === 7 ? 'rotate-90' : ''"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="#000000"
+                    version="1.1"
+                    id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 330 330"
+                    xml:space="preserve"
+                  >
+                    <path
+                      class="dark:fill-gray-200"
+                      id="XMLID_225_"
+                      d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <div
+            class="relative max-h-0 overflow-hidden transition-all duration-700"
+            x-ref="container7"
+            x-bind:style="selected == 7 ? 'max-height: ' + $refs.container7.scrollHeight + 'px' : ''"
+          >
+            <div class="p-6">
+              <p>
+                When you shop at Spex4less, your spending turns into rewards,
+                these can be applied to further purchases.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="relative border-b border-gray-200" x-show="showAll">
+          <button
+            type="button"
+            class="w-full px-4 py-6 text-left md:px-8"
+            @click="selected !== 8 ? selected = 8 : selected = null"
+          >
+            <div class="flex items-center justify-between">
+              <span class="pr-2">What's your return policy?</span>
+              <div>
+                <span
+                  class="block text-lg transition-all duration-700"
+                  :class="selected === 8 ? 'rotate-90' : ''"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="#000000"
+                    version="1.1"
+                    id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 330 330"
+                    xml:space="preserve"
+                  >
+                    <path
+                      class="dark:fill-gray-200"
+                      id="XMLID_225_"
+                      d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <div
+            class="relative max-h-0 overflow-hidden transition-all duration-700"
+            x-ref="container8"
+            x-bind:style="selected == 8 ? 'max-height: ' + $refs.container8.scrollHeight + 'px' : ''"
+          >
+            <div class="p-6">
+              <p>
+                We offer a 100% satisfaction guarantee on all purchases & a 12
+                month frame warranty. Simply notify us within 7 days of receipt
+                and return your glasses to us within 30 days of the shipped date
+                to take advantage of this unique no quibble money-back
+                guarantee. For a full 12 months from the dispatch date we will
+                also repair or replace any frames that may develop a
+                manufacturing fault. Read more about it
+                <a href="/exchange-or-return" class="text-link">here</a>
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="relative border-b border-gray-200" x-show="showAll">
+          <button
+            type="button"
+            class="w-full px-4 py-6 text-left md:px-8"
+            @click="selected !== 9 ? selected = 9 : selected = null"
+          >
+            <div class="flex items-center justify-between">
+              <span class="pr-2">What payment methods do you take? </span>
+              <div>
+                <span
+                  class="block text-lg transition-all duration-700"
+                  :class="selected === 9 ? 'rotate-90' : ''"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="#000000"
+                    version="1.1"
+                    id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 330 330"
+                    xml:space="preserve"
+                  >
+                    <path
+                      class="dark:fill-gray-200"
+                      id="XMLID_225_"
+                      d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <div
+            class="relative max-h-0 overflow-hidden transition-all duration-700"
+            x-ref="container9"
+            x-bind:style="selected == 9 ? 'max-height: ' + $refs.container9.scrollHeight + 'px' : ''"
+          >
+            <div class="p-6">
+              <p>
+                We accept a variety of secure payment methods for your
+                convenience. You can make purchases using major credit cards
+                such as Visa, MasterCard, and American Express. Additionally, we
+                also accept payments through PayPal, Apple Pay, Google Pay,
+                Klarna and Revolut.
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <!-- Show More Button -->
+    </div>
+    <div class="mt-4">
+      <button
+        @click="showAll = !showAll"
+        class="bg-s hover:bg-p w-full rounded py-2 text-center text-white duration-500 ease-in-out md:w-1/4"
+        x-text="showAll ? 'Show Less' : 'Show More'"
+      ></button>
+    </div>
+  </div>
+</section>

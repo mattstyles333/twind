@@ -1,30 +1,399 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brand Slider</title>
+  <title>Testimonial Slider</title>
   <link href="../output.css" rel="stylesheet" />
 
-  <!-- Include Glide.js and Tailwind CSS -->
   <link
     rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.core.min.css"
-  />
-  <link
-    href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css"
-    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
   />
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
-  <!-- Alpine.js for additional functionality (if needed) -->
+  <!-- Updated the Alpine.js CDN link to the correct version for browsers -->
   <script
     defer
     src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"
   ></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
 </head>
 
-<div class="mx-auto hidden justify-center space-x-4 py-6 md:flex">
+<div class="glide">
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      <li class="glide__slide relative">
+        <!-- For mobile devices (default) -->
+        <img
+          src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/hero-banner-tall.webp"
+          alt="Slide Image"
+          class="block w-full md:hidden"
+        />
+
+        <!-- For larger screens (medium and up) -->
+        <img
+          src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/hero-banner.webp"
+          alt="Slide Image"
+          class="hidden w-full md:block"
+        />
+
+        <div
+          class="absolute inset-y-0 flex flex-col items-center text-center max-sm:w-full md:right-0 md:items-center md:justify-center md:pr-10 md:text-left lg:space-y-4 xl:pr-20 2xl:pr-48"
+        >
+          <h1
+            class="p-2 px-8 text-4xl font-bold text-white md:text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
+          >
+            Prescription Glasses Online
+          </h1>
+          <h2
+            class="p-2 px-8 text-lg font-semibold text-white md:text-lg lg:text-xl xl:text-3xl 2xl:text-4xl"
+          >
+            Complete Prescription Glasses From Just £9.97!
+          </h2>
+          <div
+            class="flex space-x-4 max-sm:absolute max-sm:bottom-10 md:flex-row"
+          >
+            <a
+              href="/glasses"
+              class="bg-s w-40 rounded px-4 py-2 text-center text-sm font-bold text-white lg:w-56 lg:text-xl"
+            >
+              Shop Glasses
+            </a>
+            <a
+              href="/sunglasses"
+              class="bg-s w-40 rounded px-4 py-2 text-center text-sm font-bold text-white lg:w-56 lg:text-xl"
+            >
+              Shop Sunglasses
+            </a>
+          </div>
+          <a
+            href="#"
+            class="mt-4 text-xl font-semibold text-white underline max-sm:absolute max-sm:bottom-2 md:text-lg lg:text-xl"
+          >
+            Try Our Style Finder Quiz
+          </a>
+        </div>
+      </li>
+
+      <li class="glide__slide relative">
+        <!-- For mobile devices (default) -->
+        <img
+          src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/hero-banner-slide3-tall.webp"
+          alt="Slide Image"
+          class="block w-full md:hidden"
+        />
+
+        <!-- For larger screens (medium and up) -->
+        <img
+          src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/hero-banner-slide3.webp"
+          alt="Slide Image"
+          class="hidden w-full md:block"
+        />
+
+        <div
+          class="absolute inset-y-0 flex flex-col items-center text-center max-sm:w-full md:right-0 md:items-center md:justify-center md:pr-10 md:text-left lg:space-y-4 xl:pr-20 2xl:pr-48"
+        >
+          <div
+            class="p-2 px-8 text-4xl font-bold text-white md:text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
+          >
+            Prescription Sports Glasses
+          </div>
+          <div
+            class="p-2 px-8 text-lg font-semibold text-white md:text-lg lg:text-xl xl:text-3xl 2xl:text-4xl"
+          >
+            Optimised Vision for Every Sport!
+          </div>
+          <div
+            class="flex space-x-4 max-sm:absolute max-sm:bottom-10 md:flex-row"
+          >
+            <a
+              href="/sports"
+              class="bg-s w-40 rounded px-4 py-2 text-center text-sm font-bold text-white lg:w-56 lg:text-xl"
+            >
+              Sports Glasses
+            </a>
+            <a
+              href="/sports-sunglasses"
+              class="bg-s w-40 rounded px-4 py-2 text-center text-sm font-bold text-white lg:w-56 lg:text-xl"
+            >
+              Sports Sunglasses
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="glide__slide relative">
+        <!-- For mobile devices (default) -->
+        <img
+          src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/hero-banner-slide4-tall.webp"
+          alt="Slide Image"
+          class="block w-full md:hidden"
+        />
+
+        <!-- For larger screens (medium and up) -->
+        <img
+          src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/hero-banner-slide4.webp"
+          alt="Slide Image"
+          class="hidden w-full md:block"
+        />
+
+        <div
+          class="absolute inset-y-0 flex flex-col items-center text-center max-sm:w-full md:right-0 md:items-center md:justify-center md:pr-10 md:text-left lg:space-y-4 xl:pr-20 2xl:pr-48"
+        >
+          <div
+            class="p-2 px-8 text-4xl font-bold text-white md:text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
+          >
+            Reglaze Your Glasses
+          </div>
+          <div
+            class="p-2 px-8 text-lg font-semibold text-white md:text-lg lg:text-xl xl:text-3xl 2xl:text-4xl"
+          >
+            New Lenses Starting at £34.97!
+          </div>
+
+          <div
+            class="flex space-x-4 max-sm:absolute max-sm:bottom-10 md:flex-row"
+          >
+            <a
+              href="/reglaze-customer-frames"
+              class="bg-s w-40 rounded px-4 py-2 text-center text-sm font-bold text-white lg:w-60 lg:text-xl"
+            >
+              Reglaze Glasses
+            </a>
+            <a
+              href="/reglaze-sunglasses"
+              class="bg-s w-40 rounded px-4 py-2 text-center text-sm font-bold text-white lg:w-60 lg:text-xl"
+            >
+              Reglaze Sunglasses
+            </a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Navigation -->
+  <div class="glide__arrows" data-glide-el="controls">
+    <button
+      class="glide__arrow glide__arrow--left absolute left-4 top-1/2 z-10 -translate-y-1/2 transform rounded-full bg-white bg-opacity-75 px-3 text-2xl font-bold text-gray-800 shadow-lg"
+      data-glide-dir="<"
+    >
+      ‹
+    </button>
+    <button
+      class="glide__arrow glide__arrow--right absolute right-4 top-1/2 z-10 -translate-y-1/2 transform rounded-full bg-white bg-opacity-75 px-3 text-2xl font-bold text-gray-800 shadow-lg"
+      data-glide-dir=">"
+    >
+      ›
+    </button>
+  </div>
+</div>
+<script>
+  document.addEventListener("alpine:init", () => {
+    new Glide(".glide", {
+      type: "carousel",
+      perView: 1,
+      focusAt: "center",
+      gap: 0,
+      autoplay: 0, // Duration each slide stays before transitioning
+      hoverpause: true,
+      animationDuration: 1500, // Duration of the slide transition in milliseconds
+    }).mount();
+  });
+</script>
+<div
+  data-content-type="html"
+  data-appearance="default"
+  data-element="main"
+  data-pb-style="R5H60TT"
+  data-decoded="true"
+>
+  <div
+    class="hidden bg-gray-200 px-4 py-3 dark:bg-slate-900 dark:text-gray-300 md:block"
+  >
+    <!-- Left side -->
+    <div
+      class="mx-auto flex items-center justify-between"
+      x-data="{ hovered: null }"
+    >
+      <div
+        class="mx-auto flex items-center space-x-2 text-left text-sm font-medium md:space-x-4 md:text-sm lg:space-x-6 lg:text-sm xl:space-x-8 xl:text-sm 2xl:text-lg"
+      >
+        <!-- Point 1: 12 Month Warranty -->
+        <div
+          class="group relative font-medium transition-opacity duration-500 ease-in-out dark:text-gray-300"
+          @mouseenter="hovered = 1"
+          @mouseleave="hovered = null"
+          :class="{ 'opacity-100': hovered === 1, 'opacity-30': hovered && hovered !== 1 }"
+        >
+          12 Month Warranty
+          <!-- Additional text on hover -->
+          <div
+            x-show="hovered === 1"
+            class="absolute left-0 top-full mt-2 w-64 rounded bg-white p-2 p-4 text-base text-black shadow-lg transition-opacity transition-transform duration-500 ease-in-out dark:bg-gray-800 dark:text-white"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform translate-y-1"
+            x-transition:enter-end="opacity-100 transform translate-y-0"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 transform translate-y-0"
+            x-transition:leave-end="opacity-0 transform translate-y-1"
+          >
+            Enjoy a 12-month warranty on all our products, ensuring long-lasting
+            quality and peace of mind.
+          </div>
+        </div>
+
+        <!-- Circle separator -->
+        <span class="mx-2 h-2 w-2 rounded-full bg-gray-400 md:block"></span>
+
+        <!-- Point 2: 100% Satisfaction Guarantee -->
+        <div
+          class="group relative font-medium transition-opacity duration-500 ease-in-out dark:text-gray-300"
+          @mouseenter="hovered = 2"
+          @mouseleave="hovered = null"
+          :class="{ 'opacity-100': hovered === 2, 'opacity-30': hovered && hovered !== 2 }"
+        >
+          100% Satisfaction Guarantee
+          <!-- Additional text on hover -->
+          <div
+            x-show="hovered === 2"
+            class="absolute left-0 top-full mt-2 w-64 rounded bg-white p-2 p-4 text-base text-black shadow-lg transition-opacity transition-transform duration-500 ease-in-out dark:bg-gray-800 dark:text-white"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform translate-y-1"
+            x-transition:enter-end="opacity-100 transform translate-y-0"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 transform translate-y-0"
+            x-transition:leave-end="opacity-0 transform translate-y-1"
+          >
+            We are dedicated to providing the best service. If you're not
+            satisfied, we will make it right!
+          </div>
+        </div>
+
+        <!-- Circle separator -->
+        <span class="mx-2 h-2 w-2 rounded-full bg-gray-400 md:block"></span>
+
+        <!-- Point 3: Up to 75% Off the High-Street -->
+        <div
+          class="group relative font-medium transition-opacity duration-500 ease-in-out dark:text-gray-300"
+          @mouseenter="hovered = 3"
+          @mouseleave="hovered = null"
+          :class="{ 'opacity-100': hovered === 3, 'opacity-30': hovered && hovered !== 3 }"
+        >
+          Up to 75% Off the High-Street
+          <!-- Additional text on hover -->
+          <div
+            x-show="hovered === 3"
+            class="absolute left-0 top-full mt-2 w-64 rounded bg-white p-2 p-4 text-base text-black shadow-lg transition-opacity transition-transform duration-500 ease-in-out dark:bg-gray-800 dark:text-white"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform translate-y-1"
+            x-transition:enter-end="opacity-100 transform translate-y-0"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 transform translate-y-0"
+            x-transition:leave-end="opacity-0 transform translate-y-1"
+          >
+            Save big with discounts of up to 75% compared to high-street prices
+            on our top-quality products.
+          </div>
+        </div>
+
+        <!-- Circle separator for extra elements (like icons) on larger screens -->
+        <span
+          class="mx-2 hidden h-2 w-2 rounded-full bg-gray-400 xl:block"
+        ></span>
+
+        <!-- Point 4: Buy Now, Pay Later -->
+        <div
+          class="group relative hidden items-center space-x-4 font-medium transition-opacity duration-500 ease-in-out dark:text-gray-300 xl:flex"
+          @mouseenter="hovered = 4"
+          @mouseleave="hovered = null"
+          :class="{ 'opacity-100': hovered === 4, 'opacity-30': hovered && hovered !== 4 }"
+        >
+          Buy Now, Pay Later
+          <!-- Additional text on hover -->
+          <div
+            x-show="hovered === 4"
+            class="absolute left-0 top-full mt-2 w-64 rounded bg-white p-2 p-4 text-base text-black shadow-lg transition-opacity transition-transform duration-500 ease-in-out dark:bg-gray-800 dark:text-white"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform translate-y-1"
+            x-transition:enter-end="opacity-100 transform translate-y-0"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 transform translate-y-0"
+            x-transition:leave-end="opacity-0 transform translate-y-1"
+          >
+            Take advantage of our flexible payment options and enjoy your
+            purchase now while paying later.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mx-auto flex items-center bg-gray-300 py-2 dark:bg-slate-900 md:hidden"
+  >
+    <a
+      href="/customer-reviews"
+      class="mx-auto flex items-center justify-center space-x-4"
+      target="_blank"
+    >
+      <svg
+        width="80"
+        height="30"
+        viewBox="585 193 1639 283"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="fill-black dark:fill-white"
+      >
+        <path
+          d="M585.13 193.137H810.087V234.946H721.512V470.632H672.963V234.946H584.759L585.13 193.137ZM800.451 269.725H841.959V308.575H842.7C844.182 303.025 846.777 297.845 850.483 292.665C854.189 287.485 858.636 282.675 864.195 278.605C869.384 274.165 875.313 270.835 881.984 268.245C888.284 265.655 894.955 264.175 901.626 264.175C906.815 264.175 910.521 264.545 912.374 264.545C914.227 264.915 916.45 265.285 918.303 265.285V307.835C915.339 307.095 912.003 306.725 908.668 306.355C905.332 305.985 902.367 305.615 899.032 305.615C891.62 305.615 884.578 307.095 877.907 310.055C871.237 313.014 865.677 317.454 860.489 323.004C855.671 328.924 851.595 335.954 848.63 344.464C845.665 352.974 844.182 362.964 844.182 374.063V469.522H799.71L800.451 269.725ZM1078.4 470.632V442.512H1077.66C1072.1 452.872 1063.95 460.642 1053.2 466.932C1042.46 473.222 1031.34 476.182 1020.22 476.182C993.907 476.182 974.635 469.892 962.776 456.572C950.917 443.622 944.987 423.642 944.987 397.373V269.725H989.459V392.933C989.459 410.693 992.795 423.272 999.836 430.302C1006.51 437.702 1016.14 441.402 1028.37 441.402C1037.64 441.402 1045.42 439.922 1051.72 436.962C1058.02 434.002 1063.21 430.302 1066.92 425.492C1070.99 420.683 1073.59 414.763 1075.44 408.103C1077.29 401.443 1078.03 394.043 1078.03 386.273V269.725H1122.51V470.632H1078.4ZM1197.74 406.253C1199.22 419.202 1204.04 428.082 1212.56 433.632C1221.09 438.812 1231.46 441.402 1243.32 441.402C1247.4 441.402 1252.22 441.032 1257.41 440.292C1262.59 439.552 1267.78 438.442 1272.23 436.592C1277.05 434.742 1280.75 432.152 1283.72 428.452C1286.68 424.752 1288.17 420.313 1287.8 414.763C1287.43 409.213 1285.57 404.403 1281.5 400.703C1277.42 397.003 1272.6 394.413 1266.67 391.823C1260.74 389.603 1253.7 387.753 1245.92 386.273C1238.14 384.793 1230.35 382.943 1222.2 381.093C1214.05 379.243 1205.89 377.023 1198.11 374.433C1190.33 371.843 1183.66 368.513 1177.36 363.704C1171.43 359.264 1166.24 353.714 1162.9 346.684C1159.2 339.654 1157.34 331.514 1157.34 321.154C1157.34 310.054 1159.94 301.175 1165.5 293.775C1170.68 286.375 1177.73 280.455 1185.88 276.015C1194.03 271.575 1203.3 268.245 1213.3 266.395C1223.31 264.545 1232.95 263.805 1241.84 263.805C1252.22 263.805 1262.22 264.915 1271.49 267.135C1280.75 269.355 1289.65 272.685 1297.06 277.865C1304.84 282.675 1311.14 289.335 1315.96 297.105C1321.15 304.875 1324.12 314.494 1325.6 325.594H1279.27C1277.05 314.864 1272.23 307.835 1264.82 304.135C1257.04 300.435 1248.51 298.585 1238.51 298.585C1235.54 298.585 1231.46 298.955 1227.39 299.325C1222.94 300.065 1219.23 300.805 1215.16 302.285C1211.45 303.765 1208.12 305.985 1205.52 308.575C1202.93 311.165 1201.45 314.864 1201.45 319.304C1201.45 324.854 1203.3 328.924 1207 332.254C1210.71 335.584 1215.53 338.174 1221.83 340.764C1227.76 342.984 1234.8 344.834 1242.58 346.314C1250.36 347.794 1258.52 349.644 1266.67 351.494C1274.82 353.344 1282.61 355.564 1290.39 358.154C1298.17 360.744 1305.21 364.074 1311.14 368.884C1317.07 373.323 1322.26 378.873 1325.97 385.533C1329.67 392.193 1331.53 400.703 1331.53 410.323C1331.53 422.162 1328.93 432.152 1323.37 440.662C1317.81 448.802 1310.77 455.832 1302.25 461.012C1293.73 466.192 1283.72 469.892 1273.34 472.482C1262.59 474.702 1252.22 476.182 1241.84 476.182C1229.24 476.182 1217.38 474.702 1206.63 471.742C1195.89 468.782 1186.25 464.342 1178.47 458.792C1170.68 452.872 1164.38 445.842 1159.94 436.962C1155.49 428.452 1152.9 418.093 1152.53 405.883H1197.37V406.253H1197.74ZM1344.13 269.725H1377.85V209.046H1422.33V269.355H1462.35V302.285H1422.33V409.583C1422.33 414.393 1422.7 418.093 1423.07 421.792C1423.44 425.122 1424.55 428.082 1425.66 430.302C1427.14 432.522 1429.37 434.372 1431.96 435.482C1434.93 436.592 1438.63 437.332 1443.82 437.332C1446.79 437.332 1450.12 437.332 1453.09 436.962C1456.05 436.592 1459.39 436.222 1462.35 435.482V469.892C1457.53 470.632 1452.72 471.002 1447.9 471.372C1443.08 472.112 1438.63 472.112 1433.44 472.112C1421.58 472.112 1412.32 471.002 1405.28 468.782C1398.24 466.562 1392.68 463.232 1388.6 459.162C1384.52 454.722 1381.93 449.542 1380.45 443.252C1378.96 436.962 1378.22 429.192 1377.85 421.052V302.655H1344.13V268.985V269.725ZM1493.48 269.725H1535.36V297.105H1536.1C1542.4 285.265 1550.93 277.125 1562.04 271.945C1573.16 266.765 1585.02 264.175 1598.36 264.175C1614.3 264.175 1628.01 266.765 1639.87 272.685C1651.73 278.235 1661.37 285.635 1669.15 295.625C1676.93 305.245 1682.86 316.714 1686.57 329.664C1690.27 342.614 1692.5 356.674 1692.5 371.103C1692.5 384.793 1690.64 397.743 1687.31 410.323C1683.6 422.902 1678.41 434.372 1671.37 443.992C1664.33 453.612 1655.44 461.382 1644.32 467.302C1633.2 473.221 1620.6 476.182 1605.77 476.182C1599.47 476.182 1592.8 475.442 1586.5 474.332C1580.2 473.222 1573.9 471.372 1567.97 468.782C1562.04 466.192 1556.48 462.862 1551.67 458.792C1546.48 454.722 1542.4 449.912 1539.07 444.732H1538.32V545H1493.85V269.725H1493.48ZM1648.76 370.363C1648.76 361.484 1647.65 352.604 1645.06 344.094C1642.84 335.584 1639.13 328.184 1634.31 321.524C1629.49 314.864 1623.56 309.685 1616.89 305.615C1609.85 301.545 1601.7 299.695 1592.8 299.695C1574.27 299.695 1560.19 305.985 1550.55 318.934C1541.29 331.884 1536.47 349.274 1536.47 370.733C1536.47 381.093 1537.58 390.343 1540.18 398.853C1542.77 407.363 1546.11 414.763 1551.3 421.052C1556.11 427.342 1562.04 432.152 1569.08 435.852C1576.13 439.552 1583.91 441.402 1593.17 441.402C1603.55 441.402 1611.7 439.182 1618.75 435.112C1625.79 431.042 1631.35 425.492 1636.16 419.202C1640.61 412.543 1643.95 405.143 1645.8 396.633C1647.65 387.753 1648.76 379.243 1648.76 370.363ZM1726.96 193.137H1771.43V234.946H1726.96V193.137ZM1726.96 269.725H1771.43V470.632H1726.96V269.725ZM1811.09 193.137H1855.56V470.632H1811.09V193.137ZM1991.2 476.182C1975.27 476.182 1960.81 473.592 1948.21 468.042C1935.61 462.492 1925.24 455.462 1916.34 446.212C1907.82 436.962 1901.15 425.492 1896.7 412.543C1892.25 399.593 1889.66 385.163 1889.66 369.993C1889.66 354.824 1891.88 340.764 1896.7 327.814C1901.15 314.864 1907.82 303.765 1916.34 294.145C1924.87 284.895 1935.61 277.495 1948.21 272.315C1960.81 267.135 1975.27 264.175 1991.2 264.175C2007.14 264.175 2021.59 266.765 2034.19 272.315C2046.79 277.495 2057.17 284.895 2066.07 294.145C2074.59 303.395 2081.26 314.864 2085.71 327.814C2090.15 340.764 2092.75 354.824 2092.75 369.993C2092.75 385.533 2090.53 399.593 2085.71 412.543C2080.89 425.492 2074.59 436.592 2066.07 446.212C2057.54 455.462 2046.79 462.862 2034.19 468.042C2021.59 473.222 2007.51 476.182 1991.2 476.182ZM1991.2 441.032C2000.84 441.032 2009.73 438.812 2016.78 434.742C2024.19 430.672 2029.75 425.122 2034.56 418.463C2039.38 411.803 2042.72 404.033 2044.94 395.893C2047.16 387.383 2048.28 378.873 2048.28 369.993C2048.28 361.484 2047.16 352.974 2044.94 344.464C2042.72 335.954 2039.38 328.554 2034.56 321.894C2029.75 315.234 2023.82 310.055 2016.78 305.985C2009.36 301.915 2000.84 299.695 1991.2 299.695C1981.57 299.695 1972.67 301.915 1965.63 305.985C1958.22 310.055 1952.66 315.604 1947.84 321.894C1943.02 328.554 1939.69 335.954 1937.47 344.464C1935.24 352.974 1934.13 361.484 1934.13 369.993C1934.13 378.873 1935.24 387.383 1937.47 395.893C1939.69 404.403 1943.02 411.803 1947.84 418.463C1952.66 425.122 1958.59 430.672 1965.63 434.742C1973.04 439.182 1981.57 441.032 1991.2 441.032ZM2106.09 269.725H2139.82V209.046H2184.29V269.355H2224.31V302.285H2184.29V409.583C2184.29 414.393 2184.66 418.093 2185.03 421.792C2185.4 425.122 2186.51 428.082 2187.62 430.302C2189.11 432.522 2191.33 434.372 2193.92 435.482C2196.89 436.592 2200.59 437.332 2205.78 437.332C2208.75 437.332 2212.08 437.332 2215.05 436.962C2218.01 436.592 2221.35 436.222 2224.31 435.482V469.892C2219.5 470.632 2214.68 471.002 2209.86 471.372C2205.04 472.112 2200.59 472.112 2195.41 472.112C2183.55 472.112 2174.28 471.002 2167.24 468.782C2160.2 466.562 2154.64 463.232 2150.56 459.162C2146.49 454.722 2143.89 449.542 2142.41 443.252C2140.93 436.962 2140.19 429.192 2139.82 421.052V302.655H2106.09V268.985V269.725Z"
+        ></path>
+      </svg>
+      <svg
+        width="100"
+        height="20"
+        viewBox="0 0 512 96"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="items-center justify-center"
+      >
+        <path d="M96 0H0V96H96V0Z" fill="#0091AD"></path>
+        <path d="M200 0H104V96H200V0Z" fill="#0091AD"></path>
+        <path d="M304 0H208V96H304V0Z" fill="#0091AD"></path>
+        <path d="M408 0H312V96H408V0Z" fill="#0091AD"></path>
+        <path d="M512 0H416V96H512V0Z" fill="#0091AD"></path>
+        <path
+          d="M48 64.7L62.6 61L68.7 79.8L48 64.7ZM81.6 40.4H55.9L48 16.2L40.1 40.4H14.4L35.2 55.4L27.3 79.6L48.1 64.6L60.9 55.4L81.6 40.4Z"
+          fill="white"
+        ></path>
+        <path
+          d="M152 64.7L166.6 61L172.7 79.8L152 64.7ZM185.6 40.4H159.9L152 16.2L144.1 40.4H118.4L139.2 55.4L131.3 79.6L152.1 64.6L164.9 55.4L185.6 40.4Z"
+          fill="white"
+        ></path>
+        <path
+          d="M256 64.7L270.6 61L276.7 79.8L256 64.7ZM289.6 40.4H263.9L256 16.2L248.1 40.4H222.4L243.2 55.4L235.3 79.6L256.1 64.6L268.9 55.4L289.6 40.4Z"
+          fill="white"
+        ></path>
+        <path
+          d="M360 64.7L374.6 61L380.7 79.8L360 64.7ZM393.6 40.4H367.9L360 16.2L352.1 40.4H326.4L347.2 55.4L339.3 79.6L360.1 64.6L372.9 55.4L393.6 40.4Z"
+          fill="white"
+        ></path>
+        <path
+          d="M464 64.7L478.6 61L484.7 79.8L464 64.7ZM497.6 40.4H471.9L464 16.2L456.1 40.4H430.4L451.2 55.4L443.3 79.6L464.1 64.6L476.9 55.4L497.6 40.4Z"
+          fill="white"
+        ></path>
+      </svg>
+    </a>
+    <p
+      class="mx-auto justify-center text-center text-lg font-semibold dark:text-gray-200"
+    >
+      28,000+ Reviews
+    </p>
+  </div>
+</div>
+<div class="mx-auto hidden justify-center space-x-4 py-12 md:flex">
   <!-- Individual Brand Buttons -->
   <a
-    class="flex items-center justify-center rounded-full border p-3 text-gray-700 hover:border-gray-400 hover:text-gray-900"
+    class="flex items-center justify-center rounded-full border p-3 text-gray-700 duration-500 ease-in-out hover:border-gray-500 hover:text-gray-900"
     href="/designer-glasses/ray-ban"
   >
     <svg
@@ -56,7 +425,7 @@
     </svg>
   </a>
   <a
-    class="flex items-center justify-center rounded-full border p-3 text-gray-700 hover:border-gray-400 hover:text-gray-900"
+    class="flex items-center justify-center rounded-full border p-3 text-gray-700 duration-500 ease-in-out hover:border-gray-500 hover:text-gray-900"
     href="/designer-glasses/oakley"
   >
     <svg
@@ -76,7 +445,7 @@
     </svg>
   </a>
   <a
-    class="hidden items-center justify-center rounded-full border p-3 text-gray-700 hover:border-gray-400 hover:text-gray-900 md:flex"
+    class="hidden items-center justify-center rounded-full border p-3 text-gray-700 duration-500 ease-in-out hover:border-gray-500 hover:text-gray-900 md:flex"
     href="/designer-glasses/nike"
   >
     <svg
@@ -114,7 +483,7 @@
     </svg>
   </a>
   <a
-    class="hidden items-center justify-center rounded-full border p-3 text-gray-700 hover:border-gray-400 hover:text-gray-900 md:flex"
+    class="hidden items-center justify-center rounded-full border p-3 text-gray-700 duration-500 ease-in-out hover:border-gray-500 hover:text-gray-900 md:flex"
     href="/designer-glasses/tom-ford"
   >
     <svg
@@ -134,7 +503,7 @@
     </svg>
   </a>
   <a
-    class="hidden items-center justify-center rounded-full border p-3 text-gray-700 hover:border-gray-400 hover:text-gray-900 md:flex"
+    class="hidden items-center justify-center rounded-full border p-3 text-gray-700 duration-500 ease-in-out hover:border-gray-500 hover:text-gray-900 md:flex"
     href="/designer-glasses/polaroid"
   >
     <svg
@@ -188,7 +557,7 @@
     </svg>
   </a>
   <a
-    class="hidden items-center justify-center rounded-full border p-3 text-gray-700 hover:border-gray-400 hover:text-gray-900 md:flex"
+    class="hidden items-center justify-center rounded-full border p-3 text-gray-700 duration-500 ease-in-out hover:border-gray-500 hover:text-gray-900 md:flex"
     href="/designer-glasses/superdry"
   >
     <svg
@@ -208,7 +577,7 @@
     </svg>
   </a>
   <a
-    class="hidden items-center justify-center rounded-full border p-3 text-gray-700 hover:border-gray-400 hover:text-gray-900 md:flex"
+    class="hidden items-center justify-center rounded-full border p-3 text-gray-700 duration-500 ease-in-out hover:border-gray-500 hover:text-gray-900 md:flex"
     href="/designer-glasses/hugo-boss"
   >
     <svg
@@ -228,7 +597,7 @@
     </svg>
   </a>
   <a
-    class="hidden items-center justify-center rounded-full border p-3 text-gray-700 hover:border-gray-400 hover:text-gray-900 md:flex"
+    class="hidden items-center justify-center rounded-full border p-3 text-gray-700 duration-500 ease-in-out hover:border-gray-500 hover:text-gray-900 md:flex"
     href="/designer-glasses/dkny"
   >
     <svg
@@ -248,7 +617,7 @@
     </svg>
   </a>
   <a
-    class="hidden items-center justify-center rounded-full border p-3 text-gray-700 hover:border-gray-400 hover:text-gray-900 md:flex"
+    class="hidden items-center justify-center rounded-full border p-3 text-gray-700 duration-500 ease-in-out hover:border-gray-500 hover:text-gray-900 md:flex"
     href="/designer-glasses/tommy-hilfiger"
   >
     <svg
@@ -280,7 +649,7 @@
     </svg>
   </a>
   <a
-    class="flex items-center justify-center rounded-full border p-3 text-gray-700 hover:border-gray-400 hover:text-gray-900"
+    class="flex items-center justify-center rounded-full border p-3 text-gray-700 duration-500 ease-in-out hover:border-gray-500 hover:text-gray-900"
     href="/designer-glasses"
   >
     <p
@@ -290,3 +659,492 @@
     </p>
   </a>
 </div>
+<section class="mx-auto justify-center space-y-3 px-3 pb-6 md:container">
+  <div
+    class="pb-4 text-2xl font-bold capitalize text-slate-800 dark:text-gray-300 md:text-3xl lg:text-center"
+  >
+    Our Staff Picks
+  </div>
+  <!-- Flex container for product cards -->
+  <div class="flex flex-row justify-center gap-8">
+    <!-- Product Card 1 -->
+    <div
+      class="relative flex w-full max-w-xs flex-col justify-center overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md"
+    >
+      <a
+        class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
+        href="#"
+      >
+        <img
+          class="object-cover"
+          src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+          alt="product image"
+        />
+        <span
+          class="absolute left-0 top-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white"
+          >39% OFF</span
+        >
+      </a>
+      <div class="mt-4 px-5 pb-5">
+        <a href="#">
+          <h5 class="text-xl tracking-tight text-slate-900">
+            Nike Air MX Super 2500 - Red
+          </h5>
+        </a>
+        <div class="mb-5 mt-2 flex items-center justify-between">
+          <p>
+            <span class="text-3xl font-bold text-slate-900">$449</span>
+            <span class="text-sm text-slate-900 line-through">$699</span>
+          </p>
+        </div>
+        <a
+          href="#"
+          class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mr-2 h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+            />
+          </svg>
+          Add to cart
+        </a>
+      </div>
+    </div>
+
+    <!-- Product Card 2 -->
+    <div
+      class="relative flex w-full max-w-xs flex-col justify-center overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md"
+    >
+      <a
+        class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
+        href="#"
+      >
+        <img
+          class="object-cover"
+          src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+          alt="product image"
+        />
+        <span
+          class="absolute left-0 top-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white"
+          >39% OFF</span
+        >
+      </a>
+      <div class="mt-4 px-5 pb-5">
+        <a href="#">
+          <h5 class="text-xl tracking-tight text-slate-900">
+            Nike Air MX Super 2500 - Red
+          </h5>
+        </a>
+        <div class="mb-5 mt-2 flex items-center justify-between">
+          <p>
+            <span class="text-3xl font-bold text-slate-900">$449</span>
+            <span class="text-sm text-slate-900 line-through">$699</span>
+          </p>
+        </div>
+        <a
+          href="#"
+          class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mr-2 h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+            />
+          </svg>
+          Add to cart
+        </a>
+      </div>
+    </div>
+
+    <!-- Product Card 3 -->
+    <div
+      class="relative flex w-full max-w-xs flex-col justify-center overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md"
+    >
+      <a
+        class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
+        href="#"
+      >
+        <img
+          class="object-cover"
+          src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+          alt="product image"
+        />
+        <span
+          class="absolute left-0 top-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white"
+          >39% OFF</span
+        >
+      </a>
+      <div class="mt-4 px-5 pb-5">
+        <a href="#">
+          <h5 class="text-xl tracking-tight text-slate-900">
+            Nike Air MX Super 2500 - Red
+          </h5>
+        </a>
+        <div class="mb-5 mt-2 flex items-center justify-between">
+          <p>
+            <span class="text-3xl font-bold text-slate-900">$449</span>
+            <span class="text-sm text-slate-900 line-through">$699</span>
+          </p>
+        </div>
+        <a
+          href="#"
+          class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mr-2 h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+            />
+          </svg>
+          Add to cart
+        </a>
+      </div>
+    </div>
+
+    <!-- Product Card 4 -->
+    <div
+      class="relative flex w-full max-w-xs flex-col justify-center overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md"
+    >
+      <a
+        class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
+        href="#"
+      >
+        <img
+          class="object-cover"
+          src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+          alt="product image"
+        />
+        <span
+          class="absolute left-0 top-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white"
+          >39% OFF</span
+        >
+      </a>
+      <div class="mt-4 px-5 pb-5">
+        <a href="#">
+          <h5 class="text-xl tracking-tight text-slate-900">
+            Nike Air MX Super 2500 - Red
+          </h5>
+        </a>
+        <div class="mb-5 mt-2 flex items-center justify-between">
+          <p>
+            <span class="text-3xl font-bold text-slate-900">$449</span>
+            <span class="text-sm text-slate-900 line-through">$699</span>
+          </p>
+        </div>
+        <a
+          href="#"
+          class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mr-2 h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+            />
+          </svg>
+          Add to cart
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bg-l my-12 px-3 py-8 shadow-inner md:py-12">
+  <div class="pb-4 text-left md:pb-8 md:text-center lg:pb-12">
+    <div
+      class="text-2xl font-bold capitalize text-slate-800 dark:text-gray-300 md:text-3xl"
+    >
+      Check Out Our Featured Categories
+    </div>
+  </div>
+
+  <div
+    x-data="{ hovered: null }"
+    class="mx-auto grid grid-cols-2 gap-4 pb-6 lg:container md:grid-cols-2 md:gap-8 lg:grid-cols-4"
+  >
+    <!-- Card 1 -->
+    <div
+      class="group block transform transition duration-500 ease-out"
+      @mouseenter="hovered = 1"
+      @mouseleave="hovered = null"
+      :class="{ 
+        'hover:-translate-y-2 hover:opacity-100': true, 
+        'opacity-50 translate-y-2': hovered && hovered !== 1,
+        'opacity-100': hovered === 1 || hovered === null
+      }"
+    >
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out dark:border-gray-700 dark:bg-slate-900"
+      >
+        <div class="relative">
+          <img
+            class="w-full object-cover max-sm:h-56 max-sm:rounded-lg md:rounded-t-lg"
+            src="https://test.s4l.link/media/mf_webp/jpg/media/wysiwyg/redesign/single_vision_block_3.webp"
+            alt="Glasses"
+          />
+          <div
+            class="absolute inset-0 block rounded-lg bg-gradient-to-t from-black via-transparent to-transparent md:hidden md:rounded-t-lg"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+          >
+            <h2 class="block text-left text-lg font-bold md:hidden">Glasses</h2>
+            <div class="flex justify-start space-x-3 py-2 md:hidden">
+              <a
+                href="/mens-glasses"
+                class="rounded-lg border-2 border-white px-2 py-1 text-center text-sm font-medium duration-500 ease-in-out hover:bg-gray-100 md:text-base"
+                >Men's</a
+              >
+              <a
+                href="/womens-glasses"
+                class="rounded-lg border-2 border-white px-2 py-1 text-center text-sm font-medium duration-500 ease-in-out hover:bg-gray-100 md:text-base"
+                >Women's</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="hidden py-3 pl-5 pr-2 md:block">
+          <h5
+            class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+          >
+            Glasses
+          </h5>
+          <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+            Explore our wide selection of stylish eyewear to find the perfect
+            pair that complements your look.
+          </p>
+          <div class="mt-4 flex justify-start space-x-2">
+            <a
+              href="/mens-glasses"
+              class="rounded-lg border-2 border-gray-400 px-3 py-1 text-center font-medium duration-500 ease-in-out hover:bg-gray-100"
+              >Men's</a
+            >
+            <a
+              href="/womens-glasses"
+              class="rounded-lg border-2 border-gray-400 px-3 py-1 text-center font-medium duration-500 ease-in-out hover:bg-gray-100"
+              >Women's</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div
+      class="group block transform transition duration-500 ease-out"
+      @mouseenter="hovered = 2"
+      @mouseleave="hovered = null"
+      :class="{ 
+        'hover:-translate-y-2 hover:opacity-100': true, 
+        'opacity-50 translate-y-2': hovered && hovered !== 2,
+        'opacity-100': hovered === 2 || hovered === null
+      }"
+    >
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out dark:border-gray-700 dark:bg-slate-900"
+      >
+        <div class="relative">
+          <img
+            class="w-full object-cover max-sm:h-56 max-sm:rounded-lg md:rounded-t-lg"
+            src="https://test.s4l.link/media/mf_webp/jpg/media/wysiwyg/redesign/prescription_sunglasses_block.webp"
+            alt="Sunglasses"
+          />
+          <div
+            class="absolute inset-0 block bg-gradient-to-t from-black via-transparent to-transparent max-sm:rounded-lg md:hidden md:rounded-t-lg"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+          >
+            <h2 class="block text-left text-lg font-bold md:hidden">
+              Sunglasses
+            </h2>
+            <div class="flex justify-start space-x-3 py-2 md:hidden">
+              <a
+                href="/sunglasses/mens"
+                class="rounded-lg border-2 border-white px-2 py-1 text-center text-sm font-medium duration-500 ease-in-out hover:bg-gray-100 md:text-base"
+                >Men's</a
+              >
+              <a
+                href="/sunglasses/womens"
+                class="rounded-lg border-2 border-white px-2 py-1 text-center text-sm font-medium duration-500 ease-in-out hover:bg-gray-100 md:text-base"
+                >Women's</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="hidden py-3 pl-5 pr-2 md:block">
+          <h5
+            class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+          >
+            Prescription Sunglasses
+          </h5>
+          <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+            Enjoy clear vision and protection from the sun with our prescription
+            sunglasses, perfect for any outdoor adventure.
+          </p>
+          <div class="mt-4 flex justify-start space-x-2">
+            <a
+              href="/sunglasses/mens"
+              class="rounded-lg border-2 border-gray-400 px-3 py-1 text-center font-medium duration-500 ease-in-out hover:bg-gray-100"
+              >Men's</a
+            >
+            <a
+              href="/sunglasses/womens"
+              class="rounded-lg border-2 border-gray-400 px-3 py-1 text-center font-medium duration-500 ease-in-out hover:bg-gray-100"
+              >Women's</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div
+      class="group block transform transition duration-500 ease-out"
+      @mouseenter="hovered = 3"
+      @mouseleave="hovered = null"
+      :class="{ 
+        'hover:-translate-y-2 hover:opacity-100': true, 
+        'opacity-50 translate-y-2': hovered && hovered !== 3,
+        'opacity-100': hovered === 3 || hovered === null
+      }"
+    >
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out dark:border-gray-700 dark:bg-slate-900"
+      >
+        <div class="relative">
+          <img
+            class="w-full object-cover max-sm:h-56 max-sm:rounded-lg md:rounded-t-lg"
+            src="https://test.s4l.link/media/mf_webp/jpg/media/wysiwyg/redesign/varifocal_block2.webp"
+            alt="Varifocal Glasses"
+          />
+          <div
+            class="absolute inset-0 block rounded-lg bg-gradient-to-t from-black via-transparent to-transparent md:hidden md:rounded-t-lg"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+          >
+            <h2 class="block text-left text-lg font-bold md:hidden">
+              Varifocals
+            </h2>
+            <div class="flex justify-start space-x-3 py-2 md:hidden">
+              <a
+                href="/varifocal-glasses"
+                class="rounded-lg border-2 border-white px-2 py-1 text-center text-sm font-medium duration-500 ease-in-out hover:bg-gray-100 md:text-base"
+                >Shop Varifocals</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="hidden py-3 pl-5 pr-2 md:block">
+          <h5
+            class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+          >
+            Varifocal Glasses
+          </h5>
+          <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+            Achieve smooth and seamless vision at any distance with our advanced
+            varifocal glasses, tailored to your needs.
+          </p>
+          <div class="mt-4 flex justify-start space-x-2">
+            <a
+              href="/varifocal-glasses"
+              class="rounded-lg border-2 border-gray-400 px-3 py-1 text-center font-medium duration-500 ease-in-out hover:bg-gray-100"
+              >Shop Varifocals</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div
+      class="group block transform transition duration-500 ease-out"
+      @mouseenter="hovered = 4"
+      @mouseleave="hovered = null"
+      :class="{ 
+        'hover:-translate-y-2 hover:opacity-100': true, 
+        'opacity-50 translate-y-2': hovered && hovered !== 4,
+        'opacity-100': hovered === 4 || hovered === null
+      }"
+    >
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out dark:border-gray-700 dark:bg-slate-900"
+      >
+        <div class="relative">
+          <img
+            class="w-full object-cover max-sm:h-56 max-sm:rounded-lg md:rounded-t-lg"
+            src="https://test.s4l.link/media/mf_webp/jpg/media/wysiwyg/redesign/sports_bike.webp"
+            alt="Sports Glasses"
+          />
+          <div
+            class="absolute inset-0 block rounded-lg bg-gradient-to-t from-black via-transparent to-transparent md:hidden md:rounded-t-lg"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 right-0 p-2 text-center text-white"
+          >
+            <h2 class="block text-left text-lg font-bold md:hidden">
+              Sports Glasses
+            </h2>
+            <div class="flex justify-start space-x-3 py-2 md:hidden">
+              <a
+                href="/sports-glasses"
+                class="rounded-lg border-2 border-white px-2 py-1 text-center text-sm font-medium duration-500 ease-in-out hover:bg-gray-100 md:text-base"
+                >Shop Sports</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="hidden py-3 pl-5 pr-2 md:block">
+          <h5
+            class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+          >
+            Sports Glasses
+          </h5>
+          <p class="mb-3 font-normal text-gray-800 dark:text-gray-200">
+            Elevate your game with our high-performance sports glasses, designed
+            to provide maximum protection and clarity.
+          </p>
+          <div class="mt-4 flex justify-start space-x-2">
+            <a
+              href="/sports-glasses"
+              class="rounded-lg border-2 border-gray-400 px-3 py-1 text-center font-medium duration-500 ease-in-out hover:bg-gray-100"
+              >Shop Sports</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
