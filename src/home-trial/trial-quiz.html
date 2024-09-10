@@ -824,11 +824,21 @@
       <!-- Continue and Skip Buttons -->
       <div class="pt-8 text-center">
         <button
-          @click="sendFormDataToN8N"
-          class="focus:shadow-outline mx-2 w-48 rounded bg-blue-900 px-6 py-2 font-bold text-white duration-500 ease-in-out hover:bg-gray-800 focus:outline-none dark:hover:bg-slate-900"
+          type="submit"
+          form="product_addtocart_form"
+          title="Submit to Add to Cart"
+          class="focus:shadow-outline mx-2 w-48 rounded border-2 border-gray-300 bg-blue-900 px-6 py-2 font-bold text-white duration-500 ease-in-out hover:bg-gray-800 focus:outline-none dark:hover:bg-slate-900"
         >
-          Submit
+          <span class="block min-w-fit px-1">Confirm & Add to Cart</span>
         </button>
+      </div>
+      <div
+        class="mx-auto max-w-4xl pt-6 text-center text-lg text-gray-500 dark:text-gray-200"
+      >
+        You're almost there! Simply order your home trial kit, and we'll
+        handpick the perfect frames based on your style preferences. Your
+        choices have been sent to us, and we're ready to find the best options
+        for you.
       </div>
     </div>
   </div>

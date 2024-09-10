@@ -42,7 +42,7 @@
           class="absolute inset-y-0 flex flex-col items-center text-center max-sm:w-full md:right-0 md:items-center md:justify-center md:pr-10 md:text-left lg:space-y-4 xl:pr-20 2xl:pr-48"
         >
           <h1
-            class="p-2 px-8 text-4xl font-bold text-white md:text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
+            class="p-2 px-8 text-4xl font-bold text-white md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
           >
             Prescription Glasses Online
           </h1>
@@ -95,7 +95,7 @@
           class="absolute inset-y-0 flex flex-col items-center text-center max-sm:w-full md:right-0 md:items-center md:justify-center md:pr-10 md:text-left lg:space-y-4 xl:pr-20 2xl:pr-48"
         >
           <div
-            class="p-2 px-8 text-4xl font-bold text-white md:text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
+            class="p-2 px-8 text-4xl font-bold text-white md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
           >
             Prescription Sports Glasses
           </div>
@@ -141,7 +141,7 @@
           class="absolute inset-y-0 flex flex-col items-center text-center max-sm:w-full md:right-0 md:items-center md:justify-center md:pr-10 md:text-left lg:space-y-4 xl:pr-20 2xl:pr-48"
         >
           <div
-            class="p-2 px-8 text-4xl font-bold text-white md:text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
+            class="p-2 px-8 text-4xl font-bold text-white md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
           >
             Reglaze Your Glasses
           </div>
@@ -201,13 +201,7 @@
     }).mount();
   });
 </script>
-<div
-  data-content-type="html"
-  data-appearance="default"
-  data-element="main"
-  data-pb-style="R5H60TT"
-  data-decoded="true"
->
+<div>
   <div
     class="hidden bg-gray-200 px-4 py-3 dark:bg-slate-900 dark:text-gray-300 md:block"
   >
@@ -224,13 +218,13 @@
           class="group relative font-medium transition-opacity duration-500 ease-in-out dark:text-gray-300"
           @mouseenter="hovered = 1"
           @mouseleave="hovered = null"
-          :class="{ 'opacity-100': hovered === 1, 'opacity-30': hovered && hovered !== 1 }"
+          :class="{ 'opacity-100': hovered === 1 || hovered === null, 'opacity-30': hovered && hovered !== 1 }"
         >
           12 Month Warranty
           <!-- Additional text on hover -->
           <div
             x-show="hovered === 1"
-            class="absolute left-0 top-full mt-2 w-64 rounded bg-white p-2 p-4 text-base text-black shadow-lg transition-opacity transition-transform duration-500 ease-in-out dark:bg-gray-800 dark:text-white"
+            class="absolute left-0 top-full mt-2 w-64 rounded bg-white p-4 text-base text-black shadow-lg duration-500 ease-in-out dark:bg-gray-800 dark:text-white"
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0 transform translate-y-1"
             x-transition:enter-end="opacity-100 transform translate-y-0"
@@ -251,13 +245,13 @@
           class="group relative font-medium transition-opacity duration-500 ease-in-out dark:text-gray-300"
           @mouseenter="hovered = 2"
           @mouseleave="hovered = null"
-          :class="{ 'opacity-100': hovered === 2, 'opacity-30': hovered && hovered !== 2 }"
+          :class="{ 'opacity-100': hovered === 2 || hovered === null, 'opacity-30': hovered && hovered !== 2 }"
         >
           100% Satisfaction Guarantee
           <!-- Additional text on hover -->
           <div
             x-show="hovered === 2"
-            class="absolute left-0 top-full mt-2 w-64 rounded bg-white p-2 p-4 text-base text-black shadow-lg transition-opacity transition-transform duration-500 ease-in-out dark:bg-gray-800 dark:text-white"
+            class="absolute left-0 top-full mt-2 w-64 rounded bg-white p-4 text-base text-black shadow-lg duration-500 ease-in-out dark:bg-gray-800 dark:text-white"
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0 transform translate-y-1"
             x-transition:enter-end="opacity-100 transform translate-y-0"
@@ -278,13 +272,13 @@
           class="group relative font-medium transition-opacity duration-500 ease-in-out dark:text-gray-300"
           @mouseenter="hovered = 3"
           @mouseleave="hovered = null"
-          :class="{ 'opacity-100': hovered === 3, 'opacity-30': hovered && hovered !== 3 }"
+          :class="{ 'opacity-100': hovered === 3 || hovered === null, 'opacity-30': hovered && hovered !== 3 }"
         >
           Up to 75% Off the High-Street
           <!-- Additional text on hover -->
           <div
             x-show="hovered === 3"
-            class="absolute left-0 top-full mt-2 w-64 rounded bg-white p-2 p-4 text-base text-black shadow-lg transition-opacity transition-transform duration-500 ease-in-out dark:bg-gray-800 dark:text-white"
+            class="absolute left-0 top-full mt-2 w-64 rounded bg-white p-4 text-base text-black shadow-lg duration-500 ease-in-out dark:bg-gray-800 dark:text-white"
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0 transform translate-y-1"
             x-transition:enter-end="opacity-100 transform translate-y-0"
@@ -307,13 +301,15 @@
           class="group relative hidden items-center space-x-4 font-medium transition-opacity duration-500 ease-in-out dark:text-gray-300 xl:flex"
           @mouseenter="hovered = 4"
           @mouseleave="hovered = null"
-          :class="{ 'opacity-100': hovered === 4, 'opacity-30': hovered && hovered !== 4 }"
+          :class="{ 'opacity-100': hovered === 4 || hovered === null, 'opacity-30': hovered && hovered !== 4 }"
         >
-          Buy Now, Pay Later
-          <!-- Additional text on hover -->
+          <span>Buy Now, Pay Later</span>
+          <div class="flex items-center space-x-2">
+            <!-- SVG 1 Placeholder -->
+          </div>
           <div
             x-show="hovered === 4"
-            class="absolute left-0 top-full mt-2 w-64 rounded bg-white p-2 p-4 text-base text-black shadow-lg transition-opacity transition-transform duration-500 ease-in-out dark:bg-gray-800 dark:text-white"
+            class="absolute left-0 top-full mt-2 w-64 rounded bg-white p-4 text-base text-black shadow-lg duration-500 ease-in-out dark:bg-gray-800 dark:text-white"
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0 transform translate-y-1"
             x-transition:enter-end="opacity-100 transform translate-y-0"
@@ -661,7 +657,7 @@
 </div>
 <section class="mx-auto justify-center space-y-3 px-3 pb-6 md:container">
   <div
-    class="pb-4 text-2xl font-bold capitalize text-slate-800 dark:text-gray-300 md:text-3xl lg:text-center"
+    class="pb-4 text-2xl font-bold capitalize text-slate-800 dark:text-gray-300 md:text-4xl lg:text-center"
   >
     Our Staff Picks
   </div>
@@ -883,7 +879,7 @@
 <section class="bg-l my-12 px-3 py-8 shadow-inner md:py-16">
   <div class="pb-4 text-left md:pb-8 md:text-center lg:pb-12">
     <div
-      class="text-2xl font-bold capitalize text-slate-800 dark:text-gray-300 md:text-3xl"
+      class="text-2xl font-bold capitalize text-slate-800 dark:text-gray-300 md:text-4xl"
     >
       Check Out Our Featured Categories
     </div>
@@ -1159,7 +1155,9 @@
     </div>
     <div class="flex w-1/2 items-center justify-center">
       <div class="space-y-8">
-        <h2 class="mb-4 text-left text-5xl font-bold">Style Finder</h2>
+        <h2 class="mb-4 text-left text-4xl font-bold text-slate-800">
+          Style Finder
+        </h2>
         <p class="text-left text-2xl text-gray-500">
           Find your perfect frame with our Style Finder. Answer a few questions
           to find your perfect frame.
@@ -1167,7 +1165,7 @@
         <ul class="space-y-4 text-left text-xl text-gray-500">
           <li class="flex items-center">
             <svg
-              class="mr-2 h-6 w-6 text-green-500"
+              class="mr-2 h-6 w-6 text-cyan-600"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -1184,7 +1182,7 @@
           </li>
           <li class="flex items-center">
             <svg
-              class="mr-2 h-6 w-6 text-green-500"
+              class="mr-2 h-6 w-6 text-cyan-600"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -1201,7 +1199,7 @@
           </li>
           <li class="flex items-center">
             <svg
-              class="mr-2 h-6 w-6 text-green-500"
+              class="mr-2 h-6 w-6 text-cyan-600"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -1230,42 +1228,83 @@
   </div>
 </section>
 <section class="mx-auto py-12 text-center md:container">
-  <div class="flex flex-row justify-between">
+  <div class="flex flex-row justify-between pb-8">
     <div class="w-1/2 justify-start text-left">
-      <h2 class="mb-4 text-left text-4xl font-bold">
+      <h2 class="mb-4 text-left text-4xl font-bold text-slate-800">
         High Quality, Affordable Eyewear
       </h2>
-      <p class="text-lg text-gray-500">Thousands of frames to choose from</p>
+      <p class="text-xl text-gray-500">Thousands of frames to choose from</p>
     </div>
   </div>
-</section>
 
-<!-- Grid Section for Images -->
-<section class="mx-auto md:container max-md:px-3">
-  <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-    <!-- Image 1 -->
-    <div class="w-full">
-      <img
-        src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/single_vision_block_3.webp"
-        alt="Product Image 1"
-        class="h-auto w-full object-cover"
-      />
-    </div>
-    <!-- Image 2 -->
-    <div class="w-full">
-      <img
-        src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/prescription_sunglasses_block.webp"
-        alt="Product Image 2"
-        class="h-auto w-full object-cover"
-      />
-    </div>
-    <!-- Image 3 -->
-    <div class="w-full">
-      <img
-        src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/varifocal_block2.webp"
-        alt="Product Image 3"
-        class="h-auto w-full object-cover"
-      />
+  <!-- Grid Section for Images -->
+  <div class="container mx-auto p-6">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
+      <!-- Ottoto Glasses -->
+      <div class="group relative overflow-hidden rounded-lg bg-white shadow-lg">
+        <img
+          src="ottoto-glasses.jpg"
+          alt="Ottoto Glasses"
+          class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-black opacity-25"></div>
+        <div class="absolute bottom-0 p-6 text-white">
+          <h2 class="text-lg font-bold">Ottoto</h2>
+          <p class="text-sm">Wing Core</p>
+          <button class="mt-4 rounded-md bg-white px-4 py-2 text-black">
+            Shop Collection
+          </button>
+        </div>
+      </div>
+
+      <!-- Amelia E. Glasses -->
+      <div class="group relative overflow-hidden rounded-lg bg-white shadow-lg">
+        <img
+          src="amelia-e-glasses.jpg"
+          alt="Amelia E. Glasses"
+          class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-black opacity-25"></div>
+        <div class="absolute bottom-0 p-6 text-white">
+          <h2 class="text-lg font-bold">Amelia E.</h2>
+          <p class="text-sm">Golden Hour</p>
+          <button class="mt-4 rounded-md bg-white px-4 py-2 text-black">
+            Shop Collection
+          </button>
+        </div>
+      </div>
+
+      <!-- Bayonetta Glasses -->
+      <div class="group relative overflow-hidden rounded-lg bg-white shadow-lg">
+        <img
+          src="bayonetta-glasses.jpg"
+          alt="Bayonetta Glasses"
+          class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-black opacity-25"></div>
+        <div class="absolute bottom-0 p-6 text-white">
+          <h2 class="text-lg font-bold">Bayonetta Glasses</h2>
+          <button class="mt-4 rounded-md bg-white px-4 py-2 text-black">
+            Shop Collection
+          </button>
+        </div>
+      </div>
+
+      <!-- Revel Speed Glasses -->
+      <div class="group relative overflow-hidden rounded-lg bg-white shadow-lg">
+        <img
+          src="revel-speed-glasses.jpg"
+          alt="Revel Speed Glasses"
+          class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-black opacity-25"></div>
+        <div class="absolute bottom-0 p-6 text-white">
+          <h2 class="text-lg font-bold">Revel Speed</h2>
+          <button class="mt-4 rounded-md bg-white px-4 py-2 text-black">
+            Shop Collection
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
