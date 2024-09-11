@@ -827,7 +827,7 @@
           type="submit"
           form="product_addtocart_form"
           title="Submit to Add to Cart"
-          class="focus:shadow-outline mx-2 w-48 rounded border-2 border-gray-300 bg-blue-900 px-6 py-2 font-bold text-white duration-500 ease-in-out hover:bg-gray-800 focus:outline-none dark:hover:bg-slate-900"
+          class="focus:shadow-outline mx-2 w-64 rounded border-2 border-gray-300 bg-blue-900 px-6 py-2 font-bold text-white duration-500 ease-in-out hover:bg-gray-800 focus:outline-none dark:hover:bg-slate-900"
         >
           <span class="block min-w-fit px-1">Confirm & Add to Cart</span>
         </button>
@@ -877,14 +877,18 @@
         { name: "White", hex: "#FFFFFF" },
         { name: "Grey", hex: "#969396" },
         { name: "Blue", hex: "#3575c4" },
-        { name: "Green", hex: "#447d2c" },
-        { name: "Purple / Violet", hex: "#800080" },
-        { name: "Red", hex: "#FF0000" },
         { name: "Brown", hex: "#662505" },
-        { name: "Tortoise", image: "https://example.com/tortoise.webp" },
-        { name: "Crystal", image: "https://example.com/clear.webp" },
+        {
+          name: "Tortoise",
+          image:
+            "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/quiz/tortoise.webp",
+        },
+        {
+          name: "Crystal",
+          image:
+            "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/quiz/clear.webp",
+        },
         { name: "Gold", hex: "#d3aa31" },
-        { name: "Silver", hex: "#C0C0C0" },
       ],
       faceShapes: {
         Oval: ["Oversized", "Wayfarer", "Aviator"],
@@ -930,7 +934,7 @@
         }
       },
 
-      // Function to submit the collected form data to n8n
+      // Function to submit the collected form data to n8n and add the product to the cart
       sendFormDataToN8N() {
         const payload = {
           gender: this.selectedGender,
@@ -941,6 +945,7 @@
           colors: this.selectedColors,
         };
 
+        // Send the quiz results via email
         fetch("https://n8n.s4l.link/webhook/home-trial-quiz", {
           method: "POST",
           headers: {
@@ -950,12 +955,14 @@
         })
           .then((response) => response.json())
           .then((data) => {
-            alert("Quiz submitted successfully!");
+            console.log("Quiz results sent successfully");
           })
           .catch((error) => {
-            console.error("Error:", error);
-            alert("There was an error submitting the quiz.");
+            console.error("Error sending quiz results:", error);
           });
+
+        // Trigger form submission to add product to cart
+        document.querySelector("form#product_addtocart_form").submit();
       },
     };
   }
