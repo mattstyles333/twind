@@ -60,62 +60,82 @@
   </div>
 
   <!-- Each step automatically transitions to the next upon selection -->
-  <!-- Step 1: Select Gender -->
   <div class="px-3 pt-6 md:pt-12">
-    <div
-      class="mx-auto flex max-w-screen-xl flex-col items-center px-4 md:flex-row"
-      x-show="currentStep === 0"
-    >
-      <div class="w-full text-center md:text-left lg:w-1/2">
-        <h1
-          class="mb-4 text-4xl font-bold tracking-tight dark:text-white md:text-4xl xl:text-6xl"
-        >
-          Welcome to Our Style Finder Quiz!
-        </h1>
-        <p
-          class="mb-6 leading-loose text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-2xl"
-        >
-          Discover your ideal pair of glasses in seconds with just a few quick
-          questions!
-        </p>
-        <button
-          @click="nextStep"
-          class="flex w-full items-center justify-center space-x-2 rounded bg-blue-900 px-6 py-3 text-lg font-bold text-white duration-500 ease-in-out hover:bg-gray-800 dark:hover:bg-slate-900 max-md:mx-auto md:w-2/3 lg:w-1/2"
-        >
-          <span>Start Quiz</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            class="h-6 w-6"
+    <!-- Step 1: Collect Email Address, Upload Photo, or Start Quiz -->
+    <div x-show="currentStep === 0">
+      <div class="mx-auto max-w-screen-lg px-4 py-8">
+        <!-- Introductory Text -->
+        <div class="mb-8 text-center">
+          <h1 class="mb-4 text-4xl font-bold tracking-tight dark:text-white">
+            Welcome to Our Style Finder!
+          </h1>
+          <p
+            class="leading-loose text-gray-500 dark:text-gray-400 md:text-lg lg:text-2xl"
           >
-            <!-- Arrow shaft -->
-            <line
-              x1="3"
-              y1="12"
-              x2="18"
-              y2="12"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-            <!-- Arrowhead -->
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 5l7 7-7 7"
-            />
-          </svg>
-        </button>
-      </div>
+            Enter your email address to get started. Take a
+            <strong>quick quiz</strong>, and we'll recommend frames based on
+            your preferences and style.
+          </p>
+        </div>
 
-      <div class="mt-8 md:w-full lg:mt-0 lg:flex lg:w-1/2 lg:justify-center">
-        <img
-          class="p-8"
-          src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/quiz/quiz-hero-image6.webp"
-          alt="Quiz Hero Image"
-        />
+        <!-- Email Input and Start Quiz Button Block -->
+        <div class="mx-auto w-1/2 rounded-md border-2 border-gray-300 p-6">
+          <h2
+            class="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-300"
+          >
+            Enter your Email Address & Start the Quiz
+          </h2>
+
+          <!-- Email Input -->
+          <div class="mb-6 flex items-center space-x-4">
+            <label
+              class="whitespace-nowrap text-lg font-semibold text-gray-700 dark:text-gray-300"
+              for="email"
+            >
+              Email:
+            </label>
+            <input
+              type="email"
+              id="email"
+              x-model="email"
+              placeholder="you@example.com"
+              required
+              class="flex-1 rounded border border-gray-300 px-3 py-2"
+            />
+          </div>
+
+          <!-- Start Quiz Button -->
+          <button
+            @click="nextStep"
+            :disabled="!emailValid"
+            class="flex w-full items-center justify-center rounded bg-blue-900 px-6 py-3 text-lg font-bold text-white duration-500 ease-in-out hover:bg-gray-800 dark:hover:bg-slate-900"
+            :class="{ 'opacity-50 cursor-not-allowed': !emailValid }"
+          >
+            <span>Start Quiz</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="ml-2 h-6 w-6"
+            >
+              <line
+                x1="3"
+                y1="12"
+                x2="18"
+                y2="12"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -824,8 +844,7 @@
       <!-- Continue and Skip Buttons -->
       <div class="pt-8 text-center">
         <button
-          type="submit"
-          form="product_addtocart_form"
+          @click="sendFormDataToN8N"
           title="Submit to Add to Cart"
           class="focus:shadow-outline mx-2 w-64 rounded border-2 border-gray-300 bg-blue-900 px-6 py-2 font-bold text-white duration-500 ease-in-out hover:bg-gray-800 focus:outline-none dark:hover:bg-slate-900"
         >
@@ -847,31 +866,28 @@
 <script>
   function quizApp() {
     return {
-      currentStep: 1,
+      currentStep: 0,
       totalSteps: 6,
       steps: Array.from({ length: 7 }, (_, i) => i),
 
-      get progressWidth() {
-        return (this.currentStep / this.totalSteps) * 100;
+      // Email field
+      email: "",
+
+      // Email validation logic
+      get emailValid() {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(this.email);
       },
 
-      nextStep() {
-        if (this.currentStep < this.totalSteps) {
-          this.currentStep++;
-        }
-      },
-      goToPreviousStep() {
-        if (this.currentStep > 0) {
-          this.currentStep--;
-        }
-      },
-
+      // Quiz data
       selectedGender: "",
       selectedType: "",
       selectedFrameSize: "",
       selectedFaceShape: "",
       selectedMaterial: "",
       selectedColors: [],
+
+      // Colors data
       colors: [
         { name: "Black", hex: "#000000" },
         { name: "White", hex: "#FFFFFF" },
@@ -890,15 +906,24 @@
         },
         { name: "Gold", hex: "#d3aa31" },
       ],
-      faceShapes: {
-        Oval: ["Oversized", "Wayfarer", "Aviator"],
-        Round: ["Regular", "Square", "Clubmaster"],
-        Square: ["Oval", "Round", "Cateye"],
-        Heart: ["Cateye", "Round", "Oval"],
-        Diamond: ["Oval", "Cateye", "Regular"],
-        Rectangular: ["Round", "Oval", "Aviator"],
+
+      // Form progression logic
+      get progressWidth() {
+        return (this.currentStep / this.totalSteps) * 100;
       },
 
+      nextStep() {
+        if (this.currentStep < this.totalSteps && this.emailValid) {
+          this.currentStep++;
+        }
+      },
+      goToPreviousStep() {
+        if (this.currentStep > 0) {
+          this.currentStep--;
+        }
+      },
+
+      // Form field selections
       selectGender(gender) {
         this.selectedGender = gender;
         this.nextStep();
@@ -913,7 +938,6 @@
       },
       selectFaceShape(shape) {
         this.selectedFaceShape = shape;
-        this.updateRecommendedStyles();
         this.nextStep();
       },
       selectMaterial(material) {
@@ -923,20 +947,16 @@
       toggleColorSelection(color) {
         const index = this.selectedColors.indexOf(color);
         if (index > -1) {
-          this.selectedColors.splice(index, 1); // Remove if already selected
+          this.selectedColors.splice(index, 1);
         } else {
-          this.selectedColors.push(color); // Add if not already selected
-        }
-      },
-      updateRecommendedStyles() {
-        if (this.selectedFaceShape) {
-          this.recommendedStyles = this.faceShapes[this.selectedFaceShape];
+          this.selectedColors.push(color);
         }
       },
 
-      // Function to submit the collected form data to n8n and add the product to the cart
+      // Send form data to n8n webhook and include email
       sendFormDataToN8N() {
         const payload = {
+          email: this.email, // Include email in payload
           gender: this.selectedGender,
           type: this.selectedType,
           frameSize: this.selectedFrameSize,
@@ -945,7 +965,7 @@
           colors: this.selectedColors,
         };
 
-        // Send the quiz results via email
+        // Send data to n8n webhook
         fetch("https://n8n.s4l.link/webhook/home-trial-quiz", {
           method: "POST",
           headers: {
@@ -961,7 +981,7 @@
             console.error("Error sending quiz results:", error);
           });
 
-        // Trigger form submission to add product to cart
+        // Add product to cart
         document.querySelector("form#product_addtocart_form").submit();
       },
     };
