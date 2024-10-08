@@ -350,7 +350,7 @@
           <!-- Product Card -->
           <div class="rounded-lg bg-white px-2 pb-2 pt-2 shadow-md">
             <!-- Product Image -->
-            <div class="flex h-6 justify-end gap-x-2"></div>
+            <div class="flex h-6 items-center justify-end gap-x-2"></div>
             <div class="relative">
               <img
                 src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/m/s/ms45_1_1.webp"
@@ -371,11 +371,31 @@
               <!-- Color Swatches and Grey Circle -->
               <div class="mt-2 flex items-center justify-between">
                 <div class="flex space-x-2">
-                  <div class="h-5 w-8 bg-blue-500"></div>
                   <div class="h-5 w-8 bg-black"></div>
-                  <div class="h-5 w-8 bg-orange-700"></div>
                 </div>
-                <div class="h-6 w-6 rounded-full bg-gray-400"></div>
+                <button
+                  x-data="initWishlist()"
+                  @click.prevent="addToWishlist(37551)"
+                  aria-label="Add to Wish List CTO-3011 CAT Glasses"
+                  type="button"
+                  class="ml-2 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-0 bg-gray-200 p-0 text-gray-500 hover:text-red-600"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    class="h-5 w-5"
+                    width="15"
+                    height="15"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M3.172 5.172a4 4 0 0 1 5.656 0L10 6.343l1.172-1.171a4 4 0 1 1 5.656 5.656L10 17.657l-6.828-6.829a4 4 0 0 1 0-5.656Z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
@@ -383,10 +403,10 @@
           <!-- Second Product Card (for demonstration) -->
           <div class="rounded-lg bg-white px-2 pb-2 pt-2 shadow-md">
             <!-- Product Image -->
-            <div class="flex h-6 justify-end gap-x-2">
+            <div class="flex h-6 items-center justify-end gap-x-2">
               <svg
-                width="50"
-                height="25"
+                width="40"
+                height="20"
                 viewBox="0 0 512 277"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -399,7 +419,66 @@
                 />
               </svg>
               <span
-                class="rounded-md bg-red-500 px-2 py-1 text-xs font-bold text-white"
+                class="rounded-md bg-gradient-to-r from-red-500 to-orange-500 px-2 py-1 text-xs font-bold text-white"
+                >Sale</span
+              >
+            </div>
+            <div class="relative">
+              <img
+                src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/m/s/ms45_1_1.webp"
+                alt="SF 2852 Glasses"
+                class="h-auto max-h-48 w-full object-contain"
+              />
+              <!-- Sale Badge -->
+            </div>
+            <!-- Product Info -->
+            <div class="mt-4">
+              <!-- Brand Name -->
+              <!-- Product Name -->
+              <div class="mt-1 text-base font-semibold">
+                SF 2852 Salvatore Ferragamo Glasses
+              </div>
+              <!-- Price -->
+              <div class="mt-2 text-lg font-bold">&pound;142.00</div>
+              <!-- Color Swatches and Grey Circle -->
+              <div class="mt-2 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                  <div class="h-5 w-8 bg-blue-500"></div>
+                  <div class="h-5 w-8 bg-black"></div>
+                  <div class="h-5 w-8 bg-orange-700"></div>
+                  <div class="text-xl font-semibold text-gray-600">+</div>
+                </div>
+                <button
+                  x-data="initWishlist()"
+                  @click.prevent="addToWishlist(37551)"
+                  aria-label="Add to Wish List CTO-3011 CAT Glasses"
+                  type="button"
+                  class="ml-2 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-0 bg-gray-200 p-0 text-gray-500 hover:text-red-600"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    class="h-5 w-5"
+                    width="25"
+                    height="25"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M3.172 5.172a4 4 0 0 1 5.656 0L10 6.343l1.172-1.171a4 4 0 1 1 5.656 5.656L10 17.657l-6.828-6.829a4 4 0 0 1 0-5.656Z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg bg-white px-2 pb-2 pt-2 shadow-md">
+            <!-- Product Image -->
+            <div class="flex h-6 items-center justify-end gap-x-2">
+              <span
+                class="rounded-md bg-gradient-to-r from-red-500 to-orange-500 px-2 py-1 text-xs font-bold text-white"
                 >Sale</span
               >
             </div>
@@ -423,56 +502,41 @@
               <!-- Color Swatches and Grey Circle -->
               <div class="mt-2 flex items-center justify-between">
                 <div class="flex space-x-2">
-                  <div class="h-5 w-8 bg-blue-500"></div>
                   <div class="h-5 w-8 bg-black"></div>
                   <div class="h-5 w-8 bg-orange-700"></div>
                 </div>
-                <div class="h-6 w-6 rounded-full bg-gray-400"></div>
+                <button
+                  x-data="initWishlist()"
+                  @click.prevent="addToWishlist(37551)"
+                  aria-label="Add to Wish List CTO-3011 CAT Glasses"
+                  type="button"
+                  class="ml-2 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-0 bg-gray-200 p-0 text-gray-500 hover:text-red-600"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    class="h-5 w-5"
+                    width="25"
+                    height="25"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M3.172 5.172a4 4 0 0 1 5.656 0L10 6.343l1.172-1.171a4 4 0 1 1 5.656 5.656L10 17.657l-6.828-6.829a4 4 0 0 1 0-5.656Z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
           <div class="rounded-lg bg-white px-2 pb-2 pt-2 shadow-md">
             <!-- Product Image -->
-            <div class="flex h-6 justify-end gap-x-2">
-              <span
-                class="rounded-md bg-red-500 px-2 py-1 text-xs font-bold text-white"
-                >Sale</span
-              >
-            </div>
-            <div class="relative">
-              <img
-                src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/m/s/ms45_1_1.webp"
-                alt="SF 2852 Glasses"
-                class="h-auto max-h-48 w-full object-contain"
-              />
-              <!-- Sale Badge -->
-            </div>
-            <!-- Product Info -->
-            <div class="mt-4">
-              <!-- Brand Name -->
-              <!-- Product Name -->
-              <div class="mt-1 text-base font-semibold">
-                SF 2852 Salvatore Ferragamo Glasses
-              </div>
-              <!-- Price -->
-              <div class="mt-2 text-lg font-bold">&pound;142.00</div>
-              <!-- Color Swatches and Grey Circle -->
-              <div class="mt-2 flex items-center justify-between">
-                <div class="flex space-x-2">
-                  <div class="h-5 w-8 bg-blue-500"></div>
-                  <div class="h-5 w-8 bg-black"></div>
-                  <div class="h-5 w-8 bg-orange-700"></div>
-                </div>
-                <div class="h-6 w-6 rounded-full bg-gray-400"></div>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-lg bg-white px-2 pb-2 pt-2 shadow-md">
-            <!-- Product Image -->
-            <div class="flex h-6 justify-end gap-x-2">
+            <div class="flex h-6 items-center justify-end gap-x-2">
               <svg
-                width="50"
-                height="25"
+                width="40"
+                height="20"
                 viewBox="0 0 512 277"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -504,12 +568,35 @@
               <div class="mt-2 text-lg font-bold">&pound;142.00</div>
               <!-- Color Swatches and Grey Circle -->
               <div class="mt-2 flex items-center justify-between">
-                <div class="flex space-x-2">
+                <div class="flex items-center space-x-2">
                   <div class="h-5 w-8 bg-blue-500"></div>
                   <div class="h-5 w-8 bg-black"></div>
                   <div class="h-5 w-8 bg-orange-700"></div>
+                  <div class="text-xl font-semibold text-gray-600">+</div>
                 </div>
-                <div class="h-6 w-6 rounded-full bg-gray-400"></div>
+                <button
+                  x-data="initWishlist()"
+                  @click.prevent="addToWishlist(37551)"
+                  aria-label="Add to Wish List CTO-3011 CAT Glasses"
+                  type="button"
+                  class="ml-2 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-0 bg-gray-200 p-0 text-gray-500 hover:text-red-600"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    class="h-5 w-5"
+                    width="25"
+                    height="25"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M3.172 5.172a4 4 0 0 1 5.656 0L10 6.343l1.172-1.171a4 4 0 1 1 5.656 5.656L10 17.657l-6.828-6.829a4 4 0 0 1 0-5.656Z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
