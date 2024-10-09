@@ -1,0 +1,130 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Popup Modal</title>
+  <link href="../output.css" rel="stylesheet" />
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.2/dist/cdn.min.js"
+    defer
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+
+<div id="discount-form-modal" class="relative text-center">
+  <span
+    class="absolute right-2 top-2 cursor-pointer text-gray-200"
+    @click="hide()"
+    >X</span
+  >
+  <div x-data="discountForm()" class="mx-auto max-w-3xl">
+    <template x-if="step === 1">
+      <div class="flex flex-col text-center md:flex-row">
+        <div class="w-full md:w-1/2">
+          <img
+            src="../images/20-off-lenses-tall.png"
+            alt="Glasses"
+            class="h-72 w-full object-cover object-center max-sm:rounded-t-lg md:h-full md:rounded-l-lg md:rounded-tr-none"
+          />
+        </div>
+        <div
+          class="flex w-full flex-col justify-center bg-gradient-to-l from-gray-100 to-gray-100 px-4 py-4 md:w-1/2 md:py-0"
+        >
+          <h2 class="text-p my-4 text-4xl font-extrabold md:text-4xl">
+            20% OFF LENSES
+          </h2>
+          <p class="text-p mb-4 px-3 text-center text-lg font-medium">
+            New Customers: Enjoy this offer to enhance your lenses!
+          </p>
+          <form @submit.prevent="submitForm" class="w-full items-center">
+            <div class="mb-4 flex justify-center px-4">
+              <input
+                type="email"
+                x-model="email"
+                placeholder="Your email"
+                class="mb-2 w-full rounded border border-gray-300 p-2"
+                aria-label="Email address"
+                required
+              />
+            </div>
+            <div class="flex justify-center px-4">
+              <button
+                type="submit"
+                :disabled="!isValidEmail()"
+                class="w-full rounded-md px-4 py-3 font-bold text-white duration-500 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                :class="{ 'bg-gray-400 cursor-not-allowed': !isValidEmail(), 'bg-blue-600 hover:bg-blue-800': isValidEmail() }"
+              >
+                Get 20% Off Now!
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </template>
+
+    <template x-if="step === 2">
+      <div class="p-8 text-center">
+        <p class="mx-auto px-4 py-6 text-xl">
+          Here's your 20% off code for lenses! For assistance or inquiries, call
+          us at <a href="tel:01516326611">0151 632 6611</a>.
+        </p>
+        <p
+          class="mx-auto w-1/2 cursor-pointer border-2 border-dashed border-gray-400 p-3 text-3xl font-bold"
+          @click="navigator.clipboard.writeText('Save20').then(() => { alert('Copied to clipboard!'); }).catch(err => { console.error('Failed to copy: ', err); });"
+        >
+          Save20
+        </p>
+        <p class="mt-4 text-sm text-gray-500">
+          *Please note: This code does not apply to Ray-Ban and Oakley glazing
+          lenses.
+        </p>
+        <button
+          @click="showModal = false"
+          class="bg-s hover:bg-p mt-8 w-full rounded px-4 py-2 font-bold text-white duration-500 ease-in-out md:w-2/3"
+        >
+          Close
+        </button>
+      </div>
+    </template>
+  </div>
+  <script>
+    function discountForm() {
+      return {
+        step: 1,
+        email: "",
+        showModal: true,
+        init() {
+          console.log("Modal initialized");
+        },
+        isValidEmail() {
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailPattern.test(this.email);
+        },
+        submitForm() {
+          if (!this.isValidEmail()) {
+            alert("Please enter a valid email address.");
+            return;
+          }
+          fetch("https://n8n.s4l.link/webhook/save-popup", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: this.email }),
+          })
+            .then((response) => {
+              if (response.ok) {
+                this.step = 2;
+              } else {
+                alert("Failed to subscribe.");
+              }
+            })
+            .catch(() => {
+              alert("An error occurred. Please try again.");
+            });
+        },
+      };
+    }
+  </script>
+</div>

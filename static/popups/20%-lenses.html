@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exclusive 20% Off on Lenses!</title>
+    <link href="../output.css" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.2/dist/cdn.min.js"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <div
+      id="discount-form-modal"
+      class="animate__animated animate__fadeIn fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-3"
+    >
+      <div
+        x-data="discountForm()"
+        class="animate__animated animate__zoomIn relative mx-auto max-w-xl rounded-lg bg-white shadow-lg"
+      >
+        <span
+          class="absolute right-2 top-2 cursor-pointer text-xl font-bold"
+          @click="hide()"
+          >X</span
+        >
+        <template x-if="step === 1">
+          <div class="pb-6 text-center">
+            <img
+              src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/mail/save30-image.webp"
+              alt="Glasses"
+              class="h-full w-full rounded-t-lg object-cover object-center"
+            />
+            <h2 class="my-4 text-3xl font-extrabold text-cyan-600 md:text-5xl">
+              20% OFF LENSES!
+            </h2>
+            <p class="mb-4 text-center text-lg text-gray-600">
+              New Customers: Take advantage of this exclusive 20% discount on
+              lenses to enhance your vision today!
+            </p>
+            <form @submit.prevent="submitForm" class="w-full items-center">
+              <div class="mb-4 flex justify-center px-4">
+                <input
+                  type="email"
+                  x-model="email"
+                  placeholder="Enter your email"
+                  class="mb-2 w-full rounded border border-gray-300 p-2 md:w-2/3"
+                  aria-label="Email address"
+                  required
+                />
+              </div>
+              <div class="flex justify-center px-4">
+                <button
+                  type="submit"
+                  :disabled="!isValidEmail()"
+                  class="w-full rounded px-4 py-2 text-white duration-500 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 md:w-2/3"
+                  :class="{ 'bg-gray-400': !isValidEmail(), 'bg-blue-600 hover:bg-blue-800': isValidEmail() }"
+                >
+                  Claim Your Discount Now!
+                </button>
+              </div>
+            </form>
+          </div>
+        </template>
+        <template x-if="step === 2">
+          <div class="p-8 text-center">
+            <p class="mx-auto px-4 py-6 text-xl">
+              Congratulations! Here's your 20% off code for lenses! For
+              assistance or inquiries, call us at
+              <a href="tel:01516326611" class="text-cyan-600 underline"
+                >0151 632 6611</a
+              >.
+            </p>
+            <p
+              class="mx-auto w-1/2 cursor-pointer border-2 border-dashed border-gray-400 p-3 text-3xl font-bold text-cyan-600"
+              @click="copyCode()"
+            >
+              Save20
+            </p>
+            <p class="mt-4 text-sm text-gray-500">
+              *Please note: This code does not apply to Ray-Ban and Oakley
+              glazing lenses.
+            </p>
+            <button
+              @click="hide()"
+              class="mt-8 w-full rounded bg-cyan-600 px-4 py-2 font-bold text-white duration-500 ease-in-out hover:bg-cyan-800 md:w-2/3"
+            >
+              Close
+            </button>
+          </div>
+        </template>
+      </div>
+    </div>
+    <script>
+      function discountForm() {
+        return {
+          step: 1,
+          email: "",
+          showModal: true,
+          isValidEmail() {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(this.email);
+          },
+          submitForm() {
+            if (!this.isValidEmail()) {
+              alert("Please enter a valid email address.");
+              return;
+            }
+            fetch("https://n8n.s4l.link/webhook/save-popup", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email: this.email }),
+            })
+              .then((response) => {
+                if (response.ok) {
+                  this.step = 2;
+                } else {
+                  alert("Failed to subscribe.");
+                }
+              })
+              .catch(() => {
+                alert("An error occurred. Please try again.");
+              });
+          },
+          copyCode() {
+            navigator.clipboard
+              .writeText("Save20")
+              .then(() => {
+                alert("Copied to clipboard!");
+              })
+              .catch((err) => {
+                console.error("Failed to copy: ", err);
+              });
+          },
+          hide() {
+            this.showModal = false;
+          },
+        };
+      }
+    </script>
+  </body>
+</html>

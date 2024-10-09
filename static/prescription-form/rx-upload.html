@@ -1,0 +1,163 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RX Upload</title>
+  <link href="../output.css" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+    defer
+  ></script>
+</head>
+
+<body class="bg-gray-100 px-3">
+  <img
+    src="../images/rx-menu2.png"
+    class="mb-8 hidden w-full shadow-lg lg:block"
+  />
+  <h1 class="mx-auto mb-6 max-w-7xl justify-start text-3xl font-bold">
+    Attach prescription
+  </h1>
+  <div
+    class="mx-auto max-w-7xl rounded-lg bg-white p-4 shadow-md"
+    x-data="prescriptionForm()"
+  >
+    <div class="mb-12">
+      <nav
+        class="mx-auto -mb-px flex max-w-4xl flex-wrap justify-center md:flex-row md:flex-nowrap md:justify-between"
+      >
+        <a
+          href="#"
+          @click.prevent="tab = 'send_later'"
+          :class="tab === 'send_later' ? 'border-indigo-500' : 'border-transparent text-gray-500'"
+          class="w-1/2 border-b-2 px-1 pb-4 text-center text-sm"
+        >
+          SEND LATER
+        </a>
+        <a
+          href="#"
+          @click.prevent="tab = 'upload_photo'"
+          :class="tab === 'upload_photo' ? 'border-indigo-500' : 'border-transparent text-gray-500'"
+          class="w-1/2 border-b-2 px-1 pb-4 text-center text-sm"
+        >
+          UPLOAD / TAKE A PHOTO
+        </a>
+        <a
+          href="#"
+          @click.prevent="tab = 'enter_details'"
+          :class="tab === 'enter_details' ? 'border-indigo-500' : 'border-transparent text-gray-500'"
+          class="w-1/2 border-b-2 px-1 pb-4 text-center text-sm"
+        >
+          ENTER DETAILS MANUALLY
+        </a>
+        <a
+          href="#"
+          @click.prevent="tab = 'load_saved'"
+          :class="tab === 'load_saved' ? 'border-indigo-500' : 'border-transparent text-gray-500'"
+          class="w-1/2 border-b-2 px-1 pb-4 text-center text-sm"
+        >
+          LOAD A SAVED PRESCRIPTION
+        </a>
+      </nav>
+    </div>
+
+    <div class="mx-auto max-w-5xl">
+      <div x-show="tab === 'upload_photo'">
+        <p class="mb-8 text-sm md:text-base">
+          <strong>Please Note:</strong> Please give your prescription a Name and
+          select the file from your device to upload. Note: If your prescription
+          values fall outside of our standard prescription range additional
+          surcharges may occur or we may not be able to complete your order. If
+          this is the case we will always contact you before proceeding with
+          your order.
+        </p>
+        <form
+          action="#"
+          method="POST"
+          enctype="multipart/form-data"
+          @submit.prevent
+        >
+          <div class="mb-4">
+            <label
+              for="prescriptionName"
+              class="mb-2 block font-bold text-gray-700"
+              >Name Your Prescription</label
+            >
+            <input
+              type="text"
+              id="prescriptionName"
+              name="prescriptionName"
+              class="w-full rounded-lg border px-3 py-2 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label for="fileUpload" class="mb-2 block font-bold text-gray-700"
+              >Upload Prescription</label
+            >
+            <input
+              type="file"
+              id="fileUpload"
+              name="fileUpload"
+              class="block w-full cursor-pointer rounded-lg border border-gray-300 bg-gray-50 text-sm text-gray-900 focus:outline-none"
+              @change="fileChosen"
+            />
+          </div>
+          <template x-if="imageUrl">
+            <div class="py-4">
+              <img
+                :src="imageUrl"
+                alt="Prescription Image Preview"
+                class="h-auto w-full rounded-lg border"
+              />
+            </div>
+          </template>
+
+          <div
+            class="flex flex-col items-center justify-between gap-4 space-y-4 pt-6 sm:flex-row sm:space-y-0"
+          >
+            <button
+              type="submit"
+              class="order-2 w-full rounded border-2 border-gray-300 px-4 py-2 sm:order-1 sm:w-auto"
+            >
+              Send Prescription Later
+            </button>
+            <button
+              type="submit"
+              class="bg-s order-1 w-full rounded px-4 py-2 font-semibold text-white sm:order-2 sm:w-auto"
+            >
+              Save Prescription & Proceed
+            </button>
+          </div>
+        </form>
+      </div>
+      <div x-show="tab === 'enter_details'">
+        <p class="mb-4">
+          Form to enter prescription details manually will go here.
+        </p>
+      </div>
+      <div x-show="tab === 'load_saved'">
+        <p class="mb-4">Feature to load a saved prescription will go here.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    function prescriptionForm() {
+      return {
+        tab: "upload_photo",
+        imageUrl: null,
+        fileChosen(event) {
+          const file = event.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+              this.imageUrl = e.target.result;
+            };
+            reader.readAsDataURL(file);
+          }
+        },
+      };
+    }
+  </script>
+</body>

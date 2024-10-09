@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Selection Quiz</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@latest/dist/alpine.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <div
+      x-data="colorSelectionApp()"
+      class="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-4"
+    >
+      <template x-for="color in colors" :key="color.name">
+        <div
+          :class="{'border-b-2 border-blue-600': selectedColors.includes(color.name)}"
+        >
+          <div class="relative h-8 w-12 hover:-translate-y-4">
+            <button
+              @click="toggleColorSelection(color.name)"
+              :class="[
+          'transition-all duration-300 ease-in-out border-2',
+          'h-full w-full rounded',
+          selectedColors.includes(color.name) ? '-mt-2 shadow-md' : 'border-gray-400',
+        ]"
+              :style="color.hex ? `background-color: ${color.hex};` : `background: url(${color.image}) no-repeat center center; background-size: cover;`"
+              :title="color.name"
+            ></button>
+          </div>
+        </div>
+      </template>
+    </div>
+
+    <script>
+      function colorSelectionApp() {
+        return {
+          selectedColors: [],
+          colors: [
+            { name: "Black", hex: "#000000" },
+            { name: "White", hex: "#FFFFFF" },
+            { name: "Grey", hex: "#808080" },
+            { name: "Blue", hex: "#6495ED" },
+            { name: "Green", hex: "#008000" },
+            { name: "Purple", hex: "#800080" },
+            { name: "Red", hex: "#FF0000" },
+            { name: "Brown", hex: "#662505" },
+            // Ensure the image path includes the file extension if necessary
+            {
+              name: "Tortoise / Havana",
+              image:
+                "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/quiz/tortoise.webp",
+            },
+            {
+              name: "Clear / Transparent",
+              image:
+                "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/quiz/clear.webp",
+            },
+            { name: "Gold", hex: "#d3aa31" },
+            { name: "Silver", hex: "#C0C0C0" },
+          ],
+
+          toggleColorSelection(colorName) {
+            const index = this.selectedColors.indexOf(colorName);
+            if (index > -1) {
+              this.selectedColors.splice(index, 1);
+            } else {
+              this.selectedColors.push(colorName);
+            }
+          },
+        };
+      }
+    </script>
+  </body>
+</html>

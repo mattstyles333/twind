@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Example</title>
+    <style>
+      .responsive-table table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .responsive-table th,
+      .responsive-table td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+        vertical-align: middle; /* This will center the headers vertically */
+      }
+      .responsive-table th {
+        background-color: #f2f2f2;
+      }
+      .responsive-table {
+        overflow-x: auto; /* Allows horizontal scrolling when needed */
+      }
+      @media screen and (max-width: 600px) {
+        .responsive-table th,
+        .responsive-table td {
+          font-size: 0.8em; /* Smaller font size for better readability on small screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="responsive-table">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>3in1 MAR</th>
+            <th>Honeycomb</th>
+            <th>BlueShield</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lens Index (Thinness)</td>
+            <td>1.6+</td>
+            <td>1.5+</td>
+            <td>1.5+</td>
+          </tr>
+          <tr>
+            <td>Scratch Resistant</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td>UV Protection</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td>Multi-Anti-Reflective</td>
+            <td>✓</td>
+            <td>-</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td>Water Repellent</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td>Hydrophobic+</td>
+            <td>-</td>
+            <td>✓</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td>Anti-static</td>
+            <td>-</td>
+            <td>✓</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td>Oil & Smudge Resistant</td>
+            <td>-</td>
+            <td>✓</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td>Blue-Light Blocking</td>
+            <td>-</td>
+            <td>-</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td><strong>Discounted Price</strong></td>
+            <td><s>£80</s> £0</td>
+            <td><s>£65</s> £50</td>
+            <td><s>£90</s> £60</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

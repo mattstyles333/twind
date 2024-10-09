@@ -1,0 +1,186 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remove Prescription</title>
+  <link href="../output.css" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+    defer
+  ></script>
+</head>
+<div class="mx-auto w-full md:w-2/3">
+  <div class="column main">
+    <script>
+      if (window.require) {
+        require(["jquery", "domReady!"], function ($) {
+          if ($(".mfblogunveil").length) {
+            require(["Magefan_Blog/js/lib/mfblogunveil"], function () {
+              $(".mfblogunveil").mfblogunveil();
+            });
+          }
+        });
+      } else {
+        /* e.g. hyva theme */
+        document.addEventListener("DOMContentLoaded", function () {
+          var items = document.getElementsByClassName("mfblogunveil");
+          var el, url;
+          if (items.length) {
+            for (var i = 0; i < items.length; i++) {
+              el = items[i];
+              url = el.getAttribute("data-original");
+              if (!url) {
+                continue;
+              }
+              if ("IMG" == el.tagName) {
+                el.src = url;
+              } else {
+                el.style.backgroundImage = "url('" + url + "')";
+              }
+            }
+          }
+        });
+      }
+    </script>
+
+    <style>
+      [data-role="prsc-image-popup-trigger"] {
+        color: rgb(30 64 175);
+      }
+
+      [data-role="prsc-image-popup-trigger"]:hover {
+        text-decoration: underline;
+      }
+    </style>
+    <div class="remove-prescription-wrapper">
+      <div class="prescription-note-remove">
+        <p>
+          Example text (CMS Block): Changes you make here will not affect
+          previously attached prescriptions. <br />
+          <strong
+            >Are you sure you want to remove following prescription?</strong
+          >
+        </p>
+        <p><br /><br /></p>
+      </div>
+
+      <div x-data="{expanded: true}" class="flex flex-col">
+        <div class="flex flex-col gap-x-8 gap-y-4 md:flex-row">
+          <div class="flex justify-between" @click="expanded = expanded">
+            <div class="max-w-max">
+              <span class="font-semibold">Presciption # - </span>
+              <span>353581</span>
+            </div>
+          </div>
+          <div class="flex justify-between" @click="expanded = expanded">
+            <div class="max-w-max">
+              <span class="font-semibold">Prescription Name - </span>
+              <span>New PD</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t-1 mt-2 flex grid w-full flex-col items-center border-t pb-8 pt-2"
+          :class="{'hidden': !expanded, 'grid' : 'expanded'}"
+        >
+          <span>Until: 25 Jul 2023</span>
+          <div class="mt-4 flex w-full justify-start">
+            <div
+              class="flex w-full flex-col gap-4 md:flex-row lg:w-full lg:items-start lg:justify-start lg:gap-8"
+            >
+              <div class="w-full lg:w-1/3">
+                <div class="text-center font-semibold">Right Eye</div>
+                <table class="prescription-info mt-2 w-full">
+                  <thead>
+                    <tr class="border">
+                      <th class="border px-2"></th>
+                      <th class="border px-2">SPH</th>
+                      <th class="border px-2">CYL</th>
+                      <th class="border px-2">AXIS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border">
+                      <td class="border px-2">Distance</td>
+                      <td class="border px-2">+1.25</td>
+                      <td class="border px-2">+0.50</td>
+                      <td class="border px-2">12</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="w-full lg:w-1/3">
+                <div class="text-center font-semibold">Left Eye</div>
+                <table class="prescription-info mt-2 w-full">
+                  <thead>
+                    <tr class="border">
+                      <th class="border px-2"></th>
+                      <th class="border px-2">SPH</th>
+                      <th class="border px-2">CYL</th>
+                      <th class="border px-2">AXIS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border">
+                      <td class="border px-2">Distance</td>
+                      <td class="border px-2">+3.25</td>
+                      <td class="border px-2">+1.00</td>
+                      <td class="border px-2">17</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="w-full lg:w-1/3">
+                <div class="text-center font-semibold">
+                  Interpupillary Distance
+                </div>
+                <table class="prescription-info mt-2 w-full">
+                  <tbody>
+                    <tr class="border">
+                      <th class="border px-2">Single PD</th>
+                      <td class="border px-2">64</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex gap-3">
+        <button
+          class="btn bg-s hover:bg-s mb-6 rounded-md px-4 py-2 text-sm text-white"
+          id="remove-button"
+        >
+          Yes, Remove Prescription
+        </button>
+        <button
+          class="btn bg-s hover:bg-s mb-6 rounded-md px-4 py-2 text-sm text-white"
+          id="resign-button"
+        >
+          No, Go Back
+        </button>
+      </div>
+
+      <div class="messages-container" style="margin-top: 50px"></div>
+    </div>
+
+    <script type="text/javascript">
+      require(["presc-cart-remove", "domReady!"], function (
+        prescCartRemoveExecute,
+      ) {
+        prescCartRemoveExecute(
+          "https://test.s4l.link/prescription/customer_confirm/remove/id/353581/",
+          "https://test.s4l.link/prescription/customer/index/",
+        );
+      });
+    </script>
+    <script type="text/javascript">
+      require(["customer-prsc-img-popup"], function (popupProcess) {
+        popupProcess();
+      });
+    </script>
+  </div>
+</div>

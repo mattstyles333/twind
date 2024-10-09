@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Carousel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="../output.css" rel="stylesheet" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.core.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.theme.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
+  </head>
+  <body class="bg-gray-100">
+    <div class="mx-auto block px-3 py-4 md:hidden">
+      <div class="mb-4 items-center justify-between space-y-2">
+        <div
+          class="text-2xl font-bold text-slate-800 dark:text-gray-200 md:text-4xl"
+        >
+          How To Buy Your Glasses
+        </div>
+        <div class="text-gray-600 dark:text-gray-300">
+          Buying your glasses online has never been easier, simply follow these
+          5 easy steps!
+        </div>
+      </div>
+
+      <div class="glide">
+        <div class="glide__arrows space-x-1 pb-3" data-glide-el="controls">
+          <button
+            class="glide__arrows glide__arrow--left rounded-full border px-3 py-1 text-lg font-semibold text-black dark:bg-slate-900 dark:text-white"
+            data-glide-dir="<"
+          >
+            < Back
+          </button>
+          <button
+            class="glide__arrows glide__arrow--left rounded-full border px-3 py-1 text-lg font-semibold text-black dark:bg-slate-900 dark:text-white"
+            data-glide-dir=">"
+          >
+            Next >
+          </button>
+        </div>
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <blockquote
+                class="flex h-full flex-col rounded-lg bg-white dark:bg-slate-900"
+              >
+                <div class="relative flex justify-center">
+                  <img
+                    src="https://test.s4l.link/media/mf_webp/jpg/media/wysiwyg/redesign/frame_step.webp"
+                    alt="Frame Step Image"
+                    class="w-full rounded-t-lg object-cover"
+                  />
+                  <div
+                    class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4"
+                  >
+                    <span class="text-2xl font-extrabold text-white"
+                      >Step 1.</span
+                    >
+                  </div>
+                </div>
+
+                <div
+                  class="h-80 flex-grow rounded-b-lg border border-gray-300 px-4 py-2 dark:border-0"
+                >
+                  <p
+                    class="pb-1 text-xl font-bold text-blue-900 dark:text-blue-600"
+                  >
+                    Choose Your Frame
+                  </p>
+                  <div
+                    class="pb-6 text-lg leading-relaxed dark:text-gray-200 md:px-3"
+                  >
+                    Explore our wide range of
+                    <a href="/glasses" class="text-link">glasses</a>,
+                    <a href="/sunglasses" class="text-link">sunglasses</a>, and
+                    <a href="/sports-glasses" class="text-link">sports frames</a
+                    >. We offer over 10,000 frames, from affordable to designer
+                    brands like
+                    <a href="/designer-glasses/ray-ban" class="text-link"
+                      >Ray-Ban</a
+                    >,
+                    <a href="/designer-glasses/oakley" class="text-link"
+                      >Oakley</a
+                    >, and
+                    <a href="/designer-glasses/tom-ford" class="text-link"
+                      >Tom Ford</a
+                    >. Find your perfect style today! Not sure where to start?
+                    Try our
+                    <a href="/product-quiz" class="text-link">Product Quiz</a>.
+                  </div>
+                </div>
+              </blockquote>
+            </li>
+
+            <li class="glide__slide">
+              <blockquote
+                class="flex h-full flex-col rounded-lg bg-white dark:bg-slate-900"
+              >
+                <div class="relative flex justify-center">
+                  <img
+                    src="https://test.s4l.link/media/mf_webp/jpg/media/wysiwyg/redesign/lenses_step.webp"
+                    alt="Lens Step Image"
+                    class="w-full rounded-t-lg object-cover"
+                  />
+                  <div
+                    class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4"
+                  >
+                    <span class="text-2xl font-extrabold text-white"
+                      >Step 2.</span
+                    >
+                  </div>
+                </div>
+
+                <div
+                  class="h-80 flex-grow rounded-b-lg border border-gray-300 px-4 py-2 dark:border-0"
+                >
+                  <p
+                    class="pb-1 text-xl font-bold text-blue-900 dark:text-blue-600"
+                  >
+                    Select Your Lenses
+                  </p>
+                  <div
+                    class="pb-6 text-lg leading-relaxed dark:text-gray-200 md:px-3"
+                  >
+                    Explore our
+                    <a href="/lens-info" class="text-link">lenses</a>, and
+                    discover unparalleled customisation options. With the
+                    largest lens offering, you're sure to find the perfect
+                    match. All of our lenses are sourced from industry leaders
+                    such as Zeiss, Essilor, and Jai Kudo.
+                  </div>
+                </div>
+              </blockquote>
+            </li>
+            <li class="glide__slide">
+              <blockquote
+                class="flex h-full flex-col rounded-lg bg-white dark:bg-slate-900"
+              >
+                <div class="relative flex justify-center">
+                  <img
+                    src="https://test.s4l.link/media/mf_webp/jpg/media/wysiwyg/redesign/prescription_step.webp"
+                    alt="Lens Step Image"
+                    class="w-full rounded-t-lg object-cover"
+                  />
+                  <div
+                    class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4"
+                  >
+                    <span class="text-2xl font-extrabold text-white"
+                      >Step 3.</span
+                    >
+                  </div>
+                </div>
+
+                <div
+                  class="h-80 flex-grow rounded-b-lg border border-gray-300 px-4 py-2 dark:border-0"
+                >
+                  <p
+                    class="pb-1 text-xl font-bold text-blue-900 dark:text-blue-600"
+                  >
+                    Select Your Lenses
+                  </p>
+                  <div
+                    class="pb-6 text-lg leading-relaxed dark:text-gray-200 md:px-3"
+                  >
+                    Adding your prescription is simple with our 4 methods. Our
+                    dedicated opticians review every order for accuracy,
+                    ensuring you receive the perfect lenses. Need assistance?
+                    Learn more about interpreting your prescription
+                    <a href="/about-your-prescription" class="text-link">here</a
+                    >.
+                  </div>
+                </div>
+              </blockquote>
+            </li>
+            <li class="glide__slide">
+              <blockquote
+                class="flex h-full flex-col rounded-lg bg-white dark:bg-slate-900"
+              >
+                <div class="relative flex justify-center">
+                  <img
+                    src="https://test.s4l.link/media/mf_webp/jpg/media/wysiwyg/redesign/order_step.webp"
+                    alt="Lens Step Image"
+                    class="w-full rounded-t-lg object-cover"
+                  />
+                  <div
+                    class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4"
+                  >
+                    <span class="text-2xl font-extrabold text-white"
+                      >Step 4.</span
+                    >
+                  </div>
+                </div>
+
+                <div
+                  class="h-80 flex-grow rounded-b-lg border border-gray-300 px-4 py-2 dark:border-0"
+                >
+                  <p
+                    class="pb-1 text-xl font-bold text-blue-900 dark:text-blue-600"
+                  >
+                    Place Your Order
+                  </p>
+                  <div
+                    class="pb-6 text-lg leading-relaxed dark:text-gray-200 md:px-3"
+                  >
+                    We accept Visa, Mastercard, American Express, Google Pay,
+                    Apple Pay, PayPal, and Klarna. For details, visit our
+                    <a href="/payments" class="text-link">payments page</a>.
+                    After your order, we'll send a confirmation email and keep
+                    you updated. For any queries, feel free to
+                    <a href="/contact" class="text-link">contact</a> our optical
+                    service team.
+                  </div>
+                </div>
+              </blockquote>
+            </li>
+            <li class="glide__slide">
+              <blockquote
+                class="flex h-full flex-col rounded-lg bg-white dark:bg-slate-900"
+              >
+                <div class="relative flex justify-center">
+                  <img
+                    src="https://test.s4l.link/media/mf_webp/jpg/media/wysiwyg/redesign/delivery_step.webp"
+                    alt="Lens Step Image"
+                    class="w-full rounded-t-lg object-cover"
+                  />
+                  <div
+                    class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4"
+                  >
+                    <span class="text-2xl font-extrabold text-white"
+                      >Step 5.</span
+                    >
+                  </div>
+                </div>
+
+                <div
+                  class="h-80 flex-grow rounded-b-lg border border-gray-300 px-4 py-2 dark:border-0"
+                >
+                  <p
+                    class="pb-1 text-xl font-bold text-blue-900 dark:text-blue-600"
+                  >
+                    Receive Your Glasses
+                  </p>
+                  <div
+                    class="pb-6 text-lg leading-relaxed dark:text-gray-200 md:px-3"
+                  >
+                    Enjoy doorstep delivery for your glasses. Our optical
+                    service advisors are ready to assist with any queries. Not
+                    satisfied? Our 100% satisfaction guarantee and 12-month
+                    frame warranty have you covered.
+                  </div>
+                </div>
+              </blockquote>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Glide(".glide", {
+          type: "slide",
+          startAt: 0,
+          perView: 1.1,
+          hoverpause: true,
+          animationDuration: 800,
+          animationTimingFunc: "ease-in-out",
+        }).mount();
+      });
+    </script>
+  </body>
+</html>

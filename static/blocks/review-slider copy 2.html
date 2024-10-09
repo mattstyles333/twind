@@ -1,0 +1,171 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../output.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.5/dist/alpine.js"></script>
+</head>
+
+<div class="mx-auto my-12 items-center justify-center">
+  <div
+    class="relative mx-auto max-w-7xl"
+    x-data="{ activeSlide: 1, slides: [1, 2, 3,] }"
+  >
+    <!-- Slides -->
+    <!-- First Div -->
+    <div
+      x-show="activeSlide === 1"
+      class="items-center rounded-lg px-12 text-white"
+    >
+      <div class="my-8 flex items-center justify-center space-x-4">
+        <!-- Review Block 1 -->
+        <div
+          class="flex h-48 w-1/3 flex-col justify-between rounded-lg bg-gray-100 p-6"
+        >
+          <h3 class="text-lg font-semibold text-gray-800">John Doe</h3>
+          <div class="mt-1 flex">
+            <!-- Star Icons -->
+          </div>
+          <p class="text-gray-700">Excellent service and quality!</p>
+        </div>
+
+        <!-- Review Block 2 -->
+        <div
+          class="flex h-48 w-1/3 flex-col justify-between rounded-lg bg-gray-100 p-6"
+        >
+          <h3 class="text-lg font-semibold text-gray-800">Jane Smith</h3>
+          <div class="mt-1 flex">
+            <!-- Star Icons -->
+          </div>
+          <p class="text-gray-700">Very satisfied with the products.</p>
+        </div>
+
+        <!-- Review Block 3 -->
+        <div
+          class="flex h-48 w-1/3 flex-col justify-between rounded-lg bg-gray-100 p-6"
+        >
+          <h3 class="text-lg font-semibold text-gray-800">Alex Johnson</h3>
+          <div class="mt-1 flex">
+            <!-- Star Icons -->
+          </div>
+          <p class="text-gray-700">Great experience, highly recommend!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Div -->
+    <div
+      x-show="activeSlide === 2"
+      class="items-center rounded-lg px-12 text-white"
+    >
+      <div class="my-8 flex items-center justify-center space-x-4">
+        <!-- Review Block 1 -->
+        <div
+          class="flex h-48 w-1/3 flex-col justify-between rounded-lg bg-gray-100 p-6"
+        >
+          <h3 class="text-lg font-semibold text-gray-800">John Doe</h3>
+          <div class="mt-1 flex">
+            <!-- Star Icons -->
+          </div>
+          <p class="text-gray-700">Excellent service and quality!</p>
+        </div>
+
+        <!-- Review Block 2 -->
+        <div
+          class="flex h-48 w-1/3 flex-col justify-between rounded-lg bg-gray-100 p-6"
+        >
+          <h3 class="text-lg font-semibold text-gray-800">Jane Smith</h3>
+          <div class="mt-1 flex">
+            <!-- Star Icons -->
+          </div>
+          <p class="text-gray-700">Very satisfied with the products.</p>
+        </div>
+
+        <!-- Review Block 3 -->
+        <div
+          class="flex h-48 w-1/3 flex-col justify-between rounded-lg bg-gray-100 p-6"
+        >
+          <h3 class="text-lg font-semibold text-gray-800">Alex Johnson</h3>
+          <div class="mt-1 flex">
+            <!-- Star Icons -->
+          </div>
+          <p class="text-gray-700">Great experience, highly recommend!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Third Div -->
+    <div
+      x-show="activeSlide === 3"
+      class="items-center rounded-lg px-12 text-white"
+    >
+      <div class="my-8 flex items-center justify-center space-x-4">
+        <!-- Review Block 1 -->
+        <div
+          class="flex h-48 w-1/3 flex-col justify-between rounded-lg bg-gray-100 p-6"
+        >
+          <h3 class="text-lg font-semibold text-gray-800">John Doe</h3>
+          <div class="mt-1 flex">
+            <!-- Star Icons -->
+          </div>
+          <p class="text-gray-700">Excellent service and quality!</p>
+        </div>
+
+        <!-- Review Block 2 -->
+        <div
+          class="flex h-48 w-1/3 flex-col justify-between rounded-lg bg-gray-100 p-6"
+        >
+          <h3 class="text-lg font-semibold text-gray-800">Jane Smith</h3>
+          <div class="mt-1 flex">
+            <!-- Star Icons -->
+          </div>
+          <p class="text-gray-700">Very satisfied with the products.</p>
+        </div>
+
+        <!-- Review Block 3 -->
+        <div
+          class="flex h-48 w-1/3 flex-col justify-between rounded-lg bg-gray-100 p-6"
+        >
+          <h3 class="text-lg font-semibold text-gray-800">Alex Johnson</h3>
+          <div class="mt-1 flex">
+            <!-- Star Icons -->
+          </div>
+          <p class="text-gray-700">Great experience, highly recommend!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prev/Next Arrows -->
+    <div class="absolute inset-0 flex">
+      <div class="flex w-1/2 items-center justify-start">
+        <button
+          class="-ml-6 h-12 w-12 rounded-full bg-teal-100 font-bold text-teal-500 hover:text-orange-500 hover:shadow-lg"
+          x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1"
+        >
+          &#8592;
+        </button>
+      </div>
+      <div class="flex w-1/2 items-center justify-end">
+        <button
+          class="-mr-6 h-12 w-12 rounded-full bg-teal-100 font-bold text-teal-500 hover:text-orange-500 hover:shadow"
+          x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1"
+        >
+          &#8594;
+        </button>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="absolute flex w-full items-center justify-center px-4">
+      <template x-for="slide in slides" :key="slide">
+        <button
+          class="mx-2 mb-0 mt-4 h-2 w-4 flex-1 overflow-hidden rounded-full transition-colors duration-200 ease-out hover:bg-teal-600 hover:shadow-lg"
+          :class="{ 
+              'bg-orange-600': activeSlide === slide,
+              'bg-teal-300': activeSlide !== slide 
+          }"
+          x-on:click="activeSlide = slide"
+        ></button>
+      </template>
+    </div>
+  </div>
+</div>

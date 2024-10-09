@@ -1,0 +1,237 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonial Slider</title>
+  <link href="../output.css" rel="stylesheet" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
+  <!-- Updated the Alpine.js CDN link to the correct version for browsers -->
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"
+  ></script>
+</head>
+<body class="text-gray-900">
+  <!-- Top Banner -->
+  <div class="relative lg:grid lg:grid-cols-2">
+    <picture class="mfwebp">
+      <source
+        width="1228"
+        height="500"
+        loading="lazy"
+        type="image/webp"
+        srcset="
+          https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/banner_default_short.webp
+        " />
+      <img
+        class="absolute h-full w-full object-cover lg:relative"
+        src="https://www.spex4less.com/media/wysiwyg/redesign/banner_default_short.jpg"
+        width="1228"
+        height="500"
+        loading="lazy"
+        alt=""
+    /></picture>
+    <div
+      class="from-p to-p/75 lg:bg-s dark:tp-slate-900 relative bg-gradient-to-t px-8 pt-8 dark:to-slate-900/75 md:pt-16 lg:to-transparent lg:pt-24"
+    >
+      <div class="mx-auto flex max-w-3xl flex-col gap-6 md:gap-8 lg:gap-10">
+        <h1
+          class="text-left text-3xl font-extrabold leading-tight text-white drop-shadow-lg md:text-center md:text-4xl lg:text-left xl:text-6xl"
+        >
+          Spex4less Reviews
+        </h1>
+        <div
+          class="max-w-2xl text-left text-xl font-medium leading-normal text-white md:text-center md:text-2xl lg:text-left lg:text-3xl"
+        >
+          Find out what our customers say about us and why we're ranked #1
+        </div>
+        <div class="pb-4">
+          <a
+            href="https://uk.trustpilot.com/review/www.spex4less.com"
+            target="_blank"
+          >
+            <picture class="mfwebp">
+              <source
+                type="image/webp"
+                srcset="
+                  https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/tp_stars_long.webp
+                " />
+              <img
+                class="hidden pb-4 lg:block"
+                src="https://www.spex4less.com/media/wysiwyg/redesign/tp_stars_long.png"
+                alt="trustpilot"
+            /></picture>
+          </a>
+          <a
+            href="https://uk.trustpilot.com/review/www.spex4less.com"
+            target="_blank"
+          >
+            <picture class="mfwebp">
+              <source
+                type="image/webp"
+                srcset="
+                  https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/tp-stars.webp
+                " />
+              <img
+                class="mx-auto block w-full md:w-1/2 lg:hidden"
+                src="https://www.spex4less.com/media/wysiwyg/redesign/tp-stars.png"
+                alt="trustpilot"
+            /></picture>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="bg-white py-8">
+    <div class="container mx-auto max-w-6xl px-4 text-center">
+      <h2
+        class="mx-auto pb-8 text-center text-3xl font-semibold text-slate-800"
+      >
+        Discover Your Ideal Eyewear!
+      </h2>
+      <p class="mb-4 text-lg">
+        At Spex4Less, we offer an extensive collection of eyeglasses and
+        sunglasses to match every style and budget. From vibrant colours and
+        unique frame designs to popular brands, you'll find everything you need
+        to express yourself. Enjoy top-quality eyewear, excellent customer
+        service, and the convenience of online shopping. Start your journey to
+        perfect vision with us today!
+      </p>
+    </div>
+  </section>
+
+  <div class="bg-l pt-12 dark:bg-slate-900">
+    <div class="mx-auto flex justify-center px-3 text-center">
+      <span
+        class="text-center text-3xl font-bold tracking-tight text-slate-800 dark:text-gray-300 md:text-4xl lg:text-center"
+      >
+        Reviews from our customers
+      </span>
+    </div>
+    <p class="flex justify-center pt-4 dark:text-gray-200">
+      Check Out More on Our&nbsp;
+      <a href="/reviews" class="text-blue-500 underline">Reviews Page</a>
+    </p>
+  </div>
+
+  <!-- Category Blocks -->
+  <section class="px-3 py-16">
+    <div class="pb-12 text-left md:text-center">
+      <h2
+        class="text-xl font-bold capitalize text-slate-800 dark:text-gray-300 md:text-3xl"
+      >
+        Discover Our Collection of Eyewear for All Occasions
+      </h2>
+      <p
+        class="mt-2 text-base text-gray-600 dark:text-gray-200 sm:text-lg md:text-xl"
+      >
+        Check Out Our Featured Categories
+      </p>
+    </div>
+
+    <div
+      class="mx-auto grid grid-cols-1 gap-8 lg:container md:grid-cols-2 lg:grid-cols-4"
+    >
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+      >
+        <a href="/glasses">
+          <img
+            class="rounded-t-lg"
+            src="https://test.s4l.link/media/mf_webp/jpg/media/wysiwyg/redesign/single_vision_block_3.webp"
+            alt=""
+          />
+        </a>
+        <div class="p-5">
+          <a href="/glasses">
+            <h5
+              class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+            >
+              Glasses
+            </h5>
+          </a>
+          <p class="mb-3 font-normal text-gray-800 dark:text-gray-400">
+            Explore our wide selection of stylish eyewear to find the perfect
+            pair that complements your look.
+          </p>
+        </div>
+      </div>
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+      >
+        <a href="/sunglasses">
+          <img
+            class="rounded-t-lg"
+            src="https://test.s4l.link/media/mf_webp/jpg/media/wysiwyg/redesign/prescription_sunglasses_block.webp"
+            alt=""
+          />
+        </a>
+        <div class="p-5">
+          <a href="/sunglasses">
+            <h5
+              class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+            >
+              Prescription Sunglasses
+            </h5>
+          </a>
+          <p class="mb-3 font-normal text-gray-800 dark:text-gray-400">
+            Enjoy clear vision and protection from the sun with our prescription
+            sunglasses, perfect for any outdoor adventure.
+          </p>
+        </div>
+      </div>
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+      >
+        <a href="/varifocal-glasses">
+          <img
+            class="rounded-t-lg"
+            src="https://test.s4l.link/media/mf_webp/jpg/media/wysiwyg/redesign/varifocal_block2.webp"
+            alt=""
+          />
+        </a>
+        <div class="p-5">
+          <a href="varifocal-glasses">
+            <h5
+              class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+            >
+              Varifocal Glasses
+            </h5>
+          </a>
+          <p class="mb-3 font-normal text-gray-800 dark:text-gray-400">
+            Achieve smooth and seamless vision at any distance with our advanced
+            varifocal glasses, tailored to your needs.
+          </p>
+        </div>
+      </div>
+      <div
+        class="max-w-sm rounded-lg border border-gray-300 bg-white shadow-lg duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+      >
+        <a href="/sports">
+          <img
+            class="rounded-t-lg"
+            src="https://test.s4l.link/media/mf_webp/jpg/media/wysiwyg/redesign/sports_bike.webp"
+            alt="Sports Glasses"
+          />
+        </a>
+        <div class="p-5">
+          <a href="/sports">
+            <h5
+              class="mb-2 text-2xl font-bold tracking-tight text-slate-800 dark:text-white"
+            >
+              Sports Glasses
+            </h5>
+          </a>
+          <p class="mb-3 font-normal text-gray-800 dark:text-gray-400">
+            Elevate your game with our high-performance sports glasses, designed
+            to provide maximum protection and clarity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
