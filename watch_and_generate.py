@@ -1,6 +1,7 @@
 import os
 import time
 import traceback
+import shutil
 from jinja2 import Environment, FileSystemLoader
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
@@ -35,32 +36,40 @@ def sync_pages():
     static_dir = 'static'
     
     try:
-        # Generate new pages
-        for root, _, files in os.walk(src_dir):
+        # Generate new pages and copy non-HTML files
+        for root, dirs, files in os.walk(src_dir):
             for file in files:
+                src_path = os.path.join(root, file)
+                relative_path = os.path.relpath(src_path, src_dir)
+                static_path = os.path.join(static_dir, relative_path)
+                
                 if file.endswith('.html'):
-                    template_path = os.path.join(root, file)
-                    relative_path = os.path.relpath(template_path, src_dir)
-                    output_path = os.path.join(static_dir, relative_path)
-                    
                     context = {'title': 'Generated Page'}
-                    render_template(template_path, context, output_path)
+                    render_template(src_path, context, static_path)
+                else:
+                    os.makedirs(os.path.dirname(static_path), exist_ok=True)
+                    shutil.copy2(src_path, static_path)
+                    print(f"Copied: {static_path}")
         
-        # Remove obsolete pages
-        for root, _, files in os.walk(static_dir):
+        # Remove obsolete files and directories
+        for root, dirs, files in os.walk(static_dir, topdown=False):
             for file in files:
-                if file.endswith('.html'):
-                    static_path = os.path.join(root, file)
-                    relative_path = os.path.relpath(static_path, static_dir)
-                    src_path = os.path.join(src_dir, relative_path)
-                    
-                    if not os.path.exists(src_path):
-                        try:
-                            os.remove(static_path)
-                            print(f"Removed obsolete file: {static_path}")
-                        except Exception as e:
-                            print(f"Error removing file {static_path}: {str(e)}")
-                            traceback.print_exc()
+                static_path = os.path.join(root, file)
+                relative_path = os.path.relpath(static_path, static_dir)
+                src_path = os.path.join(src_dir, relative_path)
+                
+                if not os.path.exists(src_path):
+                    try:
+                        os.remove(static_path)
+                        print(f"Removed obsolete file: {static_path}")
+                    except Exception as e:
+                        print(f"Error removing file {static_path}: {str(e)}")
+                        traceback.print_exc()
+            
+            # Remove empty directories
+            if not os.listdir(root):
+                os.rmdir(root)
+                print(f"Removed empty directory: {root}")
     except Exception as e:
         print(f"Error during sync_pages: {str(e)}")
         traceback.print_exc()
