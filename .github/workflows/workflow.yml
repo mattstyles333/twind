@@ -34,22 +34,14 @@ jobs:
         uses: actions/checkout@v3
         with:
           sparse-checkout: |
-            src/
-            src/output.css
-
-      - name: NodeJs Build
-        uses: actions/setup-node@v3
-        with:
-          node-version: 19.4
-          cache: "npm"
-      - run: npm install .
-      - run: npx tailwindcss -i ./src/input.css -o ./src/output.css
+            static/
+      
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          # Upload entire repository
+          # Upload the src directory instead of "static"
           path: "static"
       - name: Deploy to GitHub Pages
         id: deployment
