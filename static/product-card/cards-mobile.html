@@ -1,0 +1,809 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../output.css" rel="stylesheet" />
+  <script
+    defer
+    src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.6/dist/cdn.min.js"
+    defer
+  ></script>
+</head>
+
+<body class="bg-gray-50">
+  <div class="mx-auto p-4">
+    <div class="hidden max-w-full pb-6 md:flex md:space-x-4">
+      <!-- Designer Glasses -->
+      <a
+        href="/designer-glasses"
+        class="flex items-center space-x-2 rounded-full border border-transparent bg-white px-5 py-1.5 text-sm text-gray-700 shadow-md transition duration-700 ease-in-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl md:text-base lg:text-lg"
+      >
+        <span>Designers Glasses</span>
+      </a>
+
+      <!-- Rx Sunglasses -->
+      <a
+        href="/sunglasses"
+        class="flex items-center space-x-2 rounded-full border border-transparent bg-white px-5 py-1.5 text-sm text-gray-700 shadow-md transition duration-700 ease-in-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl md:text-base lg:text-lg"
+      >
+        <span>Sunglasses</span>
+      </a>
+
+      <!-- On Sale -->
+      <a
+        href="/varifocal-glasses"
+        class="flex items-center space-x-2 rounded-full border border-transparent bg-white px-5 py-1.5 text-sm text-gray-700 shadow-md transition duration-700 ease-in-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl md:text-base lg:text-lg"
+      >
+        <span>Varifocal Glasses</span>
+      </a>
+
+      <!-- Bestsellers -->
+      <a
+        href="/glasses-bestsellers"
+        class="flex items-center space-x-2 rounded-full border border-transparent bg-white px-5 py-1.5 text-sm text-gray-700 shadow-md transition duration-700 ease-in-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl md:text-base lg:text-lg"
+      >
+        <span>Bestsellers</span>
+      </a>
+
+      <!-- Ray-Ban -->
+      <a
+        href="/ray-ban-glasses"
+        class="flex items-center space-x-2 rounded-full border border-transparent bg-white px-5 py-1.5 text-sm text-gray-700 shadow-md transition duration-700 ease-in-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl md:text-base lg:text-lg"
+      >
+        <span>Ray-Ban</span>
+      </a>
+
+      <!-- Oakley -->
+      <a
+        href="/oakley-glasses"
+        class="flex items-center space-x-2 rounded-full border border-transparent bg-white px-5 py-1.5 text-sm text-gray-700 shadow-md transition duration-700 ease-in-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl md:text-base lg:text-lg"
+      >
+        <span>Oakley</span>
+      </a>
+    </div>
+
+    <!-- Glide.js Carousel (Visible on Small Devices Only) -->
+    <div class="glide mx-auto max-w-full overflow-hidden pb-6 md:hidden">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides flex space-x-4">
+          <!-- Designer Glasses -->
+          <li class="glide__slide">
+            <div
+              class="flex items-center space-x-2 rounded-full border border-transparent bg-white px-3 py-1.5 text-sm text-gray-700 shadow-md transition duration-700 ease-in-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl md:text-base lg:text-lg"
+            >
+              <span>Ray-Ban</span>
+            </div>
+          </li>
+
+          <!-- Rx Sunglasses -->
+          <li class="glide__slide">
+            <div
+              class="flex items-center space-x-2 rounded-full border border-transparent bg-white px-3 py-1.5 text-sm text-gray-700 shadow-md transition duration-700 ease-in-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl md:text-base lg:text-lg"
+            >
+              <span>Varifocals </span>
+            </div>
+          </li>
+
+          <!-- On Sale -->
+          <li class="glide__slide">
+            <div
+              class="flex items-center space-x-2 rounded-full border border-transparent bg-white px-3 py-1.5 text-sm text-gray-700 shadow-md transition duration-700 ease-in-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl md:text-base lg:text-lg"
+            >
+              <span>Black Frames</span>
+            </div>
+          </li>
+
+          <!-- Bestsellers -->
+          <li class="glide__slide">
+            <div
+              class="flex items-center space-x-2 rounded-full border border-transparent bg-white px-3 py-1.5 text-sm text-gray-700 shadow-md transition duration-700 ease-in-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl md:text-base lg:text-lg"
+            >
+              <span>Bestsellers</span>
+            </div>
+          </li>
+
+          <!-- Ray-Ban -->
+          <li class="glide__slide">
+            <div
+              class="flex items-center space-x-2 rounded-full border border-transparent bg-white px-3 py-1.5 text-sm text-gray-700 shadow-md transition duration-700 ease-in-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl md:text-base lg:text-lg"
+            >
+              <span>Round Glasses</span>
+            </div>
+          </li>
+
+          <!-- Oakley -->
+          <li class="glide__slide">
+            <div
+              class="flex items-center space-x-2 rounded-full border border-transparent bg-white px-3 py-1.5 text-sm text-gray-700 shadow-md transition duration-700 ease-in-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl md:text-base lg:text-lg"
+            >
+              <span>Oakley</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Include Glide.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Glide(".glide", {
+          type: "carousel",
+          perView: 3,
+          gap: 10,
+          animationDuration: 700,
+          animationTimingFunc: "ease-in-out",
+          breakpoints: {
+            768: {
+              perView: 3,
+            },
+            480: {
+              perView: 3.3,
+            },
+          },
+        }).mount();
+      });
+    </script>
+
+    <div class="flex gap-8">
+      <!-- Left Menu (Filters) -->
+      <div class="hidden w-1/5 bg-white p-6 shadow-md md:block">
+        <h2 class="mb-6 text-2xl font-bold">Filters</h2>
+
+        <!-- Gender Filter -->
+        <div class="mb-4">
+          <h3 class="mb-2 font-semibold">Gender</h3>
+          <div class="flex gap-2">
+            <button
+              class="w-full rounded border px-4 py-2 font-medium text-gray-800 hover:bg-gray-200"
+            >
+              Womens
+            </button>
+            <button
+              class="w-full rounded border px-4 py-2 font-medium text-gray-800 hover:bg-gray-200"
+            >
+              Mens
+            </button>
+          </div>
+        </div>
+
+        <!-- Size Filter -->
+        <div class="mb-4">
+          <h3 class="mb-2 font-semibold">Size</h3>
+          <div class="mb-2 flex gap-2">
+            <button
+              class="rounded border px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200"
+            >
+              S
+            </button>
+            <button
+              class="rounded border px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200"
+            >
+              M
+            </button>
+            <button
+              class="rounded border px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200"
+            >
+              L
+            </button>
+            <button
+              class="rounded border px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200"
+            >
+              XL
+            </button>
+          </div>
+          <a href="#" class="text-sm text-blue-500">Find your size</a>
+          <div><a href="#" class="text-sm text-blue-500">More Options</a></div>
+        </div>
+
+        <!-- Colour Filter -->
+        <div class="mb-4">
+          <h3 class="mb-2 font-semibold">Colour</h3>
+          <div class="flex gap-2">
+            <button class="flex items-center gap-2">
+              <div class="h-5 w-5 rounded-full bg-black"></div>
+              Black
+            </button>
+            <button class="flex items-center gap-2">
+              <div class="h-5 w-5 rounded-full bg-orange-700"></div>
+              Tortoise
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Content (Product Cards) -->
+      <div class="w-full pt-1 md:w-4/5">
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Product Card 1 -->
+          <div
+            x-data="{ loading: false }"
+            @click="loading = true; setTimeout(() => { window.location.href = 'file:///home/james/Documents/code/twind/src/product-page/v20-stock.html'; }, 1000)"
+            class="group transform cursor-pointer border border-gray-200 bg-white p-4 shadow-md transition-all duration-500 ease-in-out hover:scale-[1.025]"
+          >
+            <div class="mb-2 flex items-center justify-between">
+              <!-- Placeholder for Brand Logo -->
+              <img
+                src="https://www.spex4less.com/media/mf_webp/jpg/media/logos/brand-logos/hyva-spex4less/small/ray-ban.webp"
+                alt="Brand Logo"
+                class="h-8"
+              />
+              <!-- Icons -->
+              <div class="flex items-center gap-3">
+                <div>
+                  <!-- Placeholder for SVG icon -->
+                  <svg
+                    width="50"
+                    height="25"
+                    viewBox="0 0 512 277"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M97.1899 0.666207C95.1589 1.40821 91.2659 5.01121 89.8479 7.46021C89.1769 8.62021 88.4799 15.9722 88.1899 24.9602L87.6899 40.4602L68.1899 41.0152C57.4649 41.3202 48.5559 41.6572 48.3919 41.7652C48.2279 41.8722 47.4969 43.3782 46.7689 45.1112C44.8959 49.5652 46.1129 53.1122 50.2409 55.2282C53.4259 56.8602 57.5479 56.9752 104.027 56.7282L154.364 56.4602L156.777 53.6542C159.737 50.2132 159.843 47.0602 157.117 43.5952L155.045 40.9602H129.617H104.19V28.4602V15.9602H236.695H369.199L368.945 120.21L368.69 224.46L310.412 224.718C264.303 224.922 252.042 224.713 251.696 223.718C247.051 210.356 242.851 203.946 234.666 197.727C221.669 187.851 203.056 186.376 188.049 194.032C178.973 198.662 170.659 208.713 167.026 219.447L165.329 224.46L134.759 224.724L104.19 224.989V201.974V178.96H117.69C129.857 178.96 131.388 178.762 133.19 176.96C136.231 173.919 136.182 168.64 133.083 165.46C131.182 163.509 129.818 163.46 77.0759 163.46H23.0169L20.6029 166.266C17.6429 169.707 17.5369 172.86 20.2629 176.325L22.3349 178.96H55.2629H88.1899V207.349C88.1899 233.805 88.3199 235.899 90.1009 238.099L92.0109 240.46L128.741 240.96L165.471 241.46L166.666 245.46C171.327 261.065 185.023 273.034 201.686 276.062C221.828 279.724 244.301 266.108 249.973 246.807L251.69 240.963L324.251 240.961L396.812 240.96L398.088 245.94C400.85 256.716 410.206 267.331 421.501 272.502C445.119 283.315 472.441 271.591 481.108 246.925L483.028 241.46L492.404 240.96C502.803 240.405 505.914 239.059 509.272 233.656C511.154 230.626 511.243 228.923 510.974 200.96C510.695 171.928 510.65 171.365 508.152 165.46C506.757 162.16 495.603 141.46 483.366 119.46C459.966 77.3882 456.975 73.1052 449.567 71.0482C447.195 70.3892 433.968 69.9692 415.494 69.9662L385.298 69.9602L384.994 39.7102C384.694 9.87321 384.658 9.41521 382.361 6.19521C377.585 -0.500793 388.326 -0.0477915 236.49 0.0392085C160.7 0.0822085 98.0149 0.365207 97.1899 0.666207ZM92.6899 74.1682C88.3859 76.6362 88.2549 77.4732 88.2219 102.71L88.1899 126.96H76.1449C64.6889 126.96 63.9789 127.08 61.6449 129.415C58.3969 132.662 58.3969 137.258 61.6449 140.505L64.0989 142.96H137.51C210.263 142.96 210.944 142.941 213.555 140.887C217.277 137.96 217.277 131.96 213.555 129.033C210.964 126.995 210.029 126.96 157.555 126.96H104.19V102.883V78.8062L101.267 75.8832C98.1519 72.7682 95.9119 72.3202 92.6899 74.1682ZM2.41289 86.5172C-1.00611 88.9112 -0.738115 96.0852 2.87689 98.9282C5.49689 100.989 6.30989 101.034 35.9659 100.751L66.3689 100.46L68.2789 98.0992C70.9319 94.8222 70.7479 89.8332 67.8759 87.1342C65.6039 85.0002 64.9989 84.9602 35.0979 84.9602C9.14489 84.9602 4.30589 85.1902 2.41289 86.5172ZM446.817 87.8372C450.119 91.6932 492.314 168.655 493.723 173.392C494.83 177.112 495.19 184.059 495.19 201.689V225.055L489.117 224.758L483.044 224.46L481.351 219.447C473.805 197.105 451.172 184.674 428.65 190.502C414.237 194.232 401.939 206.124 397.669 220.46C396.479 224.457 396.473 224.46 390.834 224.76L385.19 225.06V155.51V85.9602H415.2C443.316 85.9602 445.311 86.0782 446.817 87.8372ZM217.103 206.527C223.27 208.358 230.335 214.364 233.407 220.386C236.261 225.98 236.869 235.399 234.782 241.682C232.614 248.211 227.226 254.391 220.828 257.687C214.582 260.906 204.083 261.306 197.873 258.563C192.107 256.016 185.686 249.54 183.203 243.767C180.466 237.406 180.692 226.688 183.694 220.503C187.85 211.939 198.426 205.132 207.758 205.012C209.996 204.983 214.201 205.665 217.103 206.527ZM449.523 206.984C468.539 214.098 473.424 239.615 458.369 253.187C452.627 258.364 447.861 260.223 440.19 260.28C424.735 260.394 413.399 249.899 412.415 234.564C411.843 225.65 414.265 219.266 420.563 213.085C428.423 205.371 439.164 203.108 449.523 206.984Z"
+                      fill="black"
+                    />
+                  </svg>
+                </div>
+                <span
+                  class="rounded bg-gradient-to-r from-red-500 to-orange-500 px-3 py-1 text-sm font-bold text-white"
+                >
+                  Sale
+                </span>
+              </div>
+            </div>
+
+            <!-- Product Image -->
+            <div class="mb-4">
+              <img
+                src="https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/e78b80cdeb6ca6a2604708b5e79895ec/o/l/ol001_-_c1_1_1_1.webp"
+                alt="Product Image"
+                class="h-40 w-full rounded-lg object-cover"
+              />
+            </div>
+
+            <!-- Product Title -->
+            <h2 class="mb-4 text-center text-lg font-semibold text-gray-800">
+              SF 2852 Salvatore Ferragamo Glasses
+            </h2>
+
+            <!-- Brand Logo and Color Swatches -->
+            <div
+              class="mb-4 flex items-center justify-between border-t-2 border-gray-200 py-4"
+            >
+              <div
+                class="flex gap-1 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
+              >
+                <div
+                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                >
+                  54
+                </div>
+                <div
+                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                >
+                  52
+                </div>
+                <div
+                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                >
+                  50
+                </div>
+              </div>
+
+              <!-- Color Swatches -->
+              <div class="flex gap-2">
+                <div class="h-6 w-10 bg-black"></div>
+                <div class="h-6 w-10 bg-gray-600"></div>
+                <div class="h-6 w-10 bg-orange-700"></div>
+              </div>
+            </div>
+
+            <!-- Price -->
+            <div class="flex justify-between">
+              <div class="text-2xl font-bold text-gray-700">£142.00</div>
+              <div class="rounded-full bg-gray-200 p-4 text-2xl"></div>
+            </div>
+            <div
+              x-show="loading"
+              class="absolute inset-0 bg-white bg-opacity-75"
+            ></div>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div
+            x-data="{ loading: false }"
+            @click="loading = true; setTimeout(() => { window.location.href = 'file:///home/james/Documents/code/twind/src/product-page/v20-stock.html'; }, 1000)"
+            class="group transform cursor-pointer border border-gray-200 bg-white p-4 shadow-md transition-all duration-500 ease-in-out hover:scale-[1.025]"
+          >
+            <div class="mb-2 flex items-center justify-between">
+              <!-- Placeholder for Brand Logo -->
+              <img
+                src="https://www.spex4less.com/media/mf_webp/jpg/media/logos/brand-logos/hyva-spex4less/small/ray-ban.webp"
+                alt="Brand Logo"
+                class="h-8"
+              />
+              <!-- Icons -->
+              <div class="flex items-center gap-3">
+                <div>
+                  <!-- Placeholder for SVG icon -->
+                  <svg
+                    width="50"
+                    height="25"
+                    viewBox="0 0 512 277"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M97.1899 0.666207C95.1589 1.40821 91.2659 5.01121 89.8479 7.46021C89.1769 8.62021 88.4799 15.9722 88.1899 24.9602L87.6899 40.4602L68.1899 41.0152C57.4649 41.3202 48.5559 41.6572 48.3919 41.7652C48.2279 41.8722 47.4969 43.3782 46.7689 45.1112C44.8959 49.5652 46.1129 53.1122 50.2409 55.2282C53.4259 56.8602 57.5479 56.9752 104.027 56.7282L154.364 56.4602L156.777 53.6542C159.737 50.2132 159.843 47.0602 157.117 43.5952L155.045 40.9602H129.617H104.19V28.4602V15.9602H236.695H369.199L368.945 120.21L368.69 224.46L310.412 224.718C264.303 224.922 252.042 224.713 251.696 223.718C247.051 210.356 242.851 203.946 234.666 197.727C221.669 187.851 203.056 186.376 188.049 194.032C178.973 198.662 170.659 208.713 167.026 219.447L165.329 224.46L134.759 224.724L104.19 224.989V201.974V178.96H117.69C129.857 178.96 131.388 178.762 133.19 176.96C136.231 173.919 136.182 168.64 133.083 165.46C131.182 163.509 129.818 163.46 77.0759 163.46H23.0169L20.6029 166.266C17.6429 169.707 17.5369 172.86 20.2629 176.325L22.3349 178.96H55.2629H88.1899V207.349C88.1899 233.805 88.3199 235.899 90.1009 238.099L92.0109 240.46L128.741 240.96L165.471 241.46L166.666 245.46C171.327 261.065 185.023 273.034 201.686 276.062C221.828 279.724 244.301 266.108 249.973 246.807L251.69 240.963L324.251 240.961L396.812 240.96L398.088 245.94C400.85 256.716 410.206 267.331 421.501 272.502C445.119 283.315 472.441 271.591 481.108 246.925L483.028 241.46L492.404 240.96C502.803 240.405 505.914 239.059 509.272 233.656C511.154 230.626 511.243 228.923 510.974 200.96C510.695 171.928 510.65 171.365 508.152 165.46C506.757 162.16 495.603 141.46 483.366 119.46C459.966 77.3882 456.975 73.1052 449.567 71.0482C447.195 70.3892 433.968 69.9692 415.494 69.9662L385.298 69.9602L384.994 39.7102C384.694 9.87321 384.658 9.41521 382.361 6.19521C377.585 -0.500793 388.326 -0.0477915 236.49 0.0392085C160.7 0.0822085 98.0149 0.365207 97.1899 0.666207ZM92.6899 74.1682C88.3859 76.6362 88.2549 77.4732 88.2219 102.71L88.1899 126.96H76.1449C64.6889 126.96 63.9789 127.08 61.6449 129.415C58.3969 132.662 58.3969 137.258 61.6449 140.505L64.0989 142.96H137.51C210.263 142.96 210.944 142.941 213.555 140.887C217.277 137.96 217.277 131.96 213.555 129.033C210.964 126.995 210.029 126.96 157.555 126.96H104.19V102.883V78.8062L101.267 75.8832C98.1519 72.7682 95.9119 72.3202 92.6899 74.1682ZM2.41289 86.5172C-1.00611 88.9112 -0.738115 96.0852 2.87689 98.9282C5.49689 100.989 6.30989 101.034 35.9659 100.751L66.3689 100.46L68.2789 98.0992C70.9319 94.8222 70.7479 89.8332 67.8759 87.1342C65.6039 85.0002 64.9989 84.9602 35.0979 84.9602C9.14489 84.9602 4.30589 85.1902 2.41289 86.5172ZM446.817 87.8372C450.119 91.6932 492.314 168.655 493.723 173.392C494.83 177.112 495.19 184.059 495.19 201.689V225.055L489.117 224.758L483.044 224.46L481.351 219.447C473.805 197.105 451.172 184.674 428.65 190.502C414.237 194.232 401.939 206.124 397.669 220.46C396.479 224.457 396.473 224.46 390.834 224.76L385.19 225.06V155.51V85.9602H415.2C443.316 85.9602 445.311 86.0782 446.817 87.8372ZM217.103 206.527C223.27 208.358 230.335 214.364 233.407 220.386C236.261 225.98 236.869 235.399 234.782 241.682C232.614 248.211 227.226 254.391 220.828 257.687C214.582 260.906 204.083 261.306 197.873 258.563C192.107 256.016 185.686 249.54 183.203 243.767C180.466 237.406 180.692 226.688 183.694 220.503C187.85 211.939 198.426 205.132 207.758 205.012C209.996 204.983 214.201 205.665 217.103 206.527ZM449.523 206.984C468.539 214.098 473.424 239.615 458.369 253.187C452.627 258.364 447.861 260.223 440.19 260.28C424.735 260.394 413.399 249.899 412.415 234.564C411.843 225.65 414.265 219.266 420.563 213.085C428.423 205.371 439.164 203.108 449.523 206.984Z"
+                      fill="black"
+                    />
+                  </svg>
+                </div>
+                <span
+                  class="rounded bg-gradient-to-r from-red-500 to-orange-500 px-3 py-1 text-sm font-bold text-white"
+                >
+                  Sale
+                </span>
+              </div>
+            </div>
+
+            <!-- Product Image -->
+            <div class="mb-4">
+              <img
+                src="https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/e78b80cdeb6ca6a2604708b5e79895ec/o/l/ol001_-_c1_1_1_1.webp"
+                alt="Product Image"
+                class="h-40 w-full rounded-lg object-cover"
+              />
+            </div>
+
+            <!-- Product Title -->
+            <h2 class="mb-4 text-center text-lg font-semibold text-gray-800">
+              SF 2852 Salvatore Ferragamo Glasses
+            </h2>
+
+            <!-- Brand Logo and Color Swatches -->
+            <div
+              class="mb-4 flex items-center justify-between border-t-2 border-gray-200 py-4"
+            >
+              <div
+                class="flex gap-1 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
+              >
+                <div
+                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                >
+                  54
+                </div>
+                <div
+                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                >
+                  52
+                </div>
+                <div
+                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                >
+                  50
+                </div>
+              </div>
+
+              <!-- Color Swatches -->
+              <div class="flex gap-2">
+                <div class="h-6 w-10 bg-black"></div>
+                <div class="h-6 w-10 bg-gray-600"></div>
+                <div class="h-6 w-10 bg-orange-700"></div>
+              </div>
+            </div>
+
+            <!-- Price -->
+            <div class="flex justify-between">
+              <div class="text-2xl font-bold text-gray-700">£142.00</div>
+              <div class="rounded-full bg-gray-200 p-4 text-2xl"></div>
+            </div>
+            <div
+              x-show="loading"
+              class="absolute inset-0 bg-white bg-opacity-75"
+            ></div>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div
+            x-data="{ loading: false }"
+            @click="loading = true; setTimeout(() => { window.location.href = 'file:///home/james/Documents/code/twind/src/product-page/v20-stock.html'; }, 1000)"
+            class="group transform cursor-pointer border border-gray-200 bg-white p-4 shadow-md transition-all duration-500 ease-in-out hover:scale-[1.025]"
+          >
+            <div class="mb-2 flex items-center justify-between">
+              <!-- Placeholder for Brand Logo -->
+              <img
+                src="https://www.spex4less.com/media/mf_webp/jpg/media/logos/brand-logos/hyva-spex4less/small/ray-ban.webp"
+                alt="Brand Logo"
+                class="h-8"
+              />
+              <!-- Icons -->
+              <div class="flex items-center gap-3">
+                <div>
+                  <!-- Placeholder for SVG icon -->
+                  <svg
+                    width="50"
+                    height="25"
+                    viewBox="0 0 512 277"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M97.1899 0.666207C95.1589 1.40821 91.2659 5.01121 89.8479 7.46021C89.1769 8.62021 88.4799 15.9722 88.1899 24.9602L87.6899 40.4602L68.1899 41.0152C57.4649 41.3202 48.5559 41.6572 48.3919 41.7652C48.2279 41.8722 47.4969 43.3782 46.7689 45.1112C44.8959 49.5652 46.1129 53.1122 50.2409 55.2282C53.4259 56.8602 57.5479 56.9752 104.027 56.7282L154.364 56.4602L156.777 53.6542C159.737 50.2132 159.843 47.0602 157.117 43.5952L155.045 40.9602H129.617H104.19V28.4602V15.9602H236.695H369.199L368.945 120.21L368.69 224.46L310.412 224.718C264.303 224.922 252.042 224.713 251.696 223.718C247.051 210.356 242.851 203.946 234.666 197.727C221.669 187.851 203.056 186.376 188.049 194.032C178.973 198.662 170.659 208.713 167.026 219.447L165.329 224.46L134.759 224.724L104.19 224.989V201.974V178.96H117.69C129.857 178.96 131.388 178.762 133.19 176.96C136.231 173.919 136.182 168.64 133.083 165.46C131.182 163.509 129.818 163.46 77.0759 163.46H23.0169L20.6029 166.266C17.6429 169.707 17.5369 172.86 20.2629 176.325L22.3349 178.96H55.2629H88.1899V207.349C88.1899 233.805 88.3199 235.899 90.1009 238.099L92.0109 240.46L128.741 240.96L165.471 241.46L166.666 245.46C171.327 261.065 185.023 273.034 201.686 276.062C221.828 279.724 244.301 266.108 249.973 246.807L251.69 240.963L324.251 240.961L396.812 240.96L398.088 245.94C400.85 256.716 410.206 267.331 421.501 272.502C445.119 283.315 472.441 271.591 481.108 246.925L483.028 241.46L492.404 240.96C502.803 240.405 505.914 239.059 509.272 233.656C511.154 230.626 511.243 228.923 510.974 200.96C510.695 171.928 510.65 171.365 508.152 165.46C506.757 162.16 495.603 141.46 483.366 119.46C459.966 77.3882 456.975 73.1052 449.567 71.0482C447.195 70.3892 433.968 69.9692 415.494 69.9662L385.298 69.9602L384.994 39.7102C384.694 9.87321 384.658 9.41521 382.361 6.19521C377.585 -0.500793 388.326 -0.0477915 236.49 0.0392085C160.7 0.0822085 98.0149 0.365207 97.1899 0.666207ZM92.6899 74.1682C88.3859 76.6362 88.2549 77.4732 88.2219 102.71L88.1899 126.96H76.1449C64.6889 126.96 63.9789 127.08 61.6449 129.415C58.3969 132.662 58.3969 137.258 61.6449 140.505L64.0989 142.96H137.51C210.263 142.96 210.944 142.941 213.555 140.887C217.277 137.96 217.277 131.96 213.555 129.033C210.964 126.995 210.029 126.96 157.555 126.96H104.19V102.883V78.8062L101.267 75.8832C98.1519 72.7682 95.9119 72.3202 92.6899 74.1682ZM2.41289 86.5172C-1.00611 88.9112 -0.738115 96.0852 2.87689 98.9282C5.49689 100.989 6.30989 101.034 35.9659 100.751L66.3689 100.46L68.2789 98.0992C70.9319 94.8222 70.7479 89.8332 67.8759 87.1342C65.6039 85.0002 64.9989 84.9602 35.0979 84.9602C9.14489 84.9602 4.30589 85.1902 2.41289 86.5172ZM446.817 87.8372C450.119 91.6932 492.314 168.655 493.723 173.392C494.83 177.112 495.19 184.059 495.19 201.689V225.055L489.117 224.758L483.044 224.46L481.351 219.447C473.805 197.105 451.172 184.674 428.65 190.502C414.237 194.232 401.939 206.124 397.669 220.46C396.479 224.457 396.473 224.46 390.834 224.76L385.19 225.06V155.51V85.9602H415.2C443.316 85.9602 445.311 86.0782 446.817 87.8372ZM217.103 206.527C223.27 208.358 230.335 214.364 233.407 220.386C236.261 225.98 236.869 235.399 234.782 241.682C232.614 248.211 227.226 254.391 220.828 257.687C214.582 260.906 204.083 261.306 197.873 258.563C192.107 256.016 185.686 249.54 183.203 243.767C180.466 237.406 180.692 226.688 183.694 220.503C187.85 211.939 198.426 205.132 207.758 205.012C209.996 204.983 214.201 205.665 217.103 206.527ZM449.523 206.984C468.539 214.098 473.424 239.615 458.369 253.187C452.627 258.364 447.861 260.223 440.19 260.28C424.735 260.394 413.399 249.899 412.415 234.564C411.843 225.65 414.265 219.266 420.563 213.085C428.423 205.371 439.164 203.108 449.523 206.984Z"
+                      fill="black"
+                    />
+                  </svg>
+                </div>
+                <span
+                  class="rounded bg-gradient-to-r from-red-500 to-orange-500 px-3 py-1 text-sm font-bold text-white"
+                >
+                  Sale
+                </span>
+              </div>
+            </div>
+
+            <!-- Product Image -->
+            <div class="mb-4">
+              <img
+                src="https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/e78b80cdeb6ca6a2604708b5e79895ec/o/l/ol001_-_c1_1_1_1.webp"
+                alt="Product Image"
+                class="h-40 w-full rounded-lg object-cover"
+              />
+            </div>
+
+            <!-- Product Title -->
+            <h2 class="mb-4 text-center text-lg font-semibold text-gray-800">
+              SF 2852 Salvatore Ferragamo Glasses
+            </h2>
+
+            <!-- Brand Logo and Color Swatches -->
+            <div
+              class="mb-4 flex items-center justify-between border-t-2 border-gray-200 py-4"
+            >
+              <div
+                class="flex gap-1 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
+              >
+                <div
+                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                >
+                  54
+                </div>
+                <div
+                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                >
+                  52
+                </div>
+                <div
+                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                >
+                  50
+                </div>
+              </div>
+
+              <!-- Color Swatches -->
+              <div class="flex gap-2">
+                <div class="h-6 w-10 bg-black"></div>
+                <div class="h-6 w-10 bg-gray-600"></div>
+                <div class="h-6 w-10 bg-orange-700"></div>
+              </div>
+            </div>
+
+            <!-- Price -->
+            <div class="flex justify-between">
+              <div class="text-2xl font-bold text-gray-700">£142.00</div>
+              <div class="rounded-full bg-gray-200 p-4 text-2xl"></div>
+            </div>
+            <div
+              x-show="loading"
+              class="absolute inset-0 bg-white bg-opacity-75"
+            ></div>
+          </div>
+          <div
+            x-data="{ loading: false }"
+            @click="loading = true; setTimeout(() => { window.location.href = 'file:///home/james/Documents/code/twind/src/product-page/v20-stock.html'; }, 1000)"
+            class="group transform cursor-pointer border border-gray-200 bg-white p-4 shadow-md transition-all duration-500 ease-in-out hover:scale-[1.025]"
+          >
+            <div class="mb-2 flex items-center justify-between">
+              <!-- Frame Sizes -->
+              <div
+                class="flex gap-1 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
+              >
+                <div
+                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                >
+                  54
+                </div>
+                <div
+                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                >
+                  52
+                </div>
+                <div
+                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                >
+                  50
+                </div>
+              </div>
+
+              <!-- Icons -->
+              <div class="flex items-center gap-3">
+                <div>
+                  <!-- Placeholder for SVG icon -->
+                  <svg
+                    width="50"
+                    height="25"
+                    viewBox="0 0 512 277"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M97.1899 0.666207C95.1589 1.40821 91.2659 5.01121 89.8479 7.46021C89.1769 8.62021 88.4799 15.9722 88.1899 24.9602L87.6899 40.4602L68.1899 41.0152C57.4649 41.3202 48.5559 41.6572 48.3919 41.7652C48.2279 41.8722 47.4969 43.3782 46.7689 45.1112C44.8959 49.5652 46.1129 53.1122 50.2409 55.2282C53.4259 56.8602 57.5479 56.9752 104.027 56.7282L154.364 56.4602L156.777 53.6542C159.737 50.2132 159.843 47.0602 157.117 43.5952L155.045 40.9602H129.617H104.19V28.4602V15.9602H236.695H369.199L368.945 120.21L368.69 224.46L310.412 224.718C264.303 224.922 252.042 224.713 251.696 223.718C247.051 210.356 242.851 203.946 234.666 197.727C221.669 187.851 203.056 186.376 188.049 194.032C178.973 198.662 170.659 208.713 167.026 219.447L165.329 224.46L134.759 224.724L104.19 224.989V201.974V178.96H117.69C129.857 178.96 131.388 178.762 133.19 176.96C136.231 173.919 136.182 168.64 133.083 165.46C131.182 163.509 129.818 163.46 77.0759 163.46H23.0169L20.6029 166.266C17.6429 169.707 17.5369 172.86 20.2629 176.325L22.3349 178.96H55.2629H88.1899V207.349C88.1899 233.805 88.3199 235.899 90.1009 238.099L92.0109 240.46L128.741 240.96L165.471 241.46L166.666 245.46C171.327 261.065 185.023 273.034 201.686 276.062C221.828 279.724 244.301 266.108 249.973 246.807L251.69 240.963L324.251 240.961L396.812 240.96L398.088 245.94C400.85 256.716 410.206 267.331 421.501 272.502C445.119 283.315 472.441 271.591 481.108 246.925L483.028 241.46L492.404 240.96C502.803 240.405 505.914 239.059 509.272 233.656C511.154 230.626 511.243 228.923 510.974 200.96C510.695 171.928 510.65 171.365 508.152 165.46C506.757 162.16 495.603 141.46 483.366 119.46C459.966 77.3882 456.975 73.1052 449.567 71.0482C447.195 70.3892 433.968 69.9692 415.494 69.9662L385.298 69.9602L384.994 39.7102C384.694 9.87321 384.658 9.41521 382.361 6.19521C377.585 -0.500793 388.326 -0.0477915 236.49 0.0392085C160.7 0.0822085 98.0149 0.365207 97.1899 0.666207ZM92.6899 74.1682C88.3859 76.6362 88.2549 77.4732 88.2219 102.71L88.1899 126.96H76.1449C64.6889 126.96 63.9789 127.08 61.6449 129.415C58.3969 132.662 58.3969 137.258 61.6449 140.505L64.0989 142.96H137.51C210.263 142.96 210.944 142.941 213.555 140.887C217.277 137.96 217.277 131.96 213.555 129.033C210.964 126.995 210.029 126.96 157.555 126.96H104.19V102.883V78.8062L101.267 75.8832C98.1519 72.7682 95.9119 72.3202 92.6899 74.1682ZM2.41289 86.5172C-1.00611 88.9112 -0.738115 96.0852 2.87689 98.9282C5.49689 100.989 6.30989 101.034 35.9659 100.751L66.3689 100.46L68.2789 98.0992C70.9319 94.8222 70.7479 89.8332 67.8759 87.1342C65.6039 85.0002 64.9989 84.9602 35.0979 84.9602C9.14489 84.9602 4.30589 85.1902 2.41289 86.5172ZM446.817 87.8372C450.119 91.6932 492.314 168.655 493.723 173.392C494.83 177.112 495.19 184.059 495.19 201.689V225.055L489.117 224.758L483.044 224.46L481.351 219.447C473.805 197.105 451.172 184.674 428.65 190.502C414.237 194.232 401.939 206.124 397.669 220.46C396.479 224.457 396.473 224.46 390.834 224.76L385.19 225.06V155.51V85.9602H415.2C443.316 85.9602 445.311 86.0782 446.817 87.8372ZM217.103 206.527C223.27 208.358 230.335 214.364 233.407 220.386C236.261 225.98 236.869 235.399 234.782 241.682C232.614 248.211 227.226 254.391 220.828 257.687C214.582 260.906 204.083 261.306 197.873 258.563C192.107 256.016 185.686 249.54 183.203 243.767C180.466 237.406 180.692 226.688 183.694 220.503C187.85 211.939 198.426 205.132 207.758 205.012C209.996 204.983 214.201 205.665 217.103 206.527ZM449.523 206.984C468.539 214.098 473.424 239.615 458.369 253.187C452.627 258.364 447.861 260.223 440.19 260.28C424.735 260.394 413.399 249.899 412.415 234.564C411.843 225.65 414.265 219.266 420.563 213.085C428.423 205.371 439.164 203.108 449.523 206.984Z"
+                      fill="black"
+                    />
+                  </svg>
+                </div>
+                <span
+                  class="rounded bg-gradient-to-r from-red-500 to-orange-500 px-3 py-1 text-sm font-bold text-white"
+                >
+                  Sale
+                </span>
+              </div>
+            </div>
+
+            <!-- Product Image -->
+            <div class="mb-4">
+              <img
+                src="https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/e78b80cdeb6ca6a2604708b5e79895ec/o/l/ol001_-_c1_1_1_1.webp"
+                alt="Product Image"
+                class="h-40 w-full rounded-lg object-cover"
+              />
+            </div>
+
+            <!-- Product Title -->
+            <h2 class="mb-4 text-center text-lg font-semibold text-gray-800">
+              SF 2852 Salvatore Ferragamo Glasses
+            </h2>
+
+            <!-- Brand Logo and Color Swatches -->
+            <div
+              class="mb-4 flex items-center justify-between border-t-2 border-gray-200 py-4"
+            >
+              <!-- Placeholder for Brand Logo -->
+              <img
+                src="https://www.spex4less.com/media/mf_webp/jpg/media/logos/brand-logos/hyva-spex4less/small/ray-ban.webp"
+                alt="Brand Logo"
+                class="h-8"
+              />
+
+              <!-- Color Swatches -->
+              <div class="flex gap-2">
+                <div class="h-6 w-10 bg-black"></div>
+                <div class="h-6 w-10 bg-gray-600"></div>
+                <div class="h-6 w-10 bg-orange-700"></div>
+              </div>
+            </div>
+
+            <!-- Price -->
+            <div class="flex justify-between">
+              <div class="text-2xl font-bold text-gray-700">£142.00</div>
+              <div class="rounded-full bg-gray-200 p-4 text-2xl"></div>
+            </div>
+            <div
+              x-show="loading"
+              class="absolute inset-0 bg-white bg-opacity-75"
+            ></div>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div
+            x-data="{ loading: false }"
+            @click="loading = true; setTimeout(() => { window.location.href = 'file:///home/james/Documents/code/twind/src/product-page/v20-stock.html'; }, 1000)"
+            class="group transform cursor-pointer border border-gray-200 bg-white p-4 shadow-md transition-all duration-500 ease-in-out hover:scale-[1.025]"
+          >
+            <div class="mb-2 flex items-center justify-between">
+              <!-- Frame Sizes -->
+              <div
+                class="flex gap-1 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
+              >
+                <div
+                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                >
+                  54
+                </div>
+                <div
+                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                >
+                  52
+                </div>
+                <div
+                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                >
+                  50
+                </div>
+              </div>
+
+              <!-- Icons -->
+              <div class="flex items-center gap-3">
+                <div>
+                  <!-- Placeholder for SVG icon -->
+                  <svg
+                    width="50"
+                    height="25"
+                    viewBox="0 0 512 277"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M97.1899 0.666207C95.1589 1.40821 91.2659 5.01121 89.8479 7.46021C89.1769 8.62021 88.4799 15.9722 88.1899 24.9602L87.6899 40.4602L68.1899 41.0152C57.4649 41.3202 48.5559 41.6572 48.3919 41.7652C48.2279 41.8722 47.4969 43.3782 46.7689 45.1112C44.8959 49.5652 46.1129 53.1122 50.2409 55.2282C53.4259 56.8602 57.5479 56.9752 104.027 56.7282L154.364 56.4602L156.777 53.6542C159.737 50.2132 159.843 47.0602 157.117 43.5952L155.045 40.9602H129.617H104.19V28.4602V15.9602H236.695H369.199L368.945 120.21L368.69 224.46L310.412 224.718C264.303 224.922 252.042 224.713 251.696 223.718C247.051 210.356 242.851 203.946 234.666 197.727C221.669 187.851 203.056 186.376 188.049 194.032C178.973 198.662 170.659 208.713 167.026 219.447L165.329 224.46L134.759 224.724L104.19 224.989V201.974V178.96H117.69C129.857 178.96 131.388 178.762 133.19 176.96C136.231 173.919 136.182 168.64 133.083 165.46C131.182 163.509 129.818 163.46 77.0759 163.46H23.0169L20.6029 166.266C17.6429 169.707 17.5369 172.86 20.2629 176.325L22.3349 178.96H55.2629H88.1899V207.349C88.1899 233.805 88.3199 235.899 90.1009 238.099L92.0109 240.46L128.741 240.96L165.471 241.46L166.666 245.46C171.327 261.065 185.023 273.034 201.686 276.062C221.828 279.724 244.301 266.108 249.973 246.807L251.69 240.963L324.251 240.961L396.812 240.96L398.088 245.94C400.85 256.716 410.206 267.331 421.501 272.502C445.119 283.315 472.441 271.591 481.108 246.925L483.028 241.46L492.404 240.96C502.803 240.405 505.914 239.059 509.272 233.656C511.154 230.626 511.243 228.923 510.974 200.96C510.695 171.928 510.65 171.365 508.152 165.46C506.757 162.16 495.603 141.46 483.366 119.46C459.966 77.3882 456.975 73.1052 449.567 71.0482C447.195 70.3892 433.968 69.9692 415.494 69.9662L385.298 69.9602L384.994 39.7102C384.694 9.87321 384.658 9.41521 382.361 6.19521C377.585 -0.500793 388.326 -0.0477915 236.49 0.0392085C160.7 0.0822085 98.0149 0.365207 97.1899 0.666207ZM92.6899 74.1682C88.3859 76.6362 88.2549 77.4732 88.2219 102.71L88.1899 126.96H76.1449C64.6889 126.96 63.9789 127.08 61.6449 129.415C58.3969 132.662 58.3969 137.258 61.6449 140.505L64.0989 142.96H137.51C210.263 142.96 210.944 142.941 213.555 140.887C217.277 137.96 217.277 131.96 213.555 129.033C210.964 126.995 210.029 126.96 157.555 126.96H104.19V102.883V78.8062L101.267 75.8832C98.1519 72.7682 95.9119 72.3202 92.6899 74.1682ZM2.41289 86.5172C-1.00611 88.9112 -0.738115 96.0852 2.87689 98.9282C5.49689 100.989 6.30989 101.034 35.9659 100.751L66.3689 100.46L68.2789 98.0992C70.9319 94.8222 70.7479 89.8332 67.8759 87.1342C65.6039 85.0002 64.9989 84.9602 35.0979 84.9602C9.14489 84.9602 4.30589 85.1902 2.41289 86.5172ZM446.817 87.8372C450.119 91.6932 492.314 168.655 493.723 173.392C494.83 177.112 495.19 184.059 495.19 201.689V225.055L489.117 224.758L483.044 224.46L481.351 219.447C473.805 197.105 451.172 184.674 428.65 190.502C414.237 194.232 401.939 206.124 397.669 220.46C396.479 224.457 396.473 224.46 390.834 224.76L385.19 225.06V155.51V85.9602H415.2C443.316 85.9602 445.311 86.0782 446.817 87.8372ZM217.103 206.527C223.27 208.358 230.335 214.364 233.407 220.386C236.261 225.98 236.869 235.399 234.782 241.682C232.614 248.211 227.226 254.391 220.828 257.687C214.582 260.906 204.083 261.306 197.873 258.563C192.107 256.016 185.686 249.54 183.203 243.767C180.466 237.406 180.692 226.688 183.694 220.503C187.85 211.939 198.426 205.132 207.758 205.012C209.996 204.983 214.201 205.665 217.103 206.527ZM449.523 206.984C468.539 214.098 473.424 239.615 458.369 253.187C452.627 258.364 447.861 260.223 440.19 260.28C424.735 260.394 413.399 249.899 412.415 234.564C411.843 225.65 414.265 219.266 420.563 213.085C428.423 205.371 439.164 203.108 449.523 206.984Z"
+                      fill="black"
+                    />
+                  </svg>
+                </div>
+                <span
+                  class="rounded bg-gradient-to-r from-red-500 to-orange-500 px-3 py-1 text-sm font-bold text-white"
+                >
+                  Sale
+                </span>
+              </div>
+            </div>
+
+            <!-- Product Image -->
+            <div class="mb-4">
+              <img
+                src="https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/e78b80cdeb6ca6a2604708b5e79895ec/o/l/ol001_-_c1_1_1_1.webp"
+                alt="Product Image"
+                class="h-40 w-full rounded-lg object-cover"
+              />
+            </div>
+
+            <!-- Product Title -->
+            <h2 class="mb-4 text-center text-lg font-semibold text-gray-800">
+              SF 2852 Salvatore Ferragamo Glasses
+            </h2>
+
+            <!-- Brand Logo and Color Swatches -->
+            <div
+              class="mb-4 flex items-center justify-between border-t-2 border-gray-200 py-4"
+            >
+              <!-- Placeholder for Brand Logo -->
+              <img
+                src="https://www.spex4less.com/media/mf_webp/jpg/media/logos/brand-logos/hyva-spex4less/small/ray-ban.webp"
+                alt="Brand Logo"
+                class="h-8"
+              />
+
+              <!-- Color Swatches -->
+              <div class="flex gap-2">
+                <div class="h-6 w-10 bg-black"></div>
+                <div class="h-6 w-10 bg-gray-600"></div>
+                <div class="h-6 w-10 bg-orange-700"></div>
+              </div>
+            </div>
+
+            <!-- Price -->
+            <div class="flex justify-between">
+              <div class="text-2xl font-bold text-gray-700">£142.00</div>
+              <div class="rounded-full bg-gray-200 p-4 text-2xl"></div>
+            </div>
+            <div
+              x-show="loading"
+              class="absolute inset-0 bg-white bg-opacity-75"
+            ></div>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div
+            x-data="{ loading: false }"
+            @click="loading = true; setTimeout(() => { window.location.href = 'file:///home/james/Documents/code/twind/src/product-page/v20-stock.html'; }, 1000)"
+            class="group transform cursor-pointer border border-gray-200 bg-white p-4 shadow-md transition-all duration-500 ease-in-out hover:scale-[1.025]"
+          >
+            <div class="mb-2 flex items-center justify-between">
+              <!-- Frame Sizes -->
+              <div
+                class="flex gap-1 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
+              >
+                <div
+                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                >
+                  54
+                </div>
+                <div
+                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                >
+                  52
+                </div>
+                <div
+                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                >
+                  50
+                </div>
+              </div>
+
+              <!-- Icons -->
+              <div class="flex items-center gap-3">
+                <div>
+                  <!-- Placeholder for SVG icon -->
+                  <svg
+                    width="50"
+                    height="25"
+                    viewBox="0 0 512 277"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M97.1899 0.666207C95.1589 1.40821 91.2659 5.01121 89.8479 7.46021C89.1769 8.62021 88.4799 15.9722 88.1899 24.9602L87.6899 40.4602L68.1899 41.0152C57.4649 41.3202 48.5559 41.6572 48.3919 41.7652C48.2279 41.8722 47.4969 43.3782 46.7689 45.1112C44.8959 49.5652 46.1129 53.1122 50.2409 55.2282C53.4259 56.8602 57.5479 56.9752 104.027 56.7282L154.364 56.4602L156.777 53.6542C159.737 50.2132 159.843 47.0602 157.117 43.5952L155.045 40.9602H129.617H104.19V28.4602V15.9602H236.695H369.199L368.945 120.21L368.69 224.46L310.412 224.718C264.303 224.922 252.042 224.713 251.696 223.718C247.051 210.356 242.851 203.946 234.666 197.727C221.669 187.851 203.056 186.376 188.049 194.032C178.973 198.662 170.659 208.713 167.026 219.447L165.329 224.46L134.759 224.724L104.19 224.989V201.974V178.96H117.69C129.857 178.96 131.388 178.762 133.19 176.96C136.231 173.919 136.182 168.64 133.083 165.46C131.182 163.509 129.818 163.46 77.0759 163.46H23.0169L20.6029 166.266C17.6429 169.707 17.5369 172.86 20.2629 176.325L22.3349 178.96H55.2629H88.1899V207.349C88.1899 233.805 88.3199 235.899 90.1009 238.099L92.0109 240.46L128.741 240.96L165.471 241.46L166.666 245.46C171.327 261.065 185.023 273.034 201.686 276.062C221.828 279.724 244.301 266.108 249.973 246.807L251.69 240.963L324.251 240.961L396.812 240.96L398.088 245.94C400.85 256.716 410.206 267.331 421.501 272.502C445.119 283.315 472.441 271.591 481.108 246.925L483.028 241.46L492.404 240.96C502.803 240.405 505.914 239.059 509.272 233.656C511.154 230.626 511.243 228.923 510.974 200.96C510.695 171.928 510.65 171.365 508.152 165.46C506.757 162.16 495.603 141.46 483.366 119.46C459.966 77.3882 456.975 73.1052 449.567 71.0482C447.195 70.3892 433.968 69.9692 415.494 69.9662L385.298 69.9602L384.994 39.7102C384.694 9.87321 384.658 9.41521 382.361 6.19521C377.585 -0.500793 388.326 -0.0477915 236.49 0.0392085C160.7 0.0822085 98.0149 0.365207 97.1899 0.666207ZM92.6899 74.1682C88.3859 76.6362 88.2549 77.4732 88.2219 102.71L88.1899 126.96H76.1449C64.6889 126.96 63.9789 127.08 61.6449 129.415C58.3969 132.662 58.3969 137.258 61.6449 140.505L64.0989 142.96H137.51C210.263 142.96 210.944 142.941 213.555 140.887C217.277 137.96 217.277 131.96 213.555 129.033C210.964 126.995 210.029 126.96 157.555 126.96H104.19V102.883V78.8062L101.267 75.8832C98.1519 72.7682 95.9119 72.3202 92.6899 74.1682ZM2.41289 86.5172C-1.00611 88.9112 -0.738115 96.0852 2.87689 98.9282C5.49689 100.989 6.30989 101.034 35.9659 100.751L66.3689 100.46L68.2789 98.0992C70.9319 94.8222 70.7479 89.8332 67.8759 87.1342C65.6039 85.0002 64.9989 84.9602 35.0979 84.9602C9.14489 84.9602 4.30589 85.1902 2.41289 86.5172ZM446.817 87.8372C450.119 91.6932 492.314 168.655 493.723 173.392C494.83 177.112 495.19 184.059 495.19 201.689V225.055L489.117 224.758L483.044 224.46L481.351 219.447C473.805 197.105 451.172 184.674 428.65 190.502C414.237 194.232 401.939 206.124 397.669 220.46C396.479 224.457 396.473 224.46 390.834 224.76L385.19 225.06V155.51V85.9602H415.2C443.316 85.9602 445.311 86.0782 446.817 87.8372ZM217.103 206.527C223.27 208.358 230.335 214.364 233.407 220.386C236.261 225.98 236.869 235.399 234.782 241.682C232.614 248.211 227.226 254.391 220.828 257.687C214.582 260.906 204.083 261.306 197.873 258.563C192.107 256.016 185.686 249.54 183.203 243.767C180.466 237.406 180.692 226.688 183.694 220.503C187.85 211.939 198.426 205.132 207.758 205.012C209.996 204.983 214.201 205.665 217.103 206.527ZM449.523 206.984C468.539 214.098 473.424 239.615 458.369 253.187C452.627 258.364 447.861 260.223 440.19 260.28C424.735 260.394 413.399 249.899 412.415 234.564C411.843 225.65 414.265 219.266 420.563 213.085C428.423 205.371 439.164 203.108 449.523 206.984Z"
+                      fill="black"
+                    />
+                  </svg>
+                </div>
+                <span
+                  class="rounded bg-gradient-to-r from-red-500 to-orange-500 px-3 py-1 text-sm font-bold text-white"
+                >
+                  Sale
+                </span>
+              </div>
+            </div>
+
+            <!-- Product Image -->
+            <div class="mb-4">
+              <img
+                src="https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/e78b80cdeb6ca6a2604708b5e79895ec/o/l/ol001_-_c1_1_1_1.webp"
+                alt="Product Image"
+                class="h-40 w-full rounded-lg object-cover"
+              />
+            </div>
+
+            <!-- Product Title -->
+            <h2 class="mb-4 text-center text-lg font-semibold text-gray-800">
+              SF 2852 Salvatore Ferragamo Glasses
+            </h2>
+
+            <!-- Brand Logo and Color Swatches -->
+            <div
+              class="mb-4 flex items-center justify-between border-t-2 border-gray-200 py-4"
+            >
+              <!-- Placeholder for Brand Logo -->
+              <img
+                src="https://www.spex4less.com/media/mf_webp/jpg/media/logos/brand-logos/hyva-spex4less/small/ray-ban.webp"
+                alt="Brand Logo"
+                class="h-8"
+              />
+
+              <!-- Color Swatches -->
+              <div class="flex gap-2">
+                <div class="h-6 w-10 bg-black"></div>
+                <div class="h-6 w-10 bg-gray-600"></div>
+                <div class="h-6 w-10 bg-orange-700"></div>
+              </div>
+            </div>
+
+            <!-- Price -->
+            <div class="flex justify-between">
+              <div class="text-2xl font-bold text-gray-700">£142.00</div>
+              <div class="rounded-full bg-gray-200 p-4 text-2xl"></div>
+            </div>
+            <div
+              x-show="loading"
+              class="absolute inset-0 bg-white bg-opacity-75"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

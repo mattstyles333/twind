@@ -12,66 +12,38 @@
   </head>
   <body class="bg-gray-50 p-4">
     <hr class="py-4" />
-    <div class="flex w-full items-baseline justify-between gap-3 px-4">
-      <div class="pb-2 text-left">
-        <p class="text-2xl font-medium">Filters</p>
-        <a
-          href="/product-quiz"
-          class="font-semibold text-blue-800 hover:text-blue-700"
-          >Take Our <u>Style Finder</u> Quiz</a
-        >
-      </div>
-      <div class="flex gap-3">
-        <div class="relative inline-block text-left">
-          <div>
-            <button
-              type="button"
-              class="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-800 shadow-sm duration-500 ease-in-out hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
-              id="menu-button"
-              aria-expanded="true"
-              aria-haspopup="true"
-            >
-              Bestselling
-              <!-- Heroicon name: solid/chevron-down -->
-              <svg
-                class="-mr-1 ml-2 h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </button>
-          </div>
+    <div class="flex w-96 items-center justify-between gap-3 px-4">
+      <div class="flex items-center justify-between gap-4 pb-2">
+        <div class="text-sm text-gray-600">
+          Frames sorted by: <strong>Most Relevant</strong>
         </div>
-        <svg
-          width="30"
-          height="30"
-          viewBox="0 0 364 311"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M43.492 124.732V249.464L32.986 238.994L22.48 228.523L11.24 239.763L0 251.003L29.746 280.75L59.492 310.496L89.238 280.75L118.984 251.003L107.744 239.763L96.504 228.523L85.998 238.994L75.492 249.464V124.732V0H59.492H43.492V124.732ZM139.492 16V32H251.492H363.492V16V0H251.492H139.492V16ZM139.492 96V112H227.492H315.492V96V80H227.492H139.492V96ZM139.492 176V192H203.492H267.492V176V160H203.492H139.492V176ZM139.492 256V272H179.492H219.492V256V240H179.492H139.492V256Z"
-            fill="black"
-          />
-        </svg>
       </div>
     </div>
     <div class="flex">
-      <div class="sticky top-0 mx-auto w-96 max-w-xl justify-center px-3">
+      <div class="sticky left-0 top-0 w-96 max-w-xl justify-start px-3">
         <div class="sticky top-0 z-10 py-3">
           <div
             class="border border-gray-300 bg-white"
             x-data="{ selected: null, showAll: false }"
           >
+            <div class="flex items-center gap-2 border-b border-gray-300 p-4">
+              <span>Sort By: <span class="font-bold">Bestsellers</span></span>
+              <svg
+                class="h-4 w-4 text-gray-600"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+
             <ul class="shadow-box">
               <!-- Accordion Item 1 -->
               <li class="relative border-b border-gray-300">
