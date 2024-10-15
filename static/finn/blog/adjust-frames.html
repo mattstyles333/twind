@@ -1,28 +1,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            p: "#1f2937",
-            s: "#1E3A8A",
-            l: "#f3f4f6",
-            t: "#5494EC",
-            a: "#f97316",
-            b: "#2563eb",
-            gr: "#6b7280",
-          },
-          screens: {
-            xxsm: "420px",
-            xxxsm: "360px",
-          },
-        },
-      },
-    };
-  </script>
+  <link href="../output.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <div class="max-w-4xl mx-auto p-6">
   <h1 class="text-3xl font-bold mb-6">
@@ -35,12 +15,6 @@
     have them feeling as comfortable as ever. Let's dive into some easy fixes
     for the most common issues people have with their glasses.
   </p>
-
-  <img
-    src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/trial-banner.webp"
-    alt="Glasses sliding down nose"
-    class="w-3/4 h-auto mx-auto mb-4"
-  />
 
   <h2 class="text-2xl font-semibold mb-4">
     1. Glasses Sliding Down Your Nose?
@@ -56,14 +30,12 @@
       thumbs for even pressure—a little goes a long way!
     </li>
     <li>
-      <strong>For Plastic Frames:</strong> ?
+      <strong>For Plastic Frames:</strong> You’ll want to adjust the arms. Place
+      the frames in hot (but not boiling) water for about 30 seconds to soften
+      them. Then, carefully bend the temple arms slightly downwards where they
+      curve behind your ears. This will make them sit more snugly.
+    </li>
   </ul>
-
-  <img
-    src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/woman_wearing_glasses.webp"
-    alt="Glasses too tight"
-    class="w-3/4 h-auto mx-auto mb-4"
-  />
 
   <h2 class="text-2xl font-semibold mb-4">2. Glasses Too Tight?</h2>
   <p class="mb-4">
@@ -83,12 +55,6 @@
     </li>
   </ul>
 
-  <img
-    src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/man_wearing_glasses.webp"
-    alt="One side sitting higher"
-    class="w-3/4 h-auto mx-auto mb-4"
-  />
-
   <h2 class="text-2xl font-semibold mb-4">3. One Side Sitting Higher?</h2>
   <p class="mb-4">
     Nobody wants lopsided glasses. If one lens seems to sit higher than the
@@ -101,12 +67,6 @@
       touch. Go slowly—small adjustments can make a big difference.
     </li>
   </ul>
-
-  <img
-    src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/old_couple_wearing_glasses.webp"
-    alt="Glasses sitting too far or too close"
-    class="w-3/4 h-auto mx-auto mb-4"
-  />
 
   <h2 class="text-2xl font-semibold mb-4">
     4. Glasses Sitting Too Far or Too Close?
@@ -127,12 +87,6 @@
     </li>
   </ul>
 
-  <img
-    src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/glasses-banner-2.webp"
-    alt="Crooked glasses after wear and tear"
-    class="w-3/4 h-auto mx-auto mb-4"
-  />
-
   <h2 class="text-2xl font-semibold mb-4">
     5. Crooked Glasses After Wear and Tear?
   </h2>
@@ -148,36 +102,6 @@
       accordingly—either by bending it up or down to make everything even again.
     </li>
   </ul>
-
-  <!-- Buttons Section -->
-  <div class="flex flex-col items-center">
-    <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-      <a
-        href="/glasses"
-        class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-2 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
-      >
-        <span class="mx-auto">Shop Glasses</span>
-      </a>
-      <a
-        href="/sunglasses"
-        class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-2 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
-      >
-        <span class="mx-auto">Shop Sunglasses</span>
-      </a>
-      <a
-        href="/sports-glasses"
-        class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-2 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
-      >
-        <span class="mx-auto">Shop Sports</span>
-      </a>
-      <a
-        href="/varifocal-glasses"
-        class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md bg-white px-4 py-2 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
-      >
-        <span class="mx-auto">Shop Varifocals</span>
-      </a>
-    </div>
-  </div>
 
   <h2 class="text-2xl font-semibold mb-4">Tips for Success</h2>
   <ul class="list-disc list-inside mb-6">
