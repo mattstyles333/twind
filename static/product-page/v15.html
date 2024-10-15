@@ -289,7 +289,8 @@
                   <button
                     class="w-full whitespace-nowrap rounded border border-gray-400 bg-white px-1 py-1 text-sm font-bold hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200"
                   >
-                    Size Guide
+                    <span class="sm:hidden">Guide</span>
+                    <span class="hidden sm:inline">Size Guide</span>
                   </button>
                 </div>
               </div>
@@ -375,7 +376,8 @@
                             class="text-xl font-bold text-gray-900 dark:text-gray-200"
                             >£120</span
                           >
-                          <span class="text-gray-700 dark:text-gray-200"
+                          <span
+                            class="text-sm text-gray-700 dark:text-gray-200 md:text-base"
                             >Frame Colour: Black</span
                           >
                         </div>
@@ -394,7 +396,8 @@
                             class="text-xl font-bold text-gray-900 dark:text-gray-200"
                             >£130</span
                           >
-                          <span class="text-gray-700 dark:text-gray-200"
+                          <span
+                            class="text-sm text-gray-700 dark:text-gray-200 md:text-base"
                             >Frame Colour: Blue</span
                           >
                         </div>
@@ -413,7 +416,8 @@
                             class="text-xl font-bold text-gray-900 dark:text-gray-200"
                             >£125</span
                           >
-                          <span class="text-gray-700 dark:text-gray-200"
+                          <span
+                            class="text-sm text-gray-700 dark:text-gray-200 md:text-base"
                             >Frame Colour: Havana</span
                           >
                         </div>
@@ -439,7 +443,7 @@
             </div>
 
             <div
-              :class="sticky ? 'fixed inset-x-0 bottom-0 bg-white dark:bg-slate-900 z-50 p-2 md:p-4' : 'pb-5'"
+              :class="sticky ? 'fixed inset-x-0 bottom-0 bg-white dark:bg-slate-900 z-50 py-4 px-2 md:p-4' : 'pb-5'"
               x-data="{ sticky: false }"
               x-init="window.addEventListener('scroll', () => { 
     sticky = window.innerWidth < 1280; // Ensure sticky only on screens smaller than 1280
@@ -516,27 +520,56 @@
           <div class="grid grid-cols-1 gap-y-4">
             <div class="bg-white p-4 shadow-sm dark:bg-slate-900 md:rounded-lg">
               <div
-                class="flex w-full flex-col rounded-lg bg-white dark:bg-slate-900 lg:flex-row"
+                class="flex w-full flex-col gap-4 rounded-lg bg-white dark:bg-slate-900 lg:flex-col"
               >
-                <div
-                  class="dark:bg-p w-full justify-end rounded-lg bg-gray-50 p-4 lg:ml-4 lg:w-1/3"
-                >
-                  <h3 class="mb-2 text-lg font-bold dark:text-gray-300">
-                    Frame Details:
-                  </h3>
-                  <ul
-                    class="list-disc pl-4 leading-8 text-gray-700 dark:text-gray-200"
-                  >
-                    <li><strong>Gender:</strong> Mens, Womens</li>
-                    <li><strong>Material:</strong> Acetate</li>
-                    <li><strong>Hinge Type:</strong> Sprung Sides</li>
-                    <li><strong>Multifocal:</strong> Yes</li>
-                    <li><strong>Frame Type:</strong> Full Rimmed</li>
-                  </ul>
-                </div>
-                <div class="flex w-full flex-col pb-4 md:flex-row lg:w-2/3">
+                <div class="flex w-full flex-col pb-4 md:flex-row lg:w-full">
                   <!-- First SVG Block -->
-                  <div class="w-full py-8 lg:w-1/2">
+                  <div class="w-full py-8 lg:w-1/3">
+                    <div class="relative flex flex-col items-center">
+                      <!-- Bridge Width -->
+                      <!-- Frame Width -->
+                      <div
+                        class="absolute top-0 -translate-y-full transform pb-2"
+                      >
+                        <span
+                          class="size-detail-bridge-width dark:bg-p bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:text-gray-200"
+                        >
+                          144 mm
+                        </span>
+                      </div>
+
+                      <!-- Lens Depth and Bridge Width -->
+                      <div class="relative w-full max-w-lg">
+                        <!-- Eye Size - Centered in the Right Lens -->
+                        <div
+                          class="absolute right-[30%] top-1/2 -translate-y-1/2 translate-x-1/2 transform"
+                        >
+                          <span
+                            x-text="`${selectedSize.eye || '48'} mm`"
+                            class="size-detail-lens-depth dark:bg-p bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:text-gray-200"
+                          >
+                            48 mm
+                          </span>
+                        </div>
+
+                        <!-- Frame Illustration using SVG -->
+                        <div class="z-0 flex justify-center">
+                          <svg
+                            class="w-64 md:w-52 lg:w-64"
+                            viewBox="0 0 125 56"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M1 2H123.785M1 0V5.00003M123.785 0V5.00003M80.4979 13.1892L111.525 44.2167M82.5965 11.0403L78.3539 15.283M114.003 42.4466L109.76 46.6892M21.7841 6.73547C19.1507 6.92647 14.39 7.84351 12.1031 8.60058C7.55423 10.1063 4.79855 12.4139 2.97905 16.242C1.52754 19.2953 1.00031 22.2465 1.00031 27.3182C1.00031 34.4605 2.19843 40.3034 4.60905 44.9178C6.19962 47.9621 9.69498 51.3606 12.6658 52.7512C17.1133 54.8329 23.3417 55.2483 28.5083 53.8074C35.4101 51.8827 44.0503 45.7529 49.0143 39.2599C50.6904 37.0673 50.8204 36.9621 50.8204 37.7994C50.8204 38.9396 51.6572 39.2553 52.9421 38.6004C54.787 37.6602 57.0616 32.4059 56.8752 29.5156C56.7859 28.1337 56.7309 28.0478 55.9399 28.059C55.4778 28.0656 55.1012 27.9978 55.1033 27.9084C55.1055 27.8192 55.3787 26.4581 55.7107 24.884C56.0426 23.3099 56.3158 20.8962 56.318 19.5201L56.322 17.0178L58.0277 16.2481C59.5764 15.5495 60.0202 15.4889 62.8438 15.5919C65.2718 15.6805 66.1885 15.8399 67.0216 16.3186L68.0893 16.9316L68.4469 20.4594C68.7693 23.6437 69.1083 25.6423 69.6377 27.483C69.7969 28.0364 69.7174 28.1045 69.0591 27.9804C67.5351 27.6933 67.3163 29.5813 68.4579 33.1687C69.4326 36.2316 70.7597 38.2413 72.1589 38.7739C73.0477 39.1122 73.972 38.6603 74.1043 37.8231C74.1829 37.327 74.4723 37.571 75.5656 39.0556C78.9014 43.5845 86.5248 49.7154 91.8164 52.1255C98.8169 55.3134 106.23 55.5174 112.255 52.6882C119.952 49.0737 124.321 38.77 123.786 25.4941C123.325 14.0594 118.794 9.19255 106.766 7.21297C104.209 6.79211 98.8585 6.72855 63.3518 6.69541C41.0779 6.67462 22.3725 6.69269 21.7841 6.73547ZM39.4907 8.32342C45.8261 8.87623 49.5391 10.1536 52.1896 12.6926C54.1546 14.5749 54.7787 16.0655 54.787 18.8946C54.8053 25.1344 52.2202 32.452 48.0876 37.8593C45.8056 40.8454 40.5807 45.6394 37.1663 47.8795C31.3517 51.695 27.2967 53.0368 21.6313 53.0196C18.4535 53.01 17.6414 52.8991 15.5517 52.1897C10.8931 50.6077 8.00873 48.0265 5.74207 43.4115C3.40664 38.6558 2.33169 32.5631 2.61258 25.6739C2.85557 19.7231 4.06714 16.2378 6.86868 13.4328C9.67664 10.6211 13.8096 9.27118 22.8539 8.21105C24.9549 7.96492 36.2555 8.04114 39.4907 8.32342ZM106.439 8.74458C109.853 9.33204 114.217 10.7175 115.839 11.7289C117.518 12.7754 119.538 15.0584 120.369 16.8479C121.85 20.0382 122.175 21.957 122.163 27.4447C122.141 37.333 120.069 43.9234 115.574 48.4055C111.845 52.1225 105.439 53.9138 99.5504 52.8859C93.7187 51.8679 87.9476 48.8174 82.1061 43.6649C74.5246 36.9778 70.0924 27.9638 70.0799 19.2055C70.0753 15.8658 70.469 14.8415 72.5486 12.7833C75.0338 10.3241 79.0041 8.84249 84.484 8.33005C89.1057 7.89774 103.047 8.16104 106.439 8.74458ZM74.6606 9.23684C72.6385 10.3331 70.2465 12.5649 69.4338 14.1139C69.1077 14.7354 68.8093 15.2437 68.7708 15.2434C68.732 15.2434 67.9441 14.9527 67.0195 14.5978C65.7288 14.1019 64.6642 13.9504 62.4348 13.9449C59.7595 13.9383 58.8735 14.1088 56.5906 15.0698C56.2223 15.2247 55.8904 14.9343 55.2993 13.9401C54.2851 12.2344 51.869 10.0897 49.8374 9.09193L48.2551 8.31468L76.3416 8.32553L74.6606 9.23684Z"
+                              stroke="black"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-full py-8 lg:w-1/3">
                     <div class="relative flex flex-col items-center">
                       <!-- Bridge Width -->
                       <div
@@ -544,7 +577,7 @@
                       >
                         <span
                           x-text="`${selectedSize.bridge || '18'} mm`"
-                          class="size-detail-frame-width dark:bg-p bg-gray-100 px-3 py-1 text-sm text-gray-700 dark:text-gray-200"
+                          class="size-detail-frame-width dark:bg-p bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:text-gray-200"
                           >18 mm</span
                         >
                       </div>
@@ -562,55 +595,31 @@
                           </span>
                         </div>
 
-                        <!-- Eye Size - Centered in the Right Lens -->
-                        <div
-                          class="absolute right-[30%] top-1/2 -translate-y-1/2 translate-x-1/2 transform"
-                        >
-                          <span
-                            x-text="`${selectedSize.eye || '48'} mm`"
-                            class="size-detail-lens-depth dark:bg-p bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:text-gray-200"
-                          >
-                            48 mm
-                          </span>
-                        </div>
-
                         <!-- Frame Illustration using SVG -->
                         <div class="z-0 flex justify-center">
                           <svg
-                            class="w-64"
-                            viewBox="0 0 125 69"
+                            class="w-64 md:w-52 lg:w-64"
+                            viewBox="0 0 125 56"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M48.8478 3.00342H74M48.5 0.814819V6M74.5 0.814819V6M24.9966 13L24.9966 48.9999M28 12.5H22M28 49.5H22M80.4976 14.5024L111.525 45.5299M82.5962 12.3536L78.3536 16.5962M114.002 43.7598L109.76 48.0024M2 65.5L122 65.5M1.5 63L1.5 68.1852M122.5 63V68.1852M21.7838 8.0487C19.1504 8.2397 14.3897 9.15674 12.1028 9.9138C7.55393 11.4195 4.79824 13.7272 2.97874 17.5553C1.52724 20.6086 1 23.5597 1 28.6314C1 35.7737 2.19813 41.6167 4.60874 46.2311C6.19932 49.2753 9.69467 52.6738 12.6655 54.0644C17.113 56.1461 23.3414 56.5616 28.508 55.1207C35.4098 53.1959 44.05 47.0662 49.014 40.5731C50.6902 38.3805 50.82 38.2754 50.82 39.1126C50.82 40.2528 51.6569 40.5686 52.9418 39.9136C54.7867 38.9734 57.0613 33.7191 56.8749 30.8288C56.7856 29.4469 56.7306 29.3611 55.9396 29.3722C55.4775 29.3788 55.1009 29.3111 55.103 29.2216C55.1052 29.1324 55.3784 27.7713 55.7104 26.1972C56.0423 24.6231 56.3155 22.2094 56.3177 20.8333L56.3217 18.331L58.0275 17.5613C59.5762 16.8627 60.0199 16.8021 62.8435 16.9052C65.2715 16.9937 66.1882 17.1531 67.0213 17.6318L68.089 18.2449L68.4466 21.7726C68.769 24.9569 69.108 26.9555 69.6374 28.7962C69.7966 29.3496 69.7171 29.4177 69.0588 29.2936C67.5348 29.0065 67.316 30.8945 68.4576 34.4819C69.4323 37.5448 70.7594 39.5545 72.1586 40.0872C73.0474 40.4255 73.9717 39.9736 74.104 39.1364C74.1826 38.6402 74.472 38.8842 75.5653 40.3688C78.9011 44.8977 86.5245 51.0286 91.8161 53.4387C98.8166 56.6267 106.23 56.8306 112.255 54.0015C119.952 50.3869 124.321 40.0832 123.785 26.8073C123.325 15.3726 118.794 10.5058 106.766 8.5262C104.209 8.10534 98.8582 8.04177 63.3515 8.00863C41.0776 7.98784 22.3722 8.00592 21.7838 8.0487ZM39.4904 9.63664C45.8258 10.1895 49.5388 11.4668 52.1893 14.0058C54.1543 15.8881 54.7785 17.3787 54.7867 20.2079C54.805 26.4476 52.2199 33.7652 48.0873 39.1725C45.8053 42.1586 40.5804 46.9526 37.166 49.1927C31.3514 53.0082 27.2964 54.35 21.631 54.3329C18.4532 54.3232 17.6411 54.2124 15.5514 53.5029C10.8928 51.921 8.00843 49.3398 5.74177 44.7248C3.40634 39.9691 2.33139 33.8764 2.61227 26.9871C2.85526 21.0363 4.06684 17.5511 6.86837 14.746C9.67633 11.9344 13.8093 10.5844 22.8536 9.52427C24.9546 9.27814 36.2552 9.35436 39.4904 9.63664ZM106.439 10.0578C109.853 10.6453 114.217 12.0308 115.839 13.0421C117.518 14.0887 119.538 16.3716 120.369 18.1611C121.85 21.3515 122.175 23.2702 122.162 28.7579C122.141 38.6462 120.069 45.2366 115.573 49.7188C111.845 53.4357 105.439 55.227 99.5502 54.1991C93.7185 53.1811 87.9473 50.1306 82.1058 44.9781C74.5243 38.291 70.0922 29.277 70.0796 20.5188C70.075 17.179 70.4687 16.1547 72.5483 14.0965C75.0335 11.6373 79.0038 10.1557 84.4837 9.64327C89.1054 9.21096 103.047 9.47426 106.439 10.0578ZM74.6603 10.5501C72.6382 11.6464 70.2462 13.8781 69.4335 15.4272C69.1074 16.0487 68.8091 16.5569 68.7705 16.5566C68.7317 16.5566 67.9438 16.2659 67.0192 15.911C65.7285 15.4151 64.6639 15.2636 62.4345 15.2582C59.7592 15.2515 58.8732 15.422 56.5903 16.3831C56.222 16.5379 55.8901 16.2475 55.299 15.2533C54.2848 13.5476 51.8687 11.4029 49.8371 10.4052L48.2548 9.62791L76.3414 9.63875L74.6603 10.5501Z"
+                              d="M48.8478 2.1886H74M48.5 9.95021e-09V5.18518M74.5 0V5.18518M24.9966 12.1852L24.9966 48.1851M28 11.6852H22M28 48.6852H22M21.7838 7.23388C19.1504 7.42488 14.3897 8.34192 12.1028 9.09898C7.55393 10.6047 4.79824 12.9123 2.97874 16.7405C1.52724 19.7937 1 22.7449 1 27.8166C1 34.9589 2.19813 40.8018 4.60874 45.4162C6.19932 48.4605 9.69467 51.859 12.6655 53.2496C17.113 55.3313 23.3414 55.7468 28.508 54.3058C35.4098 52.3811 44.05 46.2513 49.014 39.7583C50.6902 37.5657 50.82 37.4606 50.82 38.2978C50.82 39.438 51.6569 39.7537 52.9418 39.0988C54.7867 38.1586 57.0613 32.9043 56.8749 30.014C56.7856 28.6321 56.7306 28.5463 55.9396 28.5574C55.4775 28.564 55.1009 28.4962 55.103 28.4068C55.1052 28.3176 55.3784 26.9565 55.7104 25.3824C56.0423 23.8083 56.3155 21.3946 56.3177 20.0185L56.3217 17.5162L58.0275 16.7465C59.5762 16.0479 60.0199 15.9873 62.8435 16.0903C65.2715 16.1789 66.1882 16.3383 67.0213 16.817L68.089 17.43L68.4466 20.9578C68.769 24.1421 69.108 26.1407 69.6374 27.9814C69.7966 28.5348 69.7171 28.6029 69.0588 28.4788C67.5348 28.1917 67.316 30.0797 68.4576 33.6671C69.4323 36.73 70.7594 38.7397 72.1586 39.2723C73.0474 39.6107 73.9717 39.1588 74.104 38.3216C74.1826 37.8254 74.472 38.0694 75.5653 39.554C78.9011 44.0829 86.5245 50.2138 91.8161 52.6239C98.8166 55.8118 106.23 56.0158 112.255 53.1867C119.952 49.5721 124.321 39.2684 123.785 25.9925C123.325 14.5578 118.794 9.69096 106.766 7.71138C104.209 7.29052 98.8582 7.22695 63.3515 7.19381C41.0776 7.17303 22.3722 7.1911 21.7838 7.23388ZM39.4904 8.82182C45.8258 9.37464 49.5388 10.652 52.1893 13.191C54.1543 15.0733 54.7785 16.5639 54.7867 19.3931C54.805 25.6328 52.2199 32.9504 48.0873 38.3577C45.8053 41.3438 40.5804 46.1378 37.166 48.3779C31.3514 52.1934 27.2964 53.5352 21.631 53.518C18.4532 53.5084 17.6411 53.3975 15.5514 52.6881C10.8928 51.1061 8.00843 48.5249 5.74177 43.9099C3.40634 39.1542 2.33139 33.0615 2.61227 26.1723C2.85526 20.2215 4.06684 16.7362 6.86837 13.9312C9.67633 11.1195 13.8093 9.76959 22.8536 8.70945C24.9546 8.46332 36.2552 8.53954 39.4904 8.82182ZM106.439 9.24299C109.853 9.83044 114.217 11.2159 115.839 12.2273C117.518 13.2739 119.538 15.5568 120.369 17.3463C121.85 20.5366 122.175 22.4554 122.162 27.9431C122.141 37.8314 120.069 44.4218 115.573 48.9039C111.845 52.6209 105.439 54.4122 99.5502 53.3843C93.7185 52.3663 87.9473 49.3158 82.1058 44.1633C74.5243 37.4762 70.0922 28.4622 70.0796 19.704C70.075 16.3642 70.4687 15.3399 72.5483 13.2817C75.0335 10.8225 79.0038 9.3409 84.4837 8.82845C89.1054 8.39614 103.047 8.65945 106.439 9.24299ZM74.6603 9.73525C72.6382 10.8315 70.2462 13.0633 69.4335 14.6124C69.1074 15.2339 68.8091 15.7421 68.7705 15.7418C68.7317 15.7418 67.9438 15.4511 67.0192 15.0962C65.7285 14.6003 64.6639 14.4488 62.4345 14.4433C59.7592 14.4367 58.8732 14.6072 56.5903 15.5683C56.222 15.7231 55.8901 15.4327 55.299 14.4385C54.2848 12.7328 51.8687 10.5881 49.8371 9.59034L48.2548 8.81309L76.3414 8.82393L74.6603 9.73525Z"
                               stroke="black"
-                              class="dark:stroke-gray-200"
                             />
                           </svg>
                         </div>
-                      </div>
-
-                      <!-- Frame Width -->
-                      <div
-                        class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full transform"
-                      >
-                        <span
-                          class="size-detail-bridge-width dark:bg-p bg-gray-100 px-3 py-1 text-sm text-gray-700 dark:text-gray-200"
-                        >
-                          144 mm
-                        </span>
                       </div>
                     </div>
                   </div>
 
                   <!-- Second SVG Block -->
-                  <div class="w-full py-8 max-sm:mt-6 lg:w-1/2">
+                  <div class="w-full py-8 max-sm:mt-6 lg:w-1/3">
                     <div class="relative z-10 flex flex-col items-center">
                       <!-- New SVG for the arm length -->
                       <div class="relative flex w-full justify-center">
                         <svg
-                          class="w-64"
+                          class="w-64 md:w-52 lg:w-64"
                           viewBox="0 0 125 45"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
@@ -625,7 +634,7 @@
                         >
                           <span
                             x-text="`${selectedSize.arm || '145'} mm`"
-                            class="size-detail-arm-length dark:bg-p bg-gray-100 px-3 py-1 text-sm text-gray-700 dark:text-gray-200"
+                            class="size-detail-arm-length dark:bg-p bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:text-gray-200"
                           >
                             145 mm
                           </span>
@@ -634,8 +643,169 @@
                     </div>
                   </div>
                 </div>
+                <div class="flex w-full flex-col pb-4 md:flex-row lg:w-full">
+                  <!-- Wrapper for making the blocks scrollable on mobile -->
+                  <div
+                    class="flex w-full flex-row space-x-4 overflow-x-auto pb-4 md:flex-nowrap"
+                  >
+                    <!-- First SVG Block -->
+                    <div class="w-full flex-shrink-0 py-8 lg:w-1/3">
+                      <div class="relative flex flex-col items-center">
+                        <!-- Bridge Width -->
+                        <!-- Frame Width -->
+                        <div
+                          class="absolute top-0 -translate-y-full transform pb-2"
+                        >
+                          <span
+                            class="size-detail-bridge-width dark:bg-p bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:text-gray-200"
+                          >
+                            144 mm
+                          </span>
+                        </div>
+
+                        <!-- Lens Depth and Bridge Width -->
+                        <div class="relative w-full max-w-lg">
+                          <!-- Eye Size - Centered in the Right Lens -->
+                          <div
+                            class="absolute right-[30%] top-1/2 -translate-y-1/2 translate-x-1/2 transform"
+                          >
+                            <span
+                              x-text="`${selectedSize.eye || '48'} mm`"
+                              class="size-detail-lens-depth dark:bg-p bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:text-gray-200"
+                            >
+                              48 mm
+                            </span>
+                          </div>
+
+                          <!-- Frame Illustration using SVG -->
+                          <div class="z-0 flex justify-center">
+                            <svg
+                              class="w-64 md:w-52 lg:w-64"
+                              viewBox="0 0 125 56"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M1 2H123.785M1 0V5.00003M123.785 0V5.00003M80.4979 13.1892L111.525 44.2167M82.5965 11.0403L78.3539 15.283M114.003 42.4466L109.76 46.6892M21.7841 6.73547C19.1507 6.92647 14.39 7.84351 12.1031 8.60058C7.55423 10.1063 4.79855 12.4139 2.97905 16.242C1.52754 19.2953 1.00031 22.2465 1.00031 27.3182C1.00031 34.4605 2.19843 40.3034 4.60905 44.9178C6.19962 47.9621 9.69498 51.3606 12.6658 52.7512C17.1133 54.8329 23.3417 55.2483 28.5083 53.8074C35.4101 51.8827 44.0503 45.7529 49.0143 39.2599C50.6904 37.0673 50.8204 36.9621 50.8204 37.7994C50.8204 38.9396 51.6572 39.2553 52.9421 38.6004C54.787 37.6602 57.0616 32.4059 56.8752 29.5156C56.7859 28.1337 56.7309 28.0478 55.9399 28.059C55.4778 28.0656 55.1012 27.9978 55.1033 27.9084C55.1055 27.8192 55.3787 26.4581 55.7107 24.884C56.0426 23.3099 56.3158 20.8962 56.318 19.5201L56.322 17.0178L58.0277 16.2481C59.5764 15.5495 60.0202 15.4889 62.8438 15.5919C65.2718 15.6805 66.1885 15.8399 67.0216 16.3186L68.0893 16.9316L68.4469 20.4594C68.7693 23.6437 69.1083 25.6423 69.6377 27.483C69.7969 28.0364 69.7174 28.1045 69.0591 27.9804C67.5351 27.6933 67.3163 29.5813 68.4579 33.1687C69.4326 36.2316 70.7597 38.2413 72.1589 38.7739C73.0477 39.1122 73.972 38.6603 74.1043 37.8231C74.1829 37.327 74.4723 37.571 75.5656 39.0556C78.9014 43.5845 86.5248 49.7154 91.8164 52.1255C98.8169 55.3134 106.23 55.5174 112.255 52.6882C119.952 49.0737 124.321 38.77 123.786 25.4941C123.325 14.0594 118.794 9.19255 106.766 7.21297C104.209 6.79211 98.8585 6.72855 63.3518 6.69541C41.0779 6.67462 22.3725 6.69269 21.7841 6.73547ZM39.4907 8.32342C45.8261 8.87623 49.5391 10.1536 52.1896 12.6926C54.1546 14.5749 54.7787 16.0655 54.787 18.8946C54.8053 25.1344 52.2202 32.452 48.0876 37.8593C45.8056 40.8454 40.5807 45.6394 37.1663 47.8795C31.3517 51.695 27.2967 53.0368 21.6313 53.0196C18.4535 53.01 17.6414 52.8991 15.5517 52.1897C10.8931 50.6077 8.00873 48.0265 5.74207 43.4115C3.40664 38.6558 2.33169 32.5631 2.61258 25.6739C2.85557 19.7231 4.06714 16.2378 6.86868 13.4328C9.67664 10.6211 13.8096 9.27118 22.8539 8.21105C24.9549 7.96492 36.2555 8.04114 39.4907 8.32342ZM106.439 8.74458C109.853 9.33204 114.217 10.7175 115.839 11.7289C117.518 12.7754 119.538 15.0584 120.369 16.8479C121.85 20.0382 122.175 21.957 122.163 27.4447C122.141 37.333 120.069 43.9234 115.574 48.4055C111.845 52.1225 105.439 53.9138 99.5504 52.8859C93.7187 51.8679 87.9476 48.8174 82.1061 43.6649C74.5246 36.9778 70.0924 27.9638 70.0799 19.2055C70.0753 15.8658 70.469 14.8415 72.5486 12.7833C75.0338 10.3241 79.0041 8.84249 84.484 8.33005C89.1057 7.89774 103.047 8.16104 106.439 8.74458ZM74.6606 9.23684C72.6385 10.3331 70.2465 12.5649 69.4338 14.1139C69.1077 14.7354 68.8093 15.2437 68.7708 15.2434C68.732 15.2434 67.9441 14.9527 67.0195 14.5978C65.7288 14.1019 64.6642 13.9504 62.4348 13.9449C59.7595 13.9383 58.8735 14.1088 56.5906 15.0698C56.2223 15.2247 55.8904 14.9343 55.2993 13.9401C54.2851 12.2344 51.869 10.0897 49.8374 9.09193L48.2551 8.31468L76.3416 8.32553L74.6606 9.23684Z"
+                                stroke="black"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Second SVG Block -->
+                    <div class="w-full flex-shrink-0 py-8 lg:w-1/3">
+                      <div class="relative flex flex-col items-center">
+                        <!-- Bridge Width -->
+                        <div
+                          class="absolute top-0 -translate-y-full transform pb-2"
+                        >
+                          <span
+                            x-text="`${selectedSize.bridge || '18'} mm`"
+                            class="size-detail-frame-width dark:bg-p bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:text-gray-200"
+                          >
+                            18 mm
+                          </span>
+                        </div>
+
+                        <!-- Lens Depth and Bridge Width -->
+                        <div class="relative w-full max-w-lg">
+                          <!-- Lens Depth Measurement - Centered in the Left Lens -->
+                          <div
+                            class="absolute left-[30%] top-1/2 -translate-x-1/2 -translate-y-1/2 transform pr-2"
+                          >
+                            <span
+                              class="size-detail-lens-depth dark:bg-p bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:text-gray-200"
+                            >
+                              42 mm
+                            </span>
+                          </div>
+
+                          <!-- Frame Illustration using SVG -->
+                          <div class="z-0 flex justify-center">
+                            <svg
+                              class="w-64 md:w-52 lg:w-64"
+                              viewBox="0 0 125 56"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <!-- SVG Path Data -->
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Third SVG Block -->
+                    <div class="w-full flex-shrink-0 py-8 lg:w-1/3">
+                      <div class="relative z-10 flex flex-col items-center">
+                        <!-- New SVG for the arm length -->
+                        <div class="relative flex w-full justify-center">
+                          <svg
+                            class="w-64 md:w-52 lg:w-64"
+                            viewBox="0 0 125 45"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <!-- SVG Path Data -->
+                          </svg>
+                          <div
+                            class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-full transform pb-2"
+                          >
+                            <span
+                              x-text="`${selectedSize.arm || '145'} mm`"
+                              class="size-detail-arm-length dark:bg-p bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:text-gray-200"
+                            >
+                              145 mm
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <!-- Frame Details Section with 1/3 Width -->
+                <div
+                  class="dark:bg-p llg:w-full w-full justify-end rounded-lg bg-gray-50 p-4"
+                >
+                  <h3 class="mb-2 text-lg font-bold dark:text-gray-300">
+                    Frame Details:
+                  </h3>
+                  <div
+                    class="flex flex-wrap items-center gap-3 text-gray-700 dark:text-gray-200"
+                  >
+                    <div class="w-full sm:w-auto">
+                      <strong>Gender:</strong> Mens, Womens
+                    </div>
+                    <div
+                      class="hidden h-2 w-2 rounded-full bg-gray-500 sm:block"
+                    ></div>
+                    <div class="w-full sm:w-auto">
+                      <strong>Material:</strong> Acetate
+                    </div>
+                    <div
+                      class="hidden h-2 w-2 rounded-full bg-gray-500 sm:block"
+                    ></div>
+                    <div class="w-full sm:w-auto">
+                      <strong>Hinge Type:</strong> Sprung Sides
+                    </div>
+                    <div
+                      class="hidden h-2 w-2 rounded-full bg-gray-500 sm:block"
+                    ></div>
+                    <div class="w-full sm:w-auto">
+                      <strong>Multifocal:</strong> Yes
+                    </div>
+                    <div
+                      class="hidden h-2 w-2 rounded-full bg-gray-500 sm:block"
+                    ></div>
+                    <div class="w-full sm:w-auto">
+                      <strong>Frame Type:</strong> Full Rimmed
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="bg-white p-4 shadow-sm dark:bg-slate-900 md:rounded-lg">
@@ -849,74 +1019,59 @@
               <div class="pb-3 text-xl font-bold dark:text-gray-200">
                 Description
               </div>
-
-              <div x-data="{ expanded: false }">
-                <p
-                  :class="expanded ? '' : 'line-clamp-4'"
-                  class="leading-relaxed text-gray-700 dark:text-gray-200"
-                >
-                  Introducing the RX 7047 Ray-Ban Glasses—where form meets
-                  function in perfect harmony. Crafted from premium plastic,
-                  these frames promise durability while ensuring a lightweight
-                  feel for all-day comfort. Their sleek, square shape is not
-                  only a timeless classic but also offers a modern twist that
-                  suits various face types, enhancing your natural features
-                  seamlessly. With the iconic Ray-Ban branding on the temples,
-                  these glasses stand as a testament to quality and style. The
-                  thoughtfully designed temples provide a snug yet comfortable
-                  fit, ensuring they stay in place without causing pressure,
-                  making them ideal for daily wear or a fashionable addition to
-                  your office look. Whether you're heading to a business meeting
-                  or enjoying a casual day out, these versatile frames
-                  effortlessly elevate your look. The clear, clean lines and
-                  subtle curves exude confidence and sophistication, ensuring
-                  you always make a statement. With RX 7047 Ray-Ban Glasses,
-                  experience the perfect blend of style, comfort, and iconic
-                  design—transforming the way you see the world and how the
-                  world sees you.
-                </p>
-
-                <button
-                  @click="expanded = !expanded"
-                  class="mt-2 text-blue-600 dark:text-blue-400"
-                >
-                  <span x-show="!expanded">Show More</span>
-                  <span x-show="expanded">Show Less</span>
-                </button>
-              </div>
+              <p class="leading-relaxed text-gray-700 dark:text-gray-200">
+                Introducing the RX 7047 Ray-Ban Glasses—where form meets
+                function in perfect harmony. Crafted from premium plastic, these
+                frames promise durability while ensuring a lightweight feel for
+                all-day comfort. Their sleek, square shape is not only a
+                timeless classic but also offers a modern twist that suits
+                various face types, enhancing your natural features seamlessly.
+                With the iconic Ray-Ban branding on the temples, these glasses
+                stand as a testament to quality and style. The thoughtfully
+                designed temples provide a snug yet comfortable fit, ensuring
+                they stay in place without causing pressure, making them ideal
+                for daily wear or a fashionable addition to your office look.
+                Whether you're heading to a business meeting or enjoying a
+                casual day out, these versatile frames effortlessly elevate your
+                look. The clear, clean lines and subtle curves exude confidence
+                and sophistication, ensuring you always make a statement. With
+                RX 7047 Ray-Ban Glasses, experience the perfect blend of style,
+                comfort, and iconic design—transforming the way you see the
+                world and how the world sees you.
+              </p>
             </div>
-            <div
-              class="relative mx-auto flex w-full flex-col items-center lg:max-w-5xl lg:flex-row-reverse xl:max-w-6xl"
-            >
-              <!-- Image Column -->
-              <div class="w-full border-2 bg-white md:rounded-xl lg:w-1/2">
-                <img
-                  class="h-64 w-full object-cover object-center md:rounded-xl lg:h-64"
-                  src="../images/case_and_cloth.png"
-                  alt="Winding mountain road"
-                />
-              </div>
-              <!-- Close Image Column -->
-
-              <!-- Text Column -->
-              <div
-                class="max-w-lg bg-white dark:bg-slate-900 md:absolute md:top-0 md:z-10 md:mt-48 md:max-w-2xl md:rounded-xl md:shadow-lg lg:left-0 lg:ml-0 lg:mt-20 lg:w-3/5 xl:ml-0 xl:mt-24"
-              >
-                <!-- Text Wrapper -->
-                <div class="flex flex-col p-2 py-6 md:p-6 lg:py-12">
-                  <h2 class="text-2xl font-semibold dark:text-gray-200">
+            <div class="bg-white p-4 shadow-sm dark:bg-slate-900 md:rounded-lg">
+              <div class="flex flex-col items-center gap-8 lg:flex-row">
+                <!-- Image Section -->
+                <div class="w-full lg:w-1/2">
+                  <h3 class="pb-3 text-xl font-bold dark:text-gray-200">
                     Plus a frame case and lens cloth
-                  </h2>
-                  <p class="mt-4">
+                  </h3>
+                  <p class="text-gray-600 dark:text-gray-200">
                     Every pair of glasses comes with a case and cloth to keep
                     your frames safe and clean. Stock frames come with a
                     Spex4Less branded case and cloth, while designer frames
                     include a branded case and cloth from the designer.
                   </p>
                 </div>
-                <!-- Close Text Wrapper -->
+                <div class="w-full lg:w-1/2">
+                  <img
+                    src="../images/case_and_cloth.png"
+                    alt="Frame case and lens cloth"
+                    class="h-auto w-full rounded-lg"
+                  />
+                </div>
+
+                <!-- Text Section -->
               </div>
-              <!-- Close Text Column -->
+            </div>
+
+            <div
+              class="h-32 rounded-lg bg-white p-4 shadow-sm dark:bg-slate-900"
+            >
+              <p class="text-gray-700 dark:text-gray-200">
+                Left Div 6 - Short Content
+              </p>
             </div>
           </div>
         </div>

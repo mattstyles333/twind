@@ -17,25 +17,12 @@
     <div
       class="mx-auto pb-20 md:container"
       x-data="{ 
-        selectedSize: { eye: '54', bridge: '20', arm: '140' }, 
-        selectedColour: 'Havana',
-        stockStatus: {
-          '52-18-140-Black': 'backorder',
-          '52-18-140-Havana': 'backorder',
-          '54-20-140-Black': 'backorder',
-          '54-20-140-Havana': 'in_stock',
-          '54-20-140-Blue': 'backorder',
-          '56-20-145-Black': 'backorder',
-          '56-20-145-Blue': 'backorder'
-        },
+        selectedSize: { eye: '52', bridge: '18', arm: '140' }, 
+        selectedColour: 'Black',
         images: {
-          'Black': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rb2140__127771_tvii1v1llzwqzp1q.webp',
-          'Blue': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rb2140__1361r5_7ohzor2c07xg8viy.webp',
-          'Havana': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rb2140__902_yuob2z70jgnxaz21.webp',
-        },
-        get estimatedDelivery() {
-          let key = `${this.selectedSize.eye}-${this.selectedSize.bridge}-${this.selectedSize.arm}-${this.selectedColour}`;
-          return this.stockStatus[key] === 'in_stock' ? '1-2 Days' : '5-14 Days';
+          'Black': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__2000_hvrukewcnx8fogxr.webp',
+          'Blue': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp',
+          'Havana': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__5574_lfa32i6jtnvj3mdk.webp',
         }
       }"
     >
@@ -109,7 +96,7 @@
               </div>
               <span
                 class="mx-auto flex justify-center text-base text-gray-500 dark:text-gray-200"
-                >RB2140-2000-54-17-140</span
+                >RX7047-2000-54-17-140</span
               >
               <!-- Slogans -->
               <div
@@ -203,11 +190,11 @@
                   <div class="w-full space-y-2 md:w-3/4">
                     <!-- Product Title -->
                     <h1 class="text-3xl font-bold lg:text-2xl">
-                      Ray-Ban RB2140 | Wayfarer Classic
+                      Ray-Ban RX7047 | Aviator
                     </h1>
                   </div>
                   <div
-                    class="dark:bg-l right-0 ml-auto hidden h-auto w-32 justify-end dark:rounded-lg md:flex"
+                    class="right-0 ml-auto hidden h-auto w-32 justify-end md:flex"
                   >
                     <img
                       src="../images/rayban-logo.png"
@@ -273,6 +260,10 @@
                     class="flex w-full flex-col items-start gap-1 md:flex-row md:items-baseline md:justify-between"
                   >
                     <div class="flex items-baseline gap-2">
+                      <span
+                        class="text-xl font-semibold text-gray-500 line-through dark:text-gray-200"
+                        >£75.00</span
+                      >
                       <!-- Actual Price -->
                       <span class="text-3xl font-bold">£64.97</span>
                     </div>
@@ -560,13 +551,12 @@
                           class="flex cursor-pointer items-center rounded-lg border-2 border-gray-200 bg-white p-4 shadow-sm duration-500 ease-in-out dark:bg-slate-900"
                         >
                           <img
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rb2140__127771_tvii1v1llzwqzp1q.webp"
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__2000_hvrukewcnx8fogxr.webp"
                             alt="Frame Colour: Black"
                             class="w-1/2 rounded-lg"
                           />
                           <div class="ml-4 flex flex-col">
-                            <span
-                              class="text-xl font-bold text-gray-900 md:text-2xl"
+                            <span class="text-2xl font-bold text-gray-900"
                               >£120</span
                             >
                             <span class="text-gray-700 dark:text-gray-200"
@@ -574,10 +564,6 @@
                             >
                             <span class="text-gray-500 dark:text-gray-200"
                               >Size: 52-18-140</span
-                            >
-                            <span
-                              class="text-sm text-gray-500 dark:text-gray-200"
-                              >SKU: RB2140-2000-52-18-140</span
                             >
                           </div>
                         </div>
@@ -588,13 +574,12 @@
                           class="flex cursor-pointer items-center rounded-lg border-2 border-gray-200 bg-white p-4 shadow-sm duration-500 ease-in-out dark:bg-slate-900"
                         >
                           <img
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rb2140__902_yuob2z70jgnxaz21.webp"
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__5574_lfa32i6jtnvj3mdk.webp"
                             alt="Frame Colour: Havana"
                             class="w-1/2 rounded-lg"
                           />
                           <div class="ml-4 flex flex-col">
-                            <span
-                              class="text-xl font-bold text-gray-900 md:text-2xl"
+                            <span class="text-2xl font-bold text-gray-900"
                               >£125</span
                             >
                             <span class="text-gray-700 dark:text-gray-200"
@@ -602,10 +587,6 @@
                             >
                             <span class="text-gray-500 dark:text-gray-200"
                               >Size: 54-20-140</span
-                            >
-                            <span
-                              class="text-sm text-gray-500 dark:text-gray-200"
-                              >SKU: RB2140-5574-54-20-140</span
                             >
                           </div>
                         </div>
@@ -616,13 +597,12 @@
                           class="flex cursor-pointer items-center rounded-lg border-2 border-gray-200 bg-white p-4 shadow-sm duration-500 ease-in-out dark:bg-slate-900"
                         >
                           <img
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rb2140__1361r5_7ohzor2c07xg8viy.webp"
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp"
                             alt="Frame Colour: Blue"
                             class="w-1/2 rounded-lg"
                           />
                           <div class="ml-4 flex flex-col">
-                            <span
-                              class="text-xl font-bold text-gray-900 md:text-2xl"
+                            <span class="text-2xl font-bold text-gray-900"
                               >£130</span
                             >
                             <span class="text-gray-700 dark:text-gray-200"
@@ -631,26 +611,21 @@
                             <span class="text-gray-500 dark:text-gray-200"
                               >Size: 56-20-145</span
                             >
-                            <span
-                              class="text-sm text-gray-500 dark:text-gray-200"
-                              >SKU: RB2140-5769-56-20-145</span
-                            >
                           </div>
                         </div>
 
                         <div
                           @click="selectedColour = 'Black'; selectedSize = { eye: '54', bridge: '20', arm: '140' }; showColours = false"
-                          :class="selectedSize.eye === '54' ? 'border-gray-500 hover:border-blue-600 hover-border-2' : 'opacity-50 hover:border-blue-600 hover:border-2'"
+                          :class="selectedSize.eye === '54' ? 'border-gray-500 hover:border-blue-600 hover:border-2' : 'opacity-50 hover:border-blue-600 hover:border-2'"
                           class="flex cursor-pointer items-center rounded-lg border-2 border-gray-200 bg-white p-4 shadow-sm duration-500 ease-in-out dark:bg-slate-900"
                         >
                           <img
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rb2140__127771_tvii1v1llzwqzp1q.webp"
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__2000_hvrukewcnx8fogxr.webp"
                             alt="Frame Colour: Black"
                             class="w-1/2 rounded-lg"
                           />
                           <div class="ml-4 flex flex-col">
-                            <span
-                              class="text-xl font-bold text-gray-900 md:text-2xl"
+                            <span class="text-2xl font-bold text-gray-900"
                               >£120</span
                             >
                             <span class="text-gray-700 dark:text-gray-200"
@@ -659,26 +634,21 @@
                             <span class="text-gray-500 dark:text-gray-200"
                               >Size: 54-20-140</span
                             >
-                            <span
-                              class="text-sm text-gray-500 dark:text-gray-200"
-                              >SKU: RB2140-2000-54-20-140</span
-                            >
                           </div>
                         </div>
 
                         <div
                           @click="selectedColour = 'Black'; selectedSize = { eye: '56', bridge: '20', arm: '145' }; showColours = false"
-                          :class="selectedSize.eye === '56' ? 'border-gray-500 hover:border-blue-600 hover-border-2' : 'opacity-50 hover:border-blue-600 hover-border-2'"
+                          :class="selectedSize.eye === '56' ? 'border-gray-500 hover:border-blue-600 hover:border-2' : 'opacity-50 hover:border-blue-600 hover:border-2'"
                           class="flex cursor-pointer items-center rounded-lg border-2 border-gray-200 bg-white p-4 shadow-sm duration-500 ease-in-out dark:bg-slate-900"
                         >
                           <img
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rb2140__127771_tvii1v1llzwqzp1q.webp"
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__2000_hvrukewcnx8fogxr.webp"
                             alt="Frame Colour: Black"
                             class="w-1/2 rounded-lg"
                           />
                           <div class="ml-4 flex flex-col">
-                            <span
-                              class="text-xl font-bold text-gray-900 md:text-2xl"
+                            <span class="text-2xl font-bold text-gray-900"
                               >£120</span
                             >
                             <span class="text-gray-700 dark:text-gray-200"
@@ -686,10 +656,6 @@
                             >
                             <span class="text-gray-500 dark:text-gray-200"
                               >Size: 56-20-145</span
-                            >
-                            <span
-                              class="text-sm text-gray-500 dark:text-gray-200"
-                              >SKU: RB2140-2000-56-20-145</span
                             >
                           </div>
                         </div>
@@ -704,8 +670,8 @@
               :class="sticky ? 'fixed inset-x-0 bottom-0 border-t-2 border-gray-300 bg-white dark:bg-slate-900  z-40 p-2 md:p-4' : 'pb-5'"
               x-data="{ sticky: false }"
               x-init="window.addEventListener('scroll', () => { 
-          sticky = window.innerWidth < 1280; // Ensure sticky only on screens smaller than 1280
-        })"
+    sticky = window.innerWidth < 1280; // Ensure sticky only on screens smaller than 1280
+  })"
             >
               <!-- Buy Now Button -->
               <div class="pb-4">
@@ -717,16 +683,7 @@
               </div>
               <div class="text-base text-gray-700 dark:text-gray-200">
                 Estimated Delivery:
-                <span
-                  :class="{
-        'font-medium text-green-600': selectedSize.eye === '54' && selectedColour === 'Havana',
-        'font-medium text-orange-600': !(selectedSize.eye === '54' && selectedColour === 'Havana')
-      }"
-                >
-                  <span
-                    x-text="selectedSize.eye === '54' && selectedColour === 'Havana' ? '1-2 Days' : '5-14 Days'"
-                  ></span>
-                </span>
+                <span class="font-medium text-green-600">1-2 Days</span>
                 <span class="text-sm text-gray-700 dark:text-gray-200"
                   >(Subject to Lenses)</span
                 >
@@ -752,20 +709,7 @@
                   <li><strong>Hinge Type:</strong> Standard</li>
                   <li><strong>Size:</strong> M (52-18-140)</li>
                   <li><strong>Material:</strong> Acetate</li>
-                  <li>
-                    <strong>Delivery:</strong>
-                    <span>
-                      <span
-                        x-text="selectedColour === 'Havana' && selectedSize.eye === '54' ? '1-2 Days' : '5-14 days'"
-                      ></span>
-                      <template
-                        x-if="!(selectedColour === 'Havana' && selectedSize.eye === '54')"
-                      >
-                        <span> (Sourced from Italy)</span>
-                      </template>
-                    </span>
-                  </li>
-
+                  <li><strong>Delivery:</strong> Free UK Delivery</li>
                   <li><strong>Price:</strong> £120</li>
 
                   <template x-if="showMore">
@@ -781,12 +725,13 @@
                           ?
                         </button>
                       </li>
+
                       <li><strong>Frame Type:</strong> Full Rimmed</li>
                       <li><strong>RRP:</strong> £124.00</li>
                       <li><strong>Nose Pad:</strong> Moulded</li>
                       <li><strong>Frame Shape:</strong> Regular</li>
                       <li><strong>Brand:</strong> Ray-Ban</li>
-                      <li><strong>Model Number:</strong> RB2140</li>
+                      <li><strong>Model Number:</strong> 0RX7047</li>
                       <li><strong>Colour:</strong> Black</li>
                     </div>
                   </template>
@@ -1434,26 +1379,7 @@
               <div
                 class="flex grid items-center md:grid-cols-2 md:px-6 2xl:px-6"
               >
-                <!-- Text Section First -->
-                <div class="sm:mt-12 md:mb-0 md:mt-0">
-                  <div
-                    class="relative block bg-gradient-to-r from-gray-100 via-slate-50 to-white p-2 md:-mr-14 md:rounded-xl md:shadow-xl xl:px-6 2xl:py-16"
-                  >
-                    <h2 class="mb-6 text-xl font-bold 2xl:text-3xl">
-                      Includes case and lens cloth
-                    </h2>
-                    <p
-                      class="mb-6 font-medium leading-relaxed 2xl:leading-loose"
-                    >
-                      Every pair of glasses comes with a case and cloth to keep
-                      your frames safe and clean. Stock frames come with a
-                      Spex4Less branded case and cloth, while designer frames
-                      include a branded case and cloth from the designer.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Image Section Second -->
+                <!-- Image Section First -->
                 <div class="md:mb-12 md:rounded-xl md:shadow-lg lg:mb-0">
                   <img
                     src="../images/case_and_cloth11.png"
@@ -1461,9 +1387,27 @@
                     alt=""
                   />
                 </div>
+
+                <!-- Text Section Second -->
+                <div class="sm:mt-12 md:mb-0 md:mt-0">
+                  <div
+                    class="t relative block bg-gradient-to-r from-gray-100 via-slate-50 p-6 dark:bg-gradient-to-l dark:from-gray-800 dark:via-slate-700 dark:to-gray-600 dark:shadow-lg md:-ml-14 md:rounded-xl md:shadow-xl xl:px-6 2xl:py-16"
+                  >
+                    <h2 class="mb-6 text-xl font-bold 2xl:text-3xl">
+                      Includes case and lens cloth
+                    </h2>
+                    <p class="mb-6 leading-relaxed 2xl:leading-loose">
+                      Every pair of glasses comes with a case and cloth to keep
+                      your frames safe and clean. Stock frames come with a
+                      Spex4Less branded case and cloth, while designer frames
+                      include a branded case and cloth from the designer.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-
+          </div>
+          <div class="mx-4 border-b-2 py-8 md:mx-6 lg:py-16">
             <div class="mx-auto my-8 max-w-full">
               <h3 class="mb-4 text-lg font-bold sm:text-xl">
                 Delivery & Returns
@@ -1493,6 +1437,24 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <tr
+                      class="bg-gray-100 dark:bg-slate-900 dark:text-gray-200"
+                    >
+                      <td
+                        class="border border-gray-300 p-2 font-bold text-gray-800 dark:text-gray-200 sm:p-4"
+                      >
+                        Stock Frames
+                      </td>
+                      <td class="border border-gray-300 p-2 sm:p-4">
+                        1-2 Days
+                      </td>
+                      <td class="border border-gray-300 p-2 sm:p-4">
+                        1-4 Days
+                      </td>
+                      <td class="border border-gray-300 p-2 sm:p-4">
+                        5-10 Days
+                      </td>
+                    </tr>
                     <tr class="bg-white dark:bg-slate-950 dark:text-gray-200">
                       <td
                         class="border border-gray-300 p-2 font-bold text-gray-800 dark:text-gray-200 sm:p-4"
@@ -1532,6 +1494,7 @@
               </p>
             </div>
           </div>
+
           <!--Lenses-->
           <div class="mx-4 py-8 md:mx-6 lg:py-16">
             <div class="container mx-auto text-left">
@@ -1551,12 +1514,11 @@
                   />
                   <div class="pt-6">
                     <h3 class="mb-2 text-lg font-semibold">
-                      Bespoke Prescription Lenses
+                      Free Standard Single-Vision Lenses
                     </h3>
                     <p class="">
-                      Our lenses are crafted to your exact prescription,
-                      ensuring perfect vision, and are backed by our 100%
-                      satisfaction guarantee.
+                      Enjoy clear vision with our standard single-vision lenses,
+                      designed to suit your everyday needs.
                     </p>
                   </div>
                 </div>

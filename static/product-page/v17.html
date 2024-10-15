@@ -13,9 +13,9 @@
       defer
     ></script>
   </head>
-  <body class="bg-zinc-50">
+  <body class="dark:bg-p bg-zinc-50">
     <div
-      class="mx-auto pb-20 md:container"
+      class="mx-auto md:container"
       x-data="{ 
         selectedSize: { eye: '52', bridge: '18', arm: '140' }, 
         selectedColour: 'Black',
@@ -29,7 +29,9 @@
       <div class="grid grid-cols-1 gap-y-4 pt-4 xl:grid-cols-3 xl:gap-4">
         <!-- First left-hand div (shown first on mobile and top left on desktop) -->
         <div class="order-1 lg:order-1 lg:col-span-2 lg:flex lg:flex-col">
-          <div class="relative flex-grow bg-white p-4 shadow-sm md:rounded-lg">
+          <div
+            class="relative flex-grow bg-white p-4 shadow-sm dark:bg-slate-900 md:rounded-lg"
+          >
             <div>
               <!-- Product Labels -->
               <div
@@ -64,48 +66,47 @@
                 <img
                   :src="images[selectedColour]"
                   alt="Large image"
-                  class="mx-auto rounded-xl"
+                  class="mx-auto rounded-xl dark:border"
                 />
               </div>
-              <span class="mx-auto flex justify-center text-base text-gray-500"
+              <span
+                class="mx-auto flex justify-center text-base text-gray-500 dark:text-gray-200"
                 >RX7047-2000-54-17-140</span
               >
               <!-- Slogans -->
               <div
-                class="mt-4 hidden items-center justify-center space-x-8 border-t-2 pt-4 text-center text-gray-700 lg:flex"
+                class="mt-4 hidden items-center justify-center space-x-8 border-t-2 pt-4 text-center text-gray-700 dark:text-gray-200 lg:flex"
               >
-                <div class="flex items-center space-x-2 text-base">
+                <p class="flex items-center text-base">
                   <!-- Insert SVG for satisfaction guarantee here -->
                   <svg
-                    class="w-7"
-                    viewBox="0 0 92 92"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 450 438"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    class="mr-2"
                   >
                     <path
                       fill-rule="evenodd"
                       clip-rule="evenodd"
-                      d="M65.1001 28.126C64.8826 28.1949 64.5237 28.3609 64.3025 28.4947C64.0813 28.6284 58.3689 34.3563 51.6083 41.2232L39.3163 53.7086L33.6845 48.0069C27.5688 41.8153 27.6902 41.9207 26.4135 41.6924C24.9394 41.4288 23.2857 42.2227 22.5101 43.5662C21.8239 44.7551 21.8304 46.2708 22.5274 47.5104C22.6802 47.7822 25.4531 50.6705 29.8703 55.1589C36.6032 62.0003 37.0015 62.3868 37.6246 62.6853C38.2377 62.979 38.3471 63 39.2668 63C40.1855 63 40.2965 62.9788 40.909 62.6863C41.5404 62.3847 42.1057 61.8245 55.4739 48.2526C68.8422 34.6807 69.394 34.1068 69.691 33.4658C69.9761 32.8507 70 32.7251 70 31.8462C70 30.9759 69.7055 30.2625 69.7055 30.2625C69.7055 30.2625 68.3759 28.4433 67.3645 28.1319C66.802 27.9586 65.6371 27.9555 65.1001 28.126Z"
+                      d="M428.785 1.70736C427.362 2.66536 369.885 67.1254 301.058 144.95C232.232 222.775 174.497 287.315 172.759 288.372C169.878 290.124 169.264 290.168 165.802 288.872C163.26 287.92 147.529 274.258 118.22 247.547C79.0932 211.888 73.6362 207.264 66.9162 204.073C60.2522 200.908 58.3012 200.458 49.7722 200.115C34.6022 199.506 24.8552 203.01 14.6542 212.74C8.04523 219.044 2.68923 228.704 0.822235 237.687C-1.52476 248.983 1.27524 263.347 7.65824 272.755C9.15124 274.955 37.9912 310.581 71.7462 351.924C120.181 411.248 134.208 427.816 138.285 430.523C146.123 435.727 153.485 437.95 162.88 437.95C175.893 437.95 186.51 433.515 195.403 424.365C198.029 421.664 247.049 343.678 322.474 222.209C390.013 113.441 446.301 22.6504 447.56 20.4504C448.819 18.2504 449.854 15.1684 449.861 13.6014C449.879 9.36036 446.938 3.96137 443.453 1.83637C439.528 -0.557635 432.242 -0.621636 428.785 1.70736Z"
                       fill="#1E3A8A"
-                    />
-                    <path
-                      d="M46 89.5C70.0244 89.5 89.5 70.0244 89.5 46C89.5 21.9756 70.0244 2.5 46 2.5C21.9756 2.5 2.5 21.9756 2.5 46C2.5 70.0244 21.9756 89.5 46 89.5Z"
-                      stroke="#1E3A8A"
-                      stroke-width="5"
-                    />
+                    ></path>
                   </svg>
-
-                  <p>100% Satisfaction guarantee</p>
-                </div>
+                  100% Satisfaction guarantee
+                </p>
                 <div class="h-2 w-2 rounded-full bg-gray-500"></div>
 
-                <div class="flex items-center space-x-2 text-base">
+                <p class="flex items-center text-base">
                   <!-- Insert SVG for 12 month frame warranty here -->
                   <svg
-                    class="w-7"
+                    width="30"
+                    height="30"
                     viewBox="0 0 512 512"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    class="mr-2"
                   >
                     <path
                       fill-rule="evenodd"
@@ -114,33 +115,35 @@
                       fill="#1E3A8A"
                     ></path>
                   </svg>
-                  <p>12 month frame warranty</p>
-                </div>
+                  12 month frame warranty
+                </p>
                 <div class="h-2 w-2 rounded-full bg-gray-500"></div>
 
-                <div class="flex items-center space-x-2 text-base">
+                <p class="flex items-center text-base">
                   <!-- Insert SVG for customer support here -->
                   <svg
-                    class="w-7"
-                    viewBox="0 0 104 92"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 116 96"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    class="mr-2"
                   >
                     <path
                       fill-rule="evenodd"
                       clip-rule="evenodd"
-                      d="M33.989 0.289926C22.6845 1.83764 12.6227 7.77716 6.29201 16.6397C4.70528 18.8611 2.38549 23.4909 1.53304 26.1377C0.32117 29.9008 0 32.131 0 36.7837C0 41.4381 0.341104 43.8008 1.54524 47.4852C2.25674 49.662 4.17135 53.7002 5.37081 55.5543C5.82806 56.261 6.20231 56.9615 6.20231 57.111C6.20231 57.2603 4.87512 61.5748 3.253 66.6987C1.5729 72.0055 0.304085 76.3523 0.304492 76.7989C0.305915 78.3863 1.68599 79.7281 3.31829 79.7295C4.06294 79.7301 5.61123 79.008 13.4643 74.9966L22.7315 70.2631L25.5014 71.2071C28.7544 72.3159 30.0312 72.6499 32.6359 73.0724L34.5597 73.3845L35.7886 74.5802C43.2063 81.7977 53.4722 85.8701 64.2329 85.8639C69.3407 85.8609 73.2364 85.22 78.136 83.5761L81.2183 82.5421L90.4749 87.2714C98.3347 91.2871 99.8647 92.0006 100.614 92C102.25 91.9986 103.629 90.6582 103.631 89.0669C103.631 88.616 102.373 84.3162 100.682 78.99C99.0601 73.8804 97.7329 69.5712 97.7329 69.4142C97.7329 69.2569 98.2068 68.3618 98.7859 67.4249C102.093 62.076 103.758 56.5377 103.973 50.179C104.184 43.9122 103.193 39.3615 100.365 33.6138C98.6907 30.2115 96.8985 27.6318 94.296 24.8793C88.2068 18.439 80.1395 14.1848 71.3271 12.7674L69.4312 12.4624L67.8081 10.9272C61.5588 5.0163 53.0957 1.16767 44.1954 0.189512C41.5581 -0.10048 36.4747 -0.050375 33.989 0.289926ZM42.7128 6.32004C48.3393 6.8534 53.5307 8.52729 58.0314 11.2593C58.9613 11.8238 59.6936 12.3131 59.6586 12.3469C59.6236 12.3806 58.4968 12.5966 57.1543 12.8267C41.9403 15.4345 29.5672 26.2051 25.8547 40.0726C24.9663 43.391 24.651 46.287 24.7657 50.0767C24.9232 55.2837 25.8676 59.3113 27.9689 63.7391C29.1313 66.1885 29.3752 66.106 25.5332 64.563C23.5907 63.7828 22.845 63.5738 22.3426 63.6687C21.982 63.7366 18.7922 65.2714 15.2545 67.0793C11.7165 68.8874 8.78592 70.3304 8.74219 70.2862C8.69825 70.242 9.62474 67.1723 10.8012 63.4646C12.3794 58.4902 12.9127 56.5451 12.8358 56.0432C12.7783 55.6674 12.0493 54.3411 11.2056 53.0779C5.67469 44.7957 4.55598 35.4217 8.03191 26.4831C12.0424 16.1695 22.1278 8.4232 33.8649 6.64153C37.4925 6.09079 39.5184 6.01717 42.7128 6.32004ZM70.5235 18.984C74.7579 19.7155 78.3337 20.9767 81.9095 23.0001C94.8757 30.337 100.807 44.625 96.4228 57.9583C95.673 60.2381 94.0279 63.5127 92.6975 65.3731C91.5096 67.0347 91.0206 67.9973 91.0206 68.6749C91.0206 68.9004 91.978 72.0975 93.148 75.7795C94.3182 79.4614 95.2394 82.5102 95.1952 82.5546C95.1511 82.599 92.2136 81.1554 88.6677 79.3465C85.1218 77.5376 81.9331 76.0034 81.5816 75.9371C81.0989 75.8459 80.3071 76.0719 78.3445 76.8605C73.415 78.8414 69.6973 79.5743 64.4768 79.5942C60.4915 79.6093 57.8457 79.2489 54.205 78.1951C45.9007 75.7913 39.0813 70.6032 34.8652 63.482C29.6063 54.5994 29.5668 43.6274 34.7621 34.7879C40.1215 25.6687 49.624 19.7736 60.8701 18.5909C63.3396 18.3314 67.7955 18.5128 70.5235 18.984ZM50.3894 46.3946C47.732 48.0235 48.8753 52.1185 51.9883 52.121C53.6526 52.1224 55.018 50.7401 55.018 49.0542C55.018 46.7032 52.3689 45.181 50.3894 46.3946ZM62.5935 46.3946C60.0056 47.9809 61.0726 52.1191 64.07 52.1208C65.7735 52.1216 67.0175 50.9966 67.1607 49.325C67.3771 46.8009 64.716 45.0933 62.5935 46.3946ZM74.7976 46.3946C72.2097 47.9809 73.2767 52.1191 76.274 52.1208C77.9775 52.1216 79.2215 50.9966 79.3647 49.325C79.5811 46.8009 76.92 45.0933 74.7976 46.3946Z"
+                      d="M48.798 1.06999C34.706 3.84299 20.312 15.657 15.904 28.069C14.529 31.941 13.683 33 11.964 33C9.322 33 4.059 37.244 2.204 40.869C-2.648 50.355 0.921996 66.261 8.897 70.693C12.241 72.551 18.067 72.27 20.718 70.123L23.036 68.247L21.195 55.245C19.154 40.829 19.443 37.378 23.393 29.022C29.092 16.968 41.065 8.99099 54.637 8.20499C64.607 7.62799 71.09 9.20999 78.573 14.047C85.92 18.795 90.834 25.383 93.734 34.37C95.807 40.798 95.872 41.825 94.742 50.316C93.272 61.355 90.34 67.229 82.911 74.019C76.129 80.217 68.733 83.053 57.622 83.716C48.389 84.266 46.622 85.282 46.622 90.036C46.622 94.546 49.346 96 57.796 96C63.807 96 65.643 95.634 66.967 94.171C67.877 93.165 68.634 91.928 68.649 91.421C68.664 90.915 72.194 88.835 76.494 86.801C82.032 84.181 85.995 81.383 90.082 77.209C95.756 71.415 95.932 71.323 100.551 71.767C104.823 72.178 105.552 71.917 108.579 68.89C114.702 62.766 116.828 53.659 114.224 44.703C112.43 38.53 107.204 33 103.167 33C101.338 33 100.63 32.311 100.133 30.049C99.776 28.425 97.788 24.473 95.715 21.265C85.57 5.56899 66.86 -2.48401 48.798 1.06999ZM50.356 15.03C41.026 17.373 33.377 23.714 28.94 32.783C25.181 40.466 25.205 50.224 29.002 58.519C30.494 61.779 32.345 65.142 33.115 65.993C34.181 67.17 34.295 68.489 33.592 71.52C31.641 79.938 32.996 81.14 40.146 77.334C44.511 75.01 45.225 74.909 49.265 76.04C56.13 77.962 66.334 76.826 72.54 73.448C95.121 61.158 94.235 28.134 71.036 17.365C65.262 14.684 55.929 13.63 50.356 15.03ZM45.622 42C48.029 44.407 48.123 45.84 46.065 48.777C42.469 53.912 34.304 49.597 36.531 43.74C38.093 39.63 42.423 38.801 45.622 42ZM61.622 42C64.029 44.407 64.123 45.84 62.065 48.777C59.131 52.967 51.622 50.45 51.622 45.277C51.622 43.311 55.386 40 57.622 40C58.722 40 60.522 40.9 61.622 42ZM76.117 40.636C77.029 40.986 78.203 42.397 78.725 43.771C80.941 49.6 72.76 53.891 69.179 48.777C67.121 45.84 67.215 44.407 69.622 42C71.712 39.91 73.335 39.569 76.117 40.636Z"
                       fill="#1E3A8A"
                     />
                   </svg>
 
-                  <p>Expert Customer Support</p>
-                </div>
+                  Expert Customer Support
+                </p>
               </div>
 
               <!-- Product Code -->
               <div
-                class="mt-4 text-center text-gray-700"
+                class="mt-4 text-center text-gray-700 dark:text-gray-300"
                 x-text="`RB2140-${selectedColour.replace(/ /g, '')}-${selectedSize.replace(/-/g, '-')}`"
               ></div>
             </div>
@@ -154,28 +157,21 @@
           @scroll.window="sticky = (window.pageYOffset > $el.querySelector('.pb-5').offsetTop)"
         >
           <div
-            class="flex-grow bg-white shadow-sm max-sm:px-2 max-sm:py-4 md:rounded-lg md:p-4"
+            class="flex-grow bg-white shadow-sm dark:bg-slate-900 max-sm:px-2 max-sm:py-4 md:rounded-lg md:p-4"
           >
-            <div class="flex border-b-2 pb-4">
-              <div class="w-full space-y-3">
-                <div class="relative flex">
-                  <div class="w-3/4 space-y-2">
-                    <!-- Product Title -->
-                    <h1 class="text-2xl font-bold lg:text-2xl">
-                      Ray-Ban RX7047 | Aviator
-                    </h1>
-                  </div>
-                  <div
-                    class="right-0 ml-auto hidden h-auto w-32 justify-end md:flex"
-                  >
-                    <img
-                      src="../images/rayban-logo.png"
-                      alt="Logo"
-                      class="object-contain"
-                    />
-                  </div>
+            <div class="flex rounded-lg bg-gray-50 p-4">
+              <div class="w-full space-y-2 lg:w-3/4">
+                <div class="space-y-2">
+                  <!-- Product Title -->
+                  <h1 class="text-2xl font-bold dark:text-gray-300 lg:text-3xl">
+                    Bailey 235 Rimless Glasses | 2004
+                  </h1>
+                  <!-- Product Subtitle -->
+                  <p class="text-xl text-gray-800 dark:text-gray-300">
+                    RX 7047 Aviator
+                  </p>
+                  <!-- Additional Content for the right div goes here -->
                 </div>
-
                 <div class="flex items-center space-x-2">
                   <svg
                     width="80"
@@ -225,98 +221,27 @@
                       fill="white"
                     />
                   </svg>
-                  <p class="">(90 Reviews)</p>
+                  <p class="dark:text-gray-300">(90 Reviews)</p>
                 </div>
-                <div class="flex w-full items-baseline justify-between">
-                  <div class="flex items-baseline gap-2">
-                    <span
-                      class="text-xl font-semibold text-gray-500 line-through"
-                      >£75.00</span
-                    >
-                    <!-- Actual Price -->
-                    <span class="text-3xl font-bold text-amber-500"
-                      >£64.97</span
-                    >
-                    <!-- Sale Price -->
-                  </div>
-                  <div class="flex items-baseline gap-1">
-                    <span class="text-sm text-gray-500">RRP:</span>
-                    <!-- RRP Label -->
-                    <span class="text-lg text-gray-500">£124.00</span>
-                    <!-- RRP Price -->
-                  </div>
-                </div>
-
-                <div class="space-y-2">
-                  <div
-                    class="max-xxxsm:space-x-2 flex flex-col justify-center space-y-4 xl:flex-col xl:space-x-0 xl:space-y-4"
+                <div>
+                  <span class="text-sm text-gray-500 dark:text-gray-300"
+                    >RRP:</span
                   >
-                    <!-- SVG 1 and Text -->
-                    <div class="flex items-center space-x-2 xl:space-x-2">
-                      <p class="text-sm text-gray-700">
-                        Pay in 4 interest-free payments with
-                      </p>
-                      <svg
-                        class="w-10"
-                        viewBox="0 0 224 55"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M0 26.9866V53.9731H6.0843H12.1686L12.1948 40.6429L12.221 27.3127L12.8519 28.1577C13.9578 29.639 18.14 35.1985 18.31 35.4134C18.4001 35.5271 20.0482 37.714 21.9725 40.273C23.8969 42.8321 26.9951 46.9499 28.8574 49.4237L32.2435 53.9214L39.6871 53.948C43.7812 53.9626 47.1308 53.9473 47.1308 53.9141C47.1308 53.8808 46.2606 52.704 45.1971 51.299C44.1336 49.894 43.1705 48.6195 43.0571 48.4669C42.9436 48.3144 42.2395 47.3854 41.4923 46.4026C39.9253 44.3415 37.9493 41.7341 35.8283 38.9289C35.0114 37.8484 32.8805 35.0334 31.0929 32.6734L27.8427 28.3824L28.1277 28.1759C29.7219 27.0202 33.0564 23.9049 34.2703 22.4371C39.2609 16.4028 41.9909 9.33962 42.253 1.78359L42.3149 0H36.4365H30.5583L30.4958 1.1688C30.1564 7.51953 27.328 13.5731 22.1934 18.9389C21.0887 20.0934 19.2944 21.7083 17.9434 22.7639C17.0039 23.4982 12.5186 26.6676 12.3004 26.7515C12.1949 26.7921 12.1694 24.1901 12.1694 13.4009V0H6.08471H0V26.9866ZM50.6372 26.9866V53.9731H56.4125H62.1878V26.9866V0H56.4125H50.6372V26.9866ZM82.8196 15.724C74.1347 16.7092 67.7957 23.479 66.8162 32.8149C66.6655 34.2516 66.7563 37.7719 66.978 39.084C68.2358 46.5288 72.7674 52.0677 79.3099 54.1571C83.4994 55.4951 88.272 55.2251 91.7249 53.4547C94.3046 52.132 96.1823 50.2369 97.819 47.304C98.1727 46.6703 98.146 46.7017 98.2662 46.7763C98.3247 46.8125 98.1975 47.3548 97.9577 48.092C97.3708 49.8964 97.1463 51.0465 97.0774 52.6031L97.0167 53.9731H102.652H108.287V35.31V16.6469H102.653H97.0187L97.0716 17.9652C97.1418 19.7109 97.5943 21.7564 98.3429 23.7126C98.3847 23.8216 98.3569 23.8847 98.2674 23.8847C98.1896 23.8847 97.9178 23.5017 97.6634 23.0337C97.4089 22.5656 96.8698 21.7398 96.4652 21.1984C94.3751 18.4014 91.5149 16.6202 87.9811 15.9149C86.8013 15.6794 84.0948 15.5793 82.8196 15.724ZM161.005 15.7202C159.919 15.8574 158.614 16.1853 157.703 16.5501C155.203 17.5513 152.902 19.8479 151.216 23.0252C150.965 23.498 150.694 23.8847 150.614 23.8847C150.534 23.8847 150.468 23.873 150.468 23.8588C150.468 23.8445 150.649 23.2919 150.872 22.6307C151.467 20.858 151.717 19.5883 151.78 18.0169L151.835 16.6469H146.201H140.567V35.31V53.9731H146.343H152.118V43.9151C152.118 32.0107 152.123 31.9412 153.098 29.9334C154.025 28.0239 155.434 26.8524 157.537 26.2427C158.236 26.04 158.593 26.0049 159.956 26.0052C161.777 26.0057 162.411 26.1322 163.669 26.7459C165.162 27.4746 166.235 28.949 166.781 31.019L167.013 31.8979L167.046 42.9355L167.079 53.9731H172.854H178.629L178.596 41.0227L178.563 28.0722L178.328 27.0417C177.708 24.3191 176.501 22.0701 174.667 20.2239C173.616 19.1655 173.339 18.934 172.352 18.2856C170.621 17.1487 168.516 16.322 166.33 15.9203C164.991 15.6741 162.2 15.5693 161.005 15.7202ZM199.094 15.672C198.924 15.6954 198.375 15.766 197.875 15.829C193.967 16.32 189.997 18.4417 187.371 21.442C184.136 25.1389 182.436 29.9261 182.439 35.3318C182.442 41.22 184.448 46.3407 188.201 50.044C192.272 54.0602 198.348 55.818 204.072 54.6358C208.102 53.8033 211.553 51.1388 213.533 47.3301C213.703 47.0032 213.9 46.7358 213.971 46.7356C214.136 46.7352 214.161 46.6206 213.692 48.0502C213.135 49.7527 212.852 51.2052 212.786 52.7065L212.731 53.9731H218.365H224V35.31V16.6469H218.364H212.729L212.786 17.9135C212.854 19.4228 213.134 20.8655 213.69 22.564C213.915 23.2507 214.099 23.8289 214.099 23.8487C214.099 23.8684 214.039 23.8847 213.965 23.8847C213.892 23.8847 213.725 23.6636 213.595 23.3935C213.066 22.2917 211.981 20.8135 210.911 19.7356C208.854 17.6647 206.519 16.4501 203.477 15.8701C202.645 15.7112 199.756 15.5808 199.094 15.672ZM131.853 16.4876C128.733 17.0596 126.356 19.0642 124.591 22.6132C124.302 23.1934 124.066 23.7169 124.066 23.7764C124.066 23.836 123.997 23.8847 123.912 23.8847C123.827 23.8847 123.757 23.8684 123.757 23.8487C123.757 23.8289 123.941 23.2514 124.166 22.5653C124.736 20.8242 124.995 19.5009 125.066 17.9652L125.127 16.6469H119.492H113.856V35.31V53.9731H119.617H125.378L125.453 44.3314C125.535 33.7706 125.538 33.7238 126.16 32.0661C127.487 28.5297 130.689 27.0256 135.093 27.8704C135.523 27.953 135.933 28.0205 136.004 28.0205C136.105 28.0205 136.133 26.8156 136.133 22.3406C136.133 16.9718 136.122 16.6576 135.948 16.602C135.127 16.3407 132.981 16.2808 131.853 16.4876ZM89.4336 26.0002C91.4726 26.4308 93.5908 27.8253 94.8581 29.5715C95.485 30.4353 96.1101 31.7736 96.4005 32.8736C96.7567 34.2228 96.7795 36.2283 96.4536 37.533C95.97 39.469 95.1529 40.9195 93.8034 42.2376C92.004 43.9951 89.9713 44.8087 87.4033 44.799C85.781 44.7929 84.8617 44.5809 83.4616 43.89C80.831 42.5917 79.0279 40.2073 78.4265 37.2313C78.1857 36.0402 78.2622 33.7785 78.5804 32.6803C79.9916 27.8095 84.5922 24.9779 89.4336 26.0002ZM204.305 25.8555C210.101 26.583 213.762 32.5319 211.967 38.306C211.217 40.7197 209.375 42.8826 207.19 43.9171C204.203 45.3306 200.777 45.0831 198.067 43.2578C197.358 42.7802 196.211 41.6327 195.717 40.9057C195.168 40.0974 194.572 38.8047 194.28 37.7897C194.078 37.0828 194.044 36.7267 194.044 35.31C194.044 33.9028 194.078 33.535 194.276 32.8475C194.827 30.9285 195.619 29.5924 196.967 28.3108C198.01 27.3188 199.006 26.716 200.331 26.273C201.8 25.7824 202.846 25.6724 204.305 25.8555Z"
-                          fill="black"
-                        />
-                      </svg>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                      <p class="text-sm text-gray-700">
-                        Standard Lenses Included
-                      </p>
-                      <svg
-                        class="w-5"
-                        viewBox="0 0 92 92"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M65.1001 28.126C64.8826 28.1949 64.5237 28.3609 64.3025 28.4947C64.0813 28.6284 58.3689 34.3563 51.6083 41.2232L39.3163 53.7086L33.6845 48.0069C27.5688 41.8153 27.6902 41.9207 26.4135 41.6924C24.9394 41.4288 23.2857 42.2227 22.5101 43.5662C21.8239 44.7551 21.8304 46.2708 22.5274 47.5104C22.6802 47.7822 25.4531 50.6705 29.8703 55.1589C36.6032 62.0003 37.0015 62.3868 37.6246 62.6853C38.2377 62.979 38.3471 63 39.2668 63C40.1855 63 40.2965 62.9788 40.909 62.6863C41.5404 62.3847 42.1057 61.8245 55.4739 48.2526C68.8422 34.6807 69.394 34.1068 69.691 33.4658C69.9761 32.8507 70 32.7251 70 31.8462C70 30.9759 69.7055 30.2625 69.7055 30.2625C69.7055 30.2625 68.3759 28.4433 67.3645 28.1319C66.802 27.9586 65.6371 27.9555 65.1001 28.126Z"
-                          fill="#1E3A8A"
-                        />
-                        <path
-                          d="M46 89.5C70.0244 89.5 89.5 70.0244 89.5 46C89.5 21.9756 70.0244 2.5 46 2.5C21.9756 2.5 2.5 21.9756 2.5 46C2.5 70.0244 21.9756 89.5 46 89.5Z"
-                          stroke="#1E3A8A"
-                          stroke-width="5"
-                        />
-                      </svg>
-                    </div>
-                    <!-- SVG 2 and Text -->
-                    <div class="flex items-center space-x-3">
-                      <p class="text-sm text-gray-700">Best Price Guarantee</p>
-                      <svg
-                        class="w-5"
-                        viewBox="0 0 92 92"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M65.1001 28.126C64.8826 28.1949 64.5237 28.3609 64.3025 28.4947C64.0813 28.6284 58.3689 34.3563 51.6083 41.2232L39.3163 53.7086L33.6845 48.0069C27.5688 41.8153 27.6902 41.9207 26.4135 41.6924C24.9394 41.4288 23.2857 42.2227 22.5101 43.5662C21.8239 44.7551 21.8304 46.2708 22.5274 47.5104C22.6802 47.7822 25.4531 50.6705 29.8703 55.1589C36.6032 62.0003 37.0015 62.3868 37.6246 62.6853C38.2377 62.979 38.3471 63 39.2668 63C40.1855 63 40.2965 62.9788 40.909 62.6863C41.5404 62.3847 42.1057 61.8245 55.4739 48.2526C68.8422 34.6807 69.394 34.1068 69.691 33.4658C69.9761 32.8507 70 32.7251 70 31.8462C70 30.9759 69.7055 30.2625 69.7055 30.2625C69.7055 30.2625 68.3759 28.4433 67.3645 28.1319C66.802 27.9586 65.6371 27.9555 65.1001 28.126Z"
-                          fill="#1E3A8A"
-                        />
-                        <path
-                          d="M46 89.5C70.0244 89.5 89.5 70.0244 89.5 46C89.5 21.9756 70.0244 2.5 46 2.5C21.9756 2.5 2.5 21.9756 2.5 46C2.5 70.0244 21.9756 89.5 46 89.5Z"
-                          stroke="#1E3A8A"
-                          stroke-width="5"
-                        />
-                      </svg>
-                    </div>
-                  </div>
+                  <!-- RRP Label -->
+                  <span
+                    class="text-lg text-gray-500 line-through dark:text-gray-300"
+                    >£99.99</span
+                  >
+                  <!-- RRP Price -->
+                  <span
+                    class="text-2xl font-bold text-gray-900 dark:text-gray-200"
+                    >£79.99</span
+                  >
+                  <!-- Actual Price -->
                 </div>
+              </div>
+              <div class="hidden w-1/4 md:block">
+                <img src="../images/rayban-logo.png" alt="Logo" />
               </div>
             </div>
             <div class="my-4"></div>
@@ -324,7 +249,9 @@
               <div class="space-y-4">
                 <!-- Size Selector Section -->
                 <div class="flex items-center space-x-2">
-                  <label for="size" class="text-xl font-bold text-gray-700"
+                  <label
+                    for="size"
+                    class="text-xl font-bold text-gray-700 dark:text-gray-200"
                     >Size</label
                   >
                   <p
@@ -338,7 +265,7 @@
                   <button
                     @click="selectedSize = { eye: '52', bridge: '18', arm: '140' }"
                     :class="selectedSize.eye === '52' ? 'ring-2 ring-blue-800' : ''"
-                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none"
+                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200"
                   >
                     <span class="block md:hidden">52</span>
                     <span class="hidden md:block">52-18-140</span>
@@ -346,7 +273,7 @@
                   <button
                     @click="selectedSize = { eye: '54', bridge: '20', arm: '140' }"
                     :class="selectedSize.eye === '54' ? 'ring-2 ring-blue-800' : ''"
-                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none"
+                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200"
                   >
                     <span class="block md:hidden">54</span>
                     <span class="hidden md:block">54-20-140</span>
@@ -354,16 +281,15 @@
                   <button
                     @click="selectedSize = { eye: '56', bridge: '20', arm: '145' }"
                     :class="selectedSize.eye === '56' ? 'ring-2 ring-blue-800' : ''"
-                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none"
+                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200"
                   >
                     <span class="block md:hidden">56</span>
                     <span class="hidden md:block">56-20-145</span>
                   </button>
                   <button
-                    class="w-full whitespace-nowrap rounded border border-gray-400 bg-white px-1 py-1 text-sm font-bold hover:bg-gray-100 focus:outline-none"
+                    class="w-full whitespace-nowrap rounded border border-gray-400 bg-white px-1 py-1 text-sm font-bold hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200"
                   >
-                    <span class="sm:hidden">Guide</span>
-                    <span class="hidden sm:inline">Size Guide</span>
+                    Size Guide
                   </button>
                 </div>
               </div>
@@ -372,11 +298,13 @@
                 <!-- Colours Section -->
                 <div class="flex items-center justify-between">
                   <div class="space-x-2">
-                    <label for="colours" class="text-xl font-bold text-gray-700"
+                    <label
+                      for="colours"
+                      class="text-xl font-bold text-gray-700 dark:text-gray-200"
                       >Colour</label
                     >
                     <span
-                      class="text-md text-gray-700"
+                      class="text-md text-gray-700 dark:text-gray-200"
                       x-text="selectedColour"
                     ></span>
                   </div>
@@ -384,12 +312,12 @@
                   <div class="flex items-center">
                     <button
                       @click="showColours = true"
-                      class="group flex items-center text-lg font-bold text-gray-700"
+                      class="flex items-center text-lg text-gray-800 hover:underline dark:text-gray-300"
                     >
                       <span>Show colours</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6 transform text-amber-500 transition-transform duration-200 ease-in-out group-hover:scale-150"
+                        class="h-6 w-6"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -414,15 +342,17 @@
                   x-transition:leave="transition ease-in duration-300"
                   x-transition:leave-start="transform translate-x-0"
                   x-transition:leave-end="transform translate-x-full"
-                  class="fixed right-0 top-0 z-50 h-full w-full overflow-y-auto bg-white shadow-lg lg:w-1/2 xl:w-1/3"
+                  class="fixed right-0 top-0 z-50 h-full w-full overflow-y-auto bg-white shadow-lg dark:bg-slate-900 lg:w-1/2 xl:w-1/3"
                 >
                   <div class="flex items-center justify-between border-b-2 p-4">
-                    <h2 class="text-lg font-bold text-gray-700">
+                    <h2
+                      class="text-lg font-bold text-gray-700 dark:text-gray-200"
+                    >
                       Available Colours (3)
                     </h2>
                     <button
                       @click="showColours = false"
-                      class="text-gray-500 hover:text-gray-700"
+                      class="text-gray-500 hover:text-gray-700 dark:text-gray-200"
                     >
                       &#10005;
                       <!-- Close Button (X) -->
@@ -433,7 +363,7 @@
                     <div>
                       <div
                         @click="selectedColour = 'Black'; showColours = false"
-                        class="flex cursor-pointer items-center rounded hover:bg-gray-100"
+                        class="dark:bg-p flex cursor-pointer items-center rounded hover:bg-gray-100"
                       >
                         <img
                           src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__2000_hvrukewcnx8fogxr.webp"
@@ -441,15 +371,18 @@
                           class="w-2/3 lg:w-1/2"
                         />
                         <div class="flex flex-col p-2">
-                          <span class="text-xl font-bold text-gray-900"
+                          <span
+                            class="text-xl font-bold text-gray-900 dark:text-gray-200"
                             >£120</span
                           >
-                          <span class="text-gray-700">Frame Colour: Black</span>
+                          <span class="text-gray-700 dark:text-gray-200"
+                            >Frame Colour: Black</span
+                          >
                         </div>
                       </div>
                       <div
                         @click="selectedColour = 'Blue'; showColours = false"
-                        class="flex cursor-pointer items-center hover:bg-gray-100"
+                        class="dark:bg-p flex cursor-pointer items-center hover:bg-gray-100"
                       >
                         <img
                           src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp"
@@ -457,15 +390,18 @@
                           class="w-2/3 lg:w-1/2"
                         />
                         <div class="flex flex-col p-2">
-                          <span class="text-xl font-bold text-gray-900"
+                          <span
+                            class="text-xl font-bold text-gray-900 dark:text-gray-200"
                             >£130</span
                           >
-                          <span class="text-gray-700">Frame Colour: Blue</span>
+                          <span class="text-gray-700 dark:text-gray-200"
+                            >Frame Colour: Blue</span
+                          >
                         </div>
                       </div>
                       <div
                         @click="selectedColour = 'Havana'; showColours = false"
-                        class="flex cursor-pointer items-center rounded hover:bg-gray-100"
+                        class="dark:bg-p flex cursor-pointer items-center rounded hover:bg-gray-100"
                       >
                         <img
                           src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/0/r/0rx7047__5574_lfa32i6jtnvj3mdk.webp"
@@ -473,10 +409,11 @@
                           class="w-2/3 lg:w-1/2"
                         />
                         <div class="flex flex-col p-2">
-                          <span class="text-xl font-bold text-gray-900"
+                          <span
+                            class="text-xl font-bold text-gray-900 dark:text-gray-200"
                             >£125</span
                           >
-                          <span class="text-gray-700"
+                          <span class="text-gray-700 dark:text-gray-200"
                             >Frame Colour: Havana</span
                           >
                         </div>
@@ -502,7 +439,7 @@
             </div>
 
             <div
-              :class="sticky ? 'fixed inset-x-0 bottom-0 bg-white  z-50 p-2 md:p-4' : 'pb-5'"
+              :class="sticky ? 'fixed inset-x-0 bottom-0 bg-white dark:bg-slate-900 z-50 p-2 md:p-4' : 'pb-5'"
               x-data="{ sticky: false }"
               x-init="window.addEventListener('scroll', () => { 
     sticky = window.innerWidth < 1280; // Ensure sticky only on screens smaller than 1280
@@ -513,50 +450,91 @@
                 <button
                   class="bg-s hover:bg-p w-full rounded px-4 py-2 text-lg font-bold text-white duration-700 ease-in-out focus:outline-none"
                 >
-                  Personalise Your Lenses
+                  Customise Lenses
                 </button>
               </div>
-              <div class="text-base">
-                Estimated Delivery: 4 Days
-                <span class="text-sm text-gray-700">(Subject to Lenses)</span>
+
+              <!-- SVG and Text Section -->
+              <div class="space-y-4 lg:flex lg:flex-col lg:space-y-0">
+                <div
+                  class="max-xxxsm:space-x-2 flex flex-row justify-center space-x-4 md:space-x-8"
+                >
+                  <!-- SVG 1 and Text -->
+                  <div class="flex items-center space-x-2">
+                    <svg
+                      viewBox="0 0 767 767"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6 sm:h-8 sm:w-8"
+                    >
+                      <path
+                        d="M767 383.5C767 595.301 595.301 767 383.5 767C171.699 767 0 595.301 0 383.5C0 171.699 171.699 0 383.5 0C595.301 0 767 171.699 767 383.5Z"
+                        fill="#FFB3C7"
+                      ></path>
+                      <path
+                        d="M208 584.693H299.15V183.001H208V584.693ZM526.812 183.001C526.812 269.963 493.295 350.861 433.57 410.992L559.565 584.708H446.983L310.055 395.916L345.394 369.157C403.999 324.769 437.614 256.92 437.614 183L526.812 183.001Z"
+                        fill="#0A0B09"
+                      ></path>
+                    </svg>
+                    <p
+                      class="text-sm text-gray-700 dark:text-gray-200 md:text-base"
+                    >
+                      Pay with Klarna
+                    </p>
+                  </div>
+                  <!-- SVG 2 and Text -->
+                  <div class="flex items-center space-x-2">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 512 488"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6 sm:h-8 sm:w-8"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M263.015 2.68698C259.012 4.80498 256.717 6.90498 254.515 10.463L251.5 15.337L251 48.469L250.5 81.601L245.061 88.55C233.508 103.312 201.572 139.408 160.61 184L150.047 195.5L150.023 327.082L150 458.664L168.25 465.484C202.757 478.379 215.351 482.142 235.953 485.714C244.265 487.155 257.64 487.416 339.362 487.732C404.052 487.983 434.841 487.76 438.427 487.015C445.833 485.478 455.557 480.622 461.644 475.421C480.007 459.733 484.587 432.273 472.355 411.202L469.86 406.905L475.934 400.412C485.772 389.895 490.008 379.391 489.988 365.568C489.974 355.922 488.36 349.332 484.017 341.183L480.79 335.129L486.295 329.489C492.488 323.147 497.005 315.333 499.524 306.606C502.863 295.04 500.19 276.907 493.707 267.137L491.397 263.656L497.449 257.513C520.979 233.624 515.11 194.022 485.593 177.515C474.145 171.113 473.149 171.031 406.183 171.015C349.197 171.001 345.896 170.903 346.42 169.25C346.726 168.287 350.386 155.8 354.555 141.5L362.135 115.5L361.676 95C361.194 73.445 360.582 69.662 355.301 55.598C349.893 41.197 335.767 23.991 321.696 14.667C308.837 6.14698 294.017 1.23598 278.5 0.35298C268.863 -0.19502 268.301 -0.110019 263.015 2.68698ZM0 319.5V478H60H120V319.5V161H60H0V319.5Z"
+                        fill="#1E3A8A"
+                      />
+                    </svg>
+                    <p
+                      class="text-sm text-gray-700 dark:text-gray-200 md:text-base"
+                    >
+                      Best Price Guarantee
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Remaining left-hand divs (shown last on mobile and below Left Div 1 on desktop) -->
-        <div class="order-3 rounded-xl bg-white lg:order-3 lg:col-span-2">
-          <div class="mx-4 border-b-2 py-8 md:mx-6 lg:pb-16 xl:rounded-t-xl">
-            <div class="flex w-full flex-col gap-8 lg:flex-row">
+        <div
+          class="order-3 rounded-xl border-2 bg-white lg:order-3 lg:col-span-2"
+        >
+          <div class="bg-gray-100 px-4 py-4 lg:py-12 xl:rounded-t-xl xl:px-8">
+            <div class="flex w-full flex-col lg:flex-row">
               <div
-                x-data="{ showMore: false }"
-                class="w-full justify-end rounded-lg bg-gray-50 p-4 lg:w-1/3"
+                class="dark:bg-p w-full justify-end rounded-lg bg-white p-4 lg:w-1/3"
               >
-                <h3 class="mb-2 text-lg font-bold">Frame Details:</h3>
-                <ul class="list-disc pl-4 leading-8 text-gray-700">
+                <h3 class="mb-2 text-lg font-bold dark:text-gray-300">
+                  Frame Details:
+                </h3>
+                <ul
+                  class="list-disc pl-4 leading-8 text-gray-700 dark:text-gray-200"
+                >
                   <li><strong>Gender:</strong> Mens, Womens</li>
                   <li><strong>Material:</strong> Acetate</li>
+                  <li><strong>Hinge Type:</strong> Sprung Sides</li>
                   <li><strong>Multifocal:</strong> Yes</li>
                   <li><strong>Frame Type:</strong> Full Rimmed</li>
-                  <template x-if="showMore">
-                    <div>
-                      <li><strong>Hinge Type:</strong> Hinged</li>
-                      <li><strong>Nose Pad:</strong> Moulded/Plastic</li>
-                      <li><strong>Frame Shape:</strong> Regular</li>
-                      <li><strong>Brand:</strong> Ray-Ban</li>
-                    </div>
-                  </template>
                 </ul>
-                <button
-                  @click="showMore = !showMore"
-                  class="mt-2 text-blue-500"
-                >
-                  <span x-text="showMore ? 'Show Less' : 'Show More'"></span>
-                </button>
               </div>
-
               <div
-                class="flex w-full flex-col gap-4 pb-4 max-lg:pt-8 md:flex-row lg:w-2/3 xl:gap-8"
+                class="flex w-full flex-col pb-4 max-lg:pt-8 md:flex-row lg:w-2/3"
               >
                 <!-- First SVG Block -->
                 <div class="w-full py-8 lg:w-1/2">
@@ -567,7 +545,7 @@
                     >
                       <span
                         x-text="`${selectedSize.bridge || '18'} mm`"
-                        class="size-detail-frame-width bg-gray-200 px-3 py-1 text-sm text-gray-700"
+                        class="size-detail-frame-width dark:bg-p bg-gray-200 px-3 py-1 text-sm text-gray-700 dark:text-gray-200"
                         >18 mm</span
                       >
                     </div>
@@ -576,10 +554,10 @@
                     <div class="relative w-full max-w-lg">
                       <!-- Lens Depth Measurement - Centered in the Left Lens -->
                       <div
-                        class="absolute left-[25%] top-1/2 -translate-x-1/2 -translate-y-1/2 transform pr-2"
+                        class="absolute left-[30%] top-1/2 -translate-x-1/2 -translate-y-1/2 transform pr-2"
                       >
                         <span
-                          class="size-detail-lens-depth bg-gray-200 px-2 py-1 text-sm text-gray-700"
+                          class="size-detail-lens-depth dark:bg-p bg-gray-200 px-2 py-1 text-sm text-gray-700 dark:text-gray-200"
                         >
                           42 mm
                         </span>
@@ -587,13 +565,13 @@
 
                       <!-- Eye Size - Centered in the Right Lens -->
                       <div
-                        class="absolute right-[25%] top-1/2 -translate-y-1/2 translate-x-1/2 transform"
+                        class="absolute right-[30%] top-1/2 -translate-y-1/2 translate-x-1/2 transform"
                       >
                         <span
-                          x-text="`${selectedSize.eye || '52'} mm`"
-                          class="size-detail-lens-depth bg-gray-200 px-2 py-1 text-sm text-gray-700"
+                          x-text="`${selectedSize.eye || '48'} mm`"
+                          class="size-detail-lens-depth dark:bg-p bg-gray-200 px-2 py-1 text-sm text-gray-700 dark:text-gray-200"
                         >
-                          52 mm
+                          48 mm
                         </span>
                       </div>
 
@@ -608,7 +586,7 @@
                           <path
                             d="M48.8478 3.00342H74M48.5 0.814819V6M74.5 0.814819V6M24.9966 13L24.9966 48.9999M28 12.5H22M28 49.5H22M80.4976 14.5024L111.525 45.5299M82.5962 12.3536L78.3536 16.5962M114.002 43.7598L109.76 48.0024M2 65.5L122 65.5M1.5 63L1.5 68.1852M122.5 63V68.1852M21.7838 8.0487C19.1504 8.2397 14.3897 9.15674 12.1028 9.9138C7.55393 11.4195 4.79824 13.7272 2.97874 17.5553C1.52724 20.6086 1 23.5597 1 28.6314C1 35.7737 2.19813 41.6167 4.60874 46.2311C6.19932 49.2753 9.69467 52.6738 12.6655 54.0644C17.113 56.1461 23.3414 56.5616 28.508 55.1207C35.4098 53.1959 44.05 47.0662 49.014 40.5731C50.6902 38.3805 50.82 38.2754 50.82 39.1126C50.82 40.2528 51.6569 40.5686 52.9418 39.9136C54.7867 38.9734 57.0613 33.7191 56.8749 30.8288C56.7856 29.4469 56.7306 29.3611 55.9396 29.3722C55.4775 29.3788 55.1009 29.3111 55.103 29.2216C55.1052 29.1324 55.3784 27.7713 55.7104 26.1972C56.0423 24.6231 56.3155 22.2094 56.3177 20.8333L56.3217 18.331L58.0275 17.5613C59.5762 16.8627 60.0199 16.8021 62.8435 16.9052C65.2715 16.9937 66.1882 17.1531 67.0213 17.6318L68.089 18.2449L68.4466 21.7726C68.769 24.9569 69.108 26.9555 69.6374 28.7962C69.7966 29.3496 69.7171 29.4177 69.0588 29.2936C67.5348 29.0065 67.316 30.8945 68.4576 34.4819C69.4323 37.5448 70.7594 39.5545 72.1586 40.0872C73.0474 40.4255 73.9717 39.9736 74.104 39.1364C74.1826 38.6402 74.472 38.8842 75.5653 40.3688C78.9011 44.8977 86.5245 51.0286 91.8161 53.4387C98.8166 56.6267 106.23 56.8306 112.255 54.0015C119.952 50.3869 124.321 40.0832 123.785 26.8073C123.325 15.3726 118.794 10.5058 106.766 8.5262C104.209 8.10534 98.8582 8.04177 63.3515 8.00863C41.0776 7.98784 22.3722 8.00592 21.7838 8.0487ZM39.4904 9.63664C45.8258 10.1895 49.5388 11.4668 52.1893 14.0058C54.1543 15.8881 54.7785 17.3787 54.7867 20.2079C54.805 26.4476 52.2199 33.7652 48.0873 39.1725C45.8053 42.1586 40.5804 46.9526 37.166 49.1927C31.3514 53.0082 27.2964 54.35 21.631 54.3329C18.4532 54.3232 17.6411 54.2124 15.5514 53.5029C10.8928 51.921 8.00843 49.3398 5.74177 44.7248C3.40634 39.9691 2.33139 33.8764 2.61227 26.9871C2.85526 21.0363 4.06684 17.5511 6.86837 14.746C9.67633 11.9344 13.8093 10.5844 22.8536 9.52427C24.9546 9.27814 36.2552 9.35436 39.4904 9.63664ZM106.439 10.0578C109.853 10.6453 114.217 12.0308 115.839 13.0421C117.518 14.0887 119.538 16.3716 120.369 18.1611C121.85 21.3515 122.175 23.2702 122.162 28.7579C122.141 38.6462 120.069 45.2366 115.573 49.7188C111.845 53.4357 105.439 55.227 99.5502 54.1991C93.7185 53.1811 87.9473 50.1306 82.1058 44.9781C74.5243 38.291 70.0922 29.277 70.0796 20.5188C70.075 17.179 70.4687 16.1547 72.5483 14.0965C75.0335 11.6373 79.0038 10.1557 84.4837 9.64327C89.1054 9.21096 103.047 9.47426 106.439 10.0578ZM74.6603 10.5501C72.6382 11.6464 70.2462 13.8781 69.4335 15.4272C69.1074 16.0487 68.8091 16.5569 68.7705 16.5566C68.7317 16.5566 67.9438 16.2659 67.0192 15.911C65.7285 15.4151 64.6639 15.2636 62.4345 15.2582C59.7592 15.2515 58.8732 15.422 56.5903 16.3831C56.222 16.5379 55.8901 16.2475 55.299 15.2533C54.2848 13.5476 51.8687 11.4029 49.8371 10.4052L48.2548 9.62791L76.3414 9.63875L74.6603 10.5501Z"
                             stroke="black"
-                            class=""
+                            class="dark:stroke-gray-200"
                           />
                         </svg>
                       </div>
@@ -619,7 +597,7 @@
                       class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full transform"
                     >
                       <span
-                        class="size-detail-bridge-width bg-gray-200 px-3 py-1 text-sm text-gray-700"
+                        class="size-detail-bridge-width dark:bg-p bg-gray-200 px-3 py-1 text-sm text-gray-700 dark:text-gray-200"
                       >
                         144 mm
                       </span>
@@ -648,7 +626,7 @@
                       >
                         <span
                           x-text="`${selectedSize.arm || '145'} mm`"
-                          class="size-detail-arm-length bg-gray-200 px-3 py-1 text-sm text-gray-700"
+                          class="size-detail-arm-length dark:bg-p bg-gray-200 px-3 py-1 text-sm text-gray-700 dark:text-gray-200"
                         >
                           145 mm
                         </span>
@@ -659,13 +637,18 @@
               </div>
             </div>
           </div>
-          <div class="mx-4 border-b-2 py-8 md:mx-6 lg:py-16">
+          <div class="px-4 py-4 lg:py-8 xl:px-8">
             <div class="mb-4">
-              <div class="pb-3 text-xl font-bold">Customer Reviews</div>
+              <div class="pb-3 text-xl font-bold dark:text-gray-200">
+                Customer Reviews
+              </div>
               <div
                 class="mt-2 flex flex-col lg:flex-row lg:items-center lg:space-x-2"
               >
-                <span class="text-2xl font-semibold lg:text-3xl">4.91</span>
+                <span
+                  class="text-2xl font-semibold dark:text-gray-300 lg:text-3xl"
+                  >4.91</span
+                >
                 <div class="flex space-x-1 text-blue-500">
                   <!-- Star SVGs -->
                   <svg
@@ -719,7 +702,9 @@
                     />
                   </svg>
                 </div>
-                <span class="text-sm text-gray-600">Based on 90 reviews</span>
+                <span class="text-sm text-gray-600 dark:text-gray-300"
+                  >Based on 90 reviews</span
+                >
               </div>
             </div>
 
@@ -728,7 +713,7 @@
               class="mb-4 flex flex-col items-start justify-between border-b border-gray-200 pb-2 lg:flex-row lg:items-center"
             >
               <div class="flex items-center space-x-2">
-                <span class="font-semibold">Sort</span>
+                <span class="font-semibold dark:text-gray-300">Sort</span>
                 <select class="rounded-md border p-1 text-sm">
                   <option>Most recent</option>
                   <option>Highest rating</option>
@@ -823,11 +808,11 @@
                           />
                         </svg>
                       </div>
-                      <h3 class="text-lg font-semibold">
+                      <h3 class="text-lg font-semibold dark:text-gray-200">
                         SL 175 Prescription Glasses
                       </h3>
                     </div>
-                    <p class="mt-1 text-gray-700">
+                    <p class="mt-1 text-gray-700 dark:text-gray-200">
                       Fantastic fitting glasses, had these with bifocal lenses,
                       and I am really happy with them, think I might get some as
                       sunglasses as well.
@@ -843,13 +828,17 @@
                           d="M12 2C6.477 2 2 6.477 2 12c0 4.411 2.891 8.145 6.83 9.501.997.184 1.326-.432 1.326-.958 0-.47-.018-1.71-.027-3.36-2.782.605-3.369-1.342-3.369-1.342-.907-2.307-1.58-3.014-1.58-3.014-1.291-.883.097-.865.097-.865 1.428.1 2.179 1.482 2.179 1.482 1.267 2.172 3.324 1.545 4.135 1.18.128-.918.495-1.546.899-1.902-2.222-.251-4.555-1.111-4.555-4.945 0-1.092.389-1.986 1.026-2.684-.103-.252-.446-1.266.097-2.64 0 0 .838-.269 2.746 1.026A9.581 9.581 0 0112 5.837c.848.004 1.702.115 2.498.338 1.907-1.296 2.745-1.027 2.745-1.027.544 1.375.201 2.388.098 2.64.639.698 1.026 1.592 1.026 2.684 0 3.841-2.335 4.692-4.563 4.938.509.439.964 1.306.964 2.634 0 1.903-.017 3.437-.017 3.904 0 .528.325 1.15 1.337.955C19.105 20.142 22 16.407 22 12c0-5.523-4.477-10-10-10z"
                         />
                       </svg>
-                      <span class="">Was this review helpful?</span>
+                      <span class="dark:text-gray-300"
+                        >Was this review helpful?</span
+                      >
                       <a href="#" class="ml-2 text-blue-500">Yes</a>
                       <a href="#" class="ml-2 text-blue-500">Report</a>
                       <a href="#" class="ml-2 text-blue-500">Share</a>
                     </div>
                   </div>
-                  <div class="text-sm text-gray-500 lg:ml-4">3 months ago</div>
+                  <div class="text-sm text-gray-500 dark:text-gray-200 lg:ml-4">
+                    3 months ago
+                  </div>
                 </div>
               </div>
               <hr class="my-4" />
@@ -921,11 +910,11 @@
                           />
                         </svg>
                       </div>
-                      <h3 class="text-lg font-semibold">
+                      <h3 class="text-lg font-semibold dark:text-gray-200">
                         SL 175 Prescription Glasses
                       </h3>
                     </div>
-                    <p class="mt-1 text-gray-700">
+                    <p class="mt-1 text-gray-700 dark:text-gray-200">
                       Fantastic fitting glasses, had these with bifocal lenses,
                       and I am really happy with them, think I might get some as
                       sunglasses as well.
@@ -941,13 +930,17 @@
                           d="M12 2C6.477 2 2 6.477 2 12c0 4.411 2.891 8.145 6.83 9.501.997.184 1.326-.432 1.326-.958 0-.47-.018-1.71-.027-3.36-2.782.605-3.369-1.342-3.369-1.342-.907-2.307-1.58-3.014-1.58-3.014-1.291-.883.097-.865.097-.865 1.428.1 2.179 1.482 2.179 1.482 1.267 2.172 3.324 1.545 4.135 1.18.128-.918.495-1.546.899-1.902-2.222-.251-4.555-1.111-4.555-4.945 0-1.092.389-1.986 1.026-2.684-.103-.252-.446-1.266.097-2.64 0 0 .838-.269 2.746 1.026A9.581 9.581 0 0112 5.837c.848.004 1.702.115 2.498.338 1.907-1.296 2.745-1.027 2.745-1.027.544 1.375.201 2.388.098 2.64.639.698 1.026 1.592 1.026 2.684 0 3.841-2.335 4.692-4.563 4.938.509.439.964 1.306.964 2.634 0 1.903-.017 3.437-.017 3.904 0 .528.325 1.15 1.337.955C19.105 20.142 22 16.407 22 12c0-5.523-4.477-10-10-10z"
                         />
                       </svg>
-                      <span class="">Was this review helpful?</span>
+                      <span class="dark:text-gray-300"
+                        >Was this review helpful?</span
+                      >
                       <a href="#" class="ml-2 text-blue-500">Yes</a>
                       <a href="#" class="ml-2 text-blue-500">Report</a>
                       <a href="#" class="ml-2 text-blue-500">Share</a>
                     </div>
                   </div>
-                  <div class="text-sm text-gray-500 lg:ml-4">3 months ago</div>
+                  <div class="text-sm text-gray-500 dark:text-gray-200 lg:ml-4">
+                    3 months ago
+                  </div>
                 </div>
               </div>
               <hr class="my-4" />
@@ -1019,11 +1012,11 @@
                           />
                         </svg>
                       </div>
-                      <h3 class="text-lg font-semibold">
+                      <h3 class="text-lg font-semibold dark:text-gray-200">
                         SL 175 Prescription Glasses
                       </h3>
                     </div>
-                    <p class="mt-1 text-gray-700">
+                    <p class="mt-1 text-gray-700 dark:text-gray-200">
                       Fantastic fitting glasses, had these with bifocal lenses,
                       and I am really happy with them, think I might get some as
                       sunglasses as well.
@@ -1039,26 +1032,25 @@
                           d="M12 2C6.477 2 2 6.477 2 12c0 4.411 2.891 8.145 6.83 9.501.997.184 1.326-.432 1.326-.958 0-.47-.018-1.71-.027-3.36-2.782.605-3.369-1.342-3.369-1.342-.907-2.307-1.58-3.014-1.58-3.014-1.291-.883.097-.865.097-.865 1.428.1 2.179 1.482 2.179 1.482 1.267 2.172 3.324 1.545 4.135 1.18.128-.918.495-1.546.899-1.902-2.222-.251-4.555-1.111-4.555-4.945 0-1.092.389-1.986 1.026-2.684-.103-.252-.446-1.266.097-2.64 0 0 .838-.269 2.746 1.026A9.581 9.581 0 0112 5.837c.848.004 1.702.115 2.498.338 1.907-1.296 2.745-1.027 2.745-1.027.544 1.375.201 2.388.098 2.64.639.698 1.026 1.592 1.026 2.684 0 3.841-2.335 4.692-4.563 4.938.509.439.964 1.306.964 2.634 0 1.903-.017 3.437-.017 3.904 0 .528.325 1.15 1.337.955C19.105 20.142 22 16.407 22 12c0-5.523-4.477-10-10-10z"
                         />
                       </svg>
-                      <span class="">Was this review helpful?</span>
+                      <span class="dark:text-gray-300"
+                        >Was this review helpful?</span
+                      >
                       <a href="#" class="ml-2 text-blue-500">Yes</a>
                       <a href="#" class="ml-2 text-blue-500">Report</a>
                       <a href="#" class="ml-2 text-blue-500">Share</a>
                     </div>
                   </div>
-                  <div class="text-sm text-gray-500 lg:ml-4">3 months ago</div>
+                  <div class="text-sm text-gray-500 dark:text-gray-200 lg:ml-4">
+                    3 months ago
+                  </div>
                 </div>
               </div>
               <hr class="my-4" />
             </div>
-            <div
-              class="flex flex-row items-center justify-between space-y-2 py-4 lg:flex-row lg:space-y-0"
-            >
+            <div class="flex items-center justify-between py-4">
               <!-- Pagination Centered -->
               <div class="flex w-full justify-center">
-                <div
-                  class="flex flex-wrap justify-center space-x-2 text-sm font-medium text-gray-700"
-                >
-                  <!-- Show only the first 6 pages on mobile, but all on larger screens -->
+                <div class="flex space-x-2 text-sm font-medium text-gray-700">
                   <a href="#" class="border-b-2 border-black px-2 py-1">1</a>
                   <a
                     href="#"
@@ -1085,50 +1077,52 @@
                     class="px-2 py-1 hover:border-b-2 hover:border-black"
                     >6</a
                   >
-
-                  <!-- These elements are hidden on mobile and shown on larger screens -->
-                  <span class="hidden px-2 py-1 lg:inline">...</span>
                   <a
                     href="#"
-                    class="hidden px-2 py-1 hover:border-b-2 hover:border-black lg:inline"
+                    class="px-2 py-1 hover:border-b-2 hover:border-black"
                     >7</a
                   >
                   <a
                     href="#"
-                    class="hidden px-2 py-1 hover:border-b-2 hover:border-black lg:inline"
+                    class="px-2 py-1 hover:border-b-2 hover:border-black"
                     >8</a
                   >
                   <a
                     href="#"
-                    class="hidden px-2 py-1 hover:border-b-2 hover:border-black lg:inline"
+                    class="px-2 py-1 hover:border-b-2 hover:border-black"
                     >9</a
                   >
                   <a
                     href="#"
-                    class="hidden px-2 py-1 hover:border-b-2 hover:border-black lg:inline"
+                    class="px-2 py-1 hover:border-b-2 hover:border-black"
                     >10</a
                   >
-                  <span class="hidden px-2 py-1 lg:inline">...</span>
+                  <span class="px-2 py-1">...</span>
                   <a
                     href="#"
-                    class="hidden px-2 py-1 hover:border-b-2 hover:border-black lg:inline"
+                    class="px-2 py-1 hover:border-b-2 hover:border-black"
                     >30</a
                   >
                 </div>
               </div>
 
               <!-- Reviews.io branding -->
-              <div class="flex items-center justify-center lg:ml-auto">
+              <div class="ml-auto flex items-center">
                 <span class="text-xs font-semibold text-gray-700">REVIEWS</span>
                 <span class="text-xs text-gray-700">.io</span>
               </div>
             </div>
           </div>
-          <div class="mx-4 border-b-2 py-8 md:mx-6 lg:py-16">
-            <div class="pb-3 text-xl font-bold">Description</div>
+          <div class="bg-l px-4 py-4 lg:py-12 xl:px-8">
+            <div class="pb-3 text-xl font-bold dark:text-gray-200">
+              Description
+            </div>
 
             <div x-data="{ expanded: false }">
-              <p :class="expanded ? '' : 'line-clamp-4'" class="leading-loose">
+              <p
+                :class="expanded ? '' : 'line-clamp-4'"
+                class="leading-loose dark:text-gray-200"
+              >
                 Introducing the RX 7047 Ray-Ban Glasses—where form meets
                 function in perfect harmony. Crafted from premium plastic, these
                 frames promise durability while ensuring a lightweight feel for
@@ -1149,32 +1143,35 @@
                 world and how the world sees you.
               </p>
 
-              <button @click="expanded = !expanded" class="mt-2 text-blue-600">
+              <button
+                @click="expanded = !expanded"
+                class="mt-2 text-blue-600 dark:text-blue-400"
+              >
                 <span x-show="!expanded">Show More</span>
                 <span x-show="expanded">Show Less</span>
               </button>
             </div>
           </div>
-          <div class="mx-4 border-b-2 py-8 md:mx-6 lg:py-16">
+          <div class="px-4 py-4 lg:py-8 xl:px-8">
             <div
-              class="flex w-full flex-wrap items-center justify-center lg:justify-between"
+              class="relative flex w-full flex-wrap items-center justify-center lg:justify-between"
             >
-              <div class="order-2 w-full lg:order-1 lg:w-5/12">
+              <div class="relative z-10 order-2 w-full lg:order-1 lg:w-5/12">
                 <div class="flex">
                   <img
                     src="../images/case_and_cloth4.png"
-                    class="w-full"
-                    alt="Frame case and lens cloth"
+                    class="relative w-full"
+                    alt=""
                   />
                 </div>
               </div>
 
-              <div class="order-1 w-full lg:order-2 lg:-ml-20 lg:w-7/12">
-                <div
-                  class="flex items-center rounded-lg bg-gray-50 p-4 text-left"
-                >
+              <div
+                class="relative z-0 order-1 w-full lg:order-2 lg:-ml-20 lg:w-7/12"
+              >
+                <div class="bg-l flex items-center p-4 text-left lg:rounded-lg">
                   <div>
-                    <h2 class="mb-3 text-xl font-bold lg:mb-6">
+                    <h2 class="mb-3 text-2xl font-bold lg:mb-6">
                       Plus a frame case and lens cloth
                     </h2>
                     <p class="mb-3 pb-2 leading-loose lg:mb-6 lg:pb-0">
@@ -1182,74 +1179,6 @@
                       your frames safe and clean. Stock frames come with a
                       Spex4Less branded case and cloth, while designer frames
                       include a branded case and cloth from the designer.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!--Lenses-->
-          <div class="mx-4 py-8 md:mx-6 lg:py-16">
-            <div class="container mx-auto text-left">
-              <h2 class="pb-3 text-xl font-bold">
-                Explore Our Range of Lens Options
-              </h2>
-
-              <div
-                class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3"
-              >
-                <!-- Card 1 -->
-                <div class="overflow-hidden rounded-lg">
-                  <img
-                    class="h-48 w-full object-cover"
-                    src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/lenses_step_2.webp"
-                    alt="Team working together"
-                  />
-                  <div class="pt-6">
-                    <h3 class="mb-2 text-lg font-semibold">
-                      Free Standard Single-Vision Lenses
-                    </h3>
-                    <p class="">
-                      Enjoy clear vision with our standard single-vision lenses,
-                      designed to suit your everyday needs.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="overflow-hidden rounded-lg">
-                  <img
-                    class="h-48 w-full object-cover"
-                    src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/varifocal_block2.webp"
-                    alt="Office desk with computer"
-                  />
-                  <div class="pt-6">
-                    <h3 class="mb-2 text-lg font-semibold">
-                      A Range of Premium Lens Options
-                    </h3>
-                    <p class="">
-                      Explore our selection of premium lenses, including
-                      bifocal, varifocal, and transition options, designed to
-                      meet your unique vision needs.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="overflow-hidden rounded-lg">
-                  <img
-                    class="h-48 w-full object-cover"
-                    src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/product_page_tints.webp"
-                    alt="Workspace with plants"
-                  />
-                  <div class="pt-6">
-                    <h3 class="mb-2 text-lg font-semibold">
-                      Custom Tints and Lens Coatings
-                    </h3>
-                    <p class="">
-                      Enhance your lenses with a variety of tints and coatings,
-                      from anti-glare to blue light protection.
                     </p>
                   </div>
                 </div>

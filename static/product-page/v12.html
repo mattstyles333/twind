@@ -17,9 +17,9 @@
     <div class="mx-auto p-4 md:container">
       <div class="grid grid-cols-1 gap-y-4 lg:grid-cols-3 lg:gap-4">
         <!-- First left-hand div (shown first on mobile and top left on desktop) -->
-        <div class="order-1 lg:order-1 lg:col-span-2 lg:flex lg:flex-col">
+        <div class="order-1 lg:order-1 lg:col-span-2">
           <div
-            class="relative flex-grow rounded-lg bg-white p-4 shadow-sm dark:bg-slate-900"
+            class="relative rounded-lg bg-white p-4 shadow-sm dark:bg-slate-900"
           >
             <div>
               <!-- Product Labels -->
@@ -46,7 +46,9 @@
                   Sale
                 </span>
               </div>
-              <div class="absolute left-0 top-0 block w-1/4 p-2 md:hidden">
+              <div
+                class="absolute left-0 top-0 block w-16 object-contain p-2 md:w-24"
+              >
                 <img src="../images/rayban-logo.png" alt="Logo" class="" />
               </div>
 
@@ -140,14 +142,10 @@
         </div>
 
         <!-- Right-hand sticky div (shown second on mobile and top right on desktop) -->
-        <div
-          class="order-2 lg:sticky lg:top-4 lg:order-2 lg:col-span-1 lg:flex lg:flex-col"
-        >
-          <div
-            class="flex-grow rounded-lg bg-white p-4 shadow-sm dark:bg-slate-900"
-          >
+        <div class="order-2 lg:sticky lg:top-4 lg:order-2 lg:col-span-1">
+          <div class="rounded-lg bg-white p-4 shadow-sm dark:bg-slate-900">
             <div class="flex rounded-lg bg-gray-50 p-4">
-              <div class="w-full space-y-2 lg:w-3/4">
+              <div class="w-full space-y-2">
                 <div class="space-y-2">
                   <!-- Product Title -->
                   <h1 class="text-2xl font-bold dark:text-gray-300 lg:text-3xl">
@@ -227,12 +225,9 @@
                   <!-- Actual Price -->
                 </div>
               </div>
-              <div class="hidden w-1/4 md:block">
-                <img src="../images/rayban-logo.png" alt="Logo" />
-              </div>
             </div>
             <div class="my-4"></div>
-            <div class="space-y-4 pb-6">
+            <div class="space-y-6 pb-6">
               <div x-data="{ selectedSize: '' }" class="space-y-4">
                 <div class="flex items-center space-x-2">
                   <label
@@ -242,32 +237,30 @@
                   >
                   <p class="text-md text-gray-600" x-text="selectedSize"></p>
                 </div>
-                <div
-                  class="grid w-full gap-3 md:grid-cols-4 md:gap-4 lg:grid-cols-2 xl:grid-cols-4"
-                >
+                <div class="flex w-full gap-3 md:gap-4">
                   <button
                     @click="selectedSize = '52-18-140'"
                     :class="selectedSize === '52-18-140' ? 'ring-2 ring-blue-800' : ''"
-                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200 md:text-base"
+                    class="dark:bg-p w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200 md:w-1/3 md:text-base"
                   >
                     52-18-140
                   </button>
                   <button
                     @click="selectedSize = '54-18-140'"
                     :class="selectedSize === '54-18-140' ? 'ring-2 ring-blue-800' : ''"
-                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200 md:text-base"
+                    class="dark:bg-p w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200 md:w-1/3 md:text-base"
                   >
                     54-18-140
                   </button>
                   <button
                     @click="selectedSize = '56-18-140'"
                     :class="selectedSize === '56-18-140' ? 'ring-2 ring-blue-800' : ''"
-                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200 md:text-base"
+                    class="dark:bg-p w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200 md:w-1/3 md:text-base"
                   >
                     56-18-140
                   </button>
                   <button
-                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200 md:text-base"
+                    class="dark:bg-p w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200 md:w-1/3 md:text-base"
                   >
                     Size Guide
                   </button>
@@ -417,7 +410,7 @@
               </div>
             </div>
 
-            <div class="pb-5">
+            <div class="pb-6">
               <button
                 class="bg-s hover:bg-p w-full rounded px-4 py-2 text-lg font-bold text-white duration-700 ease-in-out focus:outline-none"
               >
@@ -464,6 +457,26 @@
 
                 <p class="text-md text-gray-700 dark:text-gray-200">
                   Best Price Guarantee
+                </p>
+              </div>
+              <div class="flex items-center space-x-2">
+                <svg
+                  width="30"
+                  height="30"
+                  viewBox="0 0 118 119"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12.4066 2.57101C10.2466 4.73101 10.0916 28.137 12.2246 29.908C13.1566 30.681 17.8196 30.969 26.3676 30.781C37.2356 30.542 39.2846 30.241 40.2236 28.75C42.4026 25.29 39.8456 23.549 31.7806 23L24.4326 22.5L27.8836 19.586C32.2326 15.916 41.7366 11.581 48.6346 10.121C83.8056 2.68001 116.045 34.907 108.739 70.201C103.959 93.292 82.2996 111 58.8356 111C40.0996 111 21.2766 99.21 13.3566 82.514C9.91958 75.267 7.83558 67.365 7.83558 61.573C7.83558 55.69 2.29458 53.909 0.43558 59.195C-1.84942 65.693 5.23758 87.109 12.7796 96.5C19.7766 105.211 30.6346 112.464 42.8356 116.575C50.4336 119.136 67.1936 119.144 74.8356 116.591C95.1416 109.808 108.644 96.306 115.427 76C117.97 68.387 117.97 51.613 115.427 44C111.104 31.06 103.986 20.735 94.1826 13.185C85.3646 6.39301 69.7766 1.03501 58.8356 1.03501C47.5146 1.03501 30.2566 7.18001 22.5336 13.96L18.8356 17.207V10.304C18.8356 1.58701 16.3636 -1.38599 12.4066 2.57101ZM40.8356 36.877L26.3356 42.541L26.0886 61.02C25.9526 71.184 26.1776 80.004 26.5886 80.62C27.3536 81.767 56.7546 93 58.9916 93C61.1706 93 90.3066 81.741 91.0826 80.599C91.4936 79.995 91.7186 71.188 91.5826 61.03L91.3356 42.559L76.3656 36.78C68.1316 33.601 60.0316 31.048 58.3656 31.107C56.6986 31.165 48.8106 33.762 40.8356 36.877ZM68.6066 42.16L76.9776 45.319L67.9936 48.759L59.0086 52.199L49.8796 48.781L40.7506 45.363L48.5436 42.294C52.8286 40.606 57.2126 39.174 58.2856 39.112C59.3576 39.051 64.0016 40.422 68.6066 42.16ZM50.8356 57.461L54.3356 58.698L54.6166 70.849C54.7706 77.532 54.5816 83 54.1966 83C53.8116 83 49.0726 81.375 43.6666 79.389L33.8356 75.778V63.434V51.09L40.5856 53.657C44.2976 55.069 48.9106 56.781 50.8356 57.461ZM83.8356 63.389V75.778L74.0046 79.389C68.5986 81.375 63.8736 83 63.5046 83C63.1366 83 62.8356 77.633 62.8356 71.073V59.146L73.0856 55.127C78.7236 52.917 83.4476 51.085 83.5856 51.055C83.7236 51.025 83.8356 56.575 83.8356 63.389Z"
+                    fill="#1E3A8A"
+                  />
+                </svg>
+
+                <p class="text-md text-gray-700 dark:text-gray-200">
+                  Easy no Quibble Returns
                 </p>
               </div>
             </div>
