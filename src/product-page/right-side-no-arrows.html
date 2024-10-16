@@ -13,19 +13,22 @@
   ></script>
 </head>
 
-<div class="mx-auto w-1/4 justify-center border-2">
+<div class="mx-auto w-full justify-center border-2 md:w-1/4">
   <div
     class="order-2 lg:top-4 lg:order-2 lg:col-span-1 lg:flex lg:flex-col xl:sticky"
     x-data="{ 
-    sticky: false, 
-    selectedSize: { eye: '54', bridge: '20', arm: '140' }, 
-    selectedColour: 'Black', 
-    colourOptions: { 
-      'Black': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp', 
-      'Havana': 'https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol002_-_c1_1_1_1_1_1.webp', 
-      'Blue': 'https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol003_-_c1_1_1_1_1_1.webp' 
-    }
-  }"
+      sticky: false, 
+      selectedSize: { eye: '54', bridge: '20', arm: '140' }, 
+      selectedColour: 'Black', 
+      colourOptions: { 
+        'Black': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp', 
+        'Havana': 'https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol002_-_c1_1_1_1_1_1.webp', 
+        'Blue': 'https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol003_-_c1_1_1_1_1_1.webp' 
+      },
+      updateColour(colour) {
+        this.selectedColour = colour;
+      }
+    }"
     @scroll.window="sticky = (window.pageYOffset > $el.querySelector('.pb-5').offsetTop)"
   >
     <div
@@ -289,7 +292,7 @@
             </button>
           </div>
           <!-- Colour Selector Section -->
-          <div class="flex items-center space-x-2">
+          <div class="my-4 flex items-center space-x-2">
             <label
               for="colour"
               class="text-xl font-bold text-gray-700 dark:text-gray-200"
@@ -304,76 +307,97 @@
           <div class="glide relative overflow-hidden">
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__slides flex items-center space-x-4">
-                <!-- Flexbox with items-center to vertically align the images -->
+                <!-- Image 1 (Black) -->
                 <li class="glide__slide">
-                  <div class="relative">
+                  <div class="relative p-1">
                     <img
+                      @click="selectedColour = 'Black'"
                       src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp"
-                      alt="Product 1"
-                      class="h-auto w-full rounded-md border-2 border-gray-200 object-cover transition-colors duration-500 hover:border-gray-400"
+                      alt="Black Frame"
+                      :class="selectedColour === 'Black' ? 'ring-2 ring-blue-800' : ''"
+                      class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
                     />
                   </div>
                 </li>
+
+                <!-- Image 2 (Havana) -->
                 <li class="glide__slide">
-                  <div class="relative">
+                  <div class="relative p-1">
                     <img
-                      src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__2475_my43e1qwxv63bjre.webp"
-                      alt="Product 2"
-                      class="h-auto w-full rounded-md border-2 border-gray-200 object-cover transition-colors duration-500 hover:border-gray-400"
+                      @click="selectedColour = 'Havana'"
+                      src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5573_a6ab6byxeovjr45m.webp"
+                      alt="Havana Frame"
+                      :class="selectedColour === 'Havana' ? 'ring-2 ring-blue-800' : ''"
+                      class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
                     />
                   </div>
                 </li>
+
+                <!-- Image 3 (Blue) -->
                 <li class="glide__slide">
-                  <div class="relative">
+                  <div class="relative p-1">
                     <img
-                      src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5450_mtlmzoksjgm8dkxg.webp"
-                      alt="Product 3"
-                      class="h-auto w-full rounded-md border-2 border-gray-200 object-cover transition-colors duration-500 hover:border-gray-400"
+                      @click="selectedColour = 'Blue'"
+                      src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__8100_bajny668wk6ovl06.webp"
+                      alt="Blue Frame"
+                      :class="selectedColour === 'Blue' ? 'ring-2 ring-blue-800' : ''"
+                      class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
                     />
                   </div>
                 </li>
+
+                <!-- Image 4 (Brown) -->
                 <li class="glide__slide">
-                  <div class="relative">
+                  <div class="relative p-1">
                     <img
+                      @click="selectedColour = 'Brown'"
                       src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5451_8excktemjtedjjep.webp"
-                      alt="Product 4"
-                      class="h-auto w-full rounded-md border-2 border-gray-200 object-cover transition-colors duration-500 hover:border-gray-400"
+                      alt="Brown Frame"
+                      :class="selectedColour === 'Brown' ? 'ring-2 ring-blue-800' : ''"
+                      class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
                     />
                   </div>
                 </li>
+
+                <!-- Image 5 (Black/Red) -->
                 <li class="glide__slide">
-                  <div class="relative">
+                  <div class="relative p-1">
                     <img
-                      src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5943_2r0eavf401rmuggf.webp"
-                      alt="Product 5"
-                      class="h-auto w-full rounded-md border-2 border-gray-200 object-cover transition-colors duration-500 hover:border-gray-400"
+                      @click="selectedColour = 'Black/Red'"
+                      src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__2475_my43e1qwxv63bjre.webp"
+                      alt="Black/Red Frame"
+                      :class="selectedColour === 'Black/Red' ? 'ring-2 ring-blue-800' : ''"
+                      class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
                     />
                   </div>
                 </li>
+
+                <!-- Image 6 (Grey) -->
                 <li class="glide__slide">
-                  <div class="relative">
+                  <div class="relative p-1">
                     <img
+                      @click="selectedColour = 'Grey'"
                       src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp"
-                      alt="Product 6"
-                      class="h-auto w-full rounded-md border-2 border-gray-200 object-cover transition-colors duration-500 hover:border-gray-400"
+                      alt="Grey Frame"
+                      :class="selectedColour === 'Grey' ? 'ring-2 ring-blue-800' : ''"
+                      class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
+                    />
+                  </div>
+                </li>
+
+                <!-- Image 7 (Clear) -->
+                <li class="glide__slide">
+                  <div class="relative p-1">
+                    <img
+                      @click="selectedColour = 'Clear'"
+                      src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5943_2r0eavf401rmuggf.webp"
+                      alt="Clear Frame"
+                      :class="selectedColour === 'Clear' ? 'ring-2 ring-blue-800' : ''"
+                      class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
                     />
                   </div>
                 </li>
               </ul>
-            </div>
-            <div class="glide__arrows" data-glide-el="controls">
-              <button
-                class="glide__arrow glide__arrow--left absolute left-0 top-1/2 z-10 -translate-y-1/2 transform rounded-full bg-gray-300 bg-opacity-50 px-3 text-2xl font-bold text-gray-800 shadow-lg"
-                data-glide-dir="<"
-              >
-                ‹
-              </button>
-              <button
-                class="glide__arrow glide__arrow--right absolute right-0 top-1/2 z-10 -translate-y-1/2 transform rounded-full bg-gray-300 bg-opacity-50 px-3 text-2xl font-bold text-gray-800 shadow-lg"
-                data-glide-dir=">"
-              >
-                ›
-              </button>
             </div>
           </div>
 
@@ -392,7 +416,7 @@
                   perView: 2,
                 },
                 480: {
-                  perView: 1,
+                  perView: 3.2,
                 },
               },
             }).mount();

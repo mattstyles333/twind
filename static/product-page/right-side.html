@@ -21,7 +21,7 @@
     selectedSize: { eye: '54', bridge: '20', arm: '140' }, 
     selectedColour: 'Black', 
     colourOptions: { 
-      'Black': 'https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol001_-_c1_1_1_1_1_1.webp', 
+      'Black': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp', 
       'Havana': 'https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol002_-_c1_1_1_1_1_1.webp', 
       'Blue': 'https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol003_-_c1_1_1_1_1_1.webp' 
     }
@@ -137,14 +137,19 @@
               <div
                 class="max-xxsm:flex-col max-xxsm:space-y-3 max-xxsm:space-x-0 flex flex-row items-start space-x-3 md:flex-col md:space-x-0 md:space-y-3"
               >
-                <div class="flex items-center">
+                <div
+                  x-data="{ open: false }"
+                  class="relative flex items-center"
+                >
                   <p
-                    class="hidden pr-3 text-sm text-gray-700 dark:text-gray-200 md:block"
+                    @click="open = true"
+                    class="hidden cursor-pointer pr-3 text-sm text-gray-700 hover:underline dark:text-gray-200 md:block"
                   >
-                    Standard Lenses Included
+                    Best Price Guarantee
                   </p>
                   <svg
-                    class="w-5 text-blue-900 dark:text-blue-400"
+                    @click="open = true"
+                    class="w-5 cursor-pointer text-blue-900 dark:text-blue-400"
                     viewBox="0 0 92 92"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -162,41 +167,37 @@
                     />
                   </svg>
                   <p
-                    class="pl-2 text-sm text-gray-700 dark:text-gray-200 md:hidden"
-                  >
-                    Standard Lenses Included
-                  </p>
-                </div>
-                <!-- SVG 2 and Text -->
-                <div class="flex items-center">
-                  <p
-                    class="hidden pr-3 text-sm text-gray-700 dark:text-gray-200 md:block"
+                    @click="open = true"
+                    class="cursor-pointer pl-2 text-sm text-gray-700 hover:underline dark:text-gray-200 md:hidden"
                   >
                     Best Price Guarantee
                   </p>
-                  <svg
-                    class="w-5 text-blue-900 dark:text-blue-400"
-                    viewBox="0 0 92 92"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+
+                  <!-- Modal -->
+                  <div
+                    x-show="open"
+                    @click.away="open = false"
+                    class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+                    x-cloak
                   >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M65.1001 28.126C64.8826 28.1949 64.5237 28.3609 64.3025 28.4947C64.0813 28.6284 58.3689 34.3563 51.6083 41.2232L39.3163 53.7086L33.6845 48.0069C27.5688 41.8153 27.6902 41.9207 26.4135 41.6924C24.9394 41.4288 23.2857 42.2227 22.5101 43.5662C21.8239 44.7551 21.8304 46.2708 22.5274 47.5104C22.6802 47.7822 25.4531 50.6705 29.8703 55.1589C36.6032 62.0003 37.0015 62.3868 37.6246 62.6853C38.2377 62.979 38.3471 63 39.2668 63C40.1855 63 40.2965 62.9788 40.909 62.6863C41.5404 62.3847 42.1057 61.8245 55.4739 48.2526C68.8422 34.6807 69.394 34.1068 69.691 33.4658C69.9761 32.8507 70 32.7251 70 31.8462C70 30.9759 69.7055 30.2625 69.7055 30.2625C69.7055 30.2625 68.3759 28.4433 67.3645 28.1319C66.802 27.9586 65.6371 27.9555 65.1001 28.126Z"
-                      fill="currentColor"
-                    />
-                    <path
-                      d="M46 89.5C70.0244 89.5 89.5 70.0244 89.5 46C89.5 21.9756 70.0244 2.5 46 2.5C21.9756 2.5 2.5 21.9756 2.5 46C2.5 70.0244 21.9756 89.5 46 89.5Z"
-                      stroke="currentColor"
-                      stroke-width="5"
-                    />
-                  </svg>
-                  <p
-                    class="pl-2 text-sm text-gray-700 dark:text-gray-200 md:hidden"
-                  >
-                    Best Price Guarantee
-                  </p>
+                    <div
+                      class="w-full max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-slate-900"
+                    >
+                      <h3 class="mb-4 text-lg font-bold">
+                        Best Price Guarantee
+                      </h3>
+                      <p class="text-gray-700 dark:text-gray-200">
+                        We ensure that you always get the best price for your
+                        glasses. If you find a better price, we'll match it!
+                      </p>
+                      <button
+                        @click="open = false"
+                        class="mt-4 rounded bg-blue-500 px-4 py-2 text-white"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -300,61 +301,89 @@
             ></p>
           </div>
 
-          <div class="glide overflow-hidden">
+          <div class="glide relative overflow-hidden">
             <div class="glide__track" data-glide-el="track">
-              <ul class="glide__slides flex space-x-4">
+              <ul class="glide__slides flex items-center space-x-4">
+                <!-- Flexbox with items-center to vertically align the images -->
                 <li class="glide__slide">
-                  <img
-                    src="https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol001_-_c1_1_1_1_1_1.webp"
-                    alt="Product 1"
-                    class="h-auto w-full rounded-md border-2 border-gray-200 object-cover"
-                  />
+                  <div class="relative">
+                    <img
+                      src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp"
+                      alt="Product 1"
+                      class="h-auto w-full rounded-md border-2 border-gray-200 object-cover transition-colors duration-500 hover:border-gray-400"
+                    />
+                  </div>
                 </li>
                 <li class="glide__slide">
-                  <img
-                    src="https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol001_-_c1_1_1_1_1_1.webp"
-                    alt="Product 2"
-                    class="h-auto w-full rounded-md border-2 border-gray-200 object-cover"
-                  />
+                  <div class="relative">
+                    <img
+                      src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__2475_my43e1qwxv63bjre.webp"
+                      alt="Product 2"
+                      class="h-auto w-full rounded-md border-2 border-gray-200 object-cover transition-colors duration-500 hover:border-gray-400"
+                    />
+                  </div>
                 </li>
                 <li class="glide__slide">
-                  <img
-                    src="https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol001_-_c1_1_1_1_1_1.webp"
-                    alt="Product 3"
-                    class="h-auto w-full rounded-md border-2 border-gray-200 object-cover"
-                  />
+                  <div class="relative">
+                    <img
+                      src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5450_mtlmzoksjgm8dkxg.webp"
+                      alt="Product 3"
+                      class="h-auto w-full rounded-md border-2 border-gray-200 object-cover transition-colors duration-500 hover:border-gray-400"
+                    />
+                  </div>
                 </li>
                 <li class="glide__slide">
-                  <img
-                    src="https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol001_-_c1_1_1_1_1_1.webp"
-                    alt="Product 4"
-                    class="h-auto w-full rounded-md border-2 border-gray-200 object-cover"
-                  />
+                  <div class="relative">
+                    <img
+                      src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5451_8excktemjtedjjep.webp"
+                      alt="Product 4"
+                      class="h-auto w-full rounded-md border-2 border-gray-200 object-cover transition-colors duration-500 hover:border-gray-400"
+                    />
+                  </div>
                 </li>
                 <li class="glide__slide">
-                  <img
-                    src="https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol001_-_c1_1_1_1_1_1.webp"
-                    alt="Product 5"
-                    class="h-auto w-full rounded-md border-2 border-gray-200 object-cover"
-                  />
+                  <div class="relative">
+                    <img
+                      src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5943_2r0eavf401rmuggf.webp"
+                      alt="Product 5"
+                      class="h-auto w-full rounded-md border-2 border-gray-200 object-cover transition-colors duration-500 hover:border-gray-400"
+                    />
+                  </div>
                 </li>
                 <li class="glide__slide">
-                  <img
-                    src="https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol001_-_c1_1_1_1_1_1.webp"
-                    alt="Product 6"
-                    class="h-auto w-full rounded-md border-2 border-gray-200 object-cover"
-                  />
+                  <div class="relative">
+                    <img
+                      src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp"
+                      alt="Product 6"
+                      class="h-auto w-full rounded-md border-2 border-gray-200 object-cover transition-colors duration-500 hover:border-gray-400"
+                    />
+                  </div>
                 </li>
               </ul>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls">
+              <button
+                class="glide__arrow glide__arrow--left absolute left-0 top-1/2 z-10 -translate-y-1/2 transform rounded-full bg-gray-300 bg-opacity-50 px-3 text-2xl font-bold text-gray-800 shadow-lg"
+                data-glide-dir="<"
+              >
+                ‹
+              </button>
+              <button
+                class="glide__arrow glide__arrow--right absolute right-0 top-1/2 z-10 -translate-y-1/2 transform rounded-full bg-gray-300 bg-opacity-50 px-3 text-2xl font-bold text-gray-800 shadow-lg"
+                data-glide-dir=">"
+              >
+                ›
+              </button>
             </div>
           </div>
 
           <!-- Initialize Glide.js -->
           <script>
             new Glide(".glide", {
-              type: "carousel",
-              perView: 5.4,
+              type: "slider",
+              perView: 4.4,
               gap: 6,
+              focusAt: "0", // Add this line to center the focus
               breakpoints: {
                 1024: {
                   perView: 3,
@@ -379,11 +408,16 @@
         })"
       >
         <!-- Buy Now Button -->
-        <div class="pb-4">
+        <div class="mb-4 flex flex-col gap-4">
           <button
-            class="bg-s hover:bg-p w-full rounded px-4 py-2 font-bold text-white duration-700 ease-in-out focus:outline-none"
+            class="bg-s hover:bg-p w-full rounded-lg px-4 py-2 font-bold text-white duration-700 ease-in-out focus:outline-none"
           >
             Customise Your Lenses
+          </button>
+          <button
+            class="w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-2 font-bold text-slate-700 duration-700 ease-in-out hover:bg-gray-100 focus:outline-none"
+          >
+            Order Frame Only
           </button>
         </div>
         <div class="text-base text-gray-700 dark:text-gray-200">
