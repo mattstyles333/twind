@@ -299,9 +299,17 @@
               class="text-md text-gray-600 dark:text-gray-200"
               x-text="selectedColour"
             ></p>
+            <!-- Display number of slides next to the colour -->
+            <p class="text-md text-gray-600 dark:text-gray-200">
+              ( <span x-text="slidesCount"></span>)
+            </p>
           </div>
 
-          <div class="glide relative overflow-hidden">
+          <div
+            class="glide relative overflow-hidden"
+            x-data="{ slidesCount: 0 }"
+            x-init="slidesCount = $el.querySelectorAll('.glide__slide').length"
+          >
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__slides flex items-center space-x-4">
                 <!-- Flexbox with items-center to vertically align the images -->
@@ -361,15 +369,18 @@
                 </li>
               </ul>
             </div>
-            <div class="glide__arrows" data-glide-el="controls">
+            <div
+              class="glide__arrows mt-2 flex items-center"
+              data-glide-el="controls"
+            >
               <button
-                class="glide__arrow glide__arrow--left absolute left-0 top-1/2 z-10 -translate-y-1/2 transform rounded-full bg-gray-300 bg-opacity-50 px-3 text-2xl font-bold text-gray-800 shadow-lg"
+                class="glide__arrow glide__arrow--left relative px-3 text-2xl font-bold text-gray-800 transition-all duration-300 hover:scale-110 hover:bg-gray-400 hover:bg-opacity-100"
                 data-glide-dir="<"
               >
                 ‹
               </button>
               <button
-                class="glide__arrow glide__arrow--right absolute right-0 top-1/2 z-10 -translate-y-1/2 transform rounded-full bg-gray-300 bg-opacity-50 px-3 text-2xl font-bold text-gray-800 shadow-lg"
+                class="glide__arrow glide__arrow--right relative px-3 text-2xl font-bold text-gray-800 transition-all duration-300 hover:scale-110 hover:bg-gray-400 hover:bg-opacity-100"
                 data-glide-dir=">"
               >
                 ›
@@ -381,7 +392,7 @@
           <script>
             new Glide(".glide", {
               type: "slider",
-              perView: 4.4,
+              perView: 3.4,
               gap: 6,
               focusAt: "0", // Add this line to center the focus
               breakpoints: {

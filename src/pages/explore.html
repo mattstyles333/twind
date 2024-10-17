@@ -1,0 +1,320 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../output.css" rel="stylesheet" />
+  <script
+    defer
+    src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.6/dist/cdn.min.js"
+    defer
+  ></script>
+</head>
+{% set page_data = { "hero": { "image_path":
+"https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/points-banner-2.webp",
+"h1_text": "Explore", "h2_text": "Navigate our Explore page! Here you'll find
+essential links and insights to guide your eyewear journey. " }, } %} {% include
+"blocks/hero.html" with context %} {% include "blocks/hero-underlay.html" with
+context %}
+
+<section class="px-3 md:container">
+  <section class="mx-auto text-left lg:text-center">
+    <div class="my-12">
+      <h2
+        class="text-4xl font-bold capitalize text-slate-800 dark:text-gray-300 md:text-5xl"
+      >
+        Your Guide to All Things Glasses
+      </h2>
+      <p
+        class="mx-auto mt-6 max-w-7xl text-lg leading-loose dark:text-gray-200"
+      >
+        Welcome to our Explore page! Dive into a curated collection of helpful
+        links, guiding you through our world of glasses. From detailed
+        information to essential pages, find everything you need to enhance your
+        eyewear journey. If you have any questions, feel free to
+        <a href="/contact-us" class="text-blue-500 underline">contact us</a> for
+        more personalized assistance.
+      </p>
+    </div>
+  </section>
+
+  <!-- How to Choose Section -->
+  <section class="mx-auto my-8">
+    <h3
+      class="text-2xl font-bold text-slate-800 dark:text-gray-300 md:text-center md:text-3xl lg:text-4xl"
+    >
+      How to Choose
+    </h3>
+    <div
+      class="mt-6 grid grid-cols-2 gap-4 md:grid-cols-2 md:gap-8 md:px-4 lg:grid-cols-4"
+    >
+      <a
+        href="/choosing-the-right-size-glasses"
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl md:h-80"
+      >
+        <img
+          class="absolute h-full w-full rounded-xl object-cover"
+          src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/rightsize_block.webp"
+          width="340"
+          height="510"
+          loading="lazy"
+          alt="Varifocal Glasses section with guide on choosing the right size frames"
+        />
+        <div
+          class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-3 pt-11 md:p-7"
+        >
+          <div class="text-left text-lg font-bold leading-7 text-white">
+            Choosing The Right Size Frames
+          </div>
+        </div>
+      </a>
+      <a
+        href="/how-to-choose-the-right-colour-frames"
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl md:h-80"
+      >
+        <img
+          class="absolute h-full w-full rounded-xl object-cover"
+          src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/colour_block.webp"
+          width="340"
+          height="610"
+          loading="lazy"
+          alt="Guide to choosing the right frame color with illustrative background"
+        />
+        <div
+          class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-3 pt-11 md:p-7"
+        >
+          <div class="text-left text-lg font-bold leading-7 text-white">
+            Choosing The Best Frame Colour
+          </div>
+        </div>
+      </a>
+      <a
+        href="/how-to-order-your-glasses"
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl md:h-80"
+      >
+        <img
+          class="absolute h-full w-full rounded-xl object-cover"
+          src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/order_block.webp"
+          width="340"
+          height="510"
+          loading="lazy"
+          alt="Instructions on how to order glasses online with relevant visual"
+        />
+        <div
+          class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-3 pt-11 md:p-7"
+        >
+          <div class="text-left text-lg font-bold leading-7 text-white">
+            How to Order Your Glasses
+          </div>
+        </div>
+      </a>
+      <a
+        href="/product-quiz"
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl md:h-80"
+      >
+        <img
+          class="absolute h-full w-full rounded-xl object-cover"
+          src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/glasses_choice.webp"
+          width="340"
+          height="510"
+          loading="lazy"
+          alt="Selection of frames for different face shapes with descriptive imagery"
+        />
+        <div
+          class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-3 pt-11 md:p-7"
+        >
+          <div class="text-left text-lg font-bold leading-7 text-white">
+            Try Our Style Finder
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Lenses Section -->
+  <section class="mx-auto my-8">
+    <h3
+      class="text-2xl font-bold text-slate-800 dark:text-gray-300 md:text-center md:text-3xl lg:text-4xl"
+    >
+      Lenses
+    </h3>
+    <div
+      class="mt-6 grid grid-cols-2 gap-4 md:grid-cols-2 md:gap-8 md:px-4 lg:grid-cols-4"
+    >
+      <a
+        href="/about-your-prescription"
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl md:h-80"
+      >
+        <img
+          class="absolute h-full w-full rounded-xl object-cover"
+          src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/prescription_block.webp"
+          width="340"
+          height="510"
+          loading="lazy"
+          alt="Reading Glasses page link with prescription information and text overlay"
+        />
+        <div
+          class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-3 pt-11 md:p-7"
+        >
+          <div class="text-left text-lg font-bold leading-7 text-white">
+            How To Read Your Prescription
+          </div>
+        </div>
+      </a>
+      <a
+        href="/exchange-or-return"
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl md:h-80"
+      >
+        <img
+          class="absolute h-full w-full rounded-xl object-cover"
+          src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/exchange_block.webp"
+          width="480"
+          height="320"
+          loading="lazy"
+          alt="Bifocal Glasses section with Exchange & Return policy information"
+        />
+        <div
+          class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-3 pt-11 md:p-7"
+        >
+          <div class="text-left text-lg font-bold leading-7 text-white">
+            Exchange & Return
+          </div>
+        </div>
+      </a>
+      <a
+        href="/how-to-choose-lens-coatings"
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl md:h-80"
+      >
+        <img
+          class="absolute h-full w-full rounded-xl object-cover"
+          src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/explore-coatings.webp"
+          width="480"
+          height="320"
+          loading="lazy"
+          alt="Bifocal Glasses section with Exchange & Return policy information"
+        />
+        <div
+          class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-3 pt-11 md:p-7"
+        >
+          <div class="text-left text-lg font-bold leading-7 text-white">
+            Lens Coatings
+          </div>
+        </div>
+      </a>
+      <a
+        href="/lens"
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl md:h-80"
+      >
+        <img
+          class="absolute h-full w-full rounded-xl object-cover"
+          src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/explore-index.webp"
+          width="480"
+          height="320"
+          loading="lazy"
+          alt="Bifocal Glasses section with Exchange & Return policy information"
+        />
+        <div
+          class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-3 pt-11 md:p-7"
+        >
+          <div class="text-left text-lg font-bold leading-7 text-white">
+            Lens Index
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Helpful Links Section -->
+  <section class="mx-auto my-8">
+    <h3
+      class="text-2xl font-bold text-slate-800 dark:text-gray-300 md:text-center md:text-3xl lg:text-4xl"
+    >
+      Helpful Links
+    </h3>
+    <div
+      class="mt-6 grid grid-cols-2 gap-4 md:grid-cols-2 md:gap-8 md:px-4 lg:grid-cols-4"
+    >
+      <a
+        href="/faq"
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl md:h-80"
+      >
+        <img
+          class="absolute h-full w-full rounded-xl object-cover"
+          src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/faq_block.webp"
+          width="340"
+          height="610"
+          loading="lazy"
+          alt="FAQ section link with background image and 'FAQ's' text overlay"
+        />
+        <div
+          class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-3 pt-11 md:p-7"
+        >
+          <div class="text-left text-lg font-bold leading-7 text-white">
+            FAQ's
+          </div>
+        </div>
+      </a>
+      <a
+        href="/about"
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl md:h-80"
+      >
+        <img
+          class="absolute h-full w-full rounded-xl object-cover"
+          src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/aboutus_block.webp"
+          width="340"
+          height="510"
+          loading="lazy"
+          alt="About Us page link with thematic background and text overlay"
+        />
+        <div
+          class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-3 pt-11 md:p-7"
+        >
+          <div class="text-left text-lg font-bold leading-7 text-white">
+            About Us
+          </div>
+        </div>
+      </a>
+      <a
+        href="/glasses-delivery-schedule"
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl md:h-80"
+      >
+        <img
+          class="absolute h-full w-full rounded-xl object-cover"
+          src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/delivery_step.webp"
+          width="340"
+          height="510"
+          loading="lazy"
+          alt="Dispatch & Shipping info link with relevant background and text"
+        />
+        <div
+          class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-3 pt-11 md:p-7"
+        >
+          <div class="text-left text-lg font-bold leading-7 text-white">
+            Dispatch & Shipping
+          </div>
+        </div>
+      </a>
+      <a
+        href="/blog"
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl md:h-80"
+      >
+        <img
+          class="absolute h-full w-full rounded-xl object-cover"
+          src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/blog_block.webp"
+          width="480"
+          height="320"
+          loading="lazy"
+          alt="Blog section link with illustrative background and 'Blog' text overlay"
+        />
+        <div
+          class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-3 pt-11 md:p-7"
+        >
+          <div class="text-left text-lg font-bold leading-7 text-white">
+            Guides
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+</section>

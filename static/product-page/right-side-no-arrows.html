@@ -208,29 +208,27 @@
         </div>
       </div>
       <div class="my-4"></div>
-      <div class="space-y-4 pb-6">
+      <div class="space-y-4 pb-2">
         <div class="space-y-4">
           <!-- Size Selector Section -->
           <div
             x-data="{ open: false, selectedSize: { eye: '54', bridge: '20', arm: '140' }, selectedColour: 'Black', colours: { '52-18-140': ['Black', 'Havana'], '54-20-140': ['Black', 'Havana', 'Blue'], '56-20-145': ['Black', 'Blue'] } }"
             class="flex items-center space-x-2"
           >
-            <label
-              for="size"
-              class="text-xl font-bold text-gray-700 dark:text-gray-200"
+            <label for="size" class="text-xl text-gray-700 dark:text-gray-200"
               >Size</label
             >
 
             <!-- Selected Size Display -->
             <p
-              class="text-md text-gray-600 dark:text-gray-200"
+              class="font-bold text-gray-700 dark:text-gray-200"
               x-text="`${selectedSize.eye}-${selectedSize.bridge}-${selectedSize.arm}`"
             ></p>
 
             <!-- Question Mark Button -->
             <button
               @click="open = true"
-              class="text-s pl-4"
+              class="text-s pl-2 text-sm md:pl-4 md:text-base"
               aria-label="Size Information"
             >
               Need help choosing your size?
@@ -292,16 +290,23 @@
             </button>
           </div>
           <!-- Colour Selector Section -->
-          <div class="my-4 flex items-center space-x-2">
-            <label
-              for="colour"
-              class="text-xl font-bold text-gray-700 dark:text-gray-200"
-              >Colour</label
-            >
-            <p
-              class="text-md text-gray-600 dark:text-gray-200"
-              x-text="selectedColour"
-            ></p>
+          <div class="flex justify-between">
+            <div class="flex items-center space-x-2">
+              <div class="flex items-center space-x-1">
+                <label
+                  for="colour"
+                  class="text-xl text-gray-700 dark:text-gray-200"
+                  >Colour</label
+                >
+                <!-- Display number of slides next to the colour -->
+                <p class="text-gray-700 dark:text-gray-200">(6)</p>
+              </div>
+
+              <p
+                class="font-bold text-gray-700 dark:text-gray-200"
+                x-text="selectedColour"
+              ></p>
+            </div>
           </div>
 
           <div class="glide relative overflow-hidden">
@@ -399,39 +404,54 @@
                 </li>
               </ul>
             </div>
+            <div
+              class="glide__arrows items-center justify-between space-x-4 pl-1"
+              data-glide-el="controls"
+            >
+              <button
+                class="glide__arrow glide__arrow--left text-2xl font-bold text-gray-800 transition-all duration-300 hover:scale-110 hover:bg-gray-400 hover:bg-opacity-100"
+                data-glide-dir="<"
+              >
+                ‹
+              </button>
+              <button
+                class="glide__arrow glide__arrow--right text-2xl font-bold text-gray-800 transition-all duration-300 hover:scale-110 hover:bg-gray-400 hover:bg-opacity-100"
+                data-glide-dir=">"
+              >
+                ›
+              </button>
+            </div>
           </div>
 
           <!-- Initialize Glide.js -->
           <script>
-            new Glide(".glide", {
-              type: "slider",
-              perView: 4.4,
-              gap: 6,
-              focusAt: "0", // Add this line to center the focus
-              breakpoints: {
-                1024: {
-                  perView: 3,
+            document.addEventListener("DOMContentLoaded", () => {
+              const glide = new Glide(".glide", {
+                type: "slider",
+                perView: 3.4,
+                gap: 6,
+                focusAt: "0", // Center the focus
+                breakpoints: {
+                  1024: {
+                    perView: 3,
+                  },
+                  768: {
+                    perView: 2,
+                  },
+                  480: {
+                    perView: 3.2,
+                  },
                 },
-                768: {
-                  perView: 2,
-                },
-                480: {
-                  perView: 3.2,
-                },
-              },
-            }).mount();
+              });
+
+              // Mount Glide and make sure the arrows are working
+              glide.mount();
+            });
           </script>
         </div>
       </div>
 
-      <div
-        :class="sticky ? 'fixed inset-x-0 bottom-0 border-t-2 border-gray-300 bg-white dark:bg-slate-900  z-40 p-2 md:p-4' : 'pb-5'"
-        x-data="{ sticky: false }"
-        x-init="window.addEventListener('scroll', () => { 
-          sticky = window.innerWidth < 1280; // Ensure sticky only on screens smaller than 1280
-        })"
-      >
-        <!-- Buy Now Button -->
+      <div>
         <div class="mb-4 flex flex-col gap-4">
           <button
             class="bg-s hover:bg-p w-full rounded-lg px-4 py-2 font-bold text-white duration-700 ease-in-out focus:outline-none"
