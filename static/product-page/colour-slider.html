@@ -15,6 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
   </head>
   <body class="dark:bg-p bg-zinc-50">
+    <img src="/home/james/Documents/code/twind/src/images/top-menu.png" />
     <div
       class="mx-auto pb-20 md:container"
       x-data="{ 
@@ -437,86 +438,9 @@
             <div class="space-y-4 pb-6" id="buy-section">
               <div class="space-y-4">
                 <!-- Size Selector Section -->
-                <div
-                  x-data="{ open: false, selectedSize: { eye: '54', bridge: '20', arm: '140' }, selectedColour: 'Black', colours: { '52-18-140': ['Black', 'Havana'], '54-20-140': ['Black', 'Havana', 'Blue'], '56-20-145': ['Black', 'Blue'] } }"
-                  class="flex items-center space-x-2"
-                >
-                  <label
-                    for="size"
-                    class="text-xl font-bold text-gray-700 dark:text-gray-200"
-                    >Size</label
-                  >
-
-                  <!-- Selected Size Display -->
-                  <p
-                    class="text-md text-gray-600 dark:text-gray-200"
-                    x-text="`${selectedSize.eye}-${selectedSize.bridge}-${selectedSize.arm}`"
-                  ></p>
-
-                  <!-- Question Mark Button -->
-                  <button
-                    @click="open = true"
-                    class="text-s pl-4 text-sm"
-                    aria-label="Size Information"
-                  >
-                    Need help choosing your size?
-                  </button>
-
-                  <!-- Modal -->
-                  <div
-                    x-show="open"
-                    @click.away="open = false"
-                    class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-                    x-cloak
-                  >
-                    <div
-                      class="w-full max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-slate-900"
-                    >
-                      <h3 class="mb-4 text-lg font-bold">Size Information</h3>
-                      <p class="text-gray-700 dark:text-gray-200">
-                        The size consists of three measurements: Eye (lens
-                        width), Bridge (distance between lenses), and Arm
-                        (length of the temple).
-                      </p>
-                      <button
-                        @click="open = false"
-                        class="mt-4 rounded bg-blue-500 px-4 py-2 text-white"
-                      >
-                        Close
-                      </button>
-                    </div>
-                  </div>
-                </div>
 
                 <!-- Size Buttons -->
-                <div
-                  class="grid w-full grid-cols-4 gap-3 px-2 md:grid-cols-4 md:gap-4 lg:grid-cols-4 xl:grid-cols-4"
-                >
-                  <button
-                    @click="selectedSize = { eye: '52', bridge: '18', arm: '140' }"
-                    :class="selectedSize.eye === '52' ? 'ring-2 ring-blue-800' : ''"
-                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200"
-                  >
-                    <span class="block md:hidden">52</span>
-                    <span class="hidden md:block">52-18-140</span>
-                  </button>
-                  <button
-                    @click="selectedSize = { eye: '54', bridge: '20', arm: '140' }"
-                    :class="selectedSize.eye === '54' ? 'ring-2 ring-blue-800' : ''"
-                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200"
-                  >
-                    <span class="block md:hidden">54</span>
-                    <span class="hidden md:block">54-20-140</span>
-                  </button>
-                  <button
-                    @click="selectedSize = { eye: '56', bridge: '20', arm: '145' }"
-                    :class="selectedSize.eye === '56' ? 'ring-2 ring-blue-800' : ''"
-                    class="w-full rounded border border-gray-400 bg-white px-2 py-1 text-sm font-bold text-gray-700 hover:bg-gray-100 focus:outline-none dark:bg-slate-900 dark:text-gray-200"
-                  >
-                    <span class="block md:hidden">56</span>
-                    <span class="hidden md:block">56-20-145</span>
-                  </button>
-                </div>
+
                 <!-- Colour Selector Section -->
                 <div class="my-4 flex items-center space-x-2">
                   <label
@@ -646,6 +570,72 @@
                     },
                   }).mount();
                 </script>
+              </div>
+            </div>
+            <div class="flex hidden flex-col gap-8 pb-4 md:flex-row">
+              <!-- Shape Dropdown -->
+              <div class="flex items-center gap-2">
+                <label for="shape" class="font-bold text-gray-700"
+                  >Shape:</label
+                >
+                <select
+                  id="shape"
+                  class="rounded-lg border-2 border-gray-400 bg-white p-2 text-gray-700"
+                >
+                  <option value="" disabled selected>Select Shape</option>
+                  <option value="round">2001</option>
+                  <option value="square">2000</option>
+                  <option value="oval">1003</option>
+                  <option value="rectangular">1013</option>
+                </select>
+              </div>
+
+              <!-- Size Dropdown -->
+              <div class="flex items-center gap-2">
+                <label for="size" class="font-bold text-gray-700">Size:</label>
+                <select
+                  id="size"
+                  class="rounded-lg border-2 border-gray-400 bg-white p-2 text-gray-700"
+                >
+                  <option value="" disabled selected>Select Size</option>
+                  <option value="small">52-16-145</option>
+                  <option value="medium">54-16-145</option>
+                  <option value="large">56-16-145</option>
+                </select>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4 pb-4">
+              <!-- Shape Dropdown -->
+              <div class="flex items-center gap-2">
+                <label for="shape" class="w-16 font-bold text-gray-700"
+                  >Shape:</label
+                >
+                <select
+                  id="shape"
+                  class="w-48 rounded-lg border-2 border-gray-400 bg-white p-2 text-gray-700"
+                >
+                  <option value="" disabled selected>Select Shape</option>
+                  <option value="round">2001</option>
+                  <option value="square">2000</option>
+                  <option value="oval">1003</option>
+                  <option value="rectangular">1013</option>
+                </select>
+              </div>
+
+              <!-- Size Dropdown -->
+              <div class="flex items-center gap-2">
+                <label for="size" class="w-16 font-bold text-gray-700"
+                  >Size:</label
+                >
+                <select
+                  id="size"
+                  class="w-48 rounded-lg border-2 border-gray-400 bg-white p-2 text-gray-700"
+                >
+                  <option value="" disabled selected>Select Size</option>
+                  <option value="small">52-16-145</option>
+                  <option value="medium">54-16-145</option>
+                  <option value="large">56-16-145</option>
+                </select>
               </div>
             </div>
 
