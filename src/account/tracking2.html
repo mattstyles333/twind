@@ -19,6 +19,16 @@
         created_at: "2024-11-15T14:45:00",
         comment: "Payment confirmed",
       },
+      {
+        status: "frame_order",
+        created_at: "2024-11-15T09:15:00",
+        comment: " frame ordered",
+      },
+      {
+        status: "lens_order",
+        created_at: "2024-11-21T16:20:00",
+        comment: " lenses ordered",
+      },
     ],
   };
 
@@ -28,26 +38,13 @@
 
   // Function to calculate delivery estimates
   function calculateOrderTracking(mockData) {
-    const statusOrder = [
-      "ready_to_process",
-      "tray_up",
-      "frame_order",
-      "lens_order",
-      "dispatched",
-    ];
-
     const statusHistories = mockData.status_histories;
-    const readyToProcessDate = new Date(
-      statusHistories.find(
-        (status) => status.status === "ready_to_process",
-      ).created_at,
+    const readyToProcessStatus = statusHistories.find(
+      (status) => status.status === "ready_to_process",
     );
+    const readyToProcessDate = new Date(readyToProcessStatus.created_at);
     const lensOrderedStatus = statusHistories.find(
       (status) => status.status === "lens_order",
-    );
-
-    const frameOrderedStatus = statusHistories.find(
-      (status) => status.status === "frame_order",
     );
     const dispatchedStatus = statusHistories.find(
       (status) => status.status === "dispatched",
@@ -57,32 +54,20 @@
     let maxDeliveryEst = null;
     const currentStatus = statusHistories[statusHistories.length - 1].status; // Get the latest status
 
-    // Check if lensOrderedStatus is not found
-    if (!lensOrderedStatus && !dispatchedStatus) {
-      // Explicitly set behavior when lens_order status is not found
-      minDeliveryEst = addBusinessDays(readyToProcessDate, 1);
-      maxDeliveryEst = addBusinessDays(readyToProcessDate, 10);
-
-      // Ensure minDeliveryEst is not in the past
-      if (minDeliveryEst < new Date()) {
-        minDeliveryEst = addBusinessDays(new Date(), 1); // Set to tomorrow
-      }
-      if (maxDeliveryEst < minDeliveryEst) {
-        maxDeliveryEst = minDeliveryEst; // Set max to be equal to min
-      }
-
-      return {
-        minDeliveryEst,
-        maxDeliveryEst,
-        readyToProcessDate,
-        currentStatus,
-      };
-    }
-
-    // Calculate delivery estimates
-    if (lensOrderedStatus) {
+    // If the order is before the Lens Ordered stage
+    if (!lensOrderedStatus) {
+      // Set min and max delivery estimates based on ready_to_process date
+      minDeliveryEst = addBusinessDays(readyToProcessDate, 1); // 1 working day
+      maxDeliveryEst = addBusinessDays(readyToProcessDate, 10); // 10 working days
+    } else {
+      // Calculate delivery estimates based on lensOrderedStatus
       const lensOrderedDate = new Date(lensOrderedStatus.created_at);
-      const frameOrderedComment = frameOrderedStatus.comment.toLowerCase();
+      const frameOrderedStatus = statusHistories.find(
+        (status) => status.status === "frame_order",
+      );
+      const frameOrderedComment = frameOrderedStatus
+        ? frameOrderedStatus.comment.toLowerCase()
+        : "";
       const lensOrderedComment = lensOrderedStatus.comment.toLowerCase();
 
       // Calculate delivery estimates based on lensOrderedStatus
@@ -102,10 +87,21 @@
         minDeliveryEst = addBusinessDays(lensOrderedDate, 1);
         maxDeliveryEst = addBusinessDays(lensOrderedDate, 3);
       }
-    } else {
-      // Handle case when lensOrderedStatus is not found
-      minDeliveryEst = addBusinessDays(readyToProcessDate, 1);
-      maxDeliveryEst = addBusinessDays(readyToProcessDate, 10);
+    }
+
+    // Check if dispatched status exists
+    if (dispatchedStatus) {
+      const dispatchedDate = new Date(dispatchedStatus.created_at);
+      minDeliveryEst = addBusinessDays(dispatchedDate, 1);
+      maxDeliveryEst = addBusinessDays(dispatchedDate, 1);
+    }
+
+    // Ensure minDeliveryEst is not in the past
+    if (minDeliveryEst < new Date()) {
+      minDeliveryEst = addBusinessDays(new Date(), 1); // Set to tomorrow
+    }
+    if (maxDeliveryEst < minDeliveryEst) {
+      maxDeliveryEst = minDeliveryEst; // Set max to be equal to min
     }
 
     return {
@@ -116,53 +112,65 @@
     };
   }
 
-  // Function to calculate progress
+  // New function to calculate progress
   function calculateProgress(
     minDeliveryEst,
     maxDeliveryEst,
     readyToProcessDate,
-    statusHistories,
   ) {
-    const totalDays =
-      (maxDeliveryEst - readyToProcessDate) / (1000 * 60 * 60 * 24);
-    const remainingDays =
-      (minDeliveryEst - readyToProcessDate) / (1000 * 60 * 60 * 24);
+    const totalDuration = Math.max(
+      0,
+      (maxDeliveryEst - readyToProcessDate) / (1000 * 60 * 60 * 24),
+    ); // in days
+    const remainingDays = Math.max(
+      0,
+      (maxDeliveryEst - new Date()) / (1000 * 60 * 60 * 24),
+    ); // in days
 
-    // Check for dispatched status
-    const dispatchedStatus = statusHistories.find(
-      (status) => status.status === "dispatched",
-    );
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
+    // Calculate progress as a percentage
+    let progress =
+      totalDuration > 0
+        ? ((totalDuration - remainingDays) / totalDuration) * 100
+        : 0;
 
-    // If dispatched status exists and its date is yesterday
-    if (dispatchedStatus) {
-      const dispatchedDate = new Date(dispatchedStatus.created_at);
-      if (dispatchedDate.toDateString() === yesterday.toDateString()) {
-        return 100; // Set progress to 100% if dispatched date is yesterday
-      }
+    // New logic to set progress to 100% if maxDeliveryEst is in the past
+    if (maxDeliveryEst <= new Date()) {
+      progress = 100; // Set progress to 100% if delivery date is in the past
     }
 
-    // Calculate progress based on remaining days
-    return Math.max(
-      0,
-      Math.min(100, ((totalDays - remainingDays) / totalDays) * 100),
-    );
+    return progress;
   }
 
   // Update the main execution
   const { minDeliveryEst, maxDeliveryEst, readyToProcessDate, currentStatus } =
-    calculateOrderTracking(mockData);
+    calculateOrderTracking(mockData); // Destructure readyToProcessDate
   const progress = calculateProgress(
     minDeliveryEst,
     maxDeliveryEst,
     readyToProcessDate,
-    mockData.status_histories,
-  );
+  ); // Calculate progress separately
   console.log(`Progress: ${progress}%`);
   console.log(`Min Delivery Estimate: ${minDeliveryEst}`);
   console.log(`Max Delivery Estimate: ${maxDeliveryEst}`);
   console.log(`Current Status: ${currentStatus}`); // Log the current status
+</script>
+
+<script>
+  // I'm writing a customer order tracking portal using the above mockData to calculate several fields
+  // So I need three javascript variables calculated appropriately:
+  // Progress (this is the percentage complete)
+  // Min and Max Delivery Est in terms of date
+
+  //   The logic is as follows:
+  // Orders progress in the following statuses (in order): Ready To Process, Processing, Trayed Up, Frame Ordered, Fitting Photograph Required, Lens Ordered, Dispatched.
+  // When the order is anything before the Lens Ordered Stage Min est dispatch date is 1 working days, max is 10 working days from the date of Ready To Process status.
+  // When the order reaches the Lens Ordered Status it gets complicated and depends on the combination of the comment of both Frame Ordered status and Lens Ordered status.
+  // If Lens Order comment includes 'Specialist' then dispatch date is 3-9 working days from the lens ordered date
+  // If Frame Order comment includes 'Designer' then dispatch date is 4-10 working days from the frame ordered date
+  // If both are true take the bigger of the two (ie 4-10 days), if neither are True default to 1-3 days.
+  // If status is Dispatched then est delivery date (both min and max) is +1 day from that date.
+  // Est Delivery date can only ever be in the future (it can be today only if status is Dispached yesterday)
+  // Progress is calculated based on the est max delivery date compared to the ready to process date and the percent complete in terms of days (including weekends)
 </script>
 
 <!-- New GUI Section -->

@@ -19,16 +19,6 @@
         created_at: "2024-11-15T14:45:00",
         comment: "Payment confirmed",
       },
-      {
-        status: "frame_order",
-        created_at: "2024-11-15T09:15:00",
-        comment: "Designer frame ordered",
-      },
-      {
-        status: "lens_order",
-        created_at: "2024-11-21T16:20:00",
-        comment: "lenses ordered",
-      },
     ],
   };
 
@@ -131,11 +121,29 @@
     minDeliveryEst,
     maxDeliveryEst,
     readyToProcessDate,
+    statusHistories,
   ) {
     const totalDays =
       (maxDeliveryEst - readyToProcessDate) / (1000 * 60 * 60 * 24);
     const remainingDays =
       (minDeliveryEst - readyToProcessDate) / (1000 * 60 * 60 * 24);
+
+    // Check for dispatched status
+    const dispatchedStatus = statusHistories.find(
+      (status) => status.status === "dispatched",
+    );
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+
+    // If dispatched status exists and its date is yesterday
+    if (dispatchedStatus) {
+      const dispatchedDate = new Date(dispatchedStatus.created_at);
+      if (dispatchedDate.toDateString() === yesterday.toDateString()) {
+        return 100; // Set progress to 100% if dispatched date is yesterday
+      }
+    }
+
+    // Calculate progress based on remaining days
     return Math.max(
       0,
       Math.min(100, ((totalDays - remainingDays) / totalDays) * 100),
@@ -149,6 +157,7 @@
     minDeliveryEst,
     maxDeliveryEst,
     readyToProcessDate,
+    mockData.status_histories,
   );
   console.log(`Progress: ${progress}%`);
   console.log(`Min Delivery Estimate: ${minDeliveryEst}`);
@@ -161,7 +170,7 @@
   id="order-status"
   class="p-4"
   x-data="{ progress: 0 }"
-  x-init="setTimeout(() => { progress = 0; setTimeout(() => { progress = ; }, 100); }, 100);"
+  x-init="setTimeout(() => { progress = 0; setTimeout(() => { progress = progress; }, 100); }, 100);"
 >
   <div class="mx-auto max-w-3xl">
     <h2 class="text-2xl font-bold text-slate-800">Order Tracking</h2>
