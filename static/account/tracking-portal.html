@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Tracker</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 p-4">
+    <div
+      x-data="orderTracker()"
+      x-init="init()"
+      class="mx-auto max-w-3xl rounded bg-white p-6 shadow"
+    >
+      <h1 class="mb-4 text-xl font-semibold">Order Tracker</h1>
+      <template x-if="loading">
+        <p>Loading...</p>
+      </template>
+      <template x-if="!loading && order">
+        <div>
+          <h2 class="text-lg font-medium">
+            Current Order Status:
+            <span
+              x-text="order.status_history[order.status_history.length - 1].status"
+            ></span>
+          </h2>
+          <p class="text-md font-semibold">
+            Progress:
+            <span x-text="getStatusPosition(order.status_history) + '%'"></span>
+          </p>
+          <div class="mt-6 border-l-4 border-green-500 bg-green-100 p-4">
+            <p>
+              Delivery Date Range:
+              <span x-text="formatDate(order.min_delivery_date)"></span>
+              to
+              <span x-text="formatDate(order.max_delivery_date)"></span>
+            </p>
+          </div>
+        </div>
+      </template>
+      <template x-if="!loading && !order">
+        <p>Order not found or an error occurred.</p>
+      </template>
+    </div>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@4.1.0/cdn.min.js"></script>
+
+    <script>
+      function orderTracker() {
+        return {
+          order: null,
+          loading: true,
+
+          async init() {
+            // Simulate API delay
+            await new Promise((resolve) => setTimeout(resolve, 500));
+
+            // Mock Magento order data
+            const mockData = {
+              entity_id: "000000123",
+              status_histories: [
+                {
+                  status: "ready_to_process",
+                  created_at: "2024-11-15T10:30:00",
+                  comment: "Order placed successfully",
+                },
+                {
+                  status: "tray_up",
+                  created_at: "2024-11-15T14:45:00",
+                  comment: "Payment confirmed",
+                },
+                {
+                  status: "frame_order",
+                  created_at: "2024-11-15T09:15:00",
+                  comment: " frame ordered",
+                },
+                {
+                  status: "lens_order",
+                  created_at: "2024-11-15T16:20:00",
+                  comment: "Specialist lenses ordered",
+                },
+              ],
+            };
+
+            this.order = this.transformOrderData(mockData);
+            this.loading = false;
+          },
+
+          transformOrderData(data) {
+            // Transform Magento order data into desired structure
+            const statusHistory = data.status_histories
+              ? data.status_histories.map((history) => ({
+                  status: history.status || "unknown",
+                  comment: history.comment || "",
+                  timestamp: history.created_at || new Date().toISOString(),
+                  icon: this.getStatusIcon(history.status || "unknown"),
+                }))
+              : [];
+
+            // Determine the latest status for estimated delivery calculation
+            const latestStatus = statusHistory[statusHistory.length - 1] || {};
+            let estimatedDeliveryDate = null;
+            let minDeliveryDate = null; // Placeholder for minimum delivery date
+            let maxDeliveryDate = null; // Placeholder for maximum delivery date
+
+            // Check if the latest status is dispatched
+            if (latestStatus.status === "dispatched") {
+              // If the order is dispatched, set delivery dates based on the dispatched timestamp
+              const dispatchedTimestamp = new Date(latestStatus.created_at); // Use the created_at timestamp
+              estimatedDeliveryDate = dispatchedTimestamp; // Set estimated delivery to dispatched date
+              minDeliveryDate = dispatchedTimestamp; // Set min delivery date to dispatched date
+
+              // Create a new date for maxDeliveryDate to avoid modifying dispatchedTimestamp
+              maxDeliveryDate = new Date(
+                dispatchedTimestamp.getTime() + 24 * 60 * 60 * 1000,
+              ); // Set max delivery date to one day after dispatched date
+            }
+
+            // Check if the latest status is more recent than lens_order
+            const lensOrderStatus = statusHistory.find(
+              (s) => s.status === "lens_order",
+            );
+            const isDispatched = latestStatus.status === "dispatched"; // Check if the order is dispatched
+
+            if (isDispatched) {
+              // If the order is dispatched, set delivery dates based on the dispatched timestamp
+              const dispatchedTimestamp = new Date(latestStatus.created_at); // Use the created_at timestamp
+              estimatedDeliveryDate = new Date(
+                dispatchedTimestamp.setDate(dispatchedTimestamp.getDate() + 1),
+              );
+              minDeliveryDate = dispatchedTimestamp;
+              maxDeliveryDate = new Date(
+                dispatchedTimestamp.setDate(dispatchedTimestamp.getDate() + 1),
+              );
+            } else if (lensOrderStatus) {
+              const lensComment = lensOrderStatus.comment.toLowerCase();
+              const frameOrderStatus =
+                statusHistory.find((s) => s.status === "frame_order") || {};
+              const frameComment = frameOrderStatus.comment
+                ? frameOrderStatus.comment.toLowerCase()
+                : "";
+              let maxLensDays = 2; // Default delivery time
+              let minLensDays = 1; // Default min delivery time
+
+              if (lensComment.includes("specialist")) {
+                maxLensDays = 9;
+                minLensDays = 3; // Set min delivery days for specialist
+              } else if (frameComment.includes("designer")) {
+                maxLensDays = 10;
+                minLensDays = 4; // Set min delivery days for designer
+              }
+
+              estimatedDeliveryDate = this.calculateWorkingDays(
+                new Date(lensOrderStatus.timestamp),
+                maxLensDays,
+              );
+
+              minDeliveryDate = this.calculateWorkingDays(
+                new Date(lensOrderStatus.timestamp),
+                minLensDays, // Use minLensDays for min delivery date
+              );
+
+              // Ensure minDeliveryDate is at least one day in the future
+              minDeliveryDate =
+                minDeliveryDate <
+                new Date(new Date().setDate(new Date().getDate() + 1))
+                  ? new Date(new Date().setDate(new Date().getDate() + 1))
+                  : minDeliveryDate;
+
+              maxDeliveryDate = this.calculateWorkingDays(
+                new Date(lensOrderStatus.timestamp),
+                maxLensDays + 1, // Example for max delivery date
+              );
+
+              // Ensure maxDeliveryDate is at least one day in the future
+              maxDeliveryDate =
+                maxDeliveryDate <
+                new Date(new Date().setDate(new Date().getDate() + 1))
+                  ? new Date(new Date().setDate(new Date().getDate() + 1))
+                  : maxDeliveryDate;
+            } else {
+              // If the latest status is not lens_order or dispatched, set delivery to +14 working days
+              estimatedDeliveryDate = this.calculateWorkingDays(new Date(), 14);
+
+              minDeliveryDate = this.calculateWorkingDays(new Date(), 1); // Example for min delivery date
+              maxDeliveryDate = this.calculateWorkingDays(new Date(), 12); // Example for max delivery date
+            }
+
+            // Ensure min and max delivery dates are valid
+            if (!minDeliveryDate || isNaN(minDeliveryDate.getTime())) {
+              minDeliveryDate = new Date(); // Default to now if invalid
+            }
+            if (!maxDeliveryDate || isNaN(maxDeliveryDate.getTime())) {
+              maxDeliveryDate = new Date(); // Default to now if invalid
+            }
+
+            // Log the values for debugging
+            console.log("Min Delivery Date:", minDeliveryDate);
+            console.log("Max Delivery Date:", maxDeliveryDate);
+
+            // Format dates to UK format (DD MMM YYYY)
+            const formatUKDate = (date) => {
+              if (date && !isNaN(date.getTime())) {
+                return dateFns.format(date, "dd MMM yyyy");
+              }
+              return "N/A"; // Return "N/A" for invalid dates
+            };
+
+            // Log the values for debugging
+            console.log("Estimated Delivery Date:", estimatedDeliveryDate);
+            console.log("Min Delivery Date:", minDeliveryDate);
+            console.log("Max Delivery Date:", maxDeliveryDate);
+
+            return {
+              order_id: data.entity_id,
+              status_history: statusHistory,
+              estimated_delivery_date: formatUKDate(estimatedDeliveryDate),
+              min_delivery_date: formatUKDate(minDeliveryDate), // Format min delivery date
+              max_delivery_date: formatUKDate(maxDeliveryDate), // Format max delivery date
+            };
+          },
+
+          calculateWorkingDays(startDate, workingDays) {
+            const holidays = [
+              "2024-12-25", // Example bank holidays
+              "2024-12-26",
+            ];
+            const isHoliday = (date) =>
+              holidays.includes(date.toISOString().split("T")[0]);
+
+            let daysAdded = 0;
+            let currentDate = new Date(startDate);
+
+            while (daysAdded < workingDays) {
+              currentDate.setDate(currentDate.getDate() + 1);
+              const dayOfWeek = currentDate.getDay();
+              if (
+                dayOfWeek !== 0 &&
+                dayOfWeek !== 6 &&
+                !isHoliday(currentDate)
+              ) {
+                daysAdded++;
+              }
+            }
+
+            return currentDate;
+          },
+
+          formatDate(date) {
+            return date && !isNaN(new Date(date).getTime())
+              ? dateFns.format(new Date(date), "dd MMM yyyy")
+              : "N/A"; // Return "N/A" for invalid dates
+          },
+
+          getStatusIcon(status) {
+            const icons = {
+              pending: "⏳",
+              processing: "⚙️",
+              complete: "✅",
+              dispatched: "📦",
+            };
+            return icons[status.toLowerCase()] || "ℹ️";
+          },
+
+          getStatusPosition(statusHistory) {
+            const currentStatus =
+              statusHistory[statusHistory.length - 1].status;
+            let currentStage = 0; // Logic to determine current stage
+
+            // Calculate the current date and the maximum delivery date
+            const currentDate = new Date();
+            const maxDeliveryDate = new Date(this.max_delivery_date); // Ensure this is defined in your order data
+            const minDeliveryDate = new Date(this.min_delivery_date); // Ensure this is defined in your order data
+
+            // Check if the order status history includes 'lens_order'
+            const hasLensOrder = statusHistory.some(
+              (status) => status.status === "lens_order",
+            );
+
+            if (!hasLensOrder) {
+              return 0; // If 'lens_order' is not present, progress is 0%
+            }
+
+            // If at 'lens_order' stage, set minimum progress to 25%
+            if (currentStatus === "lens_order") {
+              currentStage = 25; // Minimum progress at lens_order
+            } else if (currentStatus === "dispatched") {
+              // If dispatched, calculate progress based on the estimated delivery date
+              const timeDiff = maxDeliveryDate - currentDate;
+              const totalTime = maxDeliveryDate - minDeliveryDate; // Total time from min to max delivery date
+
+              if (totalTime > 0) {
+                const progress = (currentDate - minDeliveryDate) / totalTime; // Calculate progress as a fraction
+                currentStage = Math.min(
+                  100,
+                  Math.max(25, Math.floor(progress * 100)),
+                ); // Ensure progress is between 25% and 100%
+              } else {
+                currentStage = 100; // If past the max delivery date, set to complete
+              }
+            }
+
+            return currentStage; // Return the calculated percentage position
+          },
+
+          isStatusAfterLensOrder(status) {
+            const statuses = ["lens_order", "dispatched", "complete"]; // Define statuses that are after lens_order
+            return statuses.includes(status);
+          },
+
+          getCurrentStatusIcon() {
+            const currentStatus =
+              this.order.status_history[this.order.status_history.length - 1]
+                .status;
+            const icons = {
+              ready_to_process: "⏳",
+              tray_up: "⚙️",
+              frame_order: "🔲",
+              lens_order: "🔍",
+              complete: "✅",
+            };
+            return icons[currentStatus] || "ℹ️"; // Default icon if status not found
+          },
+        };
+      }
+    </script>
+  </body>
+</html>

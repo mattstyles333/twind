@@ -1,0 +1,252 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/date-fns@4.1.0/cdn.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>
+  const mockData = {
+    entity_id: "000000123",
+    status_histories: [
+      {
+        status: "ready_to_process",
+        created_at: "2024-11-15T10:30:00",
+        comment: "Order placed successfully",
+      },
+      {
+        status: "tray_up",
+        created_at: "2024-11-15T14:45:00",
+        comment: "Payment confirmed",
+      },
+      {
+        status: "frame_order",
+        created_at: "2024-11-15T09:15:00",
+        comment: "Designer frame ordered",
+      },
+      {
+        status: "lens_order",
+        created_at: "2024-11-21T16:20:00",
+        comment: "lenses ordered",
+      },
+    ],
+  };
+
+  // Importing necessary functions from date-fns
+  const dateFns = window.dateFns; // Access the entire date-fns library
+  const addBusinessDays = dateFns.addBusinessDays; // Get the addBusinessDays function
+
+  // Function to calculate delivery estimates
+  function calculateOrderTracking(mockData) {
+    const statusOrder = [
+      "ready_to_process",
+      "tray_up",
+      "frame_order",
+      "lens_order",
+      "dispatched",
+    ];
+
+    const statusHistories = mockData.status_histories;
+    const readyToProcessDate = new Date(
+      statusHistories.find(
+        (status) => status.status === "ready_to_process",
+      ).created_at,
+    );
+    const lensOrderedStatus = statusHistories.find(
+      (status) => status.status === "lens_order",
+    );
+
+    const frameOrderedStatus = statusHistories.find(
+      (status) => status.status === "frame_order",
+    );
+    const dispatchedStatus = statusHistories.find(
+      (status) => status.status === "dispatched",
+    );
+
+    let minDeliveryEst = null;
+    let maxDeliveryEst = null;
+    const currentStatus = statusHistories[statusHistories.length - 1].status; // Get the latest status
+
+    // Check if lensOrderedStatus is not found
+    if (!lensOrderedStatus && !dispatchedStatus) {
+      // Explicitly set behavior when lens_order status is not found
+      minDeliveryEst = addBusinessDays(readyToProcessDate, 1);
+      maxDeliveryEst = addBusinessDays(readyToProcessDate, 10);
+
+      // Ensure minDeliveryEst is not in the past
+      if (minDeliveryEst < new Date()) {
+        minDeliveryEst = addBusinessDays(new Date(), 1); // Set to tomorrow
+      }
+      if (maxDeliveryEst < minDeliveryEst) {
+        maxDeliveryEst = minDeliveryEst; // Set max to be equal to min
+      }
+
+      return {
+        minDeliveryEst,
+        maxDeliveryEst,
+        readyToProcessDate,
+        currentStatus,
+      };
+    }
+
+    // Calculate delivery estimates
+    if (lensOrderedStatus) {
+      const lensOrderedDate = new Date(lensOrderedStatus.created_at);
+      const frameOrderedComment = frameOrderedStatus.comment.toLowerCase();
+      const lensOrderedComment = lensOrderedStatus.comment.toLowerCase();
+
+      // Calculate delivery estimates based on lensOrderedStatus
+      if (
+        lensOrderedComment.includes("specialist") &&
+        frameOrderedComment.includes("designer")
+      ) {
+        minDeliveryEst = addBusinessDays(lensOrderedDate, 4);
+        maxDeliveryEst = addBusinessDays(lensOrderedDate, 10);
+      } else if (lensOrderedComment.includes("specialist")) {
+        minDeliveryEst = addBusinessDays(lensOrderedDate, 3);
+        maxDeliveryEst = addBusinessDays(lensOrderedDate, 9);
+      } else if (frameOrderedComment.includes("designer")) {
+        minDeliveryEst = addBusinessDays(lensOrderedDate, 4);
+        maxDeliveryEst = addBusinessDays(lensOrderedDate, 10);
+      } else {
+        minDeliveryEst = addBusinessDays(lensOrderedDate, 1);
+        maxDeliveryEst = addBusinessDays(lensOrderedDate, 3);
+      }
+    } else {
+      // Handle case when lensOrderedStatus is not found
+      minDeliveryEst = addBusinessDays(readyToProcessDate, 1);
+      maxDeliveryEst = addBusinessDays(readyToProcessDate, 10);
+    }
+
+    return {
+      minDeliveryEst,
+      maxDeliveryEst,
+      readyToProcessDate,
+      currentStatus,
+    };
+  }
+
+  // Function to calculate progress
+  function calculateProgress(
+    minDeliveryEst,
+    maxDeliveryEst,
+    readyToProcessDate,
+  ) {
+    const totalDays =
+      (maxDeliveryEst - readyToProcessDate) / (1000 * 60 * 60 * 24);
+    const remainingDays =
+      (minDeliveryEst - readyToProcessDate) / (1000 * 60 * 60 * 24);
+    return Math.max(
+      0,
+      Math.min(100, ((totalDays - remainingDays) / totalDays) * 100),
+    );
+  }
+
+  // Update the main execution
+  const { minDeliveryEst, maxDeliveryEst, readyToProcessDate, currentStatus } =
+    calculateOrderTracking(mockData);
+  const progress = calculateProgress(
+    minDeliveryEst,
+    maxDeliveryEst,
+    readyToProcessDate,
+  );
+  console.log(`Progress: ${progress}%`);
+  console.log(`Min Delivery Estimate: ${minDeliveryEst}`);
+  console.log(`Max Delivery Estimate: ${maxDeliveryEst}`);
+  console.log(`Current Status: ${currentStatus}`); // Log the current status
+</script>
+
+<!-- New GUI Section -->
+<div
+  id="order-status"
+  class="p-4"
+  x-data="{ progress: 0 }"
+  x-init="setTimeout(() => { progress = 0; setTimeout(() => { progress = ; }, 100); }, 100);"
+>
+  <div class="mx-auto max-w-3xl">
+    <h2 class="text-2xl font-bold text-slate-800">Order Tracking</h2>
+    <p class="mt-2">
+      <strong class="text-lg text-slate-800">Order Number:</strong>
+      <span id="order-number">#123456789</span>
+    </p>
+    <div class="mt-4">
+      <p>
+        <strong class="text-lg text-slate-800">Current Status:</strong>
+        <span id="current-status"></span>
+      </p>
+      <div class="relative mt-4 h-6 w-full rounded-full bg-gray-200">
+        <div
+          id="progress-bar"
+          class="absolute left-0 top-0 h-6 rounded-full bg-gradient-to-r from-blue-600 to-blue-800 transition-all duration-1000 ease-in-out"
+          x-bind:style="'width: ' + progress + '%'"
+        ></div>
+        <div
+          id="progress-circle"
+          class="absolute flex h-12 w-12 items-center justify-center rounded-full bg-blue-900"
+          x-bind:style="'left: calc(' + progress + '% - 1rem); top: 50%; transform: translate(-50%, -50%);'"
+        >
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 415 310"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M28.234 1.07798C18.476 3.40398 8.254 11.718 3.146 21.484L0 27.5V133.5V239.5L2.94 245.487C9.347 258.537 20.864 266.104 35.419 266.826L44 267.251L48.39 276.376C71.344 324.087 139.757 319.277 156.845 268.75C157.398 267.115 160.713 267 207.5 267C254.287 267 257.602 267.115 258.155 268.75C275.279 319.384 344.942 323.935 366.992 275.861L370.954 267.223L379.558 266.812C394.125 266.115 405.643 258.558 412.06 245.487L415 239.5V190.5V141.5L412.372 135.896C407.917 126.395 373.983 76.551 369.614 73.091C367.446 71.373 363.046 68.738 359.836 67.234L354 64.5L320.829 64.189L287.657 63.879L287.323 45.689C286.871 21.081 281.546 11.067 264.718 3.17998L259 0.499981L145.5 0.339977C81.293 0.248977 30.365 0.569984 28.234 1.07798ZM254.465 34.934C255.158 36.23 255.5 69.558 255.5 135.934V235H206.469C160.664 235 157.398 234.885 156.845 233.25C139.736 182.661 71.164 177.898 48.39 225.717L44 234.934L39.75 234.967C30.747 235.037 31.5 244.257 31.5 133.934C31.5 68.937 31.842 36.229 32.535 34.934C34.162 31.894 252.838 31.894 254.465 34.934ZM365.331 122.25L382.182 147.5L382.766 189.325C383.432 237.028 383.761 235.033 375.25 234.967L371 234.934L366.62 225.717C352.708 196.443 321.502 185.077 289.25 197.538C287.597 198.176 287.5 195.395 287.5 147.607V97H317.99H348.481L365.331 122.25ZM112.007 227.351C131.975 236.65 131.975 265.35 112.007 274.649C95.784 282.203 76.623 271.374 74.804 253.622C72.746 233.523 93.615 218.786 112.007 227.351ZM323.624 226.543C340.961 232.656 345.853 256.641 332.438 269.757C322.189 279.777 304.433 279.31 294.911 268.77C276.391 248.271 297.443 217.311 323.624 226.543Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="flex justify-between pt-3">
+        <p>Order Placed</p>
+        <p>Delivered</p>
+      </div>
+      <div class="mt-6 flex items-center gap-3">
+        <svg
+          width="30"
+          height="30"
+          viewBox="0 0 512 505"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M377.572 2.426C371.883 4.548 368.851 7.083 366.014 12.089L363.514 16.5V60.078V103.657L366.523 108.524C375.855 123.618 403.909 121.557 410.081 105.324C411.667 101.153 411.277 17.559 409.654 13.718C405.36 3.559 389.5 -2.024 377.572 2.426ZM116.514 3.843C105.179 9.207 105.014 10.024 105.014 60.811V103.685L107.338 108.093C116.125 124.757 146.992 122.147 151.942 104.321C153.309 99.397 153.398 21.824 152.041 17.095C148.356 4.244 130.076 -2.575 116.514 3.843ZM20.848 45.378C11.458 49.24 6.166 54.572 2.352 64.014L0 69.838L0.257 275.169L0.514 480.5L2.769 485.076C6.433 492.512 11.512 497.628 18.785 501.208L25.472 504.5H256.014H486.556L493.243 501.208C500.516 497.628 505.595 492.512 509.259 485.076L511.514 480.5V274V67.5L508.901 62C505.578 55.004 500.01 49.436 493.014 46.113L487.514 43.5L457.302 43.209L427.089 42.917L426.802 77.209L426.514 111.5L423.657 117.318C413.788 137.417 373.93 140.737 357.429 122.834C348.238 112.863 347.062 106.856 347.034 69.75L347.014 43H258.014H169.014V70.816C169.014 86.61 168.543 101.18 167.925 104.526C161.216 140.818 107.968 146.857 92.149 113.12L89.514 107.5L89.213 75.25L88.911 43L57.713 43.024C27.355 43.047 26.361 43.11 20.848 45.378ZM479.014 322V471H256.014H33.014V322V173H256.014H479.014V322ZM269.968 215.046C267.254 217.76 267.296 270.306 270.014 272.022C272.353 273.499 333.324 273.29 334.814 271.8C336.836 269.778 336.491 216.62 334.443 214.571C331.688 211.817 272.763 212.251 269.968 215.046ZM366.455 214.419C363.813 216.352 363.399 270.368 366.014 272.021C368.352 273.499 429.323 273.291 430.814 271.8C432.836 269.778 432.491 216.62 430.443 214.571C428.207 212.336 369.495 212.197 366.455 214.419ZM78.014 297.978C75.296 299.694 75.254 352.24 77.968 354.954C80.763 357.749 139.688 358.183 142.443 355.429C144.491 353.38 144.836 300.222 142.814 298.2C141.324 296.71 80.353 296.501 78.014 297.978ZM174.014 297.978C171.296 299.694 171.254 352.24 173.968 354.954C176.763 357.749 235.688 358.183 238.443 355.429C240.491 353.38 240.836 300.222 238.814 298.2C237.324 296.71 176.353 296.501 174.014 297.978ZM270.014 297.978C267.296 299.694 267.254 352.24 269.968 354.954C272.763 357.749 331.688 358.183 334.443 355.429C336.491 353.38 336.836 300.222 334.814 298.2C333.324 296.71 272.353 296.501 270.014 297.978ZM366.014 297.979C363.399 299.632 363.813 353.648 366.455 355.581C369.495 357.803 428.207 357.664 430.443 355.429C432.491 353.38 432.836 300.222 430.814 298.2C429.323 296.709 368.352 296.501 366.014 297.979ZM77.571 382.223C76.26 384.093 76.014 388.489 76.014 410C76.014 431.511 76.26 435.907 77.571 437.777C79.419 440.416 140.245 441.369 142.814 438.8C145.146 436.468 144.458 382.308 142.08 381.035C137.628 378.653 79.319 379.726 77.571 382.223ZM173.571 382.223C172.26 384.093 172.014 388.489 172.014 410C172.014 431.511 172.26 435.907 173.571 437.777C175.419 440.416 236.245 441.369 238.814 438.8C241.146 436.468 240.458 382.308 238.08 381.035C233.628 378.653 175.319 379.726 173.571 382.223ZM269.571 382.223C268.26 384.093 268.014 388.489 268.014 410C268.014 431.511 268.26 435.907 269.571 437.777C271.419 440.416 332.245 441.369 334.814 438.8C337.146 436.468 336.458 382.308 334.08 381.035C329.628 378.653 271.319 379.726 269.571 382.223ZM365.571 382.223C364.26 384.093 364.014 388.489 364.014 410C364.014 431.511 364.26 435.907 365.571 437.777C367.419 440.416 428.245 441.369 430.814 438.8C433.146 436.468 432.458 382.308 430.08 381.035C425.628 378.653 367.319 379.726 365.571 382.223Z"
+            fill="#1e293b"
+          />
+        </svg>
+        <p class="text-lg text-slate-800">
+          <strong>Estimated Delivery:</strong>
+          <span class="text-base" id="delivery-estimate"></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Update the UI with calculated values
+  document.getElementById("current-status").innerText = currentStatus;
+
+  // Set initial width to 0% for animation
+  const progressBar = document.getElementById("progress-bar");
+  const progressCircle = document.getElementById("progress-circle");
+  progressBar.style.width = "0%"; // Start at 0%
+
+  // Update the progress bar and circle after a short delay to allow for animation
+  setTimeout(() => {
+    progressBar.style.transition = "width 2s"; // Set transition for smooth animation
+    progressBar.style.width = `${progress}%`; // Animate to the calculated progress
+    progressCircle.style.transition = "left 2s"; // Set transition for the circle
+    progressCircle.style.left = `calc(${progress}% - 1rem)`; // Adjust circle position
+  }, 100); // Delay to ensure the initial width is set before animating
+
+  // Update delivery estimate range
+  const deliveryEstimate = `${minDeliveryEst.toLocaleDateString()} - ${maxDeliveryEst.toLocaleDateString()}`;
+  document.getElementById("delivery-estimate").innerText = deliveryEstimate; // Display as a range
+</script>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50">
+    <div class="container mx-auto p-6">
+      <!-- Order Header -->
+      <div class="flex items-center justify-between rounded-md">
+        <!-- Left Section: Order Info -->
+        <div>
+          <h1 class="mb-2 text-2xl font-semibold">Order # 100594498</h1>
+          <p class="mb-2 text-gray-600">Order Date: 30 October 2024</p>
+          <span
+            class="inline-block rounded bg-yellow-200 px-3 py-1 text-sm font-medium text-yellow-800"
+          >
+            Awaiting Frames AND Lenses
+          </span>
+        </div>
+
+        <!-- Right Section: Buttons -->
+        <div class="flex space-x-4">
+          <button
+            class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+          >
+            Reorder
+          </button>
+          <button
+            class="rounded bg-gray-200 px-4 py-2 text-gray-700 hover:bg-gray-300"
+          >
+            Print Order
+          </button>
+        </div>
+      </div>
+      <div class="container mx-auto pt-6">
+        <!-- Progress Bar -->
+        <div class="relative h-6 w-full rounded-full bg-gray-300">
+          <div
+            class="absolute h-6 rounded-full bg-blue-600"
+            style="width: 50%"
+          ></div>
+        </div>
+
+        <!-- Steps -->
+        <div class="mt-2 flex justify-between text-sm">
+          <span class="font-medium text-blue-600">Order placed</span>
+          <span class="font-medium text-blue-600">Processing</span>
+          <span class="text-gray-500">Shipped</span>
+          <span class="text-gray-500">Delivered</span>
+        </div>
+      </div>
+
+      <!-- Billing and Shipping Info -->
+      <div class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div class="rounded-md bg-white p-6 shadow-md">
+          <h2 class="mb-4 text-lg font-semibold">Billing Address</h2>
+          <p class="text-gray-600">James Tanner</p>
+          <p class="text-gray-600">Spex4Less</p>
+          <p class="text-gray-600">Everite House, Carr Lane</p>
+          <p class="text-gray-600">Hoylake, Merseyside, CH47 4BG</p>
+          <p class="text-gray-600">United Kingdom</p>
+          <p class="text-gray-600">T: +441516326611</p>
+        </div>
+
+        <div class="rounded-md bg-white p-6 shadow-md">
+          <h2 class="mb-4 text-lg font-semibold">Shipping Address</h2>
+          <p class="text-gray-600">James Tanner</p>
+          <p class="text-gray-600">Spex4Less</p>
+          <p class="text-gray-600">Everite House, Carr Lane</p>
+          <p class="text-gray-600">Hoylake, Merseyside, CH47 4BG</p>
+          <p class="text-gray-600">United Kingdom</p>
+          <p class="text-gray-600">T: +441516326611</p>
+        </div>
+      </div>
+
+      <!-- Additional Details -->
+      <div class="mt-6 grid grid-cols-2 gap-6">
+        <div class="rounded-md bg-white p-6 shadow-md">
+          <h2 class="mb-4 text-lg font-semibold">Shipping Method</h2>
+          <p class="text-gray-600">Shipping - Standard Delivery</p>
+        </div>
+
+        <div class="rounded-md bg-white p-6 shadow-md">
+          <h2 class="mb-4 text-lg font-semibold">Payment Method</h2>
+          <p class="text-gray-600">Payment Options</p>
+        </div>
+      </div>
+
+      <!-- About Your Order -->
+      <div class="mt-6 rounded-md bg-white p-6 shadow-md">
+        <h2 class="mb-4 text-lg font-semibold">About Your Order</h2>
+        <p class="mb-2 text-gray-600">18 Nov 2024</p>
+        <p class="text-gray-600">
+          Dear James Tanner, Thank you very much for your order of prescription
+          glasses. We are pleased to inform you that your prescription lenses
+          are currently being manufactured. We expect your order to be ready for
+          dispatch in approximately 7-14 working days. Once your order has been
+          completed, we will send you an email notification.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
