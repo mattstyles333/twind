@@ -182,15 +182,18 @@
 >
   <div class="mx-auto max-w-3xl">
     <h2 class="text-2xl font-bold text-slate-800">Order Tracking</h2>
-    <p class="mt-2">
-      <strong class="text-lg text-slate-800">Order Number:</strong>
-      <span id="order-number">#123456789</span>
-    </p>
-    <div class="mt-4">
-      <p>
+    <div class="mt-2 flex flex-col gap-3 md:flex-row">
+      <p class="">
+        <strong class="text-lg text-slate-800">Order Number:</strong>
+        <span id="order-number">#123456789</span>
+      </p>
+      <p class="border-gray-300 md:border-l-2 md:pl-3">
         <strong class="text-lg text-slate-800">Current Status:</strong>
         <span id="current-status"></span>
       </p>
+    </div>
+
+    <div class="mt-4">
       <div class="relative mt-4 h-6 w-full rounded-full bg-gray-200">
         <div
           id="progress-bar"
@@ -199,7 +202,7 @@
         ></div>
         <div
           id="progress-circle"
-          class="absolute flex h-12 w-12 items-center justify-center rounded-full bg-blue-900"
+          class="absolute flex h-12 w-12 items-center justify-center rounded-full bg-blue-800"
           x-bind:style="'left: calc(' + progress + '% - 1rem); top: 50%; transform: translate(-50%, -50%);'"
         >
           <svg
@@ -228,6 +231,7 @@
           height="30"
           viewBox="0 0 512 505"
           fill="none"
+          class="hidden md:block"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -239,7 +243,10 @@
         </svg>
         <p class="text-lg text-slate-800">
           <strong>Estimated Delivery:</strong>
-          <span class="text-base" id="delivery-estimate"></span>
+          <span
+            class="text-base font-medium text-gray-700"
+            id="delivery-estimate"
+          ></span>
         </p>
       </div>
     </div>
@@ -264,6 +271,8 @@
   }, 100); // Delay to ensure the initial width is set before animating
 
   // Update delivery estimate range
-  const deliveryEstimate = `${minDeliveryEst.toLocaleDateString()} - ${maxDeliveryEst.toLocaleDateString()}`;
+  const deliveryEstimate = `${minDeliveryEst.toLocaleDateString(
+    "en-GB",
+  )} - ${maxDeliveryEst.toLocaleDateString("en-GB")}`; // Format dates in UK format
   document.getElementById("delivery-estimate").innerText = deliveryEstimate; // Display as a range
 </script>
