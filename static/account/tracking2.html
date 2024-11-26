@@ -21,7 +21,7 @@
       },
       {
         status: "dispatched",
-        created_at: "2024-11-15T14:45:00",
+        created_at: "2024-11-24T14:45:00",
         comment: "Payment confirmed",
       },
     ],
@@ -111,9 +111,61 @@
         comment: "Order placed successfully",
       },
       {
-        status: "query",
+        status: "awaiting_confirmation",
         created_at: "2024-11-25T14:45:00",
         comment: "Awaiting customer response",
+      },
+    ],
+  };
+  // Add new mock data for customer frames received
+  const customerFramesOrder = {
+    entity_id: "000000123",
+    status_histories: [
+      {
+        status: "ready_to_process",
+        created_at: "2024-11-25T10:30:00",
+        comment: "Order placed successfully",
+      },
+      {
+        status: "tray_up",
+        created_at: "2024-11-25T14:45:00",
+        comment: "Payment confirmed",
+      },
+      {
+        status: "reglaze_awaiting_frame",
+        created_at: "2024-11-25T15:30:00",
+        comment: "Awaiting customer frames",
+      },
+    ],
+  };
+  // Add new mock data for Ready for Collection status
+  const readyForCollectionOrder = {
+    entity_id: "000000123",
+    status_histories: [
+      {
+        status: "ready_to_process",
+        created_at: "2024-11-25T10:30:00",
+        comment: "Order placed successfully",
+      },
+      {
+        status: "tray_up",
+        created_at: "2024-11-25T14:45:00",
+        comment: "Payment confirmed",
+      },
+      {
+        status: "frame_order",
+        created_at: "2024-11-25T15:30:00",
+        comment: "Frame ordered",
+      },
+      {
+        status: "lens_order",
+        created_at: "2024-11-25T16:15:00",
+        comment: "Lens ordered",
+      },
+      {
+        status: "Ready for Collection(SHOP)",
+        created_at: "2024-11-25T17:00:00",
+        comment: "Ready for collection in store",
       },
     ],
   };
@@ -127,13 +179,39 @@
     "query",
     "on_hold",
     "awaiting_customer_frames",
+    "awaiting_confirmation",
+    "fitting_photograph_required",
+    "frame_query",
+    "lens_or_prescription_query",
+    "order_delay",
+    "part_order_dispatch",
+    "pending_payment",
+    "reglaze_awaiting_frame",
   ];
 
   // Function to calculate delivery estimates
   function calculateOrderTracking(mockData) {
     const statusHistories = mockData.status_histories;
+    const currentStatus = statusHistories[statusHistories.length - 1].status; // Get the latest status
+
+    // Check if current status should hide progress
+    const shouldHideProgress = hiddenProgressStatuses.includes(currentStatus);
+
+    // If status should hide progress, return early with special flag
+    if (shouldHideProgress) {
+      return {
+        shouldHideProgress: true,
+        currentStatus,
+        minDeliveryEst: null,
+        maxDeliveryEst: null,
+        readyToProcessDate: null,
+      };
+    }
+
     const readyToProcessStatus = statusHistories.find(
-      (status) => status.status === "ready_to_process",
+      (status) =>
+        status.status === "ready_to_process" ||
+        status.status === "customer_frames_received",
     );
     const readyToProcessDate = new Date(readyToProcessStatus.created_at);
     const lensOrderedStatus = statusHistories.find(
@@ -145,18 +223,6 @@
 
     let minDeliveryEst = null;
     let maxDeliveryEst = null;
-    const currentStatus = statusHistories[statusHistories.length - 1].status; // Get the latest status
-
-    // Check if current status should hide progress
-    const shouldHideProgress = hiddenProgressStatuses.includes(currentStatus);
-
-    // If status should hide progress, return early with special flag
-    if (shouldHideProgress) {
-      return {
-        shouldHideProgress: true,
-        currentStatus,
-      };
-    }
 
     // If the order is before the Lens Ordered stage
     if (!lensOrderedStatus) {
@@ -174,30 +240,44 @@
         : "";
       const lensOrderedComment = lensOrderedStatus.comment.toLowerCase();
 
-      // Calculate delivery estimates based on lensOrderedStatus
+      // Check for Quality Control status
+      const hasQualityControl = statusHistories.some(
+        (status) => status.status === "quality_control",
+      );
+
+      // Calculate base delivery estimates
+      let baseMinDays = 1;
+      let baseMaxDays = 3;
+
       if (
         lensOrderedComment.includes("specialist") &&
         frameOrderedComment.includes("designer")
       ) {
-        minDeliveryEst = addBusinessDays(lensOrderedDate, 4);
-        maxDeliveryEst = addBusinessDays(lensOrderedDate, 10);
+        baseMinDays = 4;
+        baseMaxDays = 10;
       } else if (lensOrderedComment.includes("specialist")) {
-        minDeliveryEst = addBusinessDays(lensOrderedDate, 2);
-        maxDeliveryEst = addBusinessDays(lensOrderedDate, 10);
+        baseMinDays = 2;
+        baseMaxDays = 10;
       } else if (frameOrderedComment.includes("designer")) {
-        minDeliveryEst = addBusinessDays(lensOrderedDate, 4);
-        maxDeliveryEst = addBusinessDays(lensOrderedDate, 10);
-      } else {
-        minDeliveryEst = addBusinessDays(lensOrderedDate, 1);
-        maxDeliveryEst = addBusinessDays(lensOrderedDate, 3);
+        baseMinDays = 4;
+        baseMaxDays = 10;
       }
+
+      // Add additional days for Quality Control
+      if (hasQualityControl) {
+        baseMinDays += 7;
+        baseMaxDays += 10;
+      }
+
+      minDeliveryEst = addBusinessDays(lensOrderedDate, baseMinDays);
+      maxDeliveryEst = addBusinessDays(lensOrderedDate, baseMaxDays);
     }
 
     // Check if dispatched status exists
     if (dispatchedStatus) {
       const dispatchedDate = new Date(dispatchedStatus.created_at);
       minDeliveryEst = addBusinessDays(dispatchedDate, 1);
-      maxDeliveryEst = addBusinessDays(dispatchedDate, 1);
+      maxDeliveryEst = addBusinessDays(dispatchedDate, 2);
     } else {
       // Ensure minDeliveryEst is not in the past unless it's been dispatched
       if (minDeliveryEst < new Date()) {
@@ -216,12 +296,18 @@
     };
   }
 
-  // New function to calculate progress
+  // Function to calculate progress
   function calculateProgress(
     minDeliveryEst,
     maxDeliveryEst,
     readyToProcessDate,
+    currentStatus,
   ) {
+    // If status is Ready for Collection(SHOP), return 100%
+    if (currentStatus === "Ready for Collection(SHOP)") {
+      return 100;
+    }
+
     const totalDuration = Math.max(
       0,
       (maxDeliveryEst - readyToProcessDate) / (1000 * 60 * 60 * 24),
@@ -239,10 +325,10 @@
 
     // New logic to set progress to 100% if maxDeliveryEst is in the past
     if (maxDeliveryEst <= new Date()) {
-      progress = 100; // Set progress to 100% if delivery date is in the past
+      progress = 100;
     }
 
-    return progress;
+    return Math.min(100, progress);
   }
 
   // Update the main execution
@@ -252,6 +338,7 @@
     minDeliveryEst,
     maxDeliveryEst,
     readyToProcessDate,
+    currentStatus,
   ); // Calculate progress separately
   console.log(`Progress: ${progress}%`);
   console.log(`Min Delivery Estimate: ${minDeliveryEst}`);
@@ -265,22 +352,15 @@
     currentMockData = newMockData;
     const result = calculateOrderTracking(newMockData);
 
-    // Update status and show/hide question mark
-    document.getElementById("current-status").innerText = result.currentStatus;
-    const statusInfo = document.getElementById("status-info");
-    if (result.currentStatus === "query") {
-      statusInfo.classList.remove("hidden");
-    } else {
-      statusInfo.classList.add("hidden");
-    }
-
-    // Handle progress visibility
+    // Handle progress visibility first
     const progressContainer = document.getElementById("progress-container");
     const deliveryContainer = document.getElementById("delivery-container");
 
     if (result.shouldHideProgress) {
       progressContainer.classList.add("hidden");
       deliveryContainer.classList.add("hidden");
+      document.getElementById("current-status").innerText =
+        result.currentStatus;
     } else {
       progressContainer.classList.remove("hidden");
       deliveryContainer.classList.remove("hidden");
@@ -289,6 +369,7 @@
         result.minDeliveryEst,
         result.maxDeliveryEst,
         result.readyToProcessDate,
+        result.currentStatus,
       );
 
       // Update progress elements
@@ -301,6 +382,10 @@
       ).innerText = `${result.minDeliveryEst.toLocaleDateString(
         "en-GB",
       )} - ${result.maxDeliveryEst.toLocaleDateString("en-GB")}`;
+
+      // Update status display - no longer changing to "delivered"
+      document.getElementById("current-status").innerText =
+        result.currentStatus;
     }
 
     // Update mock data display
@@ -475,6 +560,18 @@
     class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
   >
     Query Order
+  </button>
+  <button
+    onclick="updateDisplay(customerFramesOrder)"
+    class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+  >
+    Customer Frames Order
+  </button>
+  <button
+    onclick="updateDisplay(readyForCollectionOrder)"
+    class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+  >
+    Ready for Collection Order
   </button>
 </div>
 
