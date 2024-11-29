@@ -7,6 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <script>
   const dispatchedOrder = {
+    exp_min: "2024-11-25",
+    exp_max: "2024-11-26",
     entity_id: "000000123",
     status_histories: [
       {
@@ -27,6 +29,8 @@
     ],
   };
   const standardOrder = {
+    exp_min: "2024-11-26",
+    exp_max: "2024-11-28",
     entity_id: "000000123",
     status_histories: [
       {
@@ -52,6 +56,8 @@
     ],
   };
   const designerOrder = {
+    exp_min: "2024-12-01",
+    exp_max: "2024-12-09",
     entity_id: "000000123",
     status_histories: [
       {
@@ -77,6 +83,8 @@
     ],
   };
   const specialistOrder = {
+    exp_min: "2024-11-27",
+    exp_max: "2024-12-09",
     entity_id: "000000123",
     status_histories: [
       {
@@ -103,6 +111,8 @@
   };
   // Add new mock data for query status
   const queryOrder = {
+    exp_min: null,
+    exp_max: null,
     entity_id: "000000123",
     status_histories: [
       {
@@ -119,6 +129,8 @@
   };
   // Add new mock data for customer frames received
   const customerFramesOrder = {
+    exp_min: null,
+    exp_max: null,
     entity_id: "000000123",
     status_histories: [
       {
@@ -140,6 +152,8 @@
   };
   // Add new mock data for Ready for Collection status
   const readyForCollectionOrder = {
+    exp_min: "2024-11-26",
+    exp_max: "2024-11-28",
     entity_id: "000000123",
     status_histories: [
       {
@@ -164,8 +178,99 @@
       },
       {
         status: "Ready for Collection(SHOP)",
-        created_at: "2024-11-25T17:00:00",
+        created_at: "2024-11-28T17:00:00",
         comment: "Ready for collection in store",
+      },
+    ],
+  };
+  // Add new mock data for reglaze order
+
+  // Add new mock data for quality control fail with delivery override
+  const qualityControlFailOrder = {
+    exp_min: "2024-11-26",
+    exp_max: "2024-11-28",
+    entity_id: "000000123",
+    status_histories: [
+      {
+        status: "ready_to_process",
+        created_at: "2024-11-25T10:30:00",
+        comment: "Order placed successfully",
+      },
+      {
+        status: "tray_up",
+        created_at: "2024-11-25T14:45:00",
+        comment: "Payment confirmed",
+      },
+      {
+        status: "frame_order",
+        created_at: "2024-11-25T14:45:00",
+        comment: "Payment confirmed",
+      },
+      {
+        status: "lens_order",
+        created_at: "2024-11-25T14:45:00",
+        comment: "Payment confirmed",
+      },
+      {
+        status: "quality_control",
+        created_at: "2024-11-28T09:30:00",
+        comment: "UpdateTracker | 5-10",
+      },
+    ],
+  };
+  // Add new mock data for multiple lens orders
+  const multipleLensOrder = {
+    exp_min: "2024-12-01",
+    exp_max: "2024-12-03",
+    entity_id: "000000123",
+    status_histories: [
+      {
+        status: "ready_to_process",
+        created_at: "2024-11-25T10:30:00",
+        comment: "Order placed successfully",
+      },
+      {
+        status: "tray_up",
+        created_at: "2024-11-25T14:45:00",
+        comment: "Payment confirmed",
+      },
+      {
+        status: "lens_order",
+        created_at: "2024-11-26T11:45:00",
+        comment: "Standard lenses",
+      },
+      {
+        status: "quality_control",
+        created_at: "2024-11-28T09:30:00",
+        comment: "Failed quality check",
+      },
+      {
+        status: "lens_order",
+        created_at: "2024-11-28T14:30:00",
+        comment: "Remake required",
+      },
+    ],
+  };
+  // Add new mock data for old order
+  const oldOrder = {
+    exp_min: "2023-10-15",
+    exp_max: "2023-10-17",
+    entity_id: "000000123",
+    status_histories: [
+      {
+        status: "ready_to_process",
+        created_at: "2023-10-10T10:30:00",
+        comment: "Order placed successfully",
+      },
+      {
+        status: "tray_up",
+        created_at: "2023-10-10T14:45:00",
+        comment: "Payment confirmed",
+      },
+      {
+        status: "lens_order",
+        created_at: "2023-10-11T11:45:00",
+        comment: "Standard lenses",
       },
     ],
   };
@@ -214,9 +319,14 @@
         status.status === "customer_frames_received",
     );
     const readyToProcessDate = new Date(readyToProcessStatus.created_at);
-    const lensOrderedStatus = statusHistories.find(
-      (status) => status.status === "lens_order",
-    );
+
+    // Find the most recent lens and frame order statuses
+    const lensOrderedStatus = [...statusHistories]
+      .reverse()
+      .find((status) => status.status === "lens_order");
+    const frameOrderedStatus = [...statusHistories]
+      .reverse()
+      .find((status) => status.status === "frame_order");
     const dispatchedStatus = statusHistories.find(
       (status) => status.status === "dispatched",
     );
@@ -224,17 +334,17 @@
     let minDeliveryEst = null;
     let maxDeliveryEst = null;
 
+    let minDispatchEst = null;
+    let maxDispatchEst = null;
+
     // If the order is before the Lens Ordered stage
     if (!lensOrderedStatus) {
-      // Set min and max delivery estimates based on ready_to_process date
-      minDeliveryEst = addBusinessDays(readyToProcessDate, 1); // 1 working day
-      maxDeliveryEst = addBusinessDays(readyToProcessDate, 10); // 10 working days
+      // Set min and max dispatch estimates based on ready_to_process date
+      minDispatchEst = addBusinessDays(readyToProcessDate, 1); // 1 working day
+      maxDispatchEst = addBusinessDays(readyToProcessDate, 10); // 10 working days
     } else {
-      // Calculate delivery estimates based on lensOrderedStatus
+      // Calculate dispatch estimates based on lensOrderedStatus
       const lensOrderedDate = new Date(lensOrderedStatus.created_at);
-      const frameOrderedStatus = statusHistories.find(
-        (status) => status.status === "frame_order",
-      );
       const frameOrderedComment = frameOrderedStatus
         ? frameOrderedStatus.comment.toLowerCase()
         : "";
@@ -253,38 +363,50 @@
         lensOrderedComment.includes("specialist") &&
         frameOrderedComment.includes("designer")
       ) {
-        baseMinDays = 4;
-        baseMaxDays = 10;
+        baseMinDays = 3;
+        baseMaxDays = 9;
       } else if (lensOrderedComment.includes("specialist")) {
-        baseMinDays = 2;
-        baseMaxDays = 10;
+        baseMinDays = 1;
+        baseMaxDays = 9;
       } else if (frameOrderedComment.includes("designer")) {
-        baseMinDays = 4;
-        baseMaxDays = 10;
+        baseMinDays = 3;
+        baseMaxDays = 9;
       }
 
-      // Add additional days for Quality Control
-      if (hasQualityControl) {
-        baseMinDays += 7;
-        baseMaxDays += 10;
-      }
-
-      minDeliveryEst = addBusinessDays(lensOrderedDate, baseMinDays);
-      maxDeliveryEst = addBusinessDays(lensOrderedDate, baseMaxDays);
+      minDispatchEst = addBusinessDays(lensOrderedDate, baseMinDays);
+      maxDispatchEst = addBusinessDays(lensOrderedDate, baseMaxDays);
     }
 
-    // Check if dispatched status exists
+    // Convert dispatch estimates to delivery estimates (using calendar days)
     if (dispatchedStatus) {
       const dispatchedDate = new Date(dispatchedStatus.created_at);
-      minDeliveryEst = addBusinessDays(dispatchedDate, 1);
-      maxDeliveryEst = addBusinessDays(dispatchedDate, 2);
+      minDeliveryEst = new Date(dispatchedDate.getTime() + 24 * 60 * 60 * 1000); // +1 calendar day
+      maxDeliveryEst = new Date(
+        dispatchedDate.getTime() + 2 * 24 * 60 * 60 * 1000,
+      ); // +2 calendar days
     } else {
-      // Ensure minDeliveryEst is not in the past unless it's been dispatched
-      if (minDeliveryEst < new Date()) {
-        minDeliveryEst = addBusinessDays(new Date(), 1); // Set to tomorrow
-      }
-      if (maxDeliveryEst < minDeliveryEst) {
-        maxDeliveryEst = minDeliveryEst; // Set max to be equal to min
+      minDeliveryEst = new Date(minDispatchEst.getTime() + 24 * 60 * 60 * 1000); // +1 calendar day
+      maxDeliveryEst = new Date(
+        maxDispatchEst.getTime() + 2 * 24 * 60 * 60 * 1000,
+      ); // +2 calendar days
+    }
+
+    // Check for delivery override in quality control comments
+    const qualityControlStatus = statusHistories.find(
+      (status) => status.status === "quality_control",
+    );
+    if (
+      qualityControlStatus &&
+      qualityControlStatus.comment.includes("UpdateTracker |")
+    ) {
+      const match = qualityControlStatus.comment.match(
+        /UpdateTracker \| (\d+)-(\d+)/,
+      );
+      if (match) {
+        const [, minDays, maxDays] = match;
+        const qcDate = new Date(qualityControlStatus.created_at);
+        minDeliveryEst = addBusinessDays(qcDate, parseInt(minDays));
+        maxDeliveryEst = addBusinessDays(qcDate, parseInt(maxDays));
       }
     }
 
@@ -308,6 +430,11 @@
       return 100;
     }
 
+    // If status is dispatched, return 100%
+    if (currentStatus === "dispatched") {
+      return 100;
+    }
+
     const totalDuration = Math.max(
       0,
       (maxDeliveryEst - readyToProcessDate) / (1000 * 60 * 60 * 24),
@@ -323,12 +450,12 @@
         ? ((totalDuration - remainingDays) / totalDuration) * 100
         : 0;
 
-    // New logic to set progress to 100% if maxDeliveryEst is in the past
-    if (maxDeliveryEst <= new Date()) {
-      progress = 100;
+    // Only set progress to 100% if maxDeliveryEst is in the past AND status is dispatched
+    if (maxDeliveryEst <= new Date() && currentStatus !== "dispatched") {
+      progress = 95; // Cap at 95% for non-dispatched orders
     }
 
-    return Math.min(100, progress);
+    return Math.min(95, progress); // Cap at 95% unless dispatched or ready for collection
   }
 
   // Update the main execution
@@ -340,10 +467,6 @@
     readyToProcessDate,
     currentStatus,
   ); // Calculate progress separately
-  console.log(`Progress: ${progress}%`);
-  console.log(`Min Delivery Estimate: ${minDeliveryEst}`);
-  console.log(`Max Delivery Estimate: ${maxDeliveryEst}`);
-  console.log(`Current Status: ${currentStatus}`); // Log the current status
 
   let currentMockData = dispatchedOrder; // Add this line to track current mock data
 
@@ -377,11 +500,21 @@
       document.getElementById(
         "progress-circle",
       ).style.left = `calc(${progress}% - 1rem)`;
+
+      // Update delivery estimate with date only (no time)
+      const minDate = result.minDeliveryEst.toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "numeric",
+        year: "numeric",
+      });
+      const maxDate = result.maxDeliveryEst.toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "numeric",
+        year: "numeric",
+      });
       document.getElementById(
         "delivery-estimate",
-      ).innerText = `${result.minDeliveryEst.toLocaleDateString(
-        "en-GB",
-      )} - ${result.maxDeliveryEst.toLocaleDateString("en-GB")}`;
+      ).innerText = `${minDate} - ${maxDate}`;
 
       // Update status display - no longer changing to "delivered"
       document.getElementById("current-status").innerText =
@@ -394,6 +527,43 @@
       null,
       2,
     );
+
+    // Add date verification
+    const dateVerification = document.getElementById("date-verification");
+    if (newMockData.exp_min || newMockData.exp_max) {
+      const minMatch =
+        newMockData.exp_min &&
+        result.minDeliveryEst?.toISOString().split("T")[0] ===
+          newMockData.exp_min.toString();
+      const maxMatch =
+        newMockData.exp_max &&
+        result.maxDeliveryEst?.toISOString().split("T")[0] ===
+          newMockData.exp_max.toString();
+
+      dateVerification.innerHTML = `
+        <p class="font-semibold">Date Verification:</p>
+        ${
+          newMockData.exp_min
+            ? `<p>Expected Min Date: ${newMockData.exp_min} (${
+                minMatch ? "Matches" : "Does NOT match"
+              } calculated min: ${
+                result.minDeliveryEst?.toISOString().split("T")[0]
+              })</p>`
+            : ""
+        }
+        ${
+          newMockData.exp_max
+            ? `<p>Expected Max Date: ${newMockData.exp_max} (${
+                maxMatch ? "Matches" : "Does NOT match"
+              } calculated max: ${
+                result.maxDeliveryEst?.toISOString().split("T")[0]
+              })</p>`
+            : ""
+        }
+      `;
+    } else {
+      dateVerification.innerHTML = ""; // Clear if no expected dates
+    }
   }
 </script>
 
@@ -573,14 +743,35 @@
   >
     Ready for Collection Order
   </button>
+  <button
+    onclick="updateDisplay(qualityControlFailOrder)"
+    class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+  >
+    QC Fail Order
+  </button>
+  <button
+    onclick="updateDisplay(multipleLensOrder)"
+    class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+  >
+    Multiple Lens Order
+  </button>
+  <button
+    onclick="updateDisplay(oldOrder)"
+    class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+  >
+    Old Order
+  </button>
 </div>
 
 <!-- Add this after the order-status div -->
 <div class="mt-8 p-4">
   <h3 class="mb-2 text-xl font-bold text-slate-800">Current Mock Data:</h3>
   <pre id="current-mock-data" class="overflow-auto rounded bg-gray-100 p-4">
-        <!-- Will be populated by JavaScript -->
-    </pre>
+    <!-- Will be populated by JavaScript -->
+  </pre>
+  <div id="date-verification" class="mt-4 text-sm">
+    <!-- Will be populated by JavaScript if exp dates exist -->
+  </div>
 </div>
 
 <script>
