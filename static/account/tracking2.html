@@ -30,7 +30,7 @@
   };
   const standardOrder = {
     exp_min: "2024-11-26",
-    exp_max: "2024-11-28",
+    exp_max: "2024-11-29",
     entity_id: "000000123",
     status_histories: [
       {
@@ -56,8 +56,8 @@
     ],
   };
   const designerOrder = {
-    exp_min: "2024-12-01",
-    exp_max: "2024-12-09",
+    exp_min: "2024-11-29",
+    exp_max: "2024-12-08",
     entity_id: "000000123",
     status_histories: [
       {
@@ -84,7 +84,7 @@
   };
   const specialistOrder = {
     exp_min: "2024-11-27",
-    exp_max: "2024-12-09",
+    exp_max: "2024-12-10",
     entity_id: "000000123",
     status_histories: [
       {
@@ -153,7 +153,7 @@
   // Add new mock data for Ready for Collection status
   const readyForCollectionOrder = {
     exp_min: "2024-11-26",
-    exp_max: "2024-11-28",
+    exp_max: "2024-11-29",
     entity_id: "000000123",
     status_histories: [
       {
@@ -220,8 +220,8 @@
   };
   // Add new mock data for multiple lens orders
   const multipleLensOrder = {
-    exp_min: "2024-12-01",
-    exp_max: "2024-12-03",
+    exp_min: "2024-11-29",
+    exp_max: "2024-12-04",
     entity_id: "000000123",
     status_histories: [
       {
@@ -253,8 +253,8 @@
   };
   // Add new mock data for old order
   const oldOrder = {
-    exp_min: "2023-10-15",
-    exp_max: "2023-10-17",
+    exp_min: "2023-10-12",
+    exp_max: "2023-10-15",
     entity_id: "000000123",
     status_histories: [
       {
@@ -271,6 +271,64 @@
         status: "lens_order",
         created_at: "2023-10-11T11:45:00",
         comment: "Standard lenses",
+      },
+    ],
+  };
+
+  // Add new mock data for lens order without frame order
+  const lensOnlyOrder = {
+    exp_min: "2024-11-27",
+    exp_max: "2024-11-30",
+    entity_id: "000000124",
+    status_histories: [
+      {
+        status: "ready_to_process",
+        created_at: "2024-11-25T10:30:00",
+        comment: "Order placed successfully",
+      },
+      {
+        status: "tray_up",
+        created_at: "2024-11-25T14:45:00",
+        comment: "Payment confirmed",
+      },
+      {
+        status: "lens_order",
+        created_at: "2024-11-26T11:45:00",
+        comment: "Standard lenses",
+      },
+    ],
+  };
+
+  // Add new mock data for dispatched order with update tracker logic
+  const dispatchedWithUpdateTrackerOrder = {
+    exp_min: "2024-11-30",
+    exp_max: "2024-12-01",
+    entity_id: "000000125",
+    status_histories: [
+      {
+        status: "ready_to_process",
+        created_at: "2024-11-25T10:30:00",
+        comment: "Order placed successfully",
+      },
+      {
+        status: "tray_up",
+        created_at: "2024-11-25T14:45:00",
+        comment: "Payment confirmed",
+      },
+      {
+        status: "lens_order",
+        created_at: "2024-11-26T11:45:00",
+        comment: "Standard lenses",
+      },
+      {
+        status: "quality_control",
+        created_at: "2024-11-28T09:30:00",
+        comment: "UpdateTracker | 2-4",
+      },
+      {
+        status: "dispatched",
+        created_at: "2024-11-29T14:30:00",
+        comment: "Dispatched",
       },
     ],
   };
@@ -356,16 +414,10 @@
       );
 
       // Calculate base delivery estimates
-      let baseMinDays = 1;
-      let baseMaxDays = 3;
+      let baseMinDays = 0;
+      let baseMaxDays = 2;
 
-      if (
-        lensOrderedComment.includes("specialist") &&
-        frameOrderedComment.includes("designer")
-      ) {
-        baseMinDays = 3;
-        baseMaxDays = 9;
-      } else if (lensOrderedComment.includes("specialist")) {
+      if (lensOrderedComment.includes("specialist")) {
         baseMinDays = 1;
         baseMaxDays = 9;
       } else if (frameOrderedComment.includes("designer")) {
@@ -395,7 +447,13 @@
     const qualityControlStatus = statusHistories.find(
       (status) => status.status === "quality_control",
     );
-    if (
+
+    if (dispatchedStatus) {
+      // Prioritize dispatched status for delivery estimates
+      const dispatchedDate = new Date(dispatchedStatus.created_at);
+      minDeliveryEst = dateFns.addDays(dispatchedDate, 1);
+      maxDeliveryEst = dateFns.addDays(dispatchedDate, 2);
+    } else if (
       qualityControlStatus &&
       qualityControlStatus.comment.includes("UpdateTracker |")
     ) {
@@ -528,7 +586,7 @@
       2,
     );
 
-    // Add date verification
+    // Add date verification with color coding
     const dateVerification = document.getElementById("date-verification");
     if (newMockData.exp_min || newMockData.exp_max) {
       const minMatch =
@@ -544,7 +602,9 @@
         <p class="font-semibold">Date Verification:</p>
         ${
           newMockData.exp_min
-            ? `<p>Expected Min Date: ${newMockData.exp_min} (${
+            ? `<p style="color: ${
+                minMatch ? "green" : "red"
+              };">Expected Min Date: ${newMockData.exp_min} (${
                 minMatch ? "Matches" : "Does NOT match"
               } calculated min: ${
                 result.minDeliveryEst?.toISOString().split("T")[0]
@@ -553,7 +613,9 @@
         }
         ${
           newMockData.exp_max
-            ? `<p>Expected Max Date: ${newMockData.exp_max} (${
+            ? `<p style="color: ${
+                maxMatch ? "green" : "red"
+              };">Expected Max Date: ${newMockData.exp_max} (${
                 maxMatch ? "Matches" : "Does NOT match"
               } calculated max: ${
                 result.maxDeliveryEst?.toISOString().split("T")[0]
@@ -584,6 +646,44 @@
   // Est Delivery date can only ever be in the future (it can be today only if status is Dispached yesterday)
   // Progress is calculated based on the est max delivery date compared to the ready to process date and the percent complete in terms of days (including weekends)
 </script>
+
+<!-- Split into two separate containers -->
+<div class="mt-2 px-4">
+  <!-- Date verification moved outside and above the mock data -->
+  <div
+    id="date-verification"
+    class="border-b border-gray-400 bg-gray-100 p-4 text-sm shadow-sm"
+  >
+    <!-- Will be populated by JavaScript if exp dates exist -->
+  </div>
+
+  <!-- Mock data dropdown remains separate -->
+  <button
+    onclick="document.getElementById('mock-data-content').classList.toggle('hidden')"
+    class="flex w-full items-center justify-between border-b border-gray-400 bg-gray-100 px-4 py-2 text-left hover:bg-gray-200"
+  >
+    <h3 class="text-xl font-bold text-slate-800">Current Mock Data</h3>
+    <svg
+      class="h-6 w-6 transform transition-transform"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 9l-7 7-7-7"
+      ></path>
+    </svg>
+  </button>
+  <div id="mock-data-content" class="hidden">
+    <pre id="current-mock-data" class="overflow-auto bg-gray-100 p-4 text-sm">
+      <!-- Will be populated by JavaScript -->
+    </pre>
+  </div>
+</div>
 
 <!-- New GUI Section -->
 <div
@@ -761,17 +861,18 @@
   >
     Old Order
   </button>
-</div>
-
-<!-- Add this after the order-status div -->
-<div class="mt-8 p-4">
-  <h3 class="mb-2 text-xl font-bold text-slate-800">Current Mock Data:</h3>
-  <pre id="current-mock-data" class="overflow-auto rounded bg-gray-100 p-4">
-    <!-- Will be populated by JavaScript -->
-  </pre>
-  <div id="date-verification" class="mt-4 text-sm">
-    <!-- Will be populated by JavaScript if exp dates exist -->
-  </div>
+  <button
+    onclick="updateDisplay(lensOnlyOrder)"
+    class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+  >
+    Lens Only Order
+  </button>
+  <button
+    onclick="updateDisplay(dispatchedWithUpdateTrackerOrder)"
+    class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+  >
+    Dispatched with Update Tracker Order
+  </button>
 </div>
 
 <script>
