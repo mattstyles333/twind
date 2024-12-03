@@ -352,6 +352,28 @@
     "reglaze_awaiting_frame",
   ];
 
+  // Add status name mapping with improved formatting
+  const statusNameMapping = {
+    ready_to_process: "Ready to Process",
+    tray_up: "Trayed Up",
+    frame_order: "Frame Ordered",
+    lens_order: "Lens' Ordered",
+    quality_control: "Quality Control",
+    dispatched: "Dispatched",
+    awaiting_confirmation: "Awaiting Confirmation",
+    reglaze_awaiting_frame: "Reglaze Awaiting Frame",
+    "Ready for Collection(SHOP)": "Ready for Collection (Shop)",
+    query: "Query",
+    on_hold: "On Hold",
+    awaiting_customer_frames: "Awaiting Customer Frames",
+    fitting_photograph_required: "Fitting Photograph Required",
+    frame_query: "Frame Query",
+    lens_or_prescription_query: "Lens or Prescription Query",
+    order_delay: "Order Delay",
+    part_order_dispatch: "Part Order Dispatch",
+    pending_payment: "Pending Payment",
+  };
+
   // Function to calculate delivery estimates
   function calculateOrderTracking(mockData) {
     const statusHistories = mockData.status_histories;
@@ -574,9 +596,10 @@
         "delivery-estimate",
       ).innerText = `${minDate} - ${maxDate}`;
 
-      // Update status display - no longer changing to "delivered"
-      document.getElementById("current-status").innerText =
-        result.currentStatus;
+      // Update status display with mapped name
+      const friendlyStatus =
+        statusNameMapping[result.currentStatus] || result.currentStatus;
+      document.getElementById("current-status").innerText = friendlyStatus;
     }
 
     // Update mock data display
@@ -625,6 +648,23 @@
       `;
     } else {
       dateVerification.innerHTML = ""; // Clear if no expected dates
+    }
+
+    // Show/hide the status info button based on query status only
+    const statusInfoButton = document.getElementById("status-info");
+
+    if (result.currentStatus === "awaiting_confirmation") {
+      statusInfoButton.classList.remove("hidden");
+
+      // Update modal content
+      const modalTitle = document.querySelector("#status-modal h3");
+      const modalContent = document.querySelector("#status-modal p");
+
+      modalTitle.textContent = "Order Status: Query";
+      modalContent.textContent =
+        "We need some additional information about your order. Please check your email for details or contact our customer service team for assistance.";
+    } else {
+      statusInfoButton.classList.add("hidden");
     }
   }
 </script>
@@ -712,7 +752,8 @@
         <span id="current-status"></span>
         <button
           id="status-info"
-          class="ml-1 hidden rounded-full bg-gray-200 px-2 py-0.5 text-xs text-gray-600 hover:bg-gray-300 sm:text-sm"
+          class="ml-1 rounded-full bg-gray-200 px-2 py-0.5 text-xs text-gray-600 hover:bg-gray-300 sm:text-sm"
+          onclick="document.getElementById('status-modal').classList.remove('hidden')"
         >
           ?
         </button>
