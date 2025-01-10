@@ -10,6 +10,10 @@
     src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.6/dist/cdn.min.js"
     defer
   ></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
 </head>
 
 <div
@@ -22,7 +26,7 @@
     <a
       href="#"
       title="Remove From Cart"
-      class="action action-delete text-s flex flex-row items-center justify-center gap-2 pl-6"
+      class="action action-delete flex flex-row items-center justify-center gap-2 pl-6 text-red-700 duration-500 ease-in-out hover:text-red-500"
       x-data="{}"
       @click.prevent='hyva.postForm({"action":"https:\/\/www.spex4less.com\/checkout\/cart\/delete\/","data":{"id":"6961441","uenc":"aHR0cHM6Ly93d3cuc3BleDRsZXNzLmNvbS9jaGVja291dC9jYXJ0Lw~~"}})'
     >
@@ -32,21 +36,24 @@
         viewBox="0 0 382 512"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        class="text-current"
       >
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
           d="M129.14 2.46883C127.386 4.22341 127.144 5.79534 127.144 15.4435V26.422L72.0017 26.446C-5.03979 26.4789 0.391597 23.38 0.391597 67.3102V94.2895H191.019H381.647V67.3102C381.647 23.38 387.078 26.4789 310.037 26.446L254.895 26.422V15.4435C254.895 -1.2509 262.247 0.472731 191.019 0.472731C132.467 0.472731 131.092 0.516645 129.14 2.46883ZM28.34 130.469C28.359 162.11 45.4825 492.128 47.3209 496.291C49.8221 501.954 54.3712 506.894 59.7756 509.816L63.7678 511.974H191.019H318.271L322.263 509.816C327.677 506.889 332.217 501.952 334.733 496.257C336.597 492.037 353.611 164.162 353.689 130.968L353.702 125.229H191.019H28.337L28.34 130.469ZM131.814 207.06C136.171 209.863 136.126 208.692 136.126 319.474V425.796L133.209 428.713C126.895 435.028 102.78 432.622 100.272 425.428C98.1906 419.458 98.8333 215.291 100.947 211.061C103.822 205.307 124.848 202.581 131.814 207.06ZM204.683 207.067C209.655 210.264 209.483 206.24 209.483 319.583V425.806L206.224 428.718C201.187 433.219 180.852 433.219 175.815 428.718L172.555 425.806L172.259 322.675C171.94 211.408 171.908 212.481 175.674 208.714C179.52 204.869 199.499 203.735 204.683 207.067ZM275.854 206.377C283.267 208.905 282.837 202.004 282.838 318.453C282.84 427.602 282.861 427.086 278.309 430.068C273.474 433.235 252.382 432.266 248.829 428.713L245.912 425.796V319.361C245.912 209.75 245.903 209.997 249.8 207.568C254.013 204.942 269.561 204.231 275.854 206.377Z"
-          fill="#900"
+          fill="currentColor"
         />
       </svg>
 
-      <span class="action-label" style="color: #900">Remove From Cart</span>
+      <span class="action-label" style="color: currentColor"
+        >Remove From Cart</span
+      >
     </a>
     <a
       href="#"
       title="Duplicate"
-      class="action action-duplicate text-s flex flex-row items-center justify-center gap-2 pl-6"
+      class="action action-duplicate text-s flex flex-row items-center justify-center gap-2 pl-6 duration-500 ease-in-out hover:text-blue-600"
       x-data="{}"
       @click.prevent='hyva.postForm({"action":"https:\/\/www.spex4less.com\/sellasone\/cart\/duplicate\/","data":{"quote_item_id":"6961441","uenc":"aHR0cHM6Ly93d3cuc3BleDRsZXNzLmNvbS9jaGVja291dC9jYXJ0Lw~~"}})'
     >
@@ -61,11 +68,11 @@
           fill-rule="evenodd"
           clip-rule="evenodd"
           d="M198.805 1.56686C175.647 4.64385 152.498 25.8414 152.432 44.0309C152.349 66.7795 181.625 73.5932 193.383 53.5613C199.177 43.6906 188.378 44.5299 309.596 44.5299C428.57 44.5299 420.5 44.0349 424.545 51.5782C427.316 56.7471 427.389 328.462 424.62 333.894C420.791 341.403 420.846 341.391 386.625 341.949C352.625 342.503 352.767 342.476 346.605 349.494C337.058 360.368 340.991 377.993 354.197 383.511C359.021 385.527 419.671 385.428 427.321 383.393C446.932 378.174 462.757 362.171 467.769 342.488C470.058 333.504 470.058 52.9754 467.769 43.991C462.923 24.9612 448.074 9.50635 428.364 2.9811C422.554 1.05685 212.383 -0.23762 198.805 1.56686ZM43.3883 87.8823C23.2946 92.7508 5.99634 110.661 1.67078 131.074C-0.498979 141.315 -0.470035 414.94 1.70172 425.286C6.3197 447.281 23.6169 464.579 45.612 469.196C56.0406 471.385 264.735 471.385 275.164 469.196C296.972 464.617 314.616 447.246 319.141 425.9C321.284 415.791 321.215 141.047 319.067 130.861C314.675 110.036 296.503 91.8156 275.863 87.5429C267.772 85.8682 50.3916 86.1856 43.3883 87.8823ZM267.179 130.333C269.566 130.884 272.275 132.486 273.916 134.318L276.661 137.381V278.104V418.828L273.244 422.557L269.828 426.284H160.388H50.9475L47.5312 422.557L44.1149 418.828V279.037C44.1149 119.327 43.1617 133.611 54.0375 130.31C57.7183 129.194 262.336 129.216 267.179 130.333Z"
-          fill="#1e3a8a"
+          fill="currentColor"
         />
       </svg>
 
-      <span class="action-label" style="color: #1e3a8a">Duplicate</span>
+      <span class="action-label" style="color: currentColor">Duplicate</span>
     </a>
   </div>
 </div>
