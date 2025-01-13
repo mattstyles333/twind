@@ -6,6 +6,10 @@
     defer
     src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
   ></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
   <script
     src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.6/dist/cdn.min.js"
     defer
@@ -15,17 +19,21 @@
 <div class="min-h-screen bg-gray-100">
   <!-- Header -->
   <header class="bg-white shadow">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+    <div
+      class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4"
+    >
       <img
         src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/s4l-logo.webp"
         alt="Spex4Less"
-        class="h-20"
+        class="h-12 sm:h-20"
       />
-      <div class="flex items-center space-x-4 text-gray-600">
-        <span>Step 1 of 2: Shipping</span>
+      <div
+        class="flex flex-col items-end space-y-1 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0"
+      >
+        <span class="text-base text-gray-600">Step 1 of 2: Shipping</span>
         <div class="flex space-x-1">
-          <div class="h-1 w-8 rounded bg-blue-600"></div>
-          <div class="h-1 w-8 rounded bg-gray-300"></div>
+          <div class="h-1 w-6 rounded bg-blue-600 sm:w-8"></div>
+          <div class="h-1 w-6 rounded bg-gray-300 sm:w-8"></div>
         </div>
       </div>
     </div>
@@ -33,10 +41,10 @@
 
   <!-- Main Content -->
   <main
-    class="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 py-6 md:grid-cols-3 md:px-8"
+    class="mx-auto grid max-w-7xl grid-cols-1 items-start gap-y-4 px-4 py-4 lg:grid-cols-3 lg:gap-x-6 lg:py-8"
   >
-    <!-- Address Selection -->
-    <section class="col-span-2 rounded-lg bg-white p-6 shadow">
+    <!-- Left section with self-alignment -->
+    <section class="col-span-2 h-fit self-start rounded-lg bg-white p-6 shadow">
       <h2 class="mb-4 text-xl font-semibold text-gray-700">Shipping Address</h2>
 
       <!-- Address List -->
@@ -80,6 +88,25 @@
           </div>
         </div>
 
+        <div
+          x-data="{ selected: false }"
+          class="cursor-pointer rounded-lg border p-4"
+          :class="selected ? 'border-blue-600 bg-blue-50' : 'border-gray-300'"
+        >
+          <div class="flex justify-between">
+            <div>
+              <p class="font-medium text-gray-700">John Davies</p>
+              <p class="text-sm text-gray-600">
+                45 Church Road, West Kirby, Wirral, Merseyside CH48 3JT
+              </p>
+              <p class="text-sm text-gray-600">+44 151 625 8899</p>
+            </div>
+            <button @click="selected = !selected" class="text-blue-600">
+              Edit
+            </button>
+          </div>
+        </div>
+
         <div class="mt-4 flex items-center justify-between">
           <button class="text-blue-600 hover:underline">
             + Add New Address
@@ -90,7 +117,7 @@
       <!-- Shipping Methods -->
       <div class="mt-8">
         <h2 class="mb-4 text-xl font-semibold text-gray-700">
-          Shipping Method
+          Shipping Methods
         </h2>
         <div class="space-y-4">
           <label class="flex cursor-pointer items-center space-x-3">
@@ -112,20 +139,10 @@
     </section>
 
     <!-- Order Summary -->
-    <aside class="rounded-lg bg-white p-6 shadow">
+    <aside class="sticky top-4 h-fit self-start rounded-lg bg-white p-6 shadow">
       <h2 class="mb-4 text-xl font-semibold text-gray-700">Order Summary</h2>
       <div class="space-y-4">
         <div class="mb-4" x-data="{ isOpen: false, points: 17 }">
-          <div class="flex items-center justify-between">
-            <h3 class="text-lg font-semibold text-gray-700">
-              Use Reward Points
-            </h3>
-            <button @click="isOpen = !isOpen" class="text-gray-500">
-              <span x-show="!isOpen">▼</span>
-              <span x-show="isOpen">▲</span>
-            </button>
-          </div>
-
           <div x-show="isOpen" class="mt-3 space-y-3">
             <p class="text-sm text-gray-600">
               You have
@@ -166,21 +183,36 @@
             </div>
           </div>
         </div>
-        <div class="flex items-center space-x-4">
-          <img
-            src="/path-to-product.jpg"
-            alt="Product Image"
-            class="h-16 w-16 rounded object-cover"
-          />
-          <div>
-            <p class="font-medium text-gray-700">OL 007 Glasses</p>
-            <p class="text-sm text-gray-600">Size: 55-18-140</p>
-            <p class="text-sm text-gray-600">Colour: Gunmetal</p>
+        <div class="divide-y divide-gray-300">
+          <div class="flex items-center space-x-4 py-4">
+            <img
+              src="https://test.s4l.link/media/catalog/product/cache/e228b33174e6210dd02020993ba7c78c/o/l/ol007_-_c1.png"
+              alt="Product Image"
+              class="h-16 w-24 rounded object-cover"
+            />
+            <div>
+              <p class="font-medium text-gray-700">OL 007 Glasses</p>
+              <p class="text-sm text-gray-600">Size: 55-18-140</p>
+              <p class="text-sm text-gray-600">Colour: Gunmetal</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4 py-4">
+            <img
+              src="https://test.s4l.link/media/catalog/product/cache/e228b33174e6210dd02020993ba7c78c/o/l/ol007_-_c1.png"
+              alt="Product Image"
+              class="h-16 w-24 rounded object-cover"
+            />
+            <div>
+              <p class="font-medium text-gray-700">OL 007 Glasses</p>
+              <p class="text-sm text-gray-600">Size: 55-18-140</p>
+              <p class="text-sm text-gray-600">Colour: Gunmetal</p>
+            </div>
           </div>
         </div>
-        <div class="mt-4 flex justify-between">
+
+        <div class="flex justify-between border-t border-gray-300 pt-4">
           <p class="font-medium text-gray-700">Total</p>
-          <p class="text-lg font-bold text-gray-900">£XX.XX</p>
+          <p class="text-lg font-bold text-gray-900">£31.97</p>
         </div>
       </div>
     </aside>
