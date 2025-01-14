@@ -70,7 +70,7 @@
             </svg>
           </div>
         </button>
-        <div x-data="{ isOpen: false }" class="w-full pb-4 md:w-2/5 lg:hidden">
+        <div x-data="{ isOpen: false }" class="w-full pb-4 md:hidden md:w-2/5">
           <div
             class="flex cursor-pointer items-center justify-between"
             @click="isOpen = !isOpen"
@@ -400,7 +400,7 @@
       </button>
 
       <h2 class="mb-4 text-xl font-semibold text-gray-700">Order Summary</h2>
-      <div x-data="{ isOpen: false }" class="hidden w-full pb-2 lg:block">
+      <div x-data="{ isOpen: false }" class="hidden w-full pb-2 md:block">
         <div
           class="flex cursor-pointer items-center justify-between"
           @click="isOpen = !isOpen"
