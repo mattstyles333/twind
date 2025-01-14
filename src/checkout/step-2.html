@@ -70,7 +70,56 @@
             </svg>
           </div>
         </button>
-
+        <div x-data="{ isOpen: false }" class="w-full pb-4 md:w-2/5 lg:hidden">
+          <div
+            class="flex cursor-pointer items-center justify-between"
+            @click="isOpen = !isOpen"
+          >
+            <p class="text-gray-700">Got a Coupon Code?</p>
+            <span
+              class="block text-lg transition-all duration-700"
+              :class="isOpen ? 'rotate-90' : ''"
+            >
+              <svg
+                class="h-4 w-4"
+                fill="#000000"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 330 330"
+                xml:space="preserve"
+              >
+                <path
+                  class="dark:fill-gray-200"
+                  d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                ></path>
+              </svg>
+            </span>
+          </div>
+          <div
+            class="relative max-h-0 overflow-hidden transition-all duration-700"
+            x-ref="couponContainer"
+            x-bind:style="isOpen ? 'max-height: ' + $refs.couponContainer.scrollHeight + 'px' : ''"
+          >
+            <div class="mt-2 space-y-2">
+              <div class="flex rounded-md shadow-sm">
+                <input
+                  type="text"
+                  name="couponCode"
+                  id="couponCode"
+                  class="block w-full min-w-0 flex-1 rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
+                  placeholder="Enter your coupon code"
+                />
+                <button
+                  type="button"
+                  class="hover:bg-s ml-3 inline-flex items-center rounded-md border border-transparent bg-blue-700 px-4 py-2 text-sm font-medium text-white shadow-sm"
+                >
+                  Apply
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
         <h2 class="mb-4 text-xl font-semibold text-gray-700">
           Express Checkout
         </h2>
@@ -270,7 +319,7 @@
 
           <div class="mt-6 flex md:justify-end">
             <button
-              class="w-1/2 rounded-lg bg-blue-600 px-6 py-2 font-bold text-white transition hover:bg-blue-700 md:w-1/3"
+              class="hover:bg-s w-1/2 rounded-lg bg-blue-700 px-6 py-2 font-bold text-white transition md:w-1/3"
             >
               Place Order
             </button>
@@ -351,6 +400,56 @@
       </button>
 
       <h2 class="mb-4 text-xl font-semibold text-gray-700">Order Summary</h2>
+      <div x-data="{ isOpen: false }" class="hidden w-full pb-2 lg:block">
+        <div
+          class="flex cursor-pointer items-center justify-between"
+          @click="isOpen = !isOpen"
+        >
+          <p class="text-gray-700">Got a Coupon Code?</p>
+          <span
+            class="block text-lg transition-all duration-700"
+            :class="isOpen ? 'rotate-90' : ''"
+          >
+            <svg
+              class="h-4 w-4"
+              fill="#000000"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 330 330"
+              xml:space="preserve"
+            >
+              <path
+                class="dark:fill-gray-200"
+                d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+              ></path>
+            </svg>
+          </span>
+        </div>
+        <div
+          class="relative max-h-0 overflow-hidden transition-all duration-700"
+          x-ref="couponContainer"
+          x-bind:style="isOpen ? 'max-height: ' + $refs.couponContainer.scrollHeight + 'px' : ''"
+        >
+          <div class="mt-2 space-y-2">
+            <div class="flex rounded-md shadow-sm">
+              <input
+                type="text"
+                name="couponCode"
+                id="couponCode"
+                class="block w-full min-w-0 flex-1 rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
+                placeholder="Enter your coupon code"
+              />
+              <button
+                type="button"
+                class="hover:bg-s ml-3 inline-flex items-center rounded-md border border-transparent bg-blue-700 px-4 py-2 text-sm font-medium text-white shadow-sm"
+              >
+                Apply
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="space-y-4">
         <!-- Order Summary Details -->
         <div class="divide-y divide-gray-300">
@@ -495,7 +594,7 @@
               x-bind:style="isOpen ? 'max-height: ' + $refs.productsContainer.scrollHeight + 'px' : ''"
             >
               <div class="mt-2 space-y-4">
-                <div class="flex items-center space-x-4">
+                <div class="flex items-center gap-4">
                   <img
                     src="https://test.s4l.link/media/catalog/product/cache/e228b33174e6210dd02020993ba7c78c/o/l/ol007_-_c1.png"
                     alt="Product Image"
@@ -507,7 +606,7 @@
                     <p class="text-sm text-gray-600">Colour: Gunmetal</p>
                   </div>
                 </div>
-                <div class="flex items-center space-x-4">
+                <div class="flex items-center gap-4">
                   <img
                     src="https://test.s4l.link/media/catalog/product/cache/e228b33174e6210dd02020993ba7c78c/o/l/ol007_-_c1.png"
                     alt="Product Image"
