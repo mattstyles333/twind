@@ -115,13 +115,32 @@
       <button
         x-data
         @click="$store.orderSummary.toggle()"
-        class="mb-4 flex w-full items-center justify-between text-left lg:hidden"
+        class="mb-4 flex w-full items-center justify-between rounded-lg border-2 border-gray-200 p-2 text-left lg:hidden"
       >
-        <span class="text-gray-700">View Order Summary</span>
         <div class="flex items-center space-x-2">
-          <span class="font-bold">£31.97</span>
           <svg
-            class="h-5 w-5 text-gray-400"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            class="h-8 w-8 text-gray-700 hover:text-black"
+            width="12"
+            height="12"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+            ></path>
+            <title>shopping-cart</title>
+          </svg>
+          <span class="text-gray-700">View Order Summary</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="font-bold">£24.89</span>
+          <svg
+            class="h-5 w-5 text-gray-700"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -139,13 +158,15 @@
       <h2 class="mb-4 text-xl font-semibold text-gray-700">Shipping Address</h2>
 
       <!-- Address List -->
-      <div class="space-y-4">
+      <div class="space-y-4" x-data="{ selectedAddress: 0 }">
         <div
-          x-data="{ selected: true }"
+          @click="selectedAddress = 0; $store.orderSummary.toggle()"
           class="cursor-pointer rounded-lg border p-4"
-          :class="selected ? 'border-blue-600 bg-blue-50' : 'border-gray-300'"
+          :class="selectedAddress === 0 ? 'border-blue-600 bg-blue-50' : 'border-gray-300'"
         >
-          <div class="flex justify-between">
+          <div
+            class="flex flex-col md:flex-row md:items-center md:justify-between lg:flex"
+          >
             <div>
               <p class="font-medium text-gray-700">James Tanner</p>
               <p class="text-sm text-gray-600">
@@ -154,18 +175,20 @@
               </p>
               <p class="text-sm text-gray-600">+44 151 632 6611</p>
             </div>
-            <button @click="selected = !selected" class="text-blue-600">
-              Edit
-            </button>
+            <div class="mt-2 lg:mt-0">
+              <button class="text-blue-600">Edit</button>
+            </div>
           </div>
         </div>
 
         <div
-          x-data="{ selected: false }"
+          @click="selectedAddress = 1; $store.orderSummary.toggle()"
           class="cursor-pointer rounded-lg border p-4"
-          :class="selected ? 'border-blue-600 bg-blue-50' : 'border-gray-300'"
+          :class="selectedAddress === 1 ? 'border-blue-600 bg-blue-50' : 'border-gray-300'"
         >
-          <div class="flex justify-between">
+          <div
+            class="flex flex-col md:flex-row md:items-center md:justify-between lg:flex"
+          >
             <div>
               <p class="font-medium text-gray-700">Sarah Smith</p>
               <p class="text-sm text-gray-600">
@@ -173,18 +196,20 @@
               </p>
               <p class="text-sm text-gray-600">+44 151 555 0123</p>
             </div>
-            <button @click="selected = !selected" class="text-blue-600">
-              Edit
-            </button>
+            <div class="mt-2 lg:mt-0">
+              <button class="text-blue-600">Edit</button>
+            </div>
           </div>
         </div>
 
         <div
-          x-data="{ selected: false }"
+          @click="selectedAddress = 2; $store.orderSummary.toggle()"
           class="cursor-pointer rounded-lg border p-4"
-          :class="selected ? 'border-blue-600 bg-blue-50' : 'border-gray-300'"
+          :class="selectedAddress === 2 ? 'border-blue-600 bg-blue-50' : 'border-gray-300'"
         >
-          <div class="flex justify-between">
+          <div
+            class="flex flex-col md:flex-row md:items-center md:justify-between lg:flex"
+          >
             <div>
               <p class="font-medium text-gray-700">John Davies</p>
               <p class="text-sm text-gray-600">
@@ -192,9 +217,9 @@
               </p>
               <p class="text-sm text-gray-600">+44 151 625 8899</p>
             </div>
-            <button @click="selected = !selected" class="text-blue-600">
-              Edit
-            </button>
+            <div class="mt-2 lg:mt-0">
+              <button class="text-blue-600">Edit</button>
+            </div>
           </div>
         </div>
 
@@ -267,50 +292,9 @@
       </button>
 
       <h2 class="mb-4 text-xl font-semibold text-gray-700">Order Summary</h2>
-      <div class="space-y-4">
-        <div class="mb-4" x-data="{ isOpen: false, points: 17 }">
-          <div x-show="isOpen" class="mt-3 space-y-3">
-            <p class="text-sm text-gray-600">
-              You have
-              <span class="font-bold">17 Reward Points</span> available.
-            </p>
-            <p class="text-sm text-gray-600">
-              Enter amount of points to spend:
-            </p>
-
-            <input
-              type="number"
-              class="w-full rounded border border-gray-300 px-3 py-2"
-              max="17"
-            />
-
-            <div class="flex items-center gap-2">
-              <input
-                type="checkbox"
-                id="maxPoints"
-                class="rounded border-gray-300"
-              />
-              <label for="maxPoints" class="text-sm text-gray-600">
-                Use maximum 17 Reward Points
-              </label>
-            </div>
-
-            <div class="flex gap-3">
-              <button
-                class="rounded border border-blue-600 bg-white px-4 py-2 text-blue-600"
-              >
-                Apply Points
-              </button>
-              <button
-                class="rounded border border-blue-600 bg-white px-4 py-2 text-blue-600"
-              >
-                Cancel Points
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="divide-y divide-gray-300">
-          <div class="flex items-center space-x-4 py-4">
+      <div class="border-t border-gray-300 py-2">
+        <div class="mt-2 space-y-4">
+          <div class="flex items-center gap-4">
             <img
               src="https://test.s4l.link/media/catalog/product/cache/e228b33174e6210dd02020993ba7c78c/o/l/ol007_-_c1.png"
               alt="Product Image"
@@ -320,9 +304,21 @@
               <p class="font-medium text-gray-700">OL 007 Glasses</p>
               <p class="text-sm text-gray-600">Size: 55-18-140</p>
               <p class="text-sm text-gray-600">Colour: Gunmetal</p>
+              <p class="text-sm text-gray-600">Select Lenses: Distance £5.00</p>
+              <p class="text-sm text-gray-600">
+                Distance Type: Standard Distance £0.00
+              </p>
+              <p class="text-sm text-gray-600">
+                Lens Index (Thinness): 1.5 Standard £0.00
+              </p>
+              <p class="text-sm text-gray-600">Lens Colour: Clear £0.00</p>
+              <p class="text-sm text-gray-600">
+                Coatings: UV and Durable+ £10.00
+              </p>
             </div>
           </div>
-          <div class="flex items-center space-x-4 py-4">
+          <hr class="my-2 w-full border-t border-gray-300" />
+          <div class="flex items-center gap-4">
             <img
               src="https://test.s4l.link/media/catalog/product/cache/e228b33174e6210dd02020993ba7c78c/o/l/ol007_-_c1.png"
               alt="Product Image"
@@ -332,11 +328,21 @@
               <p class="font-medium text-gray-700">OL 007 Glasses</p>
               <p class="text-sm text-gray-600">Size: 55-18-140</p>
               <p class="text-sm text-gray-600">Colour: Gunmetal</p>
+              <p class="text-sm text-gray-600">Select Lenses: Distance £5.00</p>
+              <p class="text-sm text-gray-600">
+                Distance Type: Standard Distance £0.00
+              </p>
+              <p class="text-sm text-gray-600">
+                Lens Index (Thinness): 1.5 Standard £0.00
+              </p>
+              <p class="text-sm text-gray-600">Lens Colour: Clear £0.00</p>
+              <p class="text-sm text-gray-600">
+                Coatings: UV and Durable+ £10.00
+              </p>
             </div>
           </div>
         </div>
-
-        <div class="flex justify-between border-t border-gray-300 pt-4">
+        <div class="mt-4 flex justify-between border-t border-gray-300 pt-4">
           <p class="font-medium text-gray-700">Total</p>
           <p class="text-lg font-bold text-gray-900">£31.97</p>
         </div>
