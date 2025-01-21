@@ -1,12 +1,29 @@
 {
-  "devDependencies": {
-    "prettier": "^3.0.2",
-    "prettier-plugin-tailwindcss": "^0.5.3",
-    "tailwindcss": "^3.4.3"
-  },
   "dependencies": {
     "@glidejs/glide": "^3.6.0",
     "@preline/carousel": "^2.0.2",
-    "i": "^0.3.7"
-  }
+    "i": "^0.3.7",
+    "serve": "^14.2.1"
+  },
+  "name": "twind",
+  "description": "To setup create virtaul env: python3 -m venv venv Activate: . venv/bin/activate Pip install: pip install watchdog Jinja then execute the watch_and_generate file: python watch_and_generate.py",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/serve --debug --listen 3000 /home/postgres/twind/src",
+    "update": "git stash && git pull && git stash pop",
+    "push": "git add . && git commit -m \"update\" && git push",
+    "sync": "npm run update && npm run push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattstyles333/twind.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattstyles333/twind/issues"
+  },
+  "homepage": "https://github.com/mattstyles333/twind#readme"
 }
