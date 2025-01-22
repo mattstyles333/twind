@@ -1,7 +1,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="../output.css" rel="stylesheet" />
   <script
     defer
     src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
@@ -14,27 +13,21 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <div class="relative lg:grid lg:grid-cols-2">
-  <picture class="mfwebp">
-    <source
-      width="1228"
-      height="500"
-      loading="lazy"
-      type="image/webp"
-      srcset="
-        https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/banner_default_short.webp
-      " />
-    <img
-      class="absolute h-full w-full object-cover lg:relative"
-      src="https://www.spex4less.com/media/wysiwyg/redesign/banner_default_short.jpg"
-      width="1228"
-      height="500"
-      loading="lazy"
-      alt=""
-  /></picture>
+    <div class="relative h-72 lg:h-full">
+        <img
+            class="absolute inset-0 h-full w-full object-cover"
+            src="https://www.spex4less.com/media/wysiwyg/redesign/banner_default_short.jpg"
+            width="1228"
+            height="500"
+            loading="lazy"
+            alt="Glasses aftercare banner image"
+        />
+    </div>
   <div
-    class="from-p to-p/75 lg:bg-s dark:tp-slate-900 relative bg-gradient-to-t px-8 pt-8 dark:to-slate-900/75 md:pt-16 lg:to-transparent lg:pt-24"
+    class="from-gray-800 to-p/75 lg:bg-blue-900 dark:tp-slate-900 relative bg-gradient-to-t px-8 pt-8 dark:to-slate-900/75 md:pt-16 lg:to-transparent lg:pt-24"
   >
     <div class="mx-auto flex max-w-3xl flex-col gap-6 md:gap-8 lg:gap-10">
       <h1

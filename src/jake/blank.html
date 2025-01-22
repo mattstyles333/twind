@@ -1,0 +1,109 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Initialize Tailwind with custom configuration
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            p: "#1f2937",
+            s: "#1E3A8A",
+            l: "#f3f4f6",
+            t: "#5494EC",
+            a: "#f97316",
+            b: "#2563eb",
+            gr: "#6b7280",
+          },
+          screens: {
+            xxsm: "420px",
+            xxxsm: "360px",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body>
+
+    <section class="bg-cover bg-center h-screen" style="background-image: url('https://picsum.photos/1920/1080?random=1')">
+        <div class="flex items-center justify-center h-full bg-black bg-opacity-50">
+            <h1 class="text-white text-5xl font-bold">Welcome to Our Amazing Site</h1>
+        </div>
+    </section>
+    <section class="py-10">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a href="https://test.s4l.link" class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://picsum.photos/400/300?random=1" alt="Image 1" class="w-full h-48 object-cover" />
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold">Card Title 1</h2>
+                    <p class="text-gray-600">This is a description for the first card. It contains some interesting information.</p>
+                </div>
+            </a>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://picsum.photos/400/300?random=2" alt="Image 2" class="w-full h-48 object-cover" />
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold">Card Title 2</h2>
+                    <p class="text-gray-600">This is a description for the second card. It contains some interesting information.</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://picsum.photos/400/300?random=3" alt="Image 3" class="w-full h-48 object-cover" />
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold">Card Title 3</h2>
+                    <p class="text-gray-600">This is a description for the third card. It contains some interesting information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-10 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Testimonials</h2>
+            <div class="flex flex-wrap justify-center">
+                <div class="bg-white rounded-lg shadow-lg p-6 m-4">
+                    <p class="text-gray-600">"This site is amazing! Highly recommend!"</p>
+                    <p class="font-semibold mt-2">- Happy Customer</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 m-4">
+                    <p class="text-gray-600">"A fantastic experience from start to finish!"</p>
+                    <p class="font-semibold mt-2">- Satisfied User</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-semibold">Feature 1</h3>
+                    <p class="text-gray-600">Description of feature 1.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-semibold">Feature 2</h3>
+                    <p class="text-gray-600">Description of feature 2.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-semibold">Feature 3</h3>
+                    <p class="text-gray-600">Description of feature 3.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
+            <p class="text-gray-600 mb-4">Have questions? Reach out to us!</p>
+            <form class="max-w-md mx-auto">
+                <input type="text" placeholder="Your Name" class="border p-2 mb-4 w-full" required />
+                <input type="email" placeholder="Your Email" class="border p-2 mb-4 w-full" required />
+                <textarea placeholder="Your Message" class="border p-2 mb-4 w-full" required></textarea>
+                <button type="submit" class="bg-blue-500 text-white p-2 rounded">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+</body>
