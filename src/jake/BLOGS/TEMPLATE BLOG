@@ -1,0 +1,109 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          p: "#1f2937",
+          s: "#1E3A8A",
+          l: "#f3f4f6",
+          t: "#5494EC",
+          a: "#f97316",
+          b: "#2563eb",
+          gr: "#6b7280",
+        },
+        screens: {
+          xxsm: "420px",
+          xxxsm: "360px",
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(5px); /* Subtle vertical movement */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards; /* Longer duration, smoother easing */
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const fadeElements = document.querySelectorAll(".fade-on-scroll");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+            observer.unobserve(entry.target); // Stop observing once animated
+          }
+        });
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the element is visible
+      }
+    );
+
+    fadeElements.forEach((el) => observer.observe(el));
+  });
+</script>
+
+<div class="max-w-4xl mx-auto p-3">
+  <h1 class="text-3xl font-bold mb-6 fade-on-scroll">Occupational Lenses: Explained</h1>
+  <div class="mb-6 flex justify-center fade-on-scroll">
+    <img
+      src="https://www.spex4less.com/media/wysiwyg/xhalf-price-lens-coatings.jpg.pagespeed.ic.pWlFE6ynhT_1.jpg"
+      alt="lens coatings"
+      class="mx-auto h-auto w-full max-w-4xl my-8 rounded-3xl shadow-[0_10px_20px_rgba(0,0,0,0.2)] transition-all duration-700 ease-in hover:shadow-[0_15px_25px_rgba(0,0,0,0.25)] hover:-translate-y-1"
+    />
+  </div>
+  <p class="text-lg mb-6 fade-on-scroll">
+    We've all been there. A few hours into work, and your eyes already feel <span class="italic">tired</span>, <span class="italic">dry</span>, and <span class="italic">strained</span>. Long hours staring at a screen can make eye strain an everyday struggle for most. Thankfully, <a href="/occupational-lenses" class="font-bold text-s underline">occupational lenses</a> are designed to tackle this, relieving discomfort and enhancing clarity to keep you comfortable and focused throughout the day. In this blog, we'll explore what they are, their key benefits, and how they can transform your workday.
+  </p>
+
+  <h2 class="text-2xl font-semibold mb-4 fade-on-scroll">What Causes Cataracts:</h2>
+  <ul class="text-lg mb-6 list-disc pl-5 fade-on-scroll">
+    <li>
+      <span class="font-bold">Aging:</span> Most people over the age of 60 will
+      experience some degree of cataracts.
+    </li>
+    <li>
+      <span class="font-bold">UV Exposure:</span> Prolonged exposure to sunlight
+      can accelerate their development.
+    </li>
+    <li>
+      <span class="font-bold">Lifestyle Factors:</span> Smoking, excessive
+      alcohol consumption, and poor nutrition may also contribute.
+    </li>
+  </ul>
+
+  <h2 class="text-2xl font-semibold mb-4 fade-on-scroll">Managing Cataracts Before Surgery</h2>
+  <p class="text-lg mb-6 fade-on-scroll">
+    If you're living with cataracts but not ready for surgery, there are ways to
+    help improve vision with cataracts pre-surgery:
+  </p>
+
+  <div class="mb-6 flex justify-center fade-on-scroll">
+    <img
+      src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/glasses_choice.webp"
+      alt="cataract surgery"
+      class="mx-auto h-auto"
+    />
+  </div>
+</div>
+
+
+

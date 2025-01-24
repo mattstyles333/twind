@@ -31,10 +31,10 @@
      <h1 class="my-4 text-3xl font-semibold text-slate-800 dark:text-gray-300">
        Production Times
      </h1>
-     <p class="mt-3 text-lg leading-relaxed text-slate-900 dark:text-gray-300">
+     <p class="my-3 text-lg leading-relaxed text-slate-900 dark:text-gray-300">
       The delivery time for your eyewear depends on a few key factors. If you select a standard stock frame, you can generally expect quicker delivery, while exclusive designer frames may take a bit longer due to their specialty nature. Similarly, choosing standard lenses usually results in faster dispatch, whereas specialist lenses may add a slight delay.</p>
       <div class="overflow-x-auto">
-        <table class="w-full table-auto border-separate border border-white text-left text-xs text-gray-500 md:text-base">
+        <table class="w-full table-auto border-separate border border-gray-100 text-left text-xs text-gray-500 md:text-base">
           <thead class="hidden md:table-header-group bg-p text-center uppercase text-white">
             <tr>
               <th scope="col" class="rounded-tl-lg px-2 py-2 md:px-6 md:py-3"></th>
@@ -43,7 +43,7 @@
                   Non Prescription Lenses
                   <button
                     onclick="openNonPrescriptionLensesModal()"
-                    class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-100 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     aria-label="Help"
                   >
                     <span class="sr-only">Help</span>?
@@ -55,7 +55,7 @@
                   Standard Lenses
                   <button
                     onclick="openStockLensesModal()"
-                    class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-100 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     aria-label="Help"
                   >
                     <span class="sr-only">Help</span>?
@@ -67,7 +67,7 @@
                   Specialist Lenses
                   <button
                     onclick="openSpecialistLensesModal()"
-                    class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-300 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-100 bg-white p-1 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     aria-label="Help"
                   >
                     <span class="sr-only">Help</span>?
@@ -77,54 +77,54 @@
             </tr>
           </thead>
           <tbody class="block space-y-8 md:space-y-4 md:table-row-group">
-            <tr class="block rounded-lg overflow-hidden shadow-sm md:shadow-none md:table-row md:rounded-none dark:bg-p border-b">
-              <th scope="row" class="block md:table-cell bg-p text-white md:text-gray-900 w-full md:w-auto px-4 py-3 text-left">
+            <tr class="block rounded-lg overflow-hidden shadow-sm md:shadow-none md:table-row md:rounded-none dark:bg-p">
+              <th scope="row" class="block md:table-cell bg-p text-white w-full md:w-auto px-4 py-3 text-left">
                 <div class="flex items-center">
                   <span class="font-semibold text-base">Stock Frames</span>
                   <button
                     onclick="openStockFramesModal()"
-                    class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-white/30 bg-white/10 hover:bg-white/20 text-white md:border-gray-300 md:bg-white md:text-gray-700 md:hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-b focus:ring-offset-2"
+                    class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-100/30 bg-white/10 hover:bg-white/20 text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-b focus:ring-offset-2"
                     aria-label="Help"
                   >
                     <span class="sr-only">Help</span>?
                   </button>
                 </div>
               </th>
-              <td class="block md:table-cell bg-white dark:bg-gray-800 w-full md:w-auto px-4 py-3 md:px-6 md:py-4 border-t border-gray-100 ">
+              <td class="block md:table-cell bg-l dark:bg-gray-800 w-full md:w-auto px-4 py-3 md:px-6 md:py-4 md:border-0">
                 <span class="inline-block md:hidden text-sm text-gray-500 dark:text-gray-400 mb-1">Non Prescription Lenses:</span>
                 <span class="font-medium text-gray-900 dark:text-white text-base">1-2 days</span>
               </td>
-              <td class="block md:table-cell bg-white dark:bg-gray-800 w-full md:w-auto px-4 py-3 md:px-6 md:py-4 border-t border-gray-100 ">
+              <td class="block md:table-cell bg-l dark:bg-gray-800 w-full md:w-auto px-4 py-3 md:px-6 md:py-4 md:border-0">
                 <span class="inline-block md:hidden text-sm text-gray-500 dark:text-gray-400 mb-1">Standard Lenses:</span>
                 <span class="font-medium text-gray-900 dark:text-white text-base">1-2 days</span>
               </td>
-              <td class="block md:table-cell bg-white dark:bg-gray-800 w-full md:w-auto px-4 py-3 md:px-6 md:py-4 border-t border-gray-100 ">
+              <td class="block md:table-cell bg-l dark:bg-gray-800 w-full md:w-auto px-4 py-3 md:px-6 md:py-4 md:border-0">
                 <span class="inline-block md:hidden text-sm text-gray-500 dark:text-gray-400 mb-1">Specialist Lenses:</span>
                 <span class="font-medium text-gray-900 dark:text-white text-base">4-14 days</span>
               </td>
             </tr>
-            <tr class="block rounded-lg overflow-hidden shadow-sm md:shadow-none md:table-row md:rounded-none dark:bg-p border-b">
-              <th scope="row" class="block md:table-cell bg-p text-white md:text-gray-900 w-full md:w-auto px-4 py-3 text-left">
+            <tr class="block rounded-lg overflow-hidden shadow-sm md:shadow-none md:table-row md:rounded-none dark:bg-p">
+              <th scope="row" class="block md:table-cell bg-p text-white w-full md:w-auto px-4 py-3 text-left">
                 <div class="flex items-center">
                   <span class="font-semibold text-base">Designer Frames</span>
                   <button
                     onclick="openDesignerModal()"
-                    class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-white/30 bg-white/10 hover:bg-white/20 text-white md:border-gray-300 md:bg-white md:text-gray-700 md:hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-b focus:ring-offset-2"
+                    class="ml-2 inline-flex h-6 w-6 items-center justify-center rounded-full border border-gray-100/30 bg-white/10 hover:bg-white/20 text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-b focus:ring-offset-2"
                     aria-label="Help"
                   >
                     <span class="sr-only">Help</span>?
                   </button>
                 </div>
               </th>
-              <td class="block md:table-cell bg-white dark:bg-gray-800 w-full md:w-auto px-4 py-3 md:px-6 md:py-4 border-t border-gray-100 ">
+              <td class="block md:table-cell bg-l dark:bg-gray-800 w-full md:w-auto px-4 py-3 md:px-6 md:py-4 md:border-0">
                 <span class="inline-block md:hidden text-sm text-gray-500 dark:text-gray-400 mb-1">Non Prescription Lenses:</span>
                 <span class="font-medium text-gray-900 dark:text-white text-base">1-14 days</span>
               </td>
-              <td class="block md:table-cell bg-white dark:bg-gray-800 w-full md:w-auto px-4 py-3 md:px-6 md:py-4 border-t border-gray-100 ">
+              <td class="block md:table-cell bg-l dark:bg-gray-800 w-full md:w-auto px-4 py-3 md:px-6 md:py-4 md:border-0">
                 <span class="inline-block md:hidden text-sm text-gray-500 dark:text-gray-400 mb-1">Standard Lenses:</span>
                 <span class="font-medium text-gray-900 dark:text-white text-base">1-14 days</span>
               </td>
-              <td class="block md:table-cell bg-white dark:bg-gray-800 w-full md:w-auto px-4 py-3 md:px-6 md:py-4 border-t border-gray-100 ">
+              <td class="block md:table-cell bg-l dark:bg-gray-800 w-full md:w-auto px-4 py-3 md:px-6 md:py-4 md:border-0">
                 <span class="inline-block md:hidden text-sm text-gray-500 dark:text-gray-400 mb-1">Specialist Lenses:</span>
                 <span class="font-medium text-gray-900 dark:text-white text-base">4-14 days</span>
               </td>
@@ -247,7 +247,84 @@
            lenses, providing you with reliable and affordable vision
            correction.
          </p>
+       <div
+         id="specialistLensesModal"
+         class="fixed inset-0 flex hidden items-center justify-center bg-black bg-opacity-50"
+       >
+         <div
+           class="relative w-full max-w-xl overflow-hidden rounded-lg bg-white p-6 shadow-xl"
+         >
+           <button
+             onclick="closeSpecialistLensesModal()"
+             class="absolute right-4 top-4 text-gray-900 duration-500 ease-in-out hover:text-gray-600"
+           >
+             <svg
+               class="h-6 w-6"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke="currentColor"
+             >
+               <path
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 stroke-width="2"
+                 d="M6 18L18 6M6 6l12 12"
+               />
+             </svg>
+           </button>
+           <h2 class="mb-4 text-2xl font-bold dark:text-gray-800">
+             Specialist Lenses
+           </h2>
+           <p class="mb-4 text-gray-700">
+             Our specialist lenses include high index, high prescription,
+             wrapped, multi-focal, mirrored, polarised, and transition lenses,
+             offering advanced options for various vision needs.
+           </p>
+         </div>
        </div>
+  
+       <!-- Modal for Designer Frames -->
+       <div
+         id="designerModal"
+         class="fixed inset-0 flex hidden items-center justify-center bg-black bg-opacity-50"
+       >
+         <div
+           class="relative w-full max-w-xl overflow-hidden rounded-lg bg-white p-6 shadow-xl"
+         >
+           <button
+             onclick="closeDesignerModal()"
+             class="absolute right-4 top-4 text-gray-900 duration-500 ease-in-out hover:text-gray-600"
+           >
+             <svg
+               class="h-6 w-6"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke="currentColor"
+             >
+               <path
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 stroke-width="2"
+                 d="M6 18L18 6M6 6l12 12"
+               />
+             </svg>
+           </button>
+           <h2 class="mb-4 text-2xl font-bold dark:text-gray-800">
+             Designer Frames
+           </h2>
+           <p class="mb-4 text-gray-700">
+             Our designer frames collection features over 20 well-known brands,
+             including RayBan, Oakley, and Tom Ford. These frames offer a blend
+             of style and quality, ensuring you find the perfect look to suit
+             your taste. For more information and to browse our complete range of
+             designer frames, visit our
+             <a href="/designer-glasses" class="text-blue-500 hover:underline"
+               >designer glasses</a
+             >
+             page.
+           </p>
+         </div>
+       </div>/div>
      </div>
 
      <!-- Modal for Specialist Lenses -->
@@ -329,6 +406,8 @@
          </p>
        </div>
      </div>
+     </div>
+     <section>
 
      <h2 class="my-4 text-3xl font-semibold text-slate-800 dark:text-gray-300">
        Shipping Methods
@@ -349,7 +428,6 @@
        Tracking Options
      </h3>
      <p class="text-lg leading-relaxed">Standard Delivery - £4.95</p>
-   <section>
      <div class="md:container mx-auto py-4">
        <h2
          class="my-4 text-3xl font-semibold text-slate-800 dark:text-gray-300"
@@ -360,10 +438,9 @@
         <table class="w-full table-auto border-separate border border-white text-left text-xs text-gray-500 md:text-base">
           <thead class="bg-p text-xxs text-center uppercase text-gray-700 text-white">
             <tr>
-              <th scope="col" class="rounded-tl-lg px-2 py-2 md:px-6 md:py-3">Country</th>
+              <th scope="col" class="rounded-tl-lg px-2 py-2 md:px-6 md:py-3">Country*</th>
               <th scope="col" class="px-2 py-2 md:px-6 md:py-3">Shipping Time</th>
-              <th scope="col" class="px-2 py-2 md:px-6 md:py-3">Estimated Cost</th>
-              <th scope="col" class="rounded-tr-lg px-2 py-2 md:px-6 md:py-3">Customs Paid</th>
+              <th scope="col" class="rounded-tr-lg px-2 py-2 md:px-6 md:py-3">Estimated Cost</th>
             </tr>
           </thead>
           <tbody>
@@ -438,17 +515,6 @@
             </tr>
             <tr>
               <th scope="row" class="bg-l px-2 py-2 font-bold text-gray-900 md:px-6 md:py-4">
-                Customs Charges Paid
-              </th>
-              <td class="bg-l px-2 py-2 font-bold text-gray-600 md:px-6 md:py-4">
-                5 - 7 Working Days
-              </td>
-              <td class="bg-l px-2 py-2 md:px-6 font-bold text-gray-600 md:py-4">
-                £15.95 - £19.95
-              </td>
-            </tr>
-            <tr>
-              <th scope="row" class="bg-l px-2 py-2 font-bold text-gray-900 md:px-6 md:py-4">
                 India, Kenya, Nigeria, Pakistan, South Africa, Rest of Africa, Asia, Rest of Middle East
               </th>
               <td class="bg-l px-2 py-2 md:px-6 text-gray-600 font-bold md:py-4">
@@ -461,11 +527,17 @@
           </tbody>
         </table>
       </div>
+      <p class="mt-6 text-gray-700 dark:text-gray-300 font-bold">*Times shown are for delivery after dispatch. Production times vary by prescription and lens type.</p>
       
-       <p class="mt-6 text-gray-700 dark:text-gray-300">
-         Note: All shipments shipped outside of the UK will be shipped with
-         Expedited shipping. Customers are responsible for all import duties and customs charges. We are not liable for these fees.
+       <p class="mt-6 text-gray-900 dark:text-gray-300">
+         <span class="font-bold">Note:</span> Customs charges <span class="font-bold">are not</span> covered for certain countries within our shipping regions. This includes the following:
        </p>
+       <p class="mt-4 text-gray-900 dark:text-gray-300">
+         Belgium, Bulgaria, Croatia, Czech Republic, Denmark, Estonia, Finland, Gibraltar, Greece, Hungary, Italy, Latvia, Lithuania, Netherlands, Poland, Russia, Serbia, Slovakia, Slovenia, Sweden, Ukraine
+       </p>
+         <p class="mt-8"><strong>Need Assistance?</strong></p>
+<p class="mt-2">If you're unsure whether customs charges apply to your country or have any questions about the information above, we're here to help! Feel free to email us at <a href="mailto:info@spex4less.com" class="text-t hover:text-b transition-colors duration-200">info@spex4less.com</a> or call our friendly team on <strong>0151 632 6611</strong>.</p>
+
      </div>
    </section>
  </section>
