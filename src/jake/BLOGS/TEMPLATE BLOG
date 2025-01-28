@@ -1,3 +1,4 @@
+<head>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
@@ -20,7 +21,8 @@
     },
   };
 </script>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 <style>
   @keyframes fadeIn {
     from {
@@ -61,49 +63,480 @@
   });
 </script>
 
-<div class="max-w-4xl mx-auto p-3">
-  <h1 class="text-3xl font-bold mb-6 fade-on-scroll">Occupational Lenses: Explained</h1>
+<div class="max-w-4xl mx-auto p-4">
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 mb-4 fade-on-scroll">Occupational Lenses: The Solution You May Have Missed</h1>
+  
   <div class="mb-6 flex justify-center fade-on-scroll">
     <img
-      src="https://www.spex4less.com/media/wysiwyg/xhalf-price-lens-coatings.jpg.pagespeed.ic.pWlFE6ynhT_1.jpg"
+      src="https://www.spex4less.com/media/mf_webp/jpeg/media/wysiwyg/occuimg2.webp"
+      loading="lazy"
       alt="lens coatings"
-      class="mx-auto h-auto w-full max-w-4xl my-8 rounded-3xl shadow-[0_10px_20px_rgba(0,0,0,0.2)] transition-all duration-700 ease-in hover:shadow-[0_15px_25px_rgba(0,0,0,0.25)] hover:-translate-y-1"
+      class="mx-auto w-full h- object-cover my-0 shadow-md transition-transform duration-300 ease-in-out rounded-lg sm:rounded-2xl"
     />
   </div>
-  <p class="text-lg mb-6 fade-on-scroll">
-    We've all been there. A few hours into work, and your eyes already feel <span class="italic">tired</span>, <span class="italic">dry</span>, and <span class="italic">strained</span>. Long hours staring at a screen can make eye strain an everyday struggle for most. Thankfully, <a href="/occupational-lenses" class="font-bold text-s underline">occupational lenses</a> are designed to tackle this, relieving discomfort and enhancing clarity to keep you comfortable and focused throughout the day. In this blog, we'll explore what they are, their key benefits, and how they can transform your workday.
+
+  <div class="mb-6 flex justify-center fade-on-scroll bg-gray-100 p-4 rounded-lg">
+    <p class="text-base sm:text-md leading-relaxed fade-on-scroll">
+        We've all been there. A few hours into your project, and your eyes start to feel <span class="italic">tired</span>, <span class="italic">dry</span>, and <span class="italic">strained</span>.  Whether you're designing, painting, or powering through spreadsheets, focusing on the fine details can take a toll on your vision. That's where <a href="/occupational-lenses" class="font-bold text-s underline hover:text-blue-600 transition duration-300">occupational lenses</a> come in. In this blog, we'll explore what they are, and how these lenses can enhance your productivity.
+    </p>
+  </div>
+
+  <h2 class="text-2xl sm:text-3xl font-semibold mb-4 fade-on-scroll text-slate-800">What Are Occupational Lenses?</h2>
+  <p class="text-base sm:text-lg mb-4 leading-relaxed fade-on-scroll">
+    
+As the name suggests, occupational lenses are tailored to support your vision for your occupation and your passions. These lenses, often referred to as "office lenses," are a degressive lens designed for those who frequently switch between glasses throughout the day.  Ideal for close-up and mid-range tasks like computer use, reading, and crafting, blending two prescriptions into a single lens. This eliminates the hassle of juggling multiple pairs of glasses and provides consistent visual comfort and focus, helping you stay productive and at ease.
   </p>
-
-  <h2 class="text-2xl font-semibold mb-4 fade-on-scroll">What Causes Cataracts:</h2>
-  <ul class="text-lg mb-6 list-disc pl-5 fade-on-scroll">
-    <li>
-      <span class="font-bold">Aging:</span> Most people over the age of 60 will
-      experience some degree of cataracts.
-    </li>
-    <li>
-      <span class="font-bold">UV Exposure:</span> Prolonged exposure to sunlight
-      can accelerate their development.
-    </li>
-    <li>
-      <span class="font-bold">Lifestyle Factors:</span> Smoking, excessive
-      alcohol consumption, and poor nutrition may also contribute.
-    </li>
-  </ul>
-
-  <h2 class="text-2xl font-semibold mb-4 fade-on-scroll">Managing Cataracts Before Surgery</h2>
-  <p class="text-lg mb-6 fade-on-scroll">
-    If you're living with cataracts but not ready for surgery, there are ways to
-    help improve vision with cataracts pre-surgery:
-  </p>
-
+  
+  <h2 class="text-2xl sm:text-3xl font-semibold mb-4 fade-on-scroll text-slate-800">Are Occupational lenses for Me?</h2>
   <div class="mb-6 flex justify-center fade-on-scroll">
     <img
-      src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/glasses_choice.webp"
+      src="https://www.spex4less.com/media/mf_webp/jpeg/media/wysiwyg/bannerimgocc.webp"
+      loading="lazy"
       alt="cataract surgery"
-      class="mx-auto h-auto"
+      class="mx-auto w-full h-auto sm:w-full md:w-auto object-cover my-0 shadow-md transition-transform duration-300 ease-in-out rounded-lg sm:rounded-3xl"
     />
+  </div>
+
+  <p class="text-base sm:text-lg mb-4 leading-relaxed fade-on-scroll">
+    Choosing the right lenses can feel overwhelming with so many options available. To help narrow it down, keep in mind how you use your glasses day-to-day:
+  </p>
+
+  <p class="text-base sm:text-lg mb-4 leading-relaxed fade-on-scroll">
+    In our view, occupational lenses are the perfect tool for professionals and hobbyists alike, offering optimised clarity and comfort for focus-heavy endeavors. If your day involves tasks like reading, working at a computer, or detailed work such as crafting or painting, occupational lenses could be an excellent fit. Their wider corridors are specifically crafted to deliver sharper vision and enhanced comfort for tasks at arm's length and up close, making them especially practical for the multitaskers out there, while ensuring unparalleled comfort during prolonged sessions.
+
+
+  </p>
+
+  <p class="text-base sm:text-lg mb-4 leading-relaxed fade-on-scroll">
+    Varifocals, also known as progressive lenses, offer correction for close, mid-range, and far distances like driving, making them versatile for everyday wear. However, they often prioritise distance vision, so if you're primarily using your glasses for computer use or detailed work, the narrower viewing area for mid-range and close-up tasks may feel a little limiting. <span class="italic">If you think varifocals might be the right fit for you, take a look at our dedicated page <a href="https://www.spex4less.com/varifocal-glasses" class="text-blue-500 underline hover:text-blue-700">here</a>.</span>
+  </p>
+
+  <p class="text-base sm:text-lg mb-4 leading-relaxed fade-on-scroll">
+    Occupational lenses excel when your focus is mainly on what's in front of you, offering a wider viewing area for near and mid-range work. Whether you're tackling detailed tasks or need a solution for long hours at a desk, choosing lenses that align with your daily routine ensures better comfort and clarity.
+  </p>
+
+  <h3 class="text-2xl sm:text-3xl font-semibold mb-4 fade-on-scroll text-slate-800">Explore Our Range of Occupational Lenses</h3>
+  
+  <p class="text-base sm:text-lg mb-4 leading-relaxed fade-on-scroll">
+    We offer a range of occupational lenses tailored to different needs, providing consistent clarity and comfort for a variety of focused tasks. Whether you need a reliable pair of computer glasses, lenses for crafting, or something in between, our selection is designed to support your day-to-day activities with ease.
+  </p>
+
+  <div class="overflow-x-auto">
+    <table class="min-w-full border-collapse border border-gray-300">
+      <thead class="bg-[#1f2937]">
+          <tr>
+              <th class="border border-gray-300 px-4 py-2 text-left text-lg font-semibold text-white">Lens Type</th>
+              <th class="border border-gray-300 px-4 py-2 text-left text-lg font-semibold text-white">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr class="fade-on-scroll opacity-0 transition-opacity duration-700 ease-in">
+              <td class="border border-gray-300 px-4 py-2"><strong>Essilor 2V and 3V</strong></td>
+              <td class="border border-gray-300 px-4 py-2">These lenses offer enhanced clarity with wider viewing zones, making them great for multitasking professionals or hobbyists who need precise focus.</td>
+          </tr>
+          <tr class="fade-on-scroll opacity-0 transition-opacity duration-700 ease-in">
+              <td class="border border-gray-300 px-4 py-2"><strong>Zeiss Office Lens Book</strong></td>
+              <td class="border border-gray-300 px-4 py-2">Perfect for close-up work like reading or intricate crafting, with an emphasis on sharp near vision.</td>
+          </tr>
+          <tr class="fade-on-scroll opacity-0 transition-opacity duration-700 ease-in">
+              <td class="border border-gray-300 px-4 py-2"><strong>Zeiss Office Lens Room</strong></td>
+              <td class="border border-gray-300 px-4 py-2">Designed for those who frequently interact in larger office spaces or need clear vision across a desk, room, and screen.</td>
+          </tr>
+          <tr class="fade-on-scroll opacity-0 transition-opacity duration-700 ease-in">
+              <td class="border border-gray-300 px-4 py-2"><strong>Zeiss Office Lens Plus Near</strong></td>
+              <td class="border border-gray-300 px-4 py-2">Ideal for anyone who spends extended periods on close-up tasks, offering exceptional near clarity with smooth transitions to mid-range.</td>
+          </tr>
+          <tr class="fade-on-scroll opacity-0 transition-opacity duration-700 ease-in">
+              <td class="border border-gray-300 px-4 py-2"><strong>WLC Nova Office</strong></td>
+              <td class="border border-gray-300 px-4 py-2">A reliable and budget-friendly option for those seeking clear, comfortable vision during computer use or reading.</td>
+          </tr>
+      </tbody>
+    </table>
+
+    <p class="mt-4 text-base sm:text-lg leading-relaxed"><strong>Ready to order?</strong> You can view our Occupational friendly frames <a href="https://www.spex4less.com/occupational-lenses" class="text-blue-500 underline hover:text-blue-700">here</a>.</p>
+  </div>
+  <div class="mx-auto py-8">
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <a
+        href="/glasses"
+        class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md border border-gray-200 bg-white px-4 py-2 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
+      >
+        <span class="mx-auto">Glasses</span>
+      </a>
+      <a
+        href="/varifocal-glasses"
+        class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md border border-gray-200 bg-white px-4 py-2 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
+      >
+        <span class="mx-auto">Varifocal Glasses</span>
+      </a>
+      <a
+        href="/reglaze-customer-frames"
+        class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md border border-gray-200 bg-white px-4 py-2 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
+      >
+        <span class="mx-auto">Reglaze</span>
+      </a>
+      <a
+        href="https://www.spex4less.com/occupational-lenses"
+        class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md border border-gray-200 bg-white px-4 py-2 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
+      >
+        <span class="mx-auto">Occupational</span>
+      </a>
+    </div>
+
+  <p class="mb-3 pt-10 text-base sm:text-lg leading-relaxed">
+    <strong>Still unsure?</strong> Our dedicated customer support team is here to help! Whether you need guidance or have questions about which lens option is right for you, you can reach us via live chat, email, or phone. We're available Monday to Friday, 9am-5pm, and we'd be delighted to assist you in finding the perfect fit.
+  </p>
+
+</div>
+<div class="mx-auto pb-8">
+    <div class="mx-auto">
+<div class="text-center">
+  <h2
+    class=" mb-8 text-left md:text-center text-2xl font-bold capitalize tracking-tight text-slate-800 dark:text-gray-300 md:text-3xl lg:text-4xl"
+  >
+    Got a Question we haven't answered?
+  </h2>
+</div>
+
+<div class="grid items-center gap-6 lg:grid-cols-2 lg:gap-8">
+  <!-- Card -->
+
+  <div
+    class="dark:bg-p flex flex-col rounded-xl border bg-white p-4  "
+  >
+    <section>
+      <div class="mx-auto max-w-7xl md:container">
+        <div class="mb-6 flex w-full flex-col rounded-xl">
+          <!-- The Grid -->
+          <form id="contactForm">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <!-- First row -->
+              <div class="rounded-lg border">
+                <label for="first_name" class="sr-only">First Name</label>
+                <input
+                  type="text"
+                  name="first_name"
+                  id="first_name"
+                  class="block w-full rounded-md border-gray-200 bg-gray-100 px-4 py-3 text-sm placeholder-gray-600 focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="First Name *"
+                  required
+                />
+              </div>
+              <div class="rounded-lg border">
+                <label for="last_name" class="sr-only">Last Name</label>
+                <input
+                  type="text"
+                  name="last_name"
+                  id="last_name"
+                  class="block w-full rounded-md border-gray-200 bg-gray-100 px-4 py-3 text-sm placeholder-gray-600 focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="Last Name *"
+                  required
+                />
+              </div>
+
+              <!-- Second row -->
+              <div class="rounded-lg border">
+                <label for="phone" class="sr-only">Phone Number</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  class="block w-full rounded-md border-gray-200 bg-gray-100 px-4 py-3 text-sm placeholder-gray-600 focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="Phone Number"
+                />
+              </div>
+              <div class="rounded-lg border">
+                <label for="email" class="sr-only">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  class="block w-full rounded-md border-gray-200 bg-gray-100 px-4 py-3 text-sm placeholder-gray-600 focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="Email *"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Third row -->
+            <div class="col-span-2 mt-4 rounded-lg border">
+              <label for="message" class="sr-only">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                class="block w-full rounded-md border-gray-200 bg-gray-100 px-4 py-3 text-sm placeholder-gray-600 focus:border-blue-500 focus:ring-blue-500"
+                placeholder="Message *"
+                required
+              ></textarea>
+            </div>
+
+            <div
+              class="cf-turnstile mt-4"
+              data-sitekey="0x4AAAAAAAPYeTWIJTl3uc3c"
+              data-theme="light"
+              data-callback="onTurnstileSuccess"
+            ></div>
+            <input
+              type="hidden"
+              id="turnstileToken"
+              name="cf-turnstile-response"
+            />
+
+            <div class="mt-4 grid">
+              <button
+                type="submit"
+                class="hover:bg-s inline-flex items-center justify-center gap-x-2 rounded-md border border-transparent bg-slate-900 py-2 text-center text-sm font-medium text-white transition duration-1000 ease-in-out md:gap-x-3 md:py-3 lg:text-base"
+              >
+                Submit
+              </button>
+            </div>
+
+            <div class="mt-2 text-center md:mt-3">
+              <p class="text-xs text-gray-500 dark:text-gray-200 md:text-sm">
+                We'll get back to you as soon as we can, usually within 1
+                business day
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- End Card -->
+
+  <div class="divide-y divide-gray-200">
+    <!-- Icon Block -->
+    <div class="flex gap-6 py-6">
+      <svg
+        width="25"
+        height="25"
+        viewBox="0 0 828 828"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="fill-s mb-6"
+      >
+        <path
+          d="M0.500325 162.812L0.500323 162.811C0.472712 158.127 2.21311 151.832 5.43143 144.44C8.64441 137.059 13.3095 128.63 19.0828 119.69C30.6292 101.812 46.5869 81.9249 64.162 64.3499C81.7406 46.7713 101.08 30.7925 118.075 19.2121C126.573 13.4216 134.476 8.73656 141.273 5.50118C148.087 2.25781 153.732 0.5 157.732 0.5C159.68 0.5 162.097 1.19718 164.934 2.57627C167.765 3.95195 170.977 5.98799 174.506 8.62198C181.563 13.8897 189.847 21.5192 198.817 30.9499C216.755 49.8092 237.4 75.8312 256.416 104.459C273.363 129.985 286.113 149.321 295.259 164.899C304.406 180.48 309.926 192.265 312.438 202.691C317.447 223.488 310.521 238.976 296.061 268.66L266.566 329.174L266.412 329.491L266.658 329.743L380.365 445.821L494.09 561.918L494.34 562.173L494.663 562.019L557.191 532.186C588.037 517.478 603.886 510.373 624.838 515.321C635.339 517.801 647.148 523.317 662.773 532.496C678.396 541.674 697.798 554.49 723.485 571.546C752.131 590.572 778.167 611.226 797.036 629.171C806.471 638.145 814.104 646.431 819.375 653.491C822.01 657.021 824.047 660.234 825.423 663.065C826.803 665.903 827.5 668.32 827.5 670.267C827.5 675.336 825.656 681.607 822.296 688.73C818.94 695.844 814.093 703.766 808.133 712.124C796.213 728.839 779.869 747.26 762.19 764.388C744.511 781.515 725.512 797.336 708.286 808.857C699.672 814.617 691.512 819.297 684.188 822.528C676.856 825.762 670.401 827.527 665.188 827.5C641.13 827.373 612.708 819.93 581.368 806.59C550.033 793.253 515.811 774.035 480.158 750.389C408.854 703.098 331.864 638.118 260.873 567.127C189.882 496.136 124.902 419.146 77.6105 347.842C53.9648 312.189 34.7467 277.967 21.4097 246.632C8.07045 215.292 0.626888 186.87 0.500325 162.812Z"
+        />
+      </svg>
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-300">
+          Phone
+        </h3>
+        <p class="mt-1 text-lg text-gray-500 dark:text-gray-200">
+          We're here to help with any questions or concerns.
+        </p>
+        <a
+          class="mt-2 inline-flex items-center gap-x-2 text-lg font-medium text-gray-600 hover:text-gray-800 dark:text-gray-200 dark:hover:text-gray-400"
+          href="tel:01516326611"
+          >0151 632 6611
+
+          <svg
+            class="h-2.5 w-2.5 transition ease-in-out group-hover:translate-x-1"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z"
+              fill="currentColor"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <!-- End Icon Block -->
+
+    <!-- Icon Block -->
+    <div class="flex gap-6 py-6">
+      <svg
+        width="25"
+        height="25"
+        viewBox="0 0 513 360"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="fill-s mb-6"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M36.14 0.984279C19.053 4.33928 4.364 19.3303 1.053 36.7933C-0.351 44.1933 -0.351 315.611 1.053 323.011C4.459 340.971 18.963 355.475 36.923 358.881C44.367 360.293 467.697 360.293 475.141 358.881C493.101 355.475 507.605 340.971 511.011 323.011C512.415 315.611 512.415 44.1933 511.011 36.7933C507.605 18.8333 493.101 4.32928 475.141 0.923282C468.447 -0.346718 42.614 -0.287721 36.14 0.984279ZM372.642 117.464C311.235 178.573 283.038 205.968 279.064 208.383C264.915 216.978 247.149 216.978 233 208.383C229.026 205.968 200.829 178.573 139.422 117.464L51.532 30.0013H256.032H460.532L372.642 117.464ZM114.528 134.838L159.524 179.903L105.528 233.967C75.83 263.702 46.695 292.552 40.782 298.078L30.032 308.125V179.896V51.6673L49.782 70.7203C60.644 81.1993 89.78 110.052 114.528 134.838ZM481.789 244.152L481.532 308.402L417.032 244.129L352.532 179.856L417.032 115.643L481.532 51.4293L481.789 115.666C481.931 150.996 481.931 208.814 481.789 244.152ZM191.551 211.96C209.648 230.197 220.133 237.457 235.032 242.067C241.31 244.01 244.732 244.388 256.032 244.388C271.406 244.388 279.425 242.516 291.032 236.221C299.628 231.558 304.169 227.844 318.74 213.557L330.949 201.587L350.74 220.68C361.626 231.181 390.78 260.052 415.528 284.837L460.524 329.902L256.028 329.864L51.532 329.826L115.794 265.864C151.139 230.685 180.397 201.902 180.813 201.902C181.229 201.902 186.061 206.428 191.551 211.96Z"
+        />
+      </svg>
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-300">
+          Contact us by email
+        </h3>
+        <p class="mt-1 text-lg text-gray-500 dark:text-gray-200">
+          If you wish to write us an email instead please use.
+        </p>
+        <a
+          class="mt-2 inline-flex items-center gap-x-2 text-lg font-medium text-gray-600 hover:text-gray-800 dark:text-gray-200 dark:hover:text-gray-400"
+          href="mailto:info@spex4less.com"
+        >
+          info@spex4less.com
+          <svg
+            class="h-2.5 w-2.5 transition ease-in-out group-hover:translate-x-1"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z"
+              fill="currentColor"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
   </div>
 </div>
+<script>
+  function onTurnstileSuccess(token) {
+    document.getElementById("turnstileToken").value = token;
+  }
+
+  document
+    .getElementById("contactForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      const token = document.getElementById("turnstileToken").value;
+      if (!token) {
+        alert("Please complete the Turnstile verification.");
+        return;
+      }
+
+      const formData = new FormData(this);
+      const jsonData = {};
+
+      formData.forEach((value, key) => {
+        jsonData[key] = value;
+      });
+
+      jsonData["cf-turnstile-response"] = token;
+
+      fetch("https://n8n.s4l.link/webhook/contact-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(jsonData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.message) {
+            document.getElementById("contactForm").reset(); // Optional: Reset the form after submission
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    });
+</script>
+</div>
+
+  </div>
+<section class="mx-auto"></section>
+    <h3
+      class="text-2xl font-bold text-slate-800 dark:text-gray-300 md:text-center md:text-3xl lg:text-4xl"
+    >
+      Helpful Links
+    </h3>
+    <div
+      class="mt-6 grid grid-cols-2 gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4"
+    >
+      <a
+        href="/about-your-prescription"
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl "
+      >
+        <img
+          class="absolute h-full w-full rounded-xl object-cover"
+          src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/prescription_block.webp"
+          width="340"
+          height="510"
+          loading="lazy"
+          alt="Reading Glasses page link with prescription information and text overlay"
+        />
+        <div
+          class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-3 pt-11 md:p-7"
+        >
+          <div class="text-left text-lg font-bold leading-7 text-white">
+            How To Read Your Prescription
+          </div>
+        </div>
+      </a>
+      <a
+        href="/exchange-or-return"
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl "
+      >
+        <img
+          class="absolute h-full w-full rounded-xl object-cover"
+          src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/exchange_block.webp"
+          width="480"
+          height="320"
+          loading="lazy"
+          alt="Bifocal Glasses section with Exchange & Return policy information"
+        />
+        <div
+          class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-3 pt-11 md:p-7"
+        >
+          <div class="text-left text-lg font-bold leading-7 text-white">
+            Exchange & Return
+          </div>
+        </div>
+      </a>
+      <a
+        href="/how-to-choose-lens-coatings"
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl "
+      >
+        <img
+          class="absolute h-full w-full rounded-xl object-cover"
+          src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/explore-coatings.webp"
+          width="480"
+          height="320"
+          loading="lazy"
+          alt="Bifocal Glasses section with Exchange & Return policy information"
+        />
+        <div
+          class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-3 pt-11 md:p-7"
+        >
+          <div class="text-left text-lg font-bold leading-7 text-white">
+            Lens Coatings
+          </div>
+        </div>
+      </a>
+      <a
+        href="/lens"
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl "
+      >
+        <img
+          class="absolute h-full w-full rounded-xl object-cover"
+          src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/explore-index.webp"
+          width="480"
+          height="320"
+          loading="lazy"
+          alt="Bifocal Glasses section with Exchange & Return policy information"
+        />
+        <div
+          class="absolute bottom-0 w-full rounded-b-xl bg-gradient-to-t from-gray-800/75 to-transparent p-3 pt-11 md:p-7"
+        >
+          <div class="text-left text-lg font-bold leading-7 text-white">
+            Lens Index
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
 
 
 
