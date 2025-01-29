@@ -64,7 +64,7 @@
 </script>
 
 <div class="max-w-4xl mx-auto p-4">
-  <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 mb-4 fade-on-scroll">Occupational Lenses: The Solution You May Have Missed</h1>
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 mb-4 fade-on-scroll">Occupational Lenses: Secrets to the Perfect Office Lens</h1>
   
   <div class="mb-6 flex justify-center fade-on-scroll">
     <img
@@ -75,86 +75,375 @@
     />
   </div>
 
-  <div class="mb-6 flex justify-center fade-on-scroll bg-gray-100 p-4 rounded-lg">
-    <p class="text-base sm:text-md leading-relaxed fade-on-scroll">
-        We've all been there. A few hours into your project, and your eyes start to feel <span class="italic">tired</span>, <span class="italic">dry</span>, and <span class="italic">strained</span>.  Whether you're designing, painting, or powering through spreadsheets, focusing on the fine details can take a toll on your vision. That's where <a href="/occupational-lenses" class="font-bold text-s underline hover:text-blue-600 transition duration-300">occupational lenses</a> come in. In this blog, we'll explore what they are, and how these lenses can enhance your productivity.
+  <div class="p-4 rounded-lg shadow-md mb-4">
+    <p class="text-xl leading-relaxed">
+        For many of us, work means long hours at a desk, staring at screens, or tackling detailed projects, this can leave our eyes feeling <strong>tired</strong> and <strong>strained</strong>. <a href="https://www.spex4less.com/occupational-lenses" class="text-blue-500 underline hover:text-blue-700">Occupational lenses</a> are specifically designed for office workers and professionals, providing clarity and comfort throughout the day. In this blog, we'll explore how these lenses can enhance your productivity.
     </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a 
+        href="#rankings" 
+        class="w-full sm:w-auto bg-s text-white px-6 py-3 rounded-lg hover:bg-p transition-all duration-300 ease-in-out text-center font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+      >
+        Best Occupational Lenses
+      </a>
+      <a 
+        href="#secrets" 
+        class="w-full sm:w-auto bg-s text-white px-6 py-3 rounded-lg hover:bg-p transition-all duration-300 ease-in-out text-center font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+      >
+        Skip to the Secrets
+      </a>
+    </div>
   </div>
 
-  <h2 class="text-2xl sm:text-3xl font-semibold mb-4 fade-on-scroll text-slate-800">What Are Occupational Lenses?</h2>
-  <p class="text-base sm:text-lg mb-4 leading-relaxed fade-on-scroll">
+  <section>
+  <h2 class="text-2xl sm:text-3xl font-semibold mb-4 fade-on-scroll text-slate-800">Why Choose Occupational Lenses?</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div class="fade-on-scroll flex items-center h-full">
+      <img
+        src="https://www.spex4less.com/media/wysiwyg/bannerimgocc_1.jpeg"
+        loading="lazy"
+        alt="cataract surgery"
+        class="w-full h-full object-cover shadow-md transition-transform duration-300 ease-in-out rounded-lg sm:rounded-3xl"
+      />
+    </div>
     
-As the name suggests, occupational lenses are tailored to support your vision for your occupation and your passions. These lenses, often referred to as "office lenses," are a degressive lens designed for those who frequently switch between glasses throughout the day.  Ideal for close-up and mid-range tasks like computer use, reading, and crafting, blending two prescriptions into a single lens. This eliminates the hassle of juggling multiple pairs of glasses and provides consistent visual comfort and focus, helping you stay productive and at ease.
-  </p>
-  
-  <h2 class="text-2xl sm:text-3xl font-semibold mb-4 fade-on-scroll text-slate-800">Are Occupational lenses for Me?</h2>
-  <div class="mb-6 flex justify-center fade-on-scroll">
-    <img
-      src="https://www.spex4less.com/media/mf_webp/jpeg/media/wysiwyg/bannerimgocc.webp"
-      loading="lazy"
-      alt="cataract surgery"
-      class="mx-auto w-full h-auto sm:w-full md:w-auto object-cover my-0 shadow-md transition-transform duration-300 ease-in-out rounded-lg sm:rounded-3xl"
-    />
+    <div class="shadow-md p-4 rounded-lg"> 
+      <span class="text-lg sm:text-xl text-left fade-on-scroll block mb-4">
+        Have you ever experienced any of the following?     
+      </span>
+
+      <ul class="list-disc mb-6 fade-on-scroll">
+        <li class="mb-3 flex items-center">
+          <span class="w-2 h-2 bg-gray-800 rounded-full mr-3"></span>
+          <span class="text-base sm:text-lg"><strong>Dry eyes</strong> from extended screen time</span>
+        </li>
+        <li class="mb-3 flex items-center">
+          <span class="w-2 h-2 bg-gray-800 rounded-full mr-3"></span>
+          <span class="text-base sm:text-lg"><strong>Eye fatigue</strong> after long work hours</span>
+        </li>
+        <li class="mb-3 flex items-center">
+          <span class="w-2 h-2 bg-gray-800 rounded-full mr-3"></span>
+          <span class="text-base sm:text-lg"><strong>Eyestrain</strong> when focusing on close tasks</span>
+        </li>
+        <li class="mb-3 flex items-center">
+          <span class="w-2 h-2 bg-gray-800 rounded-full mr-3"></span>
+          <span class="text-base sm:text-lg"><strong>Tired eyes</strong> during detailed work</span>
+        </li>
+        <li class="mb-3 flex items-center">
+          <span class="w-2 h-2 bg-gray-800 rounded-full mr-3"></span>
+          <span class="text-base sm:text-lg"><strong>Headaches</strong> from visual stress</span>
+        </li>
+      </ul>
+      <p class="text-base sm:text-lg leading-relaxed fade-on-scroll mb-4">
+        Occupational lenses might be the solution. Let's explore how they can help.
+      </p>
+    </div>
   </div>
+</section>
+<section>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center pt-4">
+    <div class="shadow-md p-4 rounded-lg"> 
+      <h2 class="text-xl sm:text-3xl font-semibold mb-4 fade-on-scroll text-slate-800 ">What Are Occupational Lenses?</h2>
+      <p class="text-base sm:text-lg mb-4 leading-relaxed fade-on-scroll">
+        Occupational lenses, also known as <strong>office lenses</strong> or <strong>computer glasses</strong>, are degressive lenses designed for those who need sharp intermediate and near vision throughout the day. Similar to varifocals, they provide a smooth transition between prescriptions but focus on enhancing computer work, reading, and other close-to-mid-range tasks, rather than distance vision. By reducing the need to switch between glasses, they offer comfortable, strain-free vision, perfect for office workers, crafters, and anyone who spends extended periods at a desk or screen.
+      </p>
+    </div>
 
-  <p class="text-base sm:text-lg mb-4 leading-relaxed fade-on-scroll">
-    Choosing the right lenses can feel overwhelming with so many options available. To help narrow it down, keep in mind how you use your glasses day-to-day:
-  </p>
-
-  <p class="text-base sm:text-lg mb-4 leading-relaxed fade-on-scroll">
-    In our view, occupational lenses are the perfect tool for professionals and hobbyists alike, offering optimised clarity and comfort for focus-heavy endeavors. If your day involves tasks like reading, working at a computer, or detailed work such as crafting or painting, occupational lenses could be an excellent fit. Their wider corridors are specifically crafted to deliver sharper vision and enhanced comfort for tasks at arm's length and up close, making them especially practical for the multitaskers out there, while ensuring unparalleled comfort during prolonged sessions.
-
-
-  </p>
-
-  <p class="text-base sm:text-lg mb-4 leading-relaxed fade-on-scroll">
-    Varifocals, also known as progressive lenses, offer correction for close, mid-range, and far distances like driving, making them versatile for everyday wear. However, they often prioritise distance vision, so if you're primarily using your glasses for computer use or detailed work, the narrower viewing area for mid-range and close-up tasks may feel a little limiting. <span class="italic">If you think varifocals might be the right fit for you, take a look at our dedicated page <a href="https://www.spex4less.com/varifocal-glasses" class="text-blue-500 underline hover:text-blue-700">here</a>.</span>
-  </p>
-
-  <p class="text-base sm:text-lg mb-4 leading-relaxed fade-on-scroll">
-    Occupational lenses excel when your focus is mainly on what's in front of you, offering a wider viewing area for near and mid-range work. Whether you're tackling detailed tasks or need a solution for long hours at a desk, choosing lenses that align with your daily routine ensures better comfort and clarity.
-  </p>
-
-  <h3 class="text-2xl sm:text-3xl font-semibold mb-4 fade-on-scroll text-slate-800">Explore Our Range of Occupational Lenses</h3>
-  
-  <p class="text-base sm:text-lg mb-4 leading-relaxed fade-on-scroll">
-    We offer a range of occupational lenses tailored to different needs, providing consistent clarity and comfort for a variety of focused tasks. Whether you need a reliable pair of computer glasses, lenses for crafting, or something in between, our selection is designed to support your day-to-day activities with ease.
-  </p>
-
-  <div class="overflow-x-auto">
-    <table class="min-w-full border-collapse border border-gray-300">
-      <thead class="bg-[#1f2937]">
-          <tr>
-              <th class="border border-gray-300 px-4 py-2 text-left text-lg font-semibold text-white">Lens Type</th>
-              <th class="border border-gray-300 px-4 py-2 text-left text-lg font-semibold text-white">Description</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr class="fade-on-scroll opacity-0 transition-opacity duration-700 ease-in">
-              <td class="border border-gray-300 px-4 py-2"><strong>Essilor 2V and 3V</strong></td>
-              <td class="border border-gray-300 px-4 py-2">These lenses offer enhanced clarity with wider viewing zones, making them great for multitasking professionals or hobbyists who need precise focus.</td>
-          </tr>
-          <tr class="fade-on-scroll opacity-0 transition-opacity duration-700 ease-in">
-              <td class="border border-gray-300 px-4 py-2"><strong>Zeiss Office Lens Book</strong></td>
-              <td class="border border-gray-300 px-4 py-2">Perfect for close-up work like reading or intricate crafting, with an emphasis on sharp near vision.</td>
-          </tr>
-          <tr class="fade-on-scroll opacity-0 transition-opacity duration-700 ease-in">
-              <td class="border border-gray-300 px-4 py-2"><strong>Zeiss Office Lens Room</strong></td>
-              <td class="border border-gray-300 px-4 py-2">Designed for those who frequently interact in larger office spaces or need clear vision across a desk, room, and screen.</td>
-          </tr>
-          <tr class="fade-on-scroll opacity-0 transition-opacity duration-700 ease-in">
-              <td class="border border-gray-300 px-4 py-2"><strong>Zeiss Office Lens Plus Near</strong></td>
-              <td class="border border-gray-300 px-4 py-2">Ideal for anyone who spends extended periods on close-up tasks, offering exceptional near clarity with smooth transitions to mid-range.</td>
-          </tr>
-          <tr class="fade-on-scroll opacity-0 transition-opacity duration-700 ease-in">
-              <td class="border border-gray-300 px-4 py-2"><strong>WLC Nova Office</strong></td>
-              <td class="border border-gray-300 px-4 py-2">A reliable and budget-friendly option for those seeking clear, comfortable vision during computer use or reading.</td>
-          </tr>
-      </tbody>
-    </table>
-
-    <p class="mt-4 text-base sm:text-lg leading-relaxed"><strong>Ready to order?</strong> You can view our Occupational friendly frames <a href="https://www.spex4less.com/occupational-lenses" class="text-blue-500 underline hover:text-blue-700">here</a>.</p>
+    <div class="fade-on-scroll flex items-center justify-center">
+      <img
+        src="https://www.spex4less.com/media/wysiwyg/redesign/standard_graphic.png"
+        loading="lazy"
+        alt="cataract surgery"
+        class="w-full object-contain transition-transform duration-300 ease-in-out rounded-lg sm:rounded-3xl"
+      />
+    </div>
   </div>
+</section>
+
+<section id='rankings' class="pt-10">
+  <h3 class="text-2xl sm:text-3xl font-semibold mb-4 fade-on-scroll text-slate-800">The Best Occupational Lenses</h3>
+
+  <div class="mb-8 fade-on-scroll">
+  <div class="p-6 rounded-xl shadow-lg mb-4 bg-l"> 
+    <div class="flex items-center gap-3 mb-4">
+      <span class="text-s font-bold text-5xl">#1</span>
+      <h3 class="text-2xl font-bold text-slate-800">
+        Nova Office Lens
+        <span class="block text-lg font-normal text-s">The best value & most customizable all-around choice</span>
+      </h3>
+    </div>
+
+    <div class="text-base sm:text-lg leading-relaxed">
+      <p class="mb-6 text-gray-700">
+        The Nova Office offers crystal-clear vision, smooth transitions, and customizable affordability, making it ideal for focused tasks like computer use and reading.
+      </p>
+
+      <div class="bg-white p-6 rounded-lg mb-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+              <svg class="w-6 h-6 text-s" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              Key Features
+            </h4>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Crystal-clear vision</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Smooth transitions between focal points</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Excellent clarity for computer work and reading</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Digi-Contour design for smoother, broader viewing</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+              <svg class="w-6 h-6 text-s" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              Additional Benefits
+            </h4>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Cost-effective without sacrificing quality</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Supports Blue Light and Anti-Glare coatings</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Customizable affordability options</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Starting at just: &#163;129.97</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mb-8 fade-on-scroll">
+  <div class="p-6 rounded-xl shadow-lg mb-4 bg-l"> 
+    <div class="flex items-center gap-3 mb-4">
+      <span class="text-s font-bold text-5xl">#2</span>
+      <h3 class="text-2xl font-bold text-slate-800">
+        Zeiss Office Lenses
+        <span class="block text-lg font-normal text-s">The best value & most customizable all-around choice</span>
+      </h3>
+    </div>
+
+    needs edit <div class="text-base sm:text-lg leading-relaxed">
+      <p class="mb-6 text-gray-700">
+        The Nova Office offers crystal-clear vision, smooth transitions, and customizable affordability, making it ideal for focused tasks like computer use and reading.
+      </p>
+
+      <div class="bg-white p-6 rounded-lg mb-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+              <svg class="w-6 h-6 text-s" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              Key Features
+            </h4>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Crystal-clear vision</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Smooth transitions between focal points</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Excellent clarity for computer work and reading</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Digi-Contour design for smoother, broader viewing</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+              <svg class="w-6 h-6 text-s" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              Additional Benefits
+            </h4>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Cost-effective without sacrificing quality</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Supports Blue Light and Anti-Glare coatings</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Customizable affordability options</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Starting at just: &#163;129.97</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mb-8 fade-on-scroll">
+  <div class="p-6 rounded-xl shadow-lg mb-4 bg-l"> 
+    <div class="flex items-center gap-3 mb-4">
+      <span class="text-s font-bold text-5xl">#3</span>
+      <h3 class="text-2xl font-bold text-slate-800">
+        Essilor Office Lens
+        <span class="block text-lg font-normal text-s">The best value & most customizable all-around choice</span>
+      </h3>
+    </div>
+
+    <div class="text-base sm:text-lg leading-relaxed">
+      <p class="mb-6 text-gray-700">
+        The Nova Office offers crystal-clear vision, smooth transitions, and customizable affordability, making it ideal for focused tasks like computer use and reading.
+      </p>
+
+      needs edit<div class="bg-white p-6 rounded-lg mb-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+              <svg class="w-6 h-6 text-s" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              Key Features
+            </h4>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Wide Intermediate section</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Available with or without distance correction</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Excellent clarity for computer work and reading</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Digi-Contour design for smoother, broader viewing</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+              <svg class="w-6 h-6 text-s" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              Additional Benefits
+            </h4>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Exceptional mid-range vision </span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Supports Blue Light and Anti-Glare coatings</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Customizable affordability options</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-s flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Starting at just: &#163;129.97</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+
+
+
+<section 
+
   <div class="mx-auto py-8">
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
       <a
@@ -183,7 +472,164 @@ As the name suggests, occupational lenses are tailored to support your vision fo
       </a>
     </div>
 
-  <p class="mb-3 pt-10 text-base sm:text-lg leading-relaxed">
+    <section id="secrets" class="pt-10">
+      <h2 class="text-2xl font-bold mb-4 text-slate-800">The Secrets of Occupational Lenses</h2>
+      
+      <p class="text-lg mb-6 leading-relaxed fade-on-scroll">
+        Occupational lenses can make all the difference to your workday comfort and vision. But with so many options, how do you choose the right pair? Here are the key secrets to getting the best lenses for your needs.
+      </p>
+    
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <!-- Secret 1 -->
+        <div class="bg-l rounded-xl p-6 shadow-md fade-on-scroll">
+          <h3 class="text-xl font-semibold mb-4 text-s">1. Coatings Matter</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-s flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span><strong>Blue Light Protection</strong>  Ideal for digital screens, reducing eye strain and improving comfort.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-s flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span><strong>UV Protection</strong>  Even indoors, UV rays can cause long-term damage. A UV coating shields your eyes.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-s flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span><strong>Durability</strong>  If you frequently put on and take off your glasses, an anti-scratch coating is essential.</span>
+            </li>
+          </ul>
+        </div>
+    
+        <!-- Secret 2 -->
+        <div class="bg-l rounded-xl p-6 shadow-md fade-on-scroll">
+          <h3 class="text-xl font-semibold mb-4 text-s">2. Lens Weight & Comfort</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-s flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>The index (thickness) of your lenses affects weight. Higher index lenses are thinner and lighter  perfect for all-day wear.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-s flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>If your prescription is stronger, opting for a 1.6 or 1.67 index ensures lightweight comfort.</span>
+            </li>
+          </ul>
+        </div>
+    
+        <!-- Secret 3 -->
+        <div class="bg-l rounded-xl p-6 shadow-md fade-on-scroll">
+          <h3 class="text-xl font-semibold mb-4 text-s">3. Not All Jobs Need the Same Lenses</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-s flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span><strong>Varifocals</strong> If you switch between near, intermediate, and far distances frequently.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-s flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span><strong>Intermediate Lenses</strong> If your work is 100% computer-based, perfect for screen use.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-s flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span><strong>Task-Specific Lenses</strong> For precision work like design or mechanics.</span>
+            </li>
+          </ul>
+        </div>
+    
+        <!-- Secret 4 -->
+        <div class="bg-l rounded-xl p-6 shadow-md fade-on-scroll">
+          <h3 class="text-xl font-semibold mb-4 text-s">4. Big Brands vs. Smart Choices</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-s flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span><strong>Essilor & Zeiss</strong> Trusted names with premium lens tech.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-s flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span><strong>Nova Lenses</strong> High-quality lenses at a better price point cutting-edge performance without the premium price.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Secret 5 -->
+        <div class="bg-l rounded-xl p-6 shadow-md fade-on-scroll">
+          <h3 class="text-xl font-semibold mb-4 text-s">5. Frame Depth Matters</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-s flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Choosing a deep frame allows you to get the most out of your occupational lenses, giving you better vision coverage for different working distances.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-s flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>The frame depth in the center of the lens, where your pupil sits, is crucial. A deeper frame ensures you get the full benefit of the lens design, allowing smooth transitions between focal points and reducing distortion. Without enough depth, your vision may feel restricted, making occupational lenses less effective.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Secret 6 -->
+        <div class="bg-l rounded-xl p-6 shadow-md fade-on-scroll">
+          <h3 class="text-xl font-semibold mb-4 text-s">6. Expert Help for the Perfect Fit</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-s flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Matching your prescription and work needs to the perfect lens isn't always straightforward. Our skilled opticians and optical assistants are here to tailor the best option for you.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-s flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Have questions? Talk to a real person today via phone, email, or live chat, and we'll guide you to the right choice!</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="bg-white rounded-xl p-6 shadow-md text-center mb-8 fade-on-scroll">
+        <h3 class="text-xl font-semibold mb-4 text-slate-800">Find Your Perfect Occupational Glasses</h3>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="https://www.spex4less.com/occupational-lenses" 
+            class="w-full sm:w-auto bg-s text-white px-6 py-3 rounded-lg hover:bg-p transition-all duration-300 ease-in-out text-center font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+          >
+            Explore Occupational Lenses
+          </a>
+          <a 
+            href="#contact" 
+            class="w-full sm:w-auto bg-s text-white px-6 py-3 rounded-lg hover:bg-p transition-all duration-300 ease-in-out text-center font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+          >
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+<section>
+<p class="text-base sm:text-lg mb-4 leading-relaxed fade-on-scroll font-bold"> Choosing the right occupational lenses depends on how you use your glasses daily. If you spend long hours at a desk or doing close-up tasks like crafting or computing, occupational lenses provide wider, sharper vision where you need it most. 
+</section>
+
+  <p class="mb-3 text-base sm:text-lg leading-relaxed">
     <strong>Still unsure?</strong> Our dedicated customer support team is here to help! Whether you need guidance or have questions about which lens option is right for you, you can reach us via live chat, email, or phone. We're available Monday to Friday, 9am-5pm, and we'd be delighted to assist you in finding the perfect fit.
   </p>
 
@@ -238,8 +684,7 @@ As the name suggests, occupational lenses are tailored to support your vision fo
               <div class="rounded-lg border">
                 <label for="phone" class="sr-only">Phone Number</label>
                 <input
-                  type="tel"
-                  name="phone"
+                  type="tel"            How To Read Your Prescription
                   id="phone"
                   class="block w-full rounded-md border-gray-200 bg-gray-100 px-4 py-3 text-sm placeholder-gray-600 focus:border-blue-500 focus:ring-blue-500"
                   placeholder="Phone Number"
@@ -456,8 +901,8 @@ As the name suggests, occupational lenses are tailored to support your vision fo
       class="mt-6 grid grid-cols-2 gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4"
     >
       <a
-        href="/about-your-prescription"
-        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl "
+        href="/about-your-prescription"Choosing the right occupational lenses depends on how you use your glasses daily. If you spend long hours at a desk or doing close-up tasks like crafting or computing, occupational lenses provide wider, sharper vision where you need it most. 
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl"
       >
         <img
           class="absolute h-full w-full rounded-xl object-cover"
@@ -477,7 +922,7 @@ As the name suggests, occupational lenses are tailored to support your vision fo
       </a>
       <a
         href="/exchange-or-return"
-        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl "
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl"
       >
         <img
           class="absolute h-full w-full rounded-xl object-cover"
@@ -497,7 +942,7 @@ As the name suggests, occupational lenses are tailored to support your vision fo
       </a>
       <a
         href="/how-to-choose-lens-coatings"
-        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl "
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl"
       >
         <img
           class="absolute h-full w-full rounded-xl object-cover"
@@ -517,7 +962,7 @@ As the name suggests, occupational lenses are tailored to support your vision fo
       </a>
       <a
         href="/lens"
-        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl "
+        class="relative h-48 rounded-lg shadow-gray-700 duration-1000 ease-in-out hover:-translate-y-6 hover:shadow-xl"
       >
         <img
           class="absolute h-full w-full rounded-xl object-cover"
