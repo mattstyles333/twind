@@ -21,6 +21,7 @@
       },
     };
   </script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <style>
@@ -181,6 +182,8 @@
           Occupational lenses, also known as <strong>office lenses</strong> or
           <strong>computer glasses</strong>, are degressive lenses designed for
           those who need sharp intermediate and near vision throughout the day.
+        </p>
+        <p class="text-base sm:text-lg mb-4 leading-relaxed fade-on-scroll">
           Similar to varifocals, they provide a smooth transition between
           prescriptions but focus on enhancing computer work, reading, and other
           close-to-mid-range tasks, rather than distance vision. By reducing the
@@ -209,385 +212,440 @@
     </h3>
 
     <div class="mb-8 fade-on-scroll">
-      <div class="p-6 rounded-xl shadow-lg mb-4 bg-l">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="text-s font-bold text-5xl">#1</span>
-          <h3 class="text-2xl font-bold text-slate-800">
-            Nova Office Lens
-            <span class="block text-lg font-normal text-s"
-              >The best value & most customizable all-around choice</span
+      <div class="overflow-hidden rounded-xl bg-white shadow-lg">
+        <!-- Header Section -->
+        <div class="bg-s px-6 py-4">
+          <div class="flex flex-col md:flex-row justify-between">
+            <div class="flex items-center gap-4 max-sm:pb-3">
+              <span
+                class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-2xl font-bold text-s"
+                >#1</span
+              >
+              <div>
+                <h3 class="text-xl font-bold text-white sm:text-2xl">
+                  Nova Office Lens
+                </h3>
+                <p class="text-sm text-gray-100 sm:text-base">
+                  The best value & most customizable all-around choice
+                </p>
+              </div>
+            </div>
+            <!-- Price Banner -->
+            <div
+              class="flex hidden items-end pt-2 md:pb-2 space-x-3 max-sm:border-t-2 md:border-b-2 border-gray-200"
             >
-          </h3>
+              <span class="text-gray-50 text-lg">Starting from</span>
+              <span class="text-2xl font-bold text-white">£129.97</span>
+            </div>
+            <div
+              class="flex items-end w-auto py-2 px-4 text-s bg-white rounded-lg space-x-3"
+            >
+              <span class="text-lg font-medium">Starting from</span>
+              <span class="text-2xl font-bold">£129.97</span>
+            </div>
+          </div>
         </div>
 
-        <div class="text-base sm:text-lg leading-relaxed">
-          <p class="mb-6 text-gray-700">
+        <!-- Content Section -->
+        <div class="p-6">
+          <!-- Description -->
+          <p class="mb-6 text-gray-600">
             The Nova Office offers crystal-clear vision, smooth transitions, and
             customizable affordability, making it ideal for focused tasks like
             computer use and reading.
           </p>
 
-          <div class="bg-white p-6 rounded-lg mb-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h4
-                  class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2"
+          <!-- Features Grid -->
+          <div class="grid gap-6 sm:grid-cols-2">
+            <!-- Key Features -->
+            <div class="space-y-4">
+              <div class="flex items-center gap-2">
+                <svg
+                  class="h-5 w-5 text-s"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
                 >
-                  <svg
-                    class="w-6 h-6 text-s"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    />
-                  </svg>
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <h4 class="text-lg font-semibold text-gray-900">
                   Key Features
                 </h4>
-                <ul class="space-y-4">
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Crystal-clear vision</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Smooth transitions between focal points</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Excellent clarity for computer work and reading</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span
-                      >Digi-Contour design for smoother, broader viewing</span
-                    >
-                  </li>
-                </ul>
               </div>
-              <div>
-                <h4
-                  class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2"
-                >
+              <ul class="space-y-3">
+                <li class="flex items-center gap-3">
                   <svg
-                    class="w-6 h-6 text-s"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
                     <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
                     />
                   </svg>
+                  <span class="text-gray-600">Crystal-clear vision</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >Smooth transitions between focal points</span
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >Excellent clarity for computer work and reading</span
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >Digi-Contour design for smoother, broader viewing</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Additional Benefits -->
+            <div class="space-y-4">
+              <div class="flex items-center gap-2">
+                <svg
+                  class="h-5 w-5 text-s"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <h4 class="text-lg font-semibold text-gray-900">
                   Additional Benefits
                 </h4>
-                <ul class="space-y-4">
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Cost-effective without sacrificing quality</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Supports Blue Light and Anti-Glare coatings</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Customizable affordability options</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Starting at just: &#163;129.97</span>
-                  </li>
-                </ul>
               </div>
+              <ul class="space-y-3">
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >Cost-effective without sacrificing quality</span
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >Supports Blue Light and Anti-Glare coatings</span
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >Customizable affordability options</span
+                  >
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="mb-8 fade-on-scroll">
-      <div class="p-6 rounded-xl shadow-lg mb-4 bg-l">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="text-s font-bold text-5xl">#2</span>
-          <h3 class="text-2xl font-bold text-slate-800">
-            Zeiss Office Lenses
-            <span class="block text-lg font-normal text-s"
-              >The best value & most customizable all-around choice</span
+      <div class="overflow-hidden rounded-xl bg-white shadow-lg">
+        <!-- Header Section -->
+        <div class="bg-s px-6 py-4">
+          <div class="flex flex-col md:flex-row justify-between">
+            <div class="flex items-center gap-4 max-sm:pb-3">
+              <span
+                class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-2xl font-bold text-s"
+                >#2</span
+              >
+              <div>
+                <h3 class="text-xl font-bold text-white sm:text-2xl">
+                  Zeiss Office Lens
+                </h3>
+                <p class="text-sm text-gray-100 sm:text-base">
+                  The best value & most customizable all-around choice
+                </p>
+              </div>
+            </div>
+            <!-- Price Banner -->
+            <div
+              class="flex hidden items-end pt-2 md:pb-2 space-x-3 max-sm:border-t-2 md:border-b-2 border-gray-200"
             >
-          </h3>
+              <span class="text-gray-50 text-lg">Starting from</span>
+              <span class="text-2xl font-bold text-white">£129.97</span>
+            </div>
+            <div
+              class="flex items-end w-auto py-2 px-4 text-s bg-white rounded-lg space-x-3"
+            >
+              <span class="text-lg font-medium">Starting from</span>
+              <span class="text-2xl font-bold">£129.97</span>
+            </div>
+          </div>
         </div>
 
-        needs edit
-        <div class="text-base sm:text-lg leading-relaxed">
-          <p class="mb-6 text-gray-700">
+        <!-- Content Section -->
+        <div class="p-6">
+          <!-- Description -->
+          <p class="mb-6 text-gray-600">
             The Nova Office offers crystal-clear vision, smooth transitions, and
             customizable affordability, making it ideal for focused tasks like
             computer use and reading.
           </p>
 
-          <div class="bg-white p-6 rounded-lg mb-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h4
-                  class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2"
+          <!-- Features Grid -->
+          <div class="grid gap-6 sm:grid-cols-2">
+            <!-- Key Features -->
+            <div class="space-y-4">
+              <div class="flex items-center gap-2">
+                <svg
+                  class="h-5 w-5 text-s"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
                 >
-                  <svg
-                    class="w-6 h-6 text-s"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    />
-                  </svg>
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <h4 class="text-lg font-semibold text-gray-900">
                   Key Features
                 </h4>
-                <ul class="space-y-4">
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Crystal-clear vision</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Smooth transitions between focal points</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Excellent clarity for computer work and reading</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span
-                      >Digi-Contour design for smoother, broader viewing</span
-                    >
-                  </li>
-                </ul>
               </div>
-              <div>
-                <h4
-                  class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2"
-                >
+              <ul class="space-y-3">
+                <li class="flex items-center gap-3">
                   <svg
-                    class="w-6 h-6 text-s"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
                     <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
                     />
                   </svg>
+                  <span class="text-gray-600">Crystal-clear vision</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >Smooth transitions between focal points</span
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >Excellent clarity for computer work and reading</span
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span>Digi-Contour design for smoother, broader viewing</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Additional Benefits -->
+            <div class="space-y-4">
+              <div class="flex items-center gap-2">
+                <svg
+                  class="h-5 w-5 text-s"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <h4 class="text-lg font-semibold text-gray-900">
                   Additional Benefits
                 </h4>
-                <ul class="space-y-4">
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Cost-effective without sacrificing quality</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Supports Blue Light and Anti-Glare coatings</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Customizable affordability options</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Starting at just: &#163;129.97</span>
-                  </li>
-                </ul>
               </div>
+              <ul class="space-y-3">
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >Cost-effective without sacrificing quality</span
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >Supports Blue Light and Anti-Glare coatings</span
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >Customizable affordability options</span
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-s flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span>Starting at just: <strong>&#163;129.97</strong></span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -595,193 +653,231 @@
     </div>
 
     <div class="mb-8 fade-on-scroll">
-      <div class="p-6 rounded-xl shadow-lg mb-4 bg-l">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="text-s font-bold text-5xl">#3</span>
-          <h3 class="text-2xl font-bold text-slate-800">
-            Essilor Office Lens
-            <span class="block text-lg font-normal text-s"
-              >The best value & most customizable all-around choice</span
+      <div class="overflow-hidden rounded-xl bg-white shadow-lg">
+        <!-- Header Section -->
+        <div class="bg-s px-6 py-4">
+          <div class="flex flex-col md:flex-row justify-between">
+            <div class="flex items-center gap-4 max-sm:pb-3">
+              <span
+                class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-2xl font-bold text-s"
+                >#3</span
+              >
+              <div>
+                <h3 class="text-xl font-bold text-white sm:text-2xl">
+                  Essilor Office Lens
+                </h3>
+                <p class="text-sm text-gray-100 sm:text-base">
+                  The best value & most customizable all-around choice
+                </p>
+              </div>
+            </div>
+            <!-- Price Banner -->
+            <div
+              class="flex hidden items-end pt-2 md:pb-2 space-x-3 max-sm:border-t-2 md:border-b-2 border-gray-200"
             >
-          </h3>
+              <span class="text-gray-50 text-lg">Starting from</span>
+              <span class="text-2xl font-bold text-white">£129.97</span>
+            </div>
+            <div
+              class="flex items-end w-auto py-2 px-4 text-s bg-white rounded-lg space-x-3"
+            >
+              <span class="text-lg font-medium">Starting from</span>
+              <span class="text-2xl font-bold">£129.97</span>
+            </div>
+          </div>
         </div>
 
-        <div class="text-base sm:text-lg leading-relaxed">
-          <p class="mb-6 text-gray-700">
+        <!-- Content Section -->
+        <div class="p-6">
+          <!-- Description -->
+          <p class="mb-6 text-gray-600">
             The Nova Office offers crystal-clear vision, smooth transitions, and
             customizable affordability, making it ideal for focused tasks like
             computer use and reading.
           </p>
 
-          needs edit
-          <div class="bg-white p-6 rounded-lg mb-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h4
-                  class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2"
+          <!-- Features Grid -->
+          <div class="grid gap-6 sm:grid-cols-2">
+            <!-- Key Features -->
+            <div class="space-y-4">
+              <div class="flex items-center gap-2">
+                <svg
+                  class="h-5 w-5 text-s"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
                 >
-                  <svg
-                    class="w-6 h-6 text-s"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                    />
-                  </svg>
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <h4 class="text-lg font-semibold text-gray-900">
                   Key Features
                 </h4>
-                <ul class="space-y-4">
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Wide Intermediate section</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Available with or without distance correction</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Excellent clarity for computer work and reading</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span
-                      >Digi-Contour design for smoother, broader viewing</span
-                    >
-                  </li>
-                </ul>
               </div>
-              <div>
-                <h4
-                  class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2"
-                >
+              <ul class="space-y-3">
+                <li class="flex items-center gap-3">
                   <svg
-                    class="w-6 h-6 text-s"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
                     <path
-                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
                     />
                   </svg>
+                  <span class="text-gray-600">Wide Intermediate section</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >Available with or without distance correction</span
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >Excellent clarity for computer work and reading</span
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >Digi-Contour design for smoother, broader viewing</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Additional Benefits -->
+            <div class="space-y-4">
+              <div class="flex items-center gap-2">
+                <svg
+                  class="h-5 w-5 text-s"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <h4 class="text-lg font-semibold text-gray-900">
                   Additional Benefits
                 </h4>
-                <ul class="space-y-4">
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Exceptional mid-range vision </span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Supports Blue Light and Anti-Glare coatings</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Customizable affordability options</span>
-                  </li>
-                  <li class="flex items-center gap-3">
-                    <svg
-                      class="w-5 h-5 text-s flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Starting at just: &#163;129.97</span>
-                  </li>
-                </ul>
               </div>
+              <ul class="space-y-3">
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >Exceptional mid-range vision</span
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >Supports Blue Light and Anti-Glare coatings</span
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >Customizable affordability options</span
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="h-5 w-5 flex-shrink-0 text-s"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-600"
+                    >Starting at just: <strong>£129.97</strong></span
+                  >
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -793,25 +889,25 @@
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
       <a
         href="/glasses"
-        class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md border border-gray-200 bg-white px-4 py-2 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
+        class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md border-2 border-gray-300 bg-white px-4 py-2 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
       >
         <span class="mx-auto">Glasses</span>
       </a>
       <a
         href="/varifocal-glasses"
-        class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md border border-gray-200 bg-white px-4 py-2 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
+        class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md border-2 border-gray-300 bg-white px-4 py-2 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
       >
         <span class="mx-auto">Varifocal Glasses</span>
       </a>
       <a
         href="/reglaze-customer-frames"
-        class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md border border-gray-200 bg-white px-4 py-2 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
+        class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md border-2 border-gray-300 bg-white px-4 py-2 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
       >
         <span class="mx-auto">Reglaze</span>
       </a>
       <a
         href="https://www.spex4less.com/occupational-lenses"
-        class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md border border-gray-200 bg-white px-4 py-2 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
+        class="text-p hover:text-s hover:bg-l flex w-full justify-between rounded-md border-2 border-gray-300 bg-white px-4 py-2 text-2xl font-bold shadow-md duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-2xl"
       >
         <span class="mx-auto">Occupational</span>
       </a>
@@ -1156,8 +1252,8 @@
         </div>
       </div>
 
-      <div class="text-center mb-8 fade-on-scroll">
-        <h3 class="text-xl font-semibold mb-4 text-slate-800">
+      <div class="mb-8 fade-on-scroll">
+        <h3 class="text-2xl sm:text-3xl font-semibold mb-4 text-slate-800">
           Find Your Perfect Occupational Glasses
         </h3>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
