@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Add Glide.js CDN links in the head section -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -207,7 +217,19 @@
         <!-- Right-hand sticky div (shown second on mobile and top right on desktop) -->
         <div
           class="order-2 lg:top-4 lg:order-2 lg:col-span-1 lg:flex lg:flex-col xl:sticky"
-          x-data="{ sticky: false }"
+          x-data="{ 
+      sticky: false, 
+      selectedSize: { eye: '54', bridge: '20', arm: '140' }, 
+      selectedColour: 'Black', 
+      colourOptions: { 
+        'Black': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp', 
+        'Havana': 'https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol002_-_c1_1_1_1_1_1.webp', 
+        'Blue': 'https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol003_-_c1_1_1_1_1_1.webp' 
+      },
+      updateColour(colour) {
+        this.selectedColour = colour;
+      }
+    }"
           @scroll.window="sticky = (window.pageYOffset > $el.querySelector('.pb-5').offsetTop)"
         >
           <div
@@ -290,7 +312,11 @@
                   >
                     <div class="flex items-baseline gap-2">
                       <!-- Actual Price -->
-                      <span class="text-3xl font-bold">£24.97 </span>
+                      <span class="text-3xl font-bold">£24.97</span>
+                      <!-- RRP Price -->
+                      <span class="text-lg text-gray-400 line-through"
+                        >RRP £49.99</span
+                      >
                     </div>
                   </div>
                 </div>
@@ -319,68 +345,117 @@
                       </svg>
                     </div>
                     <div
-                      class="max-xxsm:flex-col max-xxsm:space-y-3 max-xxsm:space-x-0 flex flex-row items-start space-x-3 md:flex-col md:space-x-0 md:space-y-3"
+                      class="max-xxsm:flex-col max-xxsm:space-y-3 max-xxsm:space-x-0 group relative flex flex-row items-start space-x-3 md:flex-col md:space-x-0 md:space-y-3"
                     >
-                      <div class="flex items-center">
+                      <div
+                        x-data="{ open: false }"
+                        class="relative flex items-center"
+                      >
                         <p
-                          class="hidden pr-3 text-sm text-gray-700 dark:text-gray-200 md:block"
+                          @click="open = true"
+                          class="cursor-pointer pr-3 text-sm text-gray-700 hover:underline dark:text-gray-200"
                         >
-                          Standard Lenses Included
+                          100% Satisfaction Guarantee
                         </p>
                         <svg
-                          class="w-5 text-blue-900 dark:text-blue-400"
-                          viewBox="0 0 92 92"
+                          class="w-5 text-green-600"
+                          viewBox="0 0 512 513"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
                             fill-rule="evenodd"
                             clip-rule="evenodd"
-                            d="M65.1001 28.126C64.8826 28.1949 64.5237 28.3609 64.3025 28.4947C64.0813 28.6284 58.3689 34.3563 51.6083 41.2232L39.3163 53.7086L33.6845 48.0069C27.5688 41.8153 27.6902 41.9207 26.4135 41.6924C24.9394 41.4288 23.2857 42.2227 22.5101 43.5662C21.8239 44.7551 21.8304 46.2708 22.5274 47.5104C22.6802 47.7822 25.4531 50.6705 29.8703 55.1589C36.6032 62.0003 37.0015 62.3868 37.6246 62.6853C38.2377 62.979 38.3471 63 39.2668 63C40.1855 63 40.2965 62.9788 40.909 62.6863C41.5404 62.3847 42.1057 61.8245 55.4739 48.2526C68.8422 34.6807 69.394 34.1068 69.691 33.4658C69.9761 32.8507 70 32.7251 70 31.8462C70 30.9759 69.7055 30.2625 69.7055 30.2625C69.7055 30.2625 68.3759 28.4433 67.3645 28.1319C66.802 27.9586 65.6371 27.9555 65.1001 28.126Z"
+                            d="M233.669 0.633005C232.294 0.832005 227.119 1.49001 222.169 2.09601C23.2858 26.427 -69.7222 266.331 59.8198 420.86C212.472 602.958 511.169 493.855 511.169 256C511.169 123.519 414.081 15.888 281.169 1.02301C272.816 0.0890054 239.34 -0.185995 233.669 0.633005ZM361.951 137.39C366.467 139.34 404.338 177.756 405.209 181.269C406.502 186.485 403.408 189.796 310.876 282.245C214.549 378.487 215.651 377.478 209.625 374.982C205.693 373.353 106.839 273.525 106.052 270.389C104.887 265.748 106.801 263.29 128.073 242.11L149.556 220.72L153.328 221.332C156.638 221.869 160.471 225.313 184.641 249.472C199.789 264.612 212.63 277 213.178 277C213.726 277 245.448 245.689 283.672 207.42C359.498 131.502 355.858 134.758 361.951 137.39Z"
                             fill="currentColor"
                           />
-                          <path
-                            d="M46 89.5C70.0244 89.5 89.5 70.0244 89.5 46C89.5 21.9756 70.0244 2.5 46 2.5C21.9756 2.5 2.5 21.9756 2.5 46C2.5 70.0244 21.9756 89.5 46 89.5Z"
-                            stroke="currentColor"
-                            stroke-width="5"
-                          />
                         </svg>
-                        <p
-                          class="pl-2 text-sm text-gray-700 dark:text-gray-200 md:hidden"
+                        <div
+                          x-show="open"
+                          @click.away="open = false"
+                          class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
                         >
-                          Standard Lenses Included
-                        </p>
+                          <div class="rounded-md bg-white p-4 shadow-lg">
+                            <h2 class="mb-2 text-lg font-bold">
+                              100% Satisfaction Guarantee
+                            </h2>
+                            <p class="text-sm text-gray-700 dark:text-gray-200">
+                              Click for more information about our 100%
+                              Satisfaction Guarantee.
+                            </p>
+                            <button
+                              @click="open = false"
+                              class="mt-4 rounded-md bg-blue-500 px-4 py-2 text-white"
+                            >
+                              Close
+                            </button>
+                          </div>
+                        </div>
                       </div>
-                      <!-- SVG 2 and Text -->
-                      <div class="flex items-center">
+                    </div>
+                    <div
+                      class="max-xxsm:flex-col max-xxsm:space-y-3 max-xxsm:space-x-0 group relative flex flex-row items-start space-x-3 md:flex-col md:space-x-0 md:space-y-3"
+                    >
+                      <div
+                        x-data="{ open: false }"
+                        class="relative flex items-center"
+                      >
                         <p
-                          class="hidden pr-3 text-sm text-gray-700 dark:text-gray-200 md:block"
+                          @click="open = true"
+                          class="cursor-pointer pr-3 text-sm font-medium text-gray-700 hover:underline dark:text-gray-200"
                         >
-                          Best Price Guarantee
+                          Eligible for 48hr Delivery:
                         </p>
                         <svg
-                          class="w-5 text-blue-900 dark:text-blue-400"
-                          viewBox="0 0 92 92"
+                          x-show="selectedColour === 'Black' || selectedColour === 'Havana'"
+                          class="w-5 text-green-600"
+                          viewBox="0 0 512 513"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
                             fill-rule="evenodd"
                             clip-rule="evenodd"
-                            d="M65.1001 28.126C64.8826 28.1949 64.5237 28.3609 64.3025 28.4947C64.0813 28.6284 58.3689 34.3563 51.6083 41.2232L39.3163 53.7086L33.6845 48.0069C27.5688 41.8153 27.6902 41.9207 26.4135 41.6924C24.9394 41.4288 23.2857 42.2227 22.5101 43.5662C21.8239 44.7551 21.8304 46.2708 22.5274 47.5104C22.6802 47.7822 25.4531 50.6705 29.8703 55.1589C36.6032 62.0003 37.0015 62.3868 37.6246 62.6853C38.2377 62.979 38.3471 63 39.2668 63C40.1855 63 40.2965 62.9788 40.909 62.6863C41.5404 62.3847 42.1057 61.8245 55.4739 48.2526C68.8422 34.6807 69.394 34.1068 69.691 33.4658C69.9761 32.8507 70 32.7251 70 31.8462C70 30.9759 69.7055 30.2625 69.7055 30.2625C69.7055 30.2625 68.3759 28.4433 67.3645 28.1319C66.802 27.9586 65.6371 27.9555 65.1001 28.126Z"
+                            d="M233.669 0.633005C232.294 0.832005 227.119 1.49001 222.169 2.09601C23.2858 26.427 -69.7222 266.331 59.8198 420.86C212.472 602.958 511.169 493.855 511.169 256C511.169 123.519 414.081 15.888 281.169 1.02301C272.816 0.0890054 239.34 -0.185995 233.669 0.633005ZM361.951 137.39C366.467 139.34 404.338 177.756 405.209 181.269C406.502 186.485 403.408 189.796 310.876 282.245C214.549 378.487 215.651 377.478 209.625 374.982C205.693 373.353 106.839 273.525 106.052 270.389C104.887 265.748 106.801 263.29 128.073 242.11L149.556 220.72L153.328 221.332C156.638 221.869 160.471 225.313 184.641 249.472C199.789 264.612 212.63 277 213.178 277C213.726 277 245.448 245.689 283.672 207.42C359.498 131.502 355.858 134.758 361.951 137.39Z"
                             fill="currentColor"
                           />
+                        </svg>
+                        <svg
+                          x-show="!['Black', 'Havana'].includes(selectedColour)"
+                          class="w-5 text-red-600"
+                          viewBox="0 0 512 514"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
                           <path
-                            d="M46 89.5C70.0244 89.5 89.5 70.0244 89.5 46C89.5 21.9756 70.0244 2.5 46 2.5C21.9756 2.5 2.5 21.9756 2.5 46C2.5 70.0244 21.9756 89.5 46 89.5Z"
-                            stroke="currentColor"
-                            stroke-width="5"
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M233.486 1.61898C96.272 18.161 0 123.461 0 257C0 445.876 199.216 570.487 367.486 486.865C548.356 396.982 561.158 148.034 390.486 39.603C347.146 12.068 280.521 -4.05102 233.486 1.61898ZM297.74 172.246L339.993 130.001L361.239 151.247L382.485 172.493L340.24 214.746L297.995 257L340.24 299.254L382.485 341.507L361.239 362.753L339.993 383.999L297.74 341.754L255.486 299.509L213.232 341.754L170.979 383.999L149.733 362.753L128.487 341.507L170.732 299.254L212.977 257L170.732 214.746L128.487 172.493L149.733 151.247L170.979 130.001L213.232 172.246L255.486 214.491L297.74 172.246Z"
+                            fill="currentColor"
                           />
                         </svg>
-                        <p
-                          class="pl-2 text-sm text-gray-700 dark:text-gray-200 md:hidden"
+
+                        <div
+                          x-show="open"
+                          @click.away="open = false"
+                          class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
                         >
-                          Best Price Guarantee
-                        </p>
+                          <div class="rounded-md bg-white p-4 shadow-lg">
+                            <h2 class="mb-2 text-lg font-bold">
+                              Eligible for 48hr Delivery
+                            </h2>
+                            <p class="text-sm text-gray-700 dark:text-gray-200">
+                              Click for more information about our 100%
+                              Satisfaction Guarantee.
+                            </p>
+                            <button
+                              @click="open = false"
+                              class="mt-4 rounded-md bg-blue-500 px-4 py-2 text-white"
+                            >
+                              Close
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -388,7 +463,7 @@
               </div>
             </div>
             <div class="my-4"></div>
-            <div class="space-y-4 pb-6">
+            <div class="space-y-4 pb-3" id="buy-section">
               <div class="space-y-4">
                 <!-- Size Selector Section -->
                 <div
@@ -410,10 +485,10 @@
                   <!-- Question Mark Button -->
                   <button
                     @click="open = true"
-                    class="rounded-xl bg-gray-500 px-2 font-bold text-white"
+                    class="text-s pl-4 text-sm"
                     aria-label="Size Information"
                   >
-                    ?
+                    Need help choosing your size?
                   </button>
 
                   <!-- Modal -->
@@ -470,264 +545,288 @@
                     <span class="block md:hidden">56</span>
                     <span class="hidden md:block">56-20-145</span>
                   </button>
-                  <button
-                    class="w-full whitespace-nowrap rounded border border-gray-400 bg-white px-1 py-1 text-sm font-bold hover:bg-gray-100 focus:outline-none dark:bg-slate-900"
-                  >
-                    <span class="sm:hidden">Guide</span>
-                    <span class="hidden sm:inline">Size Guide</span>
-                  </button>
                 </div>
 
-                <!-- Always Display Selected Size on Mobile -->
-                <div x-data="{ showColours: false }">
-                  <!-- Colours Section -->
-                  <div class="flex items-center justify-between">
-                    <div class="space-x-2">
-                      <label
-                        for="colours"
-                        class="text-xl font-bold text-gray-700 dark:text-gray-200"
-                        >Colour</label
-                      >
-                      <span
-                        class="text-md text-gray-700 dark:text-gray-200"
-                        x-text="selectedColour"
-                      ></span>
-                    </div>
+                <!-- Colour Selector Section -->
+                <div class="my-4 flex items-center space-x-2">
+                  <label
+                    for="colour"
+                    class="text-xl font-bold text-gray-700 dark:text-gray-200"
+                    >Colour</label
+                  >
+                  <p
+                    class="text-md text-gray-600 dark:text-gray-200"
+                    x-text="selectedColour"
+                  ></p>
+                </div>
 
-                    <div class="flex items-center">
-                      <button
-                        @click="showColours = true"
-                        class="group flex items-center text-lg font-bold text-gray-700 dark:text-gray-200"
+                <div class="glide relative overflow-hidden">
+                  <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides flex items-center space-x-4">
+                      <!-- Image 1 (Black) -->
+                      <li class="glide__slide">
+                        <div class="relative p-1">
+                          <img
+                            @click="selectedColour = 'Black'"
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp"
+                            alt="Black Frame"
+                            :class="selectedColour === 'Black' ? 'ring-2 ring-blue-800' : ''"
+                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
+                          />
+                        </div>
+                      </li>
+
+                      <!-- Image 2 (Havana) -->
+                      <li class="glide__slide">
+                        <div class="relative p-1">
+                          <img
+                            @click="selectedColour = 'Havana'"
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5573_a6ab6byxeovjr45m.webp"
+                            alt="Havana Frame"
+                            :class="selectedColour === 'Havana' ? 'ring-2 ring-blue-800' : ''"
+                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
+                          />
+                        </div>
+                      </li>
+
+                      <!-- Image 3 (Blue) -->
+                      <li class="glide__slide">
+                        <div class="relative p-1">
+                          <img
+                            @click="selectedColour = 'Blue'"
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__8100_bajny668wk6ovl06.webp"
+                            alt="Blue Frame"
+                            :class="selectedColour === 'Blue' ? 'ring-2 ring-blue-800' : ''"
+                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
+                          />
+                        </div>
+                      </li>
+
+                      <!-- Image 4 (Brown) -->
+                      <li class="glide__slide">
+                        <div class="relative p-1">
+                          <img
+                            @click="selectedColour = 'Brown'"
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5451_8excktemjtedjjep.webp"
+                            alt="Brown Frame"
+                            :class="selectedColour === 'Brown' ? 'ring-2 ring-blue-800' : ''"
+                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
+                          />
+                        </div>
+                      </li>
+
+                      <!-- Image 5 (Black/Red) -->
+                      <li class="glide__slide">
+                        <div class="relative p-1">
+                          <img
+                            @click="selectedColour = 'Black/Red'"
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__2475_my43e1qwxv63bjre.webp"
+                            alt="Black/Red Frame"
+                            :class="selectedColour === 'Black/Red' ? 'ring-2 ring-blue-800' : ''"
+                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
+                          />
+                        </div>
+                      </li>
+
+                      <!-- Image 6 (Grey) -->
+                      <li class="glide__slide">
+                        <div class="relative p-1">
+                          <img
+                            @click="selectedColour = 'Grey'"
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp"
+                            alt="Grey Frame"
+                            :class="selectedColour === 'Grey' ? 'ring-2 ring-blue-800' : ''"
+                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
+                          />
+                        </div>
+                      </li>
+
+                      <!-- Image 7 (Clear) -->
+                      <li class="glide__slide">
+                        <div class="relative p-1">
+                          <img
+                            @click="selectedColour = 'Clear'"
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5943_2r0eavf401rmuggf.webp"
+                            alt="Clear Frame"
+                            :class="selectedColour === 'Clear' ? 'ring-2 ring-blue-800' : ''"
+                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
+                          />
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Navigation controls in separate container below -->
+                  <div
+                    class="flex justify-start space-x-2 py-4"
+                    data-glide-el="controls"
+                  >
+                    <button class="" data-glide-dir="<">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <span>Show colours</span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          class="h-6 w-6 transform text-cyan-600 transition-transform duration-200 ease-in-out group-hover:scale-150"
-                          fill="none"
-                          viewBox="0 0 24 24"
+                        <path
+                          d="M15 19L8 12L15 5"
                           stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-
-                  <!-- Side Menu -->
-                  <div
-                    x-show="showColours"
-                    @click="showColours = false"
-                    x-transition:enter="transition-opacity ease-linear duration-300"
-                    x-transition:enter-start="opacity-0"
-                    x-transition:enter-end="opacity-100"
-                    x-transition:leave="transition-opacity ease-linear duration-300"
-                    x-transition:leave-start="opacity-100"
-                    x-transition:leave-end="opacity-0"
-                    class="fixed inset-0 z-50 bg-black bg-opacity-75"
-                    x-cloak
-                  ></div>
-                  <div
-                    x-show="showColours"
-                    x-transition:enter="transition ease-out duration-300"
-                    x-transition:enter-start="transform translate-x-full"
-                    x-transition:enter-end="transform translate-x-0"
-                    x-transition:leave="transition ease-in duration-300"
-                    x-transition:leave-start="transform translate-x-0"
-                    x-transition:leave-end="transform translate-x-full"
-                    class="bg-l fixed right-0 top-0 z-50 h-full w-full overflow-y-auto shadow-lg dark:bg-slate-900 lg:w-1/2 xl:w-1/3"
-                  >
-                    <div
-                      class="flex items-center justify-between border-b-2 p-4"
-                    >
-                      <h2
-                        class="text-lg font-bold text-gray-700 dark:text-gray-200"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <button class="" data-glide-dir=">">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        Available Colours
-                      </h2>
-                      <button
-                        @click="showColours = false"
-                        class="text-gray-500 hover:text-gray-700 dark:text-gray-200"
-                      >
-                        &#10005;
-                      </button>
-                    </div>
-                    <div class="p-3 lg:p-4">
-                      <!-- List of Products -->
-                      <div class="space-y-4">
-                        <div
-                          @click="selectedColour = 'Black'; selectedSize = { eye: '52', bridge: '18', arm: '140' }; showColours = false"
-                          :class="selectedSize.eye === '52' ? 'border-gray-500 hover:border-blue-600 hover:border-2' : 'opacity-50 hover:border-blue-600 hover:border-2'"
-                          class="flex cursor-pointer items-center rounded-lg border-2 border-gray-200 bg-white p-4 shadow-sm duration-500 ease-in-out dark:bg-slate-900"
-                        >
-                          <img
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/_/i/_image_84588_1.webp"
-                            alt="Frame Colour: Black"
-                            class="w-1/2 rounded-lg"
-                          />
-                          <div class="ml-4 flex flex-col">
-                            <span
-                              class="text-xl font-bold text-gray-900 md:text-2xl"
-                              >£120</span
-                            >
-                            <span class="text-gray-700 dark:text-gray-200"
-                              >Frame Colour: Black</span
-                            >
-                            <span class="text-gray-500 dark:text-gray-200"
-                              >Size: 52-18-140</span
-                            >
-                            <span
-                              class="text-sm text-gray-500 dark:text-gray-200"
-                              >SKU: RX7047-2000-52-18-140</span
-                            >
-                          </div>
-                        </div>
-
-                        <div
-                          @click="selectedColour = 'Havana'; selectedSize = { eye: '54', bridge: '20', arm: '140' }; showColours = false"
-                          :class="selectedSize.eye === '54' ? 'border-gray-500 hover:border-blue-600 hover:border-2' : 'opacity-50 hover:border-blue-600 hover:border-2'"
-                          class="flex cursor-pointer items-center rounded-lg border-2 border-gray-200 bg-white p-4 shadow-sm duration-500 ease-in-out dark:bg-slate-900"
-                        >
-                          <img
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/_/i/_image_84589.webp"
-                            alt="Frame Colour: Havana"
-                            class="w-1/2 rounded-lg"
-                          />
-                          <div class="ml-4 flex flex-col">
-                            <span
-                              class="text-xl font-bold text-gray-900 md:text-2xl"
-                              >£125</span
-                            >
-                            <span class="text-gray-700 dark:text-gray-200"
-                              >Frame Colour: Havana</span
-                            >
-                            <span class="text-gray-500 dark:text-gray-200"
-                              >Size: 54-20-140</span
-                            >
-                            <span
-                              class="text-sm text-gray-500 dark:text-gray-200"
-                              >SKU: RX7047-5574-54-20-140</span
-                            >
-                          </div>
-                        </div>
-
-                        <div
-                          @click="selectedColour = 'Blue'; selectedSize = { eye: '56', bridge: '20', arm: '145' }; showColours = false"
-                          :class="selectedSize.eye === '56' ? 'border-gray-500 hover:border-blue-600 hover:border-2' : 'opacity-50 hover:border-blue-600 hover:border-2'"
-                          class="flex cursor-pointer items-center rounded-lg border-2 border-gray-200 bg-white p-4 shadow-sm duration-500 ease-in-out dark:bg-slate-900"
-                        >
-                          <img
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/s/l/sl_175_-_blue.webp"
-                            alt="Frame Colour: Blue"
-                            class="w-1/2 rounded-lg"
-                          />
-                          <div class="ml-4 flex flex-col">
-                            <span
-                              class="text-xl font-bold text-gray-900 md:text-2xl"
-                              >£130</span
-                            >
-                            <span class="text-gray-700 dark:text-gray-200"
-                              >Frame Colour: Blue</span
-                            >
-                            <span class="text-gray-500 dark:text-gray-200"
-                              >Size: 56-20-145</span
-                            >
-                            <span
-                              class="text-sm text-gray-500 dark:text-gray-200"
-                              >SKU: RX7047-5769-56-20-145</span
-                            >
-                          </div>
-                        </div>
-
-                        <div
-                          @click="selectedColour = 'Black'; selectedSize = { eye: '54', bridge: '20', arm: '140' }; showColours = false"
-                          :class="selectedSize.eye === '54' ? 'border-gray-500 hover:border-blue-600 hover:border-2' : 'opacity-50 hover:border-blue-600 hover:border-2'"
-                          class="flex cursor-pointer items-center rounded-lg border-2 border-gray-200 bg-white p-4 shadow-sm duration-500 ease-in-out dark:bg-slate-900"
-                        >
-                          <img
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/_/i/_image_84588_1.webp"
-                            alt="Frame Colour: Black"
-                            class="w-1/2 rounded-lg"
-                          />
-                          <div class="ml-4 flex flex-col">
-                            <span
-                              class="text-xl font-bold text-gray-900 md:text-2xl"
-                              >£120</span
-                            >
-                            <span class="text-gray-700 dark:text-gray-200"
-                              >Frame Colour: Black</span
-                            >
-                            <span class="text-gray-500 dark:text-gray-200"
-                              >Size: 54-20-140</span
-                            >
-                            <span
-                              class="text-sm text-gray-500 dark:text-gray-200"
-                              >SKU: RX7047-2000-54-20-140</span
-                            >
-                          </div>
-                        </div>
-
-                        <div
-                          @click="selectedColour = 'Black'; selectedSize = { eye: '56', bridge: '20', arm: '145' }; showColours = false"
-                          :class="selectedSize.eye === '56' ? 'border-gray-500 hover:border-blue-600 hover:border-2' : 'opacity-50 hover:border-blue-600 hover:border-2'"
-                          class="flex cursor-pointer items-center rounded-lg border-2 border-gray-200 bg-white p-4 shadow-sm duration-500 ease-in-out dark:bg-slate-900"
-                        >
-                          <img
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/5126638460848648518cefac96e6dd88/_/i/_image_84588_1.webp"
-                            alt="Frame Colour: Black"
-                            class="w-1/2 rounded-lg"
-                          />
-                          <div class="ml-4 flex flex-col">
-                            <span
-                              class="text-xl font-bold text-gray-900 md:text-2xl"
-                              >£120</span
-                            >
-                            <span class="text-gray-700 dark:text-gray-200"
-                              >Frame Colour: Black</span
-                            >
-                            <span class="text-gray-500 dark:text-gray-200"
-                              >Size: 56-20-145</span
-                            >
-                            <span
-                              class="text-sm text-gray-500 dark:text-gray-200"
-                              >SKU: RX7047-2000-56-20-145</span
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                        <path
+                          d="M9 5L16 12L9 19"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
                   </div>
                 </div>
+
+                <!-- Initialize Glide.js -->
+                <script>
+                  new Glide(".glide", {
+                    type: "slider",
+                    perView: 4.2, // Show 4 full items with a peek at the 5th
+                    gap: 16, // Increased gap for better visual separation
+                    bound: true, // Prevents empty space after last slide
+                    breakpoints: {
+                      1024: {
+                        perView: 3.2,
+                      },
+                      768: {
+                        perView: 2.2,
+                      },
+                      480: {
+                        perView: 1.8,
+                      },
+                    },
+                  }).mount();
+                </script>
+              </div>
+            </div>
+
+            <div class="flex hidden flex-col gap-8 pb-4 md:flex-row">
+              <!-- Shape Dropdown -->
+              <div class="flex items-center gap-2">
+                <label for="shape" class="font-bold text-gray-700"
+                  >Shape:</label
+                >
+                <select
+                  id="shape"
+                  class="rounded-lg border-2 border-gray-400 bg-white p-2 text-gray-700"
+                >
+                  <option value="" disabled selected>Select Shape</option>
+                  <option value="round">2001</option>
+                  <option value="square">2000</option>
+                  <option value="oval">1003</option>
+                  <option value="rectangular">1013</option>
+                </select>
+              </div>
+
+              <!-- Size Dropdown -->
+              <div class="flex items-center gap-2">
+                <label for="size" class="font-bold text-gray-700">Size:</label>
+                <select
+                  id="size"
+                  class="rounded-lg border-2 border-gray-400 bg-white p-2 text-gray-700"
+                >
+                  <option value="" disabled selected>Select Size</option>
+                  <option value="small">52-16-145</option>
+                  <option value="medium">54-16-145</option>
+                  <option value="large">56-16-145</option>
+                </select>
+              </div>
+            </div>
+            <div class="flex hidden flex-col gap-4 pb-4">
+              <!-- Shape Dropdown -->
+              <div class="flex items-center gap-2">
+                <label for="shape" class="w-16 font-bold text-gray-700"
+                  >Shape:</label
+                >
+                <select
+                  id="shape"
+                  class="w-48 rounded-lg border-2 border-gray-400 bg-white p-2 text-gray-700"
+                >
+                  <option value="" disabled selected>Select Shape</option>
+                  <option value="round">2001</option>
+                  <option value="square">2000</option>
+                  <option value="oval">1003</option>
+                  <option value="rectangular">1013</option>
+                </select>
+              </div>
+
+              <!-- Size Dropdown -->
+              <div class="flex items-center gap-2">
+                <label for="size" class="w-16 font-bold text-gray-700"
+                  >Size:</label
+                >
+                <select
+                  id="size"
+                  class="w-48 rounded-lg border-2 border-gray-400 bg-white p-2 text-gray-700"
+                >
+                  <option value="" disabled selected>Select Size</option>
+                  <option value="small">52-16-145</option>
+                  <option value="medium">54-16-145</option>
+                  <option value="large">56-16-145</option>
+                </select>
               </div>
             </div>
 
             <div
-              :class="sticky ? 'fixed inset-x-0 bottom-0 border-t-2 border-gray-300 bg-white dark:bg-slate-900  z-40 p-2 md:p-4' : 'pb-5'"
-              x-data="{ sticky: false }"
-              x-init="window.addEventListener('scroll', () => { 
-          sticky = window.innerWidth < 1280; // Ensure sticky only on screens smaller than 1280
-        })"
+              x-data="{ showBackButton: false }"
+              x-init="
+    window.addEventListener('scroll', () => {
+      const buttonSection = document.querySelector('#button-section');
+      const rect = buttonSection.getBoundingClientRect();
+      showBackButton = rect.bottom < 0;  // When buttons are scrolled out of view
+    });
+  "
             >
-              <!-- Buy Now Button -->
-              <div class="pb-4">
+              <!-- Original Button Section -->
+              <div id="button-section" class="mb-4 flex flex-col gap-4">
                 <button
-                  class="bg-s hover:bg-p w-full rounded px-4 py-2 text-lg font-bold text-white duration-700 ease-in-out focus:outline-none"
+                  class="bg-s hover:bg-p w-full rounded-lg px-4 py-2 font-bold text-white duration-700 ease-in-out focus:outline-none"
                 >
                   Customise Your Lenses
                 </button>
-              </div>
-              <div class="text-base text-gray-700 dark:text-gray-200">
-                Estimated Delivery:
-                <span class="font-medium text-green-600">
-                  <span x-text="estimatedDelivery"></span>
-                </span>
-                <span class="text-sm text-gray-700 dark:text-gray-200"
-                  >(Subject to Lenses)</span
+                <button
+                  class="w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-2 font-bold text-slate-700 duration-700 ease-in-out hover:bg-gray-100 focus:outline-none"
                 >
+                  Order Frame Only
+                </button>
+              </div>
+              <p>
+                Estimated Delivery: Eligible for 48hr Shipping (subject to
+                lenses)
+              </p>
+              <!-- Mobile Back to Customise Lenses Button -->
+              <div
+                class="fixed inset-x-0 bottom-0 z-50 border-t-2 border-gray-300 bg-white p-4 md:hidden"
+                x-show="showBackButton"
+                x-cloak
+              >
+                <button
+                  onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+                  class="bg-s w-full rounded-lg px-4 py-2 font-bold text-white shadow-lg duration-1000 ease-in-out"
+                >
+                  Back to Top
+                </button>
               </div>
             </div>
           </div>
@@ -909,492 +1008,501 @@
             </div>
           </div>
           <div class="mx-4 border-b-2 py-8 md:mx-6 lg:py-16">
-            <div class="mb-4">
-              <div class="pb-3 text-xl font-bold">Customer Reviews</div>
-              <div
-                class="mt-2 flex flex-col lg:flex-row lg:items-center lg:space-x-2"
-              >
-                <span class="text-2xl font-semibold lg:text-3xl">4.91</span>
-                <div class="flex space-x-1 text-blue-500">
-                  <!-- Star SVGs -->
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    class="h-4 w-4 lg:h-5 lg:w-5"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    class="h-4 w-4 lg:h-5 lg:w-5"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    class="h-4 w-4 lg:h-5 lg:w-5"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    class="h-4 w-4 lg:h-5 lg:w-5"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    class="h-4 w-4 lg:h-5 lg:w-5"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                    />
-                  </svg>
-                </div>
-                <span class="text-sm text-gray-600 dark:text-gray-200"
-                  >Based on 90 reviews</span
-                >
-              </div>
-            </div>
-
-            <!-- Sorting and Search Bar -->
+            <div class="pb-3 text-xl font-bold">Customer Reviews</div>
             <div
-              class="mb-4 flex flex-col items-start justify-between border-b border-gray-200 pb-2 lg:flex-row lg:items-center"
+              class="mt-2 flex flex-col lg:flex-row lg:items-center lg:space-x-2"
             >
-              <div class="flex items-center space-x-2">
-                <span class="font-semibold">Sort</span>
-                <select class="rounded-md border p-1 text-sm">
-                  <option>Most recent</option>
-                  <option>Highest rating</option>
-                  <option>Lowest rating</option>
-                </select>
-              </div>
-              <div class="mt-2 flex items-center space-x-2 lg:mt-0">
+              <span class="text-2xl font-semibold lg:text-3xl">4.91</span>
+              <div class="flex space-x-1 text-yellow-400">
+                <!-- Star SVGs -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
-                  class="h-5 w-5 text-gray-600 dark:text-gray-200"
+                  class="h-4 w-4 lg:h-5 lg:w-5"
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8c1.85 0 3.55-.63 4.91-1.68l5.73 5.73 1.41-1.41-5.73-5.73C17.37 13.55 18 11.85 18 10c0-4.42-3.58-8-8-8zm-6 8c0-3.31 2.69-6 6-6s6 2.69 6 6-2.69 6-6 6-6-2.69-6-6z"
+                    d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
                   />
                 </svg>
-                <input
-                  type="text"
-                  placeholder="Search"
-                  class="w-full rounded-md border p-1 text-sm lg:w-auto"
-                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  class="h-4 w-4 lg:h-5 lg:w-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  class="h-4 w-4 lg:h-5 lg:w-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  class="h-4 w-4 lg:h-5 lg:w-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  class="h-4 w-4 lg:h-5 lg:w-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
+                  />
+                </svg>
               </div>
+              <span class="text-sm text-gray-600 dark:text-gray-200"
+                >Based on 90 reviews</span
+              >
             </div>
-            <div class="gap-4">
-              <!-- Review Card -->
+          </div>
+
+          <!-- Sorting and Search Bar -->
+          <div
+            class="mb-4 flex flex-col items-start justify-between border-b border-gray-200 pb-2 lg:flex-row lg:items-center"
+          >
+            <div class="flex items-center space-x-2">
+              <span class="font-semibold">Sort</span>
+              <select class="rounded-md border p-1 text-sm">
+                <option>Most recent</option>
+                <option>Highest rating</option>
+                <option>Lowest rating</option>
+              </select>
+            </div>
+            <div class="mt-2 flex items-center space-x-2 lg:mt-0">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="h-5 w-5 text-gray-600 dark:text-gray-200"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8c1.85 0 3.55-.63 4.91-1.68l5.73 5.73 1.41-1.41-5.73-5.73C17.37 13.55 18 11.85 18 10c0-4.42-3.58-8-8-8zm-6 8c0-3.31 2.69-6 6-6s6 2.69 6 6-2.69 6-6 6-6-2.69-6-6z"
+                />
+              </svg>
+              <input
+                type="text"
+                placeholder="Search"
+                class="w-full rounded-md border p-1 text-sm lg:w-auto"
+              />
+            </div>
+          </div>
+          <div class="gap-4">
+            <!-- Review Card -->
+            <div class="">
+              <div
+                class="flex flex-col space-y-4 lg:flex-row lg:space-x-12 lg:space-y-0"
+              >
+                <!-- Left section with initials and stars -->
+                <div
+                  class="flex w-32 flex-none flex-col items-center space-y-2"
+                >
+                  <div class="flex space-x-1 text-yellow-400">
+                    <!-- Star SVGs -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      class="h-4 w-4"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
+                      />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      class="h-4 w-4"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
+                      />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      class="h-4 w-4"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
+                      />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      class="h-4 w-4"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
+                      />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      class="h-4 w-4"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    class="w-full overflow-hidden truncate whitespace-nowrap text-center font-semibold"
+                  >
+                    Finn Bowyer
+                  </div>
+                </div>
+
+                <!-- Right section with review content -->
+                <div class="flex-grow">
+                  <h3 class="text-lg font-semibold">
+                    SL 175 Prescription Glasses
+                  </h3>
+                  <p class="mt-1 text-gray-700 dark:text-gray-200">
+                    Fantastic fitting glasses, had these with bifocal lenses,
+                    and I am really happy with them, think I might get some as
+                    sunglasses as well.
+                  </p>
+                  <div
+                    class="mt-2 flex items-center text-sm text-gray-600 dark:text-gray-200"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      class="mr-1 h-4 w-4 text-gray-400"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2C6.477 2 2 6.477 2 12c0 4.411 2.891 8.145 6.83 9.501.997.184 1.326-.432 1.326-.958 0-.47-.018-1.71-.027-3.36-2.782.605-3.369-1.342-3.369-1.342-.907-2.307-1.58-3.014-1.58-3.014-1.291-.883.097-.865.097-.865 1.428.1 2.179 1.482 2.179 1.482 1.267 2.172 3.324 1.545 4.135 1.18.128-.918.495-1.546.899-1.902-2.222-.251-4.555-1.111-4.555-4.945 0-1.092.389-1.986 1.026-2.684-.103-.252-.446-1.266.097-2.64 0 0 .838-.269 2.746 1.026A9.581 9.581 0 0112 5.837c.848.004 1.702.115 2.498.338 1.907-1.296 2.745-1.027 2.745-1.027.544 1.375.201 2.388.098 2.64.639.698 1.026 1.592 1.026 2.684 0 3.841-2.335 4.692-4.563 4.938.509.439.964 1.306.964 2.634 0 1.903-.017 3.437-.017 3.904 0 .528.325 1.15 1.337.955C19.105 20.142 22 16.407 22 12c0-5.523-4.477-10-10-10z"
+                      />
+                    </svg>
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <span class="">Was this review helpful?</span>
+                        <a href="#" class="ml-2 text-gray-400">Yes</a>
+                        <a href="#" class="ml-2 text-gray-400">Report</a>
+                        <a href="#" class="ml-2 text-gray-400">Share</a>
+                      </div>
+                    </div>
+                    <div
+                      class="ml-auto text-sm text-gray-500 dark:text-gray-200"
+                    >
+                      3 months ago
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr class="my-4" />
               <div class="">
                 <div
-                  class="flex flex-col items-start space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0"
+                  class="flex flex-col space-y-4 lg:flex-row lg:space-x-12 lg:space-y-0"
                 >
-                  <div class="flex-shrink-0">
-                    <div
-                      class="flex h-12 w-12 items-center justify-center rounded-full bg-gray-300"
-                    >
-                      <span class="text-lg font-semibold text-white">RH</span>
-                    </div>
-                  </div>
-                  <div class="flex-grow">
-                    <div
-                      class="flex flex-col items-start space-y-1 lg:flex-row lg:items-center lg:space-x-1 lg:space-y-0"
-                    >
-                      <div class="flex space-x-1 text-blue-500">
-                        <!-- Star SVGs -->
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                          />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                          />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                          />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                          />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                          />
-                        </svg>
-                      </div>
-                      <h3 class="text-lg font-semibold">
-                        SL 175 Prescription Glasses
-                      </h3>
-                    </div>
-                    <p class="mt-1 text-gray-700 dark:text-gray-200">
-                      Fantastic fitting glasses, had these with bifocal lenses,
-                      and I am really happy with them, think I might get some as
-                      sunglasses as well.
-                    </p>
-                    <div
-                      class="mt-2 flex items-center text-sm text-gray-600 dark:text-gray-200"
-                    >
+                  <!-- Left section with initials and stars -->
+                  <div
+                    class="flex w-32 flex-none flex-col items-center space-y-2"
+                  >
+                    <div class="flex space-x-1 text-yellow-400">
+                      <!-- Star SVGs -->
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor"
-                        class="mr-1 h-4 w-4 text-gray-400"
+                        class="h-4 w-4"
                         viewBox="0 0 24 24"
                       >
                         <path
-                          d="M12 2C6.477 2 2 6.477 2 12c0 4.411 2.891 8.145 6.83 9.501.997.184 1.326-.432 1.326-.958 0-.47-.018-1.71-.027-3.36-2.782.605-3.369-1.342-3.369-1.342-.907-2.307-1.58-3.014-1.58-3.014-1.291-.883.097-.865.097-.865 1.428.1 2.179 1.482 2.179 1.482 1.267 2.172 3.324 1.545 4.135 1.18.128-.918.495-1.546.899-1.902-2.222-.251-4.555-1.111-4.555-4.945 0-1.092.389-1.986 1.026-2.684-.103-.252-.446-1.266.097-2.64 0 0 .838-.269 2.746 1.026A9.581 9.581 0 0112 5.837c.848.004 1.702.115 2.498.338 1.907-1.296 2.745-1.027 2.745-1.027.544 1.375.201 2.388.098 2.64.639.698 1.026 1.592 1.026 2.684 0 3.841-2.335 4.692-4.563 4.938.509.439.964 1.306.964 2.634 0 1.903-.017 3.437-.017 3.904 0 .528.325 1.15 1.337.955C19.105 20.142 22 16.407 22 12c0-5.523-4.477-10-10-10z"
+                          d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
                         />
                       </svg>
-                      <span class="">Was this review helpful?</span>
-                      <a href="#" class="ml-2 text-blue-500">Yes</a>
-                      <a href="#" class="ml-2 text-blue-500">Report</a>
-                      <a href="#" class="ml-2 text-blue-500">Share</a>
-                    </div>
-                  </div>
-                  <div class="text-sm text-gray-500 dark:text-gray-200 lg:ml-4">
-                    3 months ago
-                  </div>
-                </div>
-              </div>
-              <hr class="my-4" />
-              <div class="md:rounded-lg">
-                <div
-                  class="flex flex-col items-start space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0"
-                >
-                  <div class="flex-shrink-0">
-                    <div
-                      class="flex h-12 w-12 items-center justify-center rounded-full bg-gray-300"
-                    >
-                      <span class="text-lg font-semibold text-white">RH</span>
-                    </div>
-                  </div>
-                  <div class="flex-grow">
-                    <div
-                      class="flex flex-col items-start space-y-1 lg:flex-row lg:items-center lg:space-x-1 lg:space-y-0"
-                    >
-                      <div class="flex space-x-1 text-blue-500">
-                        <!-- Star SVGs -->
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                          />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                          />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                          />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                          />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                          />
-                        </svg>
-                      </div>
-                      <h3 class="text-lg font-semibold">
-                        SL 175 Prescription Glasses
-                      </h3>
-                    </div>
-                    <p class="mt-1 text-gray-700 dark:text-gray-200">
-                      Fantastic fitting glasses, had these with bifocal lenses,
-                      and I am really happy with them, think I might get some as
-                      sunglasses as well.
-                    </p>
-                    <div
-                      class="mt-2 flex items-center text-sm text-gray-600 dark:text-gray-200"
-                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor"
-                        class="mr-1 h-4 w-4 text-gray-400"
+                        class="h-4 w-4"
                         viewBox="0 0 24 24"
                       >
                         <path
-                          d="M12 2C6.477 2 2 6.477 2 12c0 4.411 2.891 8.145 6.83 9.501.997.184 1.326-.432 1.326-.958 0-.47-.018-1.71-.027-3.36-2.782.605-3.369-1.342-3.369-1.342-.907-2.307-1.58-3.014-1.58-3.014-1.291-.883.097-.865.097-.865 1.428.1 2.179 1.482 2.179 1.482 1.267 2.172 3.324 1.545 4.135 1.18.128-.918.495-1.546.899-1.902-2.222-.251-4.555-1.111-4.555-4.945 0-1.092.389-1.986 1.026-2.684-.103-.252-.446-1.266.097-2.64 0 0 .838-.269 2.746 1.026A9.581 9.581 0 0112 5.837c.848.004 1.702.115 2.498.338 1.907-1.296 2.745-1.027 2.745-1.027.544 1.375.201 2.388.098 2.64.639.698 1.026 1.592 1.026 2.684 0 3.841-2.335 4.692-4.563 4.938.509.439.964 1.306.964 2.634 0 1.903-.017 3.437-.017 3.904 0 .528.325 1.15 1.337.955C19.105 20.142 22 16.407 22 12c0-5.523-4.477-10-10-10z"
+                          d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
                         />
                       </svg>
-                      <span class="">Was this review helpful?</span>
-                      <a href="#" class="ml-2 text-blue-500">Yes</a>
-                      <a href="#" class="ml-2 text-blue-500">Report</a>
-                      <a href="#" class="ml-2 text-blue-500">Share</a>
-                    </div>
-                  </div>
-                  <div class="text-sm text-gray-500 dark:text-gray-200 lg:ml-4">
-                    3 months ago
-                  </div>
-                </div>
-              </div>
-              <hr class="my-4" />
-              <div class="md:rounded-lg">
-                <div
-                  class="flex flex-col items-start space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0"
-                >
-                  <div class="flex-shrink-0">
-                    <div
-                      class="flex h-12 w-12 items-center justify-center rounded-full bg-gray-300"
-                    >
-                      <span class="text-lg font-semibold text-white">RH</span>
-                    </div>
-                  </div>
-                  <div class="flex-grow">
-                    <div
-                      class="flex flex-col items-start space-y-1 lg:flex-row lg:items-center lg:space-x-1 lg:space-y-0"
-                    >
-                      <div class="flex space-x-1 text-blue-500">
-                        <!-- Star SVGs -->
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                          />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                          />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                          />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                          />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
-                          />
-                        </svg>
-                      </div>
-                      <h3 class="text-lg font-semibold">
-                        SL 175 Prescription Glasses
-                      </h3>
-                    </div>
-                    <p class="mt-1 text-gray-700 dark:text-gray-200">
-                      Fantastic fitting glasses, had these with bifocal lenses,
-                      and I am really happy with them, think I might get some as
-                      sunglasses as well.
-                    </p>
-                    <div
-                      class="mt-2 flex items-center text-sm text-gray-600 dark:text-gray-200"
-                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor"
-                        class="mr-1 h-4 w-4 text-gray-400"
+                        class="h-4 w-4"
                         viewBox="0 0 24 24"
                       >
                         <path
-                          d="M12 2C6.477 2 2 6.477 2 12c0 4.411 2.891 8.145 6.83 9.501.997.184 1.326-.432 1.326-.958 0-.47-.018-1.71-.027-3.36-2.782.605-3.369-1.342-3.369-1.342-.907-2.307-1.58-3.014-1.58-3.014-1.291-.883.097-.865.097-.865 1.428.1 2.179 1.482 2.179 1.482 1.267 2.172 3.324 1.545 4.135 1.18.128-.918.495-1.546.899-1.902-2.222-.251-4.555-1.111-4.555-4.945 0-1.092.389-1.986 1.026-2.684-.103-.252-.446-1.266.097-2.64 0 0 .838-.269 2.746 1.026A9.581 9.581 0 0112 5.837c.848.004 1.702.115 2.498.338 1.907-1.296 2.745-1.027 2.745-1.027.544 1.375.201 2.388.098 2.64.639.698 1.026 1.592 1.026 2.684 0 3.841-2.335 4.692-4.563 4.938.509.439.964 1.306.964 2.634 0 1.903-.017 3.437-.017 3.904 0 .528.325 1.15 1.337.955C19.105 20.142 22 16.407 22 12c0-5.523-4.477-10-10-10z"
+                          d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
                         />
                       </svg>
-                      <span class="">Was this review helpful?</span>
-                      <a href="#" class="ml-2 text-blue-500">Yes</a>
-                      <a href="#" class="ml-2 text-blue-500">Report</a>
-                      <a href="#" class="ml-2 text-blue-500">Share</a>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        class="h-4 w-4"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
+                        />
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        class="h-4 w-4"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="w-full overflow-hidden truncate whitespace-nowrap text-center font-semibold"
+                    >
+                      Finn Bowyer
                     </div>
                   </div>
-                  <div class="text-sm text-gray-500 dark:text-gray-200 lg:ml-4">
-                    3 months ago
-                  </div>
-                </div>
-              </div>
-              <hr class="my-4" />
-            </div>
-            <div
-              class="flex flex-row items-center justify-between space-y-2 py-4 lg:flex-row lg:space-y-0"
-            >
-              <!-- Pagination Centered -->
-              <div class="flex w-full justify-center">
-                <div
-                  class="flex flex-wrap justify-center space-x-2 text-sm font-medium text-gray-700 dark:text-gray-200"
-                >
-                  <!-- Show only the first 6 pages on mobile, but all on larger screens -->
-                  <a href="#" class="border-b-2 border-black px-2 py-1">1</a>
-                  <a
-                    href="#"
-                    class="px-2 py-1 hover:border-b-2 hover:border-black"
-                    >2</a
-                  >
-                  <a
-                    href="#"
-                    class="px-2 py-1 hover:border-b-2 hover:border-black"
-                    >3</a
-                  >
-                  <a
-                    href="#"
-                    class="px-2 py-1 hover:border-b-2 hover:border-black"
-                    >4</a
-                  >
-                  <a
-                    href="#"
-                    class="px-2 py-1 hover:border-b-2 hover:border-black"
-                    >5</a
-                  >
-                  <a
-                    href="#"
-                    class="px-2 py-1 hover:border-b-2 hover:border-black"
-                    >6</a
-                  >
 
-                  <!-- These elements are hidden on mobile and shown on larger screens -->
-                  <span class="hidden px-2 py-1 lg:inline">...</span>
-                  <a
-                    href="#"
-                    class="hidden px-2 py-1 hover:border-b-2 hover:border-black lg:inline"
-                    >7</a
-                  >
-                  <a
-                    href="#"
-                    class="hidden px-2 py-1 hover:border-b-2 hover:border-black lg:inline"
-                    >8</a
-                  >
-                  <a
-                    href="#"
-                    class="hidden px-2 py-1 hover:border-b-2 hover:border-black lg:inline"
-                    >9</a
-                  >
-                  <a
-                    href="#"
-                    class="hidden px-2 py-1 hover:border-b-2 hover:border-black lg:inline"
-                    >10</a
-                  >
-                  <span class="hidden px-2 py-1 lg:inline">...</span>
-                  <a
-                    href="#"
-                    class="hidden px-2 py-1 hover:border-b-2 hover:border-black lg:inline"
-                    >30</a
-                  >
+                  <!-- Right section with review content -->
+                  <div class="flex-grow">
+                    <h3 class="text-lg font-semibold">
+                      SL 175 Prescription Glasses
+                    </h3>
+                    <p class="mt-1 text-gray-700 dark:text-gray-200">
+                      Fantastic fitting glasses, had these with bifocal lenses,
+                      and I am really happy with them, think I might get some as
+                      sunglasses as well.
+                    </p>
+                    <div
+                      class="mt-2 flex items-center text-sm text-gray-600 dark:text-gray-200"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        class="mr-1 h-4 w-4 text-gray-400"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 2C6.477 2 2 6.477 2 12c0 4.411 2.891 8.145 6.83 9.501.997.184 1.326-.432 1.326-.958 0-.47-.018-1.71-.027-3.36-2.782.605-3.369-1.342-3.369-1.342-.907-2.307-1.58-3.014-1.58-3.014-1.291-.883.097-.865.097-.865 1.428.1 2.179 1.482 2.179 1.482 1.267 2.172 3.324 1.545 4.135 1.18.128-.918.495-1.546.899-1.902-2.222-.251-4.555-1.111-4.555-4.945 0-1.092.389-1.986 1.026-2.684-.103-.252-.446-1.266.097-2.64 0 0 .838-.269 2.746 1.026A9.581 9.581 0 0112 5.837c.848.004 1.702.115 2.498.338 1.907-1.296 2.745-1.027 2.745-1.027.544 1.375.201 2.388.098 2.64.639.698 1.026 1.592 1.026 2.684 0 3.841-2.335 4.692-4.563 4.938.509.439.964 1.306.964 2.634 0 1.903-.017 3.437-.017 3.904 0 .528.325 1.15 1.337.955C19.105 20.142 22 16.407 22 12c0-5.523-4.477-10-10-10z"
+                        />
+                      </svg>
+                      <div class="flex items-center justify-between">
+                        <div>
+                          <span class="">Was this review helpful?</span>
+                          <a href="#" class="ml-2 text-gray-400">Yes</a>
+                          <a href="#" class="ml-2 text-gray-400">Report</a>
+                          <a href="#" class="ml-2 text-gray-400">Share</a>
+                        </div>
+                      </div>
+                      <div
+                        class="ml-auto text-sm text-gray-500 dark:text-gray-200"
+                      >
+                        3 months ago
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+                <hr class="my-4" />
+                <div class="">
+                  <div
+                    class="flex flex-col space-y-4 lg:flex-row lg:space-x-12 lg:space-y-0"
+                  >
+                    <!-- Left section with initials and stars -->
+                    <div
+                      class="flex w-32 flex-none flex-col items-center space-y-2"
+                    >
+                      <div class="flex space-x-1 text-yellow-400">
+                        <!-- Star SVGs -->
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          class="h-4 w-4"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          class="h-4 w-4"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          class="h-4 w-4"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          class="h-4 w-4"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          class="h-4 w-4"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 .587l3.668 7.568L24 9.748l-6 5.849 1.416 8.256L12 18.902l-7.416 4.951L6 15.597 0 9.748l8.332-1.593z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="w-full overflow-hidden truncate whitespace-nowrap text-center font-semibold"
+                      >
+                        Finn Bowyer
+                      </div>
+                    </div>
 
-              <!-- Reviews.io branding -->
-              <div class="flex items-center justify-center lg:ml-auto">
-                <span
-                  class="text-xs font-semibold text-gray-700 dark:text-gray-200"
-                  >REVIEWS</span
+                    <!-- Right section with review content -->
+                    <div class="flex-grow">
+                      <h3 class="text-lg font-semibold">
+                        SL 175 Prescription Glasses
+                      </h3>
+                      <p class="mt-1 text-gray-700 dark:text-gray-200">
+                        Fantastic fitting glasses, had these with bifocal
+                        lenses, and I am really happy with them, think I might
+                        get some as sunglasses as well.
+                      </p>
+                      <div
+                        class="mt-2 flex items-center text-sm text-gray-600 dark:text-gray-200"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          class="mr-1 h-4 w-4 text-gray-400"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 2C6.477 2 2 6.477 2 12c0 4.411 2.891 8.145 6.83 9.501.997.184 1.326-.432 1.326-.958 0-.47-.018-1.71-.027-3.36-2.782.605-3.369-1.342-3.369-1.342-.907-2.307-1.58-3.014-1.58-3.014-1.291-.883.097-.865.097-.865 1.428.1 2.179 1.482 2.179 1.482 1.267 2.172 3.324 1.545 4.135 1.18.128-.918.495-1.546.899-1.902-2.222-.251-4.555-1.111-4.555-4.945 0-1.092.389-1.986 1.026-2.684-.103-.252-.446-1.266.097-2.64 0 0 .838-.269 2.746 1.026A9.581 9.581 0 0112 5.837c.848.004 1.702.115 2.498.338 1.907-1.296 2.745-1.027 2.745-1.027.544 1.375.201 2.388.098 2.64.639.698 1.026 1.592 1.026 2.684 0 3.841-2.335 4.692-4.563 4.938.509.439.964 1.306.964 2.634 0 1.903-.017 3.437-.017 3.904 0 .528.325 1.15 1.337.955C19.105 20.142 22 16.407 22 12c0-5.523-4.477-10-10-10z"
+                          />
+                        </svg>
+                        <div class="flex items-center justify-between">
+                          <div>
+                            <span class="">Was this review helpful?</span>
+                            <a href="#" class="ml-2 text-gray-400">Yes</a>
+                            <a href="#" class="ml-2 text-gray-400">Report</a>
+                            <a href="#" class="ml-2 text-gray-400">Share</a>
+                          </div>
+                        </div>
+                        <div
+                          class="ml-auto text-sm text-gray-500 dark:text-gray-200"
+                        >
+                          3 months ago
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="my-4" />
+                </div>
+                <div
+                  class="flex flex-row items-center justify-between space-y-2 py-4 lg:flex-row lg:space-y-0"
                 >
-                <span class="text-xs text-gray-700 dark:text-gray-200"
-                  >.io</span
-                >
+                  <!-- Pagination Centered -->
+                  <div class="flex w-full justify-center">
+                    <div
+                      class="flex flex-wrap justify-center space-x-2 text-sm font-medium text-gray-700 dark:text-gray-200"
+                    >
+                      <!-- Show only the first 6 pages on mobile, but all on larger screens -->
+                      <a href="#" class="border-b-2 border-black px-2 py-1"
+                        >1</a
+                      >
+                      <a
+                        href="#"
+                        class="px-2 py-1 hover:border-b-2 hover:border-black"
+                        >2</a
+                      >
+                      <a
+                        href="#"
+                        class="px-2 py-1 hover:border-b-2 hover:border-black"
+                        >3</a
+                      >
+                      <a
+                        href="#"
+                        class="px-2 py-1 hover:border-b-2 hover:border-black"
+                        >4</a
+                      >
+                      <a
+                        href="#"
+                        class="px-2 py-1 hover:border-b-2 hover:border-black"
+                        >5</a
+                      >
+                      <a
+                        href="#"
+                        class="px-2 py-1 hover:border-b-2 hover:border-black"
+                        >6</a
+                      >
+
+                      <!-- These elements are hidden on mobile and shown on larger screens -->
+                      <span class="hidden px-2 py-1 lg:inline">...</span>
+                      <a
+                        href="#"
+                        class="hidden px-2 py-1 hover:border-b-2 hover:border-black lg:inline"
+                        >7</a
+                      >
+                      <a
+                        href="#"
+                        class="hidden px-2 py-1 hover:border-b-2 hover:border-black lg:inline"
+                        >8</a
+                      >
+                      <a
+                        href="#"
+                        class="hidden px-2 py-1 hover:border-b-2 hover:border-black lg:inline"
+                        >9</a
+                      >
+                      <a
+                        href="#"
+                        class="hidden px-2 py-1 hover:border-b-2 hover:border-black lg:inline"
+                        >10</a
+                      >
+                      <span class="hidden px-2 py-1 lg:inline">...</span>
+                      <a
+                        href="#"
+                        class="hidden px-2 py-1 hover:border-b-2 hover:border-black lg:inline"
+                        >30</a
+                      >
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div class="mx-4 border-b-2 py-8 md:mx-6 lg:py-16">
             <div class="pb-3 text-xl font-bold">Description</div>
-
             <div x-data="{ expanded: false }">
               <p :class="expanded ? '' : 'line-clamp-4'" class="leading-loose">
                 Introducing the RX 7047 Ray-Ban Glasses—where form meets
@@ -1471,18 +1579,12 @@
                       <th
                         class="rounded-tl-lg border border-gray-300 p-2 sm:p-4"
                       >
-                        Frame Type
-                      </th>
-                      <th class="border border-gray-300 p-2 sm:p-4">
-                        Non-Prescription Lenses
-                      </th>
-                      <th class="border border-gray-300 p-2 sm:p-4">
-                        Standard Lenses
+                        Lenses
                       </th>
                       <th
                         class="rounded-tr-lg border border-gray-300 p-2 sm:p-4"
                       >
-                        Specialist Lenses
+                        Delivery Time
                       </th>
                     </tr>
                   </thead>
@@ -1491,13 +1593,27 @@
                       <td
                         class="border border-gray-300 p-2 font-bold text-gray-800 dark:text-gray-200 sm:p-4"
                       >
-                        Stock Frames
+                        Non-Prescription Lenses
                       </td>
                       <td class="border border-gray-300 p-2 sm:p-4">
                         1-2 Days
                       </td>
+                    </tr>
+                    <tr class="bg-white dark:bg-slate-950 dark:text-gray-200">
+                      <td
+                        class="border border-gray-300 p-2 font-bold text-gray-800 dark:text-gray-200 sm:p-4"
+                      >
+                        Standard Lenses
+                      </td>
                       <td class="border border-gray-300 p-2 sm:p-4">
                         1-3 Days
+                      </td>
+                    </tr>
+                    <tr class="bg-white dark:bg-slate-950 dark:text-gray-200">
+                      <td
+                        class="border border-gray-300 p-2 font-bold text-gray-800 dark:text-gray-200 sm:p-4"
+                      >
+                        Specialist Lenses
                       </td>
                       <td class="border border-gray-300 p-2 sm:p-4">
                         5-14 Days
@@ -1508,9 +1624,9 @@
               </div>
 
               <p class="text-link mt-4 text-sm">
-                <a href="/glasses-delivery-schedule" target="_blank">
-                  View Full Delivery Schedule
-                </a>
+                <a href="/glasses-delivery-schedule" target="_blank"
+                  >View Full Delivery Schedule</a
+                >
               </p>
               <p class="mt-4 text-gray-700 dark:text-gray-200">
                 If you're not satisfied with your purchase from Spex4Less, you
