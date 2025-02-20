@@ -56,7 +56,7 @@
     },
     images: {
       'Blue': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/r/0rx3625v__2501_kllh7ycfmxjrpvz1.webp',
-      'Havana': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/b/l/black_221_1.webp',
+      'Havana': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/f/s/fs86c_1_1.webp',
     },
     get estimatedDelivery() {
       // Always return '1-2 Days' for all combinations
@@ -132,6 +132,7 @@
                   class="m-2 mx-auto rounded-xl border-2 border-transparent dark:border-2 dark:border-gray-400"
                 />
               </div>
+
               <!-- Slogans -->
               <div
                 class="mt-4 hidden items-center justify-center space-x-8 border-t-2 pt-4 text-center text-gray-700 dark:text-gray-200 lg:flex"
@@ -235,7 +236,7 @@
                 <div class="relative flex">
                   <div class="w-full space-y-2 md:w-3/4">
                     <!-- Product Title -->
-                    <h1 class="text-3xl font-bold lg:text-2xl">Matrix 835</h1>
+                    <h1 class="text-3xl font-bold lg:text-2xl">Glide FS86</h1>
                   </div>
                   <div class="right-0 ml-auto hidden h-auto w-20 justify-end">
                     <img
@@ -519,54 +520,13 @@
                         <div class="relative p-1">
                           <img
                             @click="selectedColour = 'Black'"
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/b/l/black_221_1.webp"
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/f/s/fs86c_1_1.webp"
                             alt="Black Frame"
                             :class="selectedColour === 'Black' ? 'ring-2 ring-blue-800' : ''"
                             class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
                           />
                         </div>
                       </li>
-
-                      <!-- Image 2 (Havana) -->
-                      <li class="glide__slide">
-                        <div class="relative p-1">
-                          <img
-                            @click="selectedColour = 'Havana'"
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/t/o/tortoise_1_1.webp"
-                            alt="Havana Frame"
-                            :class="selectedColour === 'Havana' ? 'ring-2 ring-blue-800' : ''"
-                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
-                          />
-                        </div>
-                      </li>
-
-                      <!-- Image 3 (Blue) -->
-                      <li class="glide__slide">
-                        <div class="relative p-1">
-                          <img
-                            @click="selectedColour = 'Blue'"
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/p/u/purple_2_1_1.webp"
-                            alt="Blue Frame"
-                            :class="selectedColour === 'Blue' ? 'ring-2 ring-blue-800' : ''"
-                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
-                          />
-                        </div>
-                      </li>
-
-                      <!-- Image 4 (Brown) -->
-                      <li class="glide__slide">
-                        <div class="relative p-1">
-                          <img
-                            @click="selectedColour = 'Brown'"
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/c/r/crystal_1_1_1.webp"
-                            alt="Brown Frame"
-                            :class="selectedColour === 'Brown' ? 'ring-2 ring-blue-800' : ''"
-                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
-                          />
-                        </div>
-                      </li>
-
-                      <!-- Image 5 (Black/Red) -->
                     </ul>
                   </div>
 

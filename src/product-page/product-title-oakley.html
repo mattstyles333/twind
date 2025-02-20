@@ -55,8 +55,10 @@
       '56-20-145-Blue': 'in_stock'
     },
     images: {
-      'Blue': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/r/0rx3625v__2501_kllh7ycfmxjrpvz1.webp',
-      'Havana': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/b/l/black_221_1.webp',
+      'Blue': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102z0_rheqxe7ugjq7ncyq.webp',
+      'Black': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102b5_zt6t4syqt7uuboak.webp',
+      'Havana': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102j9_g6rjysvonjxmuno6.webp',
+      'Grey': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102e4_bwurzqzmy4cffzre.webp'
     },
     get estimatedDelivery() {
       // Always return '1-2 Days' for all combinations
@@ -94,34 +96,28 @@
                     />
                   </svg>
                 </div>
-                <div
-                  x-show="showSvgModal"
-                  @click.away="showSvgModal = false"
-                  class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-                  x-cloak
-                >
-                  <div class="rounded-lg bg-white p-6 shadow-lg">
-                    <h2 class="text-lg font-bold text-gray-700">Modal Title</h2>
-                    <p class="mt-4 text-gray-600">
-                      This is the content of the modal. You can place any
-                      information or actions here.
-                    </p>
-                    <button
-                      @click="showSvgModal = false"
-                      class="mt-4 rounded-xl bg-gray-500 px-4 py-2 font-bold text-white"
-                    >
-                      Close
-                    </button>
-                  </div>
-                </div>
                 <span
                   class="rounded bg-gradient-to-r from-red-500 to-orange-500 px-2 py-0.5 text-sm font-bold text-white sm:px-4 sm:py-1 sm:text-lg"
                 >
-                  Sale
+                  Limited Time Deal
                 </span>
               </div>
-              <div class="absolute left-0 top-0 block w-1/4 md:hidden">
-                <img src="../images/rayban-logo.png" alt="Logo" class="" />
+              <!-- Logo positioning -->
+              <div class="absolute left-0 top-0 p-2 block w-1/4 md:hidden">
+                <img
+                  src="https://www.spex4less.com/media/mf_webp/jpg/media/logos/brand-logos/hyva-spex4less/big/oakley.webp"
+                  alt="Logo"
+                  class=""
+                />
+              </div>
+              <div
+                class="absolute left-0 top-0 hidden w-32 p-2 lg:p-4 md:block"
+              >
+                <img
+                  src="https://www.spex4less.com/media/mf_webp/jpg/media/logos/brand-logos/hyva-spex4less/big/oakley.webp"
+                  alt="Logo"
+                  class="object-contain"
+                />
               </div>
 
               <!-- Product Image -->
@@ -132,6 +128,7 @@
                   class="m-2 mx-auto rounded-xl border-2 border-transparent dark:border-2 dark:border-gray-400"
                 />
               </div>
+
               <!-- Slogans -->
               <div
                 class="mt-4 hidden items-center justify-center space-x-8 border-t-2 pt-4 text-center text-gray-700 dark:text-gray-200 lg:flex"
@@ -235,7 +232,9 @@
                 <div class="relative flex">
                   <div class="w-full space-y-2 md:w-3/4">
                     <!-- Product Title -->
-                    <h1 class="text-3xl font-bold lg:text-2xl">Matrix 835</h1>
+                    <h1 class="text-3xl font-bold lg:text-2xl">
+                      Oakley Holbrook OO9102
+                    </h1>
                   </div>
                   <div class="right-0 ml-auto hidden h-auto w-20 justify-end">
                     <img
@@ -246,32 +245,89 @@
                   </div>
                 </div>
 
-                <div
-                  x-data="{ showRRP: false }"
-                  class="flex w-full items-baseline justify-between"
-                >
-                  <div class="flex items-baseline">
-                    <div class="flex items-baseline text-lg text-gray-400">
-                      <span x-show="showRRP" class="pr-2">RRP</span>
-                      <span
-                        class="pr-2"
-                        :class="{ 'line-through': !showRRP }"
-                        x-text="showRRP ? '£129.99' : '£112.99'"
-                      ></span>
-                    </div>
-                    <!-- Actual Price -->
-                    <span class="text-3xl font-bold text-s">£84.97</span>
-                  </div>
-                  <!-- Toggle Button -->
-                  <button
-                    @click="showRRP = !showRRP"
-                    class="ml-2 rounded-md px-2 py-1 text-sm text-white hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800"
+                <div class="flex items-center space-x-2">
+                  <svg
+                    width="80"
+                    height="16"
+                    viewBox="0 0 222 41"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <span x-show="!showRRP">Show RRP</span>
-                    <span x-show="showRRP">Show Was Price</span>
-                  </button>
+                    <path
+                      d="M176.159 2C176.159 0.89543 175.264 0 174.159 0H137C135.895 0 135 0.895431 135 2V39C135 40.1046 135.895 41 137 41H174.159C175.264 41 176.159 40.1046 176.159 39V2Z"
+                      fill="#0091AD"
+                    />
+                    <path
+                      d="M155.406 27.7135L160.936 23.7417L164.281 34.1625L155.406 27.7135ZM169.811 17.3354H158.793L155.406 7L152.019 17.3354H141L149.918 23.7417L146.531 34.0771L155.406 27.7135L160.936 23.7417L169.811 17.3354Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M131.159 2C131.159 0.89543 130.264 0 129.159 0H92C90.8954 0 90 0.895431 90 2V39C90 40.1046 90.8954 41 92 41H129.159C130.264 41 131.159 40.1046 131.159 39V2Z"
+                      fill="#0091AD"
+                    />
+                    <path
+                      d="M110.406 27.7135L115.936 23.7417L119.281 34.1625L110.406 27.7135ZM124.811 17.3354H113.793L110.406 7L107.019 17.3354H96L104.918 23.7417L101.531 34.0771L110.406 27.7135L115.936 23.7417L124.811 17.3354Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M86.1589 2C86.1589 0.89543 85.2635 0 84.1589 0H47C45.8954 0 45 0.895431 45 2V39C45 40.1046 45.8954 41 47 41H84.1589C85.2635 41 86.1589 40.1046 86.1589 39V2Z"
+                      fill="#0091AD"
+                    />
+                    <path
+                      d="M65.4056 27.7135L70.9364 23.7417L74.2805 34.1625L65.4056 27.7135ZM79.8112 17.3354H68.7927L65.4056 7L62.0186 17.3354H51L59.9178 23.7417L56.5307 34.0771L65.4056 27.7135L70.9364 23.7417L79.8112 17.3354Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M41.1589 2C41.1589 0.89543 40.2635 0 39.1589 0H2C0.895431 0 0 0.895431 0 2V39C0 40.1046 0.895432 41 2 41H39.1589C40.2635 41 41.1589 40.1046 41.1589 39V2Z"
+                      fill="#0091AD"
+                    />
+                    <path
+                      d="M20.4056 27.7135L25.9364 23.7417L29.2805 34.1625L20.4056 27.7135ZM34.8112 17.3354H23.7927L20.4056 7L17.0186 17.3354H6L14.9178 23.7417L11.5307 34.0771L20.4056 27.7135L25.9364 23.7417L34.8112 17.3354Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M221.159 2C221.159 0.89543 220.264 0 219.159 0H182C180.895 0 180 0.895431 180 2V39C180 40.1046 180.895 41 182 41H219.159C220.264 41 221.159 40.1046 221.159 39V2Z"
+                      fill="#0091AD"
+                    />
+                    <path
+                      d="M200.406 27.7135L205.936 23.7417L209.281 34.1625L200.406 27.7135ZM214.811 17.3354H203.793L200.406 7L197.019 17.3354H186L194.918 23.7417L191.531 34.0771L200.406 27.7135L205.936 23.7417L214.811 17.3354Z"
+                      fill="white"
+                    />
+                  </svg>
+                  <p class="">(90 Reviews)</p>
                 </div>
+                <div class="flex w-full flex-col">
+                  <!-- Main price row -->
+                  <div class="flex items-center space-x-2">
+                    <!-- Percentage Off -->
+                    <span class="text-red-600 text-lg">-29%</span>
 
+                    <!-- Main Price -->
+                    <span class="text-2xl font-bold text-slate-800"
+                      >£178.00</span
+                    >
+                  </div>
+
+                  <!-- RRP row -->
+                  <div class="flex items-baseline text-sm text-gray-500 mt-1">
+                    <span>RRP: &nbsp;</span>
+                    <span>£249.95</span>
+                    <button
+                      class="ml-1 text-gray-400 hover:text-gray-600"
+                      title="Price Information"
+                    >
+                      <svg
+                        class="w-4 h-4"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
                 <div class="space-y-2">
                   <div
                     class="flex flex-col justify-center space-y-4 xl:flex-col xl:space-x-0 xl:space-y-4"
@@ -358,7 +414,7 @@
                           Eligible for 48hr Delivery:
                         </p>
                         <svg
-                          x-show="selectedColour === 'Black' || selectedColour === 'Havana'"
+                          x-show="selectedColour === 'Black' || selectedColour === 'Blue'"
                           class="w-5 text-green-600"
                           viewBox="0 0 512 513"
                           fill="none"
@@ -372,7 +428,7 @@
                           />
                         </svg>
                         <svg
-                          x-show="!['Black', 'Havana'].includes(selectedColour)"
+                          x-show="!['Black', 'Blue'].includes(selectedColour)"
                           class="w-5 text-gray-400"
                           viewBox="0 0 512 514"
                           fill="none"
@@ -514,38 +570,12 @@
                 <div class="glide relative overflow-hidden">
                   <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides flex items-center space-x-4">
-                      <!-- Image 1 (Black) -->
-                      <li class="glide__slide">
-                        <div class="relative p-1">
-                          <img
-                            @click="selectedColour = 'Black'"
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/b/l/black_221_1.webp"
-                            alt="Black Frame"
-                            :class="selectedColour === 'Black' ? 'ring-2 ring-blue-800' : ''"
-                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
-                          />
-                        </div>
-                      </li>
-
-                      <!-- Image 2 (Havana) -->
-                      <li class="glide__slide">
-                        <div class="relative p-1">
-                          <img
-                            @click="selectedColour = 'Havana'"
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/t/o/tortoise_1_1.webp"
-                            alt="Havana Frame"
-                            :class="selectedColour === 'Havana' ? 'ring-2 ring-blue-800' : ''"
-                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
-                          />
-                        </div>
-                      </li>
-
-                      <!-- Image 3 (Blue) -->
+                      <!-- Image 1 (Blue) -->
                       <li class="glide__slide">
                         <div class="relative p-1">
                           <img
                             @click="selectedColour = 'Blue'"
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/p/u/purple_2_1_1.webp"
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102z0_rheqxe7ugjq7ncyq.webp"
                             alt="Blue Frame"
                             :class="selectedColour === 'Blue' ? 'ring-2 ring-blue-800' : ''"
                             class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
@@ -553,26 +583,50 @@
                         </div>
                       </li>
 
-                      <!-- Image 4 (Brown) -->
+                      <!-- Image 2 (Black) -->
                       <li class="glide__slide">
                         <div class="relative p-1">
                           <img
-                            @click="selectedColour = 'Brown'"
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/c/r/crystal_1_1_1.webp"
-                            alt="Brown Frame"
-                            :class="selectedColour === 'Brown' ? 'ring-2 ring-blue-800' : ''"
+                            @click="selectedColour = 'Black'"
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102b5_zt6t4syqt7uuboak.webp"
+                            alt="Black Frame"
+                            :class="selectedColour === 'Black' ? 'ring-2 ring-blue-800' : ''"
                             class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
                           />
                         </div>
                       </li>
 
-                      <!-- Image 5 (Black/Red) -->
+                      <!-- Image 3 (Havana) -->
+                      <li class="glide__slide">
+                        <div class="relative p-1">
+                          <img
+                            @click="selectedColour = 'Havana'"
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102j9_g6rjysvonjxmuno6.webp"
+                            alt="Havana Frame"
+                            :class="selectedColour === 'Havana' ? 'ring-2 ring-blue-800' : ''"
+                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
+                          />
+                        </div>
+                      </li>
+
+                      <!-- Image 4 (Grey) -->
+                      <li class="glide__slide">
+                        <div class="relative p-1">
+                          <img
+                            @click="selectedColour = 'Grey'"
+                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102e4_bwurzqzmy4cffzre.webp"
+                            alt="Grey Frame"
+                            :class="selectedColour === 'Grey' ? 'ring-2 ring-blue-800' : ''"
+                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
+                          />
+                        </div>
+                      </li>
                     </ul>
                   </div>
 
                   <!-- Navigation controls in separate container below -->
                   <div
-                    class="flex justify-start space-x-2 py-4"
+                    class="flex justify-start space-x-2 pt-4"
                     data-glide-el="controls"
                   >
                     <button class="" data-glide-dir="<">
@@ -627,7 +681,7 @@
                         perView: 4.2,
                       },
                       480: {
-                        perView: 4.2,
+                        perView: 3.2,
                       },
                     },
                   }).mount();
@@ -667,40 +721,6 @@
                 </select>
               </div>
             </div>
-            <div class="flex hidden flex-col gap-4 pb-4">
-              <!-- Shape Dropdown -->
-              <div class="flex items-center gap-2">
-                <label for="shape" class="w-16 font-bold text-gray-700"
-                  >Shape:</label
-                >
-                <select
-                  id="shape"
-                  class="w-48 rounded-lg border-2 border-gray-400 bg-white p-2 text-gray-700"
-                >
-                  <option value="" disabled selected>Select Shape</option>
-                  <option value="round">2001</option>
-                  <option value="square">2000</option>
-                  <option value="oval">1003</option>
-                  <option value="rectangular">1013</option>
-                </select>
-              </div>
-
-              <!-- Size Dropdown -->
-              <div class="flex items-center gap-2">
-                <label for="size" class="w-16 font-bold text-gray-700"
-                  >Size:</label
-                >
-                <select
-                  id="size"
-                  class="w-48 rounded-lg border-2 border-gray-400 bg-white p-2 text-gray-700"
-                >
-                  <option value="" disabled selected>Select Size</option>
-                  <option value="small">52-16-145</option>
-                  <option value="medium">54-16-145</option>
-                  <option value="large">56-16-145</option>
-                </select>
-              </div>
-            </div>
 
             <div
               x-data="{ showBackButton: false }"
@@ -713,7 +733,7 @@
   "
             >
               <!-- Original Button Section -->
-              <div id="button-section" class="mb-4 flex flex-col gap-4">
+              <div id="button-section" class="pt-2 mb-4 flex flex-col gap-4">
                 <button
                   class="bg-s hover:bg-p w-full rounded-lg px-4 py-2 font-bold text-white duration-700 ease-in-out focus:outline-none"
                 >
@@ -725,10 +745,26 @@
                   Order Frame Only
                 </button>
               </div>
-              <p>
-                Estimated Delivery: Eligible for 48hr Shipping (subject to
-                lenses)
-              </p>
+              <div class="text-base font-medium">
+                <div
+                  x-show="selectedColour === 'Black'"
+                  class="flex items-center space-x-2 text-red-600"
+                >
+                  <span class="">Only 1 left in stock</span>
+                </div>
+                <div
+                  x-show="selectedColour === 'Blue'"
+                  class="flex items-center space-x-2 text-orange-600"
+                >
+                  <span class="">Only 5 left in stock</span>
+                </div>
+                <div
+                  x-show="selectedColour === 'Havana'"
+                  class="flex items-center space-x-2 text-green-600"
+                >
+                  <span class="">In Stock</span>
+                </div>
+              </div>
               <!-- Mobile Back to Customise Lenses Button -->
               <div
                 class="fixed inset-x-0 bottom-0 z-50 border-t-2 border-gray-300 bg-white p-4 md:hidden"

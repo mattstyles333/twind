@@ -99,13 +99,13 @@
 
   <section>
   <h2 class="text-2xl sm:text-3xl font-semibold mb-4 fade-on-scroll text-slate-800">Why Choose Occupational Lenses?</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-    <div class="fade-on-scroll flex items-center h-full">
+  <div class="grid grid-cols-1 gap-8 items-center">
+    <div class="fade-on-scroll w-full">
       <img
         src="https://www.spex4less.com/media/wysiwyg/bannerimgocc_1.jpeg"
         loading="lazy"
         alt="cataract surgery"
-        class="w-full h-full object-cover shadow-md transition-transform duration-300 ease-in-out rounded-lg sm:rounded-3xl"
+        class="w-full h-[300px] sm:h-[400px] object-cover shadow-md transition-transform duration-300 ease-in-out rounded-lg sm:rounded-3xl"
       />
     </div>
     

@@ -101,7 +101,7 @@
                 </span>
               </div>
               <!-- Logo positioning -->
-              <div class="absolute left-0 top-0 block w-1/4 md:hidden">
+              <div class="absolute left-0 p-2 top-0 block w-1/4 md:hidden">
                 <img src="../images/rayban-logo.png" alt="Logo" class="" />
               </div>
               <div
@@ -122,10 +122,7 @@
                   class="m-2 mx-auto rounded-xl border-2 border-transparent dark:border-2 dark:border-gray-400"
                 />
               </div>
-              <span
-                class="mx-auto flex justify-center text-base text-gray-500 dark:text-gray-200"
-                >SL-175-C04 - Havana -51-18-145</span
-              >
+
               <!-- Slogans -->
               <div
                 class="mt-4 hidden items-center justify-center space-x-8 border-t-2 pt-4 text-center text-gray-700 dark:text-gray-200 lg:flex"
@@ -729,6 +726,19 @@
                   />
                 </svg>
                 <span class="text-sm font-medium">Only 1 left in stock!</span>
+              </div>
+              <div
+                x-show="selectedColour === 'Havana'"
+                class="flex items-center space-x-2 text-orange-600 dark:text-red-400"
+              >
+                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    fill-rule="evenodd"
+                    d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-sm font-medium">Only 5 left in stock!</span>
               </div>
             </div>
 
