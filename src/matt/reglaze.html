@@ -1,0 +1,421 @@
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f7ff',
+                            100: '#e0f0ff',
+                            200: '#b9e0ff',
+                            300: '#7cc3ff',
+                            400: '#3aa1ff',
+                            500: '#0077ff',  // Main primary color
+                            600: '#005f99',  // Darker shade for hover states
+                            700: '#004d7f',
+                            800: '#003b66',
+                            900: '#002952',
+                        },
+                        accent: {
+                            50: '#fff7f0',
+                            100: '#ffe9d9',
+                            200: '#ffd0b3',
+                            300: '#ffb088',
+                            400: '#ff8c5c',
+                            500: '#ff6631',  // Pop color
+                            600: '#e64d1a',
+                            700: '#cc3b0d',
+                            800: '#a62f0a',
+                            900: '#802508',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<!-- Reglaze Homepage -->
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="text-xl font-bold text-gray-800">Reglaze.org</a>
+                <div class="flex items-center space-x-8">
+                    <ul class="flex space-x-8">
+                        <li><a href="#" class="text-gray-600 hover:text-gray-900">Home</a></li>
+                        <li><a href="#howItWorks" class="text-gray-600 hover:text-gray-900">How It Works</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-gray-900">Contact</a></li>
+                    </ul>
+                    <div class="flex items-center space-x-4">
+                        <a href="#" class="bg-primary-500 text-white px-4 py-2 rounded-full hover:bg-primary-600 transition duration-300">Buy Now</a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-r from-primary-500 to-primary-700 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="../images/glasses-eye-test.jpg" alt="Eye test with glasses" class="w-full h-full object-cover">
+        </div>
+        <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                Have You Been Taken for a Ride?
+            </h1>
+            <p class="text-xl text-gray-100 mb-8 max-w-3xl mx-auto">
+                Stop paying excessive prices for new glasses. Keep your frames, upgrade your lenses, and save money with our professional reglazing service.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="bg-white text-primary-500 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition duration-300">
+                    Get Started
+                </a>
+                <a href="#howItWorks" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary-500 transition duration-300">
+                    Discover The Secret
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Why Choose Us?</h2>
+            <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+                Don't pay more than you need to. We're here to revolutionize how you maintain your eyewear.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="document.getElementById('testimonials').scrollIntoView({behavior: 'smooth'})">
+                    <div class="text-3xl mb-4">⭐</div>
+                    <h3 class="text-xl font-bold mb-4">Trusted Service</h3>
+                    <p class="text-gray-600">Over 50,000 happy customers and counting. Professional service backed by real reviews.</p>
+                    <div class="mt-4 flex items-center justify-between">
+                        <div class="flex">
+                            <span class="text-yellow-400">★★★★★</span>
+                        </div>
+                        <div class="text-primary-500 font-bold">Read Reviews ↓</div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-3xl mb-4">💰</div>
+                    <h3 class="text-xl font-bold mb-4">Massive Savings</h3>
+                    <p class="text-gray-600">Save up to 70% compared to high street prices. Keep your favorite frames and only pay for what you need.</p>
+                    <div class="mt-4 bg-green-50 p-4 rounded-lg">
+                        <div class="text-green-700 font-bold">Average Customer Savings:</div>
+                        <div class="text-2xl font-bold text-green-600">£170+</div>
+                    </div>
+                    <div class="mt-6">
+                        <a href="#" class="block text-center bg-primary-500 text-white px-6 py-3 rounded-full hover:bg-primary-600 transition duration-300">
+                            Start Saving Now
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-3xl mb-4">⚖️</div>
+                    <h3 class="text-xl font-bold mb-4">Your Legal Right</h3>
+                    <p class="text-gray-600">By law, opticians must give you your prescription. We help you exercise this right to save money.</p>
+                    <ul class="mt-4 space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Free prescription check
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Legal guidance provided
+                        </li>
+                    </ul>
+                    <div class="mt-4">
+                        <a href="#" class="text-primary-500 hover:text-primary-600 font-medium">Discuss your circumstances →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Choose Your Path Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-6">Choose Your Perfect Path</h2>
+            <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+                Whether you know exactly what you want or need some expert guidance, we've got you covered.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Quick & Simple Option -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-3xl mb-4 text-primary-500">🚀</div>
+                    <h3 class="text-xl font-bold mb-4">Quick & Simple</h3>
+                    <p class="text-gray-600 mb-6">Standard reglaze service with quality lenses. No fuss, just efficient service at our best value price.</p>
+                    <ul class="text-gray-600 mb-8 space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Fast turnaround
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Standard quality lenses
+                        </li>
+                    </ul>
+                    <a href="#" class="block text-center bg-primary-500 text-white px-6 py-3 rounded-full hover:bg-primary-600 transition duration-300">
+                        Start Now
+                    </a>
+                </div>
+
+                <!-- Expert Guidance Option -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow transform scale-105">
+                    <div class="text-3xl mb-4 text-accent-500">👨‍⚕️</div>
+                    <h3 class="text-xl font-bold mb-4">Expert Guidance</h3>
+                    <p class="text-gray-600 mb-6">Get personalized recommendations from our experienced opticians to find your perfect lenses.</p>
+                    <ul class="text-gray-600 mb-8 space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Personal consultation
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Choose: Email/Phone/WhatsApp
+                        </li>
+                    </ul>
+                    <a href="#" class="block text-center bg-primary-500 text-white px-6 py-3 rounded-full hover:bg-primary-600 transition duration-300">
+                        Get Advice
+                    </a>
+                </div>
+
+                <!-- Custom Order Option -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-3xl mb-4 text-primary-500">⚡</div>
+                    <h3 class="text-xl font-bold mb-4">Custom Order</h3>
+                    <p class="text-gray-600 mb-6">Know exactly what you need? We can source any type of lens with competitive pricing.</p>
+                    <ul class="text-gray-600 mb-8 space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Access to all lens types
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Custom quote & timeline
+                        </li>
+                    </ul>
+                    <a href="#" class="block text-center bg-primary-500 text-white px-6 py-3 rounded-full hover:bg-primary-600 transition duration-300">
+                        Specify Details
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="howItWorks" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">The Industry's Best-Kept Secret</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Reglazing is the optical industry's hidden gem that most retailers don't want you to know about.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="bg-primary-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-primary-800 mb-2">What is Reglazing?</h3>
+                        <p class="text-gray-700">Reglazing is the professional process of fitting new prescription lenses into your existing frames. It's like giving your favorite glasses a new lease of life, without the premium price tag of new frames.</p>
+                    </div>
+                    
+                    <div class="bg-primary-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-primary-800 mb-2">The Simple Process</h3>
+                        <ol class="space-y-3 text-gray-700">
+                            <li class="flex items-center">
+                                <span class="bg-primary-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2">1</span>
+                                Send us your frames and prescription
+                            </li>
+                            <li class="flex items-center">
+                                <span class="bg-primary-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2">2</span>
+                                We professionally remove your old lenses
+                            </li>
+                            <li class="flex items-center">
+                                <span class="bg-primary-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2">3</span>
+                                Cut and fit new lenses to your exact prescription
+                            </li>
+                            <li class="flex items-center">
+                                <span class="bg-primary-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2">4</span>
+                                Clean, polish, and return your upgraded glasses
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-primary-800 mb-4">Why The Industry Keeps This Quiet</h3>
+                    <p class="text-gray-700 mb-6">Major retailers make significant profits by selling you new frames with every prescription change. They rarely mention that you can keep your existing frames and just replace the lenses – often at a fraction of the cost.</p>
+                    
+                    <div class="bg-white p-4 rounded-lg">
+                        <h4 class="font-bold text-gray-800 mb-2">The Truth About Savings</h4>
+                        <div class="flex items-center justify-between border-b pb-2 mb-2">
+                            <span>New Glasses from a Retailer</span>
+                            <span class="text-accent-600 font-bold">£200-400+</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Professional Reglaze</span>
+                            <span class="text-green-600 font-bold">£30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Simple, Transparent Pricing</h2>
+            <div class="flex justify-center">
+                <div class="bg-white p-8 rounded-lg shadow-lg max-w-xl w-full">
+                    <div class="relative rounded-lg overflow-hidden shadow-lg mb-8">
+                        <img 
+                            src='https://www.spex4less.com/media/wysiwyg/redesign/lenses_step.jpg'
+                            alt="Lens replacement process" 
+                            class="w-full h-auto object-cover"
+                        >
+                    </div>
+                    <p class="text-4xl font-bold text-primary-600">£30</p>
+                    <p class="text-gray-600 mt-2">Plus Shipping</p>
+                    <ul class="grid grid-cols-2 gap-4 mt-6">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Professional Reglazing</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Ultrasonic Cleaning</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Lightning-Fast Dispatch</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Frame Inspection</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Rigorous QA Process</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>100% Money Back</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Frame Polish</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Satisfaction Guaranteed</li>
+                    </ul>
+                    <a href="#" class="block text-center bg-primary-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-primary-600 transition duration-300 mt-8">
+                        Start Your Order Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shipping & Leadtime Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Fast Turnaround, Flexible Shipping</h2>
+            
+            <!-- Leadtime Info -->
+            <div class="bg-primary-50 p-8 rounded-lg mb-12 max-w-3xl mx-auto">
+                <div class="flex items-start space-x-4">
+                    <div class="text-3xl">⚡</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-primary-800 mb-2">Quick Turnaround Promise</h3>
+                        <p class="text-gray-700">For standard prescriptions, we aim to dispatch your reglazed glasses within 1-2 working days of receiving them. All orders are returned via Royal Mail Tracked 24-hour service.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shipping Options -->
+            <h3 class="text-2xl font-bold text-center mb-8">Choose Your Preferred Shipping Method</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Self Ship Option -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-100">
+                    <div class="text-xl font-bold text-primary-600 mb-4">📬 Self Ship</div>
+                    <h4 class="font-bold mb-2">Most Economical</h4>
+                    <p class="text-gray-600 mb-4">Send your glasses directly to us using your preferred shipping method.</p>
+                    <p class="text-sm text-gray-500">Perfect if you want to manage shipping yourself</p>
+                    <div class="mt-4 text-primary-600 font-bold">Cheapest Option</div>
+                </div>
+
+                <!-- Reglaze Pack Option -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-100 transform scale-105">
+                    <div class="text-xl font-bold text-primary-600 mb-4">📦 Reglaze Pack</div>
+                    <h4 class="font-bold mb-2">Most Popular</h4>
+                    <p class="text-gray-600 mb-4">Request our secure packaging kit with padding and protective materials.</p>
+                    <p class="text-sm text-gray-500">Includes everything needed to safely send your frames</p>
+                    <div class="mt-4">
+                        <a href="#" class="text-primary-600 font-bold hover:text-primary-700">Request Pack →</a>
+                    </div>
+                </div>
+
+                <!-- Return Label Option -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-100">
+                    <div class="text-xl font-bold text-primary-600 mb-4">🏷️ Return Label</div>
+                    <h4 class="font-bold mb-2">Most Convenient</h4>
+                    <p class="text-gray-600 mb-4">We'll email you a Royal Mail Tracked return label to print at home.</p>
+                    <p class="text-sm text-gray-500">Just attach to your package and drop off</p>
+                    <div class="mt-4">
+                        <a href="#" class="text-primary-600 font-bold hover:text-primary-700">Request Label →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg hover:border-accent-500 hover:border transition-all duration-300">
+                    <p class="text-gray-600 italic">"Saved me over £200 compared to buying new glasses. The service was quick and professional."</p>
+                    <p class="font-bold mt-4 text-accent-600">- Sarah P.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg hover:border-accent-500 hover:border transition-all duration-300">
+                    <p class="text-gray-600 italic">"My frames came back looking brand new with crystal clear lenses. Highly recommended!"</p>
+                    <p class="font-bold mt-4 text-accent-600">- James M.</p>
+                </div>
+            </div>
+            <p class="text-center text-gray-600 mt-8 text-sm">
+                All orders are professionally fulfilled by <a href="https://www.spex4less.com" class="text-primary-500 hover:text-primary-600 underline" target="_blank">Spex4Less</a>, the UK's #1 rated glasses company in the UK.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact Us</h3>
+                    <p>Email: info@reglaze.com</p>
+                    <p>Phone: 0800 123 4567</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-accent-400">Facebook</a>
+                        <a href="#" class="hover:text-accent-400">Twitter</a>
+                        <a href="#" class="hover:text-accent-400">Instagram</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Legal</h3>
+                    <p class="text-sm text-gray-400">© 2025 Reglaze. All rights reserved.</p>
+                    <p class="text-sm text-gray-400">Terms & Conditions | Privacy Policy</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>

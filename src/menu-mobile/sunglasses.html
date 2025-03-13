@@ -1,0 +1,178 @@
+<head>
+  <!-- Add Glide.js CDN links in the head section -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            p: "#1f2937",
+            s: "#1E3A8A",
+            l: "#f3f4f6",
+            t: "#5494EC",
+            a: "#f97316",
+            b: "#2563eb",
+            gr: "#6b7280",
+          },
+          screens: {
+            xxsm: "420px",
+            xxxsm: "360px",
+          },
+        },
+      },
+    };
+  </script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<div class="relative mx-auto">
+  <div class="flex">
+    <div class="w-full bg-white py-4 text-base">
+      <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
+        <div class="px-6">
+          <div class="mb-4 text-xl font-bold">Sunglasses</div>
+          <ul class="space-y-2">
+            <li>
+              <a href="/sunglasses" class="text-gray-700 hover:underline">
+                Prescription Sunglasses
+              </a>
+            </li>
+            <li>
+              <a href="/sunglasses/mens" class="text-gray-700 hover:underline">
+                Men's Sunglasses
+              </a>
+            </li>
+            <li>
+              <a
+                href="/sunglasses/womens"
+                class="text-gray-700 hover:underline"
+              >
+                Women's Sunglasses
+              </a>
+            </li>
+            <li>
+              <a href="/clip-on" class="text-gray-700 hover:underline">
+                Clip-On Sunglasses
+              </a>
+            </li>
+            <li>
+              <a
+                href="/designer-sunglasses"
+                class="text-gray-700 hover:underline"
+              >
+                Designer Sunglasses
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="border-b-2 border-gray-100 bg-gray-50 px-6 shadow-inner">
+          <div class="py-3">
+            <div class="mb-4 text-xl font-bold">Specialty</div>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="/reading-sunglasses"
+                  class="text-gray-700 hover:underline"
+                >
+                  Reading Sunglasses
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/polarised-sunglasses"
+                  class="text-gray-700 hover:underline"
+                >
+                  Polarised Lenses
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/how-to-choose-sunglass-tints"
+                  class="text-gray-700 hover:underline"
+                >
+                  Mirrors & Tints
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/how-to-choose-sunglass-tints#transitions"
+                  class="text-gray-700 hover:underline"
+                >
+                  Transitions&reg; Lenses
+                </a>
+              </li>
+              <li>
+                <a href="/sports" class="text-gray-700 hover:underline">
+                  Sports Sunglasses
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="px-6">
+          <div class="mb-4 text-xl font-bold">Styles</div>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="/sunglasses/ray-ban"
+                class="text-gray-700 hover:underline"
+              >
+                Ray-Ban Sunglasses
+              </a>
+            </li>
+            <li>
+              <a
+                href="/sunglasses/oakley"
+                class="text-gray-700 hover:underline"
+              >
+                Oakley Sunglasses
+              </a>
+            </li>
+            <li>
+              <a
+                href="/sunglasses/clubmaster"
+                class="text-gray-700 hover:underline"
+              >
+                Clubmaster Sunglasses
+              </a>
+            </li>
+            <li>
+              <a
+                href="/sunglasses/aviator"
+                class="text-gray-700 hover:underline"
+              >
+                Aviator Sunglasses
+              </a>
+            </li>
+            <li>
+              <a href="/sunglasses/round" class="text-gray-700 hover:underline">
+                Round Sunglasses
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="flex w-full flex-col gap-3 border-gray-200 px-6 pt-3 pb-12">
+  <div class="group grid w-full duration-700 ease-in-out hover:-translate-y-2">
+    <a href="/trial-home">
+      <img
+        class="mb-3 h-56 w-full rounded-lg object-cover duration-700 ease-in-out group-hover:shadow-lg"
+        src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/new/sunglasses-home-trial.webp"
+        alt="Home trial"
+      />
+      <p class="text-xl font-semibold text-slate-800">Home Trial</p>
+    </a>
+  </div>
+</div>

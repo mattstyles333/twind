@@ -44,25 +44,16 @@
       class="mx-auto pb-20 md:container"
       x-data="{ 
     selectedSize: { eye: '54', bridge: '20', arm: '140' }, 
-    selectedColour: 'Havana',
-    stockStatus: {
-      '52-18-140-Black': 'in_stock',
-      '52-18-140-Havana': 'in_stock',
-      '54-20-140-Black': 'in_stock',
-      '54-20-140-Havana': 'in_stock',
-      '54-20-140-Blue': 'in_stock',
-      '56-20-145-Black': 'in_stock',
-      '56-20-145-Blue': 'in_stock'
-    },
+    selectedColour: 'Black',
+    mainImage: 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp',
     images: {
-      'Blue': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102z0_rheqxe7ugjq7ncyq.webp',
-      'Black': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102b5_zt6t4syqt7uuboak.webp',
-      'Havana': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102j9_g6rjysvonjxmuno6.webp',
-      'Grey': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102e4_bwurzqzmy4cffzre.webp'
-    },
-    get estimatedDelivery() {
-      // Always return '1-2 Days' for all combinations
-      return '1-2 Days';
+      'Black': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp',
+      'Havana': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5573_a6ab6byxeovjr45m.webp',
+      'Blue': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__8100_bajny668wk6ovl06.webp',
+      'Brown': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5451_8excktemjtedjjep.webp',
+      'Black/Red': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__2475_my43e1qwxv63bjre.webp',
+      'Grey': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp',
+      'Clear': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5943_2r0eavf401rmuggf.webp'
     }
   }"
     >
@@ -99,22 +90,18 @@
                 <span
                   class="rounded bg-gradient-to-r from-red-500 to-orange-500 px-2 py-0.5 text-sm font-bold text-white sm:px-4 sm:py-1 sm:text-lg"
                 >
-                  Limited Time Deal
+                  Sale
                 </span>
               </div>
               <!-- Logo positioning -->
-              <div class="absolute left-0 top-0 p-2 block w-1/4 md:hidden">
-                <img
-                  src="https://www.spex4less.com/media/mf_webp/jpg/media/logos/brand-logos/hyva-spex4less/big/oakley.webp"
-                  alt="Logo"
-                  class=""
-                />
+              <div class="absolute left-0 p-2 top-0 block w-1/4 md:hidden">
+                <img src="../images/rayban-logo.png" alt="Logo" class="" />
               </div>
               <div
                 class="absolute left-0 top-0 hidden w-32 p-2 lg:p-4 md:block"
               >
                 <img
-                  src="https://www.spex4less.com/media/mf_webp/jpg/media/logos/brand-logos/hyva-spex4less/big/oakley.webp"
+                  src="../images/rayban-logo.png"
                   alt="Logo"
                   class="object-contain"
                 />
@@ -123,10 +110,9 @@
               <!-- Product Image -->
               <div>
                 <img
-                  x-ref="mainImage"
-                  :src="images[selectedColour]"
-                  alt="Main Product Image"
-                  class="m-2 mx-auto rounded-xl border-2 border-transparent dark:border-2 dark:border-gray-400"
+                  :src="mainImage"
+                  :alt="selectedColour + ' Frame'"
+                  class="w-full rounded-lg object-cover"
                 />
               </div>
 
@@ -234,7 +220,7 @@
                   <div class="w-full space-y-2 md:w-3/4">
                     <!-- Product Title -->
                     <h1 class="text-3xl font-bold lg:text-2xl">
-                      Oakley Holbrook OO9102
+                      Ray-Ban Aviator RX3625V
                     </h1>
                   </div>
                   <div class="right-0 ml-auto hidden h-auto w-20 justify-end">
@@ -297,59 +283,32 @@
                   </svg>
                   <p class="">(90 Reviews)</p>
                 </div>
-                <div class="flex w-full flex-col">
-                  <!-- Main price row -->
-                  <div class="flex items-center">
-                    <!-- Percentage Off -->
-                    <span
-                      class="text-red-600 text-lg pr-2"
-                      x-show="selectedColour === 'Black'"
-                      >-25%</span
-                    >
-                    <span
-                      class="text-red-600 text-lg pr-2"
-                      x-show="selectedColour !== 'Black'"
-                      >-29%</span
-                    >
-
-                    <!-- Main Price -->
-                    <span
-                      class="text-2xl font-bold text-slate-800"
-                      x-text="selectedColour === 'Black' ? '£150.00' : '£178.00'"
-                    ></span>
+                <div
+                  x-data="{ showRRP: false }"
+                  class="flex w-full items-baseline justify-between"
+                >
+                  <div class="flex items-baseline">
+                    <div class="flex items-baseline text-lg text-gray-400">
+                      <span x-show="showRRP" class="pr-2">RRP</span>
+                      <span
+                        class="pr-2"
+                        :class="{ 'line-through': !showRRP }"
+                        x-text="showRRP ? '£129.99' : '£112.99'"
+                      ></span>
+                    </div>
+                    <!-- Actual Price -->
+                    <span class="text-3xl font-bold text-s">£84.97</span>
                   </div>
-
-                  <!-- Price/RRP row -->
-                  <div class="flex items-baseline text-sm text-gray-500 mt-1">
-                    <template x-if="selectedColour === 'Black'">
-                      <div class="flex items-baseline">
-                        <span>Was: &nbsp;</span>
-                        <span class="line-through">£200.00</span>
-                      </div>
-                      s
-                    </template>
-                    <template x-if="selectedColour !== 'Black'">
-                      <div class="flex items-baseline">
-                        <span>RRP: &nbsp;</span>
-                        <span>£249.95</span>
-                        <button
-                          class="ml-1 text-gray-400 hover:text-gray-600"
-                          title="Price Information"
-                        >
-                          <svg
-                            class="w-4 h-4"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                          >
-                            <path
-                              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
-                            />
-                          </svg>
-                        </button>
-                      </div>
-                    </template>
-                  </div>
+                  <!-- Toggle Button -->
+                  <button
+                    @click="showRRP = !showRRP"
+                    class="ml-2 rounded-md px-2 py-1 text-sm text-white hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800"
+                  >
+                    <span x-show="!showRRP">Show RRP</span>
+                    <span x-show="showRRP">Show Was Price</span>
+                  </button>
                 </div>
+
                 <div class="space-y-2">
                   <div
                     class="flex flex-col justify-center space-y-4 xl:flex-col xl:space-x-0 xl:space-y-4"
@@ -436,7 +395,7 @@
                           Eligible for 48hr Delivery:
                         </p>
                         <svg
-                          x-show="selectedColour === 'Black' || selectedColour === 'Blue'"
+                          x-show="selectedColour === 'Black' || selectedColour === 'Havana'"
                           class="w-5 text-green-600"
                           viewBox="0 0 512 513"
                           fill="none"
@@ -450,7 +409,7 @@
                           />
                         </svg>
                         <svg
-                          x-show="!['Black', 'Blue'].includes(selectedColour)"
+                          x-show="!['Black', 'Havana'].includes(selectedColour)"
                           class="w-5 text-gray-400"
                           viewBox="0 0 512 514"
                           fill="none"
@@ -589,33 +548,17 @@
                   ></p>
                 </div>
 
-                <!-- Glide slider images -->
                 <div class="glide relative overflow-hidden">
                   <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides flex items-center space-x-4">
-                      <!-- Image 1 (Blue) -->
+                      <!-- Image 1 (Black) -->
                       <li class="glide__slide">
                         <div class="relative p-1">
                           <img
-                            @click="selectedColour = 'Blue'"
-                            @mouseover="$refs.mainImage.src = 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102z0_rheqxe7ugjq7ncyq.webp'"
-                            @mouseout="$refs.mainImage.src = selectedColour === 'Blue' ? 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102z0_rheqxe7ugjq7ncyq.webp' : selectedColour === 'Black' ? 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102b5_zt6t4syqt7uuboak.webp' : selectedColour === 'Havana' ? 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102j9_g6rjysvonjxmuno6.webp' : 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102e4_bwurzqzmy4cffzre.webp'"
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102z0_rheqxe7ugjq7ncyq.webp"
-                            alt="Blue Frame"
-                            :class="selectedColour === 'Blue' ? 'ring-2 ring-blue-800' : ''"
-                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
-                          />
-                        </div>
-                      </li>
-
-                      <!-- Image 2 (Black) -->
-                      <li class="glide__slide">
-                        <div class="relative p-1">
-                          <img
-                            @click="selectedColour = 'Black'"
-                            @mouseover="$refs.mainImage.src = 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102b5_zt6t4syqt7uuboak.webp'"
-                            @mouseout="$refs.mainImage.src = selectedColour === 'Blue' ? 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102z0_rheqxe7ugjq7ncyq.webp' : selectedColour === 'Black' ? 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102b5_zt6t4syqt7uuboak.webp' : selectedColour === 'Havana' ? 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102j9_g6rjysvonjxmuno6.webp' : 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102e4_bwurzqzmy4cffzre.webp'"
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102b5_zt6t4syqt7uuboak.webp"
+                            @click="selectedColour = 'Black'; mainImage = images['Black']"
+                            @mouseover="mainImage = images['Black']"
+                            @mouseout="mainImage = images[selectedColour]"
+                            :src="images['Black']"
                             alt="Black Frame"
                             :class="selectedColour === 'Black' ? 'ring-2 ring-blue-800' : ''"
                             class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
@@ -623,14 +566,14 @@
                         </div>
                       </li>
 
-                      <!-- Image 3 (Havana) -->
+                      <!-- Image 2 (Havana) -->
                       <li class="glide__slide">
                         <div class="relative p-1">
                           <img
-                            @click="selectedColour = 'Havana'"
-                            @mouseover="$refs.mainImage.src = 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102j9_g6rjysvonjxmuno6.webp'"
-                            @mouseout="$refs.mainImage.src = selectedColour === 'Blue' ? 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102z0_rheqxe7ugjq7ncyq.webp' : selectedColour === 'Black' ? 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102b5_zt6t4syqt7uuboak.webp' : selectedColour === 'Havana' ? 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102j9_g6rjysvonjxmuno6.webp' : 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102e4_bwurzqzmy4cffzre.webp'"
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102j9_g6rjysvonjxmuno6.webp"
+                            @click="selectedColour = 'Havana'; mainImage = images['Havana']"
+                            @mouseover="mainImage = images['Havana']"
+                            @mouseout="mainImage = images[selectedColour]"
+                            :src="images['Havana']"
                             alt="Havana Frame"
                             :class="selectedColour === 'Havana' ? 'ring-2 ring-blue-800' : ''"
                             class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
@@ -638,16 +581,76 @@
                         </div>
                       </li>
 
-                      <!-- Image 4 (Grey) -->
+                      <!-- Image 3 (Blue) -->
                       <li class="glide__slide">
                         <div class="relative p-1">
                           <img
-                            @click="selectedColour = 'Grey'"
-                            @mouseover="$refs.mainImage.src = 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102e4_bwurzqzmy4cffzre.webp'"
-                            @mouseout="$refs.mainImage.src = selectedColour === 'Blue' ? 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102z0_rheqxe7ugjq7ncyq.webp' : selectedColour === 'Black' ? 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102b5_zt6t4syqt7uuboak.webp' : selectedColour === 'Havana' ? 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102j9_g6rjysvonjxmuno6.webp' : 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102e4_bwurzqzmy4cffzre.webp'"
-                            src="https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/cdb20e9dfd1c69a6ea4831ecadbd9434/0/o/0oo9102__9102e4_bwurzqzmy4cffzre.webp"
+                            @click="selectedColour = 'Blue'; mainImage = images['Blue']"
+                            @mouseover="mainImage = images['Blue']"
+                            @mouseout="mainImage = images[selectedColour]"
+                            :src="images['Blue']"
+                            alt="Blue Frame"
+                            :class="selectedColour === 'Blue' ? 'ring-2 ring-blue-800' : ''"
+                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
+                          />
+                        </div>
+                      </li>
+
+                      <!-- Image 4 (Brown) -->
+                      <li class="glide__slide">
+                        <div class="relative p-1">
+                          <img
+                            @click="selectedColour = 'Brown'; mainImage = images['Brown']"
+                            @mouseover="mainImage = images['Brown']"
+                            @mouseout="mainImage = images[selectedColour]"
+                            :src="images['Brown']"
+                            alt="Brown Frame"
+                            :class="selectedColour === 'Brown' ? 'ring-2 ring-blue-800' : ''"
+                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
+                          />
+                        </div>
+                      </li>
+
+                      <!-- Image 5 (Black/Red) -->
+                      <li class="glide__slide">
+                        <div class="relative p-1">
+                          <img
+                            @click="selectedColour = 'Black/Red'; mainImage = images['Black/Red']"
+                            @mouseover="mainImage = images['Black/Red']"
+                            @mouseout="mainImage = images[selectedColour]"
+                            :src="images['Black/Red']"
+                            alt="Black/Red Frame"
+                            :class="selectedColour === 'Black/Red' ? 'ring-2 ring-blue-800' : ''"
+                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
+                          />
+                        </div>
+                      </li>
+
+                      <!-- Image 6 (Grey) -->
+                      <li class="glide__slide">
+                        <div class="relative p-1">
+                          <img
+                            @click="selectedColour = 'Grey'; mainImage = images['Grey']"
+                            @mouseover="mainImage = images['Grey']"
+                            @mouseout="mainImage = images[selectedColour]"
+                            :src="images['Grey']"
                             alt="Grey Frame"
                             :class="selectedColour === 'Grey' ? 'ring-2 ring-blue-800' : ''"
+                            class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
+                          />
+                        </div>
+                      </li>
+
+                      <!-- Image 7 (Clear) -->
+                      <li class="glide__slide">
+                        <div class="relative p-1">
+                          <img
+                            @click="selectedColour = 'Clear'; mainImage = images['Clear']"
+                            @mouseover="mainImage = images['Clear']"
+                            @mouseout="mainImage = images[selectedColour]"
+                            :src="images['Clear']"
+                            alt="Clear Frame"
+                            :class="selectedColour === 'Clear' ? 'ring-2 ring-blue-800' : ''"
                             class="h-auto w-full cursor-pointer rounded-md border-2 border-gray-200 object-cover transition-all duration-300 hover:border-gray-400"
                           />
                         </div>
@@ -701,7 +704,7 @@
                 <script>
                   new Glide(".glide", {
                     type: "slider",
-                    perView: 4.2, // Show 4 full items with a peek at the 5th
+                    perView: 4.4, // Show 4 full items with a peek at the 5th
                     gap: 0, // Increased gap for better visual separation
                     bound: true, // Prevents empty space after last slide
                     breakpoints: {
@@ -717,6 +720,32 @@
                     },
                   }).mount();
                 </script>
+              </div>
+              <div
+                x-show="selectedColour === 'Black'"
+                class="flex items-center space-x-2 text-red-600 dark:text-red-400"
+              >
+                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    fill-rule="evenodd"
+                    d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-sm font-medium">Only 1 left in stock!</span>
+              </div>
+              <div
+                x-show="selectedColour === 'Havana'"
+                class="flex items-center space-x-2 text-orange-600 dark:text-red-400"
+              >
+                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    fill-rule="evenodd"
+                    d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-sm font-medium">Only 5 left in stock!</span>
               </div>
             </div>
 
@@ -776,26 +805,10 @@
                   Order Frame Only
                 </button>
               </div>
-              <div class="text-base font-medium">
-                <div
-                  x-show="selectedColour === 'Black'"
-                  class="flex items-center space-x-2 text-red-600"
-                >
-                  <span class="">Only 1 left in stock</span>
-                </div>
-                <div
-                  x-show="selectedColour === 'Blue'"
-                  class="flex items-center space-x-2 text-orange-600"
-                >
-                  <span class="">Only 5 left in stock</span>
-                </div>
-                <div
-                  x-show="selectedColour === 'Havana'"
-                  class="flex items-center space-x-2 text-green-600"
-                >
-                  <span class="">In Stock</span>
-                </div>
-              </div>
+              <p>
+                Estimated Delivery: Eligible for 48hr Shipping (subject to
+                lenses)
+              </p>
               <!-- Mobile Back to Customise Lenses Button -->
               <div
                 class="fixed inset-x-0 bottom-0 z-50 border-t-2 border-gray-300 bg-white p-4 md:hidden"

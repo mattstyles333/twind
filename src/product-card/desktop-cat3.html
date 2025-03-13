@@ -1,15 +1,38 @@
 <head>
-  <meta charset="UTF-8" />
+  <!-- Add Glide.js CDN links in the head section -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            p: "#1f2937",
+            s: "#1E3A8A",
+            l: "#f3f4f6",
+            t: "#5494EC",
+            a: "#f97316",
+            b: "#2563eb",
+            gr: "#6b7280",
+          },
+          screens: {
+            xxsm: "420px",
+            xxxsm: "360px",
+          },
+        },
+      },
+    };
+  </script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="../output.css" rel="stylesheet" />
-  <script
-    defer
-    src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.6/dist/cdn.min.js"
-    defer
-  ></script>
 </head>
 <div class="relative lg:grid lg:grid-cols-2">
   <picture class="mfwebp">
@@ -1742,7 +1765,7 @@
           <div
             x-data="{ loading: false }"
             @click="loading = true; setTimeout(() => { window.location.href = 'file:///home/james/Documents/code/twind/src/product-page/v20-stock.html'; }, 1000)"
-            class="group transform cursor-pointer border border-gray-200 bg-white p-4 shadow-md transition-all duration-500 ease-in-out hover:scale-[1.025]"
+            class="group relative transform h-full cursor-pointer flex flex-col border border-gray-200 bg-white p-4 shadow-md transition-all duration-500 ease-in-out hover:scale-[1.025]"
           >
             <div class="mb-2 flex items-center justify-between">
               <!-- Placeholder for Brand Logo -->
@@ -1787,35 +1810,27 @@
               />
             </div>
 
-            <!-- Product Title -->
-            <h2 class="mb-4 text-center text-lg font-semibold text-gray-800">
-              SF 2852 Salvatore Ferragamo Glasses
-            </h2>
-
-            <!-- Brand Logo and Color Swatches -->
             <div
-              class="mb-4 flex items-center justify-between border-t-2 border-gray-200 py-4"
+              class="rounded-full group-hover:opacity-100 text-gray-600 hover:text-red-600 opacity-0 duration-500 ease-in-out flex justify-center items-center bg-gray-200 h-8 w-8 text-2xl ml-auto"
             >
-              <div
-                class="flex gap-1 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 513 443"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <div
-                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
-                >
-                  54
-                </div>
-                <div
-                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
-                >
-                  52
-                </div>
-                <div
-                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
-                >
-                  50
-                </div>
-              </div>
-
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M129.011 0.665762C33.305 10.1118 -25.695 114.33 11.181 208.801C37.545 276.339 114.245 355.199 220.927 424.453C259.411 449.435 252.702 450.01 301.009 417.587C454.067 314.855 528.477 208.223 509.195 119.251C484.234 4.08077 357.75 -38.6202 278.478 41.3598C271.507 48.3928 264.356 56.7478 261.478 61.2198C255.476 70.5478 256.546 70.5478 250.544 61.2198C225.51 22.3118 173.294 -3.70524 129.011 0.665762Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <!-- Brand Logo and Color Swatches -->
+            <div class="flex items-center justify-between gap-2 pt-2">
+              <div class="text-xl font-bold text-gray-700">RX5268</div>
               <!-- Color Swatches -->
               <div class="flex gap-2">
                 <div class="h-7 w-7 rounded-full bg-black"></div>
@@ -1825,9 +1840,27 @@
             </div>
 
             <!-- Price -->
-            <div class="flex justify-between">
-              <div class="text-2xl font-bold text-gray-700">£142.00</div>
-              <div class="rounded-full bg-gray-200 p-4 text-2xl"></div>
+            <div class="mt-auto pt-4">
+              <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-gray-700">£142.00</div>
+                <div class="flex gap-1">
+                  <div
+                    class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                  >
+                    54
+                  </div>
+                  <div
+                    class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                  >
+                    52
+                  </div>
+                  <div
+                    class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                  >
+                    50
+                  </div>
+                </div>
+              </div>
             </div>
             <div
               x-show="loading"
@@ -1839,7 +1872,7 @@
           <div
             x-data="{ loading: false }"
             @click="loading = true; setTimeout(() => { window.location.href = 'file:///home/james/Documents/code/twind/src/product-page/v20-stock.html'; }, 1000)"
-            class="group transform cursor-pointer border border-gray-200 bg-white p-4 shadow-md transition-all duration-500 ease-in-out hover:scale-[1.025]"
+            class="group relative transform h-full flex flex-col cursor-pointer border border-gray-200 bg-white p-4 shadow-md transition-all duration-500 ease-in-out hover:scale-[1.025]"
           >
             <div class="mb-2 flex items-center justify-between">
               <!-- Placeholder for Brand Logo -->
@@ -1884,35 +1917,30 @@
               />
             </div>
 
-            <!-- Product Title -->
-            <h2 class="mb-4 text-center text-lg font-semibold text-gray-800">
-              SF 2852 Salvatore Ferragamo Glasses
-            </h2>
-
-            <!-- Brand Logo and Color Swatches -->
             <div
-              class="mb-4 flex items-center justify-between border-t-2 border-gray-200 py-4"
+              class="rounded-full group-hover:opacity-100 text-gray-600 hover:text-red-600 opacity-0 duration-500 ease-in-out flex justify-center items-center bg-gray-200 h-8 w-8 text-2xl ml-auto"
             >
-              <div
-                class="flex gap-1 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 513 443"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <div
-                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
-                >
-                  54
-                </div>
-                <div
-                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
-                >
-                  52
-                </div>
-                <div
-                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
-                >
-                  50
-                </div>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M129.011 0.665762C33.305 10.1118 -25.695 114.33 11.181 208.801C37.545 276.339 114.245 355.199 220.927 424.453C259.411 449.435 252.702 450.01 301.009 417.587C454.067 314.855 528.477 208.223 509.195 119.251C484.234 4.08077 357.75 -38.6202 278.478 41.3598C271.507 48.3928 264.356 56.7478 261.478 61.2198C255.476 70.5478 256.546 70.5478 250.544 61.2198C225.51 22.3118 173.294 -3.70524 129.011 0.665762Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <!-- Brand Logo and Color Swatches -->
+            <div class="flex items-center justify-between gap-2 pt-2">
+              <div class="flex flex-col">
+                <div class="text-xl font-bold text-gray-700">Wayfarer</div>
+                <div class="text-base font-medium text-gray-500">RX5268</div>
               </div>
-
               <!-- Color Swatches -->
               <div class="flex gap-2">
                 <div class="h-7 w-7 rounded-full bg-black"></div>
@@ -1922,9 +1950,27 @@
             </div>
 
             <!-- Price -->
-            <div class="flex justify-between">
-              <div class="text-2xl font-bold text-gray-700">£142.00</div>
-              <div class="rounded-full bg-gray-200 p-4 text-2xl"></div>
+            <div class="mt-auto pt-4">
+              <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-gray-700">£142.00</div>
+                <div class="flex gap-1 o">
+                  <div
+                    class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                  >
+                    54
+                  </div>
+                  <div
+                    class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                  >
+                    52
+                  </div>
+                  <div
+                    class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                  >
+                    50
+                  </div>
+                </div>
+              </div>
             </div>
             <div
               x-show="loading"
@@ -1934,7 +1980,7 @@
           <div
             x-data="{ loading: false }"
             @click="loading = true; setTimeout(() => { window.location.href = 'file:///home/james/Documents/code/twind/src/product-page/v20-stock.html'; }, 1000)"
-            class="group transform cursor-pointer border border-gray-200 bg-white p-4 shadow-md transition-all duration-500 ease-in-out hover:scale-[1.025]"
+            class="group relative transform h-full cursor-pointer flex flex-col border border-gray-200 bg-white p-4 shadow-md transition-all duration-500 ease-in-out hover:scale-[1.025]"
           >
             <div class="mb-2 flex items-center justify-between">
               <!-- Placeholder for Brand Logo -->
@@ -1979,35 +2025,27 @@
               />
             </div>
 
-            <!-- Product Title -->
-            <h2 class="mb-4 text-center text-lg font-semibold text-gray-800">
-              SF 2852 Salvatore Ferragamo Glasses
-            </h2>
-
-            <!-- Brand Logo and Color Swatches -->
             <div
-              class="mb-4 flex items-center justify-between border-t-2 border-gray-200 py-4"
+              class="rounded-full group-hover:opacity-100 text-gray-600 hover:text-red-600 opacity-0 duration-500 ease-in-out flex justify-center items-center bg-gray-200 h-8 w-8 text-2xl mr-auto"
             >
-              <div
-                class="flex gap-1 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 513 443"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <div
-                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
-                >
-                  54
-                </div>
-                <div
-                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
-                >
-                  52
-                </div>
-                <div
-                  class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
-                >
-                  50
-                </div>
-              </div>
-
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M129.011 0.665762C33.305 10.1118 -25.695 114.33 11.181 208.801C37.545 276.339 114.245 355.199 220.927 424.453C259.411 449.435 252.702 450.01 301.009 417.587C454.067 314.855 528.477 208.223 509.195 119.251C484.234 4.08077 357.75 -38.6202 278.478 41.3598C271.507 48.3928 264.356 56.7478 261.478 61.2198C255.476 70.5478 256.546 70.5478 250.544 61.2198C225.51 22.3118 173.294 -3.70524 129.011 0.665762Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <!-- Brand Logo and Color Swatches -->
+            <div class="flex items-center justify-between gap-2 pt-2">
+              <div class="text-xl font-bold text-gray-700">RX5268</div>
               <!-- Color Swatches -->
               <div class="flex gap-2">
                 <div class="h-7 w-7 rounded-full bg-black"></div>
@@ -2017,9 +2055,27 @@
             </div>
 
             <!-- Price -->
-            <div class="flex justify-between">
-              <div class="text-2xl font-bold text-gray-700">£142.00</div>
-              <div class="rounded-full bg-gray-200 p-4 text-2xl"></div>
+            <div class="mt-auto pt-4">
+              <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-gray-700">£142.00</div>
+                <div class="flex gap-1">
+                  <div
+                    class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                  >
+                    54
+                  </div>
+                  <div
+                    class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                  >
+                    52
+                  </div>
+                  <div
+                    class="rounded border-2 border-gray-200 px-2 py-1 text-sm font-medium text-gray-800"
+                  >
+                    50
+                  </div>
+                </div>
+              </div>
             </div>
             <div
               x-show="loading"

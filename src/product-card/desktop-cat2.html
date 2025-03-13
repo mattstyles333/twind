@@ -1,15 +1,38 @@
 <head>
-  <meta charset="UTF-8" />
+  <!-- Add Glide.js CDN links in the head section -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            p: "#1f2937",
+            s: "#1E3A8A",
+            l: "#f3f4f6",
+            t: "#5494EC",
+            a: "#f97316",
+            b: "#2563eb",
+            gr: "#6b7280",
+          },
+          screens: {
+            xxsm: "420px",
+            xxxsm: "360px",
+          },
+        },
+      },
+    };
+  </script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="../output.css" rel="stylesheet" />
-  <script
-    defer
-    src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.6/dist/cdn.min.js"
-    defer
-  ></script>
 </head>
 <div class="relative lg:grid lg:grid-cols-2">
   <picture class="mfwebp">

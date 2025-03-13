@@ -1,0 +1,1236 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/date-fns@4.1.0/cdn.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>
+  const exampleOrders = {
+    processing: {
+      entity_id: "000000126",
+      status_histories: [
+        {
+          status: "ready_to_process",
+          created_at: "2025-02-27T10:30:00",
+          comment: "Order placed successfully",
+        },
+        {
+          status: "processing",
+          created_at: "2025-02-27T11:30:00",
+          comment: "Order is being processed",
+        },
+      ],
+    },
+    frame_picked: {
+      entity_id: "000000127",
+      status_histories: [
+        {
+          status: "ready_to_process",
+          created_at: "2025-02-27T10:30:00",
+          comment: "Order placed successfully",
+        },
+        {
+          status: "tray_up",
+          created_at: "2025-02-27T14:45:00",
+          comment: "Payment confirmed",
+        },
+        {
+          status: "frame_picked",
+          created_at: "2025-02-27T15:30:00",
+          comment: "Frame picked from stock",
+        },
+      ],
+    },
+    specialist_lens: {
+      entity_id: "000000128",
+      status_histories: [
+        {
+          status: "ready_to_process",
+          created_at: "2025-02-27T10:30:00",
+          comment: "Order placed successfully",
+        },
+        {
+          status: "tray_up",
+          created_at: "2025-02-27T14:45:00",
+          comment: "Payment confirmed",
+        },
+        {
+          status: "frame_order",
+          created_at: "2025-02-27T15:30:00",
+          comment: "Frame ordered",
+        },
+        {
+          status: "specialist_lens_order",
+          created_at: "2025-02-27T16:15:00",
+          comment: "Specialist lenses ordered",
+        },
+      ],
+    },
+    luxottica_glaze: {
+      entity_id: "000000129",
+      status_histories: [
+        {
+          status: "ready_to_process",
+          created_at: "2025-02-27T10:30:00",
+          comment: "Order placed successfully",
+        },
+        {
+          status: "tray_up",
+          created_at: "2025-02-27T14:45:00",
+          comment: "Payment confirmed",
+        },
+        {
+          status: "frame_order",
+          created_at: "2025-02-27T15:30:00",
+          comment: "Frame ordered",
+        },
+        {
+          status: "luxottica_glaze_ordered",
+          created_at: "2025-02-27T16:15:00",
+          comment: "Luxottica glaze ordered",
+        },
+      ],
+    },
+    uk_designer: {
+      entity_id: "000000130",
+      status_histories: [
+        {
+          status: "ready_to_process",
+          created_at: "2025-02-27T10:30:00",
+          comment: "Order placed successfully",
+        },
+        {
+          status: "tray_up",
+          created_at: "2025-02-27T14:45:00",
+          comment: "Payment confirmed",
+        },
+        {
+          status: "uk_designer_stock_frame",
+          created_at: "2025-02-27T15:30:00",
+          comment: "UK Designer frame ordered",
+        },
+      ],
+    },
+    eu_designer: {
+      entity_id: "000000131",
+      status_histories: [
+        {
+          status: "ready_to_process",
+          created_at: "2025-02-27T10:30:00",
+          comment: "Order placed successfully",
+        },
+        {
+          status: "tray_up",
+          created_at: "2025-02-27T14:45:00",
+          comment: "Payment confirmed",
+        },
+        {
+          status: "eu_designer_frames_ordered",
+          created_at: "2025-02-27T15:30:00",
+          comment: "EU Designer frames ordered",
+        },
+      ],
+    },
+    non_prescription: {
+      entity_id: "000000132",
+      status_histories: [
+        {
+          status: "ready_to_process",
+          created_at: "2025-02-27T10:30:00",
+          comment: "Order placed successfully",
+        },
+        {
+          status: "tray_up",
+          created_at: "2025-02-27T14:45:00",
+          comment: "Payment confirmed",
+        },
+        {
+          status: "non_prescription_confirmed",
+          created_at: "2025-02-27T15:30:00",
+          comment: "Non-prescription confirmed",
+        },
+      ],
+    },
+    frame_backorder: {
+      entity_id: "000000133",
+      status_histories: [
+        {
+          status: "ready_to_process",
+          created_at: "2025-02-27T10:30:00",
+          comment: "Order placed successfully",
+        },
+        {
+          status: "tray_up",
+          created_at: "2025-02-27T14:45:00",
+          comment: "Payment confirmed",
+        },
+        {
+          status: "frame_on_backorder",
+          created_at: "2025-02-27T15:30:00",
+          comment: "Frame is on backorder",
+        },
+      ],
+    },
+    dispatched: {
+      entity_id: "000000134",
+      status_histories: [
+        {
+          status: "ready_to_process",
+          created_at: "2025-02-27T10:30:00",
+          comment: "Order placed successfully",
+        },
+        {
+          status: "tray_up",
+          created_at: "2025-02-27T14:45:00",
+          comment: "Payment confirmed",
+        },
+        {
+          status: "frame_order",
+          created_at: "2025-02-27T15:30:00",
+          comment: "Frame ordered",
+        },
+        {
+          status: "rx_lens_order",
+          created_at: "2025-02-27T16:15:00",
+          comment: "Rx Lenses ordered",
+        },
+        {
+          status: "quality_control",
+          created_at: "2025-03-01T09:30:00",
+          comment: "Quality check passed",
+        },
+        {
+          status: "dispatched",
+          created_at: "2025-03-02T11:45:00",
+          comment: "Order dispatched",
+        },
+      ],
+    },
+    frame_order: {
+      entity_id: "000000135",
+      status_histories: [
+        {
+          status: "ready_to_process",
+          created_at: "2025-02-27T10:30:00",
+          comment: "Order placed successfully",
+        },
+        {
+          status: "tray_up",
+          created_at: "2025-02-27T14:45:00",
+          comment: "Payment confirmed",
+        },
+        {
+          status: "frame_order",
+          created_at: "2025-02-27T15:30:00",
+          comment: "Frame ordered eta | 5-9",
+        },
+      ],
+    },
+    stock_lens: {
+      entity_id: "000000136",
+      status_histories: [
+        {
+          status: "ready_to_process",
+          created_at: "2025-02-27T10:30:00",
+          comment: "Order placed successfully",
+        },
+        {
+          status: "tray_up",
+          created_at: "2025-02-27T14:45:00",
+          comment: "Payment confirmed",
+        },
+        {
+          status: "frame_picked",
+          created_at: "2025-02-27T15:30:00",
+          comment: "Frame picked from stock",
+        },
+        {
+          status: "stock_lens_order",
+          created_at: "2025-02-27T16:15:00",
+          comment: "Stock lenses ordered",
+        },
+      ],
+    },
+    cancelled: {
+      entity_id: "000000137",
+      status_histories: [
+        {
+          status: "ready_to_process",
+          created_at: "2025-02-27T10:30:00",
+          comment: "Order placed successfully",
+        },
+        {
+          status: "cancelled",
+          created_at: "2025-02-27T14:45:00",
+          comment: "Order cancelled",
+        },
+      ],
+    },
+    collected: {
+      entity_id: "000000138",
+      status_histories: [
+        {
+          status: "ready_to_process",
+          created_at: "2025-02-27T10:30:00",
+          comment: "Order placed successfully",
+        },
+        {
+          status: "ready_for_collection",
+          created_at: "2025-02-27T14:45:00",
+          comment: "Ready for collection",
+        },
+        {
+          status: "collected",
+          created_at: "2025-02-27T15:30:00",
+          comment: "Order collected from store",
+        },
+      ],
+    },
+    ready_for_collection_shop: {
+      entity_id: "000000139",
+      status_histories: [
+        {
+          status: "ready_to_process",
+          created_at: "2025-02-27T10:30:00",
+          comment: "Order placed successfully",
+        },
+        {
+          status: "ready_for_collection_shop",
+          created_at: "2025-02-27T14:45:00",
+          comment: "Ready for collection in store",
+        },
+      ],
+    },
+    ready_for_glazing: {
+      entity_id: "000000140",
+      status_histories: [
+        {
+          status: "ready_to_process",
+          created_at: "2025-02-27T10:30:00",
+          comment: "Order placed successfully",
+        },
+        {
+          status: "tray_up",
+          created_at: "2025-02-27T14:45:00",
+          comment: "Payment confirmed",
+        },
+        {
+          status: "ready_for_glazing",
+          created_at: "2025-02-27T15:30:00",
+          comment: "Ready for glazing",
+        },
+      ],
+    },
+  };
+
+  const dateFns = window.dateFns;
+  const addBusinessDays = dateFns.addBusinessDays;
+
+  const statusNameMapping = {
+    ready_to_process: "Ready To Process",
+    tray_up: "Trayed Up",
+    frame_order: "Frame Ordered",
+    frame_picked: "Frame Picked",
+    rx_lens_order: "Rx Lenses Ordered",
+    stock_lens_order: "Stock Lenses Ordered",
+    specialist_lens_order: "Specialist Lenses Ordered",
+    lens_picked: "Lenses Picked",
+    quality_control: "Quality Control",
+    dispatched: "Dispatched",
+    processing: "Processing",
+    non_prescription_confirmed: "Non-prescription Confirmed",
+    luxottica_glaze_ordered: "Luxottica Glaze Ordered",
+    frame_on_backorder: "Frame on Backorder",
+    uk_designer_stock_frame: "UK Designer/STOCK Frame",
+    eu_designer_frames_ordered: "EU Designer Frames Ordered",
+    delivered: "Delivered",
+    cancelled: "Cancelled",
+    collected: "Collected",
+    ready_for_collection_shop: "Ready for Collection (SHOP)",
+    ready_for_glazing: "Ready for Glazing",
+  };
+
+  function calculateOrderTracking(orderData) {
+    const statusHistories = orderData.status_histories;
+    const currentStatus = statusHistories[statusHistories.length - 1].status;
+
+    // For collected or ready_for_collection_shop, set delivery estimate to today
+    if (
+      currentStatus === "collected" ||
+      currentStatus === "ready_for_collection_shop"
+    ) {
+      const today = new Date();
+      return {
+        minDeliveryEst: today,
+        maxDeliveryEst: today,
+        readyToProcessDate: new Date(statusHistories[0].created_at),
+        currentStatus,
+        shouldHideProgress: false,
+      };
+    }
+
+    // Add cancelled to statuses that should hide progress
+    const hideProgressStatuses = [
+      "query",
+      "on_hold",
+      "awaiting_customer_frames",
+      "awaiting_confirmation",
+      "frame_on_backorder",
+      "fitting_photograph_required",
+      "frame_query",
+      "lens_or_prescription_query",
+      "reinstated_order",
+      "returns",
+      "cancelled", // Add cancelled status
+    ];
+
+    // Add collected and ready_for_collection_shop to completed statuses
+    const completedStatuses = [
+      "delivered",
+      "dispatched",
+      "collected",
+      "ready_for_collection_shop",
+    ];
+
+    if (hideProgressStatuses.includes(currentStatus)) {
+      return {
+        shouldHideProgress: true,
+        currentStatus: currentStatus,
+        minDeliveryEst: null,
+        maxDeliveryEst: null,
+        readyToProcessDate: null,
+      };
+    }
+
+    const readyToProcessStatus = statusHistories.find(
+      (status) => status.status === "ready_to_process"
+    );
+    const readyToProcessDate = new Date(readyToProcessStatus.created_at);
+
+    // Find frame ordered status and its comment
+    const frameOrderedStatus = statusHistories.find(
+      (status) => status.status === "frame_order"
+    );
+    const frameOrderedComment = frameOrderedStatus
+      ? frameOrderedStatus.comment
+      : "";
+    const frameOrderedDate = frameOrderedStatus
+      ? new Date(frameOrderedStatus.created_at)
+      : null;
+
+    // Parse ETA from frame ordered comment if available
+    let frameOrderedEtaMin = 1;
+    let frameOrderedEtaMax = 14;
+
+    if (frameOrderedComment && frameOrderedComment.includes("eta |")) {
+      const etaPart = frameOrderedComment.split("eta |")[1].trim();
+      const etaRange = etaPart.split("-");
+      if (etaRange.length === 2) {
+        frameOrderedEtaMin = parseInt(etaRange[0].trim(), 10) || 1;
+        frameOrderedEtaMax = parseInt(etaRange[1].trim(), 10) || 14;
+      }
+    }
+
+    // Find frame picked status
+    const framePickedStatus = statusHistories.find(
+      (status) => status.status === "frame_picked"
+    );
+    const framePickedDate = framePickedStatus
+      ? new Date(framePickedStatus.created_at)
+      : null;
+
+    // Find UK designer frame status
+    const ukDesignerStatus = statusHistories.find(
+      (status) => status.status === "uk_designer_stock_frame"
+    );
+    const ukDesignerDate = ukDesignerStatus
+      ? new Date(ukDesignerStatus.created_at)
+      : null;
+
+    // Find EU designer frame status
+    const euDesignerStatus = statusHistories.find(
+      (status) => status.status === "eu_designer_frames_ordered"
+    );
+    const euDesignerDate = euDesignerStatus
+      ? new Date(euDesignerStatus.created_at)
+      : null;
+
+    // Find specific lens statuses
+    const rxLensStatus = statusHistories.find(
+      (status) => status.status === "rx_lens_order"
+    );
+    const rxLensDate = rxLensStatus ? new Date(rxLensStatus.created_at) : null;
+
+    const stockLensStatus = statusHistories.find(
+      (status) => status.status === "stock_lens_order"
+    );
+    const stockLensDate = stockLensStatus
+      ? new Date(stockLensStatus.created_at)
+      : null;
+
+    const lensPickedStatus = statusHistories.find(
+      (status) => status.status === "lens_picked"
+    );
+    const lensPickedDate = lensPickedStatus
+      ? new Date(lensPickedStatus.created_at)
+      : null;
+
+    const specialistLensStatus = statusHistories.find(
+      (status) => status.status === "specialist_lens_order"
+    );
+    const specialistLensDate = specialistLensStatus
+      ? new Date(specialistLensStatus.created_at)
+      : null;
+
+    // Find dispatched status
+    const dispatchedStatus = statusHistories.find(
+      (status) => status.status === "dispatched"
+    );
+    const dispatchedDate = dispatchedStatus
+      ? new Date(dispatchedStatus.created_at)
+      : null;
+
+    // Find Luxottica Glaze status
+    const luxotticaGlazeStatus = statusHistories.find(
+      (status) => status.status === "luxottica_glaze_ordered"
+    );
+    const luxotticaGlazeDate = luxotticaGlazeStatus
+      ? new Date(luxotticaGlazeStatus.created_at)
+      : null;
+
+    let minDispatchEst = null;
+    let maxDispatchEst = null;
+
+    // If already dispatched, use that date
+    if (dispatchedStatus) {
+      minDispatchEst = dispatchedDate;
+      maxDispatchEst = dispatchedDate;
+    }
+    // If Luxottica Glaze is ordered, 5-10 days to dispatch
+    else if (luxotticaGlazeStatus) {
+      minDispatchEst = addBusinessDays(luxotticaGlazeDate, 5);
+      maxDispatchEst = addBusinessDays(luxotticaGlazeDate, 10);
+    }
+    // If frame is picked, 1-2 days to dispatch
+    else if (framePickedStatus) {
+      minDispatchEst = addBusinessDays(framePickedDate, 1);
+      maxDispatchEst = addBusinessDays(framePickedDate, 2);
+    }
+    // If we have EU designer frames, 5-14 days to dispatch
+    else if (euDesignerStatus) {
+      minDispatchEst = addBusinessDays(euDesignerDate, 5);
+      maxDispatchEst = addBusinessDays(euDesignerDate, 14);
+    }
+    // If we have UK designer frames, 1-5 days to dispatch
+    else if (ukDesignerStatus) {
+      minDispatchEst = addBusinessDays(ukDesignerDate, 1);
+      maxDispatchEst = addBusinessDays(ukDesignerDate, 5);
+    }
+    // If lenses are picked, 1-2 days to dispatch
+    else if (lensPickedStatus) {
+      minDispatchEst = addBusinessDays(lensPickedDate, 1);
+      maxDispatchEst = addBusinessDays(lensPickedDate, 2);
+    }
+    // If specialist lenses are ordered, 5-14 days to dispatch
+    else if (specialistLensStatus) {
+      minDispatchEst = addBusinessDays(specialistLensDate, 5);
+      maxDispatchEst = addBusinessDays(specialistLensDate, 14);
+    }
+    // If stock lenses are ordered, 1-2 days to dispatch
+    else if (stockLensStatus) {
+      minDispatchEst = addBusinessDays(stockLensDate, 1);
+      maxDispatchEst = addBusinessDays(stockLensDate, 2);
+    }
+    // If Rx lenses are ordered, 1-14 days to dispatch
+    else if (rxLensStatus) {
+      minDispatchEst = addBusinessDays(rxLensDate, 1);
+      maxDispatchEst = addBusinessDays(rxLensDate, 14);
+    }
+    // If we have frame ordered, use the ETA from comment or default to 1-14 days
+    else if (frameOrderedStatus) {
+      minDispatchEst = addBusinessDays(frameOrderedDate, frameOrderedEtaMin);
+      maxDispatchEst = addBusinessDays(frameOrderedDate, frameOrderedEtaMax);
+    }
+    // Before lens ordered stage
+    else {
+      minDispatchEst = addBusinessDays(readyToProcessDate, 1);
+      maxDispatchEst = addBusinessDays(readyToProcessDate, 10);
+    }
+
+    // Ensure dispatch dates are never in the past (except for already dispatched orders)
+    const today = new Date();
+    if (!dispatchedStatus) {
+      if (minDispatchEst < today) {
+        minDispatchEst = today;
+      }
+      if (maxDispatchEst < today) {
+        maxDispatchEst = today;
+      }
+    }
+
+    // Calculate delivery dates by adding 1-2 days to dispatch dates
+    // Use calendar days for delivery, not business days
+    let minDeliveryEst = new Date(minDispatchEst);
+    minDeliveryEst.setDate(minDeliveryEst.getDate() + 1); // Add 1 calendar day
+
+    let maxDeliveryEst = new Date(maxDispatchEst);
+    maxDeliveryEst.setDate(maxDeliveryEst.getDate() + 2); // Add 2 calendar days
+
+    // Check if max delivery date is in the past
+    if (maxDeliveryEst < today && !dispatchedStatus) {
+      // If the max delivery date has passed and the order isn't already marked as dispatched,
+      // set the status to "delivered" and update the delivery dates
+      return {
+        minDeliveryEst: maxDeliveryEst,
+        maxDeliveryEst: maxDeliveryEst,
+        readyToProcessDate,
+        currentStatus: "delivered",
+        shouldHideProgress: false,
+      };
+    }
+
+    // Add ready_for_glazing handling
+    if (currentStatus === "ready_for_glazing") {
+      minDispatchEst = addBusinessDays(
+        new Date(statusHistories[statusHistories.length - 1].created_at),
+        1
+      );
+      maxDispatchEst = addBusinessDays(
+        new Date(statusHistories[statusHistories.length - 1].created_at),
+        2
+      );
+    }
+
+    // Update progress calculation to handle completed statuses
+    if (completedStatuses.includes(currentStatus)) {
+      return {
+        minDeliveryEst: maxDeliveryEst,
+        maxDeliveryEst: maxDeliveryEst,
+        readyToProcessDate,
+        currentStatus,
+        shouldHideProgress: false,
+      };
+    }
+
+    return {
+      minDeliveryEst,
+      maxDeliveryEst,
+      readyToProcessDate,
+      currentStatus,
+      shouldHideProgress: false,
+    };
+  }
+
+  function calculateProgress(
+    minDeliveryEst,
+    maxDeliveryEst,
+    readyToProcessDate,
+    currentStatus
+  ) {
+    // If status is delivered, dispatched, collected, or ready_for_collection_shop return 100%
+    if (
+      currentStatus === "delivered" ||
+      currentStatus === "dispatched" ||
+      currentStatus === "collected" ||
+      currentStatus === "ready_for_collection_shop"
+    ) {
+      return 100;
+    }
+
+    const totalDuration = Math.max(
+      0,
+      (maxDeliveryEst - readyToProcessDate) / (1000 * 60 * 60 * 24)
+    );
+    const remainingDays = Math.max(
+      0,
+      (maxDeliveryEst - new Date()) / (1000 * 60 * 60 * 24)
+    );
+
+    let progress =
+      totalDuration > 0
+        ? ((totalDuration - remainingDays) / totalDuration) * 100
+        : 0;
+
+    return Math.min(95, progress);
+  }
+
+  // Add a variable to track the current progress
+  let currentProgressValue = 0;
+
+  function updateDisplay(orderData) {
+    const result = calculateOrderTracking(orderData);
+
+    const progressContainer = document.getElementById("progress-container");
+    const deliveryContainer = document.getElementById("delivery-container");
+    const statusInfoButton = document.getElementById("status-info");
+
+    // Show status info button for query statuses
+    const queryStatuses = [
+      "query",
+      "on_hold",
+      "awaiting_customer_frames",
+      "awaiting_confirmation",
+      "fitting_photograph_required",
+      "frame_query",
+      "lens_or_prescription_query",
+      "reinstated_order",
+      "returns",
+    ];
+
+    // Show status info button for query statuses
+    if (queryStatuses.includes(result.currentStatus)) {
+      statusInfoButton.classList.remove("hidden");
+    } else {
+      statusInfoButton.classList.add("hidden");
+    }
+
+    if (result.shouldHideProgress) {
+      progressContainer.classList.add("hidden");
+      deliveryContainer.classList.add("hidden");
+    } else {
+      progressContainer.classList.remove("hidden");
+      deliveryContainer.classList.remove("hidden");
+
+      const progress = calculateProgress(
+        result.minDeliveryEst,
+        result.maxDeliveryEst,
+        result.readyToProcessDate,
+        result.currentStatus
+      );
+
+      const progressBar = document.getElementById("progress-bar");
+      const progressCircle = document.getElementById("progress-circle");
+
+      // Always ensure transitions are applied
+      progressBar.style.transition = "width 1.5s ease-in-out";
+      progressCircle.style.transition = "left 1.5s ease-in-out";
+
+      // Update from current position to new position
+      progressBar.style.width = `${progress}%`;
+      progressCircle.style.left = `calc(${progress}% - 1rem)`;
+
+      // Store the current progress for next update
+      currentProgressValue = progress;
+
+      const minDate = result.minDeliveryEst.toLocaleDateString("en-GB");
+      const maxDate = result.maxDeliveryEst.toLocaleDateString("en-GB");
+      document.getElementById(
+        "delivery-estimate"
+      ).innerText = `${minDate} - ${maxDate}`;
+    }
+
+    const friendlyStatus =
+      statusNameMapping[result.currentStatus] || result.currentStatus;
+    document.getElementById("current-status").innerText = friendlyStatus;
+  }
+
+  // Initialize with first example
+  let currentMockData = exampleOrders.rx_lens;
+
+  // Initial update when page loads
+  document.addEventListener("DOMContentLoaded", function () {
+    // Set initial position without animation
+    const progressBar = document.getElementById("progress-bar");
+    const progressCircle = document.getElementById("progress-circle");
+
+    // First render without transition
+    progressBar.style.transition = "none";
+    progressCircle.style.transition = "none";
+
+    // Update display (this will calculate initial progress)
+    updateDisplay(currentMockData);
+
+    // Force reflow
+    void progressBar.offsetWidth;
+
+    // Now enable transitions for future updates
+    progressBar.style.transition = "width 1.5s ease-in-out";
+    progressCircle.style.transition = "left 1.5s ease-in-out";
+
+    // Update the mock data display
+    document.getElementById("current-mock-data").textContent = JSON.stringify(
+      currentMockData,
+      null,
+      2
+    );
+  });
+
+  // Add click handler for mock data button
+  document
+    .querySelector('button[onclick*="mock-data-content"]')
+    .addEventListener("click", function () {
+      const mockDataContent = document.getElementById("mock-data-content");
+      if (mockDataContent.classList.contains("hidden")) {
+        // Update content when showing
+        document.getElementById("current-mock-data").textContent =
+          JSON.stringify(currentMockData, null, 2);
+      }
+    });
+
+  function switchMockData(type) {
+    currentMockData = exampleOrders[type];
+    updateDisplay(currentMockData);
+    document.getElementById("current-mock-data").textContent = JSON.stringify(
+      currentMockData,
+      null,
+      2
+    );
+  }
+
+  function createQueryMockData(queryStatus) {
+    // Create a new mock data object based on the frame_backorder template
+    // but with the specified query status
+    const newMockData = JSON.parse(
+      JSON.stringify(exampleOrders.frame_backorder)
+    );
+
+    // Update the last status to the specified query status
+    newMockData.status_histories[
+      newMockData.status_histories.length - 1
+    ].status = queryStatus;
+    newMockData.status_histories[
+      newMockData.status_histories.length - 1
+    ].comment = `Order has ${queryStatus.replace(/_/g, " ")} status`;
+
+    // Update the entity_id to make it clear this is a custom query
+    newMockData.entity_id = `Q-${queryStatus}`;
+
+    // Set as current mock data and update display
+    currentMockData = newMockData;
+    updateDisplay(currentMockData);
+    document.getElementById("current-mock-data").textContent = JSON.stringify(
+      currentMockData,
+      null,
+      2
+    );
+  }
+
+  // Add a function to create custom frame order with specific ETA
+  function createFrameOrderWithEta(minEta, maxEta) {
+    // Create a new mock data object based on the frame_order template
+    const newMockData = JSON.parse(JSON.stringify(exampleOrders.frame_order));
+
+    // Update the frame_order comment to include the specified ETA
+    for (let i = 0; i < newMockData.status_histories.length; i++) {
+      if (newMockData.status_histories[i].status === "frame_order") {
+        newMockData.status_histories[
+          i
+        ].comment = `Frame ordered eta | ${minEta}-${maxEta}`;
+        break;
+      }
+    }
+
+    // Set as current mock data and update display
+    currentMockData = newMockData;
+    updateDisplay(currentMockData);
+    document.getElementById("current-mock-data").textContent = JSON.stringify(
+      currentMockData,
+      null,
+      2
+    );
+  }
+</script>
+
+<!-- Split into two separate containers -->
+<div class="mt-2 px-4">
+  <!-- Date verification moved outside and above the mock data -->
+  <div
+    id="date-verification"
+    class="border-b border-gray-400 bg-gray-100 p-3 text-xs shadow-sm sm:text-sm"
+  >
+    <!-- Will be populated by JavaScript if exp dates exist -->
+  </div>
+
+  <!-- Add this after the date-verification div and before the mock-data-content -->
+  <div class="mt-2 px-4 py-2 bg-gray-100 border-b border-gray-400">
+    <div class="flex flex-wrap gap-2 mb-2">
+      <button
+        onclick="switchMockData('processing')"
+        class="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+      >
+        Processing
+      </button>
+      <button
+        onclick="switchMockData('frame_picked')"
+        class="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+      >
+        Frame Picked
+      </button>
+      <button
+        onclick="switchMockData('specialist_lens')"
+        class="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+      >
+        Specialist Lens
+      </button>
+      <button
+        onclick="switchMockData('frame_order')"
+        class="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+      >
+        Frame Ordered
+      </button>
+      <button
+        onclick="switchMockData('stock_lens')"
+        class="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+      >
+        Stock Lens
+      </button>
+    </div>
+
+    <div class="flex flex-wrap gap-2 mb-2">
+      <button
+        onclick="switchMockData('luxottica_glaze')"
+        class="px-4 py-2 text-sm font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+      >
+        Luxottica Glaze
+      </button>
+      <button
+        onclick="switchMockData('uk_designer')"
+        class="px-4 py-2 text-sm font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+      >
+        UK Designer
+      </button>
+      <button
+        onclick="switchMockData('eu_designer')"
+        class="px-4 py-2 text-sm font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+      >
+        EU Designer
+      </button>
+    </div>
+
+    <div class="flex flex-wrap gap-2">
+      <button
+        onclick="switchMockData('non_prescription')"
+        class="px-4 py-2 text-sm font-medium text-white bg-yellow-600 rounded-md hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+      >
+        Non-Prescription
+      </button>
+      <div class="relative inline-block text-left">
+        <button
+          id="query-dropdown-button"
+          type="button"
+          onclick="document.getElementById('query-dropdown').classList.toggle('hidden')"
+          class="px-4 py-2 text-sm font-medium text-white bg-yellow-600 rounded-md hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 inline-flex items-center"
+        >
+          Query Statuses
+          <svg
+            class="w-4 h-4 ml-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <div
+          id="query-dropdown"
+          class="hidden absolute z-10 mt-2 w-56 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+        >
+          <div class="py-1" role="menu" aria-orientation="vertical">
+            <button
+              onclick="switchMockData('frame_backorder'); document.getElementById('query-dropdown').classList.add('hidden')"
+              class="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
+              role="menuitem"
+            >
+              Frame on Backorder
+            </button>
+            <button
+              onclick="createQueryMockData('on_hold'); document.getElementById('query-dropdown').classList.add('hidden')"
+              class="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
+              role="menuitem"
+            >
+              On Hold
+            </button>
+            <button
+              onclick="createQueryMockData('awaiting_confirmation'); document.getElementById('query-dropdown').classList.add('hidden')"
+              class="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
+              role="menuitem"
+            >
+              Awaiting Confirmation
+            </button>
+            <button
+              onclick="createQueryMockData('fitting_photograph_required'); document.getElementById('query-dropdown').classList.add('hidden')"
+              class="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
+              role="menuitem"
+            >
+              Fitting Photograph Required
+            </button>
+            <button
+              onclick="createQueryMockData('frame_query'); document.getElementById('query-dropdown').classList.add('hidden')"
+              class="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
+              role="menuitem"
+            >
+              Frame Query
+            </button>
+            <button
+              onclick="createQueryMockData('lens_or_prescription_query'); document.getElementById('query-dropdown').classList.add('hidden')"
+              class="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
+              role="menuitem"
+            >
+              Lens or Prescription Query
+            </button>
+            <button
+              onclick="createQueryMockData('reinstated_order'); document.getElementById('query-dropdown').classList.add('hidden')"
+              class="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
+              role="menuitem"
+            >
+              Reinstated Order
+            </button>
+            <button
+              onclick="createQueryMockData('returns'); document.getElementById('query-dropdown').classList.add('hidden')"
+              class="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
+              role="menuitem"
+            >
+              Returns
+            </button>
+          </div>
+        </div>
+      </div>
+      <button
+        onclick="switchMockData('dispatched')"
+        class="px-4 py-2 text-sm font-medium text-white bg-yellow-600 rounded-md hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+      >
+        Dispatched
+      </button>
+      <button
+        onclick="switchMockData('cancelled')"
+        class="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+      >
+        Cancelled
+      </button>
+      <button
+        onclick="switchMockData('collected')"
+        class="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+      >
+        Collected
+      </button>
+      <button
+        onclick="switchMockData('ready_for_collection_shop')"
+        class="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+      >
+        Ready for Collection (SHOP)
+      </button>
+      <button
+        onclick="switchMockData('ready_for_glazing')"
+        class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+      >
+        Ready for Glazing
+      </button>
+    </div>
+  </div>
+
+  <!-- Mock data dropdown remains separate -->
+  <button
+    onclick="document.getElementById('mock-data-content').classList.toggle('hidden')"
+    class="flex w-full items-center justify-between border-b border-gray-400 bg-gray-100 px-3 py-2 text-left hover:bg-gray-200 sm:px-4"
+  >
+    <h3 class="text-lg font-bold text-slate-800 sm:text-xl">
+      Current Mock Data
+    </h3>
+    <svg
+      class="h-5 w-5 transform transition-transform sm:h-6 sm:w-6"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 9l-7 7-7-7"
+      ></path>
+    </svg>
+  </button>
+  <div id="mock-data-content" class="hidden">
+    <pre
+      id="current-mock-data"
+      class="overflow-auto bg-gray-100 p-3 text-xs sm:p-4 sm:text-sm"
+    >
+        <!-- Will be populated by JavaScript -->
+      </pre>
+  </div>
+</div>
+
+<!-- New GUI Section -->
+<div
+  id="order-status"
+  class="p-4"
+  x-data="{ progress: 0 }"
+  x-init="setTimeout(() => { progress = 0; setTimeout(() => { progress = progress; }, 100); }, 100);"
+>
+  <div class="mx-auto max-w-3xl">
+    <h2 class="text-xl font-bold text-slate-800 sm:text-2xl">Order Tracking</h2>
+    <div class="mt-2 flex flex-col gap-3 sm:flex-row">
+      <p class="text-sm sm:text-base">
+        <strong class="text-base text-slate-800 sm:text-lg"
+          >Order Number:</strong
+        >
+        <span id="order-number">#123456789</span>
+      </p>
+      <p class="border-gray-300 text-sm sm:border-l-2 sm:pl-3 sm:text-base">
+        <strong class="text-base text-slate-800 sm:text-lg"
+          >Current Status:</strong
+        >
+        <span id="current-status"></span>
+        <button
+          id="status-info"
+          class="ml-1 hidden rounded-full bg-gray-200 px-2 py-0.5 text-xs text-gray-600 hover:bg-gray-300 sm:text-sm"
+          onclick="document.getElementById('status-modal').classList.remove('hidden')"
+        >
+          ?
+        </button>
+      </p>
+    </div>
+
+    <!-- Wrap progress bar in container -->
+    <div id="progress-container" class="mt-4">
+      <div class="relative mt-4 h-6 w-full rounded-full bg-gray-200">
+        <div
+          id="progress-bar"
+          class="absolute left-0 top-0 h-6 rounded-full bg-gradient-to-r from-blue-600 to-blue-800 transition-all duration-1000 ease-in-out"
+          x-bind:style="'width: ' + progress + '%'"
+        ></div>
+        <div
+          id="progress-circle"
+          class="absolute flex h-12 w-12 items-center justify-center rounded-full bg-blue-800"
+          x-bind:style="'left: calc(' + progress + '% - 1rem); top: 50%; transform: translate(-50%, -50%);'"
+        >
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 415 310"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M28.234 1.07798C18.476 3.40398 8.254 11.718 3.146 21.484L0 27.5V133.5V239.5L2.94 245.487C9.347 258.537 20.864 266.104 35.419 266.826L44 267.251L48.39 276.376C71.344 324.087 139.757 319.277 156.845 268.75C157.398 267.115 160.713 267 207.5 267C254.287 267 257.602 267.115 258.155 268.75C275.279 319.384 344.942 323.935 366.992 275.861L370.954 267.223L379.558 266.812C394.125 266.115 405.643 258.558 412.06 245.487L415 239.5V190.5V141.5L412.372 135.896C407.917 126.395 373.983 76.551 369.614 73.091C367.446 71.373 363.046 68.738 359.836 67.234L354 64.5L320.829 64.189L287.657 63.879L287.323 45.689C286.871 21.081 281.546 11.067 264.718 3.17998L259 0.499981L145.5 0.339977C81.293 0.248977 30.365 0.569984 28.234 1.07798ZM254.465 34.934C255.158 36.23 255.5 69.558 255.5 135.934V235H206.469C160.664 235 157.398 234.885 156.845 233.25C139.736 182.661 71.164 177.898 48.39 225.717L44 234.934L39.75 234.967C30.747 235.037 31.5 244.257 31.5 133.934C31.5 68.937 31.842 36.229 32.535 34.934C34.162 31.894 252.838 31.894 254.465 34.934ZM365.331 122.25L382.182 147.5L382.766 189.325C383.432 237.028 383.761 235.033 375.25 234.967L371 234.934L366.62 225.717C352.708 196.443 321.502 185.077 289.25 197.538C287.597 198.176 287.5 195.395 287.5 147.607V97H317.99H348.481L365.331 122.25ZM112.007 227.351C131.975 236.65 131.975 265.35 112.007 274.649C95.784 282.203 76.623 271.374 74.804 253.622C72.746 233.523 93.615 218.786 112.007 227.351ZM323.624 226.543C340.961 232.656 345.853 256.641 332.438 269.757C322.189 279.777 304.433 279.31 294.911 268.77C276.391 248.271 297.443 217.311 323.624 226.543Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="flex justify-between pt-3 text-sm sm:text-base">
+        <p>Order Placed</p>
+        <p>Delivered</p>
+      </div>
+    </div>
+
+    <!-- Wrap delivery estimate in container -->
+    <div id="delivery-container" class="mt-6 flex items-center gap-3">
+      <svg
+        width="30"
+        height="30"
+        viewBox="0 0 512 505"
+        fill="none"
+        class="hidden sm:block"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M377.572 2.426C371.883 4.548 368.851 7.083 366.014 12.089L363.514 16.5V60.078V103.657L366.523 108.524C375.855 123.618 403.909 121.557 410.081 105.324C411.667 101.153 411.277 17.559 409.654 13.718C405.36 3.559 389.5 -2.024 377.572 2.426ZM116.514 3.843C105.179 9.207 105.014 10.024 105.014 60.811V103.685L107.338 108.093C116.125 124.757 146.992 122.147 151.942 104.321C153.309 99.397 153.398 21.824 152.041 17.095C148.356 4.244 130.076 -2.575 116.514 3.843ZM20.848 45.378C11.458 49.24 6.166 54.572 2.352 64.014L0 69.838L0.257 275.169L0.514 480.5L2.769 485.076C6.433 492.512 11.512 497.628 18.785 501.208L25.472 504.5H256.014H486.556L493.243 501.208C500.516 497.628 505.595 492.512 509.259 485.076L511.514 480.5V274V67.5L508.901 62C505.578 55.004 500.01 49.436 493.014 46.113L487.514 43.5L457.302 43.209L427.089 42.917L426.802 77.209L426.514 111.5L423.657 117.318C413.788 137.417 373.93 140.737 357.429 122.834C348.238 112.863 347.062 106.856 347.034 69.75L347.014 43H258.014H169.014V70.816C169.014 86.61 168.543 101.18 167.925 104.526C161.216 140.818 107.968 146.857 92.149 113.12L89.514 107.5L89.213 75.25L88.911 43L57.713 43.024C27.355 43.047 26.361 43.11 20.848 45.378ZM479.014 322V471H256.014H33.014V322V173H256.014H479.014V322ZM269.968 215.046C267.254 217.76 267.296 270.306 270.014 272.022C272.353 273.499 333.324 273.29 334.814 271.8C336.836 269.778 336.491 216.62 334.443 214.571C331.688 211.817 272.763 212.251 269.968 215.046ZM366.455 214.419C363.813 216.352 363.399 270.368 366.014 272.021C368.352 273.499 429.323 273.291 430.814 271.8C432.836 269.778 432.491 216.62 430.443 214.571C428.207 212.336 369.495 212.197 366.455 214.419ZM78.014 297.978C75.296 299.694 75.254 352.24 77.968 354.954C80.763 357.749 139.688 358.183 142.443 355.429C144.491 353.38 144.836 300.222 142.814 298.2C141.324 296.71 80.353 296.501 78.014 297.978ZM174.014 297.978C171.296 299.694 171.254 352.24 173.968 354.954C176.763 357.749 235.688 358.183 238.443 355.429C240.491 353.38 240.836 300.222 238.814 298.2C237.324 296.71 176.353 296.501 174.014 297.978ZM270.014 297.978C267.296 299.694 267.254 352.24 269.968 354.954C272.763 357.749 331.688 358.183 334.443 355.429C336.491 353.38 336.836 300.222 334.814 298.2C333.324 296.71 272.353 296.501 270.014 297.978ZM366.014 297.979C363.399 299.632 363.813 353.648 366.455 355.581C369.495 357.803 428.207 357.664 430.443 355.429C432.491 353.38 432.836 300.222 430.814 298.2C429.323 296.709 368.352 296.501 366.014 297.979ZM77.571 382.223C76.26 384.093 76.014 388.489 76.014 410C76.014 431.511 76.26 435.907 77.571 437.777C79.419 440.416 140.245 441.369 142.814 438.8C145.146 436.468 144.458 382.308 142.08 381.035C137.628 378.653 79.319 379.726 77.571 382.223ZM173.571 382.223C172.26 384.093 172.014 388.489 172.014 410C172.014 431.511 172.26 435.907 173.571 437.777C175.419 440.416 236.245 441.369 238.814 438.8C241.146 436.468 240.458 382.308 238.08 381.035C233.628 378.653 175.319 379.726 173.571 382.223ZM269.571 382.223C268.26 384.093 268.014 388.489 268.014 410C268.014 431.511 268.26 435.907 269.571 437.777C271.419 440.416 332.245 441.369 334.814 438.8C337.146 436.468 336.458 382.308 334.08 381.035C329.628 378.653 271.319 379.726 269.571 382.223ZM365.571 382.223C364.26 384.093 364.014 388.489 364.014 410C364.014 431.511 364.26 435.907 365.571 437.777C367.419 440.416 428.245 441.369 430.814 438.8C433.146 436.468 432.458 382.308 430.08 381.035C425.628 378.653 367.319 379.726 365.571 382.223Z"
+          fill="#1e293b"
+        />
+      </svg>
+      <p class="text-base text-slate-800 sm:text-lg">
+        <strong>Estimated Delivery:</strong>
+        <span
+          class="text-sm font-medium text-gray-700 sm:text-base"
+          id="delivery-estimate"
+        ></span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Add this after the order-status div but before any scripts -->
+<div
+  id="status-modal"
+  class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center"
+  onclick="this.classList.add('hidden')"
+>
+  <div
+    class="relative bg-white rounded-lg shadow-xl max-w-md mx-4 p-6"
+    onclick="event.stopPropagation()"
+  >
+    <div class="flex items-start justify-between">
+      <h3 class="text-xl font-semibold text-gray-900">
+        Order Status Information
+      </h3>
+      <button
+        type="button"
+        class="text-gray-400 hover:text-gray-500"
+        onclick="document.getElementById('status-modal').classList.add('hidden')"
+      >
+        <span class="sr-only">Close</span>
+        <svg
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="mt-4">
+      <p class="text-gray-600">
+        We've contacted you via email or text message as we require some
+        additional information before we can proceed with your order.
+      </p>
+      <p class="mt-2 text-gray-600">
+        Please check your messages and respond with the requested information so
+        we can continue processing your order.
+      </p>
+    </div>
+    <div class="mt-6">
+      <button
+        type="button"
+        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+        onclick="document.getElementById('status-modal').classList.add('hidden')"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Update the UI with calculated values
+  document.getElementById("current-status").innerText =
+    currentMockData.status_histories[
+      currentMockData.status_histories.length - 1
+    ].status;
+
+  // Set initial width to 0% for animation
+  const progressBar = document.getElementById("progress-bar");
+  const progressCircle = document.getElementById("progress-circle");
+  progressBar.style.width = "0%"; // Start at 0%
+
+  // Update the progress bar and circle after a short delay to allow for animation
+  setTimeout(() => {
+    progressBar.style.transition = "width 2s"; // Set transition for smooth animation
+    progressBar.style.width = `${currentProgressValue}%`; // Animate to the calculated progress
+    progressCircle.style.transition = "left 2s"; // Set transition for the circle
+    progressCircle.style.left = `calc(${currentProgressValue}% - 1rem)`; // Adjust circle position
+  }, 100); // Delay to ensure the initial width is set before animating
+
+  // Update delivery estimate range
+  const deliveryEstimate = `${minDeliveryEst.toLocaleDateString(
+    "en-GB"
+  )} - ${maxDeliveryEst.toLocaleDateString("en-GB")}`;
+  document.getElementById("delivery-estimate").innerText = deliveryEstimate;
+</script>

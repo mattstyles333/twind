@@ -1,0 +1,702 @@
+<script>
+  // DO NOT INSERT THIS BLOCK INTO HTML MARKUP BY HAND, IT WON'T WORK, IT'S A CMS BLOCK ONLY TO ALLOW
+  // FOR MARKUP AND JS LOGIC CHANGES WHICH WILL APPLY IN PLACES THE BLOCK IS ALREADY INJECTED FROM BACKEND
+
+  // We need a function returning an object to use this object as Alpine component
+  window.OTWidgetFactory = function () {
+    const mockOrderData = null;
+    const useMockData = false;
+
+    // Mapping which to override normal status labels
+    const statusNameMapping = {
+      ready_to_process: "Ready To Process",
+      trayed_up: "Trayed Up",
+      Frame_Ordered: "Frame Ordered",
+      Frame_Picked: "Frame Picked",
+      rx_lens_order: "Rx Lenses Ordered",
+      Stock_Lenses_Ordered_1_3: "Stock Lenses Ordered",
+      Specialist_Lens_Ordered_5_14: "Specialist Lenses Ordered",
+      Lens_Picked: "Lenses Picked",
+      quality_control_fail: "Quality Control",
+      dispatched_royal_mail_rest: "Dispatched",
+      processing: "Processing",
+      frame_only_order_confirmed: "Non-prescription Confirmed",
+      Luxottica_Glaze_Ordered_5_12: "Luxottica Glaze Ordered",
+      frame_on_backorder: "Frame on Backorder",
+      uk_designer_stock_frame_ordered_: "UK Designer/STOCK Frame",
+      EU_Designer_Frames_Ordered_5_14: "EU Designer Frames Ordered",
+      delivered: "Delivered",
+      canceled: "Cancelled",
+      order_collected_shop: "Collected",
+      Ready_For_CollectionSHOP: "Ready for Collection (SHOP)",
+      Ready_For_Glazing: "Ready for Glazing",
+    };
+
+    // status codes categories
+    // we do not fetch anything from system configuration (admin panel) anymore
+    // add/remove/modify them here
+    const hideProgressStatuses = [
+      "query",
+      "holded", // changed from 'on_hold' !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      "awaiting_customer_frames",
+      "awaiting_confirmation",
+      "frame_on_backorder",
+      "fitting_photograph_required",
+      "frame_query",
+      "lens_or_prescription_query",
+      "reinstated_order",
+      "returns",
+      "canceled",
+    ];
+
+    const completedStatuses = [
+      "delivered",
+      "dispatched",
+      "dispatched_royal_mail_rest", // Added!!!!!!!!!
+      "Order_Collected_SHOP",
+      "Ready_For_CollectionSHOP",
+    ];
+
+    const queryStatuses = [
+      "query",
+      "holded", // changed from 'on_hold' !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      "awaiting_customer_frames",
+      "awaiting_confirmation",
+      "fitting_photograph_required",
+      "frame_query",
+      "lens_or_prescription_query",
+      "reinstated_order",
+      "returns",
+    ];
+
+    return {
+      // data fetched from backend
+      orderData: null,
+
+      // Alpine control variables (prefix added to not confuse some of these variables with local ones)
+      alp_progress: 0,
+      alp_infoButtonDisplayed: false,
+      alp_statusModalDisplayed: false,
+      alp_hideProgressIndicator: true,
+      alp_estimatedDeliveryTimeRangeText: "",
+
+      // Do not change this, it's automatically called by Alpine and either tries to use mock data (if present)
+      // or to fetch data set from backend
+      init() {
+        if (mockOrderData && useMockData) {
+          this.orderData = mockOrderData;
+          return;
+        }
+        if (window.OTWidgetData) {
+          this.orderData = window.OTWidgetData;
+          return;
+        }
+        throw new Error("No data found");
+      },
+
+      // We do not need to load separate library just to add business days, this method seems to work just fine
+      // Returns new date object, does not affect passed one
+      addBusinessDays(date, n) {
+        let _date = new Date(date.getTime());
+        let day = _date.getDay();
+        _date.setDate(
+          _date.getDate() +
+            n +
+            (day === 6 ? 2 : +!day) +
+            Math.floor((n - 1 + (day % 6 || 1)) / 5) * 2
+        );
+        return _date;
+      },
+
+      // Returns new date object, does not affect passed one
+      addDays(date, n) {
+        let _date = new Date(date.getTime());
+        _date.setDate(date.getDate() + n);
+        return _date;
+      },
+
+      calendarDaysToMilliseconds(n) {
+        n = n || 0;
+        return 24 * 60 * 60 * 1000 * n;
+      },
+      // Get difference between to dates in days
+      // The 'minus' operator will return a difference in milliseconds, so we need to divide result by
+      // duration of a single day in milliseconds
+      dateDifferenceInDays(from, to) {
+        return (from - to) / this.calendarDaysToMilliseconds(1);
+      },
+
+      findETARange(commentText) {
+        // Normalize to lowercase
+        let text = commentText.toLowerCase();
+        // Allow for some accidental whitespace characters (or lack of thereof)
+        let regex = "/eta\s*\|\s*(0|[1-9][0-9]+)\s*-\s*(0|[1-9][0-9]+)/";
+        let match = text.match(regex);
+        if (match) {
+          // return matches from braces (capturing groups)
+          return [match[1], match[2]];
+        }
+        return null;
+      },
+
+      getStatusCreatedAtDate(statusObject) {
+        // Magento 2 keeps dates in database in UTC timezone
+        // Javascript treats any date string as expressing date in current user's OS timezone
+        // The easiest way to deal with that is to pass datetime to javascript as unix timestamp which is absolute
+        // We need to multiply by the factor of 1000 cause unix timestamp is expressed in seconds
+        // while javascript Date constructor expects value in milliseconds
+        if (!statusObject) return null;
+        return new Date(statusObject.created_at_timestamp * 1000);
+      },
+
+      getOrderStatusLabel() {
+        let statusCode = this.orderData.order_status;
+        if ("undefined" === typeof statusNameMapping[statusCode]) {
+          return this.orderData.order_status_label;
+        }
+        return statusNameMapping[statusCode];
+      },
+
+      getOrderNumber() {
+        return this.orderData.increment_id;
+      },
+
+      getEstimatedDeliveryTimeRangeText(minDate, maxDate) {
+        if (null === minDate || null === maxDate) {
+          return "";
+        }
+        return `${minDate.toLocaleDateString(
+          "en-GB"
+        )} - ${maxDate.toLocaleDateString("en-GB")}`;
+      },
+
+      // Main calculation logic
+      calculateOrderTracking(data = null) {
+        // If no other data (e.g. mock data) was passed, use data fetched from backend
+        let orderData = null === data ? this.orderData : data;
+
+        const statusHistories = orderData.status_histories;
+        const currentStatus =
+          statusHistories[statusHistories.length - 1].status;
+
+        // For collected or Ready_For_CollectionSHOP, set delivery estimate to today
+        if (
+          currentStatus === "Order_Collected_SHOP" ||
+          currentStatus === "Ready_For_CollectionSHOP"
+        ) {
+          const today = new Date();
+          return {
+            minDeliveryEst: today,
+            maxDeliveryEst: today,
+            readyToProcessDate: this.getStatusCreatedAtDate(statusHistories[0]),
+            currentStatus,
+            shouldHideProgress: false,
+          };
+        }
+
+        if (hideProgressStatuses.includes(currentStatus)) {
+          return {
+            shouldHideProgress: true,
+            currentStatus: currentStatus,
+            minDeliveryEst: null,
+            maxDeliveryEst: null,
+            readyToProcessDate: null,
+          };
+        }
+
+        const readyToProcessStatus = statusHistories.find(
+          (status) => status.status === "ready_to_process"
+        );
+        const readyToProcessDate =
+          this.getStatusCreatedAtDate(readyToProcessStatus);
+
+        // Find frame ordered status and its comment
+        const frameOrderedStatus = statusHistories.find(
+          (status) => status.status === "Frame_Ordered"
+        );
+        const frameOrderedComment = frameOrderedStatus
+          ? frameOrderedStatus.comment
+          : "";
+        const frameOrderedDate =
+          this.getStatusCreatedAtDate(frameOrderedStatus);
+
+        // Parse ETA from frame ordered comment if available
+        let frameOrderedEtaMin = 1;
+        let frameOrderedEtaMax = 14;
+
+        let etaRange = frameOrderedComment
+          ? this.findETARange(frameOrderedComment)
+          : null;
+        if (etaRange) {
+          frameOrderedEtaMin = parseInt(etaRange[0], 10);
+          frameOrderedEtaMax = parseInt(etaRange[1], 10);
+        }
+        // Find frame picked status
+        const framePickedStatus = statusHistories.find(
+          (status) => status.status === "Frame_Picked"
+        );
+        const framePickedDate = this.getStatusCreatedAtDate(framePickedStatus);
+
+        // Find UK designer frame status
+        const ukDesignerStatus = statusHistories.find(
+          (status) => status.status === "uk_designer_stock_frame_ordered_"
+        );
+        const ukDesignerDate = this.getStatusCreatedAtDate(ukDesignerStatus);
+
+        // Find EU designer frame status
+        const euDesignerStatus = statusHistories.find(
+          (status) => status.status === "EU_Designer_Frames_Ordered_5_14"
+        );
+        const euDesignerDate = this.getStatusCreatedAtDate(euDesignerStatus);
+
+        // Find specific lens statuses
+        const rxLensStatus = statusHistories.find(
+          (status) => status.status === "rx_lens_order"
+        );
+        const rxLensDate = this.getStatusCreatedAtDate(rxLensStatus);
+
+        const stockLensStatus = statusHistories.find(
+          (status) => status.status === "Stock_Lenses_Ordered_1_3"
+        );
+        const stockLensDate = this.getStatusCreatedAtDate(stockLensStatus);
+
+        const lensPickedStatus = statusHistories.find(
+          (status) => status.status === "Lens_Picked"
+        );
+        const lensPickedDate = this.getStatusCreatedAtDate(lensPickedStatus);
+
+        const specialistLensStatus = statusHistories.find(
+          (status) => status.status === "Specialist_Lens_Ordered_5_14"
+        );
+        const specialistLensDate =
+          this.getStatusCreatedAtDate(specialistLensStatus);
+
+        // Find dispatched status
+        const dispatchedStatus = statusHistories.find(
+          (status) => status.status === "dispatched"
+        );
+        const dispatchedDate = this.getStatusCreatedAtDate(dispatchedStatus);
+
+        // Find Luxottica Glaze status
+        const luxotticaGlazeStatus = statusHistories.find(
+          (status) => status.status === "Luxottica_Glaze_Ordered_5_12"
+        );
+        const luxotticaGlazeDate =
+          this.getStatusCreatedAtDate(luxotticaGlazeStatus);
+
+        let minDispatchEst = null;
+        let maxDispatchEst = null;
+
+        // If already dispatched, use that date
+        if (dispatchedStatus) {
+          minDispatchEst = dispatchedDate;
+          maxDispatchEst = dispatchedDate;
+        }
+        // If Luxottica Glaze is ordered, 5-10 days to dispatch
+        else if (luxotticaGlazeStatus) {
+          minDispatchEst = this.addBusinessDays(luxotticaGlazeDate, 5);
+          maxDispatchEst = this.addBusinessDays(luxotticaGlazeDate, 10);
+        }
+        // If frame is picked, 1-2 days to dispatch
+        else if (framePickedStatus) {
+          minDispatchEst = this.addBusinessDays(framePickedDate, 1);
+          maxDispatchEst = this.addBusinessDays(framePickedDate, 2);
+        }
+        // If we have EU designer frames, 5-14 days to dispatch
+        else if (euDesignerStatus) {
+          minDispatchEst = this.addBusinessDays(euDesignerDate, 5);
+          maxDispatchEst = this.addBusinessDays(euDesignerDate, 14);
+        }
+        // If we have UK designer frames, 1-5 days to dispatch
+        else if (ukDesignerStatus) {
+          minDispatchEst = this.addBusinessDays(ukDesignerDate, 1);
+          maxDispatchEst = this.addBusinessDays(ukDesignerDate, 5);
+        }
+        // If lenses are picked, 1-2 days to dispatch
+        else if (lensPickedStatus) {
+          minDispatchEst = this.addBusinessDays(lensPickedDate, 1);
+          maxDispatchEst = this.addBusinessDays(lensPickedDate, 2);
+        }
+        // If specialist lenses are ordered, 5-14 days to dispatch
+        else if (specialistLensStatus) {
+          minDispatchEst = this.addBusinessDays(specialistLensDate, 5);
+          maxDispatchEst = this.addBusinessDays(specialistLensDate, 14);
+        }
+        // If stock lenses are ordered, 1-3 days to dispatch
+        else if (stockLensStatus) {
+          minDispatchEst = this.addBusinessDays(stockLensDate, 1);
+          maxDispatchEst = this.addBusinessDays(stockLensDate, 3);
+        }
+        // If Rx lenses are ordered, 1-14 days to dispatch
+        else if (rxLensStatus) {
+          minDispatchEst = this.addBusinessDays(rxLensDate, 1);
+          maxDispatchEst = this.addBusinessDays(rxLensDate, 14);
+        }
+        // If we have frame ordered, use the ETA from comment or default to 1-14 days
+        else if (frameOrderedStatus) {
+          minDispatchEst = this.addBusinessDays(
+            frameOrderedDate,
+            frameOrderedEtaMin
+          );
+          maxDispatchEst = this.addBusinessDays(
+            frameOrderedDate,
+            frameOrderedEtaMax
+          );
+        }
+        // Before lens ordered stage
+        else {
+          minDispatchEst = this.addBusinessDays(readyToProcessDate, 1);
+          maxDispatchEst = this.addBusinessDays(readyToProcessDate, 10);
+        }
+
+        // Ensure dispatch dates are never in the past (except for already dispatched orders)
+        const today = new Date();
+        if (!dispatchedStatus) {
+          if (minDispatchEst < today) {
+            minDispatchEst = today;
+          }
+          if (maxDispatchEst < today) {
+            maxDispatchEst = today;
+          }
+        }
+
+        // Calculate delivery dates by adding 1-2 days to dispatch dates
+        // Use calendar days for delivery, not business days
+        let minDeliveryEst = new Date(minDispatchEst);
+        minDeliveryEst.setDate(minDeliveryEst.getDate() + 1); // Add 1 calendar day
+
+        let maxDeliveryEst = new Date(maxDispatchEst);
+        maxDeliveryEst.setDate(maxDeliveryEst.getDate() + 2); // Add 2 calendar days
+
+        // Check if max delivery date is in the past
+        if (maxDeliveryEst < today && !dispatchedStatus) {
+          // If the max delivery date has passed and the order isn't already marked as dispatched,
+          // set the status to "delivered" and update the delivery dates
+          return {
+            minDeliveryEst: maxDeliveryEst,
+            maxDeliveryEst: maxDeliveryEst,
+            readyToProcessDate,
+            currentStatus: "delivered",
+            shouldHideProgress: false,
+          };
+        }
+
+        // Add check for dispatched_royal_mail_rest status
+        const dispatchedRoyalMailStatus = statusHistories.find(
+          (status) => status.status === "dispatched_royal_mail_rest"
+        );
+        if (dispatchedRoyalMailStatus) {
+          const dispatchedDate = this.getStatusCreatedAtDate(
+            dispatchedRoyalMailStatus
+          );
+          const twoDaysAfterDispatch = this.addDays(dispatchedDate, 2);
+
+          // Only show as delivered if both conditions are met:
+          // 1. Two days have passed since dispatch
+          // 2. We've reached the estimated delivery date
+          if (today >= twoDaysAfterDispatch && today >= maxDeliveryEst) {
+            return {
+              minDeliveryEst: maxDeliveryEst,
+              maxDeliveryEst: maxDeliveryEst,
+              readyToProcessDate,
+              currentStatus: "delivered",
+              shouldHideProgress: false,
+            };
+          }
+
+          // If not yet delivered, return dispatched status
+          return {
+            minDeliveryEst: minDeliveryEst,
+            maxDeliveryEst: maxDeliveryEst,
+            readyToProcessDate,
+            currentStatus: "dispatched_royal_mail_rest",
+            shouldHideProgress: false,
+          };
+        }
+
+        // Add Ready_For_Glazing handling
+        if (currentStatus === "Ready_For_Glazing") {
+          minDispatchEst = this.addBusinessDays(
+            this.getStatusCreatedAtDate(
+              statusHistories[statusHistories.length - 1]
+            ),
+            1
+          );
+          maxDispatchEst = this.addBusinessDays(
+            this.getStatusCreatedAtDate(
+              statusHistories[statusHistories.length - 1]
+            ),
+            2
+          );
+        }
+
+        // Update progress calculation to handle completed statuses
+        if (completedStatuses.includes(currentStatus)) {
+          return {
+            minDeliveryEst: maxDeliveryEst,
+            maxDeliveryEst: maxDeliveryEst,
+            readyToProcessDate,
+            currentStatus,
+            shouldHideProgress: false,
+          };
+        }
+        return {
+          minDeliveryEst,
+          maxDeliveryEst,
+          readyToProcessDate,
+          currentStatus,
+          shouldHideProgress: false,
+        };
+      },
+
+      updateDisplay(data = null) {
+        // If no other data (e.g. mock data) was passed, use data fetched from backend
+        let orderData = null === data ? this.orderData : data;
+        // Calculated data
+        let calculatedData = this.calculateOrderTracking(orderData);
+
+        this.alp_infoButtonDisplayed = queryStatuses.includes(
+          calculatedData.currentStatus
+        );
+        this.alp_hideProgressIndicator = calculatedData.shouldHideProgress;
+
+        if (!calculatedData.shouldHideProgress) {
+          window.setTimeout(() => {
+            this.alp_progress = this.calculateProgress(calculatedData);
+          });
+        }
+
+        this.alp_estimatedDeliveryTimeRangeText =
+          this.getEstimatedDeliveryTimeRangeText(
+            calculatedData.minDeliveryEst,
+            calculatedData.maxDeliveryEst
+          );
+      },
+
+      calculateProgress(data) {
+        // For delivered, collected, or Ready_For_CollectionSHOP return 100%
+        if (completedStatuses.includes(data.currentStatus)) {
+          // Special handling for dispatched_royal_mail_rest
+          if (data.currentStatus === "dispatched_royal_mail_rest") {
+            const dispatchedStatus = this.orderData.status_histories.find(
+              (status) => status.status === "dispatched_royal_mail_rest"
+            );
+            if (dispatchedStatus) {
+              const dispatchedDate =
+                this.getStatusCreatedAtDate(dispatchedStatus);
+              const twoDaysAfterDispatch = this.addDays(dispatchedDate, 2);
+              const today = new Date();
+
+              // If two days haven't passed yet, calculate partial progress
+              if (today < twoDaysAfterDispatch) {
+                const totalDispatchDays = 2; // 2 days waiting period
+                const elapsedDays = Math.max(
+                  0,
+                  this.dateDifferenceInDays(today, dispatchedDate)
+                );
+                const dispatchProgress =
+                  (elapsedDays / totalDispatchDays) * 100;
+                return Math.min(95, 80 + dispatchProgress * 0.15); // Scale between 80-95%
+              }
+            }
+          }
+          return 100;
+        }
+
+        const totalDuration = Math.max(
+          0,
+          this.dateDifferenceInDays(
+            data.maxDeliveryEst,
+            data.readyToProcessDate
+          )
+        );
+
+        const elapsed = Math.max(
+          0,
+          this.dateDifferenceInDays(new Date(), data.readyToProcessDate)
+        );
+
+        let progress = totalDuration > 0 ? (elapsed / totalDuration) * 100 : 0;
+        // if not completed make sure progress doesn't exceed 95%
+        return Math.min(95, progress);
+      },
+    };
+  };
+</script>
+
+<!-- CSS -->
+<style>
+  #order-status #progress-bar {
+    transition: width 2s;
+  }
+
+  #order-status #progress-circle {
+    transition: left 2s;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+</style>
+
+<!-- New GUI Section -->
+<div
+  id="order-status"
+  class="p-4"
+  x-data="new OTWidgetFactory()"
+  x-init="window.setTimeout(() => updateDisplay(), 100);"
+>
+  <div class="mx-auto max-w-3xl">
+    <h2 class="text-xl font-bold text-slate-800 sm:text-2xl">Order Tracking</h2>
+    <div class="mt-2 flex flex-col gap-3 sm:flex-row">
+      <p class="text-sm sm:text-base">
+        <strong class="text-base text-slate-800 sm:text-lg"
+          >Order Number:</strong
+        >
+        <span id="order-number" x-html="'#' + getOrderNumber()"></span>
+      </p>
+      <p class="border-gray-300 text-sm sm:border-l-2 sm:pl-3 sm:text-base">
+        <strong class="text-base text-slate-800 sm:text-lg"
+          >Current Status:</strong
+        >
+        <span id="current-status" x-html="getOrderStatusLabel()"></span>
+        <button
+          id="status-info"
+          class="ml-1 hidden rounded-full bg-gray-200 px-2 py-0.5 text-xs text-gray-600 hover:bg-gray-300 sm:text-sm"
+          :class="{'inline-block' : alp_infoButtonDisplayed, 'hidden' : !alp_infoButtonDisplayed}"
+          @click="$dispatch('ot-widget-status-modal-open')"
+        >
+          ?
+        </button>
+      </p>
+    </div>
+
+    <!-- Wrap progress bar in container -->
+    <div
+      id="progress-container"
+      class="mt-4 hidden"
+      :class="{'block' : !alp_hideProgressIndicator, 'hidden' : alp_hideProgressIndicator}"
+    >
+      <div class="relative mt-4 h-6 w-full rounded-full bg-gray-200">
+        <div
+          id="progress-bar"
+          class="absolute left-0 top-0 h-6 rounded-full bg-gradient-to-r from-blue-600 to-blue-800 transition-all duration-1000 ease-in-out"
+          x-bind:style="'width: ' + alp_progress + '%'"
+        ></div>
+        <div
+          id="progress-circle"
+          class="absolute flex h-12 w-12 items-center justify-center rounded-full bg-blue-800"
+          x-bind:style="'left: calc(' + alp_progress + '% - 1rem);'"
+        >
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 415 310"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M28.234 1.07798C18.476 3.40398 8.254 11.718 3.146 21.484L0 27.5V133.5V239.5L2.94 245.487C9.347 258.537 20.864 266.104 35.419 266.826L44 267.251L48.39 276.376C71.344 324.087 139.757 319.277 156.845 268.75C157.398 267.115 160.713 267 207.5 267C254.287 267 257.602 267.115 258.155 268.75C275.279 319.384 344.942 323.935 366.992 275.861L370.954 267.223L379.558 266.812C394.125 266.115 405.643 258.558 412.06 245.487L415 239.5V190.5V141.5L412.372 135.896C407.917 126.395 373.983 76.551 369.614 73.091C367.446 71.373 363.046 68.738 359.836 67.234L354 64.5L320.829 64.189L287.657 63.879L287.323 45.689C286.871 21.081 281.546 11.067 264.718 3.17998L259 0.499981L145.5 0.339977C81.293 0.248977 30.365 0.569984 28.234 1.07798ZM254.465 34.934C255.158 36.23 255.5 69.558 255.5 135.934V235H206.469C160.664 235 157.398 234.885 156.845 233.25C139.736 182.661 71.164 177.898 48.39 225.717L44 234.934L39.75 234.967C30.747 235.037 31.5 244.257 31.5 133.934C31.5 68.937 31.842 36.229 32.535 34.934C34.162 31.894 252.838 31.894 254.465 34.934ZM365.331 122.25L382.182 147.5L382.766 189.325C383.432 237.028 383.761 235.033 375.25 234.967L371 234.934L366.62 225.717C352.708 196.443 321.502 185.077 289.25 197.538C287.597 198.176 287.5 195.395 287.5 147.607V97H317.99H348.481L365.331 122.25ZM112.007 227.351C131.975 236.65 131.975 265.35 112.007 274.649C95.784 282.203 76.623 271.374 74.804 253.622C72.746 233.523 93.615 218.786 112.007 227.351ZM323.624 226.543C340.961 232.656 345.853 256.641 332.438 269.757C322.189 279.777 304.433 279.31 294.911 268.77C276.391 248.271 297.443 217.311 323.624 226.543Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="flex justify-between pt-3 text-sm sm:text-base">
+        <p>Order Placed</p>
+        <p>Delivered</p>
+      </div>
+    </div>
+
+    <!-- Wrap delivery estimate in container -->
+    <div
+      id="delivery-container"
+      class="mt-6 flex items-center gap-3 hidden"
+      :class="{'block' : !alp_hideProgressIndicator, 'hidden' : alp_hideProgressIndicator}"
+    >
+      <svg
+        width="30"
+        height="30"
+        viewBox="0 0 512 505"
+        fill="none"
+        class="hidden sm:block"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M377.572 2.426C371.883 4.548 368.851 7.083 366.014 12.089L363.514 16.5V60.078V103.657L366.523 108.524C375.855 123.618 403.909 121.557 410.081 105.324C411.667 101.153 411.277 17.559 409.654 13.718C405.36 3.559 389.5 -2.024 377.572 2.426ZM116.514 3.843C105.179 9.207 105.014 10.024 105.014 60.811V103.685L107.338 108.093C116.125 124.757 146.992 122.147 151.942 104.321C153.309 99.397 153.398 21.824 152.041 17.095C148.356 4.244 130.076 -2.575 116.514 3.843ZM20.848 45.378C11.458 49.24 6.166 54.572 2.352 64.014L0 69.838L0.257 275.169L0.514 480.5L2.769 485.076C6.433 492.512 11.512 497.628 18.785 501.208L25.472 504.5H256.014H486.556L493.243 501.208C500.516 497.628 505.595 492.512 509.259 485.076L511.514 480.5V274V67.5L508.901 62C505.578 55.004 500.01 49.436 493.014 46.113L487.514 43.5L457.302 43.209L427.089 42.917L426.802 77.209L426.514 111.5L423.657 117.318C413.788 137.417 373.93 140.737 357.429 122.834C348.238 112.863 347.062 106.856 347.034 69.75L347.014 43H258.014H169.014V70.816C169.014 86.61 168.543 101.18 167.925 104.526C161.216 140.818 107.968 146.857 92.149 113.12L89.514 107.5L89.213 75.25L88.911 43L57.713 43.024C27.355 43.047 26.361 43.11 20.848 45.378ZM479.014 322V471H256.014H33.014V322V173H256.014H479.014V322ZM269.968 215.046C267.254 217.76 267.296 270.306 270.014 272.022C272.353 273.499 333.324 273.29 334.814 271.8C336.836 269.778 336.491 216.62 334.443 214.571C331.688 211.817 272.763 212.251 269.968 215.046ZM366.455 214.419C363.813 216.352 363.399 270.368 366.014 272.021C368.352 273.499 429.323 273.291 430.814 271.8C432.836 269.778 432.491 216.62 430.443 214.571C428.207 212.336 369.495 212.197 366.455 214.419ZM78.014 297.978C75.296 299.694 75.254 352.24 77.968 354.954C80.763 357.749 139.688 358.183 142.443 355.429C144.491 353.38 144.836 300.222 142.814 298.2C141.324 296.71 80.353 296.501 78.014 297.978ZM174.014 297.978C171.296 299.694 171.254 352.24 173.968 354.954C176.763 357.749 235.688 358.183 238.443 355.429C240.491 353.38 240.836 300.222 238.814 298.2C237.324 296.71 176.353 296.501 174.014 297.978ZM270.014 297.978C267.296 299.694 267.254 352.24 269.968 354.954C272.763 357.749 331.688 358.183 334.443 355.429C336.491 353.38 336.836 300.222 334.814 298.2C333.324 296.71 272.353 296.501 270.014 297.978ZM366.014 297.979C363.399 299.632 363.813 353.648 366.455 355.581C369.495 357.803 428.207 357.664 430.443 355.429C432.491 353.38 432.836 300.222 430.814 298.2C429.323 296.709 368.352 296.501 366.014 297.979ZM77.571 382.223C76.26 384.093 76.014 388.489 76.014 410C76.014 431.511 76.26 435.907 77.571 437.777C79.419 440.416 140.245 441.369 142.814 438.8C145.146 436.468 144.458 382.308 142.08 381.035C137.628 378.653 79.319 379.726 77.571 382.223ZM173.571 382.223C172.26 384.093 172.014 388.489 172.014 410C172.014 431.511 172.26 435.907 173.571 437.777C175.419 440.416 236.245 441.369 238.814 438.8C241.146 436.468 240.458 382.308 238.08 381.035C233.628 378.653 175.319 379.726 173.571 382.223ZM269.571 382.223C268.26 384.093 268.014 388.489 268.014 410C268.014 431.511 268.26 435.907 269.571 437.777C271.419 440.416 332.245 441.369 334.814 438.8C337.146 436.468 336.458 382.308 334.08 381.035C329.628 378.653 271.319 379.726 269.571 382.223ZM365.571 382.223C364.26 384.093 364.014 388.489 364.014 410C364.014 431.511 364.26 435.907 365.571 437.777C367.419 440.416 428.245 441.369 430.814 438.8C433.146 436.468 432.458 382.308 430.08 381.035C425.628 378.653 367.319 379.726 365.571 382.223Z"
+          fill="#1e293b"
+        />
+      </svg>
+      <p class="text-base text-slate-800 sm:text-lg">
+        <strong>Estimated Delivery:</strong>
+        <span
+          class="text-sm font-medium text-gray-700 sm:text-base"
+          id="delivery-estimate"
+          x-html="alp_estimatedDeliveryTimeRangeText"
+        ></span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Add this after the order-status div but before any scripts -->
+<div
+  id="status-modal"
+  x-data="{}"
+  class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center"
+  @ot-widget-status-modal-open.window="$el.classList.remove('hidden')"
+  @ot-widget-status-modal-close.window="$el.classList.add('hidden')"
+>
+  <div
+    class="relative bg-white rounded-lg shadow-xl max-w-md mx-4 p-6"
+    @click.stop=""
+  >
+    <div class="flex items-start justify-between">
+      <h3 class="text-xl font-semibold text-gray-900">
+        Order Status Information
+      </h3>
+      <button
+        type="button"
+        class="text-gray-400 hover:text-gray-500"
+        @click="$dispatch('ot-widget-status-modal-close')"
+      >
+        <span class="sr-only">Close</span>
+        <svg
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="mt-4">
+      <p class="text-gray-600">
+        We've contacted you via email or text message as we require some
+        additional information before we can proceed with your order.
+      </p>
+      <p class="mt-2 text-gray-600">
+        Please check your messages and respond with the requested information so
+        we can continue processing your order.
+      </p>
+    </div>
+    <div class="mt-6">
+      <button
+        type="button"
+        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+        @click="$dispatch('ot-widget-status-modal-close')"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>

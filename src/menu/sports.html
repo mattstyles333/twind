@@ -1,19 +1,39 @@
 <head>
-  <meta charset="UTF-8" />
+  <!-- Add Glide.js CDN links in the head section -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            p: "#1f2937",
+            s: "#1E3A8A",
+            l: "#f3f4f6",
+            t: "#5494EC",
+            a: "#f97316",
+            b: "#2563eb",
+            gr: "#6b7280",
+          },
+          screens: {
+            xxsm: "420px",
+            xxxsm: "360px",
+          },
+        },
+      },
+    };
+  </script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="../output.css" rel="stylesheet" />
-  <script
-    defer
-    src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
-  ></script>
-  <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
-  <script
-    type="text/javascript"
-    src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
-    async
-  ></script>
 </head>
-
 <div class="h-80 bg-white">
   <div class="container mx-auto flex max-w-7xl flex-col px-2 py-4 sm:flex-row">
     <!-- Grid container for distinct sections -->
@@ -236,67 +256,86 @@
         </div>
       </div>
     </div>
-    <div class="group flex w-full items-stretch gap-6 px-4 pt-2 md:w-2/3">
+    <div
+      x-data="{ hovered: false }"
+      class="group flex w-full items-stretch gap-6 px-4 pt-2 md:w-2/3"
+    >
       <div class="grid w-full grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
         <div
+          @mouseenter="hovered = 'sports-glasses'"
+          @mouseleave="hovered = false"
           class="group relative flex flex-col items-start duration-700 ease-in-out hover:-translate-y-2"
         >
           <a href="/sports-glasses">
             <img
+              :class="{ 'opacity-70': hovered && hovered !== 'sports-glasses', 'opacity-100': !hovered || hovered === 'sports-glasses' }"
               class="mb-3 h-56 rounded-lg object-cover duration-700 ease-in-out group-hover:shadow-lg"
-              src="https://test.s4l.link/media/mf_webp/png/media/wysiwyg/redesign/sports-glasses.webp"
+              src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/sports-glasses.webp"
               alt="Sports"
             />
           </a>
           <div
+            :class="{ 'opacity-70': hovered && hovered !== 'sports-glasses', 'opacity-100': !hovered || hovered === 'sports-glasses' }"
             class="w-full text-left text-lg font-semibold text-slate-800 duration-700 ease-in-out"
           >
             Glasses
           </div>
         </div>
         <div
+          @mouseenter="hovered = 'sports-sunglasses'"
+          @mouseleave="hovered = false"
           class="group relative flex flex-col items-start duration-700 ease-in-out hover:-translate-y-2"
         >
-          <a href="/sports-sunglasses">
+          <a href="/sports?a1_brand=Our+Sunglasses">
             <img
+              :class="{ 'opacity-70': hovered && hovered !== 'sports-sunglasses', 'opacity-100': !hovered || hovered === 'sports-sunglasses' }"
               class="mb-3 h-56 rounded-lg object-cover duration-700 ease-in-out group-hover:shadow-lg"
-              src="https://test.s4l.link/media/mf_webp/png/media/wysiwyg/redesign/cycling-glasses.webp"
+              src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/cycling-glasses.webp"
               alt="Sports"
             />
           </a>
           <div
+            :class="{ 'opacity-70': hovered && hovered !== 'sports-sunglasses', 'opacity-100': !hovered || hovered === 'sports-sunglasses' }"
             class="w-full text-left text-lg font-semibold text-slate-800 duration-700 ease-in-out"
           >
             Sunglasses
           </div>
         </div>
         <div
+          @mouseenter="hovered = 'skiing-goggles'"
+          @mouseleave="hovered = false"
           class="group relative flex flex-col items-start duration-700 ease-in-out hover:-translate-y-2"
         >
           <a href="/sports-glasses/skiing-goggles">
             <img
+              :class="{ 'opacity-70': hovered && hovered !== 'skiing-goggles', 'opacity-100': !hovered || hovered === 'skiing-goggles' }"
               class="mb-3 h-56 rounded-lg object-cover duration-700 ease-in-out group-hover:shadow-lg"
-              src="https://test.s4l.link/media/mf_webp/png/media/wysiwyg/redesign/skiing-goggles.webp"
+              src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/skiing-goggles.webp"
               alt="Sports Goggles"
             />
           </a>
           <div
+            :class="{ 'opacity-70': hovered && hovered !== 'skiing-goggles', 'opacity-100': !hovered || hovered === 'skiing-goggles' }"
             class="w-full text-left text-lg font-semibold text-slate-800 duration-700 ease-in-out"
           >
             Goggles
           </div>
         </div>
         <div
+          @mouseenter="hovered = 'all-sports'"
+          @mouseleave="hovered = false"
           class="group relative flex flex-col items-start duration-700 ease-in-out hover:-translate-y-2"
         >
           <a href="/sports-glasses">
             <img
+              :class="{ 'opacity-70': hovered && hovered !== 'all-sports', 'opacity-100': !hovered || hovered === 'all-sports' }"
               class="mb-3 h-56 rounded-lg object-cover duration-700 ease-in-out group-hover:shadow-lg"
-              src="https://test.s4l.link/media/mf_webp/png/media/wysiwyg/redesign/woman-running.webp"
+              src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/woman-running.webp"
               alt="All sports"
             />
           </a>
           <div
+            :class="{ 'opacity-70': hovered && hovered !== 'all-sports', 'opacity-100': !hovered || hovered === 'all-sports' }"
             class="w-full text-left text-lg font-semibold text-slate-800 duration-700 ease-in-out"
           >
             All Sports

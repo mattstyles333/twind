@@ -1,0 +1,193 @@
+<head>
+  <!-- Add Glide.js CDN links in the head section -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            p: "#1f2937",
+            s: "#1E3A8A",
+            l: "#f3f4f6",
+            t: "#5494EC",
+            a: "#f97316",
+            b: "#2563eb",
+            gr: "#6b7280",
+          },
+          screens: {
+            xxsm: "420px",
+            xxxsm: "360px",
+          },
+        },
+      },
+    };
+  </script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<div class="relative mx-auto">
+  <div class="flex">
+    <div class="w-full bg-white py-4 text-base">
+      <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
+        <div class="px-6">
+          <div class="mb-4 text-xl font-bold">How to Choose</div>
+          <ul class="space-y-2">
+            <li>
+              <a href="/#how-to" class="text-gray-700 hover:underline"
+                >How to Order Your Glasses</a
+              >
+            </li>
+            <li>
+              <a
+                href="/choosing-the-right-size-glasses"
+                class="text-gray-700 hover:underline"
+                >The Right Size Frames</a
+              >
+            </li>
+            <li>
+              <a
+                href="/how-to-choose-the-right-colour-frames"
+                class="text-gray-700 hover:underline"
+                >The Right Frame Colour</a
+              >
+            </li>
+            <li>
+              <a
+                href="/about-your-prescription"
+                class="text-gray-700 hover:underline"
+                >Read Your Prescription</a
+              >
+            </li>
+            <li>
+              <a
+                href="/exchange-or-return"
+                class="text-gray-700 hover:underline"
+                >Exchange and Return</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="border-b-2 border-gray-100 bg-gray-50 px-6 shadow-inner">
+          <div class="py-3">
+            <div class="mb-4 text-xl font-bold">Helpful Links</div>
+            <ul class="space-y-2">
+              <li>
+                <a href="/faq" class="text-gray-700 hover:underline">FAQ’s</a>
+              </li>
+              <li>
+                <a href="/about" class="text-gray-700 hover:underline"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/glasses-delivery-schedule"
+                  class="text-gray-700 hover:underline"
+                  >Dispatch and Shipping</a
+                >
+              </li>
+              <li>
+                <a href="/blog" class="text-gray-700 hover:underline">Guides</a>
+              </li>
+              <li>
+                <a href="/aftercare" class="text-gray-700 hover:underline"
+                  >Aftercare</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="px-6">
+          <div class="mb-4 text-xl font-bold">Lenses</div>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="/glasses/single-vision-glasses"
+                class="text-gray-700 hover:underline"
+              >
+                Single Vision
+              </a>
+            </li>
+            <li>
+              <a
+                href="/how-to-choose-lens-coatings"
+                class="text-gray-700 hover:underline"
+              >
+                Coatings
+              </a>
+            </li>
+            <li>
+              <a
+                href="/blue-light-glasses"
+                class="text-gray-700 hover:underline"
+              >
+                Blue Light Glasses
+              </a>
+            </li>
+            <li>
+              <a
+                href="/how-to-choose-sunglass-tints"
+                class="text-gray-700 hover:underline"
+              >
+                Mirrors and Tints
+              </a>
+            </li>
+            <li>
+              <a href="/lens" class="text-gray-700 hover:underline">
+                Lens Index (Thinness)
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="border-gray-200 px-6 pb-24 pt-3">
+  <div
+    class="group flex w-full flex-col gap-3 duration-700 ease-in-out hover:-translate-y-2"
+  >
+    <a href="/product-quiz">
+      <img
+        class="mb-3 h-56 w-full rounded-lg object-cover object-center duration-700 ease-in-out group-hover:shadow-lg"
+        src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/new/style-finder.webp"
+        alt="Style Finder Image"
+      />
+      <p class="text-xl font-semibold text-slate-800">Style Finder</p>
+    </a>
+
+    <div
+      class="group grid w-full duration-700 ease-in-out hover:-translate-y-2"
+    >
+      <a href="/offers">
+        <img
+          class="mb-3 h-56 w-full rounded-lg border-2 border-gray-100 object-cover object-right duration-700 ease-in-out group-hover:shadow-lg"
+          src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/new/sales-offers.webp"
+          alt="Sales and Coupons Image"
+        />
+        <p class="text-xl font-semibold text-slate-800">Sales & Coupons</p>
+      </a>
+    </div>
+    <div
+      class="group grid w-full duration-700 ease-in-out hover:-translate-y-2"
+    >
+      <a href="/reward-points#refer">
+        <img
+          class="mb-3 h-56 w-full rounded-lg border-2 border-gray-100 object-cover duration-700 ease-in-out group-hover:shadow-lg"
+          src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/referral_2.webp"
+          alt="Home Trial Image"
+        />
+        <p class="text-xl font-semibold text-slate-800">Refer a Friend</p>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,169 @@
+<head>
+  <!-- Add Glide.js CDN links in the head section -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            p: "#1f2937",
+            s: "#1E3A8A",
+            l: "#f3f4f6",
+            t: "#5494EC",
+            a: "#f97316",
+            b: "#2563eb",
+            gr: "#6b7280",
+          },
+          screens: {
+            xxsm: "420px",
+            xxxsm: "360px",
+          },
+        },
+      },
+    };
+  </script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<div class="flex flex-wrap justify-center space-x-8 py-6">
+  <div
+    x-data="{ loading: false }"
+    @click="loading = true; setTimeout(() => { window.location.href = 'file:///home/james/Documents/code/twind/src/product-page/v20-stock.html'; }, 1000)"
+    class="relative max-w-md cursor-pointer rounded-lg bg-white p-4 shadow-md duration-500 ease-in-out hover:scale-105"
+  >
+    <span
+      class="absolute right-2 top-2 rounded bg-gradient-to-r from-red-500 to-orange-500 px-2 py-0.5 text-sm font-bold text-white sm:px-4 sm:py-1 sm:text-lg"
+    >
+      Sale
+    </span>
+
+    <div class="mb-2 text-center text-lg font-semibold text-gray-800">
+      SF 2852 Salvatore Ferragamo Glasses
+    </div>
+    <img
+      src="https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/e78b80cdeb6ca6a2604708b5e79895ec/o/l/ol001_-_c1_1_1_1.webp"
+      alt="OL 001 Glasses"
+      class="mb-4 h-auto w-full rounded border-b-2"
+    />
+
+    <div class="mb-4 flex justify-end space-x-2">
+      <div class="h-6 w-10 bg-black"></div>
+      <div class="h-6 w-10 bg-[#4D2C2C]"></div>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <div class="text-2xl font-bold text-gray-900">£22.97</div>
+      <button class="text-gray-400 transition hover:text-red-500">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 15a7 7 0 0014 0c0-4.38-3.582-7-7-7S5 10.62 5 15zm7-8a3 3 0 110-6 3 3 0 010 6zm0 10h.01"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <div x-show="loading" class="absolute inset-0 bg-white bg-opacity-75"></div>
+  </div>
+
+  <div
+    x-data="{ loading: false }"
+    @click="loading = true; setTimeout(() => { window.location.href = 'file:///home/james/Documents/code/twind/src/product-page/v20-stock.html'; }, 1000)"
+    class="relative max-w-md cursor-pointer rounded-lg bg-white p-4 shadow-md duration-500 ease-in-out hover:scale-105"
+  >
+    <div class="mb-2 text-center font-semibold text-gray-800">
+      SF 2852 Salvatore Ferragamo Glasses
+    </div>
+    <img
+      src="https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/e78b80cdeb6ca6a2604708b5e79895ec/o/l/ol001_-_c1_1_1_1.webp"
+      alt="OL 001 Glasses"
+      class="mb-4 h-auto w-full rounded border-b-2"
+    />
+
+    <div class="mb-4 flex justify-end space-x-2">
+      <div class="h-6 w-10 bg-black"></div>
+      <div class="h-6 w-10 bg-[#4D2C2C]"></div>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <div class="text-2xl font-bold text-gray-900">£22.97</div>
+      <button class="text-gray-400 transition hover:text-red-500">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 15a7 7 0 0014 0c0-4.38-3.582-7-7-7S5 10.62 5 15zm7-8a3 3 0 110-6 3 3 0 010 6zm0 10h.01"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <div x-show="loading" class="absolute inset-0 bg-white bg-opacity-75"></div>
+  </div>
+
+  <div
+    x-data="{ loading: false }"
+    @click="loading = true; setTimeout(() => { window.location.href = 'file:///home/james/Documents/code/twind/src/product-page/v20-stock.html'; }, 1000)"
+    class="relative max-w-md cursor-pointer rounded-lg bg-white p-4 shadow-md duration-500 ease-in-out hover:scale-105"
+  >
+    <div class="mb-2 text-center font-semibold text-gray-800">
+      OL 001 Glasses
+    </div>
+    <img
+      src="https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/e78b80cdeb6ca6a2604708b5e79895ec/o/l/ol001_-_c1_1_1_1.webp"
+      alt="OL 001 Glasses"
+      class="mb-4 h-auto w-full rounded border-b-2"
+    />
+
+    <div class="mb-4 flex justify-end space-x-2">
+      <div class="h-6 w-10 bg-black"></div>
+      <div class="h-6 w-10 bg-[#4D2C2C]"></div>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <div class="text-2xl font-bold text-gray-900">£22.97</div>
+      <button class="text-gray-400 transition hover:text-red-500">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 15a7 7 0 0014 0c0-4.38-3.582-7-7-7S5 10.62 5 15zm7-8a3 3 0 110-6 3 3 0 010 6zm0 10h.01"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <div x-show="loading" class="absolute inset-0 bg-white bg-opacity-75"></div>
+  </div>
+</div>
