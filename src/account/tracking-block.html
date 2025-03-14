@@ -26,9 +26,10 @@
       processing: "Processing",
       frame_only_order_confirmed: "Non-prescription Confirmed",
       Luxottica_Glaze_Ordered_5_12: "Luxottica Glaze Ordered",
-      frame_on_backorder: "Frame on Backorder",
+      Frame_on_Backorder: "Frame on Backorder",
       uk_designer_stock_frame_ordered_: "UK Designer/STOCK Frame",
       EU_Designer_Frames_Ordered_5_14: "EU Designer Frames Ordered",
+      Frame_Only_Order_EU_Designer_Sun: "EU Designer Sunglasses",
       delivered: "Delivered",
       canceled: "Cancelled",
       order_collected_shop: "Collected",
@@ -41,13 +42,13 @@
       "query",
       "holded", // changed from 'on_hold' !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       "awaiting_customer_frames",
-      "awaiting_confirmation",
-      "frame_on_backorder",
-      "fitting_photograph_required",
-      "frame_query",
-      "lens_or_prescription_query",
-      "reinstated_order",
-      "returns",
+      "Awaiting_Confirmation",
+      "Frame_on_Backorder",
+      "Fitting_Photograph_Required",
+      "Frame_Query",
+      "Lens_or_Prescription_Query",
+      "exchange",
+      "Returns",
       "canceled",
     ];
 
@@ -63,12 +64,12 @@
       "query",
       "holded", // changed from 'on_hold' !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       "awaiting_customer_frames",
-      "awaiting_confirmation",
-      "fitting_photograph_required",
-      "frame_query",
-      "lens_or_prescription_query",
-      "reinstated_order",
-      "returns",
+      "Awaiting_Confirmation",
+      "Fitting_Photograph_Required",
+      "Frame_Query",
+      "Lens_or_Prescription_Query",
+      "exchange",
+      "Returns",
     ];
 
     return {
@@ -289,6 +290,14 @@
         const luxotticaGlazeDate =
           this.getStatusCreatedAtDate(luxotticaGlazeStatus);
 
+        // Find Frame Only EU Designer Sun status
+        const frameOnlyEUDesignerSunStatus = statusHistories.find(
+          (status) => status.status === "Frame_Only_Order_EU_Designer_Sun"
+        );
+        const frameOnlyEUDesignerSunDate = this.getStatusCreatedAtDate(
+          frameOnlyEUDesignerSunStatus
+        );
+
         let minDispatchEst = null;
         let maxDispatchEst = null;
 
@@ -306,6 +315,11 @@
         else if (framePickedStatus) {
           minDispatchEst = this.addBusinessDays(framePickedDate, 1);
           maxDispatchEst = this.addBusinessDays(framePickedDate, 2);
+        }
+        // If we have Frame Only EU Designer Sun order, 7-14 days to dispatch
+        else if (frameOnlyEUDesignerSunStatus) {
+          minDispatchEst = this.addBusinessDays(frameOnlyEUDesignerSunDate, 7);
+          maxDispatchEst = this.addBusinessDays(frameOnlyEUDesignerSunDate, 14);
         }
         // If we have EU designer frames, 5-14 days to dispatch
         else if (euDesignerStatus) {
