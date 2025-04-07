@@ -1,0 +1,616 @@
+
+## New FAQ Page Design
+
+```html
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script
+    defer
+    src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.6/dist/cdn.min.js"
+    defer
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            p: "#666666",
+            s: "#333333",
+            l: "#f5f5f5",
+            t: "#666666",
+            a: "#75A53B",
+            b: "#B399EF",
+            gr: "#D6d6d6",
+          },
+          screens: {
+            xxsm: "420px",
+            xxxsm: "360px",
+          },
+          fontFamily: {
+            serif: ['"Times New Roman"', 'serif'],
+            sans: ['Raleway', 'Helvetica', 'Arial', 'sans-serif']
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 1.5s ease-in-out;
+      animation-fill-mode: both;
+    }
+
+    .drop-cap {
+      float: left;
+      font-size: 65px;
+      line-height: 0.8;
+      padding-right: 10px;
+      padding-top: 5px;
+      font-family: Georgia, serif;
+      color: #000;
+    }
+
+    /* Hide scrollbar but keep functionality */
+    .hide-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;  /* Chrome, Safari and Opera */
+    }
+
+    /* Luxury design elements */
+    .luxury-border::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 10%;
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #333333, transparent);
+    }
+
+    .measurement-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0 0 30px 0;
+    }
+
+    .measurement-list li {
+      margin-bottom: 18px;
+      padding-left: 20px;
+      position: relative;
+      border-left: 3px solid #ccc;
+      padding-left: 18px;
+      transition: border-color 0.3s ease;
+    }
+
+    .measurement-list li:hover {
+      border-left-color: #666;
+    }
+
+    .measurement-term {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 6px;
+      color: #222;
+    }
+
+    .measurement-desc {
+      color: #444;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    
+    .frame-diagram {
+      max-width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+    
+    .frame-diagram:hover {
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+  <!-- FAQ Header -->
+  <div class="bg-white pt-24 pb-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="text-3xl md:text-4xl font-light text-s mb-2 font-serif">Frequently Asked Questions</h1>
+        <div class="w-24 h-[1px] bg-s mx-auto mt-4 mb-6"></div>
+        <p class="text-t max-w-2xl mx-auto">Find answers to common questions about our products and services. If you can't find what you're looking for, our team is always here to help.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- FAQ Categories Section -->
+  <section class="pb-16 bg-white">
+    <div class="container px-4 mx-auto">
+      <div class="flex flex-wrap justify-center gap-8">
+        <!-- Frame Size Card -->
+        <div class="w-full md:w-1/3 lg:w-1/4 h-[28rem] bg-white shadow-md rounded-md p-4 overflow-hidden flex flex-col">
+          <h3 class="text-lg font-semibold text-gray-800 mb-3">Choosing the right frame size</h3>
+          <img 
+            src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/frame_size_2.webp" 
+            alt="Frame size measurements" 
+            class="w-full h-40 object-contain mb-3"
+          />
+          <p class="text-sm text-gray-600 mb-4">
+            Finding the perfect frame size is essential for comfort and style. Key measurements include lens width, bridge width, and arm length.
+          </p>
+          <p class="text-sm text-gray-600 mb-4">
+            Look for these measurements on your current frames to find your ideal fit when purchasing new glasses.
+          </p>
+          <a href="#frame-size-guide" class="mt-auto text-center py-2 px-4 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition">
+            Read our detailed guide
+          </a>
+        </div>
+        
+        <!-- Prescriptions Card -->
+        <div class="w-full md:w-1/3 lg:w-1/4 h-[28rem] bg-white shadow-md rounded-md p-4 overflow-hidden flex flex-col">
+          <h3 class="text-lg font-semibold text-gray-800 mb-3">Understanding your prescription</h3>
+          <img 
+            src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/prescription.webp" 
+            alt="Prescription details" 
+            class="w-full h-40 object-contain mb-3"
+          />
+          <p class="text-sm text-gray-600 mb-4">
+            Your eye prescription contains important information about your vision needs. Learn how to read the different values and what they mean.
+          </p>
+          <p class="text-sm text-gray-600 mb-4">
+            Understanding SPH, CYL, AXIS, and ADD values helps you make informed decisions about your eyewear.
+          </p>
+          <a href="#prescription-guide" class="mt-auto text-center py-2 px-4 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition">
+            Learn about prescriptions
+          </a>
+        </div>
+        
+        <!-- Lens Options Card -->
+        <div class="w-full md:w-1/3 lg:w-1/4 h-[28rem] bg-white shadow-md rounded-md p-4 overflow-hidden flex flex-col">
+          <h3 class="text-lg font-semibold text-gray-800 mb-3">Lens types and coatings</h3>
+          <img 
+            src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/lens_types.webp" 
+            alt="Different lens types" 
+            class="w-full h-40 object-contain mb-3"
+          />
+          <p class="text-sm text-gray-600 mb-4">
+            From single vision to varifocals, there are many lens options available. Discover which type is best suited for your visual needs.
+          </p>
+          <p class="text-sm text-gray-600 mb-4">
+            Learn about anti-reflective, blue light filtering, and other coatings that enhance your lenses' performance.
+          </p>
+          <a href="#lens-options" class="mt-auto text-center py-2 px-4 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition">
+            Explore lens options
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Accordion FAQ Section -->
+  <section class="pt-10 pb-10 lg:py-10 bg-white">
+    <div class="container px-4 mx-auto">
+      <div class="flex flex-wrap -m-8">
+        <div class="w-full md:w-1/2 p-8 pt-10">
+          <div class="animate-fade-in">
+            <h2 class="font-heading text-3xl md:text-4xl font-light text-s mb-2 font-serif">
+              Common Questions
+            </h2>
+            <div class="w-24 h-[1px] bg-s mt-4 mb-8"></div>
+            <p class="mb-8 text-base text-gray-700">
+              Find answers to the most frequently asked questions about our products, services, and policies.
+            </p>
+          </div>
+        </div>
+        
+        <div class="w-full md:w-1/2 p-8">
+          <div class="flex flex-wrap -m-1.5">
+            <!-- Accordion 1 -->
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      How do I know which frame size is right for me?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0 transition duration-200"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                  class="overflow-hidden h-0 duration-500"
+                >
+                  <p class="mt-6 tracking-tight text-gray-600">
+                    The best way to find your ideal frame size is to check the measurements on your current glasses, which are often printed on the inside of the temple. Look for three numbers, typically formatted like "52□18-140". The first number is the lens width, the second is the bridge width, and the third is the temple length. See our detailed frame size guide below for more information.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Accordion 2 -->
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      Do I need a prescription to order glasses?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0 transition duration-200"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                  class="overflow-hidden h-0 duration-500"
+                >
+                  <p class="mt-6 tracking-tight text-gray-600">
+                    You'll need a valid prescription for prescription eyewear. Your prescription should be no more than 2 years old for adults and 1 year for children. If you're ordering non-prescription glasses or sunglasses, you won't need a prescription. You can upload your prescription during checkout or email it to us afterward.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Accordion 3 -->
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      How long will it take to receive my glasses?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0 transition duration-200"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                  class="overflow-hidden h-0 duration-500"
+                >
+                  <p class="mt-6 tracking-tight text-gray-600">
+                    Production time varies depending on your prescription complexity and the type of lenses you order. Standard single vision lenses typically take 7-10 business days, while more complex prescriptions or specialty lenses may take 10-14 business days. Delivery times are additional to production times. See our delivery page for specific shipping timeframes.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Accordion 4 -->
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      What if my glasses don't fit or I'm not satisfied?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0 transition duration-200"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                  class="overflow-hidden h-0 duration-500"
+                >
+                  <p class="mt-6 tracking-tight text-gray-600">
+                    We offer a 30-day satisfaction guarantee on all our eyewear. If you're not completely satisfied, contact our customer service team, and we'll help resolve the issue. This may include adjustments, replacements, or refunds as appropriate. For prescription glasses, we may request verification of the prescription to ensure accuracy.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Accordion 5 -->
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      Do you offer blue light filtering lenses?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0 transition duration-200"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                  class="overflow-hidden h-0 duration-500"
+                >
+                  <p class="mt-6 tracking-tight text-gray-600">
+                    Yes, we offer blue light filtering lenses that help reduce eye strain from extended screen time. These lenses filter out harmful blue light emitted by digital devices while allowing beneficial blue light to pass through. They're available with or without prescription and can be added to most of our frames during the checkout process.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Frame Size Guide Section -->
+  <div class="mx-auto my-8 p-4 md:container" id="frame-size-guide">
+    <div class="my-12 relative mt-8">
+      <div class="absolute inset-0 flex items-center">
+        <div class="w-full border-t border-dashed border-gray-400"></div>
+      </div>
+      <div class="relative flex justify-center">
+        <span class="bg-white px-4 text-3xl font-light text-s tracking-wide font-serif">
+          Choosing the right frame size: A Guide
+        </span>
+      </div>
+    </div>
+    
+    <!-- Frame Size Diagrams -->
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-3 mb-12">
+      <div class="flex flex-col items-center p-6 border border-gray-200 rounded-lg hover:border-gray-300 transition duration-200">
+        <img
+          src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/Eye_Size.webp"
+          alt="Diagram showing eye size measurement"
+          class="frame-diagram mb-4 w-64"
+        />
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Lens Width</h3>
+        <p class="text-gray-600 text-center">The horizontal width of each lens in millimeters.</p>
+      </div>
+
+      <div class="flex flex-col items-center p-6 border border-gray-200 rounded-lg hover:border-gray-300 transition duration-200">
+        <img
+          src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/Bridge.webp"
+          alt="Diagram showing bridge width measurement"
+          class="frame-diagram mb-4 w-64"
+        />
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Bridge Width</h3>
+        <p class="text-gray-600 text-center">The distance between the lenses across the nose in millimeters.</p>
+      </div>
+
+      <div class="flex flex-col items-center p-6 border border-gray-200 rounded-lg hover:border-gray-300 transition duration-200">
+        <img
+          src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/Arm_Length.webp"
+          alt="Diagram showing arm length measurement"
+          class="frame-diagram mb-4 w-64"
+        />
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Temple Length</h3>
+        <p class="text-gray-600 text-center">The length of the arms that extend to your ears in millimeters.</p>
+      </div>
+    </div>
+    
+    <!-- Detailed Guide Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <div class="bg-white p-8 border border-gray-100 rounded-lg shadow-sm">
+        <div class="relative">
+          <div class="hidden lg:block absolute -top-6 -right-6 w-32 h-32 border-t border-r border-gray-200 z-[-1]"></div>
+          
+          <h3 class="text-xl font-light text-s mb-6 font-serif">Understanding Frame Measurements</h3>
+          
+          <p class="text-gray-600 mb-6">
+            <span class="drop-cap">C</span>hoosing the right frame size is key to making sure your glasses feel comfortable and fit well. The measurements can be found on the inside of one of the arms, or sometimes engraved on the inside of the nose bridge.
+          </p>
+          
+          <p class="text-gray-600 mb-4">
+            These numbers typically appear in a format like <strong>52□18-140</strong>, representing:
+          </p>
+          
+          <ul class="measurement-list">
+            <li>
+              <span class="measurement-term">Lens Width (52)</span>
+              <span class="measurement-desc">The horizontal width of each lens in millimeters.</span>
+            </li>
+            <li>
+              <span class="measurement-term">Bridge Width (18)</span>
+              <span class="measurement-desc">The distance between the lenses across the nose.</span>
+            </li>
+            <li>
+              <span class="measurement-term">Temple Length (140)</span>
+              <span class="measurement-desc">The length of the arms that extend over your ears.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="bg-white p-8 border border-gray-100 rounded-lg shadow-sm">
+        <div class="relative">
+          <div class="hidden lg:block absolute -bottom-6 -left-6 w-32 h-32 border-b border-l border-gray-200 z-[-1]"></div>
+          
+          <h3 class="text-xl font-light text-s mb-6 font-serif">Finding Your Perfect Fit</h3>
+          
+          <p class="text-gray-600 mb-6">
+            When selecting new frames, consider these additional measurements for the best fit:
+          </p>
+          
+          <ul class="measurement-list">
+            <li>
+              <span class="measurement-term">Frame Width</span>
+              <span class="measurement-desc">The total width of the frame, which should align with your face width.</span>
+            </li>
+            <li>
+              <span class="measurement-term">Lens Height</span>
+              <span class="measurement-desc">The vertical measurement of the lens, important for bifocal or progressive lenses.</span>
+            </li>
+            <li>
+              <span class="measurement-term">Face Shape</span>
+              <span class="measurement-desc">Different frame styles complement different face shapes. Round faces often pair well with angular frames, while square faces may suit rounder frames.</span>
+            </li>
+          </ul>
+          
+          <div class="mt-6 p-4 bg-l border-l-2 border-s">
+            <p class="text-t italic">
+              If you're between sizes or unsure, our opticians are always available to help. Contact us for personalized recommendations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Final Tips Box -->
+    <div class="bg-white p-8 border border-gray-100 rounded-lg shadow-sm mb-16">
+      <h3 class="text-xl font-light text-s mb-6 font-serif text-center">Quick Tips for Perfect Fitting Glasses</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-4 bg-l rounded-lg">
+          <h4 class="font-semibold text-gray-800 mb-2">Comfort Check</h4>
+          <p class="text-gray-600">Your glasses should sit comfortably on your nose without pinching or sliding down. The temples should rest gently on your ears without pressure.</p>
+        </div>
+        
+        <div class="p-4 bg-l rounded-lg">
+          <h4 class="font-semibold text-gray-800 mb-2">Alignment</h4>
+          <p class="text-gray-600">Your eyes should be centered in the lenses. The frames shouldn't be wider than your face or rest on your cheeks when you smile.</p>
+        </div>
+        
+        <div class="p-4 bg-l rounded-lg">
+          <h4 class="font-semibold text-gray-800 mb-2">Weight Distribution</h4>
+          <p class="text-gray-600">The weight of your glasses should be evenly distributed between your nose and ears for all-day comfort.</p>
+        </div>
+      </div>
+      
+      <div class="mt-8 text-center">
+        <a href="#" class="inline-block py-3 px-6 bg-s text-white rounded-md hover:bg-gray-700 transition duration-300">
+          Browse Our Frame Collection
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+```

@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      defer
+      src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.6/dist/cdn.min.js"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              p: "#333333",
+              s: "#333333",
+              l: "#f5f5f5",
+              t: "#666666",
+              a: "#75A53B",
+              b: "#B399EF",
+              gr: "#D6d6d6",
+            },
+            screens: {
+              xxsm: "420px",
+              xxxsm: "360px",
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css"
+    />
+    <style>
+      .glide__slide img {
+        height: 300px; /* Set a fixed height for all images */
+        width: 100%; /* Ensure the image takes the full width of its container */
+        object-fit: cover; /* Cover the container while maintaining aspect ratio */
+      }
+      .card-image {
+        height: 600px; /* Increase the height for all card images */
+        width: 100%; /* Ensure the image takes the full width of its container */
+        object-fit: cover; /* Cover the container while maintaining aspect ratio */
+        transition: transform 0.4s ease; /* Slightly slower transition for subtlety */
+      }
+      .card-container:hover .card-image {
+        transform: scale(1.02); /* Reduced scale for more subtle effect */
+      }
+      .card-container {
+        overflow: hidden; /* Prevent image from overflowing during scale */
+      }
+      /* Contact Us Form Styles */
+      .luxury-input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #d6d6d6;
+        border-radius: 0;
+        padding-left: 0;
+        padding-right: 0;
+        transition: all 0.3s ease;
+      }
+      .luxury-input:focus {
+        border-color: #b399ef;
+        box-shadow: none;
+      }
+      .luxury-btn {
+        position: relative;
+        overflow: hidden;
+      }
+      .luxury-btn::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: currentColor;
+        transition: width 0.5s ease;
+      }
+      .luxury-btn:hover::after {
+        width: 100%;
+      }
+      /* Additional Styles for Contact Page */
+      .hide-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari and Opera */
+      }
+      .animate-fade-in {
+        animation: fadeIn 1.5s ease-in-out;
+        animation-fill-mode: both;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .luxury-border::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+        width: 80%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #333333, transparent);
+      }
+    </style>
+  </head>
+  <body class="bg-white-100">
+    <div
+      class="flex flex-wrap justify-center gap-10 sm:gap-20 pt-10 sm:pt-20 pb-5 sm:pb-10 bg-gray-100"
+    >
+      <div class="flex flex-col items-center text-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 sm:h-8 sm:w-8"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+          />
+        </svg>
+        <p class="text-lg sm:text-2xl font-bold mt-2">
+          Free delivery on all UK orders
+        </p>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 sm:h-8 sm:w-8"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 4v16m8-8H4"
+          />
+        </svg>
+        <p class="text-lg sm:text-2xl font-bold mt-2">
+          Free single vision lenses
+        </p>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 sm:h-8 sm:w-8"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012 2h11"
+          />
+        </svg>
+        <p class="text-lg sm:text-2xl font-bold mt-2">
+          100% Satisfaction Guarantee*
+        </p>
+      </div>
+    </div>
+    <!--4 cards-->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 m-4 sm:m-10 md:m-20 px-4 sm:px-10 md:px-20"
+    >
+      <div class="text-center card-container">
+        <img
+          class="card-image h-96 sm:h-112 md:h-128"
+          src="https://test.s4l.link/media/wysiwyg/glasses.png"
+          alt="Designer Glasses"
+        />
+        <p class="text-lg sm:text-2xl font-light text-s font-serif mt-2">
+          Designer Glasses
+        </p>
+      </div>
+      <div class="text-center card-container">
+        <img
+          class="card-image h-96 sm:h-112 md:h-128"
+          src="https://test.s4l.link/media/wysiwyg/sunglasses.png"
+          alt="Designer Sunglasses"
+        />
+        <p class="text-lg sm:text-2xl font-light text-s font-serif mt-2">
+          Designer Sunglasses
+        </p>
+      </div>
+      <div class="text-center card-container">
+        <img
+          class="card-image h-96 sm:h-112 md:h-128"
+          src="https://test.s4l.link/media/wysiwyg/reglaze.png"
+          alt="Reglaze Service"
+        />
+        <p class="text-lg sm:text-2xl font-light text-s font-serif mt-2">
+          Reglaze Service
+        </p>
+      </div>
+      <div class="text-center card-container">
+        <img
+          class="card-image h-96 sm:h-112 md:h-128"
+          src="https://test.s4l.link/media/wysiwyg/style_finder.png"
+          alt="Style Finder"
+        />
+        <p class="text-lg sm:text-2xl font-light text-s font-serif mt-2">
+          Style Finder
+        </p>
+      </div>
+    </div>
+    <div class="py-1">
+      <div class="flex items-center justify-center">
+        <div class="text-center max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-light text-s font-serif">
+            Shop by Collection
+          </h2>
+          <div class="w-24 h-[1px] bg-s mx-auto mt-4 mb-6"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--Bento-->
+    <div
+      class="grid grid-cols-2 md:grid-cols-4 gap-4 m-4 md:m-10 px-4 md:px-10"
+    >
+      <div class="grid gap-4">
+        <div class="relative group">
+          <img
+            class="h-auto max-w-full transition-all duration-300 group-hover:brightness-75"
+            src="https://test.s4l.link/media/wysiwyg/oakleysun.png"
+            alt=""
+          />
+          <button
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white tracking-wide text-gray-800 font-bold text-sm md:text-base border-b-2 border-gray-800 hover:border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            Shop Now
+          </button>
+        </div>
+        <div class="relative group">
+          <img
+            class="h-auto max-w-full transition-all duration-300 group-hover:brightness-75"
+            src="https://test.s4l.link/media/wysiwyg/raybansun.png"
+            alt=""
+          />
+          <button
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white tracking-wide text-gray-800 font-bold text-sm md:text-base border-b-2 border-gray-800 hover:border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            Shop Now
+          </button>
+        </div>
+        <div class="relative group">
+          <img
+            class="h-auto max-w-full transition-all duration-300 group-hover:brightness-75"
+            src="https://test.s4l.link/media/wysiwyg/GU_CV_SS25_1_1_squared_60-ezgif.com-resize.gif"
+            alt=""
+          />
+          <button
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white tracking-wide text-gray-800 font-bold text-sm md:text-base border-b-2 border-gray-800 hover:border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            Shop Now
+          </button>
+        </div>
+      </div>
+      <div class="grid gap-4">
+        <div class="relative group">
+          <img
+            class="h-auto max-w-full transition-all duration-300 group-hover:brightness-75"
+            src="https://test.s4l.link/media/wysiwyg/MM_MAXIM_FULL_1_1_squared_30-ezgif.com-video-to-gif-converter.gif"
+            alt=""
+          />
+          <button
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white tracking-wide text-gray-800 font-bold text-sm md:text-base border-b-2 border-gray-800 hover:border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            Shop Now
+          </button>
+        </div>
+        <div class="relative group">
+          <img
+            class="h-auto max-w-full transition-all duration-300 group-hover:brightness-75"
+            src="https://test.s4l.link/media/wysiwyg/raybanoph.png"
+            alt=""
+          />
+          <button
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white tracking-wide text-gray-800 font-bold text-sm md:text-base border-b-2 border-gray-800 hover:border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            Shop Now
+          </button>
+        </div>
+        <div class="relative group">
+          <img
+            class="h-auto max-w-full transition-all duration-300 group-hover:brightness-75"
+            src="https://test.s4l.link/media/wysiwyg/guccioph.png"
+            alt=""
+          />
+          <button
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white tracking-wide text-gray-800 font-bold text-sm md:text-base border-b-2 border-gray-800 hover:border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            Shop Now
+          </button>
+        </div>
+      </div>
+      <div class="grid gap-4">
+        <div class="relative group">
+          <img
+            class="h-auto max-w-full transition-all duration-300 group-hover:brightness-75"
+            src="https://test.s4l.link/media/wysiwyg/oakleyoph.png"
+            alt=""
+          />
+          <button
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white tracking-wide text-gray-800 font-bold text-sm md:text-base border-b-2 border-gray-800 hover:border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            Shop Now
+          </button>
+        </div>
+        <div class="relative group">
+          <img
+            class="h-auto max-w-full transition-all duration-300 group-hover:brightness-75"
+            src="https://test.s4l.link/media/wysiwyg/chloe.png"
+            alt=""
+          />
+          <button
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white tracking-wide text-gray-800 font-bold text-sm md:text-base border-b-2 border-gray-800 hover:border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            Shop Now
+          </button>
+        </div>
+        <div class="relative group">
+          <img
+            class="h-auto max-w-full transition-all duration-300 group-hover:brightness-75"
+            src="https://test.s4l.link/media/wysiwyg/polosun.png"
+            alt=""
+          />
+          <button
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white tracking-wide text-gray-800 font-bold text-sm md:text-base border-b-2 border-gray-800 hover:border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            Shop Now
+          </button>
+        </div>
+      </div>
+      <div class="grid gap-4">
+        <div class="relative group">
+          <img
+            class="h-auto max-w-full transition-all duration-300 group-hover:brightness-75"
+            src="https://test.s4l.link/media/wysiwyg/guccisun.png"
+            alt=""
+          />
+          <button
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white tracking-wide text-gray-800 font-bold text-sm md:text-base border-b-2 border-gray-800 hover:border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            Shop Now
+          </button>
+        </div>
+        <div class="relative group">
+          <img
+            class="h-auto max-w-full transition-all duration-300 group-hover:brightness-75"
+            src="https://test.s4l.link/media/wysiwyg/tomford_1_.png"
+            alt=""
+          />
+          <button
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white tracking-wide text-gray-800 font-bold text-sm md:text-base border-b-2 border-gray-800 hover:border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            Shop Now
+          </button>
+        </div>
+        <div class="relative group">
+          <img
+            class="h-auto max-w-full transition-all duration-300 group-hover:brightness-75"
+            src="https://test.s4l.link/media/wysiwyg/saintlaurant.png"
+            alt=""
+          />
+          <button
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white tracking-wide text-gray-800 font-bold text-sm md:text-base border-b-2 border-gray-800 hover:border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            Shop Now
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="h-screen flex bg-gray-50">
+      <!-- Left side: Text and button only -->
+      <div class="w-1/2 flex flex-col justify-center items-center p-10">
+        <h2 class="text-2xl font-light text-s mb-4 font-serif">
+          TOM FORD: An Elevated Finish
+        </h2>
+        <p class="text-t text-center mb-4">
+          Discover the elegance of Tom Ford glasses, crafted with precision and
+          style. Perfect for those who appreciate luxury and sophistication.
+        </p>
+        <button
+          class="bg-white tracking-wide text-gray-800 font-bold border-b-2 border-gray-800 hover:border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-6 inline-flex items-center"
+        >
+          View Now
+        </button>
+      </div>
+
+      <!-- Right side: Full-sized image -->
+      <div
+        class="w-1/2 h-full bg-cover bg-center"
+        style="
+          background-image: url('https://test.s4l.link/media/wysiwyg/front.png');
+        "
+      ></div>
+      <div
+        class="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"
+        style="
+          background-image: url('https://test.s4l.link/media/wysiwyg/side.png');
+        "
+      ></div>
+    </div>
+
+    <div class="text-center py-20 bg-gray-100 my-24">
+      <p class="text-2xl italic text-t">
+        "Your vision is our top priority. Your vision is our top priority. Your
+        vision is our top priority. Your vision is our top priority."
+      </p>
+      <p class="mt-4 text-xl font-light text-s font-serif">- Clive</p>
+    </div>
+
+    <div class="h-screen flex bg-gray-50 my-24">
+      <!-- Left side: Full-sized image with hover effect -->
+      <div class="w-1/2 h-full relative overflow-hidden group">
+        <div
+          class="absolute inset-0 bg-cover bg-center transition-opacity duration-700 ease-in-out"
+          style="
+            background-image: url('https://test.s4l.link/media/wysiwyg/frontface.png');
+          "
+        ></div>
+        <div
+          class="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"
+          style="
+            background-image: url('https://test.s4l.link/media/wysiwyg/sideface.png');
+          "
+        ></div>
+      </div>
+
+      <!-- Right side: Product card with static image -->
+      <div class="w-1/2 flex flex-col justify-center items-center p-10">
+        <img
+          class="w-1/2 mb-6"
+          src="https://test.s4l.link/media/wysiwyg/TF7011.png"
+          alt="Product Image"
+        />
+        <h2 class="text-2xl font-light text-s mb-4 font-serif">
+          DESIGNER SUNGLASSES: Premium Collection
+        </h2>
+        <p class="text-t text-center mb-4">
+          Experience our premium selection of designer sunglasses. Handcrafted
+          with the finest materials for those who demand both style and quality.
+        </p>
+        <button
+          class="bg-white tracking-wide text-gray-800 font-bold border-b-2 border-gray-800 hover:border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-6 inline-flex items-center"
+        >
+          View Now
+        </button>
+      </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-l">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-light text-s mb-2 font-serif">
+            What Our Customers Say
+          </h2>
+          <div class="w-24 h-[1px] bg-s mx-auto mt-4 mb-6"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="relative bg-white p-8 border border-gray-100 shadow-sm">
+            <div class="absolute -top-4 left-8 text-6xl text-s opacity-10">
+              ❝
+            </div>
+            <div class="relative z-10">
+              <p class="text-t mb-6 italic">
+                "I've been wearing glasses for over 20 years and have never
+                experienced such a thorough eye examination. The optometrist
+                took the time to explain everything and answer all my questions.
+                The frame selection is impressive, with many designer options to
+                choose from."
+              </p>
+              <div class="flex items-center">
+                <div class="flex-shrink-0">
+                  <div
+                    class="w-12 h-12 rounded-full bg-s flex items-center justify-center text-white"
+                  >
+                    <span class="text-lg font-semibold">SJ</span>
+                  </div>
+                </div>
+                <div class="ml-3">
+                  <p class="text-s font-semibold">Gillian</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="relative bg-white p-8 border border-gray-100 shadow-sm">
+            <div class="absolute -top-4 left-8 text-6xl text-s opacity-10">
+              ❝
+            </div>
+            <div class="relative z-10">
+              <p class="text-t mb-6 italic">
+                "I've been wearing glasses for over 20 years and have never
+                experienced such a thorough eye examination. The optometrist
+                took the time to explain everything and answer all my questions.
+                The frame selection is impressive, with many designer options to
+                choose from."
+              </p>
+              <div class="flex items-center">
+                <div class="flex-shrink-0">
+                  <div
+                    class="w-12 h-12 rounded-full bg-s flex items-center justify-center text-white"
+                  >
+                    <span class="text-lg font-semibold">RW</span>
+                  </div>
+                </div>
+                <div class="ml-3">
+                  <p class="text-s font-semibold">Robert Williams</p>
+                  <p class="text-t text-sm">Manchester</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="relative bg-white p-8 border border-gray-100 shadow-sm">
+            <div class="absolute -top-4 left-8 text-6xl text-s opacity-10">
+              ❝
+            </div>
+            <div class="relative z-10">
+              <p class="text-t mb-6 italic">
+                "The aftercare service at JP Opticians is truly excellent. When
+                I had an issue with my frames, they fixed it promptly at no
+                extra cost. Their attention to detail and commitment to customer
+                satisfaction is unmatched. I wouldn't go anywhere else for my
+                eyecare needs."
+              </p>
+              <div class="flex items-center">
+                <div class="flex-shrink-0">
+                  <div
+                    class="w-12 h-12 rounded-full bg-s flex items-center justify-center text-white"
+                  >
+                    <span class="text-lg font-semibold">EP</span>
+                  </div>
+                </div>
+                <div class="ml-3">
+                  <p class="text-s font-semibold">Emily Parker</p>
+                  <p class="text-t text-sm">London</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="pt-10 pb-10 lg:py-10 bg-white overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-light text-s mb-2 font-serif">
+              Frequently Asked Questions
+            </h2>
+            <div class="w-24 h-[1px] bg-s mx-auto mt-4 mb-6"></div>
+            <p class="text-t max-w-2xl mx-auto">
+              Find answers to common questions about our services and products
+            </p>
+          </div>
+
+          <!-- Update FAQ styling to match delivery page elements -->
+          <div class="mb-10">
+            <div class="flex flex-wrap -m-1.5">
+              <div class="w-full p-1.5">
+                <div
+                  x-data="{ accordion: false }"
+                  x-on:click="accordion = !accordion"
+                  class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+                >
+                  <div class="flex flex-wrap items-center justify-between -m-2">
+                    <div class="w-auto p-2">
+                      <h3 class="font-semibold tracking-tight">
+                        How many items are there in this list?
+                      </h3>
+                    </div>
+                    <div class="w-auto p-2">
+                      <span
+                        :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                        class="inline-block transform rotate-0"
+                      >
+                        <svg
+                          width="9"
+                          height="14"
+                          viewbox="0 0 9 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                            stroke="#171A1F"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    x-ref="container"
+                    :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                    class="overflow-hidden h-0 duration-500"
+                    style=""
+                  >
+                    <p class="mt-6 tracking-tight">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s, when an unknown
+                      printer took a galley of type and scrambled it to make a
+                      type specimen book. It has survived not only five
+                      centuries, but also the leap into electronic typesetting,
+                      remaining essentially unchanged.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full p-1.5">
+                <div
+                  x-data="{ accordion: false }"
+                  x-on:click="accordion = !accordion"
+                  class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+                >
+                  <div class="flex flex-wrap items-center justify-between -m-2">
+                    <div class="w-auto p-2">
+                      <h3 class="font-semibold tracking-tight">
+                        Can I use this template for my client?
+                      </h3>
+                    </div>
+                    <div class="w-auto p-2">
+                      <span
+                        :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                        class="inline-block transform rotate-0"
+                      >
+                        <svg
+                          width="9"
+                          height="14"
+                          viewbox="0 0 9 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                            stroke="#171A1F"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    x-ref="container"
+                    :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                    class="overflow-hidden h-0 duration-500"
+                    style=""
+                  >
+                    <p class="mt-6 tracking-tight">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s, when an unknown
+                      printer took a galley of type and scrambled it to make a
+                      type specimen book. It has survived not only five
+                      centuries, but also the leap into electronic typesetting,
+                      remaining essentially unchanged.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full p-1.5">
+                <div
+                  x-data="{ accordion: false }"
+                  x-on:click="accordion = !accordion"
+                  class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+                >
+                  <div class="flex flex-wrap items-center justify-between -m-2">
+                    <div class="w-auto p-2">
+                      <h3 class="font-semibold tracking-tight">
+                        Do you offer templates in other categories?
+                      </h3>
+                    </div>
+                    <div class="w-auto p-2">
+                      <span
+                        :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                        class="inline-block transform rotate-0"
+                      >
+                        <svg
+                          width="9"
+                          height="14"
+                          viewbox="0 0 9 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                            stroke="#171A1F"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    x-ref="container"
+                    :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                    class="overflow-hidden h-0 duration-500"
+                    style=""
+                  >
+                    <p class="mt-6 tracking-tight">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s, when an unknown
+                      printer took a galley of type and scrambled it to make a
+                      type specimen book. It has survived not only five
+                      centuries, but also the leap into electronic typesetting,
+                      remaining essentially unchanged.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full p-1.5">
+                <div
+                  x-data="{ accordion: false }"
+                  x-on:click="accordion = !accordion"
+                  class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+                >
+                  <div class="flex flex-wrap items-center justify-between -m-2">
+                    <div class="w-auto p-2">
+                      <h3 class="font-semibold tracking-tight">
+                        Are you products genuine?
+                      </h3>
+                    </div>
+                    <div class="w-auto p-2">
+                      <span
+                        :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                        class="inline-block transform rotate-0"
+                      >
+                        <svg
+                          width="9"
+                          height="14"
+                          viewbox="0 0 9 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                            stroke="#171A1F"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    x-ref="container"
+                    :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                    class="overflow-hidden h-0 duration-500"
+                    style=""
+                  >
+                    <p class="mt-6 tracking-tight">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s, when an unknown
+                      printer took a galley of type and scrambled it to make a
+                      type specimen book. It has survived not only five
+                      centuries, but also the leap into electronic typesetting,
+                      remaining essentially unchanged.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us Form Section -->
+    <section class="bg-white py-10">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h1 class="text-3xl md:text-4xl font-light text-s mb-2 font-serif">
+            Contact Us
+          </h1>
+          <div class="w-24 h-[1px] bg-s mx-auto mt-4 mb-6"></div>
+          <p class="text-t max-w-2xl mx-auto">
+            We're here to assist with your eyewear needs. Reach out to our team
+            for personalized service.
+          </p>
+        </div>
+
+        <div class="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <!-- Left Column: Contact Methods -->
+            <div class="space-y-16">
+              <!-- Method Cards -->
+              <div
+                class="relative"
+                x-data="{ isHovered: false }"
+                @mouseenter="isHovered = true"
+                @mouseleave="isHovered = false"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-gray-50 to-white opacity-0 transition-opacity duration-500 -z-10"
+                  :class="{ 'opacity-100': isHovered }"
+                ></div>
+
+                <div class="pl-8 relative">
+                  <div
+                    class="w-12 h-12 rounded-full bg-l flex items-center justify-center absolute left-0 top-0"
+                  >
+                    <svg
+                      class="w-5 h-5 text-s"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+                      ></path>
+                    </svg>
+                  </div>
+
+                  <div class="ml-8">
+                    <h3 class="text-xl font-light text-s mb-2 font-serif">
+                      Call Us
+                    </h3>
+                    <p class="text-t mb-3 pr-8">
+                      Our team is ready to assist you with any inquiries you may
+                      have.
+                    </p>
+                    <a
+                      href="tel:01513030066"
+                      class="inline-block text-s hover:text-b transition-colors duration-300 luxury-btn"
+                    >
+                      0151 303 0066
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Subtle Divider -->
+              <div
+                class="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"
+              ></div>
+
+              <div
+                class="relative"
+                x-data="{ isHovered: false }"
+                @mouseenter="isHovered = true"
+                @mouseleave="isHovered = false"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-gray-50 to-white opacity-0 transition-opacity duration-500 -z-10"
+                  :class="{ 'opacity-100': isHovered }"
+                ></div>
+
+                <div class="pl-8 relative">
+                  <div
+                    class="w-12 h-12 rounded-full bg-l flex items-center justify-center absolute left-0 top-0"
+                  >
+                    <svg
+                      class="w-5 h-5 text-s"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                      ></path>
+                      <path
+                        d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                      ></path>
+                    </svg>
+                  </div>
+
+                  <div class="ml-8">
+                    <h3 class="text-xl font-light text-s mb-2 font-serif">
+                      Email Us
+                    </h3>
+                    <p class="text-t mb-3 pr-8">
+                      For detailed inquiries, our email specialists typically
+                      respond within one business day.
+                    </p>
+                    <a
+                      href="mailto:contact@jpopticians.com"
+                      class="inline-block text-s hover:text-b transition-colors duration-300 luxury-btn"
+                    >
+                      contact@jpopticians.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Subtle Divider -->
+              <div
+                class="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"
+              ></div>
+
+              <div
+                class="relative"
+                x-data="{ isHovered: false }"
+                @mouseenter="isHovered = true"
+                @mouseleave="isHovered = false"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-gray-50 to-white opacity-0 transition-opacity duration-500 -z-10"
+                  :class="{ 'opacity-100': isHovered }"
+                ></div>
+
+                <div class="pl-8 relative">
+                  <div
+                    class="w-12 h-12 rounded-full bg-l flex items-center justify-center absolute left-0 top-0"
+                  >
+                    <svg
+                      class="w-5 h-5 text-s"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
+
+                  <div class="ml-8">
+                    <h3 class="text-xl font-light text-s mb-2 font-serif">
+                      Live Chat
+                    </h3>
+                    <p class="text-t mb-3 pr-8">
+                      Get instant assistance from our online support team
+                      available during business hours.
+                    </p>
+                    <button
+                      onclick="Tawk_API.toggle()"
+                      class="inline-block text-s hover:text-b transition-colors duration-300 luxury-btn"
+                    >
+                      Start Conversation
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Contact Form -->
+            <div x-data="contactForm" class="relative">
+              <div
+                class="p-8 md:p-12 bg-white border border-gray-100 shadow-sm"
+              >
+                <h3 class="text-2xl font-light text-s mb-8 font-serif">
+                  Send Us a Message
+                </h3>
+
+                <form
+                  id="contactForm"
+                  @submit.prevent="submitForm"
+                  class="space-y-6"
+                >
+                  <!-- Reason Dropdown -->
+                  <div class="relative">
+                    <select
+                      id="reason"
+                      name="reason"
+                      x-model="reason"
+                      class="luxury-input w-full pb-2 pl-0 text-t focus:outline-none focus:ring-0"
+                      required
+                    >
+                      <option value="" disabled selected>
+                        How can we assist you? *
+                      </option>
+                      <option value="Placing an Order">
+                        Help with placing an order
+                      </option>
+                      <option value="Order Help">
+                        Assistance with an existing order
+                      </option>
+                      <option value="Return Request">
+                        Return or exchange request
+                      </option>
+                      <option value="Other">Something else</option>
+                    </select>
+                  </div>
+
+                  <!-- Order Number (conditionally shown) -->
+                  <div
+                    class="relative"
+                    x-show="reason === 'Order Help' || reason === 'Return Request'"
+                  >
+                    <input
+                      type="text"
+                      name="order_number"
+                      id="order_number"
+                      class="luxury-input w-full pb-2 text-t focus:outline-none focus:ring-0"
+                      placeholder="Your Order Number"
+                    />
+                  </div>
+
+                  <!-- Name -->
+                  <div class="relative">
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      class="luxury-input w-full pb-2 text-t focus:outline-none focus:ring-0"
+                      placeholder="Your Name"
+                    />
+                  </div>
+
+                  <!-- Contact Method Toggle -->
+                  <div class="flex items-center justify-between py-2">
+                    <span class="text-sm text-t">Preferred Contact Method</span>
+                    <div class="flex items-center space-x-4">
+                      <button
+                        @click="contactMethod = 'email'; isPhone = false"
+                        :class="contactMethod === 'email' ? 'bg-s text-white' : 'bg-gray-200 text-t'"
+                        class="px-4 py-2 transition-colors duration-300"
+                      >
+                        Email
+                      </button>
+                      <button
+                        @click="contactMethod = 'phone'; isPhone = true"
+                        :class="contactMethod === 'phone' ? 'bg-s text-white' : 'bg-gray-200 text-t'"
+                        class="px-4 py-2 transition-colors duration-300"
+                      >
+                        Phone
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Email (conditionally shown) -->
+                  <div class="relative" x-show="contactMethod === 'email'">
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      class="luxury-input w-full pb-2 text-t focus:outline-none focus:ring-0"
+                      placeholder="Your Email Address *"
+                      required
+                      x-bind:required="contactMethod === 'email'"
+                    />
+                  </div>
+
+                  <!-- Phone (conditionally shown) -->
+                  <div class="relative" x-show="contactMethod === 'phone'">
+                    <input
+                      type="tel"
+                      name="phone"
+                      id="phone"
+                      class="luxury-input w-full pb-2 text-t focus:outline-none focus:ring-0"
+                      placeholder="Your Phone Number *"
+                      required
+                      x-bind:required="contactMethod === 'phone'"
+                    />
+                  </div>
+
+                  <!-- Message -->
+                  <div class="relative">
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="4"
+                      class="luxury-input w-full pb-2 text-t focus:outline-none focus:ring-0 resize-none"
+                      placeholder="Your Message *"
+                      required
+                    ></textarea>
+                  </div>
+
+                  <!-- File Upload -->
+                  <div
+                    class="relative mt-6"
+                    x-data="{ fileName: '', fileSize: 0, showError: false }"
+                  >
+                    <p class="text-sm text-t mb-2">
+                      Upload an Image (Optional)
+                    </p>
+
+                    <div
+                      class="relative border border-dashed border-gray-300 rounded-sm p-4 transition-all duration-300 hover:border-s"
+                    >
+                      <input
+                        type="file"
+                        name="image"
+                        id="image"
+                        class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                        accept="image/*"
+                        @change="
+                          fileName = $event.target.files.length ? $event.target.files[0].name : '';
+                          fileSize = $event.target.files.length ? $event.target.files[0].size : 0;
+                          showError = fileSize > 4.5 * 1024 * 1024;
+                          if (showError) $event.target.value = '';
+                        "
+                      />
+
+                      <div class="flex items-center justify-center">
+                        <template x-if="!fileName">
+                          <div class="text-center">
+                            <svg
+                              class="mx-auto h-12 w-12 text-gray-300"
+                              stroke="currentColor"
+                              fill="none"
+                              viewBox="0 0 48 48"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                            <p class="mt-1 text-sm text-gray-500">
+                              Click to upload or drag and drop
+                            </p>
+                            <p class="text-xs text-gray-400">
+                              PNG, JPG, GIF up to 4.5MB
+                            </p>
+                          </div>
+                        </template>
+
+                        <template x-if="fileName && !showError">
+                          <div class="flex items-center">
+                            <svg
+                              class="flex-shrink-0 h-5 w-5 text-s"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                            <span
+                              class="ml-2 text-sm text-t"
+                              x-text="fileName"
+                            ></span>
+                            <button
+                              type="button"
+                              class="ml-auto text-gray-400 hover:text-s"
+                              @click.prevent="fileName = ''; document.getElementById('image').value = ''"
+                            >
+                              <svg
+                                class="h-4 w-4"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                  clip-rule="evenodd"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                        </template>
+                      </div>
+                    </div>
+
+                    <!-- File Size Error -->
+                    <div x-show="showError" class="mt-1 text-sm text-red-500">
+                      File size exceeds the maximum limit of 4.5MB. Please
+                      choose a smaller file.
+                    </div>
+
+                    <p class="mt-2 text-xs text-gray-400">
+                      This helps us better understand your inquiry. For
+                      prescriptions or frame images, please ensure they are
+                      clearly visible.
+                    </p>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <div class="pt-4">
+                    <button
+                      type="submit"
+                      class="bg-white tracking-wide text-gray-800 font-bold border-b-2 border-gray-800 hover:border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-6 transition-all duration-300"
+                    >
+                      Send Message
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Decorative Element -->
+              <div
+                class="hidden lg:block absolute -top-6 -right-6 w-32 h-32 border-t border-r border-gray-200 z-[-1]"
+              ></div>
+              <div
+                class="hidden lg:block absolute -bottom-6 -left-6 w-32 h-32 border-b border-l border-gray-200 z-[-1]"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("alpine:init", () => {
+        Alpine.data("contactForm", () => ({
+          reason: "",
+          contactMethod: "email", // Default to email
+          isPhone: false, // Boolean for toggle state
+          submitForm() {
+            const form = document.getElementById("contactForm");
+            const fileInput = document.getElementById("image");
+
+            // Check if we have a file to upload
+            if (fileInput.files.length > 0) {
+              const file = fileInput.files[0];
+              // Additional file size check
+              if (file.size > 4.5 * 1024 * 1024) {
+                alert(
+                  "File size exceeds the maximum limit of 4.5MB. Please choose a smaller file."
+                );
+                return;
+              }
+
+              const formData = new FormData(form);
+
+              // Send with file
+              fetch("https://n8n.s4l.link/webhook/contact-form", {
+                method: "POST",
+                body: formData, // FormData automatically handles files
+              })
+                .then((response) => response.json())
+                .then((data) => {
+                  if (data.message) {
+                    form.reset();
+                    alert(
+                      "Thank you for reaching out! We'll be in touch soon."
+                    );
+                  }
+                })
+                .catch((error) => {
+                  console.error("Error:", error);
+                  alert(
+                    "There was an issue sending your message. Please try again or contact us directly."
+                  );
+                });
+            } else {
+              // No file, use JSON submission as before
+              const formData = new FormData(form);
+              const jsonData = {};
+
+              formData.forEach((value, key) => {
+                if (key !== "image") {
+                  // Skip the file input
+                  jsonData[key] = value;
+                }
+              });
+
+              fetch("https://n8n.s4l.link/webhook/contact-form", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(jsonData),
+              })
+                .then((response) => response.json())
+                .then((data) => {
+                  if (data.message) {
+                    form.reset();
+                    alert(
+                      "Thank you for reaching out! We'll be in touch soon."
+                    );
+                  }
+                })
+                .catch((error) => {
+                  console.error("Error:", error);
+                  alert(
+                    "There was an issue sending your message. Please try again or contact us directly."
+                  );
+                });
+            }
+          },
+        }));
+      });
+    </script>
+  </body>
+</html>

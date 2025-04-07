@@ -1,0 +1,496 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script
+    defer
+    src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.6/dist/cdn.min.js"
+    defer
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            p: "#333333",
+            s: "#333333",
+            l: "#f5f5f5",
+            t: "#666666",
+            a: "#75A53B",
+            b: "#B399EF",
+            gr: "#D6d6d6",
+          },
+          screens: {
+            xxsm: "420px",
+            xxxsm: "360px",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 1.5s ease-in-out;
+      animation-fill-mode: both;
+    }
+
+    /* Hide scrollbar but keep functionality */
+    .hide-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;  /* Chrome, Safari and Opera */
+    }
+
+    /* Added to ensure no extra padding from document body */
+    body {
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+
+<body class="relative">
+  <!-- Top section with image taking half the width -->
+  <div class="flex w-full">
+    <!-- Image on the left half -->
+    <div class="w-1/2">
+      <img
+        class="w-full h-auto object-cover"
+        src="https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg"
+        alt=""
+      />
+    </div>
+    
+    <!-- Text space on the right half -->
+    <div class="w-1/2 flex flex-col items-center justify-center bg-white">
+      <h1 class="text-5xl font-serif font-bold p-4">
+        <span class="text-gray-600 animate-fade-in" style="animation-delay: 0.3s;">Experience</span> 
+        <span class="text-gray-600 animate-fade-in" style="animation-delay: 0.6s;">our</span> 
+        <em>Refined</em> 
+        <span class="text-gray-600 animate-fade-in" style="animation-delay: 0.9s;">Reglaze Service</span>
+      </h1>
+      <p class="text-lg text-gray-700 px-8 text-center max-w-md animate-fade-in tracking-wide leading-relaxed">
+        Preserve the style you love with expertly crafted new lenses, with the option of prescription.
+      </p>
+      <div class="mt-6">
+        <a href="#" class="bg-white tracking-wide text-gray-800 font-bold border-b-2 border-gray-800 hover:border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-6 inline-flex items-center transition-all duration-300">
+          Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scrollable product cards for lens options -->
+  <div class="mt-8 w-full">
+    <h2 class="text-2xl font-serif mb-4 ml-8">Lens Options</h2>
+    
+    <!-- Container with left margin only -->
+    <div class="m-8"> 
+      <!-- Scrollable container with proper padding and extending to the edge -->
+      <div class="flex overflow-x-auto pb-6 hide-scrollbar space-x-6 pr-0">
+        <!-- Product Card 1 -->
+        <div class="flex-none w-80 bg-white border-b border-gray-300 rounded-sm shadow-sm transition-all duration-300 hover:shadow-lg">
+          <img
+            class="h-60 w-full object-cover"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
+            alt="Standard Single Vision Lenses"
+          />
+          <div class="p-6 flex flex-col h-56">
+            <div class="flex-1">
+              <h3 class="text-xl font-serif font-semibold">Standard Single Vision</h3>
+              <p class="text-base text-gray-600 mt-2">Prescription lenses for distance or reading</p>
+              <p class="text-gray-800 font-bold text-lg mt-3">From £45</p>
+            </div>
+            <div class="h-16 flex items-end">
+              <button class="w-full bg-white text-gray-800 border-b-2 border-gray-800 hover:bg-gray-800 hover:text-white py-3 px-4 transition-all duration-300">Learn More</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product Card 2 -->
+        <div class="flex-none w-80 bg-white border-b border-gray-300 rounded-sm shadow-sm transition-all duration-300 hover:shadow-lg">
+          <img
+            class="h-60 w-full object-cover"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
+            alt="Varifocal Lenses"
+          />
+          <div class="p-6 flex flex-col h-56">
+            <div class="flex-1">
+              <h3 class="text-xl font-serif font-semibold">Varifocal Lenses</h3>
+              <p class="text-base text-gray-600 mt-2">Seamless transition between distances</p>
+              <p class="text-gray-800 font-bold text-lg mt-3">From £95</p>
+            </div>
+            <div class="h-16 flex items-end">
+              <button class="w-full bg-white text-gray-800 border-b-2 border-gray-800 hover:bg-gray-800 hover:text-white py-3 px-4 transition-all duration-300">Learn More</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product Card 3 -->
+        <div class="flex-none w-80 bg-white border-b border-gray-300 rounded-sm shadow-sm transition-all duration-300 hover:shadow-lg">
+          <img
+            class="h-60 w-full object-cover"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
+            alt="Blue Light Filter Lenses"
+          />
+          <div class="p-6 flex flex-col h-56">
+            <div class="flex-1">
+              <h3 class="text-xl font-serif font-semibold">Blue Light Filter</h3>
+              <p class="text-base text-gray-600 mt-2">Reduces eye strain from digital screens</p>
+              <p class="text-gray-800 font-bold text-lg mt-3">From £65</p>
+            </div>
+            <div class="h-16 flex items-end">
+              <button class="w-full bg-white text-gray-800 border-b-2 border-gray-800 hover:bg-gray-800 hover:text-white py-3 px-4 transition-all duration-300">Learn More</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product Card 4 -->
+        <div class="flex-none w-80 bg-white border-b border-gray-300 rounded-sm shadow-sm transition-all duration-300 hover:shadow-lg">
+          <img
+            class="h-60 w-full object-cover"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg"
+            alt="Photochromic Lenses"
+          />
+          <div class="p-6 flex flex-col h-56">
+            <div class="flex-1">
+              <h3 class="text-xl font-serif font-semibold">Photochromic Lenses</h3>
+              <p class="text-base text-gray-600 mt-2">Automatically darken in sunlight</p>
+              <p class="text-gray-800 font-bold text-lg mt-3">From £75</p>
+            </div>
+            <div class="h-16 flex items-end">
+              <button class="w-full bg-white text-gray-800 border-b-2 border-gray-800 hover:bg-gray-800 hover:text-white py-3 px-4 transition-all duration-300">Learn More</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product Card 5 -->
+        <div class="flex-none w-80 bg-white border-b border-gray-300 rounded-sm shadow-sm transition-all duration-300 hover:shadow-lg">
+          <img
+            class="h-60 w-full object-cover"
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg"
+            alt="Polarized Sunglasses Lenses"
+          />
+          <div class="p-6 flex flex-col h-56">
+            <div class="flex-1">
+              <h3 class="text-xl font-serif font-semibold">Polarized Lenses</h3>
+              <p class="text-base text-gray-600 mt-2">Reduces glare for clearer vision</p>
+              <p class="text-gray-800 font-bold text-lg mt-3">From £85</p>
+            </div>
+            <div class="h-16 flex items-end">
+              <button class="w-full bg-white text-gray-800 border-b-2 border-gray-800 hover:bg-gray-800 hover:text-white py-3 px-4 transition-all duration-300">Learn More</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Minimal spacer to prevent cutting off -->
+        <div class="flex-none w-4"></div>
+      </div>
+    </div>
+  </div>
+
+  <section
+    class="pt-10 pb-10 lg:py-10 bg-white overflow-hidden bs-section-dragged"
+  >
+    <div class="container px-4 mx-auto">
+      <div class="flex flex-wrap -m-8">
+        <div class="w-full md:w-1/2 p-8 pt-40">
+          <div class="fade-in">
+            <h2
+              class="font-heading text-6xl tracking-tighter"
+              style="font-family: 'Times New Roman', serif"
+            >
+              All Your Glasses Queries. Answered.
+            </h2>
+          </div>
+          <p class="mb-4 text-base text-gray-700 p-3">
+            Get answers to common questions about choosing the right glasses, lens
+            options, and frame styles.
+          </p>
+        </div>
+        <div class="w-full md:w-1/2 p-8">
+          <div class="flex flex-wrap -m-1.5">
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      How many items are there in this list?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                  class="overflow-hidden h-0 duration-500"
+                  style=""
+                >
+                  <p class="mt-6 tracking-tight">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type
+                    specimen book. It has survived not only five centuries, but
+                    also the leap into electronic typesetting, remaining
+                    essentially unchanged.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      Can you describe Newleaf in just one sentence?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                  class="overflow-hidden h-0 duration-500"
+                  style=""
+                >
+                  <p class="mt-6 tracking-tight">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type
+                    specimen book. It has survived not only five centuries, but
+                    also the leap into electronic typesetting, remaining
+                    essentially unchanged.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      Can I use this template for my client?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                  class="overflow-hidden h-0 duration-500"
+                  style=""
+                >
+                  <p class="mt-6 tracking-tight">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type
+                    specimen book. It has survived not only five centuries, but
+                    also the leap into electronic typesetting, remaining
+                    essentially unchanged.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      Do you offer templates in other categories?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                  class="overflow-hidden h-0 duration-500"
+                  style=""
+                >
+                  <p class="mt-6 tracking-tight">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type
+                    specimen book. It has survived not only five centuries, but
+                    also the leap into electronic typesetting, remaining
+                    essentially unchanged.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      Are you products genuine?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                  class="overflow-hidden h-0 duration-500"
+                  style=""
+                >
+                  <p class="mt-6 tracking-tight">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type
+                    specimen book. It has survived not only five centuries, but
+                    also the leap into electronic typesetting, remaining
+                    essentially unchanged.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
