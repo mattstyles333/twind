@@ -1,0 +1,339 @@
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            p: "#1f2937",
+            s: "#1E3A8A",
+            l: "#f3f4f6",
+            t: "#5494EC",
+            a: "#f97316",
+            b: "#2563eb",
+            gr: "#6b7280",
+          },
+          screens: {
+            xxsm: "420px",
+            xxxsm: "360px",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-l text-p">
+  <div class="flex justify-center items-center w-full min-h-screen">
+    <div class="p-8 w-full bg-white rounded-none shadow-lg">
+      <div class="mx-auto max-w-screen-xl">
+        <div class="flex flex-row w-full min-h-[320px]">
+          <!-- Left: Brand links/grid section (was right) -->
+          <div class="flex flex-col justify-between p-8 flex-[5] w-full">
+            <!-- Pills: single horizontal scrollable row -->
+            <div
+              class="flex overflow-x-auto gap-4 pb-2 mb-8 w-full scrollbar-hide"
+            >
+              <a
+                href="#"
+                class="inline-flex justify-center items-center px-7 py-2 min-w-[160px] h-14 bg-white rounded-full shadow-md transition hover:shadow-lg hover:border-s focus:outline-none focus:ring-2 focus:ring-s focus:ring-opacity-50"
+              >
+                <img
+                  src="https://www.spex4less.com/media/wysiwyg/logos/rayban_logo_1_.png"
+                  alt="Ray-Ban"
+                  class="object-contain mx-auto w-auto h-8"
+                />
+              </a>
+              <a
+                href="#"
+                class="inline-flex justify-center items-center px-7 py-2 min-w-[160px] h-14 bg-white rounded-full shadow-md transition hover:shadow-lg hover:border-s focus:outline-none focus:ring-2 focus:ring-s focus:ring-opacity-50"
+              >
+                <img
+                  src="https://www.spex4less.com/media/wysiwyg/logos/oakley.png"
+                  alt="Oakley"
+                  class="object-contain mx-auto w-auto h-8"
+                />
+              </a>
+              <a
+                href="#"
+                class="inline-flex justify-center items-center px-7 py-2 min-w-[160px] h-14 bg-white rounded-full shadow-md transition hover:shadow-lg hover:border-s focus:outline-none focus:ring-2 focus:ring-s focus:ring-opacity-50"
+              >
+                <img
+                  src="https://www.spex4less.com/media/wysiwyg/logos/mkors_logo.png"
+                  alt="Michael Kors"
+                  class="object-contain mx-auto w-auto h-8"
+                />
+              </a>
+              <a
+                href="#"
+                class="inline-flex justify-center items-center px-7 py-2 min-w-[160px] h-14 bg-white rounded-full shadow-md transition hover:shadow-lg hover:border-s focus:outline-none focus:ring-2 focus:ring-s focus:ring-opacity-50"
+              >
+                <img
+                  src="https://www.spex4less.com/media/wysiwyg/logos/tomford_logo.png"
+                  alt="Tom Ford"
+                  class="object-contain mx-auto w-auto h-8"
+                />
+              </a>
+              <a
+                href="#"
+                class="inline-flex justify-center items-center px-7 py-2 min-w-[160px] h-14 bg-white rounded-full shadow-md transition hover:shadow-lg hover:border-s focus:outline-none focus:ring-2 focus:ring-s focus:ring-opacity-50"
+              >
+                <img
+                  src="https://www.spex4less.com/media/wysiwyg/Vector.png"
+                  alt="Gucci"
+                  class="object-contain mx-auto w-auto h-8"
+                />
+              </a>
+              <!-- Add more pill logo buttons as needed -->
+            </div>
+            <!-- Brand links: left-aligned, semantic, no outline -->
+            <nav aria-label="Brand links" class="mb-8 w-full">
+              <div
+                class="grid grid-cols-2 gap-y-4 gap-x-6 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-12"
+              >
+                <ul class="col-span-2">
+                  <li>
+                    <span class="block mb-2 font-bold text-p"
+                      >Popular Brands</span
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Ray-Ban</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Oakley</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Gucci</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Tom Ford</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Michael Kors</a
+                    >
+                  </li>
+                </ul>
+                <ul class="col-span-2">
+                  <li>
+                    <span class="block mb-2 font-bold text-p"
+                      >Designer Brands</span
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Prada</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Versace</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Saint Laurent</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Calvin Klein</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Boss</a
+                    >
+                  </li>
+                </ul>
+                <ul class="col-span-2">
+                  <li>
+                    <span class="block mb-2 font-bold text-p">Trending</span>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Balenciaga</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Dkny</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Jimmy Choo</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Emporio Armani</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Polaroid</a
+                    >
+                  </li>
+                </ul>
+                <ul class="col-span-2">
+                  <li>
+                    <span class="block mb-2 font-bold text-p">More Brands</span>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Superdry</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Carrera</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Tommy Hilfiger</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Fendi</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-base font-medium rounded transition text-p hover:text-a focus:outline-none focus:ring-2 focus:ring-s"
+                      >Coach</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <!-- CTA at the bottom -->
+            <div class="flex gap-4 justify-center mt-2 w-full">
+              <a
+                href="#"
+                class="inline-flex items-center px-7 py-3 text-base font-semibold text-white rounded-full shadow-md transition bg-s hover:shadow-lg hover:bg-b focus:outline-none focus:ring-2 focus:ring-s focus:ring-opacity-50"
+                >Explore More Brands</a
+              >
+              <a
+                href="#"
+                class="inline-flex items-center px-7 py-3 text-base font-semibold bg-white rounded-full border shadow-md transition text-s border-s hover:bg-l hover:text-b focus:outline-none focus:ring-2 focus:ring-s focus:ring-opacity-50"
+                >Shop Men's Designer</a
+              >
+              <a
+                href="#"
+                class="inline-flex items-center px-7 py-3 text-base font-semibold bg-white rounded-full border shadow-md transition text-s border-s hover:bg-l hover:text-b focus:outline-none focus:ring-2 focus:ring-s focus:ring-opacity-50"
+                >Shop Women's Designer</a
+              >
+            </div>
+          </div>
+          <!-- Right: Poster images/cards section (was left) -->
+          <div
+            class="flex flex-col justify-center items-center p-6 bg-l flex-[2] min-w-[220px] max-w-[350px] w-full rounded-lg"
+          >
+            <div class="flex flex-col gap-6 w-full">
+              <div
+                class="relative w-full h-[220px] rounded-2xl shadow-lg overflow-hidden bg-white flex flex-col items-center"
+              >
+                <img
+                  src="https://spex4less.com/media/wysiwyg/banners/Frame_309.png"
+                  alt="Discover Our Latest Styles"
+                  class="object-cover w-full h-full rounded-2xl"
+                />
+                <div
+                  class="absolute right-0 bottom-0 left-0 px-4 py-3 bg-gradient-to-t to-transparent from-black/50"
+                >
+                  <div class="text-lg font-semibold text-white">
+                    Discover Our Latest Styles
+                  </div>
+                  <div class="text-sm text-gray-200">
+                    Explore trending eyewear
+                  </div>
+                </div>
+              </div>
+              <div
+                class="relative w-full h-[220px] rounded-2xl shadow-lg overflow-hidden bg-white flex flex-col items-center"
+              >
+                <img
+                  src="https://spex4less.com/media/wysiwyg/banners/Frame_310.png"
+                  alt="Save on Designer Frames"
+                  class="object-cover w-full h-full rounded-2xl"
+                />
+                <div
+                  class="absolute right-0 bottom-0 left-0 px-4 py-3 bg-gradient-to-t to-transparent from-black/50"
+                >
+                  <div class="text-lg font-semibold text-white">
+                    Save on Designer Frames
+                  </div>
+                  <div class="text-sm text-gray-200">
+                    Up to 70% off selected brands
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    a:hover {
+      color: #1e3a8a !important;
+    }
+  </style>
+</body>

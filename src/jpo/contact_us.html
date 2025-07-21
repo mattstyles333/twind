@@ -1,249 +1,290 @@
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      defer
-      src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.6/dist/cdn.min.js"
-      defer
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              p: "#333333",
-              s: "#333333",
-              l: "#f5f5f5",
-              t: "#666666",
-              a: "#75A53B",
-              b: "#B399EF",
-              gr: "#D6d6d6",
-            },
-            screens: {
-              xxsm: "420px",
-              xxxsm: "360px",
-            },
-            fontFamily: {
-              serif: ['"Times New Roman"', 'serif'],
-              sans: ['Raleway', 'Helvetica', 'Arial', 'sans-serif']
-            }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script
+    defer
+    src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.6/dist/cdn.min.js"
+    defer
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            p: "#333333",
+            s: "#333333",
+            l: "#f5f5f5",
+            t: "#666666",
+            a: "#75A53B",
+            b: "#B399EF",
+            gr: "#D6d6d6",
           },
+          screens: {
+            xxsm: "420px",
+            xxxsm: "360px",
+          },
+          fontFamily: {
+            serif: ['"Times New Roman"', "serif"],
+            sans: ["Raleway", "Helvetica", "Arial", "sans-serif"],
+          },
+          animation: {
+            'fade-in': 'fadeIn 1.5s ease-in-out forwards',
+          },
+          keyframes: {
+            fadeIn: {
+              'from': { opacity: '0' },
+              'to': { opacity: '1' },
+            }
+          }
         },
-      };
-    </script>
-    <style>
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-      }
-      
-      .animate-fade-in {
-        animation: fadeIn 1.5s ease-in-out;
-        animation-fill-mode: both;
-      }
-  
-      /* Hide scrollbar but keep functionality */
-      .hide-scrollbar {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-      }
-      .hide-scrollbar::-webkit-scrollbar {
-        display: none;  /* Chrome, Safari and Opera */
-      }
-  
-      /* Added to ensure no extra padding from document body */
-      body {
-        overflow-x: hidden;
-      }
-      
-      /* Luxury design elements */
-      .luxury-border::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 10%;
-        width: 80%;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, #333333, transparent);
-      }
-      
-      .luxury-input {
-        background-color: transparent;
-        border: none;
-        border-bottom: 1px solid #D6d6d6;
-        border-radius: 0;
-        padding-left: 0;
-        padding-right: 0;
-        transition: all 0.3s ease;
-      }
-      
-      .luxury-input:focus {
-        border-color: #B399EF;
-        box-shadow: none;
-      }
-      
-      .luxury-btn {
-        position: relative;
-        overflow: hidden;
-      }
-      
-      .luxury-btn::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 1px;
-        bottom: 0;
-        left: 0;
-        background-color: currentColor;
-        transition: width 0.5s ease;
-      }
-      
-      .luxury-btn:hover::after {
-        width: 100%;
-      }
-    </style>
-  </head>
-
-<body class="bg-white text-gray-800">
-  <!-- The entire banner section has been removed -->
-</body>
+      },
+    };
+  </script>
+</head>
 
 <div class="bg-white pt-24 pb-12">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Simple Contact Heading - Banner Removed -->
     <div class="text-center mb-16">
-      <h1 class="text-3xl md:text-4xl font-light text-s mb-2 font-serif">Contact Us</h1>
+      <h1 class="text-3xl md:text-4xl font-light text-s mb-2 font-serif">
+        Contact Us
+      </h1>
       <div class="w-24 h-[1px] bg-s mx-auto mt-4 mb-6"></div>
-      <p class="text-t max-w-2xl mx-auto">We're here to assist with your eyewear needs. Reach out to our team for personalized service.</p>
+      <p class="text-t max-w-2xl mx-auto">
+        We're here to assist with your eyewear needs. Reach out to our team for
+        personalized service.
+      </p>
     </div>
-    
+
     <!-- Contact Information -->
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         <!-- Left Column: Contact Methods -->
         <div class="space-y-16">
           <!-- Method Cards -->
-          <div class="relative" x-data="{ isHovered: false }" @mouseenter="isHovered = true" @mouseleave="isHovered = false">
-            <div class="absolute inset-0 bg-gradient-to-r from-gray-50 to-white opacity-0 transition-opacity duration-500 -z-10" :class="{ 'opacity-100': isHovered }"></div>
-            
+          <div
+            class="relative"
+            x-data="{ isHovered: false }"
+            @mouseenter="isHovered = true"
+            @mouseleave="isHovered = false"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-gray-50 to-white opacity-0 transition-opacity duration-500 -z-10"
+              :class="{ 'opacity-100': isHovered }"
+            ></div>
+
             <div class="pl-8 relative">
-              <div class="w-12 h-12 rounded-full bg-l flex items-center justify-center absolute left-0 top-0">
-                <svg class="w-5 h-5 text-s" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+              <div
+                class="w-12 h-12 rounded-full bg-l flex items-center justify-center absolute left-0 top-0"
+              >
+                <svg
+                  class="w-5 h-5 text-s"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+                  ></path>
                 </svg>
               </div>
-              
+
               <div class="ml-8">
-                <h3 class="text-xl font-light text-s mb-2 font-serif">Call Us</h3>
-                <p class="text-t mb-3 pr-8">Our team is ready to assist you with any inquiries you may have.</p>
-                <a href="tel:01513030066" class="inline-block text-s hover:text-b transition-colors duration-300 luxury-btn">
+                <h3 class="text-xl font-light text-s mb-2 font-serif">
+                  Call Us
+                </h3>
+                <p class="text-t mb-3 pr-8">
+                  Our team is ready to assist you with any inquiries you may
+                  have.
+                </p>
+                <a
+                  href="tel:01513030066"
+                  class="inline-block text-s hover:text-b transition-colors duration-300 relative overflow-hidden group"
+                >
                   0151 303 0066
+                  <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-current transition-all duration-500 group-hover:w-full"></span>
                 </a>
               </div>
             </div>
           </div>
-          
-          <!-- Subtle Divider - Kept -->
-          <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-          
-          <div class="relative" x-data="{ isHovered: false }" @mouseenter="isHovered = true" @mouseleave="isHovered = false">
-            <div class="absolute inset-0 bg-gradient-to-r from-gray-50 to-white opacity-0 transition-opacity duration-500 -z-10" :class="{ 'opacity-100': isHovered }"></div>
-            
+
+          <!-- Subtle Divider -->
+          <div
+            class="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"
+          ></div>
+
+          <div
+            class="relative"
+            x-data="{ isHovered: false }"
+            @mouseenter="isHovered = true"
+            @mouseleave="isHovered = false"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-gray-50 to-white opacity-0 transition-opacity duration-500 -z-10"
+              :class="{ 'opacity-100': isHovered }"
+            ></div>
+
             <div class="pl-8 relative">
-              <div class="w-12 h-12 rounded-full bg-l flex items-center justify-center absolute left-0 top-0">
-                <svg class="w-5 h-5 text-s" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+              <div
+                class="w-12 h-12 rounded-full bg-l flex items-center justify-center absolute left-0 top-0"
+              >
+                <svg
+                  class="w-5 h-5 text-s"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                  ></path>
+                  <path
+                    d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                  ></path>
                 </svg>
               </div>
-              
+
               <div class="ml-8">
-                <h3 class="text-xl font-light text-s mb-2 font-serif">Email Us</h3>
-                <p class="text-t mb-3 pr-8">For detailed inquiries, our email specialists typically respond within one business day.</p>
-                <a href="mailto:contact@jpopticians.com" class="inline-block text-s hover:text-b transition-colors duration-300 luxury-btn">
+                <h3 class="text-xl font-light text-s mb-2 font-serif">
+                  Email Us
+                </h3>
+                <p class="text-t mb-3 pr-8">
+                  For detailed inquiries, our email specialists typically
+                  respond within one business day.
+                </p>
+                <a
+                  href="mailto:contact@jpopticians.com"
+                  class="inline-block text-s hover:text-b transition-colors duration-300 relative overflow-hidden group"
+                >
                   contact@jpopticians.com
+                  <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-current transition-all duration-500 group-hover:w-full"></span>
                 </a>
               </div>
             </div>
           </div>
-          
-          <!-- Subtle Divider - Kept -->
-          <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-          
-          <div class="relative" x-data="{ isHovered: false }" @mouseenter="isHovered = true" @mouseleave="isHovered = false">
-            <div class="absolute inset-0 bg-gradient-to-r from-gray-50 to-white opacity-0 transition-opacity duration-500 -z-10" :class="{ 'opacity-100': isHovered }"></div>
-            
+
+          <!-- Subtle Divider -->
+          <div
+            class="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"
+          ></div>
+
+          <div
+            class="relative"
+            x-data="{ isHovered: false }"
+            @mouseenter="isHovered = true"
+            @mouseleave="isHovered = false"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-gray-50 to-white opacity-0 transition-opacity duration-500 -z-10"
+              :class="{ 'opacity-100': isHovered }"
+            ></div>
+
             <div class="pl-8 relative">
-              <div class="w-12 h-12 rounded-full bg-l flex items-center justify-center absolute left-0 top-0">
-                <svg class="w-5 h-5 text-s" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"></path>
+              <div
+                class="w-12 h-12 rounded-full bg-l flex items-center justify-center absolute left-0 top-0"
+              >
+                <svg
+                  class="w-5 h-5 text-s"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                    clip-rule="evenodd"
+                  ></path>
                 </svg>
               </div>
-              
+
               <div class="ml-8">
-                <h3 class="text-xl font-light text-s mb-2 font-serif">Live Chat</h3>
-                <p class="text-t mb-3 pr-8">Get instant assistance from our online support team available during business hours.</p>
-                <button onclick="Tawk_API.toggle()" class="inline-block text-s hover:text-b transition-colors duration-300 luxury-btn">
+                <h3 class="text-xl font-light text-s mb-2 font-serif">
+                  Live Chat
+                </h3>
+                <p class="text-t mb-3 pr-8">
+                  Get instant assistance from our online support team available
+                  during business hours.
+                </p>
+                <button
+                  onclick="Tawk_API.toggle()"
+                  class="inline-block text-s hover:text-b transition-colors duration-300 relative overflow-hidden group"
+                >
                   Start Conversation
+                  <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-current transition-all duration-500 group-hover:w-full"></span>
                 </button>
               </div>
             </div>
           </div>
         </div>
-        
+
         <!-- Right Column: Contact Form -->
         <div x-data="contactForm" class="relative">
           <div class="p-8 md:p-12 bg-white border border-gray-100 shadow-sm">
-            <h3 class="text-2xl font-light text-s mb-8 font-serif">Send Us a Message</h3>
-            
-            <form id="contactForm" @submit.prevent="submitForm" class="space-y-6">
+            <h3 class="text-2xl font-light text-s mb-8 font-serif">
+              Send Us a Message
+            </h3>
+
+            <form
+              id="contactForm"
+              @submit.prevent="submitForm"
+              class="space-y-6"
+            >
               <!-- Reason Dropdown -->
               <div class="relative">
-                <select 
-                  id="reason" 
-                  name="reason" 
+                <select
+                  id="reason"
+                  name="reason"
                   x-model="reason"
-                  class="luxury-input w-full pb-2 pl-0 text-t focus:outline-none focus:ring-0"
+                  class="w-full pb-2 pl-0 text-t bg-transparent border-none border-b border-gr rounded-none focus:outline-none focus:ring-0 focus:border-b transition-all duration-300"
                   required
                 >
-                  <option value="" disabled selected>How can we assist you? *</option>
-                  <option value="Placing an Order">Help with placing an order</option>
-                  <option value="Order Help">Assistance with an existing order</option>
-                  <option value="Return Request">Return or exchange request</option>
+                  <option value="" disabled selected>
+                    How can we assist you? *
+                  </option>
+                  <option value="Placing an Order">
+                    Help with placing an order
+                  </option>
+                  <option value="Order Help">
+                    Assistance with an existing order
+                  </option>
+                  <option value="Return Request">
+                    Return or exchange request
+                  </option>
                   <option value="Other">Something else</option>
                 </select>
               </div>
-              
+
               <!-- Order Number (conditionally shown) -->
-              <div class="relative" x-show="reason === 'Order Help' || reason === 'Return Request'">
+              <div
+                class="relative"
+                x-show="reason === 'Order Help' || reason === 'Return Request'"
+              >
                 <input
                   type="text"
                   name="order_number"
                   id="order_number"
-                  class="luxury-input w-full pb-2 text-t focus:outline-none focus:ring-0"
+                  class="w-full pb-2 text-t bg-transparent border-none border-b border-gr rounded-none focus:outline-none focus:ring-0 focus:border-b transition-all duration-300"
                   placeholder="Your Order Number"
                 />
               </div>
-              
+
               <!-- Name -->
               <div class="relative">
                 <input
                   type="text"
                   name="name"
                   id="name"
-                  class="luxury-input w-full pb-2 text-t focus:outline-none focus:ring-0"
+                  class="w-full pb-2 text-t bg-transparent border-none border-b border-gr rounded-none focus:outline-none focus:ring-0 focus:border-b transition-all duration-300"
                   placeholder="Your Name"
                 />
               </div>
-              
+
               <!-- Contact Method Toggle -->
               <div class="flex items-center justify-between py-2">
                 <span class="text-sm text-t">Preferred Contact Method</span>
@@ -264,50 +305,55 @@
                   </button>
                 </div>
               </div>
-              
+
               <!-- Email (conditionally shown) -->
               <div class="relative" x-show="contactMethod === 'email'">
                 <input
                   type="email"
                   name="email"
                   id="email"
-                  class="luxury-input w-full pb-2 text-t focus:outline-none focus:ring-0"
+                  class="w-full pb-2 text-t bg-transparent border-none border-b border-gr rounded-none focus:outline-none focus:ring-0 focus:border-b transition-all duration-300"
                   placeholder="Your Email Address *"
                   required
                   x-bind:required="contactMethod === 'email'"
                 />
               </div>
-              
+
               <!-- Phone (conditionally shown) -->
               <div class="relative" x-show="contactMethod === 'phone'">
                 <input
                   type="tel"
                   name="phone"
                   id="phone"
-                  class="luxury-input w-full pb-2 text-t focus:outline-none focus:ring-0"
+                  class="w-full pb-2 text-t bg-transparent border-none border-b border-gr rounded-none focus:outline-none focus:ring-0 focus:border-b transition-all duration-300"
                   placeholder="Your Phone Number *"
                   required
                   x-bind:required="contactMethod === 'phone'"
                 />
               </div>
-              
+
               <!-- Message -->
               <div class="relative">
                 <textarea
                   id="message"
                   name="message"
                   rows="4"
-                  class="luxury-input w-full pb-2 text-t focus:outline-none focus:ring-0 resize-none"
+                  class="w-full pb-2 text-t bg-transparent border-none border-b border-gr rounded-none focus:outline-none focus:ring-0 focus:border-b transition-all duration-300 resize-none"
                   placeholder="Your Message *"
                   required
                 ></textarea>
               </div>
-              
+
               <!-- File Upload -->
-              <div class="relative mt-6" x-data="{ fileName: '', fileSize: 0, showError: false }">
+              <div
+                class="relative mt-6"
+                x-data="{ fileName: '', fileSize: 0, showError: false }"
+              >
                 <p class="text-sm text-t mb-2">Upload an Image (Optional)</p>
-                
-                <div class="relative border border-dashed border-gray-300 rounded-sm p-4 transition-all duration-300 hover:border-s">
+
+                <div
+                  class="relative border border-dashed border-gray-300 rounded-sm p-4 transition-all duration-300 hover:border-s"
+                >
                   <input
                     type="file"
                     name="image"
@@ -321,12 +367,23 @@
                       if (showError) $event.target.value = '';
                     "
                   />
-                  
+
                   <div class="flex items-center justify-center">
                     <template x-if="!fileName">
                       <div class="text-center">
-                        <svg class="mx-auto h-12 w-12 text-gray-300" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
-                          <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <svg
+                          class="mx-auto h-12 w-12 text-gray-300"
+                          stroke="currentColor"
+                          fill="none"
+                          viewBox="0 0 48 48"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
                         </svg>
                         <p class="mt-1 text-sm text-gray-500">
                           Click to upload or drag and drop
@@ -336,34 +393,60 @@
                         </p>
                       </div>
                     </template>
-                    
+
                     <template x-if="fileName && !showError">
                       <div class="flex items-center">
-                        <svg class="flex-shrink-0 h-5 w-5 text-s" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
+                        <svg
+                          class="flex-shrink-0 h-5 w-5 text-s"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                            clip-rule="evenodd"
+                          />
                         </svg>
-                        <span class="ml-2 text-sm text-t" x-text="fileName"></span>
-                        <button type="button" class="ml-auto text-gray-400 hover:text-s" @click.prevent="fileName = ''; document.getElementById('image').value = ''">
-                          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        <span
+                          class="ml-2 text-sm text-t"
+                          x-text="fileName"
+                        ></span>
+                        <button
+                          type="button"
+                          class="ml-auto text-gray-400 hover:text-s"
+                          @click.prevent="fileName = ''; document.getElementById('image').value = ''"
+                        >
+                          <svg
+                            class="h-4 w-4"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                              clip-rule="evenodd"
+                            />
                           </svg>
                         </button>
                       </div>
                     </template>
                   </div>
                 </div>
-                
+
                 <!-- File Size Error -->
                 <div x-show="showError" class="mt-1 text-sm text-red-500">
-                  File size exceeds the maximum limit of 4.5MB. Please choose a smaller file.
+                  File size exceeds the maximum limit of 4.5MB. Please choose a
+                  smaller file.
                 </div>
-                
+
                 <p class="mt-2 text-xs text-gray-400">
-                  This helps us better understand your inquiry. For prescriptions or frame images, please ensure they are clearly visible.
+                  This helps us better understand your inquiry. For
+                  prescriptions or frame images, please ensure they are clearly
+                  visible.
                 </p>
               </div>
-              
-              <!-- Submit Button - Match Reglaze Page Style -->
+
+              <!-- Submit Button -->
               <div class="pt-4">
                 <button
                   type="submit"
@@ -374,179 +457,308 @@
               </div>
             </form>
           </div>
-          
+
           <!-- Decorative Element -->
-          <div class="hidden lg:block absolute -top-6 -right-6 w-32 h-32 border-t border-r border-gray-200 z-[-1]"></div>
-          <div class="hidden lg:block absolute -bottom-6 -left-6 w-32 h-32 border-b border-l border-gray-200 z-[-1]"></div>
+          <div
+            class="hidden lg:block absolute -top-6 -right-6 w-32 h-32 border-t border-r border-gray-200 z-[-1]"
+          ></div>
+          <div
+            class="hidden lg:block absolute -bottom-6 -left-6 w-32 h-32 border-b border-l border-gray-200 z-[-1]"
+          ></div>
         </div>
       </div>
     </div>
-    
+
     <!-- Address Section -->
     <div class="mt-24 md:mt-32">
-      <h2 class="text-2xl md:text-3xl font-light text-center text-s mb-12 font-serif">
+      <h2
+        class="text-2xl md:text-3xl font-light text-center text-s mb-12 font-serif"
+      >
         Our Details
         <!-- Restored visible divider below heading -->
         <div class="w-16 h-[1px] bg-s mx-auto mt-4"></div>
       </h2>
-      
+
       <div class="max-w-4xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <!-- Address Information -->
           <div class="space-y-6">
             <div class="relative pb-8">
-              <h3 class="text-2xl font-light text-s mb-4 font-serif">JP Opticians</h3>
+              <h3 class="text-2xl font-light text-s mb-4 font-serif">
+                JP Opticians
+              </h3>
               <address class="not-italic text-t leading-relaxed text-lg">
-                Everite House<br>
-                Carr Lane<br>
-                Hoylake, CH47 4BG<br>
+                Everite House<br />
+                Carr Lane<br />
+                Hoylake, CH47 4BG<br />
                 United Kingdom
               </address>
               <!-- More subtle divider replacing luxury-border -->
-              <div class="absolute bottom-0 left-0 w-1/3 h-[0.5px] bg-gradient-to-r from-gray-100 to-transparent opacity-60"></div>
+              <div
+                class="absolute bottom-0 left-0 w-1/3 h-[0.5px] bg-gradient-to-r from-gray-100 to-transparent opacity-60"
+              ></div>
             </div>
-            
+
             <div>
-              <a href="tel:01513030066" class="inline-flex items-center text-s hover:text-b transition-colors duration-300 text-lg">
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              <a
+                href="tel:01513030066"
+                class="inline-flex items-center text-s hover:text-b transition-colors duration-300 text-lg"
+              >
+                <svg
+                  class="w-5 h-5 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+                  />
                 </svg>
                 0151 303 0066
               </a>
             </div>
-            
+
             <div>
-              <a href="mailto:contact@jpopticians.com" class="inline-flex items-center text-s hover:text-b transition-colors duration-300 text-lg">
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+              <a
+                href="mailto:contact@jpopticians.com"
+                class="inline-flex items-center text-s hover:text-b transition-colors duration-300 text-lg"
+              >
+                <svg
+                  class="w-5 h-5 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                  />
+                  <path
+                    d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                  />
                 </svg>
                 contact@jpopticians.com
               </a>
             </div>
           </div>
-          
+
           <!-- Hours Section -->
           <div class="bg-l p-8 border-l-2 border-s">
-            <h3 class="text-2xl font-light text-s mb-6 font-serif">Opening Hours</h3>
-            
+            <h3 class="text-2xl font-light text-s mb-6 font-serif">
+              Opening Hours
+            </h3>
+
             <div class="space-y-6">
               <div class="flex flex-col">
-                <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                <div
+                  class="flex justify-between items-center pb-4 border-b border-gray-200"
+                >
                   <span class="text-lg text-t font-light">Monday</span>
                   <span class="text-lg text-s">9:00am - 4:30pm</span>
                 </div>
-                
-                <div class="flex justify-between items-center py-4 border-b border-gray-200">
+
+                <div
+                  class="flex justify-between items-center py-4 border-b border-gray-200"
+                >
                   <span class="text-lg text-t font-light">Tuesday</span>
                   <span class="text-lg text-s">9:00am - 4:30pm</span>
                 </div>
-                
-                <div class="flex justify-between items-center py-4 border-b border-gray-200">
+
+                <div
+                  class="flex justify-between items-center py-4 border-b border-gray-200"
+                >
                   <span class="text-lg text-t font-light">Wednesday</span>
                   <span class="text-lg text-s">9:00am - 4:30pm</span>
                 </div>
-                
-                <div class="flex justify-between items-center py-4 border-b border-gray-200">
+
+                <div
+                  class="flex justify-between items-center py-4 border-b border-gray-200"
+                >
                   <span class="text-lg text-t font-light">Thursday</span>
                   <span class="text-lg text-s">9:00am - 4:30pm</span>
                 </div>
-                
-                <div class="flex justify-between items-center py-4 border-b border-gray-200">
+
+                <div
+                  class="flex justify-between items-center py-4 border-b border-gray-200"
+                >
                   <span class="text-lg text-t font-light">Friday</span>
                   <span class="text-lg text-s">9:00am - 4:30pm</span>
                 </div>
-                
-                <div class="flex justify-between items-center py-4 border-b border-gray-200">
-                  <span class="text-lg text-t font-light">Saturday</span>
-                  <span class="text-lg text-red-500">Closed</span>
-                </div>
-                
+
                 <div class="flex justify-between items-center pt-4">
-                  <span class="text-lg text-t font-light">Sunday</span>
+                  <span class="text-lg text-t font-light"
+                    >Saturday & Sunday</span
+                  >
                   <span class="text-lg text-red-500">Closed</span>
                 </div>
               </div>
-              
+
               <div class="pt-4">
-                <p class="text-t italic text-sm">We are closed on all bank holidays.</p>
+                <p class="text-t italic text-sm">
+                  We are closed on all bank holidays.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
+
     <!-- Additional Info Links -->
     <div class="mt-24 md:mt-32">
-      <h2 class="text-2xl md:text-3xl font-light text-center text-s mb-12 font-serif">
+      <h2
+        class="text-2xl md:text-3xl font-light text-center text-s mb-12 font-serif"
+      >
         Additional Resources
         <div class="w-16 h-[1px] bg-s mx-auto mt-4"></div>
       </h2>
-      
+
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Resource Cards -->
-        <a href="/faq" class="group">
-          <div class="p-8 border border-gray-100 hover:border-s transition-colors duration-300 h-full flex flex-col">
+        <a href="{{store direct_url="faq"}}" class="group">
+          <div
+            class="p-8 border border-gray-100 hover:border-s transition-colors duration-300 h-full flex flex-col"
+          >
             <div class="mb-4">
-              <div class="w-12 h-12 rounded-full bg-l flex items-center justify-center group-hover:bg-s/10 transition-colors duration-300">
-                <svg class="w-5 h-5 text-s" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
+              <div
+                class="w-12 h-12 rounded-full bg-l flex items-center justify-center group-hover:bg-s/10 transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5 text-s"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                    clip-rule="evenodd"
+                  ></path>
                 </svg>
               </div>
             </div>
-            
-            <h3 class="text-xl font-light text-s mb-2 font-serif">Frequently Asked Questions</h3>
-            <p class="text-t mb-4 flex-grow">Find quick answers to common questions about our products and services.</p>
-            
-            <div class="mt-auto pt-4 flex items-center text-s group-hover:text-b transition-colors duration-300">
+
+            <h3 class="text-xl font-light text-s mb-2 font-serif">
+              Frequently Asked Questions
+            </h3>
+            <p class="text-t mb-4 flex-grow">
+              Find quick answers to common questions about our products and
+              services.
+            </p>
+
+            <div
+              class="mt-auto pt-4 flex items-center text-s group-hover:text-b transition-colors duration-300"
+            >
               <span>View FAQs</span>
-              <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              <svg
+                class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
               </svg>
             </div>
           </div>
         </a>
-        
-        <a href="/blog" class="group">
-          <div class="p-8 border border-gray-100 hover:border-s transition-colors duration-300 h-full flex flex-col">
+
+        <a href="{{store direct_url="lens-guide"}}" class="group">
+          <div
+            class="p-8 border border-gray-100 hover:border-s transition-colors duration-300 h-full flex flex-col"
+          >
             <div class="mb-4">
-              <div class="w-12 h-12 rounded-full bg-l flex items-center justify-center group-hover:bg-s/10 transition-colors duration-300">
-                <svg class="w-5 h-5 text-s" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"></path>
+              <div
+                class="w-12 h-12 rounded-full bg-l flex items-center justify-center group-hover:bg-s/10 transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5 text-s"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"
+                  ></path>
                 </svg>
               </div>
             </div>
-            
-            <h3 class="text-xl font-light text-s mb-2 font-serif">Eyewear Guides</h3>
-            <p class="text-t mb-4 flex-grow">Explore our collection of guides to help you choose the perfect eyewear for your needs.</p>
-            
-            <div class="mt-auto pt-4 flex items-center text-s group-hover:text-b transition-colors duration-300">
-              <span>Read Guides</span>
-              <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+
+            <h3 class="text-xl font-light text-s mb-2 font-serif">
+              Lens Guide
+            </h3>
+            <p class="text-t mb-4 flex-grow">
+              Explore everything you need to know about your lenses and what is
+              best for you.
+            </p>
+
+            <div
+              class="mt-auto pt-4 flex items-center text-s group-hover:text-b transition-colors duration-300"
+            >
+              <span>Read Guide</span>
+              <svg
+                class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
               </svg>
             </div>
           </div>
         </a>
-        
-        <a href="/terms" class="group">
-          <div class="p-8 border border-gray-100 hover:border-s transition-colors duration-300 h-full flex flex-col">
+
+        <a href="{{store direct_url="terms-and-conditions"}}" class="group">
+          <div
+            class="p-8 border border-gray-100 hover:border-s transition-colors duration-300 h-full flex flex-col"
+          >
             <div class="mb-4">
-              <div class="w-12 h-12 rounded-full bg-l flex items-center justify-center group-hover:bg-s/10 transition-colors duration-300">
-                <svg class="w-5 h-5 text-s" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+              <div
+                class="w-12 h-12 rounded-full bg-l flex items-center justify-center group-hover:bg-s/10 transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5 text-s"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                    clip-rule="evenodd"
+                  ></path>
                 </svg>
               </div>
             </div>
-            
-            <h3 class="text-xl font-light text-s mb-2 font-serif">View Our Terms and Conditions</h3>
-            <p class="text-t mb-4 flex-grow">Learn more about our policies and terms of service.</p>
-            
-            <div class="mt-auto pt-4 flex items-center text-s group-hover:text-b transition-colors duration-300">
+
+            <h3 class="text-xl font-light text-s mb-2 font-serif">
+              View Our Terms and Conditions
+            </h3>
+            <p class="text-t mb-4 flex-grow">
+              Learn more about our policies and terms of service.
+            </p>
+
+            <div
+              class="mt-auto pt-4 flex items-center text-s group-hover:text-b transition-colors duration-300"
+            >
               <span>Read Terms</span>
-              <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              <svg
+                class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
               </svg>
             </div>
           </div>
@@ -557,26 +769,28 @@
 </div>
 
 <script>
-  document.addEventListener('alpine:init', () => {
-    Alpine.data('contactForm', () => ({
-      reason: '',
-      contactMethod: 'email', // Default to email
+  document.addEventListener("alpine:init", () => {
+    Alpine.data("contactForm", () => ({
+      reason: "",
+      contactMethod: "email", // Default to email
       isPhone: false, // Boolean for toggle state
       submitForm() {
         const form = document.getElementById("contactForm");
         const fileInput = document.getElementById("image");
-        
+
         // Check if we have a file to upload
         if (fileInput.files.length > 0) {
           const file = fileInput.files[0];
           // Additional file size check
           if (file.size > 4.5 * 1024 * 1024) {
-            alert("File size exceeds the maximum limit of 4.5MB. Please choose a smaller file.");
+            alert(
+              "File size exceeds the maximum limit of 4.5MB. Please choose a smaller file."
+            );
             return;
           }
-          
+
           const formData = new FormData(form);
-          
+
           // Send with file
           fetch("https://n8n.s4l.link/webhook/contact-form", {
             method: "POST",
@@ -591,19 +805,22 @@
             })
             .catch((error) => {
               console.error("Error:", error);
-              alert("There was an issue sending your message. Please try again or contact us directly.");
+              alert(
+                "There was an issue sending your message. Please try again or contact us directly."
+              );
             });
         } else {
           // No file, use JSON submission as before
           const formData = new FormData(form);
           const jsonData = {};
-          
+
           formData.forEach((value, key) => {
-            if (key !== 'image') { // Skip the file input
+            if (key !== "image") {
+              // Skip the file input
               jsonData[key] = value;
             }
           });
-          
+
           fetch("https://n8n.s4l.link/webhook/contact-form", {
             method: "POST",
             headers: {
@@ -620,10 +837,12 @@
             })
             .catch((error) => {
               console.error("Error:", error);
-              alert("There was an issue sending your message. Please try again or contact us directly.");
+              alert(
+                "There was an issue sending your message. Please try again or contact us directly."
+              );
             });
         }
-      }
+      },
     }));
   });
 </script>

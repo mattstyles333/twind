@@ -37,10 +37,47 @@
   </script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Initialize your carousel here if needed
-      const carousel = document.getElementById("multi-slide");
-      const autoPlay = document.getElementById("auto-play");
-      // Example: initializeCarousel();
+      // Initialize Glide.js slider
+      const glide = new Glide('.glide', {
+        type: 'carousel',
+        startAt: 0,
+        perView: 1,
+        gap: 40,
+        animationDuration: 500,
+        animationTimingFunc: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
+        peek: 20,
+        rewind: false,
+        bound: false,
+        autoplay: 5000,
+        hoverpause: true,
+        pauseOnHover: true,
+        pauseOnFocus: true,
+        breakpoints: {
+          768: {
+            peek: 10
+          }
+        },
+        classes: {
+          activeNav: 'active-nav'
+        }
+      });
+
+      // Stop autoplay on swipe start
+      glide.on('swipe.start', () => {
+        glide.settings.autoplay = false;
+      });
+
+      // Stop autoplay on drag start
+      glide.on('drag.start', () => {
+        glide.settings.autoplay = false;
+      });
+
+      // Stop autoplay on arrow click
+      glide.on('click', () => {
+        glide.settings.autoplay = false;
+      });
+
+      glide.mount();
     });
   </script>
   <link
@@ -51,559 +88,996 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css"
   />
+  <!-- Add Glide.js JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
   <style>
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background-color: #f5f5f5;
+    /* Custom Glide.js Styling */
+    .glide__bullets {
+      display: flex;
+      justify-content: center;
+      margin-top: 8rem;
+      margin-bottom: 2rem;
     }
     
-    .hero-section {
-      height: 80vh;
-      background-image: url('https://images.unsplash.com/photo-1574258495973-f010dfbb5371?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80');
-      background-position: center;
-      background-size: cover;
+    .glide__bullet {
+      width: 12px;
+      height: 12px;
+      margin: 0 4px;
+      border-radius: 50%;
+      background-color: #d1d5db;
+      border: none;
+      transition: all 0.3s ease;
+    }
+    
+    .glide__bullet--active {
+      background-color: #666666;
+    }
+    
+    .active-nav {
+      color: #333333;
+      border-bottom: 2px solid #333333;
+      background-color: transparent;
+    }
+    
+    .glide__track {
+      overflow: visible;
+      margin: 0 auto;
+      max-width: 1200px;
       position: relative;
+    }
+    
+    .glide__track::before {
+      content: '← Swipe to explore →';
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #666;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      opacity: 0.7;
+      animation: fadeInOut 1.5s infinite;
+    }
+    
+    @keyframes fadeInOut {
+      0% { opacity: 0.3; }
+      50% { opacity: 0.7; }
+      100% { opacity: 0.3; }
+    }
+    
+    .glide__slides {
+      padding: 20px 0;
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
     
-    .hero-overlay {
+    .glide__slide {
+      padding: 0 20px;
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      opacity: 0.3;
+      transform: scale(0.9) translateY(10px);
+      cursor: grab;
+    }
+    
+    .glide__slide:active {
+      cursor: grabbing;
+    }
+    
+    .glide__slide--active {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    /* Define the lens-diagram-text class for consistent styling */
+    .lens-diagram-text {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #666666;
+    }
+  </style>
+  <style>
+    /* Modern lens diagram styling */
+    .lens-diagram {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      background-color: white;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .lens-zone {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      font-family: serif;
+      letter-spacing: 1px;
+      font-weight: 300;
+      color: rgba(55, 86, 119, 0.8);
+    }
+    
+    .distance-zone {
+      top: 15%;
+      font-size: 1.1rem;
+    }
+    
+    .intermediate-zone {
+      top: 42%;
+      font-size: 1rem;
+    }
+    
+    .reading-zone {
+      bottom: 15%;
+      font-size: 1.1rem;
+    }
+    
+    .lens-divider {
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background: rgba(0,0,0,0.1);
+    }
+
+    /* Editorial Luxury Card Styling */
+    .lens-option-card {
+      background: white;
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    
+    .lens-option-card::before {
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0,0,0,0.3);
-    }
-    
-    .hero-content {
-      position: relative;
-      z-index: 10;
-      text-align: center;
-    }
-    
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: 300;
-      margin-bottom: 1rem;
-      position: relative;
-      display: inline-block;
-      font-family: 'Times New Roman', serif;
-      letter-spacing: 0.5px;
-    }
-    
-    .section-title:after {
-      content: '';
-      position: absolute;
-      width: 60px;
-      height: 2px;
-      background-color: #333;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    
-    h2, h3, h4 {
-      font-family: 'Times New Roman', serif;
-      font-weight: 300;
-      letter-spacing: 0.5px;
-      color: #333333;
-    }
-    
-    p {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-weight: 400;
-      color: #666666;
-      line-height: 1.6;
-    }
-    
-    a {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-weight: 500;
-      letter-spacing: 1px;
-    }
-    
-    blockquote p {
-      font-family: 'Times New Roman', serif;
-      font-weight: 300;
-      font-style: italic;
-    }
-    
-    .lens-card {
-      transition: all 0.5s ease;
-      border: none;
-      overflow: hidden;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    .lens-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-    
-    .lens-card img {
-      transition: all 0.8s ease;
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-    }
-    
-    .lens-card:hover img {
-      transform: scale(1.05);
-    }
-    
-    .step-number {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: #333;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 500;
-      margin-right: 20px;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-    }
-    
-    .split-section {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-    }
-    
-    .animate-fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    
-    .animate-fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .lens-section {
-      background-color: #f9f9f7;
-      padding: 100px 40px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 50px;
-      max-width: 1600px;
-      margin: 0 auto;
-    }
-
-    .lens-card {
-      background-color: #f9f9f7;
-      border: 1px solid #e0e0e0;
-      border-radius: 0;
-      overflow: hidden;
-      width: 340px;
-      text-align: center;
-      color: #333;
-      transition: transform 0.1s ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .lens-card:hover {
-      transform: translateY(-1px);
-    }
-
-    .lens-card img {
       width: 100%;
-      height: 260px;
-      object-fit: cover;
-      transition: transform 0.2s ease;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+      pointer-events: none;
     }
-
-    .lens-card:hover img {
-      transform: none;
+    
+    .lens-option-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
-
-    .lens-card h3 {
-      font-size: 1.4rem;
-      font-weight: 400;
-      margin: 24px 0 16px;
-      color: #333;
-      font-family: 'Times New Roman', serif;
+    
+    
+    
+    .lens-option-card:hover .editorial-title::after {
+      transform: scaleX(1);
     }
-
-    .lens-card p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin: 0 30px 20px;
-      color: #555;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-    }
-
-    .lens-card .features {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      margin: 16px 0;
-      padding: 0 20px;
-    }
-
-    .lens-card .features div {
-      font-size: 0.8rem;
-      color: #666;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-    }
-
-    .lens-card .features i {
-      color: #75A53B;
-      opacity: 0.8;
-    }
-
-    .lens-card .button-container {
-      margin-top: auto;
-      padding: 20px 0 30px;
-    }
-
-    .lens-card .shop-button {
-      display: inline-block;
-      width: 70%;
-      padding: 10px 0;
-      font-size: 0.85rem;
-      letter-spacing: 1px;
-      font-weight: 500;
-      border-bottom: 1px solid #555;
-      color: #555;
-      text-decoration: none;
-      transition: all 0.15s ease;
-      background-color: transparent;
-      text-align: center;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-    }
-
-    .lens-card .shop-button:hover {
-      color: #222;
-      border-bottom: 1px solid #222;
-    }
-
-    @media (max-width: 1400px) {
-      .lens-section {
-        max-width: 780px;
-      }
-    }
+    
+   
   </style>
 </head>
 <body class="bg-white">
-  <!-- Hero Section -->
-  <!-- Removed the top banner section -->
+  <!-- Lens Types Section -->
+  <section id="lens-options" class="py-24 px-4 w-full">
+    <div class="max-w-7xl mx-auto mb-8">
+      <h2 class="text-5xl font-serif font-light text-center mb-4">Find Your Perfect Lens</h2>
+      <div class="w-32 h-[1px] bg-gray-400 mx-auto mb-8"></div>
+      <p class="text-center text-gray-600 max-w-3xl mx-auto text-lg mb-16">
+        Select the perfect lens solution tailored to your lifestyle and visual needs. Swipe or click through options to explore each type.
+      </p>
+    </div>
+    
+    <!-- Enhanced interactive lens selector with Glide.js -->
+    <div class="glide relative mb-16">
+      <!-- Glide.js Arrows -->
+      <div data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+      
+
+    </div>
+  </section>
   
-  <!-- Featured Lenses Section - REDESIGNED -->
-  <section class="lens-section">
-    <div class="lens-card">
-      <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Everyday Lifestyle">
-      <h3>Everyday Lifestyle</h3>
-      <p>Classic clear lenses are perfect for those looking for uncompromised style and first-class clarity.</p>
-      <div class="features">
-        <div><i class="fas fa-shield-alt"></i> RESISTS SCRATCHES</div>
-        <div><i class="fas fa-sun"></i> PROTECTS AGAINST UV RAYS</div>
-        <div><i class="fas fa-eye"></i> INCLUDES ANTI-REFLECTIVE COATING</div>
+  <!-- Lens Thinning Guide Section -->
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-serif font-light text-gray-800 mb-4">Lens Thinning Guide</h2>
+        <div class="w-32 h-[1px] bg-gray-400 mx-auto mb-8"></div>
+        <p class="text-center text-gray-600 max-w-3xl mx-auto text-lg mb-16">
+          Choose the ideal lens thickness for your prescription and frame style. Thinner lenses offer improved aesthetics and comfort, especially for stronger prescriptions.
+        </p>
       </div>
-      <div class="button-container">
-        <a href="#" class="shop-button">SHOP CLEAR</a>
-      </div>
-    </div>
-    
-    <div class="lens-card">
-      <img src="https://images.unsplash.com/photo-1633621641966-23836fcafd7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="Indoor Lifestyle">
-      <h3>Indoor Lifestyle</h3>
-      <p>Blue-violet light filtering lenses are perfect for those who spend as much time indoors as outdoors.</p>
-      <div class="features">
-        <div><i class="fas fa-filter"></i> FILTERS BLUE-VIOLET LIGHT</div>
-        <div><i class="fas fa-sun"></i> PROTECTS AGAINST UV RAYS</div>
-        <div><i class="fas fa-tint"></i> MINIMIZED YELLOW TINT</div>
-      </div>
-      <div class="button-container">
-        <a href="#" class="shop-button">SHOP BLUE-VIOLET FILTER</a>
-      </div>
-    </div>
-    
-    <div class="lens-card">
-      <img src="https://images.unsplash.com/photo-1577401239170-897942555fb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1828&q=80" alt="Dynamic Lifestyle">
-      <h3>Dynamic Lifestyle</h3>
-      <p>Transitions® Light Intelligent Lenses™ are perfect for those who need their lenses to automatically adapt to changing light conditions.</p>
-      <div class="features">
-        <div><i class="fas fa-adjust"></i> CLEAR INDOORS, DARK OUTDOORS</div>
-        <div><i class="fas fa-sun"></i> BLOCKS 100% OF UVA & UVB RAYS</div>
-        <div><i class="fas fa-filter"></i> FILTERS BLUE-VIOLET LIGHT</div>
-      </div>
-      <div class="button-container">
-        <a href="#" class="shop-button">SHOP TRANSITIONS®</a>
-      </div>
-    </div>
-    
-    <div class="lens-card">
-      <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80" alt="Premium Sunglasses">
-      <h3>Premium Sunglasses</h3>
-      <p>Our designer sunglasses combine superior UV protection with the latest fashion trends for style and protection.</p>
-      <div class="features">
-        <div><i class="fas fa-sun"></i> 100% UV PROTECTION</div>
-        <div><i class="fas fa-tint-slash"></i> REDUCED GLARE</div>
-        <div><i class="fas fa-glasses"></i> FASHION-FORWARD DESIGNS</div>
-      </div>
-      <div class="button-container">
-        <a href="#" class="shop-button">SHOP SUNGLASSES</a>
+
+      <div class="max-w-[1600px] mx-auto px-6">
+        <!-- Lens Thickness Comparison Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8 mb-24">
+          <!-- Standard Lens -->
+          <div class="group relative bg-white border border-gray-100 hover:border-gray-200 transition-all duration-500">
+            <div class="p-8 xl:p-10 flex flex-col min-h-[520px]">
+              <!-- Index Number -->
+              <div class="mb-8 flex items-baseline">
+                <span class="text-5xl font-serif text-gray-800 mr-1">1.5</span>
+                <span class="text-sm text-gray-400 font-light">index</span>
+              </div>
+              
+              <!-- Title -->
+              <h3 class="text-2xl font-serif font-light text-gray-800 mb-3">Standard</h3>
+              <div class="w-16 h-[1px] bg-gray-200 mb-8"></div>
+              
+              <!-- Thickness Scale -->
+              <div class="mb-10">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-sm text-gray-400 font-light">Thinness</span>
+                </div>
+                <div class="w-full bg-gray-50 h-1.5">
+                  <div class="bg-gray-200 h-1.5" style="width: 25%"></div>
+                </div>
+              </div>
+              
+              <!-- Features List -->
+              <ul class="space-y-5 mb-10">
+                <li class="flex items-start">
+                  <span class="text-sm text-gray-600 leading-relaxed">Basic option for mild prescriptions</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-sm text-gray-600 leading-relaxed">Suitable for +/- 2.00 or lower</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-sm text-gray-600 leading-relaxed">Most economical choice</span>
+                </li>
+              </ul>
+              
+              <!-- Price Indicator -->
+              <div class="mt-auto">
+                <span class="text-xs uppercase tracking-wider text-gray-400">Starting from</span>
+                <div class="text-lg font-serif text-gray-500">£29.97</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Thin Lens -->
+          <div class="group relative bg-white border border-gray-100 hover:border-gray-200 transition-all duration-500">
+            <div class="p-12 flex flex-col min-h-[500px]">
+              <!-- Index Number -->
+              <div class="mb-8 flex items-baseline">
+                <span class="text-5xl font-serif text-gray-800 mr-1">1.6</span>
+                <span class="text-sm text-gray-400 font-light">index</span>
+              </div>
+              
+              <!-- Title -->
+              <h3 class="text-2xl font-serif font-light text-gray-800 mb-3">Thin</h3>
+              <div class="w-16 h-[1px] bg-gray-200 mb-8"></div>
+              
+              <!-- Thickness Scale -->
+              <div class="mb-10">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-sm text-gray-400 font-light">Thinness</span>
+                </div>
+                <div class="w-full bg-gray-50 h-1.5">
+                  <div class="bg-gray-200 h-1.5" style="width: 50%"></div>
+                </div>
+              </div>
+              
+              <!-- Features List -->
+              <ul class="space-y-5 mb-10">
+                <li class="flex items-start">
+                  <span class="text-sm text-gray-600 leading-relaxed">Better for medium prescriptions</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-sm text-gray-600 leading-relaxed">Ideal for +/- 2.00 to +/- 4.00</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-sm text-gray-600 leading-relaxed">Lighter weight than standard</span>
+                </li>
+              </ul>
+              
+              <!-- Price Indicator -->
+              <div class="mt-auto">
+                <span class="text-xs uppercase tracking-wider text-gray-400">Starting from</span>
+                <div class="text-lg font-serif text-gray-500">£49.97</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Extra Thin Lens -->
+          <div class="group relative bg-white border border-gray-100 hover:border-gray-200 transition-all duration-500">
+            <div class="p-12 flex flex-col min-h-[500px]">
+              <!-- Index Number -->
+              <div class="mb-8 flex items-baseline">
+                <span class="text-5xl font-serif text-gray-800 mr-1">1.67</span>
+                <span class="text-sm text-gray-400 font-light">index</span>
+              </div>
+              
+              <!-- Title -->
+              <h3 class="text-2xl font-serif font-light text-gray-800 mb-3">Extra Thin</h3>
+              <div class="w-16 h-[1px] bg-gray-200 mb-8"></div>
+              
+              <!-- Thickness Scale -->
+              <div class="mb-10">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-sm text-gray-400 font-light">Thinness</span>
+                </div>
+                <div class="w-full bg-gray-50 h-1.5">
+                  <div class="bg-gray-200 h-1.5" style="width: 75%"></div>
+                </div>
+              </div>
+              
+              <!-- Features List -->
+              <ul class="space-y-5 mb-10">
+                <li class="flex items-start">
+                  <span class="text-sm text-gray-600 leading-relaxed">Perfect for stronger prescriptions</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-sm text-gray-600 leading-relaxed">Recommended for +/- 4.00 to +/- 6.00</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-sm text-gray-600 leading-relaxed">Significantly reduced edge thickness</span>
+                </li>
+              </ul>
+              
+              <!-- Price Indicator -->
+              <div class="mt-auto">
+                <span class="text-xs uppercase tracking-wider text-gray-400">Starting from</span>
+                <div class="text-lg font-serif text-gray-500">£69.97</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Super Thin Lens -->
+          <div class="group relative bg-white border border-gray-100 hover:border-gray-200 transition-all duration-500">
+            <div class="p-12 flex flex-col min-h-[500px]">
+              <!-- Index Number -->
+              <div class="mb-8 flex items-baseline">
+                <span class="text-5xl font-serif text-gray-800 mr-1">1.74</span>
+                <span class="text-sm text-gray-400 font-light">index</span>
+              </div>
+              
+              <!-- Title -->
+              <h3 class="text-2xl font-serif font-light text-gray-800 mb-3">Super Thin</h3>
+              <div class="w-16 h-[1px] bg-gray-200 mb-8"></div>
+              
+              <!-- Thickness Scale -->
+              <div class="mb-10">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-sm text-gray-400 font-light">Thinness</span>
+                </div>
+                <div class="w-full bg-gray-50 h-1.5">
+                  <div class="bg-gray-200 h-1.5" style="width: 100%"></div>
+                </div>
+              </div>
+              
+              <!-- Features List -->
+              <ul class="space-y-5 mb-10">
+                <li class="flex items-start">
+                  <span class="text-sm text-gray-600 leading-relaxed">Ideal for high prescriptions</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-sm text-gray-600 leading-relaxed">Best for +/- 6.00 and above</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-sm text-gray-600 leading-relaxed">Maximum comfort and aesthetics</span>
+                </li>
+              </ul>
+              
+              <!-- Price Indicator -->
+              <div class="mt-auto">
+                <span class="text-xs uppercase tracking-wider text-gray-400">Starting from</span>
+                <div class="text-lg font-serif text-gray-500">£89.97</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Information -->
+        <div class="max-w-4xl mx-auto p-12 bg-gray-50/70 rounded-sm">
+          <h3 class="text-3xl font-serif font-light mb-6 text-center">Why Lens Thickness Matters</h3>
+          <div class="w-20 h-[1px] bg-gray-300 mx-auto mb-8"></div>
+          <p class="text-gray-700 mb-12 text-center max-w-3xl mx-auto leading-relaxed">
+            The thickness of your lenses depends on your prescription strength and the frame you select. Higher prescriptions result in thicker edges for minus prescriptions or thicker centers for plus prescriptions. Choosing a higher index material reduces this thickness, creating lenses that are more comfortable, aesthetically pleasing, and compatible with a wider range of frames.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mx-auto mb-6 shadow-sm">
+                <i class="fas fa-glasses text-gray-500 text-xl"></i>
+              </div>
+              <h4 class="text-xl font-serif font-light mb-3">Aesthetics</h4>
+              <p class="text-gray-600 text-sm">
+                Thinner lenses look better in your frames, reducing the "bug-eye" effect of strong plus prescriptions or the "small-eye" effect of strong minus prescriptions.
+              </p>
+            </div>
+            
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mx-auto mb-6 shadow-sm">
+                <i class="fas fa-feather-alt text-gray-500 text-xl"></i>
+              </div>
+              <h4 class="text-xl font-serif font-light mb-3">Comfort</h4>
+              <p class="text-gray-600 text-sm">
+                Higher index lenses are lighter, making your glasses more comfortable to wear for extended periods without pressure on your nose or ears.
+              </p>
+            </div>
+            
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mx-auto mb-6 shadow-sm">
+                <i class="fas fa-check-circle text-gray-500 text-xl"></i>
+              </div>
+              <h4 class="text-xl font-serif font-light mb-3">Frame Options</h4>
+              <p class="text-gray-600 text-sm">
+                Thinner lenses give you more freedom to choose from a wider variety of frame styles, including delicate rimless and semi-rimless options.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
   
-  <!-- Quote Section -->
-  <div class="py-16 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4">
-      <blockquote class="text-center">
-        <p class="text-2xl font-light italic text-gray-700">"The right lens is not just about seeing better—it's about living better."</p>
-        <footer class="mt-4 text-gray-500 font-light">— Clive, Head Optician</footer>
-      </blockquote>
+  <!-- Premium Lens Coatings Section -->
+  <section class="py-24 bg-gradient-to-b from-white to-gray-50">
+    <div class="container mx-auto px-2 sm:px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-serif font-light text-gray-800 mb-6">Lens Coatings for Your Lifestyle</h2>
+        <div class="w-24 h-[1px] bg-gray-400 mx-auto mb-6"></div>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          Select the perfect lens enhancements based on your daily activities and needs. Our coatings are designed to complement your lifestyle while protecting your vision.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[2400px] mx-auto">
+        <!-- Everyday Essentials Card -->
+        <div class="group relative bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-500 overflow-hidden">
+          <div class="p-8">
+            <div class="flex items-center justify-center w-16 h-16 rounded-full bg-gray-50 mb-6 group-hover:scale-110 transition-transform duration-500">
+              <i class="fas fa-home text-gray-600 text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-serif font-light text-gray-800 mb-4">Everyday Essentials</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">Perfect for daily activities and indoor work</p>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-gray-600 text-xs"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center justify-between">
+                    <h4 class="font-medium text-gray-800">Anti-Reflective Coating</h4>
+                  </div>
+                  <p class="text-gray-600">Eliminates distracting reflections for crystal-clear vision</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-gray-600 text-xs"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-800">Scratch-Resistant Finish</h4>
+                  <p class="text-gray-600">Provides durable protection against daily wear</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-gray-600 text-xs"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-800">Hydrophobic Coating</h4>
+                  <p class="text-gray-600">Maintains pristine clarity by repelling water and oils</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="absolute bottom-0 left-0 w-full h-1 bg-gray-200 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+        </div>
+
+        <!-- Active Outdoors Card -->
+        <div class="group relative bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-500 overflow-hidden">
+          <div class="p-8">
+            <div class="flex items-center justify-center w-16 h-16 rounded-full bg-gray-50 mb-6 group-hover:scale-110 transition-transform duration-500">
+              <i class="fas fa-mountain text-gray-600 text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-serif font-light text-gray-800 mb-4">Active Outdoors</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">Ideal for sports and outdoor activities</p>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-gray-600 text-xs"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center justify-between">
+                    <h4 class="font-medium text-gray-800">UV Protection</h4>
+                  </div>
+                  <p class="text-gray-600">Provides comprehensive protection against harmful rays</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-gray-600 text-xs"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-800">Impact-Resistant Coating</h4>
+                  <p class="text-gray-600">Ensures durability for active lifestyles</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-gray-600 text-xs"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-800">Polarized Option</h4>
+                  <p class="text-gray-600">Eliminates harsh glare from reflective surfaces</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="absolute bottom-0 left-0 w-full h-1 bg-gray-200 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+        </div>
+
+        <!-- Digital Focus Card -->
+        <div class="group relative bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-500 overflow-hidden">
+          <div class="p-8">
+            <div class="flex items-center justify-center w-16 h-16 rounded-full bg-gray-50 mb-6 group-hover:scale-110 transition-transform duration-500">
+              <i class="fas fa-laptop text-gray-600 text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-serif font-light text-gray-800 mb-4">Digital Focus</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">Optimized for screen time and digital devices</p>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-gray-600 text-xs"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center justify-between">
+                    <h4 class="font-medium text-gray-800">Blue Light Filter</h4>
+                  </div>
+                  <p class="text-gray-600">Reduces digital eye strain and promotes better sleep</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-gray-600 text-xs"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-800">Anti-Reflective Coating</h4>
+                  <p class="text-gray-600">Enhances screen clarity by minimizing reflections</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-gray-600 text-xs"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-800">Hydrophobic Coating</h4>
+                  <p class="text-gray-600">Preserves optical clarity by repelling smudges</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="absolute bottom-0 left-0 w-full h-1 bg-gray-200 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+        </div>
+
+        <!-- Adaptive Living Card -->
+        <div class="group relative bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-500 overflow-hidden">
+          <div class="p-8">
+            <div class="flex items-center justify-center w-16 h-16 rounded-full bg-gray-50 mb-6 group-hover:scale-110 transition-transform duration-500">
+              <i class="fas fa-sun text-gray-600 text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-serif font-light text-gray-800 mb-4">Adaptive Living</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">Perfect for those who move between indoor and outdoor environments</p>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-gray-600 text-xs"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center justify-between">
+                    <h4 class="font-medium text-gray-800">Transitions® XTRActive®</h4>
+                  </div>
+                  <p class="text-gray-600">Adapts to changing light conditions, even behind car windshields</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-gray-600 text-xs"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-800">Transitions® Signature®</h4>
+                  <p class="text-gray-600">Delivers rapid adaptation with superior clarity</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-gray-600 text-xs"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-800">UV Protection</h4>
+                  <p class="text-gray-600">Offers complete protection against harmful UV rays</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="absolute bottom-0 left-0 w-full h-1 bg-gray-200 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
   
-  <!-- Split Section -->
-  <section class="split-section">
-    <div class="grid grid-cols-1 md:grid-cols-2">
-      <div class="flex items-center justify-center p-10 md:p-20 bg-light-beige">
-        <div class="max-w-md">
-          <h2 class="text-3xl font-light mb-6">How to Choose Your Perfect Lens</h2>
-          <p class="text-gray-600 mb-8">
-            Selecting the right lens is crucial for your visual comfort and lifestyle. 
-            Our expert opticians guide you through every step, ensuring you receive 
-            the perfect match for your prescription and daily activities.
-          </p>
-          <a href="#lens-guide" class="inline-block px-8 py-3 border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition-all duration-300 font-light tracking-wider">
-            View Lens Guide
+  <!-- Expert Advice CTA -->
+  <section id="expert-advice" class="py-16 px-4">
+    <div class="max-w-4xl mx-auto bg-gray-50 p-10 rounded-lg text-center" x-data="{ show: false }" x-intersect="show = true">
+      <div x-show="show" x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100">
+        <h3 class="text-2xl font-serif font-light mb-4">Need Personalized Lens Recommendations?</h3>
+        <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+          Choosing the right lenses can be complex. Our expert opticians can assess your prescription, lifestyle needs, and preferences to recommend the perfect lenses tailored specifically for you.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+          <a href="tel:01513030066" class="inline-flex items-center justify-center px-8 py-3 border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition-all duration-300 font-light tracking-wider">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+            </svg>
+            0151 303 0066
+          </a>
+          <a href="mailto:contact@jpopticians.com" class="inline-flex items-center justify-center px-8 py-3 border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition-all duration-300 font-light tracking-wider">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+            </svg>
+            contact@jpopticians.com
           </a>
         </div>
       </div>
-      <div class="h-full">
-        <img src="https://images.unsplash.com/photo-1555617171-a253d98dae9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Optician with customer" class="w-full h-full object-cover">
-      </div>
     </div>
   </section>
   
-  <!-- Lens Guide Section -->
-  <section id="lens-guide" class="py-20 px-4 max-w-7xl mx-auto">
-    <h2 class="text-4xl font-light text-center mb-16 section-title">Your Lens Selection Guide</h2>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mt-20">
-      <div class="animate-fade-in" x-data="{}" x-intersect="$el.classList.add('visible')">
-        <div class="flex items-start mb-6">
-          <div class="step-number">1</div>
-          <div>
-            <h3 class="text-2xl font-light mb-3">Understand Your Prescription</h3>
-            <p class="text-gray-600">
-              Your prescription details determine the lens type and thickness required. 
-              Our specialists can help you interpret your prescription and recommend 
-              the most suitable lens options.
-            </p>
-          </div>
+  <!-- CTA Section -->
+  <section class="py-24 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col lg:flex-row items-center justify-between">
+        <div class="w-full lg:w-3/5 mb-10 lg:mb-0 text-center lg:text-left">
+          <h2 class="text-5xl md:text-6xl font-serif font-light text-gray-800 leading-tight tracking-tight mb-6 animate-fade-in">
+            Breathe <span class="italic">New Life</span> Into Your Frames
+          </h2>
+          <p class="text-xl text-gray-700 mb-8 max-w-2xl mx-auto lg:mx-0 animate-fade-in tracking-wide leading-relaxed">
+            Don't compromise on comfort. Our reglazing service preserves the frames you love while giving you crystal clear vision with premium lenses tailored to your prescription.
+          </p>
         </div>
-      </div>
-      
-      <div class="animate-fade-in" x-data="{}" x-intersect="$el.classList.add('visible')">
-        <div class="flex items-start mb-6">
-          <div class="step-number">2</div>
-          <div>
-            <h3 class="text-2xl font-light mb-3">Consider Your Lifestyle</h3>
-            <p class="text-gray-600">
-              Different activities require different lens features. Whether you work on 
-              digital devices, drive frequently, or enjoy outdoor sports, we have specialized 
-              lens solutions to enhance your visual experience.
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="animate-fade-in" x-data="{}" x-intersect="$el.classList.add('visible')">
-        <div class="flex items-start mb-6">
-          <div class="step-number">3</div>
-          <div>
-            <h3 class="text-2xl font-light mb-3">Select Lens Materials</h3>
-            <p class="text-gray-600">
-              From standard to ultra-thin high-index materials, the right choice depends 
-              on your prescription strength, frame selection, and comfort preferences.
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="animate-fade-in" x-data="{}" x-intersect="$el.classList.add('visible')">
-        <div class="flex items-start mb-6">
-          <div class="step-number">4</div>
-          <div>
-            <h3 class="text-2xl font-light mb-3">Choose Lens Enhancements</h3>
-            <p class="text-gray-600">
-              Enhance your lenses with anti-reflective coatings, scratch resistance, 
-              UV protection, blue light filtering, or photochromic properties for 
-              optimal performance and protection.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Expert Advice CTA -->
-    <div class="mt-20 bg-gray-50 p-10 rounded-lg text-center animate-fade-in" x-data="{}" x-intersect="$el.classList.add('visible')">
-      <h3 class="text-2xl font-light mb-4">Need Personalized Lens Recommendations?</h3>
-      <p class="text-gray-600 max-w-2xl mx-auto mb-8">
-        Choosing the right lenses can be complex. Our expert opticians can assess your prescription, lifestyle needs, and preferences to recommend the perfect lenses tailored specifically for you.
-      </p>
-      <a href="tel:01513030066" class="inline-flex items-center justify-center px-8 py-3 border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition-all duration-300 font-light tracking-wider">
-        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-        </svg>
-        Speak to an Expert
-      </a>
-    </div>
-  </section>
-  
-  <!-- Re-lens CTA Section -->
-  <section class="bg-gray-50 py-20">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-light mb-6">Experience our Refined Reglaze Service</h2>
-      <p class="text-lg text-gray-600 mb-10">
-        Our re-lens service allows you to keep your favorite frames while updating your prescription.
-        Eco-friendly, cost-effective, and completely hassle-free.
-      </p>
-      <a href="/reglaze-service" class="inline-block px-8 py-3 border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition-all duration-300 font-light tracking-wider">
-        Explore Re-lens Service
-      </a>
-    </div>
-  </section>
-  
-  <!-- Lens Thinness Guide Section -->
-  <section class="py-20 px-4 max-w-7xl mx-auto">
-    <h2 class="text-4xl font-light text-center mb-16 section-title">Lens Thinness Guide</h2>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
-      <!-- 1.5 Standard Lens Card -->
-      <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
-        <div class="h-40 bg-gradient-to-r from-gray-100 to-gray-200 flex items-center justify-center">
-          <div class="w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center">
-            <span class="text-2xl font-light">1.5</span>
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-light text-gray-800 mb-2">Standard</h3>
-          <div class="mb-4">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-light text-gray-700 mr-2 mb-2">+2.00 to -2.00</span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="w-full bg-gray-200 rounded-full h-2.5">
-              <div class="bg-gray-500 h-2.5 rounded-full" style="width: 25%"></div>
+        
+        <div class="w-full lg:w-2/5 flex flex-col items-center lg:items-end">
+          <div class="bg-white/80 backdrop-blur-md p-8 rounded-lg border border-gray-200 max-w-md w-full">
+            <h3 class="text-2xl font-serif font-light text-gray-800 mb-4">Ready to Reglaze?</h3>
+            <p class="text-gray-600 mb-6">Starting from just £29.97, breathe new life into your favorite frames with our professional reglazing service.</p>
+            <div>
+              <button 
+                x-data="initSaoAddToCartButton($root)"
+                disabled
+                :disabled="loading || processing || othersProcessing || added"
+                type="button"
+                class="bg-gray-800 hover:bg-gray-700 text-white mx-auto md:mt-6 inline-flex w-full items-center justify-center rounded-md border-2 border-transparent px-24 py-2 text-center text-base md:text-xl font-bold capitalize transition-all duration-1000 duration-700 ease-in-out ease-in-out hover:-translate-y-2 hover:shadow-2xl focus:shadow md:mt-8 md:w-full md:py-3 whitespace-nowrap"
+              >
+                <a href="/reglaze-lenses" class="w-full">Reglaze Your Frame</a>
+              </button>
             </div>
-            <span class="ml-2 text-sm text-gray-600">Standard</span>
           </div>
-          <p class="text-gray-600 text-sm">Ideal for mild prescriptions and budget-conscious customers. Our standard option provides good optical clarity.</p>
-        </div>
-      </div>
-      
-      <!-- 1.6 Thin Lens Card -->
-      <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
-        <div class="h-40 bg-gradient-to-r from-gray-100 to-gray-200 flex items-center justify-center">
-          <div class="w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center">
-            <span class="text-2xl font-light">1.6</span>
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-light text-gray-800 mb-2">Thin</h3>
-          <div class="mb-4">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-light text-gray-700 mr-2 mb-2">+4.00 to -4.00</span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="w-full bg-gray-200 rounded-full h-2.5">
-              <div class="bg-gray-500 h-2.5 rounded-full" style="width: 50%"></div>
-            </div>
-            <span class="ml-2 text-sm text-gray-600">25% thinner</span>
-          </div>
-          <p class="text-gray-600 text-sm">A popular choice for medium prescriptions, offering enhanced comfort and aesthetics at an affordable price point.</p>
-        </div>
-      </div>
-      
-      <!-- 1.67 Extra Thin Lens Card -->
-      <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
-        <div class="h-40 bg-gradient-to-r from-gray-100 to-gray-200 flex items-center justify-center">
-          <div class="w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center">
-            <span class="text-2xl font-light">1.67</span>
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-light text-gray-800 mb-2">Extra Thin</h3>
-          <div class="mb-4">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-light text-gray-700 mr-2 mb-2">+5.00 to -5.00</span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="w-full bg-gray-200 rounded-full h-2.5">
-              <div class="bg-gray-500 h-2.5 rounded-full" style="width: 65%"></div>
-            </div>
-            <span class="ml-2 text-sm text-gray-600">35% thinner</span>
-          </div>
-          <p class="text-gray-600 text-sm">Recommended for higher prescriptions, providing a significant reduction in thickness and weight for improved comfort.</p>
-        </div>
-      </div>
-      
-      <!-- 1.74 Ultra Thin Lens Card -->
-      <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
-        <div class="h-40 bg-gradient-to-r from-gray-100 to-gray-200 flex items-center justify-center">
-          <div class="w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center">
-            <span class="text-2xl font-light">1.74</span>
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-light text-gray-800 mb-2">Ultra Thin</h3>
-          <div class="mb-4">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-light text-gray-700 mr-2 mb-2">+6.00 or higher</span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="w-full bg-gray-200 rounded-full h-2.5">
-              <div class="bg-gray-500 h-2.5 rounded-full" style="width: 85%"></div>
-            </div>
-            <span class="ml-2 text-sm text-gray-600">50% thinner</span>
-          </div>
-          <p class="text-gray-600 text-sm">Our premium option for very high prescriptions, providing the thinnest possible lenses with superior optical quality.</p>
         </div>
       </div>
     </div>
   </section>
   
-  <!-- Contact Section -->
-  <section class="bg-light-beige py-20">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-light mb-6">Need Expert Advice?</h2>
-      <p class="text-lg text-gray-600 mb-10">
-        Our team of experienced opticians is here to guide you through selecting 
-        the perfect lenses for your unique vision needs.
-      </p>
-      <div class="flex flex-col sm:flex-row justify-center gap-6">
-        <a href="tel:01513030066" class="inline-flex items-center justify-center px-8 py-3 border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition-all duration-300">
-          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-          </svg>
-          0151 303 0066
-        </a>
-        <a href="mailto:contact@jpopticians.com" class="inline-flex items-center justify-center px-8 py-3 border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition-all duration-300">
-          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-          </svg>
-          contact@jpopticians.com
-        </a>
+  <!-- FAQ Section -->
+  <section class="pt-10 pb-10 lg:py-10 bg-white overflow-hidden bs-section-dragged">
+    <div class="container px-4 mx-auto">
+      <div class="flex flex-wrap -m-8">
+        <div class="w-full md:w-1/2 p-8 pt-40">
+          <div class="fade-in">
+            <h2
+              class="font-heading text-6xl tracking-tighter"
+              style="font-family: 'Times New Roman', serif"
+            >
+              All Your Lens Queries. Answered.
+            </h2>
+          </div>
+          <p class="mb-4 text-base text-gray-700 p-3">
+            Get answers to common questions about lens options and services.
+          </p>
+        </div>
+        <div class="w-full md:w-1/2 p-8">
+          <div class="flex flex-wrap -m-1.5">
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      What lens thickness should I choose for my prescription?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                  class="overflow-hidden h-0 duration-500"
+                  style=""
+                >
+                  <p class="mt-6 tracking-tight">
+                    The ideal lens thickness depends on your prescription strength. For mild prescriptions (up to +/-2.00), standard 1.5 index lenses are usually sufficient. For moderate prescriptions (+/-2.00 to +/-4.00), we recommend 1.6 index lenses. Higher prescriptions benefit from 1.67 or 1.74 high-index lenses, which are thinner and lighter.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      What's the difference between anti-reflective and blue light coatings?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                  class="overflow-hidden h-0 duration-500"
+                  style=""
+                >
+                  <p class="mt-6 tracking-tight">
+                    Anti-reflective coatings reduce all light reflections on the lens surface, improving clarity and reducing glare. Blue light coatings specifically target and filter the high-energy blue light emitted by digital screens and LED lighting. While anti-reflective coatings enhance general vision clarity, blue light coatings are focused on reducing digital eye strain and potential sleep disruption.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      Are Transitions® lenses good for driving?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                  class="overflow-hidden h-0 duration-500"
+                  style=""
+                >
+                  <p class="mt-6 tracking-tight">
+                    Transitions® lenses do darken while driving, but they may not get as dark as dedicated sunglasses because car windshields block some of the UV light that activates them. For those who spend significant time driving, we recommend either Transitions® XTRActive® lenses, which have some activation behind the windshield, or a separate pair of prescription sunglasses for optimal driving comfort.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      How do I know if I need varifocal lenses?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                  class="overflow-hidden h-0 duration-500"
+                  style=""
+                >
+                  <p class="mt-6 tracking-tight">
+                    You might benefit from varifocal lenses if you find yourself needing different glasses for different distances, such as removing reading glasses to see far away. Common signs include difficulty reading small print, holding reading material at arm's length, or experiencing eye strain when switching between different viewing distances. An eye examination with our optometrists can determine if varifocals are right for you.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      Can I combine multiple coatings?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                  class="overflow-hidden h-0 duration-500"
+                  style=""
+                >
+                  <p class="mt-6 tracking-tight">
+                    Yes, you can combine multiple coatings. Popular combinations include anti-reflective + UV protection. Our advisors will help you choose the right combination for your needs, as each coating complements the others to enhance your vision and protection.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      What's the difference between polarized and non-polarized tint?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''"
+                  class="overflow-hidden h-0 duration-500"
+                  style=""
+                >
+                  <p class="mt-6 tracking-tight">
+                    Polarized lenses block reflected light, reducing glare from water, snow, and roads. They're perfect for driving and outdoor activities. Non-polarized lenses only reduce light intensity. Both provide UV protection, but polarized lenses offer better comfort in bright conditions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
-  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  
+  <script>
+    document.addEventListener('alpine:init', () => {
+      // Any additional Alpine.js components can be initialized here
+    });
+  </script>
 </body>
 </html>

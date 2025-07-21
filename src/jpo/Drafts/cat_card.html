@@ -1,0 +1,308 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      defer
+      src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.6/dist/cdn.min.js"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              p: "#333333",
+              s: "#333333",
+              l: "#f5f5f5",
+              t: "#666666",
+              a: "#75A53B",
+              b: "#B399EF",
+              gr: "#D6d6d6",
+            },
+            screens: {
+              xxsm: "420px",
+              xxxsm: "360px",
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css"
+    />
+    <style>
+      .glide__slide img {
+        height: 300px; /* Set a fixed height for all images */
+        width: 100%; /* Ensure the image takes the full width of its container */
+        object-fit: cover; /* Cover the container while maintaining aspect ratio */
+      }
+      .card-image {
+        height: 600px; /* Increase the height for all card images */
+        width: 100%; /* Ensure the image takes the full width of its container */
+        object-fit: cover; /* Cover the container while maintaining aspect ratio */
+        transition: transform 0.4s ease; /* Slightly slower transition for subtlety */
+      }
+      .card-container:hover .card-image {
+        transform: scale(1.02); /* Reduced scale for more subtle effect */
+      }
+      .card-container {
+        overflow: hidden; /* Prevent image from overflowing during scale */
+      }
+      /* Contact Us Form Styles */
+      .luxury-input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #d6d6d6;
+        border-radius: 0;
+        padding-left: 0;
+        padding-right: 0;
+        transition: all 0.3s ease;
+      }
+      .luxury-input:focus {
+        border-color: #b399ef;
+        box-shadow: none;
+      }
+      .luxury-btn {
+        position: relative;
+        overflow: hidden;
+      }
+      .luxury-btn::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: currentColor;
+        transition: width 0.5s ease;
+      }
+      .luxury-btn:hover::after {
+        width: 100%;
+      }
+      /* Additional Styles for Contact Page */
+      .hide-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari and Opera */
+      }
+      .animate-fade-in {
+        animation: fadeIn 1.5s ease-in-out;
+        animation-fill-mode: both;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .luxury-border::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+        width: 80%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #333333, transparent);
+      }
+    </style>
+  </head>
+<body>
+   
+   
+   <!-- Improved Shop By Category Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-light text-s mb-2 font-serif">
+            Shop By Category
+          </h2>
+          <div class="w-24 h-[1px] bg-s mx-auto mt-4 mb-6"></div>
+          <p class="text-t max-w-2xl mx-auto">
+            Discover our curated selection of luxury eyewear
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <!-- Men's Collection Card -->
+          <div class="group relative overflow-hidden bg-gray-50 h-64">
+            <img
+              src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Men's Eyewear Collection"
+              class="w-full h-full object-center object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-90"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div
+              class="absolute inset-x-0 bottom-0 p-4 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+            >
+              <h3 class="text-lg font-light mb-1 font-serif">
+                Men's Collection
+              </h3>
+              <div
+                class="w-8 h-[1px] bg-white mb-2 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-100"
+              ></div>
+              <div
+                class="flex items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200"
+              >
+                <span class="text-xs uppercase tracking-wider">Explore</span>
+                <svg
+                  class="w-3 h-3 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Women's Collection Card -->
+          <div class="group relative overflow-hidden bg-gray-50 h-64">
+            <img
+              src="https://images.unsplash.com/photo-1577803645773-f96470509666?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Women's Eyewear Collection"
+              class="w-full h-full object-center object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-90"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div
+              class="absolute inset-x-0 bottom-0 p-4 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+            >
+              <h3 class="text-lg font-light mb-1 font-serif">
+                Women's Collection
+              </h3>
+              <div
+                class="w-8 h-[1px] bg-white mb-2 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-100"
+              ></div>
+              <div
+                class="flex items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200"
+              >
+                <span class="text-xs uppercase tracking-wider">Explore</span>
+                <svg
+                  class="w-3 h-3 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sunglasses Collection Card -->
+          <div class="group relative overflow-hidden bg-gray-50 h-64">
+            <img
+              src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Sunglasses Collection"
+              class="w-full h-full object-center object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-90"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div
+              class="absolute inset-x-0 bottom-0 p-4 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+            >
+              <h3 class="text-lg font-light mb-1 font-serif">Sunglasses</h3>
+              <div
+                class="w-8 h-[1px] bg-white mb-2 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-100"
+              ></div>
+              <div
+                class="flex items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200"
+              >
+                <span class="text-xs uppercase tracking-wider">Explore</span>
+                <svg
+                  class="w-3 h-3 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accessories Card -->
+          <div class="group relative overflow-hidden bg-gray-50 h-64">
+            <img
+              src="https://images.unsplash.com/photo-1591076482161-42ce6da69f67?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Eyewear Accessories"
+              class="w-full h-full object-center object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-90"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div
+              class="absolute inset-x-0 bottom-0 p-4 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+            >
+              <h3 class="text-lg font-light mb-1 font-serif">Accessories</h3>
+              <div
+                class="w-8 h-[1px] bg-white mb-2 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-100"
+              ></div>
+              <div
+                class="flex items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200"
+              >
+                <span class="text-xs uppercase tracking-wider">Explore</span>
+                <svg
+                  class="w-3 h-3 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-8">
+          <a
+            href="/shop"
+            class="inline-block bg-white tracking-wide text-gray-800 font-bold border-b-2 border-gray-800 hover:border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-6 transition-all duration-300"
+          >
+            View All Collections
+          </a>
+        </div>
+      </div>
+    </section>
+    </body>
+    </html>

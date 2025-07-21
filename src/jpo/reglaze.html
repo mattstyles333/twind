@@ -1,0 +1,731 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script
+    defer
+    src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.6/dist/cdn.min.js"
+    defer
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            p: "#333333",
+            s: "#333333",
+            l: "#f5f5f5",
+            t: "#666666",
+            a: "#75A53B",
+            b: "#B399EF",
+            gr: "#D6d6d6",
+          },
+          screens: {
+            xxsm: "420px",
+            xxxsm: "360px",
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { 
+                opacity: '0',
+                transform: 'translateY(10px)'
+              },
+              '100%': { 
+                opacity: '1',
+                transform: 'translateY(0)'
+              }
+            }
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+          },
+          fontFamily: {
+            'serif': ['Times New Roman', 'serif'],
+          },
+          zIndex: {
+            '1': '1',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="relative overflow-x-hidden">
+  <!-- Top section with image taking half the width -->
+  <div class="flex w-full justify-center items-center bg-gray-100 h-64 md:h-96">
+    <!-- Removed image -->
+    
+    <!-- Text space on the right half -->
+    <div class="flex flex-col items-center justify-center text-gray-800 px-4 md:px-0">
+      <h1 class="text-3xl md:text-5xl font-serif font-bold p-2 md:p-4 text-center">
+        <span class="animate-fade-in [animation-delay:300ms]">Experience</span> 
+        <span class="animate-fade-in [animation-delay:600ms]">our</span> 
+        <em>Refined</em> 
+        <span class="animate-fade-in [animation-delay:900ms]">Reglaze Service</span>
+      </h1>
+      <p class="text-base md:text-lg px-4 md:px-8 text-center max-w-md animate-fade-in tracking-wide leading-relaxed mb-4 md:mb-8">
+        At JP Opticians, our reglazing service offers a seamless blend of precision and personalisation.
+      </p>
+      <div class="mt-4 md:mt-6 flex justify-center w-full px-4 md:px-0">
+        <button 
+          x-data="initSaoAddToCartButton($root)"
+          disabled
+          :disabled="loading || processing || othersProcessing || added"
+          type="button"
+          class="bg-gray-800 hover:bg-gray-700 text-white mx-auto md:mt-6 inline-flex w-full items-center justify-center rounded-md border-2 border-transparent px-12 py-2 text-center text-base md:text-2xl font-bold capitalize transition-all duration-1000 duration-700 ease-in-out ease-in-out hover:-translate-y-2 hover:shadow-2xl focus:shadow md:mt-8 md:w-2/3 md:py-3"
+        >
+          <span x-html="'Reglaze Your Frame'"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step-by-Step Guide Section -->
+  <section class="mx-auto overflow-hidden md:container">
+    <h2
+      class="my-8 md:my-12 px-2 text-center text-3xl md:text-4xl lg:text-5xl font-serif font-light text-gray-800"
+    >
+      How to Reglaze Your Glasses
+      <div class="w-16 md:w-24 h-[1px] bg-gray-400 mx-auto mt-4 md:mt-6"></div>
+    </h2>
+    
+    <div class="max-w-7xl mx-auto px-4 py-6 md:py-10">
+      <!-- Steps Container -->
+      <div class="space-y-12 md:space-y-16">
+        <!-- Step 1 -->
+        <div class="flex flex-col md:flex-row items-center gap-12" x-data="{ visible: false }" x-intersect="visible = true">
+          <div 
+            class="w-full md:w-1/2 transform transition-all duration-1000 ease-out"
+            :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'"
+          >
+            <img
+              src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/lenses_step.webp"
+              alt="Select Your Lenses"
+              class="w-full h-auto object-cover rounded-lg shadow-md"
+            />
+          </div>
+          
+          <div 
+            class="w-full md:w-1/2 transform transition-all duration-1000 ease-out delay-300"
+            :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'"
+          >
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-white font-light text-2xl">1</div>
+              <h3 class="text-3xl font-serif font-light text-gray-800">Select Your Lenses</h3>
+            </div>
+            
+            <p class="text-lg text-gray-700 leading-relaxed pl-16">
+              Select your preferred lenses and click the <a href="/reglaze-lenses" class="text-gray-800 border-b border-gray-400 hover:border-gray-800 transition-colors duration-300">Order Your Reglaze</a> button to begin tailoring your lenses.
+            </p>
+            
+            <!-- Lens Selection Help - Integrated with animation -->
+            <div class="mt-6 pl-16" x-data="{ visible: false }" x-intersect="visible = true">
+              <div 
+                class="bg-gray-50 border-l-2 border-gray-300 pl-4 py-3 transform transition-all duration-700 ease-out"
+                :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'"
+              >
+                <h4 class="text-lg font-medium text-gray-800">Unsure which lens is right for you?</h4>
+                <p class="text-gray-700 mt-1">We'll help guide you through the best option for your lifestyle.</p>
+                <a href="/lens-guide" class="inline-flex items-center mt-2 text-gray-800 group">
+                  <span class="border-b border-gray-400 group-hover:border-gray-800 transition-all duration-300">Explore lens options</span>
+                  <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Subtle Divider -->
+        <div class="relative">
+          <div class="absolute left-1/2 transform -translate-x-1/2 w-[1px] h-full bg-gradient-to-b from-gray-300 to-transparent"></div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="flex flex-col md:flex-row-reverse items-center gap-12" x-data="{ visible: false }" x-intersect="visible = true">
+          <div 
+            class="w-full md:w-1/2 transform transition-all duration-1000 ease-out"
+            :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'"
+          >
+            <img
+              src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/prescription_step.webp"
+              alt="Add Your Prescription"
+              class="w-full h-auto object-cover rounded-lg shadow-md"
+            />
+          </div>
+          
+          <div 
+            class="w-full md:w-1/2 transform transition-all duration-1000 ease-out delay-300"
+            :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'"
+          >
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-white font-light text-2xl">2</div>
+              <h3 class="text-3xl font-serif font-light text-gray-800">Add Your Prescription</h3>
+            </div>
+            
+            <p class="text-lg text-gray-700 leading-relaxed pl-16">
+              Send your prescription at your convenience. If you haven't received your
+              <a href="/faq#prescription" class="text-gray-800 border-b border-gray-400 hover:border-gray-800 transition-colors duration-300">prescription</a>
+              yet but wish to place an order, you can forward your prescription later to
+              <a href="mailto: contact@jpopticians.com" class="text-gray-800 border-b border-gray-400 hover:border-gray-800 transition-colors duration-300">contact@jpopticians.com</a>.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Subtle Divider -->
+        <div class="relative">
+          <div class="absolute left-1/2 transform -translate-x-1/2 w-[1px] h-full bg-gradient-to-b from-gray-300 to-transparent"></div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="flex flex-col md:flex-row items-center gap-12" x-data="{ visible: false }" x-intersect="visible = true">
+          <div 
+            class="w-full md:w-1/2 transform transition-all duration-1000 ease-out"
+            :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'"
+          >
+            <img
+              src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/order_step.webp"
+              alt="Order and Post"
+              class="w-full h-auto object-cover rounded-lg shadow-md"
+            />
+          </div>
+          
+          <div 
+            class="w-full md:w-1/2 transform transition-all duration-1000 ease-out delay-300"
+            :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'"
+          >
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-white font-light text-2xl">3</div>
+              <h3 class="text-3xl font-serif font-light text-gray-800">Order and Post</h3>
+            </div>
+            
+            <p class="text-lg text-gray-700 leading-relaxed pl-16">
+              After placing your order, send your glasses along with your order number to <em>JP Opticians at Everite House, Carr Lane, Hoylake, CH47 4BG</em>. We'll provide a tracked postage label and keep in touch with updates on your expected timeframe.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Subtle Divider -->
+        <div class="relative">
+          <div class="absolute left-1/2 transform -translate-x-1/2 w-[1px] h-full bg-gradient-to-b from-gray-300 to-transparent"></div>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="flex flex-col md:flex-row-reverse items-center gap-12" x-data="{ visible: false }" x-intersect="visible = true">
+          <div 
+            class="w-full md:w-1/2 transform transition-all duration-1000 ease-out"
+            :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'"
+          >
+            <img
+              src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/delivery_step.webp"
+              alt="Receive your reglaze"
+              class="w-full h-auto object-cover rounded-lg shadow-md"
+            />
+          </div>
+          
+          <div 
+            class="w-full md:w-1/2 transform transition-all duration-1000 ease-out delay-300"
+            :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'"
+          >
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-white font-light text-2xl">4</div>
+              <h3 class="text-3xl font-serif font-light text-gray-800">Receive Your Reglaze</h3>
+            </div>
+            
+            <p class="text-lg text-gray-700 leading-relaxed pl-16">
+              Your reglazed glasses will be returned in your original case, ready to wear.
+Enjoy refreshed clarity and comfort, perfectly tailored to your everyday vision.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Features Section -->
+  
+  <!-- Scrollable product cards for lens options -->
+  <div class="mt-8 w-full">
+    <h2 class="text-3xl font-serif font-light text-center text-gray-800 mb-8">Explore Our Reglaze Service</h2>
+    
+    <!-- Grid container for product cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 px-4 md:px-8 max-w-6xl mx-auto">
+        <!-- Product Card 1 -->
+      <div class="bg-white border border-gray-200 rounded-none shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
+        <div class="p-4 md:p-6">
+              <h3 class="text-lg md:text-xl font-serif font-light">Standard Single Vision</h3>
+              <p class="text-sm md:text-base text-gray-600 mt-2">Prescription lenses for distance or reading</p>
+              <p class="text-gray-800 font-serif font-light text-base md:text-lg mt-3">From £29.97</p>
+          <a href="/lens-guide" class="mt-4 w-full bg-white text-gray-800 border-b-2 border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-4 transition-all duration-300 inline-block text-center text-sm md:text-base">Learn More</a>
+          </div>
+        </div>
+        
+        <!-- Product Card 2 -->
+      <div class="bg-white border border-gray-200 rounded-none shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
+        <div class="p-4 md:p-6">
+              <h3 class="text-lg md:text-xl font-serif font-light">Varifocal Lenses</h3>
+              <p class="text-sm md:text-base text-gray-600 mt-2">Seamless transition between distances</p>
+              <p class="text-gray-800 font-serif font-light text-base md:text-lg mt-3">From £89.97</p>
+          <a href="/lens-guide" class="mt-4 w-full bg-white text-gray-800 border-b-2 border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-4 transition-all duration-300 inline-block text-center text-sm md:text-base">Learn More</a>
+          </div>
+        </div>
+        
+        <!-- Product Card 3 -->
+      <div class="bg-white border border-gray-200 rounded-none shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
+        <div class="p-4 md:p-6">
+              <h3 class="text-lg md:text-xl font-serif font-light">Blue Light Filter</h3>
+              <p class="text-sm md:text-base text-gray-600 mt-2">Reduces eye strain from digital screens</p>
+              <p class="text-gray-800 font-serif font-light text-base md:text-lg mt-3">From £69.97</p>
+          <a href="/lens-guide" class="mt-4 w-full bg-white text-gray-800 border-b-2 border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-4 transition-all duration-300 inline-block text-center text-sm md:text-base">Learn More</a>
+          </div>
+        </div>
+        
+        <!-- Product Card 4 -->
+      <div class="bg-white border border-gray-200 rounded-none shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
+        <div class="p-4 md:p-6">
+              <h3 class="text-lg md:text-xl font-serif font-light">Photochromic Lenses</h3>
+              <p class="text-sm md:text-base text-gray-600 mt-2">Automatically darken in sunlight</p>
+              <p class="text-gray-800 font-serif font-light text-base md:text-lg mt-3">From £79.97</p>
+          <a href="/lens-guide" class="mt-4 w-full bg-white text-gray-800 border-b-2 border-gray-800 hover:bg-gray-800 hover:text-white py-2 px-4 transition-all duration-300 inline-block text-center text-sm md:text-base">Learn More</a>
+            </div>
+            </div>
+          </div>
+        </div>
+
+  <!-- What is Reglaze Section -->
+  <div class="w-full bg-white pt-8 md:pt-16">
+    <div class="w-full flex flex-col md:flex-row">
+      <!-- Text Section -->
+      <div class="w-full md:w-1/2 p-4 md:p-6" x-data="{ show: false }" x-intersect="show = true">
+        <div x-show="show" x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0 translate-x-[-20px]" x-transition:enter-end="opacity-100 translate-x-0">
+          <h2 class="text-3xl md:text-4xl font-serif font-light text-gray-800 mb-4 md:mb-6">Why Choose Reglazing?</h2>
+          <p class="text-base md:text-lg text-gray-700 mb-4 md:mb-6 leading-relaxed">Reglazing is the process of replacing the lenses in your existing frames. It's an eco-friendly choice that allows you to keep the style you love while updating your prescription or lens type. By choosing reglazing, you reduce waste and contribute to a more sustainable future.</p>
+          <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6 md:mb-8">Our expert technicians ensure a perfect fit and finish, giving your glasses a new lease on life without the need for new frames.</p>
+          <div class="flex justify-center">
+            <button 
+              x-data="initSaoAddToCartButton($root)"
+              disabled
+              :disabled="loading || processing || othersProcessing || added"
+              type="button"
+              class="bg-gray-800 hover:bg-gray-700 text-white mx-auto md:mt-6 inline-flex w-full items-center justify-center rounded-md border-2 border-transparent px-12 py-2 text-center text-base md:text-2xl font-bold capitalize transition-all duration-1000 duration-700 ease-in-out ease-in-out hover:-translate-y-2 hover:shadow-2xl focus:shadow md:mt-8 md:w-full md:py-3"
+            >
+              <span x-html="'Reglaze Your Frame'"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Image Section -->
+      <div class="w-full md:w-1/2 hidden md:block" x-data="{ show: false }" x-intersect="show = true">
+        <div x-show="show" x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0 translate-x-[-20px]" x-transition:enter-end="opacity-100 translate-x-0">
+          <img class="w-full h-48 md:h-full object-cover" src="https://www.spex4less.com/media/wysiwyg/AdobeStock_417935923.jpeg" alt="Reglazing Service" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Who It's For Section -->
+  <div class="w-full bg-white">
+    <div class="w-full flex flex-col md:flex-row">
+      <!-- Image Section on left -->
+      <div class="w-full md:w-1/2" x-data="{ show: false }" x-intersect="show = true">
+        <div x-show="show" x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0 translate-x-[-20px]" x-transition:enter-end="opacity-100 translate-x-0">
+          <img class="w-full h-48 md:h-full object-cover" src="https://www.spex4less.com/media/wysiwyg/glassesbanner.jpeg" alt="Who Our Reglaze Service Is For" />
+        </div>
+      </div>
+      <!-- Text Section on right -->
+      <div class="w-full md:w-1/2 p-4 md:p-6" x-data="{ show: false }" x-intersect="show = true">
+        <div x-show="show" x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0 translate-x-[20px]" x-transition:enter-end="opacity-100 translate-x-0">
+          <h2 class="text-3xl md:text-4xl font-serif font-light text-gray-800 mb-4">Who Our Reglaze Service Is For</h2>
+          
+          <ul class="space-y-4 mb-4 list-disc pl-4 md:pl-6">
+            <li class="mb-2">
+              <h3 class="text-lg md:text-xl font-serif font-light text-gray-800 mb-1">Updating Your Prescription</h3>
+              <p class="text-base md:text-lg text-gray-700 leading-relaxed">Our reglazing service lets you keep the style you trust, with lenses that reflect your most up-to-date prescription.</p>
+            </li>
+            
+            <li class="mb-2">
+              <h3 class="text-lg md:text-xl font-serif font-light text-gray-800 mb-1">Environmentally Conscious</h3>
+              <p class="text-base md:text-lg text-gray-700 leading-relaxed">Prefer to reuse, not replace? Reglazing is an eco-conscious way to reduce waste and extend the life of your favourite eyewear.</p>
+            </li>
+            
+            <li class="mb-2">
+              <h3 class="text-lg md:text-xl font-serif font-light text-gray-800 mb-1">Seeking an Upgrade</h3>
+              <p class="text-base md:text-lg text-gray-700 leading-relaxed">Elevate your eyewear with coatings for your lifestyle, you're adding blue light protection for the office, going photochromic, or switching to thinner lenses, reglazing gives you that flexibility.</p>
+            </li>
+          </ul>
+          <button 
+            x-data="initSaoAddToCartButton($root)"
+            disabled
+            :disabled="loading || processing || othersProcessing || added"
+            type="button"
+            class="bg-gray-800 hover:bg-gray-700 text-white mx-auto md:mt-6 inline-flex w-full items-center justify-center rounded-md border-2 border-transparent px-12 py-2 text-center text-base md:text-2xl font-bold capitalize transition-all duration-1000 duration-700 ease-in-out ease-in-out hover:-translate-y-2 hover:shadow-2xl focus:shadow md:mt-8 md:w-full md:py-3"
+          >
+            <span x-html="'Reglaze Your Frame'"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section - with parallax reveal effect -->
+  <div class="relative -mt-8 md:-mt-16 transform perspective-1000 z-1">
+    <div 
+      x-data="{ scroll: 0 }"
+      x-init="window.addEventListener('scroll', () => {
+          const rect = $el.getBoundingClientRect();
+          const offset = window.innerHeight - rect.top;
+          scroll = Math.min(100, Math.max(0, offset / 3));
+      })"
+      class="overflow-hidden bg-gray-50 py-12 md:py-24 relative"
+      x-bind:class="`clip-path-inset-${100-scroll}`"
+    >
+      <!-- Background pattern elements for modern touch -->
+      <div class="absolute top-0 right-0 w-20 md:w-40 h-20 md:h-40 rounded-full bg-white -mr-10 md:-mr-20 -mt-10 md:-mt-20 opacity-10"></div>
+      <div class="absolute bottom-0 left-0 w-32 md:w-64 h-32 md:h-64 rounded-full bg-white -ml-16 md:-ml-32 -mb-16 md:-mb-32 opacity-10"></div>
+      
+      <div class="container mx-auto px-4 md:px-6 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center justify-between">
+          <div class="w-full lg:w-3/5 mb-8 md:mb-10 lg:mb-0 text-center lg:text-left">
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-serif font-light text-gray-800 leading-tight tracking-tight mb-4 md:mb-6 animate-fade-in">
+              Breathe <span class="italic">New Life</span> Into Your Frames
+            </h2>
+            <p class="text-lg md:text-xl text-gray-700 mb-6 md:mb-8 max-w-2xl mx-auto lg:mx-0 animate-fade-in tracking-wide leading-relaxed">
+              Don't compromise on style or comfort. Our reglazing service preserves the frames you love while giving you crystal clear vision with premium lenses tailored to your prescription.
+            </p>
+          </div>
+          
+          <div class="w-full lg:w-2/5 flex flex-col items-center lg:items-end">
+            <div class="bg-white/80 backdrop-blur-md p-6 md:p-8 rounded-lg border border-gray-200 max-w-md w-full">
+              <h3 class="text-xl md:text-2xl font-serif font-light text-gray-800 mb-3 md:mb-4">Ready to Reglaze?</h3>
+              <p class="text-sm md:text-base text-gray-600 mb-4 md:mb-6">Starting from just  £29.97, breathe new life into your favorite frames with our professional reglazing service.</p>
+              <div>
+                <button 
+                  x-data="initSaoAddToCartButton($root)"
+                  disabled
+                  :disabled="loading || processing || othersProcessing || added"
+                  type="button"
+                  class="bg-gray-800 hover:bg-gray-700 text-white mx-auto md:mt-6 inline-flex w-full items-center justify-center rounded-md border-2 border-transparent px-12 py-2 text-center text-base md:text-2xl font-bold capitalize transition-all duration-1000 duration-700 ease-in-out ease-in-out hover:-translate-y-2 hover:shadow-2xl focus:shadow md:mt-8 md:w-full md:py-3"
+                >
+                  <span x-html="'Reglaze Your Frame'"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section
+    class="pt-6 md:pt-10 pb-6 md:pb-10 lg:py-10 bg-white overflow-hidden bs-section-dragged"
+  >
+    <div class="container px-4 mx-auto">
+      <div class="flex flex-wrap -m-4 md:-m-8">
+        <div class="w-full md:w-1/2 p-4 md:p-8 pt-20 md:pt-40">
+          <div class="fade-in">
+            <h2
+              class="font-heading text-4xl md:text-6xl tracking-tighter font-serif"
+            >
+              All Your Reglazing Queries. Answered.
+            </h2>
+          </div>
+          <p class="mb-4 text-sm md:text-base text-gray-700 p-2 md:p-3">
+            Get answers to common questions about the reglazing process.
+          </p>
+        </div>
+        <div class="w-full md:w-1/2 p-8">
+          <div class="flex flex-wrap -m-1.5">
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      How long does it take to receive a reglaze?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :class="accordion ? 'h-auto' : 'h-0'"
+                  class="overflow-hidden transition-all duration-500"
+                >
+                  <p class="mt-6 tracking-tight">
+                    Once we receive your frames, it usually takes between 1 to 14 days to send back your reglazed glasses.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      Are there any frame conditions unsuitable for reglazing?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :class="accordion ? 'h-auto' : 'h-0'"
+                  class="overflow-hidden transition-all duration-500"
+                >
+                  <p class="mt-6 tracking-tight">
+                    We can reglaze almost any frame. If you're unsure whether your frames are suitable, please contact our optical service team at <a href="tel:01513030066" class="text-gray-800 border-b border-gray-400 hover:border-gray-800 transition-colors duration-300">0151 303 0066</a>.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      Can coatings be added during the reglaze process?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :class="accordion ? 'h-auto' : 'h-0'"
+                  class="overflow-hidden transition-all duration-500"
+                >
+                  <p class="mt-6 tracking-tight">
+                    Yes, you can enhance your lenses with special coatings during the reglazing process. Options include anti-reflective, scratch-resistant, blue light protection, and honeycomb coatings to suit your lifestyle and vision needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      What does reglazing mean?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :class="accordion ? 'h-auto' : 'h-0'"
+                  class="overflow-hidden transition-all duration-500"
+                >
+                  <p class="mt-6 tracking-tight">
+                    Reglazing involves replacing the lenses in your current glasses frame with new ones. This is ideal if your prescription has changed, your lenses are damaged, or you want to upgrade to different lens types, such as anti-glare or transition lenses, while keeping your existing frame.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      Can I reglaze a frame not purchased from JP Opticians?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :class="accordion ? 'h-auto' : 'h-0'"
+                  class="overflow-hidden transition-all duration-500"
+                >
+                  <p class="mt-6 tracking-tight">
+                    Yes, you can reglaze frames not bought from JP Opticians. We offer reglazing services for most frame types, regardless of where they were purchased. Send us your frame, and we'll fit it with new lenses according to your prescription and preferences.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full p-1.5">
+              <div
+                x-data="{ accordion: false }"
+                x-on:click="accordion = !accordion"
+                class="cursor-pointer block p-6 border border-gray-200 hover:border-gray-300 rounded-lg transition duration-200"
+              >
+                <div class="flex flex-wrap items-center justify-between -m-2">
+                  <div class="w-auto p-2">
+                    <h3 class="font-semibold tracking-tight">
+                      Will you return my original lenses and case?
+                    </h3>
+                  </div>
+                  <div class="w-auto p-2">
+                    <span
+                      :class="{'rotate-90': accordion, 'rotate-0': !accordion }"
+                      class="inline-block transform rotate-0"
+                    >
+                      <svg
+                        width="9"
+                        height="14"
+                        viewbox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 1.16683L7.33333 7.00016L1.5 12.8335"
+                          stroke="#171A1F"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  x-ref="container"
+                  :class="accordion ? 'h-auto' : 'h-0'"
+                  class="overflow-hidden transition-all duration-500"
+                >
+                  <p class="mt-6 tracking-tight">
+                    Yes, we will return your original case along with your reglazed glasses.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>

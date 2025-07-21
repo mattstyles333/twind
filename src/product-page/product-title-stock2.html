@@ -42,8 +42,8 @@
   <body class="dark:bg-p bg-zinc-50">
     <div
       class="mx-auto pb-20 md:container"
-      x-data="{ 
-    selectedSize: { eye: '54', bridge: '20', arm: '140' }, 
+      x-data="{
+    selectedSize: { eye: '54', bridge: '20', arm: '140' },
     selectedColour: 'Havana',
     stockStatus: {
       '52-18-140-Black': 'in_stock',
@@ -213,14 +213,14 @@
         <!-- Right-hand sticky div (shown second on mobile and top right on desktop) -->
         <div
           class="order-2 lg:top-4 lg:order-2 lg:col-span-1 lg:flex lg:flex-col xl:sticky"
-          x-data="{ 
-      sticky: false, 
-      selectedSize: { eye: '54', bridge: '20', arm: '140' }, 
-      selectedColour: 'Black', 
-      colourOptions: { 
-        'Black': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp', 
-        'Havana': 'https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol002_-_c1_1_1_1_1_1.webp', 
-        'Blue': 'https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol003_-_c1_1_1_1_1_1.webp' 
+          x-data="{
+      sticky: false,
+      selectedSize: { eye: '54', bridge: '20', arm: '140' },
+      selectedColour: 'Black',
+      colourOptions: {
+        'Black': 'https://www.spex4less.com/media/mf_webp/jpg/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/0/r/0rx7047__5769_9co6i3oxu8up9cfj.webp',
+        'Havana': 'https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol002_-_c1_1_1_1_1_1.webp',
+        'Blue': 'https://www.spex4less.com/media/mf_webp/png/media/catalog/product/cache/8d410a60fdf3bd3b1688cb90255ed65b/o/l/ol003_-_c1_1_1_1_1_1.webp'
       },
       updateColour(colour) {
         this.selectedColour = colour;
@@ -1498,7 +1498,7 @@
               </div>
 
               <p class="text-link mt-4 text-sm">
-                <a href="/glasses-delivery-schedule" target="_blank"
+                <a href="{{store direct_url="glasses-delivery-schedule"}}" target="_blank"
                   >View Full Delivery Schedule</a
                 >
               </p>

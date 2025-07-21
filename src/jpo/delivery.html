@@ -1,0 +1,471 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script
+    defer
+    src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.6/dist/cdn.min.js"
+    defer
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            p: "#666666",
+            s: "#333333",
+            l: "#f5f5f5",
+            t: "#666666",
+            a: "#75A53B",
+            b: "#B399EF",
+            gr: "#D6d6d6",
+          },
+          screens: {
+            xxsm: "420px",
+            xxxsm: "360px",
+          },
+          fontFamily: {
+            serif: ['"Times New Roman"', "serif"],
+            sans: ["Raleway", "Helvetica", "Arial", "sans-serif"],
+          },
+          animation: {
+            "fade-in": "fadeIn 1.5s ease-in-out forwards",
+          },
+          keyframes: {
+            fadeIn: {
+              from: { opacity: "0" },
+              to: { opacity: "1" },
+            },
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<div class="bg-white pt-24 pb-12">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+    <!-- Simple Delivery Heading -->
+    <div class="text-center mb-16">
+      <h1 class="text-3xl md:text-4xl font-light text-s mb-2 font-serif">
+        Delivery Information
+      </h1>
+      <div class="w-24 h-[1px] bg-s mx-auto mt-4 mb-6"></div>
+      <p class="text-t max-w-2xl mx-auto">
+        At JP Opticians, we're committed to getting your eyewear to you as
+        quickly and smoothly as possible.
+      </p>
+    </div>
+
+    <!-- Production Times Section -->
+    <div class="mb-16 relative">
+      <div
+        class="hidden lg:block absolute -top-6 -right-6 w-32 h-32 border-t border-r border-gray-200 -z-10"
+      ></div>
+
+      <h2 class="text-2xl md:text-3xl font-light text-s mb-8 font-serif">
+        Production Times
+      </h2>
+      <p class="text-lg leading-relaxed text-t mb-8">
+        At JP Opticians, every order is custom made to your exact
+        specifications. We take pride in crafting each pair of glasses with
+        precision and care.
+      </p>
+
+      <div class="bg-l p-8 border-l-2 border-s">
+        <p class="text-lg leading-relaxed text-t">
+          Orders are typically dispatched within 7-14 working days from the date
+          of order. This timeframe allows us to ensure the highest quality and
+          accuracy in your custom eyewear.
+        </p>
+      </div>
+    </div>
+
+    <!-- Shipping Methods Section -->
+    <div class="mb-16 relative">
+      <div
+        class="hidden lg:block absolute -bottom-6 -left-6 w-32 h-32 border-b border-l border-gray-200 -z-10"
+      ></div>
+
+      <h2 class="text-2xl md:text-3xl font-light text-s mb-8 font-serif">
+        Shipping Methods
+      </h2>
+
+      <div class="bg-l p-8 border-l-2 border-s mb-10">
+        <p class="text-lg leading-relaxed text-t">
+          At JP Opticians, we are dedicated to delivering your orders swiftly
+          and securely through our partnership with Royal Mail. Throughout the
+          shipping process, you will receive:
+        </p>
+
+        <ul class="mt-6 space-y-4">
+          <li class="flex items-start">
+            <div class="flex-shrink-0 w-5 h-5 mt-1 mr-3">
+              <svg
+                class="w-5 h-5 text-s"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <span class="text-t"
+              >Frequent email updates on your order status</span
+            >
+          </li>
+          <li class="flex items-start">
+            <div class="flex-shrink-0 w-5 h-5 mt-1 mr-3">
+              <svg
+                class="w-5 h-5 text-s"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <span class="text-t"
+              >A tracking number for real-time delivery updates</span
+            >
+          </li>
+          <li class="flex items-start">
+            <div class="flex-shrink-0 w-5 h-5 mt-1 mr-3">
+              <svg
+                class="w-5 h-5 text-s"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <span class="text-t"
+              >Flexibility to adjust delivery dates or specify a safe location
+              for drop-off</span
+            >
+          </li>
+          <li class="flex items-start">
+            <div class="flex-shrink-0 w-5 h-5 mt-1 mr-3">
+              <svg
+                class="w-5 h-5 text-s"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <span class="text-t"
+              >Expected delivery time on the day of delivery</span
+            >
+          </li>
+          <li class="flex items-start">
+            <div class="flex-shrink-0 w-5 h-5 mt-1 mr-3">
+              <svg
+                class="w-5 h-5 text-s"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <span class="text-t"
+              >Delivery confirmation with photo and GPS coordinates of the
+              delivery location</span
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- International Shipping Section -->
+    <div class="mb-16">
+      <h2
+        class="text-2xl md:text-3xl font-light text-center text-s mb-12 font-serif"
+      >
+        International Shipping
+        <div class="w-16 h-[1px] bg-s mx-auto mt-4"></div>
+      </h2>
+
+      <div class="relative">
+        <div
+          class="hidden lg:block absolute -top-6 -right-6 w-32 h-32 border-t border-r border-gray-200 -z-10"
+        ></div>
+        <div class="border border-gray-200 rounded-sm">
+          <div class="w-full overflow-x-auto">
+            <table class="w-full">
+              <thead class="hidden md:table-header-group">
+                <tr class="border-b-2 border-s">
+                  <th
+                    class="w-[40%] py-3.5 px-5 text-left text-xs font-medium text-s uppercase tracking-wider"
+                  >
+                    Country*
+                  </th>
+                  <th
+                    class="w-[30%] py-3.5 px-5 text-left text-xs font-medium text-s uppercase tracking-wider"
+                  >
+                    Shipping Time
+                  </th>
+                  <th
+                    class="w-[30%] py-3.5 px-5 text-left text-xs font-medium text-s uppercase tracking-wider"
+                  >
+                    Estimated Cost
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="block md:table-row-group">
+                <tr class="block md:table-row border-b border-gray-200">
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-s font-medium md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    Austria, Belgium, Bulgaria, Croatia, Cyprus, Czech Republic,
+                    Denmark, Estonia, Finland, France, Germany, Greece, Hungary,
+                    Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands,
+                    Poland, Portugal, Slovakia, Slovenia, Sweden
+                  </td>
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-right md:text-left md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    3 - 5 Working Days
+                  </td>
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-right md:text-left md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    £5.95 - £9.95
+                  </td>
+                </tr>
+                <tr class="block md:table-row border-b border-gray-200">
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-s font-medium md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    Gibraltar, Norway, Russia, Switzerland, Serbia, Ukraine and
+                    the Rest of Europe
+                  </td>
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-right md:text-left md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    5 - 7 Working Days
+                  </td>
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-right md:text-left md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    £11.95
+                  </td>
+                </tr>
+                <tr class="block md:table-row border-b border-gray-200">
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-s font-medium md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    USA, Rest of North America
+                  </td>
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-right md:text-left md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    5 - 7 Working Days
+                  </td>
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-right md:text-left md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    £10.95
+                  </td>
+                </tr>
+                <tr class="block md:table-row border-b border-gray-200">
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-s font-medium md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    Saudi Arabia, UAE, Lebanon, Jordan
+                  </td>
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-right md:text-left md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    5 - 7 Working Days
+                  </td>
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-right md:text-left md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    £10.95
+                  </td>
+                </tr>
+                <tr class="block md:table-row border-b border-gray-200">
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-s font-medium md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    Australia, China, Hong Kong, Japan, Malaysia, New Zealand,
+                    South Korea, Thailand, Taiwan, Vietnam, Rest of Far East and
+                    Australia
+                  </td>
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-right md:text-left md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    5 - 7 Working Days
+                  </td>
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-right md:text-left md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    £10.95 - £13.95
+                  </td>
+                </tr>
+                <tr class="block md:table-row border-b border-gray-200">
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-s font-medium md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    Argentina, Brazil, Mexico, Rest of Central and South America
+                  </td>
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-right md:text-left md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    5 - 7 Working Days
+                  </td>
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-right md:text-left md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    £10.95
+                  </td>
+                </tr>
+                <tr class="block md:table-row border-b border-gray-200">
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-s font-medium md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    Kenya, Nigeria, Pakistan, South Africa, Rest of Africa,
+                    Asia, Rest of Middle East
+                  </td>
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-right md:text-left md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    5 - 7 Working Days
+                  </td>
+                  <td
+                    class="block md:table-cell py-3.5 px-5 text-sm text-right md:text-left md:before:content-none before:content-[attr(data-label)] before:float-left before:font-medium before:uppercase before:text-xs before:text-s"
+                  >
+                    £11.95 - £15.95
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-6 text-t font-bold">
+        *Times shown are for delivery after dispatch. Production times vary by
+        prescription and lens type.
+      </p>
+    </div>
+
+    <!-- Customs Information Section -->
+    <div class="mb-16 relative bg-white p-8 border border-gray-100 shadow-sm">
+      <div
+        class="hidden lg:block absolute -bottom-6 -left-6 w-32 h-32 border-b border-l border-gray-200 -z-10"
+      ></div>
+
+      <h3 class="text-xl font-light text-s mb-6 font-serif">
+        Important Customs Information
+      </h3>
+
+      <p class="text-t mb-4">
+        <span class="font-bold">Note:</span> Customs charges
+        <span class="font-bold">are not</span> covered for certain countries
+        within our shipping regions. This includes the following:
+      </p>
+
+      <div class="py-4 px-6 bg-l border-l-2 border-s">
+        <p class="text-t">
+          Belgium, Bulgaria, Croatia, Czech Republic, Denmark, Estonia, Finland,
+          Gibraltar, Greece, Hungary, Italy, Latvia, Lithuania, Netherlands,
+          Poland, Russia, Serbia, Slovakia, Slovenia, Sweden, Ukraine
+        </p>
+      </div>
+
+      <div class="mt-8 p-6 bg-white border border-gray-200 rounded-sm">
+        <p class="text-t font-bold mb-2">Need Assistance?</p>
+        <p class="text-t">
+          If you're unsure whether customs charges apply to your country or have
+          any questions about the information above, we're here to help! Feel
+          free to email us at
+          <a
+            href="mailto:contact@jpopticians.com"
+            class="text-s hover:text-b transition-colors duration-200 border-b border-s hover:border-b"
+            >contact@jpopticians.com</a
+          >
+          or call our friendly team on
+          <a
+            href="tel:01513030066"
+            class="text-s hover:text-b transition-colors duration-200 border-b border-s hover:border-b"
+            ><strong>0151 303 0066</strong></a
+          >.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Modal scripts kept intact
+  function openStockFramesModal() {
+    document.getElementById("stockFramesModal").classList.remove("hidden");
+  }
+  function closeStockFramesModal() {
+    document.getElementById("stockFramesModal").classList.add("hidden");
+  }
+  function openNonPrescriptionLensesModal() {
+    document
+      .getElementById("nonPrescriptionLensesModal")
+      .classList.remove("hidden");
+  }
+  function closeNonPrescriptionLensesModal() {
+    document
+      .getElementById("nonPrescriptionLensesModal")
+      .classList.add("hidden");
+  }
+  function openStockLensesModal() {
+    document.getElementById("stockLensesModal").classList.remove("hidden");
+  }
+  function closeStockLensesModal() {
+    document.getElementById("stockLensesModal").classList.add("hidden");
+  }
+  function openSpecialistLensesModal() {
+    document.getElementById("specialistLensesModal").classList.remove("hidden");
+  }
+  function closeSpecialistLensesModal() {
+    document.getElementById("specialistLensesModal").classList.add("hidden");
+  }
+  function openDesignerModal() {
+    document.getElementById("designerModal").classList.remove("hidden");
+  }
+  function closeDesignerModal() {
+    document.getElementById("designerModal").classList.add("hidden");
+  }
+</script>

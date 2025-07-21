@@ -1,0 +1,86 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script
+    defer
+    src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.6/dist/cdn.min.js"
+    defer
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            p: "#333333",
+            s: "#333333",
+            l: "#f5f5f5",
+            t: "#666666",
+            a: "#75A53B",
+            b: "#B399EF",
+            gr: "#D6d6d6",
+          },
+          screens: {
+            xxsm: "420px",
+            xxxsm: "360px",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<div>
+  <div
+    class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-0 items-end pb-4 md:pb-0"
+  >
+    <!-- Image Column (4 images) -->
+    <div class="col-span-1 md:col-span-4">
+      <!-- Main Images -->
+      <div class="grid grid-cols-4 gap-0">
+        <div class="w-full h-48 md:h-full">
+          <a href="/delivery">
+            <img
+              src="https://www.spex4less.com/media/wysiwyg/jpoimages/faqbanner.png"
+              alt="FAQs"
+              class="w-full h-full object-cover"
+            />
+          </a>
+        </div>
+        <div class="w-full h-48 md:h-full">
+          <a href="/lens-guide">
+            <img
+              src="https://www.spex4less.com/media/wysiwyg/jpoimages/lensesbanner.png"
+              alt="Lens Info"
+              class="w-full h-full object-cover"
+            />
+          </a>
+        </div>
+        <div class="w-full h-48 md:h-full">
+          <a href="/delivery-info-jp">
+            <img
+              src="https://www.spex4less.com/media/wysiwyg/jpoimages/deliverybanner.png"
+              alt="Delivery Info"
+              class="w-full h-full object-cover"
+            />
+          </a>
+        </div>
+        <div class="w-full h-48 md:h-full">
+          <a href="/delivery-info-jp">
+            <img
+              src="https://www.spex4less.com/media/wysiwyg/jpoimages/contactusbanner.png"
+              alt="Contact Us"
+              class="w-full h-full object-cover"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -273,10 +273,10 @@
                       understanding of how to measure your face and choose the
                       most flattering frame size, please visit our
                       <a
-                        href="/choosing-the-right-size-glasses"
+                        href="{{store direct_url="choosing-the-right-size-glasses"}}"
                         target="_blank"
                         class="text-blue-600 hover:text-blue-800"
-                        >Size Guide page</a
+                      >Size Guide page</a
                       >. This guide will provide you with all the information
                       you need to find the perfect size for your frames.
                     </p>
@@ -774,7 +774,7 @@
                       </li>
                     </ul>
                     <p class="mt-4 text-black">
-                      Frame color isn’t just a matter of personal taste but also
+                      Frame color isn't just a matter of personal taste but also
                       functionality. Some colors may be better suited for
                       certain settings or times of day. Consulting with an
                       eyewear specialist can provide personalized advice to
@@ -783,7 +783,7 @@
                     </p>
                     <p class="mt-4">
                       <a
-                        href="/how-to-choose-the-right-colour-frames"
+                        href="{{store direct_url="how-to-choose-the-right-colour-frames"}}"
                         class="text-blue-600 hover:text-blue-800"
                       >
                         Learn more
@@ -1068,7 +1068,7 @@
           getGenderQueryParam() {
             if (this.selectedGender) {
               return `a1_frame_gender%5B0%5D=${encodeURIComponent(
-                this.selectedGender,
+                this.selectedGender
               )}`;
             }
             return "";
@@ -1079,7 +1079,7 @@
               return this.recommendedStyles
                 .map(
                   (style, index) =>
-                    `a1_frame_style%5B${index}%5D=${encodeURIComponent(style)}`,
+                    `a1_frame_style%5B${index}%5D=${encodeURIComponent(style)}`
                 )
                 .join("&");
             }
@@ -1101,7 +1101,7 @@
             return this.selectedColors
               .map(
                 (color, index) =>
-                  `color%5B${index}%5D=${encodeURIComponent(color)}`,
+                  `color%5B${index}%5D=${encodeURIComponent(color)}`
               )
               .join("&");
           },

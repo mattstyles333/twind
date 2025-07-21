@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags and viewport settings -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- External Scripts -->
+    <script
+      defer
+      src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.6/dist/cdn.min.js"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              p: "#333333",
+              s: "#333333",
+              l: "#f5f5f5",
+              t: "#666666",
+              a: "#75A53B",
+              b: "#B399EF",
+              gr: "#D6d6d6",
+            },
+            screens: {
+              xxsm: "420px",
+              xxxsm: "360px",
+            },
+            fontFamily: {
+              serif: ['"Cormorant Garamond"', 'serif'],
+              sans: ['Montserrat', 'sans-serif']
+            }
+          },
+        },
+      };
+    </script>
+
+    <!-- Glide.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css"
+    />
+
+    <!-- Custom Styles -->
+    <style>
+      /* Image Styles */
+      .glide__slide img {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+      }
+      .card-image {
+        height: 600px;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+      .card-container:hover .card-image {
+        transform: scale(1.02);
+      }
+      .card-container {
+        overflow: hidden;
+      }
+
+      /* Contact Form Styles */
+      .luxury-input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #d6d6d6;
+        border-radius: 0;
+        padding-left: 0;
+        padding-right: 0;
+        transition: all 0.3s ease;
+      }
+      .luxury-input:focus {
+        border-color: #b399ef;
+        box-shadow: none;
+      }
+      .luxury-btn {
+        position: relative;
+        overflow: hidden;
+      }
+      .luxury-btn::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: currentColor;
+        transition: width 0.5s ease;
+      }
+      .luxury-btn:hover::after {
+        width: 100%;
+      }
+
+      /* Utility Styles */
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .animate-fade-in {
+        animation: fadeIn 1.5s ease-in-out;
+        animation-fill-mode: both;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .luxury-border::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+        width: 80%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #333333, transparent);
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(1rem);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 1s ease-out forwards;
+      }
+    </style>
+  </head>
+  <body>
+    <div x-data="{ open: false }" class="bg-white">
+      <a @click="open = ! open" class="flex justify-between align-middle cursor-pointer group lg:cursor-default">
+        <h4 class="uppercase font-bold text-s group-hover:underline lg:group-hover:no-underline font-serif tracking-wider">
+          Shop
+        </h4>
+        <span class="transition-transform" :class="{ 'rotate-180': open }">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="text-t stroke-current lg:hidden" width="24" height="24" role="img">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"></path>
+            <title>chevron-down</title>
+          </svg>
+        </span>
+      </a>
+      <ul class="flex-col gap-4 mt-4 mb-6 lg:flex hidden" :class="{ 'cmsb68-flex': open, 'cmsb68-hidden': ! open }">
+        <li>
+          <a href="/glasses" class="hover:text-b transition-colors duration-300 text-t font-light">
+            Glasses
+          </a>
+        </li>
+        <li>
+          <a href="/sunglasses" class="hover:text-b transition-colors duration-300 text-t font-light">
+            Sunglasses
+          </a>
+        </li>
+        <li>
+          <a href="/varifocal-glasses" class="hover:text-b transition-colors duration-300 text-t font-light">
+            Varifocal Glasses
+          </a>
+        </li>
+        <li>
+          <a href="/reglaze-customer-frames" class="hover:text-b transition-colors duration-300 text-t font-light">
+            Reglaze
+          </a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

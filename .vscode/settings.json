@@ -1,0 +1,36 @@
+{
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit"
+    },
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.autoClosingQuotes": "always",
+    "editor.autoSave": "onWindowChange",
+    "files.autoSave": "onWindowChange",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.eol": "\n",
+
+    // Prettier setup
+
+    "prettier.tailwindConfig": "./tailwind.config.js",
+
+    // Tailwind CSS IntelliSense
+    "tailwindCSS.includeLanguages": {
+      "plaintext": "html",
+      "javascript": "javascript",
+      "javascriptreact": "javascriptreact",
+      "typescript": "typescript",
+      "typescriptreact": "typescriptreact"
+    },
+    "tailwindCSS.experimental.classRegex": [
+      "tw`([^`]*)", // tw`...`
+      "tw=\"([^\"]*)", // tw="..."
+      "tw={\"([^\"}]*)", // tw={"..."}
+      "className=\"([^\"]*)", // className="..."
+      "class=\"([^\"]*)", // class="..."
+      "cn\\(([^)]*)\\)" // tailwind-variants or clsx/cn helper
+    ]
+  }

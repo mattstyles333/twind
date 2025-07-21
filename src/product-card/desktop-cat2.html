@@ -78,7 +78,7 @@
     <div class="hidden max-w-full px-3 py-4 md:flex md:space-x-4">
       <!-- Designer Glasses -->
       <a
-        href="/designer-glasses"
+        href="{{store direct_url="designer-glasses"}}"
         class="flex items-center space-x-2 rounded-full border border-transparent bg-white px-5 py-1.5 text-sm text-gray-700 shadow-md transition duration-700 ease-in-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl md:text-base lg:text-lg"
       >
         <span>Ray-Ban</span>
@@ -86,7 +86,7 @@
 
       <!-- Rx Sunglasses -->
       <a
-        href="/sunglasses"
+        href="{{store direct_url="sunglasses"}}"
         class="flex items-center space-x-2 rounded-full border border-transparent bg-white px-5 py-1.5 text-sm text-gray-700 shadow-md transition duration-700 ease-in-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl md:text-base lg:text-lg"
       >
         <span>Round Glasses</span>
@@ -94,7 +94,7 @@
 
       <!-- On Sale -->
       <a
-        href="/varifocal-glasses"
+        href="{{store direct_url="varifocal-glasses"}}"
         class="flex items-center space-x-2 rounded-full border border-transparent bg-white px-5 py-1.5 text-sm text-gray-700 shadow-md transition duration-700 ease-in-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl md:text-base lg:text-lg"
       >
         <span>Varifocal Glasses</span>
@@ -102,7 +102,7 @@
 
       <!-- Bestsellers -->
       <a
-        href="/glasses-bestsellers"
+        href="{{store direct_url="glasses-bestsellers"}}"
         class="flex items-center space-x-2 rounded-full border border-transparent bg-white px-5 py-1.5 text-sm text-gray-700 shadow-md transition duration-700 ease-in-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl md:text-base lg:text-lg"
       >
         <span>Bestsellers</span>
@@ -110,7 +110,7 @@
 
       <!-- Ray-Ban -->
       <a
-        href="/ray-ban-glasses"
+        href="{{store direct_url="ray-ban-glasses"}}"
         class="flex items-center space-x-2 rounded-full border border-transparent bg-white px-5 py-1.5 text-sm text-gray-700 shadow-md transition duration-700 ease-in-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl md:text-base lg:text-lg"
       >
         <span>Black Glasses</span>
@@ -118,7 +118,7 @@
 
       <!-- Oakley -->
       <a
-        href="/oakley-glasses"
+        href="{{store direct_url="oakley-glasses"}}"
         class="flex items-center space-x-2 rounded-full border border-transparent bg-white px-5 py-1.5 text-sm text-gray-700 shadow-md transition duration-700 ease-in-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl md:text-base lg:text-lg"
       >
         <span>Oakley</span>
@@ -208,7 +208,7 @@
       });
     </script>
     <div class="items-center pl-3 text-base">
-      <a href="#" class="text-blue-600 hover:underline">Clear All</a>
+      <a href="{{store direct_url="clear-all"}}" class="text-blue-600 hover:underline">Clear All</a>
       <div class="flex flex-wrap gap-2">
         <div class="flex items-center gap-2">
           <span class="text-gray-700">Gender Womens</span>
@@ -2601,8 +2601,6 @@
               class="absolute inset-0 bg-white bg-opacity-75"
             ></div>
           </div>
-
-          <!-- Second Product Card (for demonstration) -->
           <div
             x-data="{ loading: false }"
             @click="loading = true; setTimeout(() => { window.location.href = 'file:///home/james/Documents/code/twind/src/product-page/v20-stock.html'; }, 1000)"

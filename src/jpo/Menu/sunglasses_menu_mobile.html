@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      defer
+      src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.9.6/dist/cdn.min.js"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              p: "#333333",
+              s: "#333333",
+              l: "#f5f5f5",
+              t: "#666666",
+              a: "#75A53B",
+              b: "#B399EF",
+              gr: "#D6d6d6",
+            },
+            screens: {
+              xxsm: "420px",
+              xxxsm: "360px",
+            },
+            animation: {
+              "fade-in": "fadeIn 0.5s ease-in-out",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white">
+    <div class="container mx-auto max-w-7xl px-4 py-4">
+      <!-- Main Title -->
+      <h2 class="text-base font-medium text-gray-800 mb-3">
+        Shop Designer Sunglasses
+      </h2>
+
+      <!-- Quick Links -->
+      <div class="flex flex-col md:flex-row gap-3 mb-3">
+        <a href="/designer-sunglasses/mens" class="flex-1">
+          <div
+            class="bg-white hover:bg-gray-50 p-2.5 text-center text-sm font-medium border border-gray-200 rounded transition-all duration-200"
+          >
+            Shop Mens
+          </div>
+        </a>
+        <a href="/designer-sunglasses" class="flex-1">
+          <div
+            class="bg-white hover:bg-gray-50 p-2.5 text-center text-sm font-medium border border-gray-200 rounded transition-all duration-200"
+          >
+            Shop All
+          </div>
+        </a>
+        <a href="/designer-sunglasses/womens" class="flex-1">
+          <div
+            class="bg-white hover:bg-gray-50 p-2.5 text-center text-sm font-medium border border-gray-200 rounded transition-all duration-200"
+          >
+            Shop Womens
+          </div>
+        </a>
+      </div>
+
+      <!-- Brands Section -->
+      <div class="mb-3">
+        <h3 class="text-sm font-medium text-gray-800 mb-2">Shop by Brands</h3>
+        <!-- Brands Grid -->
+        <div class="grid grid-cols-3 sm:grid-cols-4 gap-1.5 mb-3">
+          <a href="/designer-sunglasses/calvin-klein" class="group">
+            <div
+              class="bg-gray-50 hover:bg-gray-100 rounded p-2 text-center transition-all duration-200 h-[45px] flex items-center justify-center"
+            >
+              <span
+                class="text-[10px] sm:text-xs font-medium text-gray-700 group-hover:text-gray-900 truncate block w-full"
+                >Calvin Klein</span
+              >
+            </div>
+          </a>
+          <a href="/designer-sunglasses/boss" class="group">
+            <div
+              class="bg-gray-50 hover:bg-gray-100 rounded p-2 text-center transition-all duration-200 h-[45px] flex items-center justify-center"
+            >
+              <span
+                class="text-[10px] sm:text-xs font-medium text-gray-700 group-hover:text-gray-900 truncate block w-full"
+                >Boss</span
+              >
+            </div>
+          </a>
+          <a href="/designer-sunglasses/nike" class="group">
+            <div
+              class="bg-gray-50 hover:bg-gray-100 rounded p-2 text-center transition-all duration-200 h-[45px] flex items-center justify-center"
+            >
+              <span
+                class="text-[10px] sm:text-xs font-medium text-gray-700 group-hover:text-gray-900 truncate block w-full"
+                >Nike</span
+              >
+            </div>
+          </a>
+          <a href="/designer-sunglasses/polaroid" class="group">
+            <div
+              class="bg-gray-50 hover:bg-gray-100 rounded p-2 text-center transition-all duration-200 h-[45px] flex items-center justify-center"
+            >
+              <span
+                class="text-[10px] sm:text-xs font-medium text-gray-700 group-hover:text-gray-900 truncate block w-full"
+                >Polaroid</span
+              >
+            </div>
+          </a>
+          <a href="/designer-sunglasses/michael-kors" class="group">
+            <div
+              class="bg-gray-50 hover:bg-gray-100 rounded p-2 text-center transition-all duration-200 h-[45px] flex items-center justify-center"
+            >
+              <span
+                class="text-[10px] sm:text-xs font-medium text-gray-700 group-hover:text-gray-900 truncate block w-full"
+                >Michael Kors</span
+              >
+            </div>
+          </a>
+          <a href="/designer-sunglasses/emporio-armani" class="group">
+            <div
+              class="bg-gray-50 hover:bg-gray-100 rounded p-2 text-center transition-all duration-200 h-[45px] flex items-center justify-center"
+            >
+              <span
+                class="text-[10px] sm:text-xs font-medium text-gray-700 group-hover:text-gray-900 truncate block w-full"
+                >Armani</span
+              >
+            </div>
+          </a>
+          <a href="/designer-sunglasses/carrera" class="group">
+            <div
+              class="bg-gray-50 hover:bg-gray-100 rounded p-2 text-center transition-all duration-200 h-[45px] flex items-center justify-center"
+            >
+              <span
+                class="text-[10px] sm:text-xs font-medium text-gray-700 group-hover:text-gray-900 truncate block w-full"
+                >Carrera</span
+              >
+            </div>
+          </a>
+          <a href="/designer-sunglasses/vogue-eyewear" class="group">
+            <div
+              class="bg-gray-50 hover:bg-gray-100 rounded p-2 text-center transition-all duration-200 h-[45px] flex items-center justify-center"
+            >
+              <span
+                class="text-[10px] sm:text-xs font-medium text-gray-700 group-hover:text-gray-900 truncate block w-full"
+                >Vogue Eyewear</span
+              >
+            </div>
+          </a>
+          <a href="/designer-sunglasses/botaniq" class="group">
+            <div
+              class="bg-gray-50 hover:bg-gray-100 rounded p-2 text-center transition-all duration-200 h-[45px] flex items-center justify-center"
+            >
+              <span
+                class="text-[10px] sm:text-xs font-medium text-gray-700 group-hover:text-gray-900 truncate block w-full"
+                >Botaniq</span
+              >
+            </div>
+          </a>
+          <a href="/designer-sunglasses/kate-spade" class="group">
+            <div
+              class="bg-gray-50 hover:bg-gray-100 rounded p-2 text-center transition-all duration-200 h-[45px] flex items-center justify-center"
+            >
+              <span
+                class="text-[10px] sm:text-xs font-medium text-gray-700 group-hover:text-gray-900 truncate block w-full"
+                >Kate Spade</span
+              >
+            </div>
+          </a>
+          <a href="/designer-sunglasses/missoni" class="group">
+            <div
+              class="bg-gray-50 hover:bg-gray-100 rounded p-2 text-center transition-all duration-200 h-[45px] flex items-center justify-center"
+            >
+              <span
+                class="text-[10px] sm:text-xs font-medium text-gray-700 group-hover:text-gray-900 truncate block w-full"
+                >Missoni</span
+              >
+            </div>
+          </a>
+          <a href="/designer-sunglasses/tommy-hilfiger" class="group">
+            <div
+              class="bg-gray-50 hover:bg-gray-100 rounded p-2 text-center transition-all duration-200 h-[45px] flex items-center justify-center"
+            >
+              <span
+                class="text-[10px] sm:text-xs font-medium text-gray-700 group-hover:text-gray-900 truncate block w-full"
+                >Tommy Hilfiger</span
+              >
+            </div>
+          </a>
+          <a href="/designer-sunglasses/oneill" class="group">
+            <div
+              class="bg-gray-50 hover:bg-gray-100 rounded p-2 text-center transition-all duration-200 h-[45px] flex items-center justify-center"
+            >
+              <span
+                class="text-[10px] sm:text-xs font-medium text-gray-700 group-hover:text-gray-900 truncate block w-full"
+                >O'Neill</span
+              >
+            </div>
+          </a>
+          <a href="/designer-sunglasses/under-armour" class="group">
+            <div
+              class="bg-gray-50 hover:bg-gray-100 rounded p-2 text-center transition-all duration-200 h-[45px] flex items-center justify-center"
+            >
+              <span
+                class="text-[10px] sm:text-xs font-medium text-gray-700 group-hover:text-gray-900 truncate block w-full"
+                >Under Armour</span
+              >
+            </div>
+          </a>
+          <a href="/designer-sunglasses/mulberry" class="group">
+            <div
+              class="bg-gray-50 hover:bg-gray-100 rounded p-2 text-center transition-all duration-200 h-[45px] flex items-center justify-center"
+            >
+              <span
+                class="text-[10px] sm:text-xs font-medium text-gray-700 group-hover:text-gray-900 truncate block w-full"
+                >Mulberry</span
+              >
+            </div>
+          </a>
+        </div>
+        <!-- Shop All Brands Button -->
+        <a href="/designer-sunglasses" class="block w-full">
+          <div
+            class="bg-white hover:bg-gray-50 p-2 text-center text-xs font-medium border border-gray-200 rounded transition-all duration-200"
+          >
+            Shop All Brands
+          </div>
+        </a>
+      </div>
+
+      <!-- Featured Images -->
+      <div class="flex w-full">
+        <a href="/designer-sunglasses/ray-ban" class="w-1/3">
+          <div class="group relative overflow-hidden">
+            <img
+              src="https://www.spex4less.com/media/wysiwyg/jpoimages/sunrayban.png"
+              alt="Ray-Ban"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+            <div
+              class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent z-10"
+            ></div>
+            <div
+              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 w-28 h-7"
+            >
+              <img
+                src="https://www.spex4less.com/media/wysiwyg/jpoimages/raybanlogo.png"
+                alt="Ray-Ban Logo"
+                class="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </a>
+        <a href="/designer-sunglasses/oakley" class="w-1/3">
+          <div class="group relative overflow-hidden">
+            <img
+              src="https://www.spex4less.com/media/wysiwyg/jpoimages/sunoakley.png"
+              alt="Oakley"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+            <div
+              class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent z-10"
+            ></div>
+            <div
+              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 w-20 h-5"
+            >
+              <img
+                src="https://www.spex4less.com/media/wysiwyg/jpoimages/oakleylogo.png"
+                alt="Oakley Logo"
+                class="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </a>
+        <a href="/designer-sunglasses/tom-ford" class="w-1/3">
+          <div class="group relative overflow-hidden">
+            <img
+              src="https://www.spex4less.com/media/wysiwyg/jpoimages/suntf.png"
+              alt="Tom Ford"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+            <div
+              class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent z-10"
+            ></div>
+            <div
+              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 w-20 h-5"
+            >
+              <img
+                src="https://www.spex4less.com/media/wysiwyg/jpoimages/tflogo.png"
+                alt="Tom Ford Logo"
+                class="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

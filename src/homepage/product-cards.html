@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Understanding Varifocals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              p: "#1f2937",
+              s: "#1E3A8A",
+              l: "#f3f4f6",
+              t: "#5494EC",
+              a: "#f97316",
+              b: "#2563eb",
+              gr: "#6b7280",
+            },
+            screens: {
+              xxsm: "420px",
+              xxxsm: "360px",
+            },
+          },
+        },
+      };
+    </script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+</html>
+<section class="min-h-screen p-4 bg-l">
+  <div class="container px-4 mx-auto">
+    <!-- Heading -->
+    <h2
+      class="pt-10 pb-4 text-2xl font-semibold leading-tight tracking-tight text-center text-slate-800 md:text-4xl"
+    >
+      Prescription Sunglasses
+    </h2>
+
+    <!-- First Row of Products -->
+    <div class="grid grid-cols-1 gap-2 mb-8 md:grid-cols-2 lg:grid-cols-4">
+      <!-- Product Card 1 -->
+      <a
+        href="/sunglasses/ray-ban/rb2140"
+        class="flex flex-col items-center w-full max-w-[350px] mx-auto mb-4"
+      >
+        <div
+          class="flex flex-col items-center w-full p-3 bg-white border border-nordic-accent h-[450px]"
+        >
+          <div
+            class="relative flex items-center justify-center flex-1 w-full group"
+            style="min-height: 250px; height: 250px"
+          >
+            <div class="flex items-center justify-center w-full h-full">
+              <img
+                src="https://spex4less.com/media/wysiwyg/homepageimages/cardimages/rbsun_front.png"
+                alt="Classic Round"
+                class="object-contain w-[250px] h-[250px] mx-auto transition-opacity duration-300 group-hover:opacity-0"
+              />
+              <img
+                src="https://spex4less.com/media/wysiwyg/homepageimages/cardimages/rb2140_model.png"
+                alt="Classic Round Hover"
+                class="object-contain w-[250px] h-[250px] mx-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              />
+            </div>
+            <div
+              class="absolute z-10 flex justify-center w-full transition-opacity duration-300 -translate-x-1/2 opacity-0 bottom-8 left-1/2 group-hover:opacity-100"
+            >
+              <div
+                class="flex gap-2 px-3 py-0.5 rounded-full bg-l shadow text-nordic-dark text-xs font-medium tracking-wide border border-nordic-accent/20 justify-center items-center"
+              >
+                <span class="px-2 py-0.5 flex items-center justify-center h-5"
+                  >M</span
+                >
+                <span class="px-2 py-0.5 flex items-center justify-center h-5"
+                  >L</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="w-full mt-6 text-center">
+            <div class="flex items-center justify-center gap-2 pb-4">
+              <img
+                src="https://spex4less.com/media/wysiwyg/logos/rayban_logo_1_.png"
+                alt="Ray-Ban Logo"
+                class="object-contain w-auto h-12"
+              />
+            </div>
+            <p class="text-black text-lg tracking-wide mt-0.5 pb-2">Wayfarer</p>
+            <p class="text-black text-xs tracking-wide mt-0.5 pb-4">RB2140</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Product Card 2 -->
+      <a
+        href="/sunglasses/oakley/oo9242"
+        class="flex flex-col items-center w-full max-w-[350px] mx-auto mb-4"
+      >
+        <div
+          class="flex flex-col items-center w-full p-3 bg-white border border-nordic-accent h-[450px]"
+        >
+          <div
+            class="relative flex items-center justify-center flex-1 w-full group"
+            style="min-height: 250px; height: 250px"
+          >
+            <div class="flex items-center justify-center w-full h-full">
+              <img
+                src="https://spex4less.com/media/wysiwyg/homepageimages/cardimages/OOSUN_front.png"
+                alt="Wayfarer"
+                class="object-contain w-[250px] h-[250px] mx-auto transition-opacity duration-300 group-hover:opacity-0"
+              />
+              <img
+                src="https://spex4less.com/media/wysiwyg/homepageimages/cardimages/OO9242_side.png"
+                alt="Wayfarer Hover"
+                class="object-contain w-[250px] h-[250px] mx-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              />
+            </div>
+            <div
+              class="absolute z-10 flex justify-center w-full transition-opacity duration-300 -translate-x-1/2 opacity-0 bottom-8 left-1/2 group-hover:opacity-100"
+            >
+              <div
+                class="flex gap-2 px-3 py-0.5 rounded-full bg-l shadow text-nordic-dark text-xs font-medium tracking-wide border border-nordic-accent/20 justify-center items-center"
+              >
+                <span class="px-2 py-0.5 flex items-center justify-center h-5"
+                  >M/L</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="w-full mt-6 text-center">
+            <div class="flex items-center justify-center gap-2 pb-4">
+              <img
+                src="https://spex4less.com/media/wysiwyg/logos/oakley.png"
+                alt="Oakley Logo"
+                class="object-contain w-auto max-h-10"
+              />
+            </div>
+            <p class="text-black text-lg tracking-wide mt-0.5 pb-2">HSTN</p>
+            <p class="text-black text-xs tracking-wide mt-0.5 pb-4">OO9242</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Product Card 3 -->
+      <a
+        href="/sunglasses/gucci/gg0024s"
+        class="flex flex-col items-center w-full max-w-[350px] mx-auto mb-4"
+      >
+        <div
+          class="flex flex-col items-center w-full p-3 bg-white border border-nordic-accent h-[450px]"
+        >
+          <div
+            class="relative flex items-center justify-center flex-1 w-full group"
+            style="min-height: 250px; height: 250px"
+          >
+            <div class="flex items-center justify-center w-full h-full -mt-10">
+              <img
+                src="https://spex4less.com/media/wysiwyg/homepageimages/cardimages/0024s_front.png"
+                alt="Aviator"
+                class="object-contain w-[250px] h-[250px] mx-auto transition-opacity duration-300 group-hover:opacity-0"
+              />
+              <img
+                src="https://spex4less.com/media/wysiwyg/homepageimages/cardimages/gucci_model.png"
+                alt="Aviator Hover"
+                class="object-contain w-[250px] h-[250px] mx-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              />
+            </div>
+            <div
+              class="absolute z-10 flex justify-center w-full transition-opacity duration-300 -translate-x-1/2 opacity-0 bottom-8 left-1/2 group-hover:opacity-100"
+            >
+              <div
+                class="flex gap-2 px-3 py-0.5 rounded-full bg-l shadow text-nordic-dark text-xs font-medium tracking-wide border border-nordic-accent/20 justify-center items-center"
+              >
+                <span class="px-2 py-0.5 flex items-center justify-center h-5"
+                  >M</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="w-full mt-6 text-center">
+            <div class="flex items-center justify-center gap-2 pb-4">
+              <img
+                src="https://spex4less.com/media/wysiwyg/logos/gucci_logo.png"
+                alt="Gucci Logo"
+                class="object-contain w-5/12 h-auto"
+              />
+            </div>
+
+            <p class="text-black text-xs tracking-wide mt-0.5 pb-4">GG0024S</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Product Card 4 -->
+      <a
+        href="/sunglasses/barcelona-dg3588-sunglasses"
+        class="flex flex-col items-center w-full max-w-[350px] mx-auto mb-4"
+      >
+        <div
+          class="flex flex-col items-center w-full p-3 bg-white border border-nordic-accent h-[450px]"
+        >
+          <div
+            class="relative flex items-center justify-center flex-1 w-full group"
+            style="min-height: 250px; height: 250px"
+          >
+            <div class="flex items-center justify-center w-full h-full">
+              <img
+                src="https://spex4less.com/media/wysiwyg/homepageimages/cardimages/barcelona_front1.png"
+                alt="Round Metal"
+                class="object-contain w-[250px] h-[250px] mx-auto transition-opacity duration-300 group-hover:opacity-0"
+              />
+              <img
+                src="https://spex4less.com/media/wysiwyg/homepageimages/cardimages/barcelona_side.png"
+                alt="Round Metal Hover"
+                class="object-contain w-[250px] h-[250px] mx-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              />
+            </div>
+            <div
+              class="absolute z-10 flex justify-center w-full transition-opacity duration-300 -translate-x-1/2 opacity-0 bottom-8 left-1/2 group-hover:opacity-100"
+            >
+              <div
+                class="flex gap-2 px-3 py-0.5 rounded-full bg-l shadow text-nordic-dark text-xs font-medium tracking-wide border border-nordic-accent/20 justify-center items-center"
+              >
+                <span class="px-2 py-0.5 flex items-center justify-center h-5"
+                  >M</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="w-full mt-6 text-center">
+            <div class="flex items-center justify-center gap-2 pb-4">
+              <img
+                src="https://spex4less.com/media/wysiwyg/logos/stock_logo.png"
+                alt="2025 Collection"
+                class="object-contain w-auto max-h-10"
+              />
+            </div>
+            <p class="text-black text-lg tracking-wide mt-0.5 pb-2">
+              Barcelona
+            </p>
+            <p class="text-black text-xs tracking-wide mt-0.5 pb-4">DG3588</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- First Row See More Button -->
+    <div class="flex justify-center gap-4 px-2 mb-12">
+      <a
+        href="/designer-sunglasses/mens"
+        class="flex items-center justify-center w-48 h-12 px-2 transition-all duration-200 border rounded-lg bg-s border-s hover:bg-black group"
+      >
+        <span
+          class="text-xl font-semibold leading-tight tracking-tight text-white transition-all duration-200 group-hover:text-white"
+          >Shop Mens</span
+        >
+      </a>
+      <a
+        href="/designer-sunglasses/womens"
+        class="flex items-center justify-center w-48 h-12 px-2 transition-all duration-200 border rounded-lg bg-s border-s hover:bg-black group"
+      >
+        <span
+          class="text-xl font-semibold leading-tight tracking-tight text-white transition-all duration-200 group-hover:text-white"
+          >Shop Womens</span
+        >
+      </a>
+    </div>
+
+    <!-- Glasses Heading -->
+    <h2
+      class="pt-10 pb-4 text-2xl font-semibold leading-tight tracking-tight text-center text-slate-800 md:text-4xl"
+    >
+      Prescription Glasses
+    </h2>
+
+    <!-- Second Row of Products -->
+    <div
+      class="grid grid-cols-1 gap-4 mb-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+    >
+      <!-- Product Card 5 -->
+      <a
+        href="/designer-glasses/tom-ford/ft-5294-tom-ford-glasses"
+        class="flex flex-col items-center w-full max-w-[450px] mx-auto mb-4"
+      >
+        <div
+          class="flex flex-col items-center w-full p-3 bg-white border border-nordic-accent h-[450px]"
+        >
+          <div
+            class="relative flex items-center justify-center flex-1 w-full group"
+            style="min-height: 250px; height: 250px"
+          >
+            <div class="flex items-center justify-center w-full h-full -mt-4">
+              <img
+                src="https://spex4less.com/media/wysiwyg/homepageimages/cardimages/ft_front.png"
+                alt="Cat Eye"
+                class="object-contain w-[250px] h-[250px] mx-auto transition-opacity duration-300 group-hover:opacity-0"
+              />
+              <img
+                src="https://spex4less.com/media/wysiwyg/homepageimages/cardimages/ft5294_model.png"
+                alt="Cat Eye Hover"
+                class="object-contain w-[250px] h-[250px] mx-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              />
+            </div>
+            <div
+              class="absolute z-10 flex justify-center w-full transition-opacity duration-300 -translate-x-1/2 opacity-0 bottom-8 left-1/2 group-hover:opacity-100"
+            >
+              <div
+                class="flex gap-2 px-3 py-0.5 rounded-full bg-l shadow text-nordic-dark text-xs font-medium tracking-wide border border-nordic-accent/20 justify-center items-center"
+              >
+                <span class="px-2 py-0.5 flex items-center justify-center h-5"
+                  >S</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="w-full mt-6 text-center">
+            <div class="flex items-center justify-center gap-2 pb-4">
+              <img
+                src="https://spex4less.com/media/wysiwyg/logos/tomford_logo.png"
+                alt="Tom Ford Logo"
+                class="object-contain w-auto max-h-10"
+              />
+            </div>
+            <p class="text-black text-lg tracking-wide mt-0.5 pb-4">FT5294</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Product Card 6 -->
+      <a
+        href="/designer-glasses/oakley/ox5152"
+        class="flex flex-col items-center w-full max-w-[350px] mx-auto mb-4"
+      >
+        <div
+          class="flex flex-col items-center w-full p-3 bg-white border border-nordic-accent h-[450px]"
+        >
+          <div
+            class="relative flex items-center justify-center flex-1 w-full group"
+            style="min-height: 250px; height: 250px"
+          >
+            <div class="flex items-center justify-center w-full h-full">
+              <img
+                src="https://spex4less.com/media/wysiwyg/homepageimages/cardimages/O5152_front.png"
+                alt="Oversized"
+                class="object-contain w-[250px] h-[250px] mx-auto transition-opacity duration-300 group-hover:opacity-0"
+              />
+              <img
+                src="https://sadmx.spex4less.com/media/wysiwyg/homepageimages/cardimages/O5152_model.png"
+                alt="Oversized Hover"
+                class="object-contain w-[250px] h-[250px] mx-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              />
+            </div>
+            <div
+              class="absolute z-10 flex justify-center w-full transition-opacity duration-300 -translate-x-1/2 opacity-0 bottom-8 left-1/2 group-hover:opacity-100"
+            >
+              <div
+                class="flex gap-2 px-3 py-0.5 rounded-full bg-l shadow text-nordic-dark text-xs font-medium tracking-wide border border-nordic-accent/20 justify-center items-center"
+              >
+                <span class="px-2 py-0.5 flex items-center justify-center h-5"
+                  >M</span
+                >
+                <span class="px-2 py-0.5 flex items-center justify-center h-5"
+                  >L</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="w-full mt-6 text-center">
+            <div class="flex items-center justify-center gap-2 pb-4">
+              <img
+                src="https://spex4less.com/media/wysiwyg/logos/oakley.png"
+                alt="Oakley Logo"
+                class="object-contain w-auto max-h-10"
+              />
+            </div>
+            <p class="text-black text-lg tracking-wide mt-0.5 pb-4">
+              Wire Tap 2.0
+            </p>
+            <p class="text-black text-xs tracking-wide mt-0.5 pb-2">OX5152</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Product Card 7 -->
+      <a
+        href="/designer-glasses/marc-jacobs/marc662"
+        class="flex flex-col items-center w-full max-w-[350px] mx-auto mb-4"
+      >
+        <div
+          class="flex flex-col items-center w-full p-3 bg-white border border-nordic-accent h-[450px]"
+        >
+          <div
+            class="relative flex items-center justify-center flex-1 w-full group"
+            style="min-height: 250px; height: 250px"
+          >
+            <div class="flex items-center justify-center w-full h-full -mt-4">
+              <img
+                src="https://spex4less.com/media/wysiwyg/homepageimages/cardimages/MJ662_front.png"
+                alt="Retro Round"
+                class="object-contain w-[250px] h-[250px] mx-auto transition-opacity duration-300 group-hover:opacity-0"
+              />
+              <img
+                src="https://spex4less.com/media/wysiwyg/homepageimages/cardimages/MJ662_model.png"
+                alt="Retro Round Hover"
+                class="object-contain w-[250px] h-[250px] mx-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              />
+            </div>
+            <div
+              class="absolute z-10 flex justify-center w-full transition-opacity duration-300 -translate-x-1/2 opacity-0 bottom-8 left-1/2 group-hover:opacity-100"
+            >
+              <div
+                class="flex gap-2 px-3 py-0.5 rounded-full bg-l shadow text-nordic-dark text-xs font-medium tracking-wide border border-nordic-accent/20 justify-center items-center"
+              >
+                <span class="px-2 py-0.5 flex items-center justify-center h-5"
+                  >M</span
+                >
+                <span class="px-2 py-0.5 flex items-center justify-center h-5"
+                  >L</span
+                >
+                <span
+                  class="px-2 py-0.5 flex items-center justify-center h-5 border border-nordic-accent/20 text-base font-light rounded-full bg-white cursor-pointer hover:bg-nordic-accent/10 transition-colors shadow-sm"
+                  >+</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="w-full mt-6 text-center">
+            <div class="flex items-center justify-center gap-2 pb-4">
+              <img
+                src="https://spex4less.com/media/wysiwyg/logos/marcj_logo.png"
+                alt="Marc Jacobs Logo"
+                class="object-contain w-8/12 h-auto"
+              />
+            </div>
+            <p class="text-black text-lg tracking-wide mt-0.5 pb-4">MJ662</p>
+          </div>"block faq-block">
+      <a
+        href="/glasses/zurich-as6548-glasses"
+        class="flex flex-col items-center w-full max-w-[350px] mx-auto mb-4"
+      >
+        <div
+          class="flex flex-col items-center w-full p-3 bg-white border border-nordic-accent h-[450px]"
+        >
+          <div
+            class="relative flex items-center justify-center flex-1 w-full group"
+            style="min-height: 250px; height: 250px"
+          >
+            <div class="flex items-center justify-center w-full h-full">
+              <img
+                src="https://spex4less.com/media/wysiwyg/homepageimages/cardimages/zurich_front.png"
+                alt="Sport Sunglasses"
+                class="object-contain w-[250px] h-[250px] mx-auto transition-opacity duration-300 group-hover:opacity-0"
+              />
+              <img
+                src="https://spex4less.com/media/wysiwyg/homepageimages/cardimages/zurich_side.png"
+                alt="Sport Sunglasses Hover"
+                class="object-contain w-[250px] h-[250px] mx-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              />
+            </div>
+            <div
+              class="absolute z-10 flex justify-center w-full transition-opacity duration-300 -translate-x-1/2 opacity-0 bottom-8 left-1/2 group-hover:opacity-100"
+            >
+              <div
+                class="flex gap-2 px-3 py-0.5 rounded-full bg-l shadow text-nordic-dark text-xs font-medium tracking-wide border border-nordic-accent/20 justify-center items-center"
+              >
+                <span class="px-2 py-0.5 flex items-center justify-center h-5"
+                  >M/L</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="w-full mt-6 text-center">
+            <div class="flex items-center justify-center gap-2 pb-4">
+              <img
+                src="https://spex4less.com/media/wysiwyg/logos/s4l_logo.png"
+                alt="2025 Collection"
+                class="object-contain w-auto max-h-10"
+              />
+            </div>
+            <p class="text-black text-lg tracking-wide mt-0.5 pb-4">Zurich</p>
+            <p class="text-black text-xs tracking-wide mt-0.5 pb-2">AS6548</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Second Row See More Button -->
+    <div class="flex items-center justify-center gap-4 px-2 mx-auto mb-12">
+      <a
+        href="/designer-glasses/mens"
+        class="flex items-center justify-center w-48 h-12 px-2 transition-all duration-200 border rounded-lg bg-s border-s hover:bg-black group"
+      >
+        <span
+          class="text-xl font-semibold leading-tight tracking-tight text-white transition-all duration-200 group-hover:text-white"
+          >Shop Mens</span
+        >
+      </a>
+      <a
+        href="/designer-glasses/womens"
+        class="flex items-center justify-center w-48 h-12 px-2 transition-all duration-200 border rounded-lg bg-s border-s hover:bg-black group"
+      >
+        <span
+          class="text-xl font-semibold leading-tight tracking-tight text-white transition-all duration-200 group-hover:text-white"
+          >Shop Womens</span
+        >
+      </a>
+    </div>
+  </div>
+</section>

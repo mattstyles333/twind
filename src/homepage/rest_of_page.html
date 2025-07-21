@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Understanding Varifocals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              p: "#1f2937",
+              s: "#1E3A8A",
+              l: "#f3f4f6",
+              t: "#5494EC",
+              a: "#f97316",
+              b: "#2563eb",
+              gr: "#6b7280",
+            },
+            screens: {
+              xxsm: "420px",
+              xxxsm: "360px",
+            },
+          },
+        },
+      };
+    </script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <!-- ===== HOMEPAGE FEATURES SECTION ===== -->
+  <section class="px-3 pt-8 pb-8">
+    <section class="">
+      <section>
+        <div class="py-16">
+          <div class="max-w-6xl px-6 mx-auto text-gray-500">
+            <div class="relative">
+              <!-- ===== FEATURES GRID LAYOUT ===== -->
+              <div class="relative z-10 grid grid-cols-6 gap-3">
+                <!-- ===== CUSTOMER SERVICE CARD ===== -->
+                <div
+                  class="relative flex p-8 overflow-hidden bg-white border border-gray-200 col-span-full lg:col-span-2 rounded-xl dark:border-gray-800 dark:bg-gray-900"
+                >
+                  <div
+                    class="relative flex flex-col items-center pt-5 m-auto size-fit"
+                  >
+                    <svg
+                      class="mx-auto mb-4"
+                      width="50"
+                      height="40"
+                      viewBox="0 0 171 141"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M68.1131 1.96683C51.7481 6.25383 36.3891 17.9078 27.7711 32.5748C25.2271 36.9048 22.6201 42.0888 21.9781 44.0948C21.0181 47.0918 20.2151 47.8528 17.4721 48.3678C4.00208 50.8948 -3.63792 69.9508 1.73108 87.6278C3.97308 95.0078 8.97208 101.901 13.9481 104.474C17.5031 106.313 23.9491 106.371 28.1791 104.603C34.3941 102.005 34.3911 102.029 31.2951 80.7108C28.5351 61.7028 28.5191 61.3158 30.1971 54.4328C32.8821 43.4208 37.4171 35.3498 45.3601 27.4478C56.8611 16.0068 69.5881 10.6748 85.3971 10.6748C101.256 10.6748 114.03 16.0188 125.424 27.4178C133.342 35.3388 137.929 43.4898 140.575 54.3428C142.152 60.8118 142.151 62.0168 140.551 73.8428C138.616 88.1558 135.867 95.0488 128.7 103.556C117.273 117.121 101.783 123.87 81.8971 123.946C77.2221 123.964 72.9021 124.309 72.2971 124.713C68.5831 127.193 67.8811 134.386 70.9701 138.313C73.0091 140.906 73.2411 140.948 85.3971 140.948C97.5531 140.948 97.7851 140.906 99.8241 138.313C100.964 136.864 101.897 134.839 101.897 133.813C101.897 132.754 102.603 131.948 103.531 131.948C104.43 131.948 109.268 129.986 114.281 127.587C123.625 123.117 131.932 116.673 137.915 109.254L141.298 105.061L147.402 105.631C154.786 106.32 158.068 104.902 163.337 98.7468C176.681 83.1578 170.842 51.3108 154.122 48.4858C150.476 47.8698 149.956 47.3878 148.338 43.1288C140.817 23.3328 122.732 7.14883 102.288 1.91983C92.2101 -0.657171 78.0541 -0.638172 68.1131 1.96683ZM76.8971 21.3068C67.0081 23.1428 59.6121 27.0448 52.5061 34.1738C42.3511 44.3628 38.2031 55.6298 39.1651 70.4078C39.7851 79.9278 42.6541 88.1668 47.6131 94.6628L51.1601 99.3098L49.6351 106.379C47.1661 117.828 49.5941 119.452 60.2601 113.488C66.4071 110.05 66.4771 110.037 70.8421 111.541C81.3611 115.165 95.0981 114.26 105.73 109.241C112.515 106.039 122.719 96.5278 126.167 90.1918C133.684 76.3808 133.711 56.8408 126.23 44.0728C116.052 26.7028 96.4811 17.6708 76.8971 21.3068ZM67.2621 61.0208C72.1811 64.8898 70.1441 72.9768 63.6751 75.2568C60.5161 76.3698 55.7741 73.8978 54.2991 70.3688C50.8861 62.1988 60.2111 55.4738 67.2621 61.0208ZM90.8171 60.6978C91.9941 61.6608 93.2151 64.0568 93.5301 66.0228C94.8411 74.2138 84.6131 78.8068 79.1651 72.4728C74.4741 67.0188 78.1921 58.9478 85.3971 58.9478C87.2001 58.9478 89.6391 59.7348 90.8171 60.6978ZM114.574 61.1978C117.467 64.4118 117.964 66.4568 116.719 70.0268C115.512 73.4918 110.288 76.3808 107.203 75.2888C100.651 72.9708 98.5791 64.9158 103.532 61.0208C107.058 58.2468 111.988 58.3258 114.574 61.1978Z"
+                        fill="#1f2937"
+                      ></path>
+                    </svg>
+                    <h2
+                      class="mb-4 text-2xl font-semibold text-center text-gray-800 dark:text-white"
+                    >
+                      Customer Focused
+                    </h2>
+                    <p
+                      class="text-base text-center text-gray-600 dark:text-gray-400"
+                    >
+                      <strong>Help When You Need It</strong><br />
+                      Got a question or something not quite right?
+                      <strong>We'll fix it fast.</strong><br />
+                      <br />
+                      Talk to a real person today - email
+                      <a href="mailto:info@spex4less.com" class="text-blue-500"
+                        >info@spex4less.com</a
+                      >
+                      or call
+                      <a href="tel:01516326611" class="text-blue-500"
+                        >0151 632 6611</a
+                      >. We're happy to help.
+                    </p>
+                  </div>
+                </div>
+                <!-- ===== TRUST & RATINGS CARD ===== -->
+                <div
+                  class="relative p-8 overflow-hidden bg-white border-4 border-blue-800 col-span-full sm:col-span-3 lg:col-span-2 rounded-xl dark:border-gray-800 dark:bg-gray-900 shadow-[0_4px_12px_rgba(30,58,138,0.1)]"
+                >
+                  <div class="absolute top-4 right-4">
+                    <span
+                      class="inline-flex items-center px-3 py-1 text-xs font-medium text-gray-700 border border-gray-200 rounded-full bg-blu dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700"
+                    >
+                      <strong class="pr-1">28K </strong> 5-Star Reviews
+                    </span>
+                  </div>
+                  <div
+                    class="flex flex-col items-center justify-center min-h-[400px]"
+                  >
+                    <div class="relative z-10 space-y-6 text-center">
+                      <svg
+                        class="block mx-auto mb-8"
+                        width="40"
+                        height="40"
+                        viewBox="0 0 271 258"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M125.503 29.3024C120.189 45.6984 113.016 67.6624 109.563 78.1124L103.285 97.1124L51.618 97.3714C23.201 97.5134 -0.0269765 97.9634 2.35146e-05 98.3714C0.0280235 98.7794 18.703 112.607 41.5 129.101C64.298 145.595 82.951 159.33 82.951 159.623C82.951 159.917 75.954 181.681 67.402 207.989C58.851 234.296 51.994 256.24 52.165 256.754C52.336 257.267 71.057 244.17 93.767 227.649C116.477 211.129 135.263 197.612 135.514 197.612C135.766 197.612 154.279 210.935 176.656 227.218C199.032 243.501 217.879 257.031 218.539 257.284C219.199 257.537 216.62 248.152 212.809 236.428C189.3 164.117 187.902 159.37 189.73 158.007C190.677 157.302 209.322 143.762 231.165 127.918C253.008 112.075 270.895 98.7794 270.915 98.3714C270.935 97.9634 247.692 97.5134 219.265 97.3714L167.578 97.1124L151.883 48.8144C143.25 22.2494 135.957 0.285441 135.676 0.00444067C135.395 -0.277559 130.817 12.9074 125.503 29.3024Z"
+                          fill="#1f2937"
+                        ></path>
+                      </svg>
+                      <h2
+                        class="mb-4 text-2xl font-semibold text-center text-s dark:text-white"
+                      >
+                        Rated #1 in the UK
+                      </h2>
+                      <p
+                        class="max-w-2xl mx-auto text-base text-center text-p dark:text-gray-300"
+                      >
+                        Family-run and independent for 20+ years, we've helped
+                        over 500,000 customers find glasses they love, with care
+                        that's built our reputation as the
+                        <strong>UK's most trusted online optician.</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- ===== VALUE PROPOSITION CARD ===== -->
+                <div
+                  class="relative p-8 overflow-hidden bg-white border border-gray-200 col-span-full sm:col-span-3 lg:col-span-2 rounded-xl dark:border-gray-800 dark:bg-gray-900 shadow-[0_4px_12px_rgba(30,58,138,0.1)]"
+                >
+                  <div>
+                    <div
+                      class="relative flex flex-col items-center pt-20 m-auto size-fit"
+                    >
+                      <svg
+                        class="block mx-auto mb-5"
+                        width="40"
+                        height="40"
+                        viewBox="0 0 209 217"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M96.3696 1.5914C94.7196 2.4774 89.9946 6.3474 85.8696 10.1904C74.7886 20.5164 75.9686 20.0724 64.3546 18.2894C51.8406 16.3694 46.0726 16.8374 41.0156 20.1844C35.9356 23.5454 33.3746 29.0524 31.3806 40.8994C30.5006 46.1244 29.5536 51.1644 29.2736 52.0994C28.9946 53.0344 24.1776 56.2634 18.5686 59.2754C7.47364 65.2314 3.80964 68.4044 1.42264 74.1174C-1.12736 80.2214 -0.501355 83.6744 5.36964 95.8994C8.39464 102.198 10.8696 107.852 10.8696 108.464C10.8696 109.076 8.62064 114.175 5.87264 119.796C0.208645 131.377 -0.884356 136.086 0.863644 141.382C2.83064 147.34 7.33964 151.459 18.3756 157.379C24.0806 160.439 28.9816 163.721 29.2656 164.671C29.5486 165.621 30.5006 170.674 31.3806 175.899C33.3746 187.746 35.9356 193.253 41.0156 196.614C46.0726 199.961 51.8406 200.429 64.3546 198.509C76.0446 196.715 75.1286 196.365 86.1886 206.83C94.7876 214.966 98.2776 216.899 104.37 216.899C110.452 216.899 113.885 214.99 122.87 206.612C133.949 196.282 132.77 196.726 144.385 198.509C156.899 200.429 162.667 199.961 167.724 196.614C172.804 193.253 175.365 187.746 177.359 175.899C178.239 170.674 179.186 165.634 179.466 164.699C179.745 163.764 184.562 160.535 190.171 157.523C201.266 151.567 204.93 148.394 207.317 142.681C209.867 136.577 209.241 133.124 203.37 120.899C200.345 114.6 197.87 108.975 197.87 108.399C197.87 107.823 200.345 102.198 203.37 95.8994C209.241 83.6744 209.867 80.2214 207.317 74.1174C204.938 68.4214 201.319 65.2954 190.199 59.3304C184.584 56.3194 179.758 53.0774 179.474 52.1274C179.191 51.1774 178.239 46.1244 177.359 40.8994C175.365 29.0524 172.804 23.5454 167.724 20.1844C162.667 16.8374 156.899 16.3694 144.385 18.2894C132.695 20.0834 133.611 20.4334 122.551 9.9684C118.602 6.2314 113.93 2.4374 112.17 1.5364C108.122 -0.534599 100.276 -0.507599 96.3696 1.5914ZM92.0306 56.3874C94.0816 57.7444 96.9796 60.9374 98.4716 63.4824C107.452 78.8054 96.9966 97.3224 79.3696 97.3124C60.5486 97.3024 50.2086 76.4474 61.4866 61.2444C68.1756 52.2264 82.3396 49.9744 92.0306 56.3874ZM149.415 63.3544C150.765 64.7044 151.87 66.6104 151.87 67.5914C151.87 69.9464 65.9166 155.899 63.5616 155.899C61.2566 155.899 56.8696 151.512 56.8696 149.207C56.8696 146.852 142.823 60.8994 145.178 60.8994C146.159 60.8994 148.065 62.0044 149.415 63.3544ZM76.1826 65.0754C68.7776 67.0464 66.4336 76.1424 71.7876 82.1334C74.2926 84.9374 75.3656 85.3994 79.3696 85.3994C83.3736 85.3994 84.4466 84.9374 86.9516 82.1334C94.2746 73.9384 86.8816 62.2284 76.1826 65.0754ZM139.676 121.8C147.72 125.904 152.32 134 151.675 142.919C151.161 150.022 148.304 155.548 143.071 159.56C132.441 167.71 116.979 164.767 110.268 153.316C98.8106 133.765 119.554 111.534 139.676 121.8ZM125.258 131.833C119.247 134.394 116.935 143.169 120.933 148.252C126.973 155.93 139.87 151.576 139.87 141.859C139.87 134.599 131.785 129.051 125.258 131.833Z"
+                          fill="#1f2937"
+                        ></path>
+                      </svg>
+                      <h2
+                        class="mb-4 text-2xl font-semibold text-center text-gray-800 dark:text-white"
+                      >
+                        More for Less
+                      </h2>
+                      <p class="mb-4 text-base">Where Quality Meets Value</p>
+                      <strong>Expertly handled, fairly priced.</strong><br />
+                      Top-tier quality, personally checked by our in-house
+                      experts. No fuss, no shortcuts. Just great glasses, done
+                      right.
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="relative p-8 overflow-hidden bg-white border border-gray-200 col-span-full lg:col-span-3 rounded-xl dark:border-gray-800 dark:bg-gray-900 shadow-[0_4px_12px_rgba(30,58,138,0.1)]"
+                >
+                  <h2
+                    class="mb-4 text-2xl font-semibold text-center text-gray-800 dark:text-white"
+                  >
+                    Not Sure Which Frames to Pick?
+                  </h2>
+                  <p
+                    class="text-base text-center text-gray-600 dark:text-gray-400"
+                  >
+                    <strong class="text-blue-900"
+                      >The Easy Way to Find Your Frames
+                    </strong>
+                  </p>
+
+                  <p class="text-center">
+                    Try up to <strong>4 frames at home for free,</strong> no
+                    pressure to buy. Or, take our frame quiz for personalised
+                    recommendations.
+                  </p>
+
+                  <div class="mt-6 text-center">
+                    <div class="flex flex-wrap justify-center gap-6">
+                      <a
+                        href="/home-trial"
+                        class="inline-flex items-center text-blue-900 hover:text-blue-700"
+                      >
+                        Learn About Home Trial
+                        <svg
+                          class="w-4 h-4 ml-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </a>
+                      <a
+                        href="/frame-quiz"
+                        class="inline-flex items-center text-blue-900 hover:text-blue-700"
+                      >
+                        Start the Quiz
+                        <svg
+                          class="w-4 h-4 ml-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="relative p-8 overflow-hidden bg-white border border-gray-200 col-span-full lg:col-span-3 rounded-xl dark:border-gray-800 dark:bg-gray-900 shadow-[0_4px_12px_rgba(30,58,138,0.1)]"
+                >
+                  <div
+                    class="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6"
+                  >
+                    <div class="space-y-2">
+                      <h2
+                        class="mb-4 text-2xl font-semibold text-center text-gray-800 dark:text-white"
+                      >
+                        100% Money Back Guarantee
+                      </h2>
+                      <p
+                        class="text-base text-center text-gray-600 dark:text-gray-400"
+                      >
+                        We recognize the challenges of online shopping, so we
+                        proudly offer a 100% money-back guarantee for 120 days
+                        after your purchase if you're unhappy for any reason.
+                        Plus a 12 month frame warranty if anything goes wrong-
+                        we're always here to help
+                      </p>
+                      <div class="mt-6 text-center">
+                        <a
+                          href="/terms/guarantee"
+                          class="text-blue-900 hover:text-blue-700"
+                          >Learn More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </section>
+  <section class="hidden md:block dark:bg-p lg:pb-12">
+    <section class="px-3 py-8 mx-auto overflow-hidden md:container" id="how-to">
+      <h2
+        class="py-8 text-3xl font-bold text-center capitalize text-slate-800 dark:text-gray-300 md:text-4xl"
+      >
+        How to buy your prescription glasses
+      </h2>
+
+      <section class="mx-auto md:container max-w-7xl lg:py-10">
+        <div>
+          <div class="flex flex-col md:flex-row">
+            <div class="flex-col items-center hidden md:flex">
+              <div
+                class="flex flex-col items-center justify-center w-32 py-5 mr-4 uppercase border border-gray-200 bg-p rounded-xl"
+              >
+                <div class="text-lg font-black text-white dark:text-gray-300">
+                  Step 1
+                </div>
+              </div>
+              <div class="h-full border-l-4 border-transparent">
+                <div
+                  class="h-full mr-4 border-l-4 border-gray-200 border-solid"
+                ></div>
+              </div>
+            </div>
+            <div class="flex-auto text-lg">
+              <div class="flex flex-col md:flex-row">
+                <div class="flex-auto md:w-2/3">
+                  <div
+                    class="text-3xl font-bold font text-slate-800 dark:text-gray-300 md:px-3"
+                  >
+                    Choose Your Frame
+                  </div>
+
+                  <div
+                    class="pt-4 pb-6 text-lg leading-relaxed text-slate-800 dark:text-gray-200 md:px-3"
+                  >
+                    With
+                    <i
+                      ><strong
+                        >the Largest Selection of Frames in the UK,</strong
+                      ></i
+                    >
+                    you're guaranteed to discover the perfect pair of
+                    prescription glasses.
+                  </div>
+                  <div class="flex space-x-4 md:justify-start md:px-3">
+                    <a
+                      href="/frames"
+                      class="px-6 py-3 text-lg font-semibold text-white transition-colors duration-200 rounded-lg bg-s hover:bg-opacity-90"
+                    >
+                      Mens Glasses
+                    </a>
+                    <a
+                      href="/frames"
+                      class="px-6 py-3 text-lg font-semibold text-white transition-colors duration-200 rounded-lg bg-s hover:bg-opacity-90"
+                    >
+                      Womens Glasses
+                    </a>
+                  </div>
+                  <div class="mt-8 md:px-3">
+                    <p
+                      class="mb-6 text-lg leading-relaxed text-slate-800 dark:text-gray-200"
+                    >
+                      Or we've got you covered if you're after a fresh new pair
+                      of prescription sunglasses too.
+                    </p>
+                    <div class="flex justify-start">
+                      <a
+                        href="/prescription-sunglasses"
+                        class="inline-flex items-center text-blue-900 hover:text-blue-700"
+                      >
+                        Browse Prescription Sunglasses
+                        <svg
+                          class="w-4 h-4 ml-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="hidden lg:flex lg:h-auto lg:w-1/3 lg:items-center lg:justify-center"
+                  x-data="{ visible: false }"
+                  x-intersect="visible = true"
+                >
+                  <img
+                    src="https://spex4less.com/media/wysiwyg/homepageimages/selectingglasses.png"
+                    alt="selecting glasses designer in showroom"
+                    class="object-cover transition-all duration-1000 ease-in-out transform rounded-lg shadow-lg h-80 w-96 shadow-gray-400 dark:shadow-none lg:relative"
+                    width="384"
+                    height="320"
+                    :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Quick Links Section -->
+          <div class="flex flex-col items-start mt-4 mb-4 md:px-3">
+            <div
+              class="flex items-center px-8 py-4 space-x-6 bg-gray-100 rounded-full dark:bg-gray-800"
+            >
+              <a
+                href="/designer-glasses/ray-ban"
+                class="transition-transform hover:scale-110"
+              >
+                <img
+                  src="https://www.spex4less.com/media/wysiwyg/logos/raybanblacklogo_1_.png"
+                  alt="Ray-Ban"
+                  class="w-auto h-8"
+                  width="120"
+                  height="32"
+                />
+              </a>
+              <a
+                href="/designer-glasses/oakley"
+                class="transition-transform hover:scale-110"
+              >
+                <img
+                  src="https://www.spex4less.com/media/wysiwyg/logos/oakleylogo.png"
+                  alt="Oakley"
+                  class="w-auto h-8"
+                  width="120"
+                  height="32"
+                />
+              </a>
+              <a
+                href="/designer-glasses/tom-ford"
+                class="transition-transform hover:scale-110"
+              >
+                <img
+                  src="https://www.spex4less.com/media/wysiwyg/logos/tomfordlogo.png"
+                  alt="Tom Ford"
+                  class="w-auto h-8"
+                  width="120"
+                  height="32"
+                />
+              </a>
+              <a
+                href="/designer-glasses/gucci"
+                class="transition-transform hover:scale-110"
+              >
+                <img
+                  src="https://www.spex4less.com/media/wysiwyg/logos/GUCCILOGO.png"
+                  alt="Maui Jim"
+                  class="w-auto h-8"
+                  width="120"
+                  height="32"
+                />
+              </a>
+              <a
+                href="/designer-glasses/gucci"
+                class="transition-transform hover:scale-110"
+              >
+                <img
+                  src="https://www.spex4less.com/media/wysiwyg/logos/marcj_logo.png"
+                  alt="Marc jacobs logo"
+                  class="w-auto h-7"
+                  width="60"
+                  height="16"
+                />
+              </a>
+              <a
+                href="/designer-glasses/gucci"
+                class="transition-transform hover:scale-110"
+              >
+                <img
+                  src="https://www.spex4less.com/media/wysiwyg/logos/mkors_logo.png"
+                  alt="Michael Kors Logo"
+                  class="w-auto h-3"
+                  width="30"
+                  height="8"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-row items-start mt-4">
+            <div class="border-t-4 border-r-4 border-transparent">
+              <div
+                class="w-12 h-12 ml-12 border-b-4 border-l-4 border-gray-200 border-solid rounded-bl-full"
+              ></div>
+            </div>
+            <div class="flex-auto border-t-4 border-transparent">
+              <div class="h-12 border-b-4 border-gray-200 border-solid"></div>
+            </div>
+            <div
+              class="w-12 h-12 mt-12 mr-12 border-t-4 border-r-4 border-gray-200 border-solid rounded-tr-full"
+            ></div>
+          </div>
+          <div class="flex flex-row-reverse">
+            <div class="flex-col items-center hidden md:flex">
+              <div
+                class="flex flex-col items-center justify-center w-32 py-5 ml-4 uppercase border border-gray-200 bg-p rounded-xl"
+              >
+                <div class="text-lg font-black text-white dark:text-gray-300">
+                  Step 2
+                </div>
+              </div>
+              <div class="h-full border-r-4 border-transparent">
+                <div
+                  class="h-full ml-4 border-l-4 border-gray-200 border-solid"
+                ></div>
+              </div>
+            </div>
+            <div class="flex-auto">
+              <div class="flex flex-col items-center md:flex-row">
+                <div
+                  class="hidden lg:flex lg:h-auto lg:w-1/3 lg:items-center lg:justify-center"
+                  x-data="{ visible: false }"
+                  x-intersect="visible = true"
+                >
+                  <img
+                    src="https://spex4less.com/media/wysiwyg/homepageimages/holdinglens.png"
+                    alt=""
+                    class="object-cover transition-all duration-1000 ease-in-out transform rounded-lg shadow-lg h-80 w-96 shadow-gray-400 dark:shadow-none lg:relative"
+                    width="384"
+                    height="320"
+                    :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
+                  />
+                </div>
+                <div class="flex-auto md:w-2/3">
+                  <div
+                    class="text-3xl font-bold font text-slate-800 dark:text-gray-300 md:px-3"
+                  >
+                    Customise Your Lenses & Add Your Prescription
+                  </div>
+                  <div
+                    class="pb-6 text-lg leading-relaxed dark:text-gray-200 md:px-3"
+                  >
+                    <div>
+                      <br />
+                      <div>
+                        Our lens options are super flexible - no need to know
+                        all the ins and outs of optics. Whether you need
+                        distance,
+                        <a
+                          href="/reading-glasses"
+                          class="text-blue-500 hover:text-blue-700"
+                          >reading glasses</a
+                        >,
+                        <a
+                          href="/varifocal-glasses"
+                          class="text-blue-500 hover:text-blue-700"
+                          >varifocal glasses</a
+                        >, or
+                        <a
+                          href="/bifocal-glasses"
+                          class="text-blue-500 hover:text-blue-700"
+                          >bifocal lenses</a
+                        >, we offer one of the UK's biggest selections of
+                        prescription lenses. Not sure what's right for you? Just
+                        ask. Our expert opticians are here to help.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-row-reverse items-start">
+            <div class="border-t-4 border-l-4 border-transparent">
+              <div
+                class="w-16 h-16 mr-16 border-b-4 border-r-4 border-gray-200 border-solid rounded-br-full"
+              ></div>
+            </div>
+            <div class="flex-auto border-t-4 border-transparent">
+              <div class="h-16 border-b-4 border-gray-200 border-solid"></div>
+            </div>
+            <div
+              class="w-16 h-16 mt-16 ml-16 border-t-4 border-l-4 border-gray-200 border-solid rounded-tl-full"
+            ></div>
+          </div>
+          <div class="flex flex-row">
+            <div class="flex-col items-center hidden md:flex">
+              <div
+                class="flex flex-col items-center justify-center w-32 py-5 mr-4 uppercase border border-gray-200 bg-p rounded-xl"
+              >
+                <div class="text-lg font-black text-white dark:text-gray-300">
+                  Step 3
+                </div>
+              </div>
+              <div class="h-full border-l-4 border-transparent"></div>
+            </div>
+            <div class="flex-auto">
+              <div class="flex flex-col items-center md:flex-row">
+                <div class="flex-auto md:w-2/3">
+                  <div
+                    class="mb-4 text-3xl font-bold font text-slate-800 dark:text-gray-300 md:px-3"
+                  >
+                    Straight from Our Lab to Your Letterbox
+                  </div>
+                  <div
+                    class="pb-6 mb-4 text-lg leading-relaxed dark:text-gray-200 md:px-3"
+                  >
+                    Once everything's in, we'll get to work. Most orders are
+                    made and dispatched within a few days. You'll get regular
+                    email updates as your glasses make their way to you.
+                  </div>
+                  <div
+                    class="pb-6 mb-6 text-lg leading-relaxed dark:text-gray-200 md:px-3"
+                  >
+                    <strong
+                      >Backed by our 100% money-back guarantee and 12-month
+                      warranty.</strong
+                    >
+                  </div>
+                  <div class="flex w-full md:px-3">
+                    <a
+                      href="#how-to"
+                      class="px-8 py-4 text-xl font-semibold text-white transition-all transition-colors duration-200 transform rounded-lg shadow-lg bg-s hover:bg-s/80 focus:ring-2 focus:ring-s focus:ring-offset-2"
+                    >
+                      Start Your Order
+                    </a>
+                  </div>
+                </div>
+                <div
+                  class="hidden lg:flex lg:h-auto lg:w-1/3 lg:items-center lg:justify-center"
+                  x-data="{ visible: false }"
+                  x-intersect="visible = true"
+                >
+                  <img
+                    src="https://spex4less.com/media/wysiwyg/homepageimages/packageopening.png"
+                    alt="satisfied customer opening package"
+                    class="object-cover transition-all duration-1000 ease-in-out transform rounded-lg shadow-lg h-80 w-96 shadow-gray-400 dark:shadow-none lg:relative"
+                    width="384"
+                    height="320"
+                    :class="visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </section>
+
+  <div class="block px-3 py-4 mx-auto md:hidden">
+    <div class="items-center justify-between mb-8 space-y-2">
+      <div
+        class="text-2xl font-bold text-slate-800 dark:text-gray-200 md:text-4xl"
+      >
+        How To Buy Your Glasses
+      </div>
+      <div class="text-gray-600 dark:text-gray-300">
+        Buying your glasses online has never been easier, simply follow these 3
+        easy steps!
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <div class="flex flex-col h-full bg-white rounded-lg dark:bg-slate-900">
+        <div class="relative flex justify-center">
+          <img
+            src="https://spex4less.com/media/wysiwyg/homepageimages/selectingglasses.png"
+            alt="selecting glasses designer in showroom"
+            class="object-cover w-full h-48 rounded-t-lg"
+            width="800"
+            height="192"
+          />
+          <div
+            class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent"
+          >
+            <span class="text-2xl font-extrabold text-white">Step 1.</span>
+          </div>
+        </div>
+
+        <div
+          class="flex-grow px-4 py-4 border border-gray-300 rounded-b-lg dark:border-0"
+        >
+          <p class="pb-2 text-xl font-bold text-blue-900 dark:text-blue-600">
+            Choose Your Frame
+          </p>
+          <div
+            class="pb-4 text-base leading-relaxed text-slate-800 dark:text-gray-200"
+          >
+            Browse <i><strong>thousands</strong></i> of styles including top
+            designer brands like
+            <a
+              href="/designer-glasses/ray-ban"
+              class="text-blue-500 hover:underline"
+              ><strong>Ray-Ban</strong></a
+            >,
+            <a
+              href="/designer-glasses/oakley"
+              class="text-blue-500 hover:underline"
+              ><strong>Oakley</strong></a
+            >, and
+            <a
+              href="/designer-glasses/tom-ford"
+              class="text-blue-500 hover:underline"
+              ><strong>Tom Ford</strong></a
+            >. From trusty everyday pairs to something bold. Find your perfect
+            style today!
+          </div>
+          <div class="flex space-x-2">
+            <a
+              href="/frames"
+              class="flex-1 px-6 py-3 text-base font-semibold text-center text-white transition-colors duration-200 rounded-lg bg-s hover:bg-opacity-90"
+            >
+              Browse Frames
+            </a>
+            <a
+              href="/product-quiz"
+              class="flex-1 px-6 py-3 text-base font-semibold text-center transition-colors duration-200 border rounded-lg text-slate-800 border-slate-300 hover:bg-slate-50 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-slate-800"
+            >
+              Take Style Quiz
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col h-full bg-white rounded-lg dark:bg-slate-900">
+        <div class="relative flex justify-center">
+          <img
+            src="https://spex4less.com/media/wysiwyg/homepageimages/holdinglens.png"
+            alt="holding lens black background"
+            class="object-cover w-full h-48 rounded-t-lg"
+            width="800"
+            height="192"
+          />
+          <div
+            class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent"
+          >
+            <span class="text-2xl font-extrabold text-white">Step 2.</span>
+          </div>
+        </div>
+
+        <div
+          class="flex-grow px-4 py-4 border border-gray-300 rounded-b-lg dark:border-0"
+        >
+          <p class="pb-2 text-xl font-bold text-blue-900 dark:text-blue-600">
+            Select Your Lenses & Add Your Prescription
+          </p>
+          <div
+            class="pb-4 text-base leading-relaxed text-slate-800 dark:text-gray-200"
+          >
+            Whether you need varifocals, reading lenses, or something in
+            between, we make it easy to choose what's right for you. With expert
+            guidance and personalised adjustments built in, our bespoke
+            step-by-step process takes the guesswork out. Adding your
+            prescription is easy. At checkout, you can upload it, email it, or
+            snap a quick photo. Not sure about the details? Our
+            <a href="about-your-prescription" class="text-blue-500 text-link"
+              ><strong>Prescription Guide</strong></a
+            >
+            has you covered. Every order is double-checked by our opticians for
+            accuracy.
+          </div>
+          <div class="flex flex-col space-y-2">
+            <a
+              href="/lens-info"
+              class="w-full px-6 py-3 text-base font-semibold text-center text-white transition-colors duration-200 rounded-lg bg-s hover:bg-opacity-90"
+            >
+              View Lens Options
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col h-full bg-white rounded-lg dark:bg-slate-900">
+        <div class="relative flex justify-center">
+          <img
+            src="https://spex4less.com/media/wysiwyg/homepageimages/packageopening.png"
+            alt="Order Step Image"
+            class="object-cover w-full h-48 rounded-t-lg"
+            width="800"
+            height="192"
+          />
+          <div
+            class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent"
+          >
+            <span class="text-2xl font-extrabold text-white">Step 3.</span>
+          </div>
+        </div>
+
+        <div
+          class="flex-grow px-4 py-4 border border-gray-300 rounded-b-lg dark:border-0"
+        >
+          <p class="pb-2 text-xl font-bold text-blue-900 dark:text-blue-600">
+            Receive Your Glasses
+          </p>
+          <div
+            class="pb-4 text-base leading-relaxed text-slate-800 dark:text-gray-200"
+          >
+            Once everything's in, we'll get to work. Most orders are made and
+            dispatched within a few days. You'll get regular email updates as
+            your glasses make their way to you.
+          </div>
+          <div class="pb-6 text-lg leading-relaxed dark:text-gray-200">
+            <strong
+              >Backed by our 100% satisfaction guarantee and 12-month
+              warranty.</strong
+            >
+          </div>
+          <div class="flex flex-row space-x-2">
+            <a
+              href="/frames"
+              class="w-1/2 px-6 py-3 text-base font-semibold text-center text-white transition-colors duration-200 rounded-lg bg-s hover:bg-opacity-90"
+            >
+              Browse Frames
+            </a>
+            <a
+              href="/contact"
+              class="w-1/2 px-6 py-3 text-base font-semibold text-center transition-colors duration-200 border rounded-lg text-slate-800 border-slate-300 hover:bg-slate-50 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-slate-800"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="dark:bg-p">
+    <!-- 3. What Our Customers Say -->
+    <section
+      class="py-16 section-padding dark:bg-gray-900"
+      x-data="{
+      reviews: [
+        { name: 'Ken', text: 'Ordered prescription lenses with Oakley frames on a Friday and they arrived at the door in perfect condition on the following Thursday, at a very reasonable price. £100+ cheaper than high street. Perfect.' },
+        { name: 'J Vincent', text: 'Been after prescription sports sun glasses for a long time. Phoned this place, very helpful, knowledgable and professional. Ordered same day and turned up a few days later, exactly what I have been after. Thanks for the excellent advice and service.' },
+        { name: 'Alison', text: 'I have to say the whole process was efficient, they were fast at answering emails, my glasses wear done on the day they received them and I had them the day after... Very impressed! Hugely cheaper than if I had them done at my opticians in town! I will definitely be back!' },
+        { name: 'Laura', text: 'I rarely leave reviews, but had to for Spex4less. My prescription sunglasses order turned out even better than I\'d hoped. The frame is sturdy, and the lenses are perfect for my prescription. The same frame from a high street optician was quoted over £500, and I got it here for £200!' },
+        { name: 'Alan', text: 'I have a particular problem with my vision and after a recent visit to my optician he suggested that polarised prescription sunglasses would help me particularly whilst driving. I bought a pair as he suggested made up by Spex4less. The glasses fit was perfect and definitely an improvement for driving, thanks all round.' },
+        { name: 'Mark', text: 'The best sunglasses company in the UK. Big thanks for the customer service team who always put things right. I highly recommend it. Also the price is very good and fast delivery.' },
+        { name: 'Louise', text: 'Very easy ordering process. Arrived very quick and I am very impressed with the quality of the sunglasses and that a hard case is also included all for a very reasonable price. Will definitely recommend Spex4Less.' },
+        { name: 'Lesley', text: 'Fantastic service was so easy to order, very fast delivery, beautiful pair of prescription sunglasses also brilliant prices. I would definitely recommend this company.' },
+        { name: 'Clarrie', text: 'Really pleased with the whole experience of purchasing from Spex4Less. Ordering process was easy and well explained. Delivery was earlier than expected and the final product is great - very happy with my prescription sunglasses. Thank you! Happy customer!' }
+      ]
+    }"
+    >
+      <div class="px-4 mx-auto max-w-7xl">
+        <div class="mb-8 text-center">
+          <h2
+            class="mb-4 text-3xl font-bold md:text-4xl text-slate-800 dark:text-white"
+          >
+            Reviews From Our Customers
+          </h2>
+        </div>
+
+        <!-- Reviews Grid -->
+        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <template x-for="(review, index) in reviews" :key="index">
+            <div
+              class="h-full p-6 bg-white shadow-lg review-card rounded-xl dark:bg-gray-800"
+              x-show="index < 4 || window.innerWidth >= 640"
+              x-intersect="$el.classList.add('animate-fade-in')"
+              style="transition-delay: calc(index * 100ms)"
+            >
+              <div class="flex items-center mb-4">
+                <div class="flex-1">
+                  <div class="flex items-center gap-2">
+                    <h3
+                      class="text-lg font-semibold text-gray-800 dark:text-white"
+                      x-text="review.name"
+                    ></h3>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="flex text-[#00B67A]">
+                      <template x-for="i in 5" :key="i">
+                        <svg
+                          class="w-4 h-4"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                          ></path>
+                        </svg>
+                      </template>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p
+                class="text-sm text-gray-600 dark:text-gray-300"
+                x-text="review.text"
+              ></p>
+            </div>
+          </template>
+        </div>
+
+        <!-- Read More CTA -->
+        <div class="flex justify-center mt-8">
+          <a
+            href="/customer-reviews"
+            class="px-6 py-3 text-white transition-colors duration-200 rounded-lg bg-s hover:bg-s/80 focus:ring-2 focus:ring-s focus:ring-offset-2"
+          >
+            Read More Reviews
+          </a>
+        </div>
+      </div>
+    </section>
+  </section>
+</html>
