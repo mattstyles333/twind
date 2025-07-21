@@ -6,11 +6,12 @@
     "serve": "^14.2.1"
   },
   "name": "twind",
-  "description": "To setup create virtaul env: python3 -m venv venv Activate: . venv/bin/activate Pip install: pip install watchdog Jinja then execute the watch_and_generate file: python watch_and_generate.py",
+  "description": "Development server for HTML templates using static file server",
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/.bin/serve --debug --listen 3000 /home/postgres/twind/src",
+    "start": "node server.js",
+    "serve": "./node_modules/.bin/serve -l 3000 /home/postgres/twind/src",
     "update": "git stash && git pull && git stash pop",
     "push": "git add . && git commit -m \"update\" && git push",
     "sync": "npm run update && npm run push"
@@ -25,5 +26,10 @@
   "bugs": {
     "url": "https://github.com/mattstyles333/twind/issues"
   },
-  "homepage": "https://github.com/mattstyles333/twind#readme"
+  "homepage": "https://github.com/mattstyles333/twind#readme",
+  "devDependencies": {
+    "express": "^5.1.0",
+    "live-server": "^1.2.2",
+    "serve-index": "^1.9.1"
+  }
 }
