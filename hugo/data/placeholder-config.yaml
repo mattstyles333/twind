@@ -1,0 +1,35 @@
+# Placeholder configuration for images
+placeholder:
+  enabled: true
+  default_service: "unsplash"  # Options: "unsplash", "picsum", "placeholder"
+  
+  # Service-specific settings
+  services:
+    unsplash:
+      base_url: "https://source.unsplash.com"
+      featured: true
+    picsum: 
+      base_url: "https://picsum.photos"
+      featured: false
+    placeholder:
+      base_url: "https://via.placeholder.com"
+      featured: false
+      
+  # Category mappings for different image types
+  categories:
+    products: "eyewear,glasses,sunglasses,fashion"
+    hero: "glasses,eyewear,fashion,style"
+    process: "shopping,customer,glasses,people,service"
+    brands: "LOGO"
+    fallback: "abstract,minimal"
+    
+  # Default dimensions
+  defaults:
+    product_width: 400
+    product_height: 400
+    hero_width: 571 
+    hero_height: 438
+    process_width: 480
+    process_height: 400
+    logo_width: 300
+    logo_height: 127

@@ -1,0 +1,30 @@
+<section {{ if .section.id }}id="{{ .section.id }}"{{ end }} class="{{ .section.classes | default "relative z-20 px-1 pb-4 md:pb-8" }}">
+  <div class="px-2 mx-auto lg:px-4 max-w-[1500px]">
+    {{ if .section.title }}
+    <h2 class="py-4 text-2xl font-semibold text-center md:py-6 text-slate-800 md:text-4xl">
+      {{ .section.title }}
+    </h2>
+    {{ end }}
+
+    <div class="grid grid-cols-2 gap-1 md:gap-2 lg:gap-6 lg:grid-cols-4 {{ if .section.title }}pt-8 md:pt-12{{ end }}">
+      {{ range .products }}
+        {{ partial "product-card.html" . }}
+      {{ end }}
+    </div>
+
+    {{ if .cta_buttons }}
+    <div class="flex gap-4 justify-center items-center px-2 pb-8 mx-auto mt-8 md:mt-12 md:pb-12">
+      {{ range .cta_buttons }}
+      <a
+        href="{{ .url }}"
+        class="flex justify-center items-center px-2 w-48 h-12 rounded-lg border transition-all duration-200 bg-s border-s hover:bg-black group"
+      >
+        <span class="text-xl font-semibold text-white transition-all duration-200 group-hover:text-white">
+          {{ .text }}
+        </span>
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>

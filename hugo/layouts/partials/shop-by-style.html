@@ -1,0 +1,62 @@
+<section class="dark:bg-p">
+  <div class="py-12 mx-auto md:container">
+    <h2
+      class="text-3xl font-extrabold tracking-tight leading-tight text-center text-slate-800 dark:text-white md:text-4xl lg:mb-4"
+    >
+      {{ .title }}
+    </h2>
+    <div class="justify-center px-6 mx-auto md:container lg:mt-4">
+      <div x-data="{currentTab : 0 }" class="md:py-4">
+        <div class="flex justify-center">
+          <div
+            class="flex p-1 my-6 rounded-lg bg-l dark:bg-gray-800 md:my-8 lg:my-10"
+          >
+            {{ range $index, $tab := .tabs }}
+            <button
+              @click="currentTab = {{ $index }}"
+              class="px-6 py-3 text-base font-medium rounded-md transition-all duration-200 ease-in-out md:px-8 md:py-3 md:text-lg lg:px-8 lg:py-3 focus:outline-none focus:ring-2 focus:ring-s focus:ring-offset-2"
+              :class="currentTab === {{ $index }} ? 'bg-s text-white shadow-sm' : 'text-p dark:text-gray-400 hover:text-s dark:hover:text-white'"
+            >
+              {{ .name }}
+            </button>
+            {{ end }}
+          </div>
+        </div>
+        
+        {{ range $tabIndex, $tab := .tabs }}
+        <div class="justify-center mx-auto text-center">
+          <div x-show="currentTab === {{ $tabIndex }}">
+            <div
+              class="grid grid-cols-3 gap-3 mx-auto mt-4 md:grid-cols-4 md:gap-6 lg:grid-cols-5"
+            >
+              {{ range .styles }}
+              <a
+                href="{{ .url }}"
+                class="flex flex-col items-center p-3 bg-white rounded-xl border border-gray-200 shadow-md duration-1000 ease-in-out md:border-transparent lg:shadow-none lg:bg-transparent lg:rounded-full hover:scale-105 focus:outline-none focus:ring-2 focus:ring-s focus:ring-offset-2"
+                aria-label="Browse {{ .name }}"
+              >
+                {{ .svg | safeHTML }}
+                <span
+                  class="mt-2 text-center text-slate-800 dark:text-gray-200"
+                >{{ .name }}</span>
+              </a>
+              {{ end }}
+            </div>
+
+            {{ if .cta }}
+            <div class="flex justify-center mt-8">
+              <a
+                href="{{ .cta.url }}"
+                class="px-8 py-4 text-lg font-semibold text-white rounded-md shadow-lg transition-all duration-200 bg-p hover:bg-s hover:scale-105"
+              >
+                {{ .cta.text }}
+              </a>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>

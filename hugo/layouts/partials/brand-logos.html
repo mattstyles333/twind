@@ -1,0 +1,27 @@
+<section class="py-4 bg-white md:py-6">
+  <div class="px-4 mx-auto lg:px-6 max-w-8xl">
+    <div class="grid grid-cols-3 gap-2 justify-items-center items-center md:gap-4 md:flex md:justify-between md:gap-2">
+      {{ $len := len .brands }}
+      {{ range $i, $brand := .brands }}
+      <a
+        href="{{ $brand.url }}"
+        class="p-2 w-24 rounded-lg border border-gray-200 transition-transform md:w-24 md:hover:scale-105 md:border-0 md:w-40"
+      >
+        {{ partial "image.html" (dict 
+          "src" $brand.logo 
+          "alt" $brand.name 
+          "width" 300 
+          "height" 127 
+          "class" "object-contain mx-auto w-full h-14 md:h-16"
+          "placeholder" true
+          "placeholder_service" "placeholder"
+          "placeholder_category" "BRAND"
+        ) }}
+      </a>
+      {{ if and (lt $i (sub $len 1)) (not (eq $i 2)) }}
+      <div class="hidden mx-2 w-px h-8 bg-gray-300 md:block"></div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>

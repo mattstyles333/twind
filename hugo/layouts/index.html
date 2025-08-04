@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{ $data := .Site.Data.homepage }}
+
+{{ partial "trust-bar.html" $data.trust_bar }}
+
+{{ partial "hero-banner.html" $data.hero }}
+
+{{ partial "product-grid.html" $data.featured_products }}
+
+{{ partial "product-grid.html" $data.designer_glasses }}
+
+{{ partial "brand-logos.html" (dict "brands" $data.brands) }}
+
+{{ partial "how-to-buy-desktop.html" $data.how_to_buy_desktop }}
+
+{{ partial "how-to-buy-mobile.html" $data.how_to_buy_mobile }}
+
+{{ partial "customer-reviews.html" $data.customer_reviews }}
+
+{{ partial "price-comparison.html" $data.price_comparison }}
+
+{{ partial "shop-by-style.html" $data.shop_by_style }}
+
+{{ partial "sports-categories.html" $data.sports_categories }}
+
+{{ partial "faq.html" $data.faq }}
+
+{{ end }}

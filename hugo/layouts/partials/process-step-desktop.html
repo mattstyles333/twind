@@ -1,0 +1,79 @@
+<div class="flex {{ if .reverse }}flex-row-reverse{{ else }}flex-col md:flex-row{{ end }}">
+  <div class="hidden flex-col items-center md:flex">
+    <div class="flex flex-col justify-center items-center py-5 {{ if .reverse }}ml-4{{ else }}mr-4{{ end }} w-32 uppercase rounded-xl border border-gray-200 bg-p">
+      <div class="text-lg font-black text-white dark:text-gray-300">
+        Step {{ .number }}
+      </div>
+    </div>
+    <div class="h-full {{ if .reverse }}border-r-4{{ else }}border-l-4{{ end }} border-transparent">
+      {{ if not .last }}
+      <div class="{{ if .reverse }}ml-4{{ else }}mr-4{{ end }} h-full border-l-4 border-gray-200 border-solid"></div>
+      {{ end }}
+    </div>
+  </div>
+  
+  <div class="flex-auto {{ if not .reverse }}text-lg{{ end }}">
+    <div class="flex flex-col {{ if .reverse }}items-center{{ end }} md:flex-row">
+      {{ if .image }}
+      <div class="hidden lg:flex lg:h-auto lg:w-1/3 lg:items-center lg:justify-center{{ if not .reverse }} order-2{{ end }}" x-data="{ visible: false }" x-intersect="visible = true">
+        {{ partial "image.html" (dict 
+          "src" .image.src 
+          "alt" .image.alt 
+          "width" 480 
+          "height" 400 
+          "class" "object-cover w-96 h-80 rounded-lg shadow-lg transition-all duration-1000 ease-in-out transform shadow-gray-400 dark:shadow-none lg:relative"
+          "loading" "lazy"
+          "placeholder" true
+          "placeholder_service" "unsplash"
+          "placeholder_category" "shopping,customer,glasses,people"
+        ) }}
+      </div>
+      {{ end }}
+      
+      <div class="flex-auto md:w-2/3{{ if .reverse }} order-1{{ end }}">
+        <div class="{{ if .step3 }}mb-4{{ end }} text-3xl font-bold font text-slate-800 dark:text-gray-300 md:px-3">
+          {{ .title }}
+        </div>
+        
+        {{ range .content }}
+        <div class="{{ if $.step3 }}pb-6 mb-4{{ else }}pt-4 pb-6{{ end }} text-lg leading-relaxed {{ if not $.reverse }}text-slate-800{{ end }} dark:text-gray-200 md:px-3">
+          {{ .text | safeHTML }}
+        </div>
+        {{ end }}
+        
+        {{ if .buttons }}
+        <div class="flex {{ if .step3 }}w-full{{ else }}space-x-4 md:justify-start{{ end }} md:px-3">
+          {{ range .buttons }}
+          <a
+            href="{{ .url }}"
+            class="{{ .classes }}"
+          >
+            {{ .text }}
+          </a>
+          {{ end }}
+        </div>
+        {{ end }}
+        
+        {{ if .additional_content }}
+        <div class="mt-8 md:px-3">
+          {{ range .additional_content }}
+          <p class="mb-6 text-lg leading-relaxed text-slate-800 dark:text-gray-200">
+            {{ .text | safeHTML }}
+          </p>
+          {{ if .link }}
+          <div class="flex justify-start">
+            <a href="{{ .link.url }}" class="inline-flex items-center text-blue-900 hover:text-blue-700">
+              {{ .link.text }}
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+          {{ end }}
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>

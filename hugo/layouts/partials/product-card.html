@@ -1,0 +1,19 @@
+<div class="flex flex-col items-center">
+  <a href="{{ .url }}" class="w-full">
+    <div class="p-2 w-full bg-white border border-gray-200 shadow transition md:p-4 sm:hover:shadow-lg">
+      <div class="relative aspect-square group">
+        {{ partial "image.html" (dict "src" .image "alt" .alt "width" 400 "height" 400 "class" "object-contain w-full h-full transition-opacity duration-300 sm:group-hover:opacity-0" "loading" (cond (default .lazy false) "lazy" "") "fetchpriority" (cond (default .priority false) "high" "") "decoding" .decoding "placeholder" true "placeholder_service" "unsplash" "placeholder_category" "eyewear,glasses,sunglasses") }}
+        {{ if .hover_image }}
+        {{ partial "image.html" (dict "src" .hover_image "alt" .hover_alt "width" 400 "height" 400 "class" "object-contain absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-300 sm:group-hover:opacity-100" "loading" "lazy" "placeholder" true "placeholder_service" "unsplash" "placeholder_category" "eyewear,glasses,sunglasses") }}
+        {{ end }}
+      </div>
+      <div class="mt-2 text-center md:mt-4">
+        <a href="{{ .brand.url }}" class="block">
+          {{ partial "image.html" (dict "src" .brand.logo "alt" (printf "%s Logo" .brand.name) "width" 300 "height" 127 "class" (printf "mx-auto mb-1 md:mb-2 %s object-contain" (cond (default .brand.large false) "h-16 md:h-20 lg:h-24 max-w-[180px]" "h-8 md:h-12 lg:h-16 max-w-[140px]")) "placeholder" true "placeholder_service" "placeholder" "placeholder_category" "LOGO") }}
+        </a>
+        <p class="{{ if .brand.large }}-mt-3 md:-mt-6{{ end }} text-sm font-medium md:text-lg">{{ .model }}</p>
+        <p class="text-xs font-medium text-gray-600">{{ .variant }}</p>
+      </div>
+    </div>
+  </a>
+</div>

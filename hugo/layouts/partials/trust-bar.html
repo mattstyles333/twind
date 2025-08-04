@@ -1,0 +1,27 @@
+<section>
+  <div class="px-4 py-2 bg-white md:py-3 border-y-2">
+    <div class="flex justify-between items-center mx-auto">
+      <div class="flex items-center mx-auto space-x-2 text-xs font-medium text-center md:space-x-4 md:text-sm">
+        {{ .guarantee }}
+
+        <div class="hidden mx-1 h-3 border-r border-gray-300 md:mx-2 md:h-4 lg:block"></div>
+        {{ .experience }}
+
+        <div class="hidden mx-1 h-3 border-r border-gray-300 md:mx-2 md:h-4 lg:block"></div>
+
+        <a class="flex flex-row items-center space-x-2 md:space-x-3" href="{{ .reviews.url }}">
+          <span class="hidden text-xs font-medium md:text-sm md:block">{{ .reviews.count }}</span>
+          <div class="flex items-center">
+            <div class="flex space-x-0.5">
+              {{ range seq .reviews.stars }}
+              <div class="w-4 h-4 md:w-6 md:h-6 bg-[#0091AD] rounded-sm flex items-center justify-center">
+                <span class="text-sm text-white md:text-lg">★</span>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
