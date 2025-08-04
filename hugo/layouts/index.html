@@ -1,28 +1,43 @@
-{{ define "main" }}
-{{ $data := .Site.Data.homepage }}
+{{- define "main" -}}
+  {{- $data := .Site.Data.homepage -}}
 
-{{ partial "trust-bar.html" $data.trust_bar }}
+  <!-- Trust Bar Section -->
+  {{ partial "trust-bar.html" . }}
 
-{{ partial "hero-banner.html" $data.hero }}
+  <!-- Hero Banner Section -->
+  {{ partial "hero-banner.html" $data.hero }}
 
-{{ partial "product-grid.html" $data.featured_products }}
+  <!-- Featured Products Section -->
+  {{ partial "product-grid.html" $data.featured_products }}
 
-{{ partial "product-grid.html" $data.designer_glasses }}
+  <!-- Designer Glasses Section -->
+  {{ partial "product-grid.html" $data.designer_glasses }}
 
-{{ partial "brand-logos.html" (dict "brands" $data.brands) }}
+  <!-- Brand Logos Section -->
+  {{ partial "brand-logos.html" (dict "brands" $data.brands) }}
 
-{{ partial "how-to-buy-desktop.html" $data.how_to_buy_desktop }}
+  <!-- Feature Cards Section -->
+  {{ partial "feature-cards.html" . }}
 
-{{ partial "how-to-buy-mobile.html" $data.how_to_buy_mobile }}
+  <!-- How to Buy Desktop Section -->
+  {{ partial "how-to-buy-desktop.html" $data.how_to_buy_desktop }}
 
-{{ partial "customer-reviews.html" $data.customer_reviews }}
+  <!-- How to Buy Mobile Section -->
+  {{ partial "how-to-buy-mobile.html" $data.how_to_buy_mobile }}
 
-{{ partial "price-comparison.html" $data.price_comparison }}
+  <!-- Customer Reviews Section -->
+  {{ partial "customer-reviews.html" $data.customer_reviews }}
 
-{{ partial "shop-by-style.html" $data.shop_by_style }}
+  <!-- Price Comparison Section -->
+  {{ partial "price-comparison.html" $data.price_comparison }}
 
-{{ partial "sports-categories.html" $data.sports_categories }}
+  <!-- Shop by Style Section -->
+  {{ partial "shop-by-style.html" $data.shop_by_style }}
 
-{{ partial "faq.html" $data.faq }}
+  <!-- Sports Categories Section -->
+  {{ partial "sports-categories.html" $data.sports_categories }}
 
-{{ end }}
+  <!-- FAQ Section -->
+  {{ partial "faq.html" $data.faq }}
+
+{{- end -}}

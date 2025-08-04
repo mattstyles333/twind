@@ -1,13 +1,14 @@
 # Twind
 
 ## Introduction
-Twind provides a development server for HTML templates using a static file server. It's a Node.js-based project that integrates Tailwind CSS for styling and uses Express to serve static content.
+Twind is a web development project that provides both legacy HTML template serving and modern static site generation with Hugo. The project includes a Node.js Express server for legacy template development and a Hugo-based workflow for building modern static sites with Tailwind CSS integration.
 
 ## Installation
 
 ### Prerequisites
 - Node.js installed on your system.
 - npm (Node Package Manager) is included with Node.js.
+- Hugo installed on your system (for static site generation).
   
 ### Steps
 1. **Clone the Repository:**
@@ -21,22 +22,47 @@ Twind provides a development server for HTML templates using a static file serve
    npm install
    ```
 
-3. **Start the Server:**
+3. **Install Hugo (if not already installed):**
+   ```bash
+   make install-hugo
+   ```
+   Or visit [Hugo Installation Guide](https://gohugo.io/installation/) for other installation methods.
+
+4. **Start the Legacy Server (Optional):**
    ```bash
    npm start
    ```
 
+5. **Build with Hugo:**
+   ```bash
+   make hugo-build
+   ```
+
+6. **Serve Hugo Development Server:**
+   ```bash
+   make hugo-serve
+   ```
+
 ## Usage
-- Visit `http://localhost:3000` to see the templates hosted by the server.
-- The project supports live reloading using `live-server`.
+
+### Hugo Development (Primary Workflow)
+- Build the Hugo site: `make hugo-build`
+- Serve the Hugo development server with live reload: `make hugo-serve`
+- Visit `http://localhost:1313` for Hugo development
+
+### Legacy Server (Optional)
+- Visit `http://localhost:3000` to see the legacy templates hosted by the Express server
+- The legacy server supports live reloading using `live-server`
 
 ## Architecture
 
 ### Directory Structure
-- **src/**: Contains all HTML templates and assets
-- **server.js**: Express server with HTML injection for Tailwind CSS
+- **hugo/**: Hugo site source files including layouts, data, and configuration
+- **src/**: Legacy HTML templates and assets
+- **server.js**: Express server with HTML injection for Tailwind CSS (legacy)
 - **ecosystem.config.js**: Used for PM2 deployment configuration
 - **tailwind.config.js**: Tailwind CSS configuration
+- **Makefile**: Shortcuts for Hugo commands
 
 ### Key Features
 - **Tailwind CSS Integration**: Provides utility-first CSS for rapid UI development.

@@ -1,0 +1,7 @@
+trust_bar:
+  guarantee: "100% Money Back Guarantee"
+  experience: "Family Opticians for 20+ Years"
+  reviews:
+    count: "28,000+ Reviews"
+    stars: 5
+    url: "{{store direct_url='customer-reviews'}}"

@@ -1,0 +1,22 @@
+{{- define "main" -}} {{- $data := .Site.Data.glasses -}}
+
+<!-- Trust Bar Section -->
+{{ partial "trust-bar.html" . }}
+
+<!-- Hero Banner Section -->
+{{ partial "hero-banner.html" $data.hero }}
+
+<!-- Featured Products Section -->
+{{ partial "product-grid.html" $data.featured_products }}
+
+<!-- Brand Logos Section -->
+{{ partial "brand-logos.html" (dict "brands" $data.brands) }}
+
+<!-- Feature Cards Section -->
+{{ partial "feature-cards.html" . }}
+
+<!-- Customer Reviews Section -->
+{{ partial "customer-reviews.html" $data.customer_reviews }}
+
+<!-- FAQ Section -->
+{{ partial "faq.html" $data.faq }} {{- end -}}

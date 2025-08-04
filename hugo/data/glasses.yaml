@@ -1,0 +1,153 @@
+hero:
+  headline: "Prescription Glasses Online You'll Love"
+  subheadline: "Trusted by thousands, offering reliable, affordable prescription glasses & sunglasses."
+  featured_product:
+    name: "Oakley Socket 5.5 OX3218"
+    url: "{{store direct_url='designer-glasses/oakley/ox3218'}}"
+    image: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/Frame_258.webp"
+    alt: "Oakley Socket 5.5 OX3218"
+  cta_buttons:
+    - text: "Men's Glasses"
+      url: "{{store direct_url='glasses/mens'}}"
+    - text: "Women's Glasses"
+      url: "{{store direct_url='glasses/womens'}}"
+
+featured_products:
+  section:
+    id: "products"
+    classes: "relative z-20 px-1 pb-4 -mt-12 md:pb-8 md:-mt-20 lg:-mt-32"
+  products:
+    - url: "{{store direct_url='designer-glasses/tom-ford/ft-5294-tom-ford-glasses'}}"
+      image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/ft_front_1_1_.webp"
+      alt: "Tom Ford FT5294 Havana"
+      hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/ft5294_model_1_1_.webp"
+      hover_alt: "Tom Ford FT5294 Havana Hover"
+      lazy: true
+      brand:
+        name: "Tom Ford"
+        url: "{{store direct_url='designer-glasses/tom-ford'}}"
+        logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/TOMFORD.webp"
+      model: "FT5294"
+      variant: "Havana"
+    - url: "{{store direct_url='designer-glasses/oakley/ox5152'}}"
+      image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/O5152_front_1_1_.webp"
+      alt: "Oakley OX5152 Matte Black"
+      hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/O5152_model_1_1_1_.webp"
+      hover_alt: "Oakley OX5152 Matte Black Hover"
+      lazy: true
+      brand:
+        name: "Oakley"
+        url: "{{store direct_url='designer-glasses/oakley'}}"
+        logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/OAKLEY.webp"
+      model: "OX5152"
+      variant: "Matte Black"
+    - url: "{{store direct_url='designer-glasses/marc-jacobs/marc662'}}"
+      image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/MJOPH_front_1_1_.webp"
+      alt: "Marc Jacobs MJ662 Shiny Black"
+      hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/MJ662_model_1_1_.webp"
+      hover_alt: "Marc Jacobs MJ662 Shiny Black Hover"
+      lazy: true
+      brand:
+        name: "Marc Jacobs"
+        url: "{{store direct_url='designer-glasses/marc-jacobs'}}"
+        logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/MARCJACOBS.webp"
+        large: true
+      model: "MJ662"
+      variant: "Shiny Black"
+    - url: "{{store direct_url='glasses/zurich-as6548-glasses'}}"
+      image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/zurich_front_1_1_.webp"
+      alt: "Zurich AS6548"
+      hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/zurich_side_1_1_.webp"
+      hover_alt: "Zurich AS6548 Hover"
+      lazy: true
+      brand:
+        name: "Spex4Less"
+        url: "{{store direct_url='glasses'}}"
+        logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/SPEX4LESS_1_.webp"
+      model: "Zurich"
+      variant: "AS6548"
+
+brands:
+  - name: "Tom Ford"
+    url: "{{store direct_url='designer-glasses/tom-ford'}}"
+    logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/TOMFORD.webp"
+  - name: "Gucci"
+    url: "{{store direct_url='designer-glasses/gucci'}}"
+    logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/gucci_1_.webp"
+  - name: "Oakley"
+    url: "{{store direct_url='designer-glasses/oakley'}}"
+    logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/OAKLEY.webp"
+  - name: "Ray-Ban"
+    url: "{{store direct_url='designer-glasses/ray-ban'}}"
+    logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/rayban_menu_2_.webp"
+  - name: "Michael Kors"
+    url: "{{store direct_url='designer-glasses/michael-kors'}}"
+    logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/MICHAEL_KORS_2_.webp"
+  - name: "Superdry"
+    url: "{{store direct_url='designer-glasses/superdry'}}"
+    logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/superdry_2_.webp"
+# Customer Reviews Section
+customer_reviews:
+  title: "Reviews From Our Customers"
+  reviews:
+    - name: "Ken"
+      text: "Ordered prescription lenses with Oakley frames on a Friday and they arrived at the door in perfect condition on the following Thursday, at a very reasonable price. £100+ cheaper than high street. Perfect."
+    - name: "J Vincent"
+      text: "Been after prescription sports sun glasses for a long time. Phoned this place, very helpful, knowledgable and professional. Ordered same day and turned up a few days later, exactly what I have been after. Thanks for the excellent advice and service."
+    - name: "Alison"
+      text: "I have to say the whole process was efficient, they were fast at answering emails, my glasses wear done on the day they received them and I had them the day after... Very impressed! Hugely cheaper than if I had them done at my opticians in town! I will definitely be back!"
+    - name: "Laura"
+      text: "I rarely leave reviews, but had to for Spex4less. My prescription sunglasses order turned out even better than I'd hoped. The frame is sturdy, and the lenses are perfect for my prescription. The same frame from a high street optician was quoted over £500, and I got it here for £200!"
+    - name: "Alan"
+      text: "I have a particular problem with my vision and after a recent visit to my optician he suggested that polarised prescription sunglasses would help me particularly whilst driving. I bought a pair as he suggested made up by Spex4less. The glasses fit was perfect and definitely an improvement for driving, thanks all round."
+    - name: "Mark"
+      text: "The best sunglasses company in the UK. Big thanks for the customer service team who always put things right. I highly recommend it. Also the price is very good and fast delivery."
+    - name: "Louise"
+      text: "Very easy ordering process. Arrived very quick and I am very impressed with the quality of the sunglasses and that a hard case is also included all for a very reasonable price. Will definitely recommend Spex4Less."
+    - name: "Lesley"
+      text: "Fantastic service was so easy to order, very fast delivery, beautiful pair of prescription sunglasses also brilliant prices. I would definitely recommend this company."
+    - name: "Clarrie"
+      text: "Really pleased with the whole experience of purchasing from Spex4Less. Ordering process was easy and well explained. Delivery was earlier than expected and the final product is great - very happy with my prescription sunglasses. Thank you! Happy customer!"
+  cta_text: "Read More Reviews"
+  cta_url: "{{store direct_url='customer-reviews'}}"
+
+# FAQ Section
+faq:
+  title: "Frequently Asked Questions"
+  questions:
+    - question: "What's your return policy?"
+      answer: 'We offer a 100% satisfaction guarantee on all purchases & a 12 month frame warranty. Simply notify us within 7 days of receipt and return your glasses to us within 30 days of the shipped date to take advantage of this unique no quibble money-back guarantee. A full 12 months from the dispatch date we will also repair or replace any frames that may develop a manufacturing fault. Read more about our <a href="{{store direct_url="exchange-or-return"}}" class="text-blue-500 underline text-link">exchanges and returns here</a>'
+    - question: "Roughly how long does it take to deliver my glasses?"
+      answer: "Most prescription glasses are made and dispatched within 3-5 working days. Delivery times vary by location but typically take 2-3 business days within the UK."
+
+feature_cards:
+  - id: "rated-1"
+    title: "Rated #1 in the UK"
+    text: "Family-run and independent for 20+ years, we've helped over 500,000 customers find glasses they love, with care that's built our reputation as the <strong>UK's most trusted online optician.</strong>"
+    reviews_badge: "28K 5-Star Reviews"
+    
+  - id: "customer-focused"
+    title: "Customer Focused" 
+    text: "<strong>Help When You Need It</strong><br />Got a question or something not quite right? <strong>We'll fix it fast.</strong><br /><br />Talk to a real person today - email <a href=\"mailto:info@spex4less.com\" class=\"text-blue-500\">info@spex4less.com</a> or call <a href=\"tel:01516326611\" class=\"text-blue-500\">0151 632 6611</a>. We're happy to help."
+    
+  - id: "more-for-less"
+    title: "More for Less"
+    text: "<strong>Expertly handled, fairly priced.</strong><br />Top-tier quality, personally checked by our in-house experts. No fuss, no shortcuts. Just great glasses, done right."
+
+additional_cards:
+  - id: "frame-selection"
+    title: "Not Sure Which Frames to Pick?"
+    subtitle: "The Easy Way to Find Your Frames"
+    text: "Try up to <strong>4 frames at home for free,</strong> no pressure to buy. Or, take our frame quiz for personalised recommendations."
+    buttons:
+      - text: "Learn About Home Trial"
+        url: "{{store direct_url=\"trial-home\"}}"
+      - text: "Start the Quiz"
+        url: "{{store direct_url=\"product-quiz-glasses\"}}"
+        
+  - id: "money-back-guarantee"
+    title: "100% Money Back Guarantee"
+    text: "<strong>100% money-back guarantee for 30 days</strong> if you're unhappy for any reason. Plus <strong>12 month frame warranty</strong> - we're always here to help."
+    buttons:
+      - text: "Learn More"
+        url: "{{store direct_url=\"guarantee\"}}"

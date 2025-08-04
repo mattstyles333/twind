@@ -1,11 +1,3 @@
-trust_bar:
-  guarantee: "100% Money Back Guarantee"
-  experience: "Family Opticians for 20+ Years"
-  reviews:
-    count: "28,000+ Reviews"
-    stars: 5
-    url: "{{store direct_url='customer-reviews'}}"
-
 hero:
   headline: "Prescription Glasses Online You'll Love"
   subheadline: "Trusted by thousands, offering reliable, affordable prescription glasses & sunglasses."
@@ -180,7 +172,7 @@ how_to_buy_desktop:
     - number: 2
       title: "Customise Your Lenses & Add Your Prescription"
       content:
-        - text: "<br /><div>Our lens options are super flexible - no need to know all the ins and outs of optics. Whether you need distance, <a href=\"{{store direct_url='reading-glasses'}}\" class=\"text-blue-500 hover:text-blue-700\">reading glasses</a>, <a href=\"{{store direct_url='varifocal-glasses'}}\" class=\"text-blue-500 hover:text-blue-700\">varifocal glasses</a>, or <a href=\"{{store direct_url='bifocal-glasses'}}\" class=\"text-blue-500 hover:text-blue-700\">bifocal lenses</a>, we offer one of the UK's biggest selections of prescription lenses. Not sure what's right for you? Just ask. Our expert opticians are here to help.</div>"
+        - text: '<br /><div>Our lens options are super flexible - no need to know all the ins and outs of optics. Whether you need distance, <a href="{{store direct_url=''reading-glasses''}}" class="text-blue-500 hover:text-blue-700">reading glasses</a>, <a href="{{store direct_url=''varifocal-glasses''}}" class="text-blue-500 hover:text-blue-700">varifocal glasses</a>, or <a href="{{store direct_url=''bifocal-glasses''}}" class="text-blue-500 hover:text-blue-700">bifocal lenses</a>, we offer one of the UK''s biggest selections of prescription lenses. Not sure what''s right for you? Just ask. Our expert opticians are here to help.</div>'
       reverse: true
       image:
         src: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/holdinglens_2.webp"
@@ -190,7 +182,7 @@ how_to_buy_desktop:
       step3: true
       last: true
       content:
-        - text: "Once everything's in, we'll get to work. Most orders are made and dispatched within a few days. For the best estimate for your delivery, check out our <a class=\"text-blue-500 hover:text-blue-700\" href=\"{{store direct_url='glasses-delivery-schedule'}}\">delivery guide.</a> You'll get regular email updates as your glasses make their way to you."
+        - text: 'Once everything''s in, we''ll get to work. Most orders are made and dispatched within a few days. For the best estimate for your delivery, check out our <a class="text-blue-500 hover:text-blue-700" href="{{store direct_url=''glasses-delivery-schedule''}}">delivery guide.</a> You''ll get regular email updates as your glasses make their way to you.'
         - text: "<strong>Backed by our 100% money-back guarantee and 12-month warranty.</strong>"
       buttons:
         - text: "Start Your Order"
@@ -206,36 +198,38 @@ how_to_buy_desktop:
       height: "h-8"
       width: "90"
       original_height: "35"
-    - name: "Oakley"
-      url: "{{store direct_url='designer-glasses/oakley'}}"
-      logo: "https://spex4less.com/media/wysiwyg/logos/oakleylogo.png"
-      height: "h-8"
-      width: "90"
-      original_height: "35"
-    - name: "Tom Ford"
-      url: "{{store direct_url='designer-glasses/tom-ford'}}"
-      logo: "https://spex4less.com/media/wysiwyg/logos/tomfordlogo.png"
-      height: "h-8"
-      width: "90"
-      original_height: "35"
-    - name: "Gucci"
-      url: "{{store direct_url='designer-glasses/gucci'}}"
-      logo: "https://spex4less.com/media/wysiwyg/logos/GUCCILOGO.png"
-      height: "h-8"
-      width: "90"
-      original_height: "35"
-    - name: "Marc Jacobs"
-      url: "{{store direct_url='designer-glasses/marc-jacobs'}}"
-      logo: "https://spex4less.com/media/wysiwyg/logos/marcj_logo.png"
-      height: "h-7"
-      width: "600"
-      original_height: "94"
-    - name: "Michael Kors"
-      url: "{{store direct_url='designer-glasses/michael-kors'}}"
-      logo: "https://spex4less.com/media/wysiwyg/logos/mkors_logo.png"
-      height: "h-3"
-      width: "600"
-      original_height: "56"
+
+feature_cards:
+  - id: "rated-1"
+    title: "Rated #1 in the UK"
+    text: "Family-run and independent for 20+ years, we've helped over 500,000 customers find glasses they love, with care that's built our reputation as the <strong>UK's most trusted online optician.</strong>"
+    reviews_badge: "28K 5-Star Reviews"
+    
+  - id: "customer-focused"
+    title: "Customer Focused" 
+    text: "<strong>Help When You Need It</strong><br />Got a question or something not quite right? <strong>We'll fix it fast.</strong><br /><br />Talk to a real person today - email <a href=\"mailto:info@spex4less.com\" class=\"text-blue-500\">info@spex4less.com</a> or call <a href=\"tel:01516326611\" class=\"text-blue-500\">0151 632 6611</a>. We're happy to help."
+    
+  - id: "more-for-less"
+    title: "More for Less"
+    text: "<strong>Expertly handled, fairly priced.</strong><br />Top-tier quality, personally checked by our in-house experts. No fuss, no shortcuts. Just great glasses, done right."
+
+additional_cards:
+  - id: "frame-selection"
+    title: "Not Sure Which Frames to Pick?"
+    subtitle: "The Easy Way to Find Your Frames"
+    text: "Try up to <strong>4 frames at home for free,</strong> no pressure to buy. Or, take our frame quiz for personalised recommendations."
+    buttons:
+      - text: "Learn About Home Trial"
+        url: "{{store direct_url=\"trial-home\"}}"
+      - text: "Start the Quiz"
+        url: "{{store direct_url=\"product-quiz-glasses\"}}"
+        
+  - id: "money-back-guarantee"
+    title: "100% Money Back Guarantee"
+    text: "<strong>100% money-back guarantee for 30 days</strong> if you're unhappy for any reason. Plus <strong>12 month frame warranty</strong> - we're always here to help."
+    buttons:
+      - text: "Learn More"
+        url: "{{store direct_url=\"guarantee\"}}"
 
 how_to_buy_mobile:
   title: "How To Buy Your Glasses"
@@ -243,7 +237,7 @@ how_to_buy_mobile:
   steps:
     - number: 1
       title: "Choose Your Frame"
-      description: "Browse <i><strong>thousands</strong></i> of styles including top designer brands like <a href=\"{{store direct_url='designer-glasses/ray-ban'}}\" class=\"text-blue-500 hover:underline\"><strong>Ray-Ban</strong></a>, <a href=\"{{store direct_url='designer-glasses/oakley'}}\" class=\"text-blue-500 hover:underline\"><strong>Oakley</strong></a>, and <a href=\"{{store direct_url='designer-glasses/tom-ford'}}\" class=\"text-blue-500 hover:underline\"><strong>Tom Ford</strong></a>. From trusty everyday pairs to something bold. Find your perfect style today!"
+      description: 'Browse <i><strong>thousands</strong></i> of styles including top designer brands like <a href="{{store direct_url=''designer-glasses/ray-ban''}}" class="text-blue-500 hover:underline"><strong>Ray-Ban</strong></a>, <a href="{{store direct_url=''designer-glasses/oakley''}}" class="text-blue-500 hover:underline"><strong>Oakley</strong></a>, and <a href="{{store direct_url=''designer-glasses/tom-ford''}}" class="text-blue-500 hover:underline"><strong>Tom Ford</strong></a>. From trusty everyday pairs to something bold. Find your perfect style today!'
       image:
         src: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/selectingglasses_2.webp"
         alt: "Customer browsing and selecting prescription glasses frames in our showroom"
@@ -254,7 +248,7 @@ how_to_buy_mobile:
           url: "{{store direct_url='/glasses/womens'}}"
     - number: 2
       title: "Customise Your Lenses & Add Your Prescription"
-      description: "Our lens options are super flexible - no need to know all the ins and outs of optics. Whether you need distance, <a href=\"{{store direct_url='reading-glasses'}}\" class=\"text-blue-500 hover:text-blue-700\">reading glasses</a>, <a href=\"{{store direct_url='varifocal-glasses'}}\" class=\"text-blue-500 hover:text-blue-700\">varifocal glasses</a>, or <a href=\"{{store direct_url='bifocal-glasses'}}\" class=\"text-blue-500 hover:text-blue-700\">bifocal lenses</a>. Not sure what's right for you? Just ask. Our expert opticians are here to help."
+      description: 'Our lens options are super flexible - no need to know all the ins and outs of optics. Whether you need distance, <a href="{{store direct_url=''reading-glasses''}}" class="text-blue-500 hover:text-blue-700">reading glasses</a>, <a href="{{store direct_url=''varifocal-glasses''}}" class="text-blue-500 hover:text-blue-700">varifocal glasses</a>, or <a href="{{store direct_url=''bifocal-glasses''}}" class="text-blue-500 hover:text-blue-700">bifocal lenses</a>. Not sure what''s right for you? Just ask. Our expert opticians are here to help.'
       image:
         src: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/holdinglens_2.webp"
         alt: "Customer holding prescription glasses in their hands"
@@ -428,7 +422,7 @@ sports_categories:
       url: "{{store direct_url='sports/golf-glasses'}}"
       svg: '<svg class="w-20 h-24 transition-transform duration-200 group-hover:scale-110 icon-outline text-p" viewBox="0 0 109 150" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" d="M87.967 3.332C85.66 7.241 79.228 9.924 77.5 7.697C75.421 5.018 71.438 3 68.228 3C55.345 3 51.265 20.102 62.838 25.593C69.918 28.953 78.422 24.465 79.662 16.714C80.275 12.877 80.796 12.42 86.599 10.614C88.473 10.031 89.055 10.882 92.008 18.521C93.952 23.55 94.943 27.426 94.409 27.916C93.909 28.375 87.151 30.848 79.39 33.411C57.08 40.781 56.93 41.205 66.741 69.213L73.646 88.927L71.942 102.4L70.239 115.873L63.119 128.225C59.08 135.233 56 141.749 56 143.288C56 146.85 59.261 150 62.949 150C66.615 150 68.422 147.666 77.268 131.5C83.294 120.489 83.926 118.758 84.93 110.5C86.758 95.477 87.086 94 88.588 94C89.768 94 90 98.275 90 120C90 144.667 90.103 146.103 92 148C94.878 150.878 99.392 150.589 101.927 147.365C103.924 144.827 104 143.582 104 113.358V81.986L97.5 62.848C93.925 52.322 91 43.363 91 42.938C91 42.513 93.138 41.386 95.75 40.433C107.979 35.974 109 35.324 109 32C109 28.56 99.637 4.523 97.217 1.75C96.377 0.787 94.395 0 92.811 0C90.609 0 89.471 0.783001 87.967 3.332ZM26.508 27.106C13.863 31.494 3.10301 35.497 2.59801 36.002C1.10401 37.496 -0.0669849 48.692 0.981015 51.451C2.16402 54.561 5.96901 55.602 9.67601 53.831C13.2 52.147 13.639 49.439 11.453 42.859C10.169 38.994 10.05 37.587 10.958 37.026C11.615 36.62 21.132 33.194 32.106 29.414C46.543 24.44 51.981 22.143 51.779 21.103C51.626 20.313 51.05 19.545 50.5 19.397C49.95 19.249 39.154 22.718 26.508 27.106Z" fill="currentColor" class="text-p"></path></svg>'
 
-# FAQ Section  
+# FAQ Section
 faq:
   title: "Frequently Asked Questions"
   questions:

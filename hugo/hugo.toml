@@ -1,3 +1,11 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Twind - Hugo Site'
+
+# Disable default taxonomies to avoid layout warnings
+disableKinds = ['taxonomy', 'term']
+
+# Optional: If you want to use taxonomies later, create custom ones
+# [taxonomies]
+#   tag = 'tags'
+#   category = 'categories'
