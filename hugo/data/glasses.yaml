@@ -86,6 +86,7 @@ brands:
   - name: "Superdry"
     url: "{{store direct_url='designer-glasses/superdry'}}"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/superdry_2_.webp"
+
 # Customer Reviews Section
 customer_reviews:
   title: "Reviews From Our Customers"
@@ -125,11 +126,11 @@ feature_cards:
     title: "Rated #1 in the UK"
     text: "Family-run and independent for 20+ years, we've helped over 500,000 customers find glasses they love, with care that's built our reputation as the <strong>UK's most trusted online optician.</strong>"
     reviews_badge: "28K 5-Star Reviews"
-    
+
   - id: "customer-focused"
-    title: "Customer Focused" 
-    text: "<strong>Help When You Need It</strong><br />Got a question or something not quite right? <strong>We'll fix it fast.</strong><br /><br />Talk to a real person today - email <a href=\"mailto:info@spex4less.com\" class=\"text-blue-500\">info@spex4less.com</a> or call <a href=\"tel:01516326611\" class=\"text-blue-500\">0151 632 6611</a>. We're happy to help."
-    
+    title: "Customer Focused"
+    text: '<strong>Help When You Need It</strong><br />Got a question or something not quite right? <strong>We''ll fix it fast.</strong><br /><br />Talk to a real person today - email <a href="mailto:info@spex4less.com" class="text-blue-500">info@spex4less.com</a> or call <a href="tel:01516326611" class="text-blue-500">0151 632 6611</a>. We''re happy to help.'
+
   - id: "more-for-less"
     title: "More for Less"
     text: "<strong>Expertly handled, fairly priced.</strong><br />Top-tier quality, personally checked by our in-house experts. No fuss, no shortcuts. Just great glasses, done right."
@@ -141,13 +142,13 @@ additional_cards:
     text: "Try up to <strong>4 frames at home for free,</strong> no pressure to buy. Or, take our frame quiz for personalised recommendations."
     buttons:
       - text: "Learn About Home Trial"
-        url: "{{store direct_url=\"trial-home\"}}"
+        url: '{{store direct_url="trial-home"}}'
       - text: "Start the Quiz"
-        url: "{{store direct_url=\"product-quiz-glasses\"}}"
-        
+        url: '{{store direct_url="product-quiz-glasses"}}'
+
   - id: "money-back-guarantee"
     title: "100% Money Back Guarantee"
     text: "<strong>100% money-back guarantee for 30 days</strong> if you're unhappy for any reason. Plus <strong>12 month frame warranty</strong> - we're always here to help."
     buttons:
       - text: "Learn More"
-        url: "{{store direct_url=\"guarantee\"}}"
+        url: '{{store direct_url="guarantee"}}'
