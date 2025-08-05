@@ -10,10 +10,14 @@
 
   <!-- Simple Brand List -->
   <div
-    class="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4"
+    class="columns-2 gap-4 sm:columns-3 md:columns-3 lg:columns-4"
+    style="column-fill: balance"
   >
     {{ range $brands }}
-    <a href="{{ .url }}" class="text-black underline hover:text-blue-600">
+    <a
+      href="{{ .url }}"
+      class="text-black underline hover:text-blue-600 block mb-2"
+    >
       {{ .name }}
     </a>
     {{ end }}

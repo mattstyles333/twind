@@ -1,43 +1,40 @@
-{{- define "main" -}}
-  {{- $data := .Site.Data.homepage -}}
+{{- define "main" -}} {{- $data := .Site.Data.homepage -}}
 
-  <!-- Trust Bar Section -->
-  {{ partial "trust-bar.html" . }}
+<!-- Trust Bar Section -->
+{{ partial "trust-bar.html" . }}
 
-  <!-- Hero Banner Section -->
-  {{ partial "hero-banner.html" $data.hero }}
+<!-- Hero Banner Section -->
+{{ partial "hero-banner.html" $data.hero }}
 
-  <!-- Featured Products Section -->
-  {{ partial "product-grid.html" $data.featured_products }}
+<!-- Featured Products Section -->
+{{ partial "product-grid.html" $data.featured_products }}
 
-  <!-- Designer Glasses Section -->
-  {{ partial "product-grid.html" $data.designer_glasses }}
+<!-- Designer Glasses Section -->
+{{ partial "product-grid.html" $data.designer_glasses }}
 
-  <!-- Brand Logos Section -->
-  {{ partial "brand-logos.html" (dict "brands" $data.brands) }}
+<!-- Brand Logos Section -->
+{{ partial "brand-logos.html" (dict "brands" $data.brands) }}
 
-  <!-- Feature Cards Section -->
-  {{ partial "feature-cards.html" . }}
+<!-- Feature Cards Section -->
+{{ partial "feature-cards.html" . }}
 
-  <!-- How to Buy Desktop Section -->
-  {{ partial "how-to-buy-desktop.html" $data.how_to_buy_desktop }}
+<!-- How to Buy Desktop Section -->
+{{ partial "how-to-buy-desktop.html" $data.how_to_buy_desktop }}
 
-  <!-- How to Buy Mobile Section -->
-  {{ partial "how-to-buy-mobile.html" $data.how_to_buy_mobile }}
+<!-- How to Buy Mobile Section -->
+{{ partial "how-to-buy-mobile.html" $data.how_to_buy_mobile }}
 
-  <!-- Customer Reviews Section -->
-  {{ partial "customer-reviews.html" $data.customer_reviews }}
+<!-- Customer Reviews Section -->
+{{ partial "customer-reviews.html" $data.customer_reviews }}
 
-  <!-- Price Comparison Section -->
-  {{ partial "price-comparison.html" $data.price_comparison }}
+<!-- Price Comparison Section -->
+{{ partial "price-comparison.html" $data.price_comparison }}
 
-  <!-- Shop by Style Section -->
-  {{ partial "shop-by-style.html" $data.shop_by_style }}
+<!-- Shop by Style Section -->
+{{ partial "shop-by-style.html" $data.shop_by_style }}
 
-  <!-- Sports Categories Section -->
-  {{ partial "sports-categories.html" $data.sports_categories }}
+<!-- Sports Categories Section -->
+{{ partial "sports-categories.html" $data.sports_categories }}
 
-  <!-- FAQ Section -->
-  {{ partial "faq.html" $data.faq }}
-
-{{- end -}}
+<!-- FAQ Section -->
+{{ partial "faq.html" $data.faq }} {{- end -}}
