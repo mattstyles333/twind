@@ -1,6 +1,0 @@
----
-title: "Glasses"
-layout: "glasses"
----
-
-<!-- Content is handled by data files -->
