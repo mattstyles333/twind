@@ -1,0 +1,124 @@
+{{- define "main" -}}
+{{- $data := .Site.Data.glasses -}}
+
+<div class="min-h-screen bg-gray-100 p-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-gray-900 mb-2">Dev Environment</h1>
+      <p class="text-gray-600">Testing the Glasses Megamenu Component</p>
+    </div>
+
+    <!-- Test Controls -->
+    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+      <h2 class="text-xl font-semibold mb-4">Test Controls</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Viewport Size</label>
+          <select id="viewport-size" class="w-full border border-gray-300 rounded-md px-3 py-2">
+            <option value="desktop">Desktop</option>
+            <option value="tablet">Tablet</option>
+            <option value="mobile">Mobile</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Background</label>
+          <select id="background" class="w-full border border-gray-300 rounded-md px-3 py-2">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Show Info</label>
+          <input type="checkbox" id="show-info" class="mr-2">
+          <label for="show-info" class="text-sm text-gray-700">Display component info</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Component Info -->
+    <div id="component-info" class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 hidden">
+      <h3 class="text-lg font-semibold text-blue-900 mb-2">Component Information</h3>
+      <div class="text-sm text-blue-800">
+        <p><strong>File:</strong> hugo/layouts/partials/glasses-megamenu.html</p>
+        <p><strong>Data Source:</strong> hugo/data/glasses.yaml (megamenu section)</p>
+        <p><strong>Usage:</strong> {{ partial "glasses-megamenu.html" $data.megamenu }}</p>
+        <p><strong>Last Updated:</strong> {{ now.Format "2006-01-02 15:04:05" }}</p>
+      </div>
+    </div>
+
+        <!-- Megamenu Component -->
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div class="border-b border-gray-200 p-4">
+        <h2 class="text-xl font-semibold text-gray-900">Glasses Megamenu Component</h2>
+        <p class="text-sm text-gray-600 mt-1">Testing the dropdown megamenu functionality</p>
+      </div>
+
+      <!-- Component Container -->
+      <div id="megamenu-container" class="relative min-h-[500px] p-8">
+        {{ partial "glasses-megamenu.html" $data.megamenu }}
+      </div>
+    </div>
+
+    <!-- Debug Info -->
+    <div class="mt-8 bg-gray-50 rounded-lg p-4">
+      <h3 class="text-lg font-semibold text-gray-900 mb-2">Debug Information</h3>
+      <div class="text-sm text-gray-700">
+        <p><strong>Data Available:</strong> {{ if $data.megamenu }}✅ Yes{{ else }}❌ No{{ end }}</p>
+        <p><strong>Sections:</strong> {{ if $data.megamenu.sections }}✅ {{ len $data.megamenu.sections }}{{ else }}❌ None{{ end }}</p>
+        <p><strong>Promotional Links:</strong> {{ if $data.megamenu.promotional_links }}✅ {{ len $data.megamenu.promotional_links }}{{ else }}❌ None{{ end }}</p>
+        <p><strong>Featured Products:</strong> {{ if $data.megamenu.featured_products }}✅ {{ len $data.megamenu.featured_products }}{{ else }}❌ None{{ end }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const viewportSelect = document.getElementById('viewport-size');
+  const backgroundSelect = document.getElementById('background');
+  const showInfoCheckbox = document.getElementById('show-info');
+  const componentInfo = document.getElementById('component-info');
+  const megamenuContainer = document.getElementById('megamenu-container');
+
+  // Viewport size control
+  viewportSelect.addEventListener('change', function() {
+    const container = megamenuContainer.querySelector('.container');
+    if (container) {
+      container.className = 'container mx-auto flex max-w-7xl flex-col gap-4 px-2 sm:flex-row';
+
+      switch(this.value) {
+        case 'mobile':
+          container.classList.add('max-w-sm');
+          break;
+        case 'tablet':
+          container.classList.add('max-w-2xl');
+          break;
+        case 'desktop':
+          container.classList.remove('max-w-sm', 'max-w-2xl');
+          break;
+      }
+    }
+  });
+
+  // Background control
+  backgroundSelect.addEventListener('change', function() {
+    const container = megamenuContainer.querySelector('.h-80');
+    if (container) {
+      if (this.value === 'dark') {
+        container.classList.remove('bg-white');
+        container.classList.add('bg-gray-900');
+      } else {
+        container.classList.remove('bg-gray-900');
+        container.classList.add('bg-white');
+      }
+    }
+  });
+
+  // Show info control
+  showInfoCheckbox.addEventListener('change', function() {
+    componentInfo.classList.toggle('hidden', !this.checked);
+  });
+});
+</script>
+{{- end -}}

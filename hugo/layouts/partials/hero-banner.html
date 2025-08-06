@@ -1,9 +1,9 @@
 <section
-  class="relative bg-blue-100 h-[300px] md:h-[450px] lg:h-[500px] flex flex-col justify-center items-center text-slate-800 pb-8 md:pb-20 px-4"
+  class="relative {{ if .banner_styling }}{{ .banner_styling.background_gradient }}{{ else }}bg-blue-100{{ end }} h-[300px] md:h-[450px] lg:h-[500px] flex flex-col justify-center items-center text-slate-800 pb-8 md:pb-20 px-4"
 >
   <!-- Background gradient overlay -->
   <div
-    class="absolute inset-0 bg-gradient-to-t to-transparent from-gray-200/50"
+    class="absolute inset-0 {{ if .banner_styling }}{{ .banner_styling.overlay_gradient }}{{ else }}bg-gradient-to-t to-transparent from-gray-200/50{{ end }}"
   ></div>
 
   <!-- Featured Product (Right Side) -->
@@ -18,7 +18,7 @@
     <!-- Product Name -->
     <a href="{{ .featured_product.url }}">
       <p
-        class="absolute right-8 bottom-8 py-1 text-xs text-right text-gray-600 transition-colors hover:text-blue-600"
+        class="absolute right-8 bottom-8 py-1 text-xs text-right {{ if .banner_styling }}{{ .banner_styling.product_name_color }} transition-colors {{ .banner_styling.product_name_hover_color }}{{ else }}text-gray-600 transition-colors hover:text-blue-600{{ end }}"
       >
         {{ .featured_product.name }}
       </p>
