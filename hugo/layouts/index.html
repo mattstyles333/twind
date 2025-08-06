@@ -13,16 +13,13 @@
 {{ partial "product-grid.html" $data.designer_glasses }}
 
 <!-- Brand Logos Section -->
-{{ partial "brand-logos.html" (dict "brands" $data.brands) }}
+{{ partial "brand-logos-grid.html" (dict "brands" $data.brands) }}
 
 <!-- Feature Cards Section -->
 {{ partial "feature-cards.html" . }}
 
-<!-- How to Buy Desktop Section -->
-{{ partial "how-to-buy-desktop.html" $data.how_to_buy_desktop }}
-
-<!-- How to Buy Mobile Section -->
-{{ partial "how-to-buy-mobile.html" $data.how_to_buy_mobile }}
+<!-- How to Buy Section (Desktop & Mobile) -->
+{{ partial "how-to-buy.html" $data.how_to_buy_desktop }}
 
 <!-- Customer Reviews Section -->
 {{ partial "customer-reviews.html" $data.customer_reviews }}

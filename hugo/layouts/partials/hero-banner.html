@@ -1,45 +1,53 @@
-<section class="relative bg-blue-100 h-[300px] md:h-[450px] lg:h-[500px] flex flex-col justify-center items-center text-slate-800 pb-8 md:pb-20 px-4">
-  <div class="absolute inset-0 bg-gradient-to-t to-transparent from-gray-200/50"></div>
-  
+<section
+  class="relative bg-blue-100 h-[300px] md:h-[450px] lg:h-[500px] flex flex-col justify-center items-center text-slate-800 pb-8 md:pb-20 px-4"
+>
+  <!-- Background gradient overlay -->
+  <div
+    class="absolute inset-0 bg-gradient-to-t to-transparent from-gray-200/50"
+  ></div>
+
+  <!-- Featured Product (Right Side) -->
   {{ if .featured_product }}
   <div class="hidden absolute right-0 w-1/4 h-full xl:block">
+    <!-- Product Image -->
     <a href="{{ .featured_product.url }}">
-      {{ partial "image.html" (dict 
-        "src" .featured_product.image 
-        "alt" .featured_product.alt 
-        "width" 571 
-        "height" 438 
-        "class" "absolute right-0 left-0 bottom-20 w-full h-auto max-w-[500px] mx-auto"
-        "loading" "eager"
-        "fetchpriority" "high"
-        "decoding" "async"
-        "placeholder" true
-        "placeholder_service" "unsplash"
-        "placeholder_category" "glasses,eyewear,fashion"
-      ) }}
+      <!-- prettier-ignore -->
+      {{ partial "image.html" (dict "src" .featured_product.image "alt" .featured_product.alt "width" 571 "height" 438 "class" "absolute right-0 left-0 bottom-20 w-full h-auto max-w-[500px] mx-auto" "loading" "eager" "fetchpriority" "high" "decoding" "async" "placeholder" true "placeholder_service" "unsplash" "placeholder_category" "glasses,eyewear,fashion") }}
     </a>
+
+    <!-- Product Name -->
     <a href="{{ .featured_product.url }}">
-      <p class="absolute right-8 bottom-8 py-1 text-xs text-right text-gray-600 transition-colors hover:text-blue-600">
+      <p
+        class="absolute right-8 bottom-8 py-1 text-xs text-right text-gray-600 transition-colors hover:text-blue-600"
+      >
         {{ .featured_product.name }}
       </p>
     </a>
   </div>
   {{ end }}
-  
+
+  <!-- Main Content (Left Side) -->
   <div class="z-10 text-center max-w-[95%] md:max-w-[90%]">
+    <!-- Headline -->
     <h1 class="mb-2 text-xl font-bold md:text-4xl lg:text-5xl">
       {{ .headline }}
     </h1>
-    <p class="mb-3 text-sm md:mb-4 md:text-lg lg:text-xl">
-      {{ .subheadline }}
-    </p>
-    <div class="flex flex-col gap-2 justify-center mt-4 md:gap-4 md:mt-8 sm:flex-row">
+
+    <!-- Subheadline -->
+    <p class="mb-3 text-sm md:mb-4 md:text-lg lg:text-xl">{{ .subheadline }}</p>
+
+    <!-- CTA Buttons -->
+    <div
+      class="flex flex-col gap-2 justify-center mt-4 md:gap-4 md:mt-8 sm:flex-row"
+    >
       {{ range .cta_buttons }}
       <a
         href="{{ .url }}"
         class="flex justify-center items-center px-2 w-full h-10 rounded-lg border transition-all duration-200 md:h-12 sm:w-48 bg-s border-s hover:bg-black group"
       >
-        <span class="text-sm font-semibold text-white transition-all duration-200 md:text-base group-hover:text-white">
+        <span
+          class="text-sm font-semibold text-white transition-all duration-200 md:text-base group-hover:text-white"
+        >
           {{ .text }}
         </span>
       </a>

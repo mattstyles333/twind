@@ -1,81 +1,68 @@
-{{/* Image helper partial with placeholder support Usage: {{ partial
-"image.html" (dict "src" .image "alt" .alt "width" 400 "height" 400 "class"
-"w-full h-full" "loading" "lazy" "placeholder" true) }} */}} {{ $src := .src }}
-{{ $alt := .alt }} {{ $width := .width | default 400 }} {{ $height := .height |
-default 400 }} {{ $class := .class | default "" }} {{ $loading := .loading |
-default "" }} {{ $fetchpriority := .fetchpriority | default "" }} {{ $decoding
-:= .decoding | default "" }} {{ $placeholder := .placeholder | default false }}
-{{ $placeholder_service := .placeholder_service | default "picsum" }} {{
-$placeholder_category := .placeholder_category | default "" }} {{ $final_src :=
-$src }} {{ $final_alt := $alt }} {{/* Generate placeholder if enabled and no src
-provided, or if explicitly requested */}} {{ if or (and $placeholder (not $src))
-(and $placeholder (eq $src "")) }} {{ if eq $placeholder_service "picsum" }} {{
-$final_src = printf "https://picsum.photos/%d/%d" $width $height }} {{ if
-$placeholder_category }} {{ $final_src = printf
-"https://picsum.photos/%d/%d?category=%s" $width $height $placeholder_category
-}} {{ end }} {{ else if eq $placeholder_service "placeholder" }} {{ $final_src =
-printf "https://via.placeholder.com/%dx%d/e5e7eb/6b7280" $width $height }} {{ if
-$placeholder_category }} {{ $final_src = printf
-"https://via.placeholder.com/%dx%d/e5e7eb/6b7280?text=%s" $width $height
-$placeholder_category }} {{ end }} {{ else if eq $placeholder_service "unsplash"
-}} {{ $final_src = printf "https://source.unsplash.com/%dx%d" $width $height }}
-{{ if $placeholder_category }} {{ $final_src = printf
-"https://source.unsplash.com/%dx%d/?%s" $width $height $placeholder_category }}
-{{ end }} {{ end }} {{ $final_alt = $final_alt | default "Placeholder image" }}
-{{ end }} {{/* Fallback to placeholder if original src fails (can be enhanced
-with Hugo's image processing) */}} {{ $placeholder_url := "" }} {{ if and $src
-$placeholder }} {{ $final_src = printf "%s" $src }} {{ if eq
-$placeholder_service "picsum" }} {{ $placeholder_url = printf
-"https://picsum.photos/%d/%d" $width $height }} {{ else if eq
-$placeholder_service "placeholder" }} {{ $placeholder_url = printf
-"https://via.placeholder.com/%dx%d/e5e7eb/6b7280" $width $height }} {{ else if
-eq $placeholder_service "unsplash" }} {{ $placeholder_url = printf
-"https://source.unsplash.com/%dx%d" $width $height }} {{ if
-$placeholder_category }} {{ $placeholder_url = printf
-"https://source.unsplash.com/%dx%d/?%s" $width $height $placeholder_category }}
-{{ end }} {{ end }} {{ end }}
+{{/*
+  Image helper partial with placeholder support
+  Usage: {{ partial "image.html" (dict "src" .image "alt" .alt "width" 400 "height" 400 "class" "w-full h-full" "loading" "lazy" "placeholder" true) }}
+*/}}
+
+{{ $src := .src }}
+{{ $alt := .alt }}
+{{ $width := .width | default 400 }}
+{{ $height := .height | default 400 }}
+{{ $class := .class | default "" }}
+{{ $loading := .loading | default "" }}
+{{ $fetchpriority := .fetchpriority | default "" }}
+{{ $decoding := .decoding | default "" }}
+{{ $placeholder := .placeholder | default false }}
+{{ $placeholder_service := .placeholder_service | default "picsum" }}
+{{ $placeholder_category := .placeholder_category | default "" }}
+
+{{ $final_src := $src }}
+{{ $final_alt := $alt }}
+
+{{/* Generate placeholder if enabled and no src provided, or if explicitly requested */}}
+{{ if or (and $placeholder (not $src)) (and $placeholder (eq $src "")) }}
+  {{ if eq $placeholder_service "picsum" }}
+    {{ $final_src = printf "https://picsum.photos/%d/%d" $width $height }}
+    {{ if $placeholder_category }}
+      {{ $final_src = printf "https://picsum.photos/%d/%d?category=%s" $width $height $placeholder_category }}
+    {{ end }}
+  {{ else if eq $placeholder_service "placeholder" }}
+    {{ $final_src = printf "https://via.placeholder.com/%dx%d/e5e7eb/6b7280" $width $height }}
+    {{ if $placeholder_category }}
+      {{ $final_src = printf "https://via.placeholder.com/%dx%d/e5e7eb/6b7280?text=%s" $width $height $placeholder_category }}
+    {{ end }}
+  {{ else if eq $placeholder_service "unsplash" }}
+    {{ $final_src = printf "https://source.unsplash.com/%dx%d" $width $height }}
+    {{ if $placeholder_category }}
+      {{ $final_src = printf "https://source.unsplash.com/%dx%d/?%s" $width $height $placeholder_category }}
+    {{ end }}
+  {{ end }}
+  {{ $final_alt = $final_alt | default "Placeholder image" }}
+{{ end }}
+
+{{/* Fallback to placeholder if original src fails (can be enhanced with Hugo's image processing) */}}
+{{ $placeholder_url := "" }}
+{{ if and $src $placeholder }}
+  {{ $final_src = printf "%s" $src }}
+  {{ if eq $placeholder_service "picsum" }}
+    {{ $placeholder_url = printf "https://picsum.photos/%d/%d" $width $height }}
+  {{ else if eq $placeholder_service "placeholder" }}
+    {{ $placeholder_url = printf "https://via.placeholder.com/%dx%d/e5e7eb/6b7280" $width $height }}
+  {{ else if eq $placeholder_service "unsplash" }}
+    {{ $placeholder_url = printf "https://source.unsplash.com/%dx%d" $width $height }}
+    {{ if $placeholder_category }}
+      {{ $placeholder_url = printf "https://source.unsplash.com/%dx%d/?%s" $width $height $placeholder_category }}
+    {{ end }}
+  {{ end }}
+{{ end }}
 
 <img
   src="{{ $final_src }}"
   alt="{{ $final_alt }}"
   width="{{ $width }}"
   height="{{ $height }}"
-  {{
-  with
-  $class
-  }}class="{{ . }}"
-  {{
-  end
-  }}
-  {{
-  with
-  $loading
-  }}loading="{{ . }}"
-  {{
-  end
-  }}
-  {{
-  with
-  $fetchpriority
-  }}fetchpriority="{{ . }}"
-  {{
-  end
-  }}
-  {{
-  with
-  $decoding
-  }}decoding="{{ . }}"
-  {{
-  end
-  }}
-  {{
-  if
-  and
-  $src
-  $placeholder
-  }}
-  onerror="this.src='{{ $placeholder_url }}'; this.alt='Placeholder image';"
-  {{
-  end
-  }}
+  {{ with $class }}class="{{ . }}"{{ end }}
+  {{ with $loading }}loading="{{ . }}"{{ end }}
+  {{ with $fetchpriority }}fetchpriority="{{ . }}"{{ end }}
+  {{ with $decoding }}decoding="{{ . }}"{{ end }}
+  {{ if and $src $placeholder }}onerror="this.src='{{ $placeholder_url }}'; this.alt='Placeholder image';"{{ end }}
 />

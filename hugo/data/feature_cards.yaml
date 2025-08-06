@@ -1,0 +1,31 @@
+feature_cards:
+  - id: "rated-1"
+    title: "Rated #1 in the UK"
+    text: "Family-run and independent for 20+ years, we've helped over 500,000 customers find glasses they love, with care that's built our reputation as the UK's most trusted online optician."
+    reviews_badge: "28K 5-Star Reviews"
+
+  - id: "customer-focused"
+    title: "Customer Focused"
+    text: "Help When You Need It Got a question or something not quite right? We'll fix it fast. Talk to a real person today - email info@spex4less.com or call 0151 632 6611. We're happy to help."
+
+  - id: "more-for-less"
+    title: "More for Less"
+    text: "Expertly handled, fairly priced. Top-tier quality, personally checked by our in-house experts. No fuss, no shortcuts. Just great glasses, done right."
+
+additional_cards:
+  - id: "frame-selection"
+    title: "Not Sure Which Frames to Pick?"
+    subtitle: "The Easy Way to Find Your Frames"
+    text: "Try up to 4 frames at home for free, no pressure to buy. Or, take our frame quiz for personalised recommendations."
+    buttons:
+      - text: "Learn About Home Trial"
+        url: "{{store direct_url=\"trial-home\"}}"
+      - text: "Start the Quiz"
+        url: "{{store direct_url=\"product-quiz-glasses\"}}"
+
+  - id: "money-back-guarantee"
+    title: "100% Money Back Guarantee"
+    text: "100% money-back guarantee for 30 days if you're unhappy for any reason. Plus 12 month frame warranty - we're always here to help."
+    buttons:
+      - text: "Learn More"
+        url: "{{store direct_url=\"guarantee\"}}"

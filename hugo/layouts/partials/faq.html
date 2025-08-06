@@ -14,14 +14,14 @@
         <li class="relative border-b border-gray-200">
           <button
             type="button"
-            class="px-8 py-6 w-full text-left"
+            class="px-8 py-6 w-full text-left focus:outline-none"
             @click="selected !== {{ $index }} ? selected = {{ $index }} : selected = null"
           >
             <div class="flex justify-between items-center">
               <span class="pr-2">{{ .question }}</span>
               <div>
                 <span
-                  class="block text-lg transition-all duration-700"
+                  class="block text-lg transition-all duration-300 ease-in-out"
                   :class="selected === {{ $index }} ? 'rotate-90' : ''"
                 >
                   <svg
@@ -46,7 +46,7 @@
           </button>
 
           <div
-            class="overflow-hidden relative max-h-0 transition-all duration-700"
+            class="overflow-hidden relative max-h-0 transition-all duration-300 ease-in-out"
             x-ref="container{{ $index }}"
             x-bind:style="selected == {{ $index }} ? 'max-height: ' + $refs.container{{ $index }}.scrollHeight + 'px' : ''"
           >
