@@ -3,11 +3,7 @@
 
 <div class="min-h-screen bg-gray-100 p-8">
   <div class="max-w-7xl mx-auto">
-    <!-- Header -->
-    <div class="mb-8">
-      <h1 class="text-3xl font-bold text-gray-900 mb-2">Dev Environment</h1>
-      <p class="text-gray-600">Testing the Glasses Megamenu Component</p>
-    </div>
+
 
     <!-- Test Controls -->
     <div class="bg-white rounded-lg shadow-md p-6 mb-8">
@@ -70,6 +66,21 @@
         <p><strong>Featured Products:</strong> {{ if $data.megamenu.featured_products }}✅ {{ len $data.megamenu.featured_products }}{{ else }}❌ None{{ end }}</p>
       </div>
     </div>
+
+    <!-- Performance Monitoring -->
+    <div class="mt-8 bg-green-50 rounded-lg p-4">
+      <h3 class="text-lg font-semibold text-green-900 mb-2">Performance Metrics</h3>
+      <div class="text-sm text-green-800">
+        <p><strong>DOM Nodes:</strong> <span id="node-count">-</span></p>
+        <p><strong>Render Time:</strong> <span id="render-time">-</span>ms</p>
+        <p><strong>Image Load Time:</strong> <span id="image-load-time">-</span>ms</p>
+        <p><strong>Memory Usage:</strong> <span id="memory-usage">-</span>KB</p>
+        <p><strong>Layout Shifts:</strong> <span id="layout-shifts">-</span></p>
+      </div>
+      <button id="run-performance-test" class="mt-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
+        Run Performance Test
+      </button>
+    </div>
   </div>
 </div>
 
@@ -119,6 +130,99 @@ document.addEventListener('DOMContentLoaded', function() {
   showInfoCheckbox.addEventListener('change', function() {
     componentInfo.classList.toggle('hidden', !this.checked);
   });
+
+  // Performance monitoring
+  const runPerformanceTest = document.getElementById('run-performance-test');
+  const nodeCount = document.getElementById('node-count');
+  const renderTime = document.getElementById('render-time');
+  const imageLoadTime = document.getElementById('image-load-time');
+  const memoryUsage = document.getElementById('memory-usage');
+  const layoutShifts = document.getElementById('layout-shifts');
+
+  // Count DOM nodes
+  function updateNodeCount() {
+    const container = megamenuContainer.querySelector('.h-80');
+    if (container) {
+      const nodes = container.querySelectorAll('*').length;
+      nodeCount.textContent = nodes;
+    }
+  }
+
+  // Measure image load times
+  function measureImageLoadTime() {
+    const images = megamenuContainer.querySelectorAll('img');
+    let totalLoadTime = 0;
+    let loadedImages = 0;
+
+    images.forEach(img => {
+      if (img.complete) {
+        totalLoadTime += 0;
+        loadedImages++;
+      } else {
+        const start = performance.now();
+        img.onload = () => {
+          const loadTime = performance.now() - start;
+          totalLoadTime += loadTime;
+          loadedImages++;
+          if (loadedImages === images.length) {
+            imageLoadTime.textContent = Math.round(totalLoadTime / images.length);
+          }
+        };
+      }
+    });
+
+    if (loadedImages === images.length) {
+      imageLoadTime.textContent = Math.round(totalLoadTime / images.length);
+    }
+  }
+
+  // Measure memory usage
+  function updateMemoryUsage() {
+    if (performance.memory) {
+      const used = performance.memory.usedJSHeapSize / 1024;
+      memoryUsage.textContent = Math.round(used);
+    }
+  }
+
+  // Layout shift monitoring
+  let layoutShiftCount = 0;
+  const observer = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+      if (entry.entryType === 'layout-shift') {
+        layoutShiftCount++;
+        layoutShifts.textContent = layoutShiftCount;
+      }
+    }
+  });
+
+  if ('PerformanceObserver' in window) {
+    observer.observe({ entryTypes: ['layout-shift'] });
+  }
+
+  // Run performance test
+  runPerformanceTest.addEventListener('click', function() {
+    const startTime = performance.now();
+
+    // Simulate component re-render
+    const container = megamenuContainer.querySelector('.h-80');
+    if (container) {
+      container.style.display = 'none';
+      container.offsetHeight; // Force reflow
+      container.style.display = '';
+    }
+
+    const endTime = performance.now();
+    renderTime.textContent = Math.round(endTime - startTime);
+
+    updateNodeCount();
+    measureImageLoadTime();
+    updateMemoryUsage();
+  });
+
+  // Initial measurements
+  updateNodeCount();
+  measureImageLoadTime();
+  updateMemoryUsage();
 });
 </script>
 {{- end -}}

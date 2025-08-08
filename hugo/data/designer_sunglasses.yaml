@@ -117,26 +117,20 @@ customer_reviews:
   cta_text: "Read More Reviews"
   cta_url: "{{store direct_url='customer-reviews'}}"
 
-# FAQ Section
+# FAQ Section (Sunglass Specific)
 faq:
   title: "Frequently Asked Questions"
   questions:
-    - question: "What's your return policy?"
-      answer: 'We offer a 100% satisfaction guarantee on all purchases & a 12 month frame warranty. Simply notify us within 7 days of receipt and return your glasses to us within 30 days of the shipped date to take advantage of this unique no quibble money-back guarantee. A full 12 months from the dispatch date we will also repair or replace any frames that may develop a manufacturing fault. Read more about our <a href="{{store direct_url="exchange-or-return"}}" class="text-blue-500 underline text-link">exchanges and returns here</a>'
-    - question: "Roughly how long does it take to deliver my glasses?"
-      answer: 'The time it takes to make your glasses depends on the frame and lenses you choose. You can check our estimated <a href=''{{store direct_url="dispatch-times"}}'' class=''text-blue-500 underline text-link''>dispatch times here</a>. Once everything''s in stock, we usually assemble, check, and ship your order the same day. Keep an eye on your email for updates, we''ll keep you in the loop every step of the way.'
-    - question: "How do I know they will fit?"
-      answer: 'Every frame includes key measurements like lens width and bridge size. Compare them with your current pair, or use our <a href=''{{store direct_url="choosing-the-right-size-glasses"}}'' class=''text-blue-500 underline text-link''>fit guide</a> for help. <span class=''font-bold''>Want to try before you buy?</span> Use our <a href=''{{store direct_url="trial-home"}}'' class=''text-blue-500 underline text-link''>Home Trial</a>, all backed by our 100% satisfaction guarantee.'
-    - question: "How are your cheap glasses good quality?"
-      answer: "Our glasses might be cheap in price, but never in quality. Every pair goes through a thorough 15-step quality check to make sure they're comfy, durable, and crystal clear."
-    - question: "Can I reglaze my glasses?"
-      answer: 'Absolutely! Reglazing glasses is a simple, affordable way to keep the frames you love. Just send us your current pair, and we''ll fit them with brand-new prescription lenses. Our reglaze glasses service is quick, easy, and an eco-friendly alternative. <a href=''{{store direct_url="reglaze-customer-frames"}}'' class=''text-blue-500 underline text-link''>Learn more and start your reglaze today.</a>'
-    - question: "What are Occupational lenses?"
-      answer: "Occupational lenses are tailored for close-up and intermediate tasks, like using a computer or reading. Unlike varifocal lenses, they prioritise the areas you use most at work, offering clearer, more comfortable vision across your desk without needing to switch glasses. <a href='https://www.spex4less.com/blog/office-lens-secrets' class='text-blue-500 underline text-link'>Discover The Secrets to the Perfect Office Lens</a>"
-    - question: "Do you offer prescription sunglasses?"
-      answer: 'Yes, we offer a wide range of <a href=''{{store direct_url="sunglasses"}}'' class=''text-link''>prescription sunglasses</a>, in both designer and everyday styles. You can choose from different lens options, including polarised lenses, which help reduce glare, perfect for driving or spending time outdoors. You can learn more about polarised sunglasses <a href=''https://www.spex4less.com/blog/polarised-sunglasses'' class=''text-blue-500 underline text-link''>here.</a>'
-    - question: "Do you offer varifocal lenses?"
-      answer: 'We offer a wide range of varifocal lenses, from standard to elite, all at dramatically lower prices without compromising on quality. Our proprietary <a href=''{{store direct_url="blog/varifocal-photograph-guide"}}'' class=''text-link''>measuring process</a> ensures the perfect fit for your varifocal glasses from the comfort of your home. We also provide specialist varifocals from top suppliers like Zeiss and Essilor. If you can''t find a specific lens, our experts are here to help. As always, our varifocals are covered by our 100% satisfaction guarantee!'
+    - question: "Can you turn regular glasses into prescription sunglasses?"
+      answer: "Yes, you can turn your regular glasses into prescription sunglasses using our reglaze service. This service allows you to add tinted, prescription lenses to your existing frames, providing both clear vision and sun protection. You can choose from various tint options and even opt for polarised lenses to reduce glare. Our reglaze service makes it easy to transform your favourite glasses into stylish and functional prescription sunglasses."
+    - question: "What colour tints can you provide?"
+      answer: "We provide Grey, Brown and Green (G15) colour tints. Also, we are able to offer these in polarised options alongside Gold, Silver, Blue, Green and Red Mirror coatings."
+    - question: "What's the difference between polarised and tinted lenses?"
+      answer: "Tinted lenses simply reduce brightness, but polarised lenses go a step further by cutting glare from reflective surfaces like water, roads, or glass. If you drive frequently, spend time by the water, or want the best clarity in sunlight, polarised lenses are a great choice."
+    - question: "Do you offer designer sunglasses?"
+      answer: "Yes, we stock a wide range of designer sunglasses including brands like Ray-Ban, Oakley, Police, and more. You can buy them as they are or add your prescription for a fully customised pair."
+    - question: "Are your sunglasses UV protected?"
+      answer: "Absolutely. Every pair of sunglasses from Spex4Less includes 100% UVA and UVB protection as standard – even with prescription lenses. You'll never have to worry about eye damage from sun exposure."
 
 feature_cards:
   - id: "rated-1"
@@ -151,6 +145,27 @@ feature_cards:
   - id: "more-for-less"
     title: "More for Less"
     text: "<strong>Expertly handled, fairly priced.</strong><br />Top-tier quality, personally checked by our in-house experts. No fuss, no shortcuts. Just great glasses, done right."
+
+# Selling Points Section (Sunglasses Specific)
+selling_points:
+  - id: "reading-sunglasses"
+    title: "Reading Sunglasses"
+    subtitle: "See Clearly in the Sun"
+    description: "Combining vision correction and sun protection, our reading sunglasses are perfect for holidays, driving, and outdoor reading. Available in a wide range of strengths and styles, including designer frames and custom tints."
+    additional_text: "No need to switch between pairs – just slip these on and enjoy crisp, glare-free reading wherever you are."
+    icon: "reading"
+  - id: "polarised-lenses"
+    title: "Polarised Lenses"
+    subtitle: "Block the Glare, Not the View"
+    description: "Polarised sunglasses reduce harsh glare from reflective surfaces like roads, water, and windows – making them perfect for driving, beach days, or everyday wear."
+    additional_text: "Upgrade to polarised lenses for unbeatable clarity, colour, and comfort in bright light."
+    icon: "polarised"
+  - id: "varifocal-sunglasses"
+    title: "Varifocal Sunglasses"
+    subtitle: "All-Day Comfort, Seamless Vision"
+    description: "Get sun protection and clear vision at every distance with varifocal sunglasses. Whether you're reading by the pool or scanning the horizon, varifocals adjust naturally to your vision needs."
+    additional_text: "Designed for everyday wearers who need more than just sun protection – no switching glasses required."
+    icon: "varifocal"
 
 additional_cards:
   - id: "frame-selection"
