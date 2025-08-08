@@ -3,21 +3,21 @@ hero:
   subheadline: "Trusted by thousands, offering reliable, affordable prescription glasses & sunglasses."
   featured_product:
     name: "Oakley Socket 5.5 OX3218"
-    url: "{{store direct_url='designer-glasses/oakley/ox3218'}}"
+    url: "/designer-glasses/oakley/ox3218"
     image: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/Frame_258.webp"
     alt: "Oakley Socket 5.5 OX3218"
   cta_buttons:
     - text: "Men's Glasses"
-      url: "{{store direct_url='glasses/mens'}}"
+      url: "/glasses/mens"
     - text: "Women's Glasses"
-      url: "{{store direct_url='glasses/womens'}}"
+      url: "/glasses/womens"
 
 featured_products:
   section:
     id: "products"
     classes: "relative z-20 px-1 pb-4 -mt-12 md:pb-8 md:-mt-20 lg:-mt-32"
   products:
-    - url: "{{store direct_url='sunglasses/ray-ban/rb2140'}}"
+    - url: "/sunglasses/ray-ban/rb2140"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/rbsun_front_1_1_.webp"
       alt: "Ray-Ban Wayfarer RB2140"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/rb2140_model_1_1_.webp"
@@ -25,11 +25,11 @@ featured_products:
       priority: true
       brand:
         name: "Ray-Ban"
-        url: "{{store direct_url='sunglasses/ray-ban'}}"
+        url: "/sunglasses/ray-ban"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/rayban_menu_2_.webp"
       model: "Wayfarer"
       variant: "RB2140"
-    - url: "{{store direct_url='sunglasses/oakley/oo9242'}}"
+    - url: "/sunglasses/oakley/oo9242"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/OOSUN_front_1_1_.webp"
       alt: "Oakley HSTN OO9242"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/OO9242_side_1_1_.webp"
@@ -38,11 +38,11 @@ featured_products:
       decoding: "async"
       brand:
         name: "Oakley"
-        url: "{{store direct_url='sunglasses/oakley'}}"
+        url: "/sunglasses/oakley"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/OAKLEY.webp"
       model: "HSTN"
       variant: "OO9242"
-    - url: "{{store direct_url='sunglasses/gucci/gg0024s'}}"
+    - url: "/sunglasses/gucci/gg0024s"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/0024s_front_1_1_1_.webp"
       alt: "Gucci Classic GG0024S"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/gucci_model_1_1_.webp"
@@ -50,11 +50,11 @@ featured_products:
       decoding: "async"
       brand:
         name: "Gucci"
-        url: "{{store direct_url='sunglasses/gucci'}}"
+        url: "/sunglasses/gucci"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/gucci_1_.webp"
       model: "Classic"
       variant: "GG0024S"
-    - url: "{{store direct_url='sunglasses/barcelona-dg3588-sunglasses'}}"
+    - url: "/sunglasses/barcelona-dg3588-sunglasses"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/barcelona_front1_1_1_.webp"
       alt: "Barcelona DG3588"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/barcelona_side_1_1_.webp"
@@ -62,7 +62,7 @@ featured_products:
       decoding: "async"
       brand:
         name: "Spex4Less"
-        url: "{{store direct_url='sunglasses/stock'}}"
+        url: "/sunglasses/stock"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/SPEX4LESS_1_.webp"
       model: "Barcelona"
       variant: "DG3588"
@@ -72,7 +72,7 @@ designer_glasses:
     title: "Top Designer Glasses"
     classes: "relative z-20 px-1 py-6 md:py-8 bg-l border-y-2"
   products:
-    - url: "{{store direct_url='designer-glasses/tom-ford/ft-5294-tom-ford-glasses'}}"
+    - url: "/designer-glasses/tom-ford/ft-5294-tom-ford-glasses"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/ft_front_1_1_.webp"
       alt: "Tom Ford FT5294 Havana"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/ft5294_model_1_1_.webp"
@@ -80,11 +80,11 @@ designer_glasses:
       lazy: true
       brand:
         name: "Tom Ford"
-        url: "{{store direct_url='designer-glasses/tom-ford'}}"
+        url: "/designer-glasses/tom-ford"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/TOMFORD.webp"
       model: "FT5294"
       variant: "Havana"
-    - url: "{{store direct_url='designer-glasses/oakley/ox5152'}}"
+    - url: "/designer-glasses/oakley/ox5152"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/O5152_front_1_1_.webp"
       alt: "Oakley OX5152 Matte Black"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/O5152_model_1_1_1_.webp"
@@ -92,11 +92,11 @@ designer_glasses:
       lazy: true
       brand:
         name: "Oakley"
-        url: "{{store direct_url='designer-glasses/oakley'}}"
+        url: "/designer-glasses/oakley"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/OAKLEY.webp"
       model: "OX5152"
       variant: "Matte Black"
-    - url: "{{store direct_url='designer-glasses/marc-jacobs/marc662'}}"
+    - url: "/designer-glasses/marc-jacobs/marc662"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/MJOPH_front_1_1_.webp"
       alt: "Marc Jacobs MJ662 Shiny Black"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/MJ662_model_1_1_.webp"
@@ -104,12 +104,12 @@ designer_glasses:
       lazy: true
       brand:
         name: "Marc Jacobs"
-        url: "{{store direct_url='designer-glasses/marc-jacobs'}}"
+        url: "/designer-glasses/marc-jacobs"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/MARCJACOBS.webp"
         large: true
       model: "MJ662"
       variant: "Shiny Black"
-    - url: "{{store direct_url='glasses/zurich-as6548-glasses'}}"
+    - url: "/glasses/zurich-as6548-glasses"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/zurich_front_1_1_.webp"
       alt: "Zurich AS6548"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/zurich_side_1_1_.webp"
@@ -117,34 +117,34 @@ designer_glasses:
       lazy: true
       brand:
         name: "Spex4Less"
-        url: "{{store direct_url='glasses'}}"
+        url: "/glasses"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/SPEX4LESS_1_.webp"
       model: "Zurich"
       variant: "AS6548"
   cta_buttons:
     - text: "Shop Mens"
-      url: "{{store direct_url='designer-glasses/mens'}}"
+      url: "/designer-glasses/mens"
     - text: "Shop Womens"
-      url: "{{store direct_url='designer-glasses/womens'}}"
+      url: "/designer-glasses/womens"
 
 brands:
   - name: "Tom Ford"
-    url: "{{store direct_url='designer-glasses/tom-ford'}}"
+    url: "/designer-glasses/tom-ford"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/TOMFORD.webp"
   - name: "Gucci"
-    url: "{{store direct_url='designer-glasses/gucci'}}"
+    url: "/designer-glasses/gucci"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/gucci_1_.webp"
   - name: "Oakley"
-    url: "{{store direct_url='designer-glasses/oakley'}}"
+    url: "/designer-glasses/oakley"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/OAKLEY.webp"
   - name: "Ray-Ban"
-    url: "{{store direct_url='designer-glasses/ray-ban'}}"
+    url: "/designer-glasses/ray-ban"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/rayban_menu_2_.webp"
   - name: "Michael Kors"
-    url: "{{store direct_url='designer-glasses/michael-kors'}}"
+    url: "/designer-glasses/michael-kors"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/MICHAEL_KORS_2_.webp"
   - name: "Superdry"
-    url: "{{store direct_url='designer-glasses/superdry'}}"
+    url: "/designer-glasses/superdry"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/superdry_2_.webp"
 
 how_to_buy_desktop:
@@ -156,16 +156,16 @@ how_to_buy_desktop:
         - text: "With <i><strong>the Largest Selection of Frames in the UK,</strong></i> you're guaranteed to discover the perfect pair of prescription glasses."
       buttons:
         - text: "Mens Glasses"
-          url: "{{store direct_url='/glasses/mens'}}"
+          url: "//glasses/mens"
           classes: "px-6 py-3 text-lg font-semibold text-white rounded-lg transition-colors duration-200 bg-s hover:bg-opacity-90"
         - text: "Womens Glasses"
-          url: "{{store direct_url='/glasses/womens'}}"
+          url: "//glasses/womens"
           classes: "px-6 py-3 text-lg font-semibold text-white rounded-lg transition-colors duration-200 bg-s hover:bg-opacity-90"
       additional_content:
         - text: "Or we've got you covered if you're after a fresh new pair of prescription sunglasses too."
           link:
             text: "Browse Prescription Sunglasses"
-            url: "{{store direct_url='sunglasses'}}"
+            url: "/sunglasses"
       image:
         src: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/selectingglasses_2.webp"
         alt: "Customer browsing and selecting prescription glasses frames in our showroom"
@@ -193,37 +193,37 @@ how_to_buy_desktop:
         alt: "Customer opening a package containing their new prescription glasses"
   quick_links:
     - name: "Ray-Ban"
-      url: "{{store direct_url='designer-glasses/ray-ban'}}"
+      url: "/designer-glasses/ray-ban"
       logo: "https://spex4less.com/media/wysiwyg/logos/raybanblacklogo_1_.png"
       height: "h-8"
       width: "90"
       original_height: "35"
     - name: "Oakley"
-      url: "{{store direct_url='designer-glasses/oakley'}}"
+      url: "/designer-glasses/oakley"
       logo: "https://spex4less.com/media/wysiwyg/logos/oakleylogo.png"
       height: "h-8"
       width: "90"
       original_height: "35"
     - name: "Tom Ford"
-      url: "{{store direct_url='designer-glasses/tom-ford'}}"
+      url: "/designer-glasses/tom-ford"
       logo: "https://spex4less.com/media/wysiwyg/logos/tomfordlogo.png"
       height: "h-8"
       width: "90"
       original_height: "35"
     - name: "Gucci"
-      url: "{{store direct_url='designer-glasses/gucci'}}"
+      url: "/designer-glasses/gucci"
       logo: "https://spex4less.com/media/wysiwyg/logos/GUCCILOGO.png"
       height: "h-8"
       width: "90"
       original_height: "35"
     - name: "Marc Jacobs"
-      url: "{{store direct_url='designer-glasses/marc-jacobs'}}"
+      url: "/designer-glasses/marc-jacobs"
       logo: "https://spex4less.com/media/wysiwyg/logos/marcj_logo.png"
       height: "h-7"
       width: "600"
       original_height: "94"
     - name: "Michael Kors"
-      url: "{{store direct_url='designer-glasses/michael-kors'}}"
+      url: "/designer-glasses/michael-kors"
       logo: "https://spex4less.com/media/wysiwyg/logos/mkors_logo.png"
       height: "h-3"
       width: "600"
@@ -250,16 +250,16 @@ additional_cards:
     text: "Try up to <strong>4 frames at home for free,</strong> no pressure to buy. Or, take our frame quiz for personalised recommendations."
     buttons:
       - text: "Learn About Home Trial"
-        url: '{{store direct_url="trial-home"}}'
+        url: '/trial-home'
       - text: "Start the Quiz"
-        url: '{{store direct_url="product-quiz-glasses"}}'
+        url: '/product-quiz-glasses'
 
   - id: "money-back-guarantee"
     title: "100% Money Back Guarantee"
     text: "<strong>100% money-back guarantee for 30 days</strong> if you're unhappy for any reason. Plus <strong>12 month frame warranty</strong> - we're always here to help."
     buttons:
       - text: "Learn More"
-        url: '{{store direct_url="guarantee"}}'
+        url: '/guarantee'
 
 how_to_buy_mobile:
   title: "How To Buy Your Glasses"
@@ -273,9 +273,9 @@ how_to_buy_mobile:
         alt: "Customer browsing and selecting prescription glasses frames in our showroom"
       buttons:
         - text: "Mens Glasses"
-          url: "{{store direct_url='/glasses/mens'}}"
+          url: "//glasses/mens"
         - text: "Womens Glasses"
-          url: "{{store direct_url='/glasses/womens'}}"
+          url: "//glasses/womens"
     - number: 2
       title: "Customise Your Lenses & Add Your Prescription"
       description: 'Our lens options are super flexible - no need to know all the ins and outs of optics. Whether you need distance, <a href="{{store direct_url=''reading-glasses''}}" class="text-blue-500 hover:text-blue-700">reading glasses</a>, <a href="{{store direct_url=''varifocal-glasses''}}" class="text-blue-500 hover:text-blue-700">varifocal glasses</a>, or <a href="{{store direct_url=''bifocal-glasses''}}" class="text-blue-500 hover:text-blue-700">bifocal lenses</a>. Not sure what''s right for you? Just ask. Our expert opticians are here to help.'
@@ -285,7 +285,7 @@ how_to_buy_mobile:
       single_button: true
       buttons:
         - text: "Lens Options"
-          url: "{{store direct_url='lens-info'}}"
+          url: "/lens-info"
     - number: 3
       title: "Straight from Our Lab to Your Letterbox"
       description: "Once everything's in, we'll get to work. Most orders are made and dispatched within a few days. You'll get regular email updates as your glasses make their way to you."
@@ -321,7 +321,7 @@ customer_reviews:
     - name: "Clarrie"
       text: "Really pleased with the whole experience of purchasing from Spex4Less. Ordering process was easy and well explained. Delivery was earlier than expected and the final product is great - very happy with my prescription sunglasses. Thank you! Happy customer!"
   cta_text: "Read More Reviews"
-  cta_url: "{{store direct_url='customer-reviews'}}"
+  cta_url: "/customer-reviews"
 
 # Price Comparison Section
 price_comparison:
@@ -329,7 +329,7 @@ price_comparison:
   subtitle: "We tried them, we love them, and we think you will too."
   brands:
     - name: "Ray-Ban"
-      url: "{{store direct_url='designer-glasses/ray-ban'}}"
+      url: "/designer-glasses/ray-ban"
       logo:
         src: "https://spex4less.com/media/wysiwyg/homepageimages/img_reupload/rayban_logo_1__4.jpg"
         width: 1920
@@ -337,7 +337,7 @@ price_comparison:
       products:
         - name: "Aviator Sunglasses"
           price: "£29.97"
-          url: "{{store direct_url='sunglasses/202-s-prescription-sunglasses'}}"
+          url: "/sunglasses/202-s-prescription-sunglasses"
           image:
             src: "https://spex4less.com/media/wysiwyg/homepageimages/img_reupload/aviator_dupe_stock_1.jpg"
             alt: "Grey aviator prescription sunglasses with gold frame, affordable alternative to designer brands"
@@ -345,14 +345,14 @@ price_comparison:
             height: 401
         - name: "Ray-Ban Aviator 3025"
           price: "£110"
-          url: "{{store direct_url='sunglasses/ray-ban/rb3025'}}"
+          url: "/sunglasses/ray-ban/rb3025"
           image:
             src: "https://spex4less.com/media/wysiwyg/homepageimages/img_reupload/rayban3025.jpg"
             alt: "Ray-Ban Aviator 3025 prescription sunglasses, authentic designer frames"
             width: 1000
             height: 401
     - name: "Tom Ford"
-      url: "{{store direct_url='designer-glasses/tom-ford'}}"
+      url: "/designer-glasses/tom-ford"
       logo:
         src: "https://spex4less.com/media/wysiwyg/homepageimages/img_reupload/tomford_logo_1_1.jpg"
         width: 600
@@ -360,7 +360,7 @@ price_comparison:
       products:
         - name: "Havana Sunglasses"
           price: "£58"
-          url: "{{store direct_url='sunglasses/havana-at8926-sunglasses'}}"
+          url: "/sunglasses/havana-at8926-sunglasses"
           image:
             src: "https://spex4less.com/media/wysiwyg/homepageimages/img_reupload/tomford_dupe_stock_1.jpg"
             alt: "Black Wayfarer Sunglass Frame"
@@ -368,14 +368,14 @@ price_comparison:
             height: 401
         - name: "FT1099 Sunglasses"
           price: "£205"
-          url: "{{store direct_url='sunglasses/tom-ford/ft1099-n-tom-ford-sunglasses'}}"
+          url: "/sunglasses/tom-ford/ft1099-n-tom-ford-sunglasses"
           image:
             src: "https://spex4less.com/media/wysiwyg/homepageimages/img_reupload/ft1099-n_black_1.jpg"
             alt: "FT1099 Sunglasses"
             width: 1200
             height: 480
     - name: "Oakley"
-      url: "{{store direct_url='designer-glasses/oakley'}}"
+      url: "/designer-glasses/oakley"
       logo:
         src: "https://spex4less.com/media/wysiwyg/homepageimages/img_reupload/oakley_1.jpg"
         width: 600
@@ -383,7 +383,7 @@ price_comparison:
       products:
         - name: "Ibiza Sunglasses"
           price: "£52"
-          url: "{{store direct_url='sunglasses/ibiza-tr177-sunglasses'}}"
+          url: "/sunglasses/ibiza-tr177-sunglasses"
           image:
             src: "https://spex4less.com/media/wysiwyg/homepageimages/img_reupload/oakley_dupe_stock_1.jpg"
             alt: "Oakley HSTN"
@@ -391,7 +391,7 @@ price_comparison:
             height: 395
         - name: "Oakley Latch 9265"
           price: "£145"
-          url: "{{store direct_url='sunglasses/oakley/9265'}}"
+          url: "/sunglasses/oakley/9265"
           image:
             src: "https://spex4less.com/media/wysiwyg/homepageimages/img_reupload/oakley_dupe_1_1_1_.jpg"
             alt: "crystal Oakley dupe"
@@ -399,7 +399,7 @@ price_comparison:
             height: 403
   final_cta:
     text: "Explore All Prescription Sunglasses"
-    url: "{{store direct_url='sunglasses'}}"
+    url: "/sunglasses"
 
 # Shop by Style Section
 shop_by_style:
@@ -408,24 +408,24 @@ shop_by_style:
     - name: "Glasses"
       styles:
         - name: "Aviator Glasses"
-          url: "{{store direct_url='glasses/Aviator'}}"
+          url: "/glasses/Aviator"
           svg: '<svg width="80" height="32" class="md:w-[100px] md:h-[40px] lg:w-[130px] lg:h-[50px]" viewBox="0 0 402 159" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path class="dark:fill-gray-200" fill-rule="evenodd" clip-rule="evenodd" d="M67.9479 0.161268C59.3385 0.79376 43.7744 3.83052 36.2981 6.33755C21.4266 11.3237 12.4175 18.9654 6.46904 31.6422C1.72368 41.7531 0 51.5258 0 68.3208C0 91.9724 3.91699 111.321 11.7979 126.602C16.998 136.683 28.4252 147.937 38.1377 152.542C52.6776 159.436 73.04 160.811 89.931 156.04C112.495 149.666 140.742 129.367 156.971 107.866C162.45 100.605 162.875 100.257 162.875 103.029C162.875 106.805 165.611 107.851 169.812 105.682C175.843 102.568 183.279 85.1686 182.67 75.5975C182.378 71.0214 182.198 70.737 179.612 70.774C178.101 70.7959 176.87 70.5714 176.877 70.2751C176.884 69.9798 177.778 65.4726 178.863 60.26C179.948 55.0474 180.841 47.0545 180.848 42.4974L180.861 34.2111L186.438 31.6622C191.501 29.3487 192.952 29.1482 202.183 29.4894C210.121 29.7827 213.117 30.3104 215.841 31.8956L219.332 33.9258L220.501 45.6079C221.555 56.1528 222.663 62.771 224.394 68.8665C224.914 70.6991 224.655 70.9246 222.502 70.5136C217.52 69.5628 216.805 75.8149 220.537 87.6946C223.723 97.8374 228.062 104.493 232.636 106.256C235.542 107.377 238.564 105.88 238.997 103.108C239.253 101.465 240.2 102.273 243.774 107.189C254.68 122.186 279.602 142.489 296.902 150.47C319.789 161.027 344.024 161.702 363.721 152.334C388.885 140.364 403.168 106.243 401.418 62.2802C399.912 24.4145 385.098 8.29787 345.777 1.7425C337.417 0.348821 319.925 0.138323 203.844 0.0285841C131.024 -0.0402518 69.8714 0.0196055 67.9479 0.161268ZM125.835 5.41973C146.548 7.25037 158.686 11.4803 167.352 19.8882C173.776 26.1214 175.816 31.0576 175.843 40.4263C175.903 61.089 167.452 85.3213 153.941 103.228C146.481 113.116 129.399 128.991 118.236 136.409C99.2269 149.044 85.97 153.488 67.4482 153.431C57.0592 153.399 54.4043 153.032 47.5725 150.682C32.3422 145.444 22.9124 136.896 15.5021 121.614C7.86696 105.865 4.35266 85.6894 5.27096 62.8758C6.06535 43.1698 10.0263 31.6283 19.1853 22.3394C28.3652 13.0286 41.8769 8.55825 71.4452 5.04762C78.3139 4.23256 115.259 4.48496 125.835 5.41973ZM344.708 6.81441C355.868 8.75977 370.137 13.3478 375.44 16.6969C380.928 20.1626 387.532 27.7226 390.248 33.6484C395.09 44.2133 396.152 50.5671 396.112 68.7398C396.041 101.485 389.267 123.309 374.571 138.151C362.382 150.46 341.438 156.392 322.187 152.988C303.121 149.617 284.254 139.515 265.157 122.453C240.371 100.309 225.881 70.4587 225.84 41.4558C225.825 30.3962 227.112 27.0043 233.911 20.1885C242.035 12.0449 255.015 7.13864 272.931 5.44168C288.04 4.01009 333.619 4.88202 344.708 6.81441ZM240.815 8.44452C234.204 12.0749 226.384 19.4653 223.727 24.595C222.661 26.6531 221.686 28.3361 221.56 28.3351C221.433 28.3351 218.857 27.3724 215.834 26.1972C211.615 24.5551 208.134 24.0533 200.846 24.0354C192.1 24.0134 189.203 24.5781 181.74 27.7605C180.535 28.2733 179.45 27.3116 177.518 24.0194C174.202 18.3709 166.303 11.2688 159.661 7.96467L154.488 5.3908L200.4 5.40876L246.311 5.42672L240.815 8.44452Z" fill="#1f2937"/></svg>'
         - name: "Wayfarer Glasses"
-          url: "{{store direct_url='glasses/Wayfarer'}}"
+          url: "/glasses/Wayfarer"
           svg: '<svg width="80" height="32" class="md:w-[100px] md:h-[40px] lg:w-[130px] lg:h-[50px]" viewBox="0 0 443 148" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path class="dark:fill-gray-200" fill-rule="evenodd" clip-rule="evenodd" d="M54.4902 0.501072C28.5348 2.55206 3.64034 6.05636 1.30476 7.98682C0.360935 8.76777 0 12.4554 0 21.3247C0 34.3986 0.131977 34.7961 5.67997 38.4179C10.1252 41.3186 12.7507 47.8341 17.8418 68.589C24.0956 94.0893 29.3827 111.513 32.7231 117.635C40.3357 131.587 57.7616 141.565 82.985 146.417C91.5895 148.071 117.576 148.049 126.907 146.379C148.733 142.471 166.243 131.723 179.587 114.042C187.598 103.428 198.482 79.8301 203.909 61.3104C206.27 53.2559 207.534 50.6212 210.417 47.7494C213.876 44.3019 214.239 44.1844 221.396 44.1844C227.911 44.1844 229.118 44.4822 231.472 46.6746C235.086 50.0375 236.592 53.1553 239.55 63.3893C243.443 76.8577 253.79 100.028 260.169 109.561C267.226 120.108 279.127 131.429 289.035 137.021C315.56 151.99 362.059 151.568 391.21 136.093C398.391 132.282 407.827 122.394 411.337 115.006C414.272 108.822 423.25 77.5091 427.358 59.126C430.089 46.8988 432.772 41.3345 437.384 38.3233C442.769 34.808 442.92 34.3438 442.92 21.3247C442.92 12.7213 442.547 8.76577 441.67 8.05655C440.035 6.73372 432.22 5.23258 417.425 3.39775C393.782 0.465212 375.026 -0.377495 345.072 0.145462C313.289 0.700293 303.745 1.69441 280.142 6.90803C256.276 12.1804 232.595 15.7953 221.927 15.7953C209.675 15.7953 198.558 14.1866 166.97 7.84139C153.497 5.13496 139.1 2.4126 134.976 1.79103C127.749 0.702285 64.7213 -0.307767 54.4902 0.501072ZM130.686 11.8139C143.358 13.8838 160.685 18.426 167.97 21.5887C179.514 26.5991 185.153 34.0599 187.006 46.7782C189.777 65.786 183.11 89.57 169.624 108.789C161.559 120.282 145.053 131.215 129.264 135.522C118.893 138.351 88.2691 138.695 77.9359 136.098C60.817 131.797 53.0124 127.17 46.5576 117.497C35.9685 101.628 29.7206 77.4095 29.5727 51.6552C29.5047 40.0017 29.7736 37.6101 31.5863 33.7252C36.1345 23.9773 41.5955 20.0547 56.9967 15.4736C80.1045 8.59943 103.808 7.42203 130.686 11.8139ZM368.53 11.3337C380.605 13.3997 395.466 18.0883 400.928 21.5548C406.906 25.349 410.533 30.8216 412.598 39.163C414.107 45.2532 414.165 47.609 413.114 60.0474C410.297 93.405 400.575 118.096 386.587 127.421C374.969 135.167 355.841 139.033 334.14 138.021C313.234 137.046 298.38 131.798 284.242 120.392C266.681 106.224 253.315 74.3116 255.291 51.2697C257.039 30.9003 263.905 23.9823 289.478 16.8283C316.841 9.17418 344.62 7.24273 368.53 11.3337ZM23.4038 17.6869C25.0385 19.4859 25.0105 19.6562 22.8369 21.1733C19.6505 23.3966 14.6993 23.1994 12.4837 20.7599C10.7161 18.8145 10.7191 18.7069 12.5787 17.3054C15.3742 15.1976 21.3341 15.4078 23.4038 17.6869ZM430.33 17.6869C431.965 19.4859 431.937 19.6562 429.763 21.1733C426.802 23.2392 422.073 23.2113 419.745 21.1125C418.029 19.5646 418.018 19.3365 419.571 17.6262C421.824 15.1458 428.055 15.1817 430.33 17.6869Z" fill="#1f2937"/></svg>'
         - name: "Round Glasses"
-          url: "{{store direct_url='glasses/Round'}}"
+          url: "/glasses/Round"
           svg: '<svg width="80" height="32" class="md:w-[100px] md:h-[40px] lg:w-[130px] lg:h-[50px]" viewBox="0 0 443 154" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path class="dark:fill-gray-200" fill-rule="evenodd" clip-rule="evenodd" d="M73.4867 1.91726C52.4655 5.12185 34.5498 9.57927 12.2478 17.1513L0 21.3097V34.455V47.6003L4.06227 49.4321C9.75924 52.0018 12.6627 55.8833 13.9415 62.6424C19.4055 91.5266 28.2149 111.36 42.3034 126.496C53.6553 138.692 64.7053 145.437 81.5643 150.458C93.2702 153.945 116.916 154.99 129.617 152.585C168.966 145.129 194.654 111.795 200.548 60.5406C201.749 50.103 207.747 45.9045 221.46 45.9045C230.009 45.9045 235.129 47.4293 238.544 50.9949C240.857 53.4086 241.489 55.5023 243.099 66.0589C249.262 106.476 265.828 132.781 293.447 146.009C305.257 151.665 311.514 153.045 327.941 153.618C344.714 154.202 353.526 153.102 366.276 148.83C398.428 138.058 419.669 109.932 427.912 67.2198C430.217 55.2733 431.894 52.5727 438.994 49.3711L442.92 47.6003V34.418V21.2348L427.173 16.0704C409.209 10.1792 392.763 5.97874 375.432 2.85614C358.466 -0.200461 328.286 -0.940365 313.718 1.34434C291.633 4.80789 275.962 10.4062 258.757 20.9788C249.077 26.928 248.468 27.157 245.534 25.9541C236.363 22.1976 235.135 21.9957 221.46 21.9957C207.782 21.9957 206.562 22.1966 197.374 25.9591C194.424 27.168 193.819 26.942 183.989 20.9698C166.44 10.3082 150.508 4.59692 129.477 1.42833C115.614 -0.659402 88.856 -0.426432 73.4867 1.91726ZM131.976 10.9641C150.042 12.9928 161.156 17.2593 170.054 25.5842C179.28 34.2131 183.937 44.0818 186.107 59.5938C188.176 74.3829 184.222 97.1079 177.703 107.896C167.339 125.048 150.225 137.393 128.977 143.042C117.162 146.185 97.1015 146.182 85.5426 143.036C57.3556 135.367 38.1581 114.944 30.4245 84.3996C22.5279 53.2136 32.1572 28.1219 56.4898 16.4764C69.0035 10.4882 80.5824 8.83137 105.481 9.46528C114.829 9.70325 126.752 10.3782 131.976 10.9641ZM371.89 11.392C393.459 15.9524 409.814 31.2954 414.022 50.9199C415.655 58.5359 414.613 76.6596 411.982 86.3993C409.207 96.667 402.295 110.815 396.475 118.137C387.621 129.278 372.407 138.923 357.066 143.124C346.197 146.1 324.803 146.057 313.443 143.038C285.358 135.574 265.694 116.926 258.82 91.2407C256.22 81.5259 255.693 60.4277 257.836 51.9038C263.321 30.0996 278.231 16.5104 301.088 12.4849C322.395 8.73238 356.798 8.20145 371.89 11.392Z" fill="#1f2937"/></svg>'
       cta:
         text: "Browse All Glasses"
-        url: "{{store direct_url='glasses'}}"
+        url: "/glasses"
     - name: "Sunglasses"
       styles:
         - name: "Aviator Sunglasses"
-          url: "{{store direct_url='sunglasses/Aviator'}}"
+          url: "/sunglasses/Aviator"
           svg: '<svg width="80" height="32" class="md:w-[100px] md:h-[40px] lg:w-[130px] lg:h-[50px]" viewBox="0 0 402 159" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path class="dark:fill-gray-200" fill-rule="evenodd" clip-rule="evenodd" d="M67.9479 0.161268C59.3385 0.79376 43.7744 3.83052 36.2981 6.33755C21.4266 11.3237 12.4175 18.9654 6.46904 31.6422C1.72368 41.7531 0 51.5258 0 68.3208C0 91.9724 3.91699 111.321 11.7979 126.602C16.998 136.683 28.4252 147.937 38.1377 152.542C52.6776 159.436 73.04 160.811 89.931 156.04C112.495 149.666 140.742 129.367 156.971 107.866C162.45 100.605 162.875 100.257 162.875 103.029C162.875 106.805 165.611 107.851 169.812 105.682C175.843 102.568 183.279 85.1686 182.67 75.5975C182.378 71.0214 182.198 70.737 179.612 70.774C178.101 70.7959 176.87 70.5714 176.877 70.2751C176.884 69.9798 177.778 65.4726 178.863 60.26C179.948 55.0474 180.841 47.0545 180.848 42.4974L180.861 34.2111L186.438 31.6622C191.501 29.3487 192.952 29.1482 202.183 29.4894C210.121 29.7827 213.117 30.3104 215.841 31.8956L219.332 33.9258L220.501 45.6079C221.555 56.1528 222.663 62.771 224.394 68.8665C224.914 70.6991 224.655 70.9246 222.502 70.5136C217.52 69.5628 216.805 75.8149 220.537 87.6946C223.723 97.8374 228.062 104.493 232.636 106.256C235.542 107.377 238.564 105.88 238.997 103.108C239.253 101.465 240.2 102.273 243.774 107.189C254.68 122.186 279.602 142.489 296.902 150.47C319.789 161.027 344.024 161.702 363.721 152.334C388.885 140.364 403.168 106.243 401.418 62.2802C399.912 24.4145 385.098 8.29787 345.777 1.7425C337.417 0.348821 319.925 0.138323 203.844 0.0285841C131.024 -0.0402518 69.8714 0.0196055 67.9479 0.161268ZM125.835 5.41973C146.548 7.25037 158.686 11.4803 167.352 19.8882C173.776 26.1214 175.816 31.0576 175.843 40.4263C175.903 61.089 167.452 85.3213 153.941 103.228C146.481 113.116 129.399 128.991 118.236 136.409C99.2269 149.044 85.97 153.488 67.4482 153.431C57.0592 153.399 54.4043 153.032 47.5725 150.682C32.3422 145.444 22.9124 136.896 15.5021 121.614C7.86696 105.865 4.35266 85.6894 5.27096 62.8758C6.06535 43.1698 10.0263 31.6283 19.1853 22.3394C28.3652 13.0286 41.8769 8.55825 71.4452 5.04762C78.3139 4.23256 115.259 4.48496 125.835 5.41973ZM344.708 6.81441C355.868 8.75977 370.137 13.3478 375.44 16.6969C380.928 20.1626 387.532 27.7226 390.248 33.6484C395.09 44.2133 396.152 50.5671 396.112 68.7398C396.041 101.485 389.267 123.309 374.571 138.151C362.382 150.46 341.438 156.392 322.187 152.988C303.121 149.617 284.254 139.515 265.157 122.453C240.371 100.309 225.881 70.4587 225.84 41.4558C225.825 30.3962 227.112 27.0043 233.911 20.1885C242.035 12.0449 255.015 7.13864 272.931 5.44168C288.04 4.01009 333.619 4.88202 344.708 6.81441ZM240.815 8.44452C234.204 12.0749 226.384 19.4653 223.727 24.595C222.661 26.6531 221.686 28.3361 221.56 28.3351C221.433 28.3351 218.857 27.3724 215.834 26.1972C211.615 24.5551 208.134 24.0533 200.846 24.0354C192.1 24.0134 189.203 24.5781 181.74 27.7605C180.535 28.2733 179.45 27.3116 177.518 24.0194C174.202 18.3709 166.303 11.2688 159.661 7.96467L154.488 5.3908L200.4 5.40876L246.311 5.42672L240.815 8.44452Z" fill="#1f2937"/></svg>'
         - name: "Wayfarer Sunglasses"
-          url: "{{store direct_url='sunglasses/Wayfarer'}}"
+          url: "/sunglasses/Wayfarer"
           svg: '<svg width="80" height="32" class="md:w-[100px] md:h-[40px] lg:w-[130px] lg:h-[50px]" viewBox="0 0 443 148" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path class="dark:fill-gray-200" fill-rule="evenodd" clip-rule="evenodd" d="M54.4902 0.501072C28.5348 2.55206 3.64034 6.05636 1.30476 7.98682C0.360935 8.76777 0 12.4554 0 21.3247C0 34.3986 0.131977 34.7961 5.67997 38.4179C10.1252 41.3186 12.7507 47.8341 17.8418 68.589C24.0956 94.0893 29.3827 111.513 32.7231 117.635C40.3357 131.587 57.7616 141.565 82.985 146.417C91.5895 148.071 117.576 148.049 126.907 146.379C148.733 142.471 166.243 131.723 179.587 114.042C187.598 103.428 198.482 79.8301 203.909 61.3104C206.27 53.2559 207.534 50.6212 210.417 47.7494C213.876 44.3019 214.239 44.1844 221.396 44.1844C227.911 44.1844 229.118 44.4822 231.472 46.6746C235.086 50.0375 236.592 53.1553 239.55 63.3893C243.443 76.8577 253.79 100.028 260.169 109.561C267.226 120.108 279.127 131.429 289.035 137.021C315.56 151.99 362.059 151.568 391.21 136.093C398.391 132.282 407.827 122.394 411.337 115.006C414.272 108.822 423.25 77.5091 427.358 59.126C430.089 46.8988 432.772 41.3345 437.384 38.3233C442.769 34.808 442.92 34.3438 442.92 21.3247C442.92 12.7213 442.547 8.76577 441.67 8.05655C440.035 6.73372 432.22 5.23258 417.425 3.39775C393.782 0.465212 375.026 -0.377495 345.072 0.145462C313.289 0.700293 303.745 1.69441 280.142 6.90803C256.276 12.1804 232.595 15.7953 221.927 15.7953C209.675 15.7953 198.558 14.1866 166.97 7.84139C153.497 5.13496 139.1 2.4126 134.976 1.79103C127.749 0.702285 64.7213 -0.307767 54.4902 0.501072ZM130.686 11.8139C143.358 13.8838 160.685 18.426 167.97 21.5887C179.514 26.5991 185.153 34.0599 187.006 46.7782C189.777 65.786 183.11 89.57 169.624 108.789C161.559 120.282 145.053 131.215 129.264 135.522C118.893 138.351 88.2691 138.695 77.9359 136.098C60.817 131.797 53.0124 127.17 46.5576 117.497C35.9685 101.628 29.7206 77.4095 29.5727 51.6552C29.5047 40.0017 29.7736 37.6101 31.5863 33.7252C36.1345 23.9773 41.5955 20.0547 56.9967 15.4736C80.1045 8.59943 103.808 7.42203 130.686 11.8139ZM368.53 11.3337C380.605 13.3997 395.466 18.0883 400.928 21.5548C406.906 25.349 410.533 30.8216 412.598 39.163C414.107 45.2532 414.165 47.609 413.114 60.0474C410.297 93.405 400.575 118.096 386.587 127.421C374.969 135.167 355.841 139.033 334.14 138.021C313.234 137.046 298.38 131.798 284.242 120.392C266.681 106.224 253.315 74.3116 255.291 51.2697C257.039 30.9003 263.905 23.9823 289.478 16.8283C316.841 9.17418 344.62 7.24273 368.53 11.3337ZM23.4038 17.6869C25.0385 19.4859 25.0105 19.6562 22.8369 21.1733C19.6505 23.3966 14.6993 23.1994 12.4837 20.7599C10.7161 18.8145 10.7191 18.7069 12.5787 17.3054C15.3742 15.1976 21.3341 15.4078 23.4038 17.6869ZM430.33 17.6869C431.965 19.4859 431.937 19.6562 429.763 21.1733C426.802 23.2392 422.073 23.2113 419.745 21.1125C418.029 19.5646 418.018 19.3365 419.571 17.6262C421.824 15.1458 428.055 15.1817 430.33 17.6869Z" fill="#1f2937"/></svg>'
 
 # Sports Categories Section
@@ -457,18 +457,18 @@ faq:
   title: "Frequently Asked Questions"
   questions:
     - question: "What's your return policy?"
-      answer: 'We offer a 100% satisfaction guarantee on all purchases & a 12 month frame warranty. Simply notify us within 7 days of receipt and return your glasses to us within 30 days of the shipped date to take advantage of this unique no quibble money-back guarantee. A full 12 months from the dispatch date we will also repair or replace any frames that may develop a manufacturing fault. Read more about our <a href="{{store direct_url="exchange-or-return"}}" class="text-blue-500 underline text-link">exchanges and returns here</a>'
+      answer: 'We offer a 100% satisfaction guarantee on all purchases & a 12 month frame warranty. Simply notify us within 7 days of receipt and return your glasses to us within 30 days of the shipped date to take advantage of this unique no quibble money-back guarantee. A full 12 months from the dispatch date we will also repair or replace any frames that may develop a manufacturing fault. Read more about our <a href="/exchange-or-return" class="text-blue-500 underline text-link">exchanges and returns here</a>'
     - question: "Roughly how long does it take to deliver my glasses?"
-      answer: 'The time it takes to make your glasses depends on the frame and lenses you choose. You can check our estimated <a href=''{{store direct_url="dispatch-times"}}'' class=''text-blue-500 underline text-link''>dispatch times here</a>. Once everything''s in stock, we usually assemble, check, and ship your order the same day. Keep an eye on your email for updates, we''ll keep you in the loop every step of the way.'
+      answer: 'The time it takes to make your glasses depends on the frame and lenses you choose. You can check our estimated <a href=''/dispatch-times'' class=''text-blue-500 underline text-link''>dispatch times here</a>. Once everything''s in stock, we usually assemble, check, and ship your order the same day. Keep an eye on your email for updates, we''ll keep you in the loop every step of the way.'
     - question: "How do I know they will fit?"
-      answer: 'Every frame includes key measurements like lens width and bridge size. Compare them with your current pair, or use our <a href=''{{store direct_url="choosing-the-right-size-glasses"}}'' class=''text-blue-500 underline text-link''>fit guide</a> for help. <span class=''font-bold''>Want to try before you buy?</span> Use our <a href=''{{store direct_url="trial-home"}}'' class=''text-blue-500 underline text-link''>Home Trial</a>, all backed by our 100% satisfaction guarantee.'
+      answer: 'Every frame includes key measurements like lens width and bridge size. Compare them with your current pair, or use our <a href=''/choosing-the-right-size-glasses'' class=''text-blue-500 underline text-link''>fit guide</a> for help. <span class=''font-bold''>Want to try before you buy?</span> Use our <a href=''/trial-home'' class=''text-blue-500 underline text-link''>Home Trial</a>, all backed by our 100% satisfaction guarantee.'
     - question: "How are your cheap glasses good quality?"
       answer: "Our glasses might be cheap in price, but never in quality. Every pair goes through a thorough 15-step quality check to make sure they're comfy, durable, and crystal clear."
     - question: "Can I reglaze my glasses?"
-      answer: 'Absolutely! Reglazing glasses is a simple, affordable way to keep the frames you love. Just send us your current pair, and we''ll fit them with brand-new prescription lenses. Our reglaze glasses service is quick, easy, and an eco-friendly alternative. <a href=''{{store direct_url="reglaze-customer-frames"}}'' class=''text-blue-500 underline text-link''>Learn more and start your reglaze today.</a>'
+      answer: 'Absolutely! Reglazing glasses is a simple, affordable way to keep the frames you love. Just send us your current pair, and we''ll fit them with brand-new prescription lenses. Our reglaze glasses service is quick, easy, and an eco-friendly alternative. <a href=''/reglaze-customer-frames'' class=''text-blue-500 underline text-link''>Learn more and start your reglaze today.</a>'
     - question: "What are Occupational lenses?"
       answer: "Occupational lenses are tailored for close-up and intermediate tasks, like using a computer or reading. Unlike varifocal lenses, they prioritise the areas you use most at work, offering clearer, more comfortable vision across your desk without needing to switch glasses. <a href='https://www.spex4less.com/blog/office-lens-secrets' class='text-blue-500 underline text-link'>Discover The Secrets to the Perfect Office Lens</a>"
     - question: "Do you offer prescription sunglasses?"
-      answer: 'Yes, we offer a wide range of <a href=''{{store direct_url="sunglasses"}}'' class=''text-link''>prescription sunglasses</a>, in both designer and everyday styles. You can choose from different lens options, including polarised lenses, which help reduce glare, perfect for driving or spending time outdoors. You can learn more about polarised sunglasses <a href=''https://www.spex4less.com/blog/polarised-sunglasses'' class=''text-blue-500 underline text-link''>here.</a>'
+      answer: 'Yes, we offer a wide range of <a href=''/sunglasses'' class=''text-link''>prescription sunglasses</a>, in both designer and everyday styles. You can choose from different lens options, including polarised lenses, which help reduce glare, perfect for driving or spending time outdoors. You can learn more about polarised sunglasses <a href=''https://www.spex4less.com/blog/polarised-sunglasses'' class=''text-blue-500 underline text-link''>here.</a>'
     - question: "Do you offer varifocal lenses?"
-      answer: 'We offer a wide range of varifocal lenses, from standard to elite, all at dramatically lower prices without compromising on quality. Our proprietary <a href=''{{store direct_url="blog/varifocal-photograph-guide"}}'' class=''text-link''>measuring process</a> ensures the perfect fit for your varifocal glasses from the comfort of your home. We also provide specialist varifocals from top suppliers like Zeiss and Essilor. If you can''t find a specific lens, our experts are here to help. As always, our varifocals are covered by our 100% satisfaction guarantee!'
+      answer: 'We offer a wide range of varifocal lenses, from standard to elite, all at dramatically lower prices without compromising on quality. Our proprietary <a href=''/blog/varifocal-photograph-guide'' class=''text-link''>measuring process</a> ensures the perfect fit for your varifocal glasses from the comfort of your home. We also provide specialist varifocals from top suppliers like Zeiss and Essilor. If you can''t find a specific lens, our experts are here to help. As always, our varifocals are covered by our 100% satisfaction guarantee!'

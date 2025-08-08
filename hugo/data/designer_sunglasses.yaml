@@ -3,7 +3,7 @@ hero:
   subheadline: "Prescription Lenses That Just Work, Crafted in the UK, Tailored for Your Vision"
   featured_product:
     name: "Ray-ban Aviator 3025"
-    url: "{{store direct_url='sunglasses/ray-ban/rb3025'}}"
+    url: "/sunglasses/ray-ban/rb3025"
     image: "/media/wysiwyg/0RB3025__L0205__STD__shad__cfr.png"
     alt: "Gold RayBan Aviator folded 3025"
   banner_styling:
@@ -13,16 +13,16 @@ hero:
     product_name_hover_color: "hover:text-amber-700"
   cta_buttons:
     - text: "Men's Glasses"
-      url: "{{store direct_url='glasses/mens'}}"
+      url: "/glasses/mens"
     - text: "Women's Glasses"
-      url: "{{store direct_url='glasses/womens'}}"
+      url: "/glasses/womens"
 
 featured_products:
   section:
     id: "products"
     classes: "relative z-20 px-1 pb-4 -mt-12 md:pb-8 md:-mt-20 lg:-mt-32"
   products:
-    - url: "{{store direct_url='sunglasses/ray-ban/rb2140'}}"
+    - url: "/sunglasses/ray-ban/rb2140"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/rbsun_front_1_1_.webp"
       alt: "Ray-Ban Wayfarer RB2140"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/rb2140_model_1_1_.webp"
@@ -30,11 +30,11 @@ featured_products:
       priority: true
       brand:
         name: "Ray-Ban"
-        url: "{{store direct_url='sunglasses/ray-ban'}}"
+        url: "/sunglasses/ray-ban"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/rayban_menu_2_.webp"
       model: "Wayfarer"
       variant: "RB2140"
-    - url: "{{store direct_url='sunglasses/oakley/oo9242'}}"
+    - url: "/sunglasses/oakley/oo9242"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/OOSUN_front_1_1_.webp"
       alt: "Oakley HSTN OO9242"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/OO9242_side_1_1_.webp"
@@ -43,11 +43,11 @@ featured_products:
       decoding: "async"
       brand:
         name: "Oakley"
-        url: "{{store direct_url='sunglasses/oakley'}}"
+        url: "/sunglasses/oakley"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/OAKLEY.webp"
       model: "HSTN"
       variant: "OO9242"
-    - url: "{{store direct_url='sunglasses/gucci/gg0024s'}}"
+    - url: "/sunglasses/gucci/gg0024s"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/0024s_front_1_1_1_.webp"
       alt: "Gucci Classic GG0024S"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/gucci_model_1_1_.webp"
@@ -55,11 +55,11 @@ featured_products:
       decoding: "async"
       brand:
         name: "Gucci"
-        url: "{{store direct_url='sunglasses/gucci'}}"
+        url: "/sunglasses/gucci"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/gucci_1_.webp"
       model: "Classic"
       variant: "GG0024S"
-    - url: "{{store direct_url='sunglasses/barcelona-dg3588-sunglasses'}}"
+    - url: "/sunglasses/barcelona-dg3588-sunglasses"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/barcelona_front1_1_1_.webp"
       alt: "Barcelona DG3588"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/barcelona_side_1_1_.webp"
@@ -67,29 +67,29 @@ featured_products:
       decoding: "async"
       brand:
         name: "Spex4Less"
-        url: "{{store direct_url='sunglasses/stock'}}"
+        url: "/sunglasses/stock"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/SPEX4LESS_1_.webp"
       model: "Barcelona"
       variant: "DG3588"
 
 brands:
   - name: "Tom Ford"
-    url: "{{store direct_url='designer-glasses/tom-ford'}}"
+    url: "/designer-glasses/tom-ford"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/TOMFORD.webp"
   - name: "Gucci"
-    url: "{{store direct_url='designer-glasses/gucci'}}"
+    url: "/designer-glasses/gucci"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/gucci_1_.webp"
   - name: "Oakley"
-    url: "{{store direct_url='designer-glasses/oakley'}}"
+    url: "/designer-glasses/oakley"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/OAKLEY.webp"
   - name: "Ray-Ban"
-    url: "{{store direct_url='designer-glasses/ray-ban'}}"
+    url: "/designer-glasses/ray-ban"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/rayban_menu_2_.webp"
   - name: "Michael Kors"
-    url: "{{store direct_url='designer-glasses/michael-kors'}}"
+    url: "/designer-glasses/michael-kors"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/MICHAEL_KORS_2_.webp"
   - name: "Superdry"
-    url: "{{store direct_url='designer-glasses/superdry'}}"
+    url: "/designer-glasses/superdry"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/superdry_2_.webp"
 
 # Customer Reviews Section
@@ -115,7 +115,7 @@ customer_reviews:
     - name: "Clarrie"
       text: "Really pleased with the whole experience of purchasing from Spex4Less. Ordering process was easy and well explained. Delivery was earlier than expected and the final product is great - very happy with my prescription sunglasses. Thank you! Happy customer!"
   cta_text: "Read More Reviews"
-  cta_url: "{{store direct_url='customer-reviews'}}"
+  cta_url: "/customer-reviews"
 
 # FAQ Section (Sunglass Specific)
 faq:
@@ -174,13 +174,13 @@ additional_cards:
     text: "Try up to <strong>4 frames at home for free,</strong> no pressure to buy. Or, take our frame quiz for personalised recommendations."
     buttons:
       - text: "Learn About Home Trial"
-        url: '{{store direct_url="trial-home"}}'
+        url: '/trial-home'
       - text: "Start the Quiz"
-        url: '{{store direct_url="product-quiz-glasses"}}'
+        url: '/product-quiz-glasses'
 
   - id: "money-back-guarantee"
     title: "100% Money Back Guarantee"
     text: "<strong>100% money-back guarantee for 30 days</strong> if you're unhappy for any reason. Plus <strong>12 month frame warranty</strong> - we're always here to help."
     buttons:
       - text: "Learn More"
-        url: '{{store direct_url="guarantee"}}'
+        url: '/guarantee'

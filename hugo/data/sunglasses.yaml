@@ -3,21 +3,21 @@ hero:
   subheadline: "Prescription Lenses That Just Work, Crafted in the UK, Tailored for Your Vision"
   featured_product:
     name: "Oakley Socket 5.5 OX3218"
-    url: "{{store direct_url='designer-glasses/oakley/ox3218'}}"
+    url: "/designer-glasses/oakley/ox3218"
     image: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/Frame_258.webp"
     alt: "Oakley Socket 5.5 OX3218"
   cta_buttons:
     - text: "Men's Glasses"
-      url: "{{store direct_url='glasses/mens'}}"
+      url: "/glasses/mens"
     - text: "Women's Glasses"
-      url: "{{store direct_url='glasses/womens'}}"
+      url: "/glasses/womens"
 
 featured_products:
   section:
     id: "products"
     classes: "relative z-20 px-1 pb-4 -mt-12 md:pb-8 md:-mt-20 lg:-mt-32"
   products:
-    - url: "{{store direct_url='designer-glasses/tom-ford/ft-5294-tom-ford-glasses'}}"
+    - url: "/designer-glasses/tom-ford/ft-5294-tom-ford-glasses"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/ft_front_1_1_.webp"
       alt: "Tom Ford FT5294 Havana"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/ft5294_model_1_1_.webp"
@@ -25,11 +25,11 @@ featured_products:
       lazy: true
       brand:
         name: "Tom Ford"
-        url: "{{store direct_url='designer-glasses/tom-ford'}}"
+        url: "/designer-glasses/tom-ford"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/TOMFORD.webp"
       model: "FT5294"
       variant: "Havana"
-    - url: "{{store direct_url='designer-glasses/oakley/ox5152'}}"
+    - url: "/designer-glasses/oakley/ox5152"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/O5152_front_1_1_.webp"
       alt: "Oakley OX5152 Matte Black"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/O5152_model_1_1_1_.webp"
@@ -37,11 +37,11 @@ featured_products:
       lazy: true
       brand:
         name: "Oakley"
-        url: "{{store direct_url='designer-glasses/oakley'}}"
+        url: "/designer-glasses/oakley"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/OAKLEY.webp"
       model: "OX5152"
       variant: "Matte Black"
-    - url: "{{store direct_url='designer-glasses/marc-jacobs/marc662'}}"
+    - url: "/designer-glasses/marc-jacobs/marc662"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/MJOPH_front_1_1_.webp"
       alt: "Marc Jacobs MJ662 Shiny Black"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/MJ662_model_1_1_.webp"
@@ -49,12 +49,12 @@ featured_products:
       lazy: true
       brand:
         name: "Marc Jacobs"
-        url: "{{store direct_url='designer-glasses/marc-jacobs'}}"
+        url: "/designer-glasses/marc-jacobs"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/MARCJACOBS.webp"
         large: true
       model: "MJ662"
       variant: "Shiny Black"
-    - url: "{{store direct_url='glasses/zurich-as6548-glasses'}}"
+    - url: "/glasses/zurich-as6548-glasses"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/zurich_front_1_1_.webp"
       alt: "Zurich AS6548"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/zurich_side_1_1_.webp"
@@ -62,29 +62,29 @@ featured_products:
       lazy: true
       brand:
         name: "Spex4Less"
-        url: "{{store direct_url='glasses'}}"
+        url: "/glasses"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/SPEX4LESS_1_.webp"
       model: "Zurich"
       variant: "AS6548"
 
 brands:
   - name: "Tom Ford"
-    url: "{{store direct_url='designer-glasses/tom-ford'}}"
+    url: "/designer-glasses/tom-ford"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/TOMFORD.webp"
   - name: "Gucci"
-    url: "{{store direct_url='designer-glasses/gucci'}}"
+    url: "/designer-glasses/gucci"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/gucci_1_.webp"
   - name: "Oakley"
-    url: "{{store direct_url='designer-glasses/oakley'}}"
+    url: "/designer-glasses/oakley"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/OAKLEY.webp"
   - name: "Ray-Ban"
-    url: "{{store direct_url='designer-glasses/ray-ban'}}"
+    url: "/designer-glasses/ray-ban"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/rayban_menu_2_.webp"
   - name: "Michael Kors"
-    url: "{{store direct_url='designer-glasses/michael-kors'}}"
+    url: "/designer-glasses/michael-kors"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/MICHAEL_KORS_2_.webp"
   - name: "Superdry"
-    url: "{{store direct_url='designer-glasses/superdry'}}"
+    url: "/designer-glasses/superdry"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/superdry_2_.webp"
 
 # Customer Reviews Section
@@ -110,7 +110,7 @@ customer_reviews:
     - name: "Clarrie"
       text: "Really pleased with the whole experience of purchasing from Spex4Less. Ordering process was easy and well explained. Delivery was earlier than expected and the final product is great - very happy with my prescription sunglasses. Thank you! Happy customer!"
   cta_text: "Read More Reviews"
-  cta_url: "{{store direct_url='customer-reviews'}}"
+  cta_url: "/customer-reviews"
 
 # FAQ Section (Sunglass Specific)
 faq:
@@ -148,13 +148,33 @@ additional_cards:
     text: "Try up to <strong>4 frames at home for free,</strong> no pressure to buy. Or, take our frame quiz for personalised recommendations."
     buttons:
       - text: "Learn About Home Trial"
-        url: '{{store direct_url="trial-home"}}'
+        url: '/trial-home'
       - text: "Start the Quiz"
-        url: '{{store direct_url="product-quiz-glasses"}}'
+        url: '/product-quiz-glasses'
 
   - id: "money-back-guarantee"
     title: "100% Money Back Guarantee"
     text: "<strong>100% money-back guarantee for 30 days</strong> if you're unhappy for any reason. Plus <strong>12 month frame warranty</strong> - we're always here to help."
     buttons:
       - text: "Learn More"
-        url: '{{store direct_url="guarantee"}}'
+        url: '/guarantee'
+
+# Feature Cards for selling-points partial (sunglasses-specific)
+feature_cards:
+  - id: "rated-1"
+    title: "Prescription Sunglasses"
+    text: "<strong>Custom Vision + Sun Protection</strong><br />Choose from single vision, bifocal, or varifocal lenses, all available with photochromic, mirrored, or tinted options. Our prescription sunglasses are built for clarity, comfort, and protection in any light.
+
+"
+    reviews_badge: "28K 5-Star Reviews"
+
+  - id: "customer-focused"
+    title: "Polarised Sunglasses"
+    text: "<strong>The Essential Sunglass Lens</strong><br />Polarised technology eliminates 99% of glare for sharper, more comfortable vision in bright or reflective settings. An essential for driving, and everyday outdoor wear.
+<a href='https://www.spex4less.com/blog/polarised-sunglasses' class='text-blue-500 hover:text-blue-700 underline'>Learn more about polarised technology</a>
+
+"
+
+  - id: "more-for-less"
+    title: "Varifocal Sunglasses"
+    text: "<strong>Multi-Distance Vision in the Sun</strong><br />Seamlessly switch between near and distance vision while enjoying sun protection. Ideal for reading outdoors, driving, and active lifestyles. Custom-made to your exact prescription needs."

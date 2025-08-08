@@ -3,21 +3,21 @@ hero:
   subheadline: "Trusted by thousands, offering reliable, affordable prescription glasses & sunglasses."
   featured_product:
     name: "Oakley Socket 5.5 OX3218"
-    url: "{{store direct_url='designer-glasses/oakley/ox3218'}}"
+    url: "/designer-glasses/oakley/ox3218"
     image: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/Frame_258.webp"
     alt: "Oakley Socket 5.5 OX3218"
   cta_buttons:
     - text: "Men's Glasses"
-      url: "{{store direct_url='glasses/mens'}}"
+      url: "/glasses/mens"
     - text: "Women's Glasses"
-      url: "{{store direct_url='glasses/womens'}}"
+      url: "/glasses/womens"
 
 featured_products:
   section:
     id: "products"
     classes: "relative z-20 px-1 pb-4 -mt-12 md:pb-8 md:-mt-20 lg:-mt-32"
   products:
-    - url: "{{store direct_url='designer-glasses/tom-ford/ft-5294-tom-ford-glasses'}}"
+    - url: "/designer-glasses/tom-ford/ft-5294-tom-ford-glasses"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/ft_front_1_1_.webp"
       alt: "Tom Ford FT5294 Havana"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/ft5294_model_1_1_.webp"
@@ -25,11 +25,11 @@ featured_products:
       lazy: true
       brand:
         name: "Tom Ford"
-        url: "{{store direct_url='designer-glasses/tom-ford'}}"
+        url: "/designer-glasses/tom-ford"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/TOMFORD.webp"
       model: "FT5294"
       variant: "Havana"
-    - url: "{{store direct_url='designer-glasses/oakley/ox5152'}}"
+    - url: "/designer-glasses/oakley/ox5152"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/O5152_front_1_1_.webp"
       alt: "Oakley OX5152 Matte Black"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/O5152_model_1_1_1_.webp"
@@ -37,11 +37,11 @@ featured_products:
       lazy: true
       brand:
         name: "Oakley"
-        url: "{{store direct_url='designer-glasses/oakley'}}"
+        url: "/designer-glasses/oakley"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/OAKLEY.webp"
       model: "OX5152"
       variant: "Matte Black"
-    - url: "{{store direct_url='designer-glasses/marc-jacobs/marc662'}}"
+    - url: "/designer-glasses/marc-jacobs/marc662"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/MJOPH_front_1_1_.webp"
       alt: "Marc Jacobs MJ662 Shiny Black"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/MJ662_model_1_1_.webp"
@@ -49,12 +49,12 @@ featured_products:
       lazy: true
       brand:
         name: "Marc Jacobs"
-        url: "{{store direct_url='designer-glasses/marc-jacobs'}}"
+        url: "/designer-glasses/marc-jacobs"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/MARCJACOBS.webp"
         large: true
       model: "MJ662"
       variant: "Shiny Black"
-    - url: "{{store direct_url='glasses/zurich-as6548-glasses'}}"
+    - url: "/glasses/zurich-as6548-glasses"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/zurich_front_1_1_.webp"
       alt: "Zurich AS6548"
       hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/zurich_side_1_1_.webp"
@@ -62,29 +62,29 @@ featured_products:
       lazy: true
       brand:
         name: "Spex4Less"
-        url: "{{store direct_url='glasses'}}"
+        url: "/glasses"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/SPEX4LESS_1_.webp"
       model: "Zurich"
       variant: "AS6548"
 
 brands:
   - name: "Tom Ford"
-    url: "{{store direct_url='designer-glasses/tom-ford'}}"
+    url: "/designer-glasses/tom-ford"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/TOMFORD.webp"
   - name: "Gucci"
-    url: "{{store direct_url='designer-glasses/gucci'}}"
+    url: "/designer-glasses/gucci"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/gucci_1_.webp"
   - name: "Oakley"
-    url: "{{store direct_url='designer-glasses/oakley'}}"
+    url: "/designer-glasses/oakley"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/OAKLEY.webp"
   - name: "Ray-Ban"
-    url: "{{store direct_url='designer-glasses/ray-ban'}}"
+    url: "/designer-glasses/ray-ban"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/rayban_menu_2_.webp"
   - name: "Michael Kors"
-    url: "{{store direct_url='designer-glasses/michael-kors'}}"
+    url: "/designer-glasses/michael-kors"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/MICHAEL_KORS_2_.webp"
   - name: "Superdry"
-    url: "{{store direct_url='designer-glasses/superdry'}}"
+    url: "/designer-glasses/superdry"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/superdry_2_.webp"
 
 # Customer Reviews Section
@@ -110,7 +110,7 @@ customer_reviews:
     - name: "Clarrie"
       text: "Really pleased with the whole experience of purchasing from Spex4Less. Ordering process was easy and well explained. Delivery was earlier than expected and the final product is great - very happy with my prescription sunglasses. Thank you! Happy customer!"
   cta_text: "Read More Reviews"
-  cta_url: "{{store direct_url='customer-reviews'}}"
+  cta_url: "/customer-reviews"
 
 # Glasses Megamenu
 megamenu:
@@ -119,59 +119,59 @@ megamenu:
       title: "Glasses"
       links:
         - text: "Prescription Glasses"
-          url: "{{store direct_url='glasses'}}"
+          url: "/glasses"
         - text: "Men's Glasses"
-          url: "{{store direct_url='glasses/mens'}}"
+          url: "/glasses/mens"
         - text: "Women's Glasses"
-          url: "{{store direct_url='glasses/womens'}}"
+          url: "/glasses/womens"
         - text: "Bestsellers"
-          url: "{{store direct_url='glasses'}}"
+          url: "/glasses"
         - text: "Designer Glasses"
-          url: "{{store direct_url='designer-glasses'}}"
+          url: "/designer-glasses"
     specialty:
       title: "Specialty"
       links:
         - text: "Blue Light Glasses"
-          url: "{{store direct_url='blue-light-glasses'}}"
+          url: "/blue-light-glasses"
         - text: "Bifocal Glasses"
-          url: "{{store direct_url='bifocal-glasses'}}"
+          url: "/bifocal-glasses"
         - text: "Varifocal Glasses"
-          url: "{{store direct_url='varifocal-glasses'}}"
+          url: "/varifocal-glasses"
         - text: "Reading Glasses"
-          url: "{{store direct_url='reading-glasses'}}"
+          url: "/reading-glasses"
         - text: "Sports Glasses"
-          url: "{{store direct_url='sports-glasses'}}"
+          url: "/sports-glasses"
     styles:
       title: "Styles"
       links:
         - text: "Full-rimmed Glasses"
-          url: "{{store direct_url='glasses/full-rimmed'}}"
+          url: "/glasses/full-rimmed"
         - text: "Semi-rimless Glasses"
-          url: "{{store direct_url='glasses/semi-rimless'}}"
+          url: "/glasses/semi-rimless"
         - text: "Rimless Glasses"
-          url: "{{store direct_url='glasses/rimless'}}"
+          url: "/glasses/rimless"
         - text: "Aviator Glasses"
-          url: "{{store direct_url='glasses/aviator'}}"
+          url: "/glasses/aviator"
         - text: "Round Glasses"
-          url: "{{store direct_url='glasses/round'}}"
+          url: "/glasses/round"
   promotional_links:
     - text: "Check Out our Style Finder quiz!"
-      url: "{{store direct_url='product-quiz-glasses'}}"
+      url: "/product-quiz-glasses"
       icon: '<svg width="25" height="25" viewBox="0 0 304 303" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M101.689 1.55188C57.051 9.95588 20.63 41.1339 6.79405 82.7869C-28.279 188.367 79.0041 281.842 178.08 232.027C182.485 229.812 186.83 228 187.735 228C188.64 228 204.884 243.469 223.832 262.375C251.665 290.145 259.375 297.29 263.959 299.564C288.527 311.75 311.879 288.385 299.692 263.812C297.41 259.211 290.303 251.542 262.502 223.678C243.6 204.732 228.134 188.494 228.134 187.593C228.134 186.692 229.946 182.351 232.161 177.946C268.286 106.097 230.524 23.6839 152.134 3.29688C139.842 0.0998828 114.127 -0.789117 101.689 1.55188ZM142.134 34.6569C211.126 48.8639 236.929 135.541 187.271 186.281C145.144 229.327 70.132 218.457 43.277 165.416C8.19205 96.1199 66.443 19.0709 142.134 34.6569ZM103.634 50.0619C83.201 54.0499 74.7 61.9619 79.647 72.3869C83.299 80.0829 88.59 81.3079 101.731 77.4999C127.203 70.1179 153.304 81.2469 166.14 104.961C171.52 114.9 177.012 117.749 184.644 114.56C207.084 105.184 174.515 61.5249 137.634 51.5429C130.377 49.5789 110.537 48.7149 103.634 50.0619Z" fill="#1e3a8a"/></svg>'
     - text: "Try our Home Trial Service!"
-      url: "{{store direct_url='trial-home'}}"
+      url: "/trial-home"
       icon: '<svg width="25" height="25" viewBox="0 0 512 478" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M246.25 1.10204C236.771 2.20504 225.195 6.12604 216.491 11.182C205.521 17.554 7.32069 215.646 2.81669 224.74C-8.95831 248.513 18.5237 275.717 41.9907 263.518C43.9157 262.518 90.8567 216.654 146.305 161.599C201.752 106.545 248.327 60.958 249.805 60.295C253.173 58.784 258.015 58.684 261.676 60.051C263.257 60.641 308.315 104.858 364.491 160.948C435.908 232.255 465.777 261.443 468.991 263.063C487.98 272.635 510.38 259.702 511.773 238.361C512.631 225.228 512.683 225.296 466.443 178.984L425.991 138.468V91.271C425.991 45.56 425.924 43.896 423.86 38.381C414.421 13.151 378.481 13.365 368.999 38.708C367.266 43.339 366.991 46.5 366.991 61.753V79.431L334.741 47.357C299.859 12.665 296.039 9.63004 280.901 4.58704C274.568 2.47704 258.088 -0.298958 254.491 0.138042C253.941 0.205042 250.233 0.639041 246.25 1.10204ZM249.491 116.55C246.162 118.257 78.4967 285.205 73.8907 291.4L70.9907 295.3V363.969C70.9907 424.223 71.1887 433.303 72.6027 438.068C77.9847 456.195 91.7237 470.161 109.608 475.683C114.936 477.329 119.881 477.5 161.991 477.5H208.491L208.748 412.25L209.005 347H255.991H302.977L303.234 412.25L303.491 477.5H349.991C407.176 477.5 410.372 476.817 425.72 461.316C440.945 445.94 440.991 445.648 440.991 363.44V295.3L438.094 291.4C432.938 284.46 264.599 117.14 261.676 116.05C257.693 114.565 252.988 114.758 249.491 116.55Z" fill="#1e3a8a"/></svg>'
   featured_products:
     - title: "Men's Glasses"
-      url: "{{store direct_url='glasses/mens'}}"
+      url: "/glasses/mens"
       image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/new/mens-glasses.webp"
       alt: "Men's Glasses"
     - title: "Women's Glasses"
-      url: "{{store direct_url='glasses/womens'}}"
+      url: "/glasses/womens"
       image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/new/womens-glasses2.webp"
       alt: "Women's Glasses"
     - title: "Home Trial"
-      url: "{{store direct_url='trial-home'}}"
+      url: "/trial-home"
       image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/trial-banner.webp"
       alt: "Home trial"
 
@@ -180,21 +180,21 @@ faq:
   title: "Frequently Asked Questions"
   questions:
     - question: "What's your return policy?"
-      answer: 'We offer a 100% satisfaction guarantee on all purchases & a 12 month frame warranty. Simply notify us within 7 days of receipt and return your glasses to us within 30 days of the shipped date to take advantage of this unique no quibble money-back guarantee. A full 12 months from the dispatch date we will also repair or replace any frames that may develop a manufacturing fault. Read more about our <a href="{{store direct_url="exchange-or-return"}}" class="text-blue-500 underline text-link">exchanges and returns here</a>'
+      answer: 'We offer a 100% satisfaction guarantee on all purchases & a 12 month frame warranty. Simply notify us within 7 days of receipt and return your glasses to us within 30 days of the shipped date to take advantage of this unique no quibble money-back guarantee. A full 12 months from the dispatch date we will also repair or replace any frames that may develop a manufacturing fault. Read more about our <a href="/exchange-or-return" class="text-blue-500 underline text-link">exchanges and returns here</a>'
     - question: "Roughly how long does it take to deliver my glasses?"
-      answer: 'The time it takes to make your glasses depends on the frame and lenses you choose. You can check our estimated <a href=''{{store direct_url="dispatch-times"}}'' class=''text-blue-500 underline text-link''>dispatch times here</a>. Once everything''s in stock, we usually assemble, check, and ship your order the same day. Keep an eye on your email for updates, we''ll keep you in the loop every step of the way.'
+      answer: 'The time it takes to make your glasses depends on the frame and lenses you choose. You can check our estimated <a href=''/dispatch-times'' class=''text-blue-500 underline text-link''>dispatch times here</a>. Once everything''s in stock, we usually assemble, check, and ship your order the same day. Keep an eye on your email for updates, we''ll keep you in the loop every step of the way.'
     - question: "How do I know they will fit?"
-      answer: 'Every frame includes key measurements like lens width and bridge size. Compare them with your current pair, or use our <a href=''{{store direct_url="choosing-the-right-size-glasses"}}'' class=''text-blue-500 underline text-link''>fit guide</a> for help. <span class=''font-bold''>Want to try before you buy?</span> Use our <a href=''{{store direct_url="trial-home"}}'' class=''text-blue-500 underline text-link''>Home Trial</a>, all backed by our 100% satisfaction guarantee.'
+      answer: 'Every frame includes key measurements like lens width and bridge size. Compare them with your current pair, or use our <a href=''/choosing-the-right-size-glasses'' class=''text-blue-500 underline text-link''>fit guide</a> for help. <span class=''font-bold''>Want to try before you buy?</span> Use our <a href=''/trial-home'' class=''text-blue-500 underline text-link''>Home Trial</a>, all backed by our 100% satisfaction guarantee.'
     - question: "How are your cheap glasses good quality?"
       answer: "Our glasses might be cheap in price, but never in quality. Every pair goes through a thorough 15-step quality check to make sure they're comfy, durable, and crystal clear."
     - question: "Can I reglaze my glasses?"
-      answer: 'Absolutely! Reglazing glasses is a simple, affordable way to keep the frames you love. Just send us your current pair, and we''ll fit them with brand-new prescription lenses. Our reglaze glasses service is quick, easy, and an eco-friendly alternative. <a href=''{{store direct_url="reglaze-customer-frames"}}'' class=''text-blue-500 underline text-link''>Learn more and start your reglaze today.</a>'
+      answer: 'Absolutely! Reglazing glasses is a simple, affordable way to keep the frames you love. Just send us your current pair, and we''ll fit them with brand-new prescription lenses. Our reglaze glasses service is quick, easy, and an eco-friendly alternative. <a href=''/reglaze-customer-frames'' class=''text-blue-500 underline text-link''>Learn more and start your reglaze today.</a>'
     - question: "What are Occupational lenses?"
       answer: "Occupational lenses are tailored for close-up and intermediate tasks, like using a computer or reading. Unlike varifocal lenses, they prioritise the areas you use most at work, offering clearer, more comfortable vision across your desk without needing to switch glasses. <a href='https://www.spex4less.com/blog/office-lens-secrets' class='text-blue-500 underline text-link'>Discover The Secrets to the Perfect Office Lens</a>"
     - question: "Do you offer prescription sunglasses?"
-      answer: 'Yes, we offer a wide range of <a href=''{{store direct_url="sunglasses"}}'' class=''text-link''>prescription sunglasses</a>, in both designer and everyday styles. You can choose from different lens options, including polarised lenses, which help reduce glare, perfect for driving or spending time outdoors. You can learn more about polarised sunglasses <a href=''https://www.spex4less.com/blog/polarised-sunglasses'' class=''text-blue-500 underline text-link''>here.</a>'
+      answer: 'Yes, we offer a wide range of <a href=''/sunglasses'' class=''text-link''>prescription sunglasses</a>, in both designer and everyday styles. You can choose from different lens options, including polarised lenses, which help reduce glare, perfect for driving or spending time outdoors. You can learn more about polarised sunglasses <a href=''https://www.spex4less.com/blog/polarised-sunglasses'' class=''text-blue-500 underline text-link''>here.</a>'
     - question: "Do you offer varifocal lenses?"
-      answer: 'We offer a wide range of varifocal lenses, from standard to elite, all at dramatically lower prices without compromising on quality. Our proprietary <a href=''{{store direct_url="blog/varifocal-photograph-guide"}}'' class=''text-link''>measuring process</a> ensures the perfect fit for your varifocal glasses from the comfort of your home. We also provide specialist varifocals from top suppliers like Zeiss and Essilor. If you can''t find a specific lens, our experts are here to help. As always, our varifocals are covered by our 100% satisfaction guarantee!'
+      answer: 'We offer a wide range of varifocal lenses, from standard to elite, all at dramatically lower prices without compromising on quality. Our proprietary <a href=''/blog/varifocal-photograph-guide'' class=''text-link''>measuring process</a> ensures the perfect fit for your varifocal glasses from the comfort of your home. We also provide specialist varifocals from top suppliers like Zeiss and Essilor. If you can''t find a specific lens, our experts are here to help. As always, our varifocals are covered by our 100% satisfaction guarantee!'
 
 feature_cards:
   - id: "rated-1"
@@ -210,6 +210,21 @@ feature_cards:
     title: "More for Less"
     text: "<strong>Expertly handled, fairly priced.</strong><br />Top-tier quality, personally checked by our in-house experts. No fuss, no shortcuts. Just great glasses, done right."
 
+# Feature Cards for selling-points partial (glasses-specific)
+feature_cards:
+  - id: "rated-1"
+    title: "Glasses for Every Style and Need"
+    text: "From timeless classics to modern designer looks, we offer glasses to suit every face, lifestyle, and budget. Browse a wide selection of stylish frames and lens options, all backed by expert care and fast delivery."
+    reviews_badge: "28K 5-Star Reviews"
+
+  - id: "customer-focused"
+    title: "Prescription Glasses, Made for You"
+    text: "Our prescription glasses are tailored to your exact needs. Whether you need single vision, bifocals, or varifocals, we'll help you see clearly in every setting. All lenses are crafted with precision and care for maximum clarity."
+
+  - id: "more-for-less"
+    title: "Photochromic & Transition Lenses"
+    text: "Enjoy all-day comfort with light-adaptive lenses that darken in the sun and clear indoors. Photochromic lenses reduce glare, protect your eyes, and adapt to changing light — ideal for driving, working, and everyday wear."
+
 additional_cards:
   - id: "frame-selection"
     title: "Not Sure Which Frames to Pick?"
@@ -217,16 +232,16 @@ additional_cards:
     text: "Try up to <strong>4 frames at home for free,</strong> no pressure to buy. Or, take our frame quiz for personalised recommendations."
     buttons:
       - text: "Learn About Home Trial"
-        url: '{{store direct_url="trial-home"}}'
+        url: '/trial-home'
       - text: "Start the Quiz"
-        url: '{{store direct_url="product-quiz-glasses"}}'
+        url: '/product-quiz-glasses'
 
   - id: "money-back-guarantee"
     title: "100% Money Back Guarantee"
     text: "<strong>100% money-back guarantee for 30 days</strong> if you're unhappy for any reason. Plus <strong>12 month frame warranty</strong> - we're always here to help."
     buttons:
       - text: "Learn More"
-        url: '{{store direct_url="guarantee"}}'
+        url: '/guarantee'
 
 # Trust Bar Data
 trust_bar:
@@ -235,79 +250,79 @@ trust_bar:
   reviews:
     count: "28,000+ Reviews"
     stars: 5
-    url: "{{store direct_url='customer-reviews'}}"
+    url: "/customer-reviews"
 
 # Global Brand Data - Available across all pages
 brands_a_to_z:
   - name: "Adidas Original"
-    url: "{{store direct_url='designer-glasses/adidas-original'}}"
+    url: "/designer-glasses/adidas-original"
   - name: "Adidas Sport"
-    url: "{{store direct_url='designer-glasses/adidas-sport'}}"
+    url: "/designer-glasses/adidas-sport"
   - name: "Balenciaga"
-    url: "{{store direct_url='designer-glasses/balenciaga'}}"
+    url: "/designer-glasses/balenciaga"
   - name: "Boss"
-    url: "{{store direct_url='designer-glasses/boss'}}"
+    url: "/designer-glasses/boss"
   - name: "Bvlgari"
-    url: "{{store direct_url='designer-glasses/bvlgari'}}"
+    url: "/designer-glasses/bvlgari"
   - name: "Carrera"
-    url: "{{store direct_url='designer-glasses/ducati'}}"
+    url: "/designer-glasses/ducati"
   - name: "Carolina Herrera"
-    url: "{{store direct_url='designer-glasses/carolina-herrera'}}"
+    url: "/designer-glasses/carolina-herrera"
   - name: "Cat"
-    url: "{{store direct_url='designer-glasses/cat'}}"
+    url: "/designer-glasses/cat"
   - name: "Chiara Ferragni"
-    url: "{{store direct_url='designer-glasses/chiara-ferragni'}}"
+    url: "/designer-glasses/chiara-ferragni"
   - name: "Chloé"
-    url: "{{store direct_url='designer-glasses/chloe'}}"
+    url: "/designer-glasses/chloe"
   - name: "David Beckham"
-    url: "{{store direct_url='designer-glasses/david-beckham'}}"
+    url: "/designer-glasses/david-beckham"
   - name: "Dsquared2"
-    url: "{{store direct_url='designer-glasses/dsquared2'}}"
+    url: "/designer-glasses/dsquared2"
   - name: "Emporio Armani"
-    url: "{{store direct_url='designer-glasses/emporio-armani'}}"
+    url: "/designer-glasses/emporio-armani"
   - name: "Gant"
-    url: "{{store direct_url='designer-glasses/gant'}}"
+    url: "/designer-glasses/gant"
   - name: "Gucci"
-    url: "{{store direct_url='designer-glasses/gucci'}}"
+    url: "/designer-glasses/gucci"
   - name: "Hugo"
-    url: "{{store direct_url='designer-glasses/hugo'}}"
+    url: "/designer-glasses/hugo"
   - name: "Kate Spade"
-    url: "{{store direct_url='designer-glasses/kate-spade'}}"
+    url: "/designer-glasses/kate-spade"
   - name: "Lipsy"
-    url: "{{store direct_url='designer-glasses/lipsy'}}"
+    url: "/designer-glasses/lipsy"
   - name: "Marc Jacobs"
-    url: "{{store direct_url='designer-glasses/marc-jacobs'}}"
+    url: "/designer-glasses/marc-jacobs"
   - name: "Michael Kors"
-    url: "{{store direct_url='designer-glasses/michael-kors'}}"
+    url: "/designer-glasses/michael-kors"
   - name: "Mont Blanc"
-    url: "{{store direct_url='designer-glasses/mont-blanc'}}"
+    url: "/designer-glasses/mont-blanc"
   - name: "Oakley"
-    url: "{{store direct_url='designer-glasses/oakley'}}"
+    url: "/designer-glasses/oakley"
   - name: "O'Neill"
-    url: "{{store direct_url='designer-glasses/oneill'}}"
+    url: "/designer-glasses/oneill"
   - name: "Pierre Cardin"
-    url: "{{store direct_url='designer-glasses/pierre-cardin'}}"
+    url: "/designer-glasses/pierre-cardin"
   - name: "Polaroid"
-    url: "{{store direct_url='designer-glasses/polaroid'}}"
+    url: "/designer-glasses/polaroid"
   - name: "Radley"
-    url: "{{store direct_url='designer-glasses/radley'}}"
+    url: "/designer-glasses/radley"
   - name: "Rag & Bone"
-    url: "{{store direct_url='designer-glasses/rag-bone'}}"
+    url: "/designer-glasses/rag-bone"
   - name: "Ray-Ban"
-    url: "{{store direct_url='designer-glasses/ray-ban'}}"
+    url: "/designer-glasses/ray-ban"
   - name: "Salvini"
-    url: "{{store direct_url='designer-glasses/salvini'}}"
+    url: "/designer-glasses/salvini"
   - name: "Seventh Street"
-    url: "{{store direct_url='designer-glasses/seventh-street'}}"
+    url: "/designer-glasses/seventh-street"
   - name: "Superdry"
-    url: "{{store direct_url='designer-glasses/superdry'}}"
+    url: "/designer-glasses/superdry"
   - name: "Swarovski"
-    url: "{{store direct_url='designer-glasses/swarovski'}}"
+    url: "/designer-glasses/swarovski"
   - name: "Timberland"
-    url: "{{store direct_url='designer-glasses/timberland'}}"
+    url: "/designer-glasses/timberland"
   - name: "Tom Ford"
-    url: "{{store direct_url='designer-glasses/tom-ford'}}"
+    url: "/designer-glasses/tom-ford"
   - name: "Tommy Hilfiger"
-    url: "{{store direct_url='designer-glasses/tommy-hilfiger'}}"
+    url: "/designer-glasses/tommy-hilfiger"
   - name: "Under Armour"
-    url: "{{store direct_url='designer-glasses/under-armour'}}"
+    url: "/designer-glasses/under-armour"
