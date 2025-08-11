@@ -1,0 +1,6 @@
+<!-- Right side image cards row -->
+<div class="flex w-full gap-6 border-gray-200 py-6 lg:w-5/12 xl:w-1/2">
+  {{ range .featured_products }}
+    {{ partial "megamenu/image-card-item.html" . }}
+  {{ end }}
+</div>
