@@ -1,0 +1,43 @@
+<!-- Debug: {{ printf "%#v" . }} -->
+<div class="{{ .layout.main_container_class }}">
+  <div class="flex">
+    <div class="{{ .layout.navigation_container_class }}">
+      <div class="{{ .layout.grid_class }}">
+        {{ range .sections }}
+        <div class="{{ if .styling.container_class }}{{ .styling.container_class }}{{ else }}{{ $.layout.section_container_class }}{{ end }}">
+          {{ if .styling.container_class }}
+          <div class="py-3">
+          {{ end }}
+          <div class="{{ if .styling.title_class }}{{ .styling.title_class }}{{ else }}{{ $.layout.section_title_class }}{{ end }}">{{ .title }}</div>
+          <ul class="{{ $.layout.list_class }}">
+            {{ range .links }}
+            <li>
+              <a href="{{ .url | safeHTML }}" class="{{ .class }}">
+                {{ .text }}
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+          {{ if .styling.container_class }}
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="{{ .layout.cta_container_class }}">
+  {{ range .mobile_cta_cards }}
+  <div class="{{ .container_class }}">
+    <a href="{{ .url | safeHTML }}">
+      <img
+        class="{{ .image_class }}"
+        src="{{ .image }}"
+        alt="{{ .alt }}"
+      />
+      <p class="{{ .title_class }}">{{ .title }}</p>
+    </a>
+  </div>
+  {{ end }}
+</div>

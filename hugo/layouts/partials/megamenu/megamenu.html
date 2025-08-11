@@ -1,7 +1,10 @@
 <!-- Debug: {{ printf "%#v" . }} -->
 <div class="h-80 bg-white">
   <div class="container mx-auto flex max-w-7xl flex-col gap-4 px-2 sm:flex-row">
-    {{ partial "megamenu/navigation.html" . }}
-    {{ partial "megamenu/images.html" . }}
+    <div class="flex w-full flex-wrap lg:w-7/12 xl:w-1/2">
+      {{ partial "megamenu/navigation.html" . }}
+      {{ partial "megamenu/menu-cta.html" . }}
+    </div>
+    {{ partial "megamenu/menu-cards.html" . }}
   </div>
 </div>

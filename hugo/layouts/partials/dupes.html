@@ -1,0 +1,84 @@
+<section class="px-2 py-24 mx-auto w-full max-w-6xl sm:px-4">
+  <header class="text-center">
+    <h2
+      class="pb-6 mb-4 text-4xl font-extrabold tracking-tighter text-center md:text-5xl text-p"
+    >
+      {{ .title }}
+    </h2>
+
+    <p class="mb-16 text-xl text-center text-gray-600">
+      {{ .subtitle }}
+    </p>
+  </header>
+
+  {{ range .brands }}
+  <div class="flex justify-center mb-8">
+    <a href="{{ .url }}">
+      {{ partial "image.html" (dict 
+        "src" .logo.src 
+        "alt" .name 
+        "width" .logo.width 
+        "height" .logo.height 
+        "class" "w-auto h-12"
+        "loading" "lazy"
+        "decoding" "async"
+      ) }}
+    </a>
+  </div>
+  
+  <div class="grid grid-cols-2 gap-2 items-start md:gap-8">
+    {{ range .products }}
+    <a
+      href="{{ .url }}"
+      class="block transition-all duration-200 hover:scale-[1.02] hover:shadow-lg rounded-lg overflow-hidden sm:rounded-lg sm:overflow-hidden"
+    >
+      <div
+        class="flex flex-col w-full bg-white rounded-lg border border-gray-200 shadow-sm minimal-card sm:border-0 sm:shadow-none sm:bg-transparent"
+      >
+        <div class="p-2 w-full text-center sm:hidden">
+          <h3 class="text-sm font-semibold text-gray-800">
+            {{ .name }}
+          </h3>
+        </div>
+        <div class="p-1 w-full sm:p-4">
+          {{ partial "image.html" (dict 
+            "src" .image.src 
+            "alt" .image.alt 
+            "width" .image.width 
+            "height" .image.height 
+            "class" "object-cover w-full h-auto rounded-lg sm:object-contain"
+            "loading" "lazy"
+            "decoding" "async"
+          ) }}
+        </div>
+        <div class="p-3 w-full text-center sm:p-6">
+          <div class="mb-3 text-lg font-bold text-gray-800 sm:hidden">
+            {{ .price }}
+          </div>
+          <span
+            class="inline-block px-4 py-3 w-full text-sm font-semibold text-white rounded-md shadow-sm transition-all duration-200 bg-p hover:bg-s sm:px-6"
+          >
+            <span class="sm:hidden">View</span>
+            <span class="hidden sm:inline">{{ .name }} - {{ .price }}</span>
+          </span>
+        </div>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+  
+  {{ if not (eq . (index $.brands (sub (len $.brands) 1))) }}
+  <div class="my-8 w-full h-px bg-gray-200 md:my-16"></div>
+  {{ end }}
+  {{ end }}
+  
+  <div class="my-8 w-full h-px bg-gray-200 md:my-16"></div>
+  <div class="flex justify-center">
+    <a
+      href="{{ .final_cta.url }}"
+      class="inline-block px-8 py-4 text-lg font-semibold text-white rounded-md shadow-lg transition-all duration-200 bg-p hover:bg-s hover:scale-105"
+    >
+      {{ .final_cta.text }}
+    </a>
+  </div>
+</section>
