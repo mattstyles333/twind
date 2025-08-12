@@ -1,0 +1,7 @@
+{{- define "main" -}} {{- $data := .Site.Data.mobile_menu -}}
+
+
+<div id="megamenu-container" class="relative min-h-[500px]">
+  {{ partial "megamenu/mobile.html" $data }}
+</div>
+{{- end -}}

@@ -1,0 +1,64 @@
+megamenu:
+  sections:
+    - title: "Glasses"
+      links:
+        - text: "Prescription Glasses"
+          url: '{{store direct_url="glasses"}}'
+        - text: "Men's Glasses"
+          url: '{{store direct_url="glasses/mens"}}'
+        - text: "Women's Glasses"
+          url: '{{store direct_url="glasses/womens"}}'
+        - text: "Bestsellers"
+          url: '{{store direct_url="glasses"}}'
+        - text: "Designer Glasses"
+          url: '{{store direct_url="designer-glasses"}}'
+
+    - title: "Specialty"
+      links:
+        - text: "Blue Light Glasses"
+          url: '{{store direct_url="blue-light-glasses"}}'
+        - text: "Bifocal Glasses"
+          url: '{{store direct_url="bifocal-glasses"}}'
+        - text: "Varifocal Glasses"
+          url: '{{store direct_url="varifocal-glasses"}}'
+        - text: "Reading Glasses"
+          url: '{{store direct_url="reading-glasses"}}'
+        - text: "Sports Glasses"
+          url: '{{store direct_url="sports-glasses"}}'
+
+    - title: "Styles"
+      links:
+        - text: "Full-rimmed Glasses"
+          url: '{{store direct_url="glasses/full-rimmed"}}'
+        - text: "Semi-rimless Glasses"
+          url: '{{store direct_url="glasses/semi-rimless"}}'
+        - text: "Rimless Glasses"
+          url: '{{store direct_url="glasses/rimless"}}'
+        - text: "Aviator Glasses"
+          url: '{{store direct_url="glasses/aviator"}}'
+        - text: "Round Glasses"
+          url: '{{store direct_url="glasses/round"}}'
+
+  featured_links:
+    - text: "Check Out our Style Finder quiz!"
+      url: '{{store direct_url="product-quiz-glasses"}}'
+      icon: "quiz"
+    - text: "Try our Home Trial Service!"
+      url: '{{store direct_url="trial-home"}}'
+      icon: "home"
+
+  featured_images:
+    - title: "Men's Glasses"
+      url: '{{store direct_url="glasses/mens"}}'
+      image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/new/mens-glasses.webp"
+      alt: "Men's Glasses"
+    - title: "Women's Glasses"
+      url: '{{store direct_url="glasses/womens"}}'
+      image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/new/womens-glasses2.webp"
+      alt: "Women's Glasses"
+
+home_trial_card:
+  title: "Try Before You Buy"
+  description: "Order up to 5 frames to try at home for free"
+  button_text: "Start Home Trial"
+  url: '{{store direct_url="trial-home"}}'

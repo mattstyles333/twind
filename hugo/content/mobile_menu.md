@@ -1,6 +1,6 @@
 ---
 title: "Dev Environment - Mobile Glasses Megamenu Test"
-layout: "megamenu_mobile"
+layout: "mobile_menu"
 ---
 
 # Mobile Glasses Megamenu Development Environment
