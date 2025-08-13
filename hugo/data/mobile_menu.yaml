@@ -47,7 +47,7 @@ megamenu:
       url: '{{store direct_url="trial-home"}}'
       icon: "home"
 
-  featured_images:
+  top_cards:
     - title: "Men's Glasses"
       url: '{{store direct_url="glasses/mens"}}'
       image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/new/mens-glasses.webp"
@@ -57,8 +57,8 @@ megamenu:
       image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/new/womens-glasses2.webp"
       alt: "Women's Glasses"
 
-home_trial_card:
-  title: "Try Before You Buy"
-  description: "Order up to 5 frames to try at home for free"
-  button_text: "Start Home Trial"
-  url: '{{store direct_url="trial-home"}}'
+  bottom_card:
+    - title: "Try Before You Buy"
+      url: '{{store direct_url="trial-home"}}'
+      image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/trial-banner.webp"
+      alt: "Home Trial"
