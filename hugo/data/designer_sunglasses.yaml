@@ -1,6 +1,6 @@
 hero:
-  headline: "Prescription Sunglasses Made-to-Order"
-  subheadline: "Prescription Lenses That Just Work, Crafted in the UK, Tailored for Your Vision"
+  headline: "Designer Sunglasses Online You'll Love"
+  subheadline: "Premium designer sunglasses from the world's most prestigious brands at unbeatable prices."
   featured_product:
     name: "Ray-Ban Aviator RB3025"
     url: "/sunglasses/ray-ban/rb3025"
@@ -12,84 +12,83 @@ hero:
     product_name_color: "text-gray-400"
     product_name_hover_color: "hover:text-amber-700"
   cta_buttons:
-    - text: "Men's Glasses"
-      url: "/glasses/mens"
-    - text: "Women's Glasses"
-      url: "/glasses/womens"
+    - text: "Men's Sunglasses"
+      url: "/designer-sunglasses/mens"
+    - text: "Women's Sunglasses"
+      url: "/designer-sunglasses/womens"
 
 featured_products:
   section:
     id: "products"
     classes: "relative z-20 px-1 pb-4 -mt-12 md:pb-8 md:-mt-20 lg:-mt-32"
   products:
-    - url: "/designer-glasses/tom-ford/ft-5294-tom-ford-glasses"
-      image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/ft_front_1_1_.webp"
-      alt: "Tom Ford FT5294 Havana"
-      hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/ft5294_model_1_1_.webp"
-      hover_alt: "Tom Ford FT5294 Havana Hover"
-      lazy: true
+    - url: "/sunglasses/ray-ban/rb2140"
+      image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/rbsun_front_1_1_.webp"
+      alt: "Ray-Ban Wayfarer RB2140"
+      hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/rb2140_model_1_1_.webp"
+      hover_alt: "Ray-Ban Wayfarer RB2140 Hover"
+      lazy: false
       brand:
-        name: "Tom Ford"
-        url: "/designer-glasses/tom-ford"
-        logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/TOMFORD.webp"
-      model: "FT5294"
-      variant: "Havana"
-    - url: "/designer-glasses/oakley/ox5152"
-      image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/O5152_front_1_1_.webp"
-      alt: "Oakley OX5152 Matte Black"
-      hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/O5152_model_1_1_1_.webp"
-      hover_alt: "Oakley OX5152 Matte Black Hover"
+        name: "Ray-Ban"
+        url: "/sunglasses/ray-ban"
+        logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/rayban_menu_2_.webp"
+      model: "Wayfarer"
+      variant: "RB2140"
+    - url: "/sunglasses/oakley/oo9242"
+      image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/OOSUN_front_1_1_.webp"
+      alt: "Oakley HSTN OO9242"
+      hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/OO9242_side_1_1_.webp"
+      hover_alt: "Oakley HSTN OO9242 Hover"
       lazy: true
       brand:
         name: "Oakley"
-        url: "/designer-glasses/oakley"
+        url: "/sunglasses/oakley"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/OAKLEY.webp"
-      model: "OX5152"
-      variant: "Matte Black"
-    - url: "/designer-glasses/marc-jacobs/marc662"
-      image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/MJOPH_front_1_1_.webp"
-      alt: "Marc Jacobs MJ662 Shiny Black"
-      hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/MJ662_model_1_1_.webp"
-      hover_alt: "Marc Jacobs MJ662 Shiny Black Hover"
+      model: "HSTN"
+      variant: "OO9242"
+    - url: "/sunglasses/gucci/gg0024s"
+      image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/0024s_front_1_1_1_.webp"
+      alt: "Gucci Classic GG0024S"
+      hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/gucci_model_1_1_.webp"
+      hover_alt: "Gucci Classic GG0024S Hover"
       lazy: true
       brand:
-        name: "Marc Jacobs"
-        url: "/designer-glasses/marc-jacobs"
-        logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/MARCJACOBS.webp"
-        large: true
-      model: "MJ662"
-      variant: "Shiny Black"
-    - url: "/glasses/zurich-as6548-glasses"
-      image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/zurich_front_1_1_.webp"
-      alt: "Zurich AS6548"
-      hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/zurich_side_1_1_.webp"
-      hover_alt: "Zurich AS6548 Hover"
+        name: "Gucci"
+        url: "/sunglasses/gucci"
+        logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/gucci_1_.webp"
+      model: "Classic"
+      variant: "GG0024S"
+    - url: "/sunglasses/barcelona-dg3588-sunglasses"
+      image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/barcelona_front1_1_1_.webp"
+      alt: "Barcelona DG3588"
+      hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/barcelona_side_1_1_.webp"
+      hover_alt: "Barcelona DG3588 Hover"
       lazy: true
       brand:
         name: "Spex4Less"
-        url: "/glasses"
+        url: "/sunglasses/stock"
         logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/SPEX4LESS_1_.webp"
-      model: "Zurich"
-      variant: "AS6548"
+      model: "Barcelona"
+      variant: "DG3588"
 
 brands:
   - name: "Tom Ford"
-    url: "/designer-glasses/tom-ford"
+    url: "/designer-sunglasses/tom-ford"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/TOMFORD.webp"
   - name: "Gucci"
-    url: "/designer-glasses/gucci"
+    url: "/designer-sunglasses/gucci"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/gucci_1_.webp"
   - name: "Oakley"
-    url: "/designer-glasses/oakley"
+    url: "/designer-sunglasses/oakley"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/OAKLEY.webp"
   - name: "Ray-Ban"
-    url: "/designer-glasses/ray-ban"
+    url: "/designer-sunglasses/ray-ban"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/rayban_menu_2_.webp"
   - name: "Michael Kors"
-    url: "/designer-glasses/michael-kors"
+    url: "/designer-sunglasses/michael-kors"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/MICHAEL_KORS_2_.webp"
   - name: "Superdry"
-    url: "/designer-glasses/superdry"
+    url: "/designer-sunglasses/superdry"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/superdry_2_.webp"
 
 # Customer Reviews Section
@@ -117,11 +116,11 @@ customer_reviews:
   cta_text: "Read More Reviews"
   cta_url: "/customer-reviews"
 
-# FAQ Section (Sunglass Specific)
+# FAQ Section
 faq:
   title: "Frequently Asked Questions"
   questions:
-    - question: "Can you turn regular glasses into PRESCRIPTION sunglasses?"
+    - question: "Can you turn regular glasses into prescription sunglasses?"
       answer: "Yes, you can turn your regular glasses into prescription sunglasses using our reglaze service. This service allows you to add tinted, prescription lenses to your existing frames, providing both clear vision and sun protection. You can choose from various tint options and even opt for polarised lenses to reduce glare. Our reglaze service makes it easy to transform your favourite glasses into stylish and functional prescription sunglasses."
     - question: "What colour tints can you provide?"
       answer: "We provide Grey, Brown and Green (G15) colour tints. Also, we are able to offer these in polarised options alongside Gold, Silver, Blue, Green and Red Mirror coatings."
@@ -134,52 +133,14 @@ faq:
 
 feature_cards:
   - id: "rated-1"
-    title: "Rated #1 in the UK"
-    text: "Family-run and independent for 20+ years, we've helped over 500,000 customers find glasses they love, with care that's built our reputation as the <strong>UK's most trusted online optician.</strong>"
+    title: "Designer Prescription Sunglasses"
+    text: "<strong>Premium Brands + Custom Vision</strong><br />Designer frames from Ray-Ban, Oakley, Tom Ford and more, fitted with your exact prescription. Choose from single vision, bifocal, or varifocal lenses with polarised, mirrored, or tinted options."
     reviews_badge: "28K 5-Star Reviews"
 
   - id: "customer-focused"
-    title: "Customer Focused"
-    text: '<strong>Help When You Need It</strong><br />Got a question or something not quite right? <strong>We''ll fix it fast.</strong><br /><br />Talk to a real person today - email <a href="mailto:info@spex4less.com" class="text-blue-500">info@spex4less.com</a> or call <a href="tel:01516326611" class="text-blue-500">0151 632 6611</a>. We''re happy to help.'
+    title: "Authentic Designer Frames"
+    text: '<strong>100% Genuine Designer Sunglasses</strong><br />Every pair is sourced directly from authorised distributors. You get the authentic designer experience at a fraction of high-street prices, backed by our satisfaction guarantee.'
 
   - id: "more-for-less"
-    title: "More for Less"
-    text: "<strong>Expertly handled, fairly priced.</strong><br />Top-tier quality, personally checked by our in-house experts. No fuss, no shortcuts. Just great glasses, done right."
-
-additional_cards:
-  - id: "frame-selection"
-    title: "Not Sure Which Frames to Pick?"
-    subtitle: "The Easy Way to Find Your Frames"
-    text: "Try up to <strong>4 frames at home for free,</strong> no pressure to buy. Or, take our frame quiz for personalised recommendations."
-    buttons:
-      - text: "Learn About Home Trial"
-        url: '/trial-home'
-      - text: "Start the Quiz"
-        url: '/product-quiz-glasses'
-
-  - id: "money-back-guarantee"
-    title: "100% Money Back Guarantee"
-    text: "<strong>100% money-back guarantee for 30 days</strong> if you're unhappy for any reason. Plus <strong>12 month frame warranty</strong> - we're always here to help."
-    buttons:
-      - text: "Learn More"
-        url: '/guarantee'
-
-# Feature Cards for selling-points partial (sunglasses-specific)
-feature_cards:
-  - id: "rated-1"
-    title: "Prescription Sunglasses"
-    text: "<strong>Custom Vision + Sun Protection</strong><br />Choose from single vision, bifocal, or varifocal lenses, all available with photochromic, mirrored, or tinted options. Our prescription sunglasses are built for clarity, comfort, and protection in any light.
-
-"
-    reviews_badge: "28K 5-Star Reviews"
-
-  - id: "customer-focused"
-    title: "Polarised Sunglasses"
-    text: "<strong>The Essential Sunglass Lens</strong><br />Polarised technology eliminates 99% of glare for sharper, more comfortable vision in bright or reflective settings. An essential for driving, and everyday outdoor wear.
-<a href='https://www.spex4less.com/blog/polarised-sunglasses' class='text-blue-500 hover:text-blue-700 underline'>Learn more about polarised technology</a>
-
-"
-
-  - id: "more-for-less"
-    title: "Varifocal Sunglasses"
-    text: "<strong>Multi-Distance Vision in the Sun</strong><br />Seamlessly switch between near and distance vision while enjoying sun protection. Ideal for reading outdoors, driving, and active lifestyles. Custom-made to your exact prescription needs."
+    title: "Luxury for Less"
+    text: "<strong>Designer Quality, Fair Prices</strong><br />Why pay high-street markups? Get the same premium designer sunglasses at up to 60% less, with the same quality and authenticity you expect from luxury brands."

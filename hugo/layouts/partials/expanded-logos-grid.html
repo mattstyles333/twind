@@ -1,7 +1,7 @@
-<section class="py-4 bg-white md:py-6">
-  <div class="px-4 mx-auto max-w-8xl md:px-0" x-data="{ expanded: false }">
+ <section class="py-4 bg-white md:py-6">
+  <div class="mx-auto max-w-8xl" x-data="{ expanded: false }">
     <!-- Initial 6 brands grid -->
-    <div class="grid grid-cols-3 gap-0 md:grid-cols-6">
+    <div class="grid grid-cols-3 gap-0 md:grid-cols-6 px-4 md:px-0">
       {{ range first 6 .brands }}
       <a
         href="{{ .url }}"
@@ -28,7 +28,7 @@
       x-bind:style="expanded ? 'max-height: ' + $refs.container.scrollHeight + 'px' : ''"
     >
       <div>
-        <div class="grid grid-cols-3 gap-0 md:grid-cols-6">
+        <div class="grid grid-cols-3 gap-0 md:grid-cols-6 px-4 md:px-0">
           {{ range after 6 (first 24 .brands) }}
           <a
             href="{{ .url }}"
