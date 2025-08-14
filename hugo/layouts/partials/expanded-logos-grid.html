@@ -1,0 +1,70 @@
+<section class="py-4 bg-white md:py-6">
+  <div class="px-4 mx-auto lg:px-6 max-w-8xl" x-data="{ expanded: false }">
+    <div class="grid grid-cols-3 gap-2 justify-items-center items-center md:grid-cols-6 md:gap-4">
+      <!-- Show first 6 brands initially -->
+      {{ range first 6 .brands }}
+      <a
+        href="{{ .url }}"
+        class="p-2 w-24 rounded-lg border border-gray-200 transition-transform md:w-24 md:hover:scale-105 md:border-0 md:w-40"
+      >
+        {{ partial "image.html" (dict
+          "src" .logo
+          "alt" .name
+          "width" 300
+          "height" 127
+          "class" "object-contain mx-auto w-full h-14 md:h-16"
+          "placeholder" true
+          "placeholder_service" "placeholder"
+          "placeholder_category" "BRAND"
+        ) }}
+      </a>
+      {{ end }}
+
+      <!-- Show remaining brands when expanded -->
+      {{ range after 6 .brands }}
+      <a
+        href="{{ .url }}"
+        class="p-2 w-24 rounded-lg border border-gray-200 transition-transform md:w-24 md:hover:scale-105 md:border-0 md:w-40"
+        x-show="expanded"
+      >
+        {{ partial "image.html" (dict
+          "src" .logo
+          "alt" .name
+          "width" 300
+          "height" 127
+          "class" "object-contain mx-auto w-full h-14 md:h-16"
+          "placeholder" true
+          "placeholder_service" "placeholder"
+          "placeholder_category" "BRAND"
+        ) }}
+      </a>
+
+
+
+      {{ end }}
+    </div>
+
+    <div class="mt-4 text-center" x-show="{{ len .brands }} > 6">
+      <button
+        x-show="!expanded"
+        type="button"
+        class="px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
+        @click="expanded = true"
+      >
+        View More
+      </button>
+
+      <div x-show="expanded">
+        <a
+          href="#brands-a-z"
+          class="inline-flex items-center text-lg font-semibold text-blue-600 hover:text-blue-800 transition-colors duration-200"
+        >
+          <span>View All Brands</span>
+          <svg class="ml-2 w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
