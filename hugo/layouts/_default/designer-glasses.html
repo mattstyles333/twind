@@ -9,14 +9,11 @@
 <!-- Featured Products Section -->
 {{ partial "product-grid.html" $data.featured_products }}
 
-<!-- Brand Logos Section -->
-{{ partial "brand-logos-grid.html" (dict "brands" $data.brands) }}
+<!-- Brand Logos Section (with dropdown to 24) -->
+{{ partial "new-logo-layout.html" (dict "brands" $data.brands) }}
 
 <!-- Brands A-Z Section -->
 {{ partial "brands-a-to-z.html" . }}
-
-<!-- Selling Points Section -->
-{{ partial "new-logo-layout.html" (dict "brands" $data.brands) }}
 
 <!-- Customer Reviews Section -->
 {{ partial "customer-reviews.html" $data.customer_reviews }}

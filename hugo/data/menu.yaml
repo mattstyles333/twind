@@ -1,6 +1,7 @@
-megamenu:
+menu:
   sections:
-      - links:
+    - title: "Glasses"
+      links:
         - text: "Prescription Glasses"
           url: '{{store direct_url="glasses"}}'
         - text: "Men's Glasses"
@@ -12,7 +13,8 @@ megamenu:
         - text: "Designer Glasses"
           url: '{{store direct_url="designer-glasses"}}'
 
-      - links:
+    - title: "Specialty"
+      links:
         - text: "Blue Light Glasses"
           url: '{{store direct_url="blue-light-glasses"}}'
         - text: "Bifocal Glasses"
@@ -24,7 +26,8 @@ megamenu:
         - text: "Sports Glasses"
           url: '{{store direct_url="sports-glasses"}}'
 
-      - links:
+    - title: "Styles"
+      links:
         - text: "Full-rimmed Glasses"
           url: '{{store direct_url="glasses/full-rimmed"}}'
         - text: "Semi-rimless Glasses"
