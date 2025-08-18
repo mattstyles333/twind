@@ -23,10 +23,10 @@ menu:
           url: '{{store direct_url="designer-glasses/gucci"}}'
         - text: "Oakley Glasses"
           url: '{{store direct_url="designer-glasses/oakley"}}'
-        - text: "Kate Spade Glasses"
-          url: '{{store direct_url="designer-glasses/kate-spade"}}'
+        - text: "Browse all"
+          url: '{{store direct_url="designer-glasses"}}'
 
-    - title: "Shop by lens-type"
+    - title: "Shop by lens"
       links:
         - text: "Varifocal Glasses"
           url: '{{store direct_url="varifocal-glasses"}}'
@@ -37,7 +37,7 @@ menu:
         - text: "Reading Glasses"
           url: '{{store direct_url="reading-glasses"}}'
         - text: "Browse all"
-          url: '{{store direct_url="designer-glasses"}}'
+          url: '{{store direct_url="glasses"}}'
 
   featured_links:
     - text: "Check Out our Style Finder quiz!"
