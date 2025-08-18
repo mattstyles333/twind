@@ -2,41 +2,42 @@ menu:
   sections:
     - title: "Glasses"
       links:
-        - text: "Prescription Glasses"
-          url: '{{store direct_url="glasses"}}'
-        - text: "Men's Glasses"
+        - text: "Shop Mens"
           url: '{{store direct_url="glasses/mens"}}'
-        - text: "Women's Glasses"
+        - text: "Shop Womens"
           url: '{{store direct_url="glasses/womens"}}'
-        - text: "Bestsellers"
-          url: '{{store direct_url="glasses"}}'
-        - text: "Designer Glasses"
-          url: '{{store direct_url="designer-glasses"}}'
-
-    - title: "Specialty"
-      links:
-        - text: "Blue Light Glasses"
-          url: '{{store direct_url="blue-light-glasses"}}'
-        - text: "Bifocal Glasses"
-          url: '{{store direct_url="bifocal-glasses"}}'
-        - text: "Varifocal Glasses"
-          url: '{{store direct_url="varifocal-glasses"}}'
-        - text: "Reading Glasses"
-          url: '{{store direct_url="reading-glasses"}}'
-        - text: "Sports Glasses"
-          url: '{{store direct_url="sports-glasses"}}'
-
-    - title: "Styles"
-      links:
         - text: "Full-rimmed Glasses"
           url: '{{store direct_url="glasses/full-rimmed"}}'
         - text: "Semi-rimless Glasses"
           url: '{{store direct_url="glasses/semi-rimless"}}'
         - text: "Rimless Glasses"
           url: '{{store direct_url="glasses/rimless"}}'
-        - text: "Aviator Glasses"
+
+
+    - title: "Specialty"
+      links:
+        - text: "Varifocal Glasses"
+          url: '{{store direct_url="blue-light-glasses"}}'
+        - text: "Bifocal Glasses"
+          url: '{{store direct_url="bifocal-glasses"}}'
+        - text: "Distance Glasses"
+          url: '{{store direct_url="varifocal-glasses"}}'
+        - text: "Reading Glasses"
+          url: '{{store direct_url="reading-glasses"}}'
+        - text: "Sports Glasses"
+          url: '{{store direct_url="sports-glasses"}}'
+
+    - title: "Shop by Brand"
+      links:
+        - text: "Ray-Ban Glasses"
+          url: '{{store direct_url="glasses/full-rimmed"}}'
+        - text: "Gucci Glasses"
+          url: '{{store direct_url="glasses/semi-rimless"}}'
+        - text: "Oakley Glasses"
+          url: '{{store direct_url="glasses/rimless"}}'
+        - text: "Tom Ford Glasses"
           url: '{{store direct_url="glasses/aviator"}}'
-        - text: "Round Glasses"
+        - text: "Browse all"
           url: '{{store direct_url="glasses/round"}}'
 
   featured_links:
