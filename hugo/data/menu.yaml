@@ -13,32 +13,31 @@ menu:
         - text: "Rimless Glasses"
           url: '{{store direct_url="glasses/rimless"}}'
 
-
-    - title: "Specialty"
-      links:
-        - text: "Varifocal Glasses"
-          url: '{{store direct_url="blue-light-glasses"}}'
-        - text: "Bifocal Glasses"
-          url: '{{store direct_url="bifocal-glasses"}}'
-        - text: "Distance Glasses"
-          url: '{{store direct_url="varifocal-glasses"}}'
-        - text: "Reading Glasses"
-          url: '{{store direct_url="reading-glasses"}}'
-        - text: "Sports Glasses"
-          url: '{{store direct_url="sports-glasses"}}'
-
     - title: "Shop by Brand"
       links:
         - text: "Ray-Ban Glasses"
-          url: '{{store direct_url="glasses/full-rimmed"}}'
-        - text: "Gucci Glasses"
-          url: '{{store direct_url="glasses/semi-rimless"}}'
-        - text: "Oakley Glasses"
-          url: '{{store direct_url="glasses/rimless"}}'
+          url: '{{store direct_url="designer-glasses/ray-ban"}}'
         - text: "Tom Ford Glasses"
-          url: '{{store direct_url="glasses/aviator"}}'
+          url: '{{store direct_url="designer-glasses/tom-ford"}}'
+        - text: "Gucci Glasses"
+          url: '{{store direct_url="designer-glasses/gucci"}}'
+        - text: "Oakley Glasses"
+          url: '{{store direct_url="designer-glasses/oakley"}}'
+        - text: "Kate Spade Glasses"
+          url: '{{store direct_url="designer-glasses/kate-spade"}}'
+
+    - title: "Shop by lens-type"
+      links:
+        - text: "Varifocal Glasses"
+          url: '{{store direct_url="varifocal-glasses"}}'
+        - text: "Bifocal Glasses"
+          url: '{{store direct_url="bifocal-glasses"}}'
+        - text: "Distance Glasses"
+          url: '{{store direct_url="glasses"}}'
+        - text: "Reading Glasses"
+          url: '{{store direct_url="reading-glasses"}}'
         - text: "Browse all"
-          url: '{{store direct_url="glasses/round"}}'
+          url: '{{store direct_url="designer-glasses"}}'
 
   featured_links:
     - text: "Check Out our Style Finder quiz!"
