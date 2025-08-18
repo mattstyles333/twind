@@ -5,6 +5,24 @@ title = 'Twind - Hugo Site'
 # Disable default taxonomies to avoid layout warnings
 disableKinds = ['taxonomy', 'term']
 
+# Development settings - disable minification for readable output
+[build]
+  writeStats = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# Disable minification for development
+[minify]
+  disableHTML = true
+  disableCSS = true
+  disableJS = true
+  disableJSON = true
+  disableSVG = true
+  disableXML = true
+
 # Optional: If you want to use taxonomies later, create custom ones
 # [taxonomies]
 #   tag = 'tags'
