@@ -13,7 +13,7 @@
           <span>{{ .text }}</span>
           {{ if or (eq .text "Shop Mens") (eq .text "Shop Womens") (eq .text "Browse all") }}
           <svg
-            class="w-3.5 h-3.5 ml-2 -rotate-90 transition-transform duration-150 ease-in-out"
+            class="w-3.5 h-3.5 ml-2 -rotate-90 transition-transform duration-150 ease-in-out megamenu-arrow"
             fill="currentColor"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@
 </div>
 
 <style>
-a:hover svg {
+a:hover .megamenu-arrow {
   transform: translateX(4px) rotate(-90deg);
 }
 </style>
