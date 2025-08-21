@@ -12,6 +12,6 @@
   <!-- CTA Links -->
   {{ partial "megamenu/menu-cta.html" . }}
 
-  <!-- Bottom Card - Last featured image as single card -->
-  {{ partial "megamenu/menu-cards.html" (dict "megamenu" (dict "featured_images" (last 1 .menu.featured_images))) }}
+  <!-- Bottom Card - Last featured image as single card (taller version) -->
+  {{ partial "megamenu/mobile-bottom-card.html" (dict "megamenu" (dict "featured_images" (last 1 .menu.featured_images))) }}
 </div>

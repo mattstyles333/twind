@@ -1,7 +1,7 @@
 {{- define "main" -}} {{- $data := .Site.Data.menu -}}
 
 
-<div id="megamenu-container" class="relative min-h-[500px] p-8">
+<div id="megamenu-container" class="relative lg:pt-4">
   {{ partial "megamenu/megamenu.html" $data }}
 </div>
 {{- end -}}

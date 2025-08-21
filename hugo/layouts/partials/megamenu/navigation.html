@@ -1,41 +1,54 @@
-<!-- Left Navigation Section -->
-<div class="flex w-full flex-wrap">
-  <div class="grid w-full grid-cols-3 gap-x-6 pl-4 pt-4">
-    {{ range .megamenu.sections }}
-    <!-- Section -->
-    <div class="group space-y-3">
-      {{ range .links }}
+<!-- Desktop Navigation Layout -->
+<div class="grid grid-cols-3 gap-x-8">
+  {{ range $index, $section := .megamenu.sections }}
+  <div class="space-y-2">
+    <!-- Section Header -->
+    {{ if and (ne $section.title "Glasses") (ne $section.title "Shop by Brand") (ne $section.title "Shop by lens") }}
+    <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wide border-b border-gray-200 pb-2">
+      {{ $section.title }}
+    </h3>
+    {{ else }}
+    <!-- Invisible spacer for sections without header -->
+    <div class="h-3"></div>
+    {{ end }}
+
+    <!-- Section Links -->
+    <nav class="space-y-1.5" role="navigation" aria-label="{{ $section.title }} navigation">
+      {{ range $section.links }}
       <a
         href="{{ .url | safeHTML }}"
-        class="block text-base {{ if or (eq .text "Shop Mens") (eq .text "Shop Womens") (eq .text "Browse all") }}font-bold{{ else }}font-medium{{ end }} text-gray-700 duration-500 ease-in-out hover:underline group-hover:text-black"
-        aria-label="{{ .text }} - Browse {{ .text | lower }} collection"
-        title="{{ .text }}"
+        class="group flex items-center gap-2 py-1.5 text-base transition-all duration-200 {{ if or (eq .text "Shop Mens") (eq .text "Shop Womens") }}font-bold text-gray-800 hover:text-blue-800{{ else if or (eq .text "Home trial") (eq .text "View all designers") (eq .text "Explore more") }}font-semibold text-blue-800 hover:text-blue-900{{ else }}font-medium text-gray-600 hover:text-gray-800{{ end }}"
+        aria-label="Navigate to {{ .text }}"
       >
-        <div class="flex items-center">
-          <span>{{ .text }}</span>
-          {{ if or (eq .text "Shop Mens") (eq .text "Shop Womens") (eq .text "Browse all") }}
-          <svg
-            class="w-3.5 h-3.5 ml-2 -rotate-90 transition-transform duration-150 ease-in-out megamenu-arrow"
-            fill="currentColor"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 330 330"
-            aria-hidden="true"
-            role="img"
-          >
-            <path d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
-          </svg>
-          {{ end }}
-        </div>
+        <span>{{ .text }}</span>
+
+        <!-- Arrow for primary navigation -->
+        {{ if or (eq .text "Shop Mens") (eq .text "Shop Womens") }}
+        <svg
+          class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+        {{ end }}
+
+        <!-- Special icon for CTA links -->
+        {{ if or (eq .text "Home trial") (eq .text "View all designers") (eq .text "Explore more") }}
+        <svg
+          class="w-4 h-4 transition-transform duration-200 group-hover:scale-110"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          aria-hidden="true"
+        >
+          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+        {{ end }}
       </a>
       {{ end }}
-    </div>
-    {{ end }}
+    </nav>
   </div>
+  {{ end }}
 </div>
-
-<style>
-a:hover .megamenu-arrow {
-  transform: translateX(4px) rotate(-90deg);
-}
-</style>
