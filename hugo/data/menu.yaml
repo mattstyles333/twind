@@ -6,57 +6,73 @@ menu:
           url: '{{store direct_url="glasses/mens"}}'
         - text: "Shop Womens"
           url: '{{store direct_url="glasses/womens"}}'
-        - text: "Full-rimmed Glasses"
-          url: '{{store direct_url="glasses/full-rimmed"}}'
-        - text: "Semi-rimless Glasses"
-          url: '{{store direct_url="glasses/semi-rimless"}}'
-        - text: "Rimless Glasses"
-          url: '{{store direct_url="glasses/rimless"}}'
+        - text: "Black Sunglasses"
+          url: '{{store direct_url="sunglasses/black"}}'
+        - text: "Aviator Sunglasses"
+          url: '{{store direct_url="sunglasses/aviator"}}'
+        - text: "Wayfarer Sunglasses"
+          url: '{{store direct_url="sunglasses/wayfarer"}}'
+        - text: "Try Home Trial"
+          url: '{{store direct_url="trial-home"}}'
 
     - title: "Shop by Brand"
       links:
-        - text: "Ray-Ban Glasses"
+        - text: "Ray-Ban"
           url: '{{store direct_url="designer-glasses/ray-ban"}}'
-        - text: "Tom Ford Glasses"
-          url: '{{store direct_url="designer-glasses/tom-ford"}}'
-        - text: "Gucci Glasses"
+          popular: true
+        - text: "Gucci"
           url: '{{store direct_url="designer-glasses/gucci"}}'
-        - text: "Oakley Glasses"
+          popular: true
+        - text: "Oakley"
           url: '{{store direct_url="designer-glasses/oakley"}}'
-        - text: "Browse all"
+        - text: "Tom Ford"
+          url: '{{store direct_url="designer-glasses/tom-ford"}}'
+        - text: "Mont Blanc"
+          url: '{{store direct_url="designer-glasses/mont-blanc"}}'
+        - text: "Shop All"
           url: '{{store direct_url="designer-glasses"}}'
 
     - title: "Shop by lens"
       links:
-        - text: "Varifocal Glasses"
-          url: '{{store direct_url="varifocal-glasses"}}'
-        - text: "Bifocal Glasses"
-          url: '{{store direct_url="bifocal-glasses"}}'
-        - text: "Distance Glasses"
-          url: '{{store direct_url="glasses"}}'
-        - text: "Reading Glasses"
-          url: '{{store direct_url="reading-glasses"}}'
-        - text: "Browse all"
-          url: '{{store direct_url="glasses"}}'
+        - text: "Polarised Sunglasses"
+          url: '{{store direct_url="sunglasses/polarised"}}'
+        - text: "Reading Sunglasses"
+          url: '{{store direct_url="sunglasses/reading"}}'
+        - text: "Mirrored Sunglasses"
+          url: '{{store direct_url="sunglasses/mirrored"}}'
+        - text: "Varifocal Sunglasses"
+          url: '{{store direct_url="sunglasses/varifocal"}}'
+        - text: "Bifocal Sunglasses"
+          url: '{{store direct_url="sunglasses/bifocal"}}'
+        - text: "Explore More"
+          url: '{{store direct_url="sunglasses"}}'
 
   featured_links:
     - text: "Check Out our Style Finder quiz!"
       url: '{{store direct_url="product-quiz-glasses"}}'
       icon: "quiz"
-    - text: "Try our Home Trial Service!"
+    - text: "Our Satisfaction Guarantee"
       url: '{{store direct_url="trial-home"}}'
-      icon: "home"
+      icon: "guarantee"
 
   featured_images:
-    - title: "Men's Glasses"
+    - title: "Men's Collection"
+      subtitle: "Professional & Casual Styles"
       url: '{{store direct_url="glasses/mens"}}'
-      image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/new/mens-glasses.webp"
-      alt: "Men's Glasses"
-    - title: "Women's Glasses"
+      image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/mens_sunglassesmenu.webp"
+      alt: "Men's Collection"
+      item_count: "500"
+      starting_price: "29"
+      popular: true
+    - title: "Women's Collection"
+      subtitle: "Designer & Everyday Elegance"
       url: '{{store direct_url="glasses/womens"}}'
-      image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/new/womens-glasses2.webp"
-      alt: "Women's Glasses"
-    - title: "Home Trial"
-      url: '{{store direct_url="trial-home"}}'
-      image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/redesign/trial-banner.webp"
-      alt: "Home trial"
+      image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/womens_sunglassesmenu.webp"
+      alt: "Women's Collection"
+      item_count: "600"
+      starting_price: "25"
+      popular: true
+    - title: "Designer Sunglasses"
+      url: '{{store direct_url="designer-sunglasses"}}'
+      image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/Raybandesignerbanner.webp"
+      alt: "Designer Sunglasses"

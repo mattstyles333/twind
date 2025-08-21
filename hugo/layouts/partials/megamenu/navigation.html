@@ -1,26 +1,31 @@
 <!-- Desktop Navigation Layout -->
-<div class="grid grid-cols-3 gap-x-8">
+<div class="grid grid-cols-3 gap-x-3">
   {{ range $index, $section := .megamenu.sections }}
-  <div class="space-y-2">
+  <div class="space-y-0.5">
     <!-- Section Header -->
     {{ if and (ne $section.title "Glasses") (ne $section.title "Shop by Brand") (ne $section.title "Shop by lens") }}
-    <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wide border-b border-gray-200 pb-2">
+    <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wide border-b border-gray-200 pb-1">
       {{ $section.title }}
     </h3>
     {{ else }}
-    <!-- Invisible spacer for sections without header -->
-    <div class="h-3"></div>
+    <!-- Minimal spacer for sections without header -->
+    <div class="h-1"></div>
     {{ end }}
 
     <!-- Section Links -->
-    <nav class="space-y-1.5" role="navigation" aria-label="{{ $section.title }} navigation">
+    <nav class="space-y-0.5" role="navigation" aria-label="{{ $section.title }} navigation">
       {{ range $section.links }}
       <a
         href="{{ .url | safeHTML }}"
-        class="group flex items-center gap-2 py-1.5 text-base transition-all duration-200 {{ if or (eq .text "Shop Mens") (eq .text "Shop Womens") }}font-bold text-gray-800 hover:text-blue-800{{ else if or (eq .text "Home trial") (eq .text "View all designers") (eq .text "Explore more") }}font-semibold text-blue-800 hover:text-blue-900{{ else }}font-medium text-gray-600 hover:text-gray-800{{ end }}"
+        class="group flex items-center gap-2 py-1 text-base transition-all duration-200 {{ if or (eq .text "Shop Mens") (eq .text "Shop Womens") }}font-bold text-gray-800 hover:text-blue-800{{ else }}font-medium text-gray-600 hover:text-gray-800{{ end }}"
         aria-label="Navigate to {{ .text }}"
       >
         <span>{{ .text }}</span>
+        {{ if .popular }}
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+          Popular
+        </span>
+        {{ end }}
 
         <!-- Arrow for primary navigation -->
         {{ if or (eq .text "Shop Mens") (eq .text "Shop Womens") }}
