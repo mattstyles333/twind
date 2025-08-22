@@ -2,51 +2,65 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Twind - Hugo Site</title>
-    <link>http://localhost:1313/</link>
+    <link>https://example.org/</link>
     <description>Recent content on Twind - Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Code Limbo</title>
+      <link>https://example.org/limbo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/limbo/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Designer Glasses</title>
-      <link>http://localhost:1313/designer-glasses/</link>
+      <link>https://example.org/designer-glasses/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/designer-glasses/</guid>
+      <guid>https://example.org/designer-glasses/</guid>
       <description>&lt;h1 id=&#34;designer-glasses&#34;&gt;Designer Glasses&lt;/h1&gt;&#xA;&lt;p&gt;Premium designer glasses from the world&amp;rsquo;s most prestigious brands at unbeatable prices.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Designer Sunglasses</title>
-      <link>http://localhost:1313/designer-sunglasses/</link>
+      <link>https://example.org/designer-sunglasses/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/designer-sunglasses/</guid>
+      <guid>https://example.org/designer-sunglasses/</guid>
       <description>&lt;h1 id=&#34;designer-sunglasses&#34;&gt;Designer Sunglasses&lt;/h1&gt;&#xA;&lt;p&gt;Premium designer sunglasses from the world&amp;rsquo;s most prestigious brands at unbeatable prices.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Desktop Glasses Megamenu</title>
-      <link>http://localhost:1313/desktop_menu/</link>
+      <link>https://example.org/desktop_menu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/desktop_menu/</guid>
+      <guid>https://example.org/desktop_menu/</guid>
       <description>&lt;h1 id=&#34;desktop-glasses-megamenu&#34;&gt;Desktop Glasses Megamenu&lt;/h1&gt;</description>
     </item>
     <item>
       <title>Dev Environment - Mobile Glasses Megamenu Test</title>
-      <link>http://localhost:1313/mobile_menu/</link>
+      <link>https://example.org/mobile_menu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/mobile_menu/</guid>
+      <guid>https://example.org/mobile_menu/</guid>
       <description>&lt;h1 id=&#34;mobile-glasses-megamenu-development-environment&#34;&gt;Mobile Glasses Megamenu Development Environment&lt;/h1&gt;</description>
     </item>
     <item>
       <title>Glasses</title>
-      <link>http://localhost:1313/glasses/</link>
+      <link>https://example.org/glasses/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/glasses/</guid>
+      <guid>https://example.org/glasses/</guid>
       <description>&lt;h1 id=&#34;glasses&#34;&gt;Glasses&lt;/h1&gt;&#xA;&lt;p&gt;Quality prescription glasses at affordable prices.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Sunglasses</title>
-      <link>http://localhost:1313/sunglasses/</link>
+      <title>Style Finder Quiz</title>
+      <link>https://example.org/style-finder/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sunglasses/</guid>
+      <guid>https://example.org/style-finder/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sunglasses</title>
+      <link>https://example.org/sunglasses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/sunglasses/</guid>
       <description>&lt;h1 id=&#34;sunglasses&#34;&gt;Sunglasses&lt;/h1&gt;&#xA;&lt;p&gt;Premium sunglasses and prescription sunglasses for all styles.&lt;/p&gt;</description>
     </item>
   </channel>
