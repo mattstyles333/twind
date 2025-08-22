@@ -12,7 +12,7 @@ menu:
           url: '{{store direct_url="glasses/rimless"}}'
         - text: "Aviator Glasses"
           url: '{{store direct_url="glasses/aviator"}}'
-        - text: "Try Home trial"
+        - text: "Try at Home"
           url: '{{store direct_url="trial-home"}}'
 
     - title: "Shop by Brand"

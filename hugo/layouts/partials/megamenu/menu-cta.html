@@ -1,7 +1,7 @@
 <!-- Bottom CTA Links Section - Responsive -->
 <div class="flex flex-col sm:flex-row gap-3 sm:gap-6">
   {{ range .megamenu.featured_links }}
-  <a class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/50 active:bg-white/70 transition-all duration-200 group flex-1 sm:flex-none min-h-[48px]" href="{{ .url | safeHTML }}" aria-label="{{ .text }}" role="button">
+  <a class="flex items-center gap-3 py-3 pr-4 rounded-lg hover:bg-white/50 active:bg-white/70 transition-all duration-200 group flex-1 sm:flex-none min-h-[48px]" href="{{ .url | safeHTML }}" aria-label="{{ .text }}" role="button">
     {{ if eq .icon "quiz" }}
     <svg
       width="20"
@@ -39,9 +39,12 @@
     {{ end }}
 
     <div
-      class="font-semibold text-blue-800 text-sm sm:text-base group-hover:text-blue-900 transition-colors duration-200 leading-tight whitespace-nowrap"
+      class="font-semibold text-blue-800 text-sm sm:text-base group-hover:text-blue-900 transition-colors duration-200 leading-tight whitespace-nowrap relative"
     >
-      {{ .text }}
+      <span class="relative">
+        {{ .text }}
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-800 transition-all duration-300 ease-out group-hover:w-full"></span>
+      </span>
     </div>
   </a>
   {{ end }}
