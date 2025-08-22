@@ -3,7 +3,7 @@
   {{ range $index, $section := .megamenu.sections }}
   <div class="space-y-0.5">
     <!-- Section Header -->
-    {{ if and (ne $section.title "Glasses") (ne $section.title "Shop by Brand") (ne $section.title "Shop by lens") }}
+    {{ if and (ne $section.title "Glasses") (ne $section.title "Sunglasses") (ne $section.title "Shop by Brand") (ne $section.title "Shop by lens") }}
     <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wide border-b border-gray-200 pb-1">
       {{ $section.title }}
     </h3>

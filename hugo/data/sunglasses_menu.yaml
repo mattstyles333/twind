@@ -1,17 +1,19 @@
 menu:
   sections:
-    - title: "Glasses"
+    - title: "Sunglasses"
       links:
-        - text: "Shop Mens Sunnies"
+        - text: "Shop Mens"
           url: '{{store direct_url="glasses/mens"}}'
+          font_weight: "bold"
         - text: "Shop Womens"
           url: '{{store direct_url="glasses/womens"}}'
-        - text: "Clear Glasses"
-          url: '{{store direct_url="glasses/clear"}}'
-        - text: "Rimless Glasses"
-          url: '{{store direct_url="glasses/rimless"}}'
-        - text: "Aviator Glasses"
-          url: '{{store direct_url="glasses/aviator"}}'
+          font_weight: "bold"
+        - text: "Aviator Sunglasses"
+          url: '{{store direct_url="sunglasses/aviator"}}'
+        - text: "Wayfarer Sunglasses"
+          url: '{{store direct_url="sunglasses/wayfarer"}}'
+        - text: "Black Sunglasses"
+          url: '{{store direct_url="sunglasses/black"}}'
         - text: "Try at Home"
           url: '{{store direct_url="trial-home"}}'
 
@@ -27,25 +29,25 @@ menu:
           url: '{{store direct_url="designer-glasses/oakley"}}'
         - text: "Tom Ford"
           url: '{{store direct_url="designer-glasses/tom-ford"}}'
-        - text: "Polaroid"
-          url: '{{store direct_url="designer-glasses/polaroid"}}'
+        - text: "Saint Laurent"
+          url: '{{store direct_url="designer-glasses/saint-laurent"}}'
         - text: "Shop All"
           url: '{{store direct_url="designer-glasses"}}'
 
     - title: "Shop by lens"
       links:
-        - text: "Distance Glasses"
-          url: '{{store direct_url="glasses/distance"}}'
-        - text: "Reading Glasses"
-          url: '{{store direct_url="glasses/reading"}}'
-        - text: "Bifocal Glasses"
-          url: '{{store direct_url="glasses/bifocal"}}'
-        - text: "Varifocal Glasses"
-          url: '{{store direct_url="glasses/varifocal"}}'
-        - text: "Photochromic Glasses"
-          url: '{{store direct_url="glasses/photochromic"}}'
-        - text: "Explore More"
-          url: '{{store direct_url="glasses"}}'
+        - text: "Polarised Sunglasses"
+          url: '{{store direct_url="sunglasses/polarised"}}'
+        - text: "Reading Sunglasses"
+          url: '{{store direct_url="sunglasses/reading"}}'
+        - text: "Mirrored Sunglasses"
+          url: '{{store direct_url="sunglasses/mirrored"}}'
+        - text: "Varifocal Sunglasses"
+          url: '{{store direct_url="sunglasses/varifocal"}}'
+        - text: "Bifocal Sunglasses"
+          url: '{{store direct_url="sunglasses/bifocal"}}'
+        - text: "Lens Guide"
+          url: '{{store direct_url="sunglasses"}}'
 
   featured_links:
     - text: "Check Out our Style Finder quiz!"
@@ -57,22 +59,14 @@ menu:
 
   featured_images:
     - title: "Mens Sunglasses"
-      subtitle: "Professional & Casual Styles"
       url: '{{store direct_url="glasses/mens"}}'
-      image: "https://sadmx.spex4less.com/media/wysiwyg/homepageimages/Frame_224_1_.png"
-      alt: "Mens Glasses"
-      item_count: "500"
-      starting_price: "29"
-      popular: true
-    - title: "Womens Glasses"
-      subtitle: "Designer & Everyday Elegance"
+      image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/mens_sunglassesmenu.webp"
+      alt: "Mens Sunglasses"
+    - title: "Womens Sunglasses"
       url: '{{store direct_url="glasses/womens"}}'
-      image: "https://sadmx.spex4less.com/media/wysiwyg/homepageimages/Frame_225.png"
-      alt: "Womens Glasses"
-      item_count: "600"
-      starting_price: "25"
-      popular: true
-    - title: "Designer Glasses"
-      url: '{{store direct_url="designer-glasses"}}'
-      image: "https://sadmx.spex4less.com/media/wysiwyg/homepageimages/tomford_menu.png"
-      alt: "Designer Glasses"
+      image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/womens_sunglassesmenu.webp"
+      alt: "Womens Sunglasses"
+    - title: "Designer Sunglasses"
+      url: '{{store direct_url="designer-sunglasses"}}'
+      image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/Raybandesignerbanner.webp"
+      alt: "Designer Sunglasses"

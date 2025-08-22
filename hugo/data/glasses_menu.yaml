@@ -6,12 +6,12 @@ menu:
           url: '{{store direct_url="glasses/mens"}}'
         - text: "Shop Womens"
           url: '{{store direct_url="glasses/womens"}}'
-        - text: "Clear Glasses"
-          url: '{{store direct_url="glasses/clear"}}'
         - text: "Rimless Glasses"
           url: '{{store direct_url="glasses/rimless"}}'
         - text: "Aviator Glasses"
           url: '{{store direct_url="glasses/aviator"}}'
+        - text: "Clear Glasses"
+          url: '{{store direct_url="glasses/clear"}}'
         - text: "Try at Home"
           url: '{{store direct_url="trial-home"}}'
 
@@ -29,7 +29,7 @@ menu:
           url: '{{store direct_url="designer-glasses/tom-ford"}}'
         - text: "Polaroid"
           url: '{{store direct_url="designer-glasses/polaroid"}}'
-        - text: "Shop All"
+        - text: "All Designers"
           url: '{{store direct_url="designer-glasses"}}'
 
     - title: "Shop by lens"
