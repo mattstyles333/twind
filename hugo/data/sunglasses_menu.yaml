@@ -1,0 +1,78 @@
+menu:
+  sections:
+    - title: "Glasses"
+      links:
+        - text: "Shop Mens Sunnies"
+          url: '{{store direct_url="glasses/mens"}}'
+        - text: "Shop Womens"
+          url: '{{store direct_url="glasses/womens"}}'
+        - text: "Clear Glasses"
+          url: '{{store direct_url="glasses/clear"}}'
+        - text: "Rimless Glasses"
+          url: '{{store direct_url="glasses/rimless"}}'
+        - text: "Aviator Glasses"
+          url: '{{store direct_url="glasses/aviator"}}'
+        - text: "Try at Home"
+          url: '{{store direct_url="trial-home"}}'
+
+    - title: "Shop by Brand"
+      links:
+        - text: "Ray-Ban"
+          url: '{{store direct_url="designer-glasses/ray-ban"}}'
+          popular: true
+        - text: "Gucci"
+          url: '{{store direct_url="designer-glasses/gucci"}}'
+          popular: true
+        - text: "Oakley"
+          url: '{{store direct_url="designer-glasses/oakley"}}'
+        - text: "Tom Ford"
+          url: '{{store direct_url="designer-glasses/tom-ford"}}'
+        - text: "Polaroid"
+          url: '{{store direct_url="designer-glasses/polaroid"}}'
+        - text: "Shop All"
+          url: '{{store direct_url="designer-glasses"}}'
+
+    - title: "Shop by lens"
+      links:
+        - text: "Distance Glasses"
+          url: '{{store direct_url="glasses/distance"}}'
+        - text: "Reading Glasses"
+          url: '{{store direct_url="glasses/reading"}}'
+        - text: "Bifocal Glasses"
+          url: '{{store direct_url="glasses/bifocal"}}'
+        - text: "Varifocal Glasses"
+          url: '{{store direct_url="glasses/varifocal"}}'
+        - text: "Photochromic Glasses"
+          url: '{{store direct_url="glasses/photochromic"}}'
+        - text: "Explore More"
+          url: '{{store direct_url="glasses"}}'
+
+  featured_links:
+    - text: "Check Out our Style Finder quiz!"
+      url: '{{store direct_url="product-quiz-glasses"}}'
+      icon: "quiz"
+    - text: "Our Satisfaction Guarantee"
+      url: '{{store direct_url="trial-home"}}'
+      icon: "guarantee"
+
+  featured_images:
+    - title: "Mens Sunglasses"
+      subtitle: "Professional & Casual Styles"
+      url: '{{store direct_url="glasses/mens"}}'
+      image: "https://sadmx.spex4less.com/media/wysiwyg/homepageimages/Frame_224_1_.png"
+      alt: "Mens Glasses"
+      item_count: "500"
+      starting_price: "29"
+      popular: true
+    - title: "Womens Glasses"
+      subtitle: "Designer & Everyday Elegance"
+      url: '{{store direct_url="glasses/womens"}}'
+      image: "https://sadmx.spex4less.com/media/wysiwyg/homepageimages/Frame_225.png"
+      alt: "Womens Glasses"
+      item_count: "600"
+      starting_price: "25"
+      popular: true
+    - title: "Designer Glasses"
+      url: '{{store direct_url="designer-glasses"}}'
+      image: "https://sadmx.spex4less.com/media/wysiwyg/homepageimages/tomford_menu.png"
+      alt: "Designer Glasses"
