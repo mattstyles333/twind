@@ -11,7 +11,7 @@ menu:
         - text: "Aviator Glasses"
           url: '{{store direct_url="glasses/aviator"}}'
         - text: "Clear Glasses"
-          url: '{{store direct_url="glasses/clear"}}'
+          url: '{{store direct_url="/glasses?color=Crystal"}}'
         - text: "Try at Home"
           url: '{{store direct_url="trial-home"}}'
 
@@ -35,17 +35,17 @@ menu:
     - title: "Shop by lens"
       links:
         - text: "Distance Glasses"
-          url: '{{store direct_url="glasses/distance"}}'
+          url: '{{store direct_url="/glasses/single-vision-glasses"}}'
         - text: "Reading Glasses"
-          url: '{{store direct_url="glasses/reading"}}'
+          url: '{{store direct_url="glasses/reading-glasses"}}'
         - text: "Bifocal Glasses"
           url: '{{store direct_url="glasses/bifocal"}}'
         - text: "Varifocal Glasses"
           url: '{{store direct_url="glasses/varifocal"}}'
         - text: "Photochromic Glasses"
-          url: '{{store direct_url="glasses/photochromic"}}'
-        - text: "Explore More"
-          url: '{{store direct_url="glasses"}}'
+          url: '{{store direct_url="how-to-choose-sunglass-tints"}}'
+        - text: "Lens Guide"
+          url: '{{store direct_url="/lens"}}'
 
   featured_links:
     - text: "Check Out our Style Finder quiz!"
