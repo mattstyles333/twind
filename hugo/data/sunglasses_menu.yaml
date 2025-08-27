@@ -20,32 +20,32 @@ menu:
     - title: "Shop by Brand"
       links:
         - text: "Ray-Ban"
-          url: '{{store direct_url="designer-glasses/ray-ban"}}'
+          url: '{{store direct_url="sunglasses/ray-ban"}}'
           popular: true
         - text: "Gucci"
-          url: '{{store direct_url="designer-glasses/gucci"}}'
+          url: '{{store direct_url="sunglasses/gucci"}}'
           popular: true
         - text: "Oakley"
-          url: '{{store direct_url="designer-glasses/oakley"}}'
+          url: '{{store direct_url="sunglasses/oakley"}}'
         - text: "Tom Ford"
-          url: '{{store direct_url="designer-glasses/tom-ford"}}'
+          url: '{{store direct_url="sunglasses/tom-ford"}}'
         - text: "Saint Laurent"
-          url: '{{store direct_url="designer-glasses/saint-laurent"}}'
+          url: '{{store direct_url="sunglasses/saint-laurent"}}'
         - text: "Shop All"
-          url: '{{store direct_url="designer-glasses"}}'
+          url: '{{store direct_url="designer-sunglasses"}}'
 
     - title: "Shop by lens"
       links:
         - text: "Polarised Sunglasses"
-          url: '{{store direct_url="sunglasses/polarised"}}'
+          url: '{{store direct_url="sunglasses/polarised-sunglasses"}}'
         - text: "Reading Sunglasses"
-          url: '{{store direct_url="sunglasses/reading"}}'
+          url: '{{store direct_url="sunglasses/reading-sunglasses"}}'
         - text: "Mirrored Sunglasses"
-          url: '{{store direct_url="sunglasses/mirrored"}}'
+          url: '{{store direct_url="sunglasses/how-to-choose-sunglass-tints"}}'
         - text: "Varifocal Sunglasses"
-          url: '{{store direct_url="sunglasses/varifocal"}}'
-        - text: "Bifocal Sunglasses"
-          url: '{{store direct_url="sunglasses/bifocal"}}'
+          url: '{{store direct_url="varifocal-sunglasses"}}'
+        - text: "Clip-on Sunglasses"
+          url: '{{store direct_url="clip-on"}}'
         - text: "Lens Guide"
           url: '{{store direct_url="sunglasses"}}'
 
@@ -54,7 +54,7 @@ menu:
       url: '{{store direct_url="product-quiz-glasses"}}'
       icon: "quiz"
     - text: "Our Satisfaction Guarantee"
-      url: '{{store direct_url="trial-home"}}'
+      url: '{{store direct_url="guarantee"}}'
       icon: "guarantee"
 
   featured_images:

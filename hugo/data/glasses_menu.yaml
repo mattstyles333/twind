@@ -43,7 +43,8 @@ menu:
         - text: "Varifocal Glasses"
           url: '{{store direct_url="glasses/varifocal"}}'
         - text: "Photochromic Glasses"
-          url: '{{store direct_url="how-to-choose-sunglass-tints"}}'
+          url: '{{store direct_url="how-to-choose-sunglass-tints"}}#photochromic'
+
         - text: "Lens Guide"
           url: '{{store direct_url="/lens"}}'
 
