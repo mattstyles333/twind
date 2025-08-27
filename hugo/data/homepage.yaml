@@ -172,7 +172,7 @@ how_to_buy_desktop:
     - number: 2
       title: "Customise Your Lenses & Add Your Prescription"
       content:
-        - text: '<br /><div>Our lens options are super flexible - no need to know all the ins and outs of optics. Whether you need distance, <a href="{{store direct_url=''reading-glasses''}}" class="text-blue-500 hover:text-blue-700">reading glasses</a>, <a href="{{store direct_url=''varifocal-glasses''}}" class="text-blue-500 hover:text-blue-700">varifocal glasses</a>, or <a href="{{store direct_url=''bifocal-glasses''}}" class="text-blue-500 hover:text-blue-700">bifocal lenses</a>, we offer one of the UK''s biggest selections of prescription lenses. Not sure what''s right for you? Just ask. Our expert opticians are here to help.</div>'
+        - text: '<br /><div>Our lens options are super flexible - no need to know all the ins and outs of optics. Whether you need distance, <a href="/reading-glasses" class="text-blue-500 hover:text-blue-700">reading glasses</a>, <a href="/varifocal-glasses" class="text-blue-500 hover:text-blue-700">varifocal glasses</a>, or <a href="/bifocal-glasses" class="text-blue-500 hover:text-blue-700">bifocal lenses</a>, we offer one of the UK''s biggest selections of prescription lenses. Not sure what''s right for you? Just ask. Our expert opticians are here to help.</div>'
       reverse: true
       image:
         src: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/holdinglens_2.webp"
@@ -182,7 +182,7 @@ how_to_buy_desktop:
       step3: true
       last: true
       content:
-        - text: 'Once everything''s in, we''ll get to work. Most orders are made and dispatched within a few days. For the best estimate for your delivery, check out our <a class="text-blue-500 hover:text-blue-700" href="{{store direct_url=''glasses-delivery-schedule''}}">delivery guide.</a> You''ll get regular email updates as your glasses make their way to you.'
+        - text: 'Once everything''s in, we''ll get to work. Most orders are made and dispatched within a few days. For the best estimate for your delivery, check out our <a class="text-blue-500 hover:text-blue-700" href="/glasses-delivery-schedule">delivery guide.</a> You''ll get regular email updates as your glasses make their way to you.'
         - text: "<strong>Backed by our 100% money-back guarantee and 12-month warranty.</strong>"
       buttons:
         - text: "Start Your Order"
@@ -267,7 +267,7 @@ how_to_buy_mobile:
   steps:
     - number: 1
       title: "Choose Your Frame"
-      description: 'Browse <i><strong>thousands</strong></i> of styles including top designer brands like <a href="{{store direct_url=''designer-glasses/ray-ban''}}" class="text-blue-500 hover:underline"><strong>Ray-Ban</strong></a>, <a href="{{store direct_url=''designer-glasses/oakley''}}" class="text-blue-500 hover:underline"><strong>Oakley</strong></a>, and <a href="{{store direct_url=''designer-glasses/tom-ford''}}" class="text-blue-500 hover:underline"><strong>Tom Ford</strong></a>. From trusty everyday pairs to something bold. Find your perfect style today!'
+      description: 'Browse <i><strong>thousands</strong></i> of styles including top designer brands like <a href="/designer-glasses/ray-ban" class="text-blue-500 hover:underline"><strong>Ray-Ban</strong></a>, <a href="/designer-glasses/oakley" class="text-blue-500 hover:underline"><strong>Oakley</strong></a>, and <a href="/designer-glasses/tom-ford" class="text-blue-500 hover:underline"><strong>Tom Ford</strong></a>. From trusty everyday pairs to something bold. Find your perfect style today!'
       image:
         src: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/selectingglasses_2.webp"
         alt: "Customer browsing and selecting prescription glasses frames in our showroom"
@@ -278,7 +278,7 @@ how_to_buy_mobile:
           url: "//glasses/womens"
     - number: 2
       title: "Customise Your Lenses & Add Your Prescription"
-      description: 'Our lens options are super flexible - no need to know all the ins and outs of optics. Whether you need distance, <a href="{{store direct_url=''reading-glasses''}}" class="text-blue-500 hover:text-blue-700">reading glasses</a>, <a href="{{store direct_url=''varifocal-glasses''}}" class="text-blue-500 hover:text-blue-700">varifocal glasses</a>, or <a href="{{store direct_url=''bifocal-glasses''}}" class="text-blue-500 hover:text-blue-700">bifocal lenses</a>. Not sure what''s right for you? Just ask. Our expert opticians are here to help.'
+      description: 'Our lens options are super flexible - no need to know all the ins and outs of optics. Whether you need distance, <a href="/reading-glasses" class="text-blue-500 hover:text-blue-700">reading glasses</a>, <a href="/varifocal-glasses" class="text-blue-500 hover:text-blue-700">varifocal glasses</a>, or <a href="/bifocal-glasses" class="text-blue-500 hover:text-blue-700">bifocal lenses</a>. Not sure what''s right for you? Just ask. Our expert opticians are here to help.'
       image:
         src: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/holdinglens_2.webp"
         alt: "Customer holding prescription glasses in their hands"

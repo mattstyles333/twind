@@ -4,3 +4,4 @@ venv
 .mcp*
 .claude*
 .playwright*
+hugo/hugo_stats.json

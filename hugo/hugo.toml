@@ -7,7 +7,7 @@ disableKinds = ['taxonomy', 'term']
 
 # Development settings - disable minification for readable output
 [build]
-  writeStats = true
+  writeStats = false
 
 [markup]
   [markup.goldmark]

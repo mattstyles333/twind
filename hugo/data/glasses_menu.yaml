@@ -3,63 +3,63 @@ menu:
     - title: "Glasses"
       links:
         - text: "Shop Mens"
-          url: '{{store direct_url="glasses/mens"}}'
+          url: '/glasses/mens'
         - text: "Shop Womens"
-          url: '{{store direct_url="glasses/womens"}}'
+          url: '/glasses/womens'
         - text: "Rimless Glasses"
-          url: '{{store direct_url="glasses/rimless"}}'
+          url: '/glasses/rimless'
         - text: "Aviator Glasses"
-          url: '{{store direct_url="glasses/aviator"}}'
+          url: '/glasses/aviator'
         - text: "Clear Glasses"
-          url: '{{store direct_url="/glasses?color=Crystal"}}'
+          url: '/glasses?color=Crystal'
         - text: "Try at Home"
-          url: '{{store direct_url="trial-home"}}'
+          url: '/trial-home'
 
     - title: "Shop by Brand"
       links:
         - text: "Ray-Ban"
-          url: '{{store direct_url="designer-glasses/ray-ban"}}'
+          url: '/designer-glasses/ray-ban'
           popular: true
         - text: "Gucci"
-          url: '{{store direct_url="designer-glasses/gucci"}}'
+          url: '/designer-glasses/gucci'
           popular: true
         - text: "Oakley"
-          url: '{{store direct_url="designer-glasses/oakley"}}'
+          url: '/designer-glasses/oakley'
         - text: "Tom Ford"
-          url: '{{store direct_url="designer-glasses/tom-ford"}}'
+          url: '/designer-glasses/tom-ford'
         - text: "Polaroid"
-          url: '{{store direct_url="designer-glasses/polaroid"}}'
+          url: '/designer-glasses/polaroid'
         - text: "All Designers"
-          url: '{{store direct_url="designer-glasses"}}'
+          url: '/designer-glasses'
 
     - title: "Shop by lens"
       links:
         - text: "Distance Glasses"
-          url: '{{store direct_url="/glasses/single-vision-glasses"}}'
+          url: '/glasses/single-vision-glasses'
         - text: "Reading Glasses"
-          url: '{{store direct_url="glasses/reading-glasses"}}'
+          url: '/glasses/reading-glasses'
         - text: "Bifocal Glasses"
-          url: '{{store direct_url="glasses/bifocal"}}'
+          url: '/glasses/bifocal'
         - text: "Varifocal Glasses"
-          url: '{{store direct_url="glasses/varifocal"}}'
+          url: '/glasses/varifocal'
         - text: "Photochromic Glasses"
-          url: '{{store direct_url="how-to-choose-sunglass-tints"}}#photochromic'
+          url: '/how-to-choose-sunglass-tints#photochromic'
 
         - text: "Lens Guide"
-          url: '{{store direct_url="/lens"}}'
+          url: '/lens'
 
   featured_links:
     - text: "Check Out our Style Finder quiz!"
-      url: '{{store direct_url="product-quiz-glasses"}}'
+      url: '/product-quiz-glasses'
       icon: "quiz"
     - text: "Our Satisfaction Guarantee"
-      url: '{{store direct_url="trial-home"}}'
+      url: '/trial-home'
       icon: "guarantee"
 
   featured_images:
     - title: "Mens Glasses"
       subtitle: "Professional & Casual Styles"
-      url: '{{store direct_url="glasses/mens"}}'
+      url: '/glasses/mens'
       image: "https://sadmx.spex4less.com/media/wysiwyg/homepageimages/Frame_224_1_.png"
       alt: "Mens Glasses"
       item_count: "500"
@@ -67,13 +67,13 @@ menu:
       popular: true
     - title: "Womens Glasses"
       subtitle: "Designer & Everyday Elegance"
-      url: '{{store direct_url="glasses/womens"}}'
+      url: '/glasses/womens'
       image: "https://sadmx.spex4less.com/media/wysiwyg/homepageimages/Frame_225.png"
       alt: "Womens Glasses"
       item_count: "600"
       starting_price: "25"
       popular: true
     - title: "Designer Glasses"
-      url: '{{store direct_url="designer-glasses"}}'
+      url: '/designer-glasses'
       image: "https://sadmx.spex4less.com/media/wysiwyg/homepageimages/tomford_menu.png"
       alt: "Designer Glasses"

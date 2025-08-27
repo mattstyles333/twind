@@ -19,13 +19,13 @@ additional_cards:
     text: "Try up to 4 frames at home for free, no pressure to buy. Or, take our frame quiz for personalised recommendations."
     buttons:
       - text: "Learn About Home Trial"
-        url: "{{store direct_url=\"trial-home\"}}"
+        url: "/trial-home"
       - text: "Start the Quiz"
-        url: "{{store direct_url=\"product-quiz-glasses\"}}"
+        url: "/product-quiz-glasses"
 
   - id: "money-back-guarantee"
     title: "100% Money Back Guarantee"
     text: "100% money-back guarantee for 30 days if you're unhappy for any reason. Plus 12 month frame warranty - we're always here to help."
     buttons:
       - text: "Learn More"
-        url: "{{store direct_url=\"guarantee\"}}"
+        url: "/guarantee"

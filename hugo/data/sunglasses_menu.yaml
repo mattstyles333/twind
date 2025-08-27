@@ -3,70 +3,70 @@ menu:
     - title: "Sunglasses"
       links:
         - text: "Shop Mens"
-          url: '{{store direct_url="sunglasses/mens"}}'
+          url: '/sunglasses/mens'
           font_weight: "bold"
         - text: "Shop Womens"
-          url: '{{store direct_url="sunglasses/womens"}}'
+          url: '/sunglasses/womens'
           font_weight: "bold"
         - text: "Aviator Sunglasses"
-          url: '{{store direct_url="sunglasses/aviator"}}'
+          url: '/sunglasses/aviator'
         - text: "Wayfarer Sunglasses"
-          url: '{{store direct_url="sunglasses/wayfarer"}}'
+          url: '/sunglasses/wayfarer'
         - text: "Black Sunglasses"
-          url: '{{store direct_url="sunglasses/black"}}'
+          url: '/sunglasses/black'
         - text: "Try at Home"
-          url: '{{store direct_url="trial-home"}}'
+          url: '/trial-home'
 
     - title: "Shop by Brand"
       links:
         - text: "Ray-Ban"
-          url: '{{store direct_url="sunglasses/ray-ban"}}'
+          url: '/sunglasses/ray-ban'
           popular: true
         - text: "Gucci"
-          url: '{{store direct_url="sunglasses/gucci"}}'
+          url: '/sunglasses/gucci'
           popular: true
         - text: "Oakley"
-          url: '{{store direct_url="sunglasses/oakley"}}'
+          url: '/sunglasses/oakley'
         - text: "Tom Ford"
-          url: '{{store direct_url="sunglasses/tom-ford"}}'
+          url: '/sunglasses/tom-ford'
         - text: "Saint Laurent"
-          url: '{{store direct_url="sunglasses/saint-laurent"}}'
+          url: '/sunglasses/saint-laurent'
         - text: "Shop All"
-          url: '{{store direct_url="designer-sunglasses"}}'
+          url: '/designer-sunglasses'
 
     - title: "Shop by lens"
       links:
         - text: "Polarised Sunglasses"
-          url: '{{store direct_url="sunglasses/polarised-sunglasses"}}'
+          url: '/sunglasses/polarised-sunglasses'
         - text: "Reading Sunglasses"
-          url: '{{store direct_url="sunglasses/reading-sunglasses"}}'
+          url: '/sunglasses/reading-sunglasses'
         - text: "Mirrored Sunglasses"
-          url: '{{store direct_url="sunglasses/how-to-choose-sunglass-tints"}}'
+          url: '/sunglasses/how-to-choose-sunglass-tints'
         - text: "Varifocal Sunglasses"
-          url: '{{store direct_url="varifocal-sunglasses"}}'
+          url: '/varifocal-sunglasses'
         - text: "Clip-on Sunglasses"
-          url: '{{store direct_url="clip-on"}}'
+          url: '/clip-on'
         - text: "Lens Guide"
-          url: '{{store direct_url="sunglasses"}}'
+          url: '/sunglasses'
 
   featured_links:
     - text: "Check Out our Style Finder quiz!"
-      url: '{{store direct_url="product-quiz-glasses"}}'
+      url: '/product-quiz-glasses'
       icon: "quiz"
     - text: "Our Satisfaction Guarantee"
-      url: '{{store direct_url="guarantee"}}'
+      url: '/guarantee'
       icon: "guarantee"
 
   featured_images:
     - title: "Mens Sunglasses"
-      url: '{{store direct_url="sunglasses/mens"}}'
+      url: '/sunglasses/mens'
       image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/mens_sunglassesmenu.webp"
       alt: "Mens Sunglasses"
     - title: "Womens Sunglasses"
-      url: '{{store direct_url="sunglasses/womens"}}'
+      url: '/sunglasses/womens'
       image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/womens_sunglassesmenu.webp"
       alt: "Womens Sunglasses"
     - title: "Designer Sunglasses"
-      url: '{{store direct_url="designer-sunglasses"}}'
+      url: '/designer-sunglasses'
       image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/Raybandesignerbanner.webp"
       alt: "Designer Sunglasses"

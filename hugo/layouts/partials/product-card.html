@@ -2,7 +2,7 @@
   <a href="{{ .url }}" class="w-full">
     <div class="p-2 w-full bg-white border border-gray-200 shadow transition md:p-4 sm:hover:shadow-lg">
       <div class="relative aspect-square group">
-        {{ partial "image.html" (dict
+        {{- partial "image.html" (dict
           "src" .image
           "alt" .alt
           "width" 400
@@ -14,10 +14,10 @@
           "placeholder" true
           "placeholder_service" "unsplash"
           "placeholder_category" "eyewear,glasses,sunglasses"
-        ) }}
+        ) -}}
 
-        {{ if .hover_image }}
-          {{ partial "image.html" (dict
+        {{- if .hover_image -}}
+          {{- partial "image.html" (dict
             "src" .hover_image
             "alt" .hover_alt
             "width" 400
@@ -27,13 +27,13 @@
             "placeholder" true
             "placeholder_service" "unsplash"
             "placeholder_category" "eyewear,glasses,sunglasses"
-          ) }}
-        {{ end }}
+          ) -}}
+        {{- end -}}
       </div>
 
       <div class="mt-2 text-center md:mt-4">
         <a href="{{ .brand.url }}" class="block">
-          {{ partial "image.html" (dict
+          {{- partial "image.html" (dict
             "src" .brand.logo
             "alt" (printf "%s Logo" .brand.name)
             "width" 300
@@ -42,10 +42,10 @@
             "placeholder" true
             "placeholder_service" "placeholder"
             "placeholder_category" "LOGO"
-          ) }}
+          ) -}}
         </a>
-        <p class="text-sm font-medium md:text-lg">{{ .model }}</p>
-        <p class="text-xs font-medium text-gray-600">{{ .variant }}</p>
+        <p class="text-sm font-medium md:text-lg">{{- .model -}}</p>
+        <p class="text-xs font-medium text-gray-600">{{- .variant -}}</p>
       </div>
     </div>
   </a>
