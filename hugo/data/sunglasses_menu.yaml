@@ -3,10 +3,10 @@ menu:
     - title: "Sunglasses"
       links:
         - text: "Shop Mens"
-          url: '{{store direct_url="glasses/mens"}}'
+          url: '{{store direct_url="sunglasses/mens"}}'
           font_weight: "bold"
         - text: "Shop Womens"
-          url: '{{store direct_url="glasses/womens"}}'
+          url: '{{store direct_url="sunglasses/womens"}}'
           font_weight: "bold"
         - text: "Aviator Sunglasses"
           url: '{{store direct_url="sunglasses/aviator"}}'
@@ -59,11 +59,11 @@ menu:
 
   featured_images:
     - title: "Mens Sunglasses"
-      url: '{{store direct_url="glasses/mens"}}'
+      url: '{{store direct_url="sunglasses/mens"}}'
       image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/mens_sunglassesmenu.webp"
       alt: "Mens Sunglasses"
     - title: "Womens Sunglasses"
-      url: '{{store direct_url="glasses/womens"}}'
+      url: '{{store direct_url="sunglasses/womens"}}'
       image: "https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/womens_sunglassesmenu.webp"
       alt: "Womens Sunglasses"
     - title: "Designer Sunglasses"
