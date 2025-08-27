@@ -21,6 +21,14 @@
       {{ end }}
     </div>
 
+    <!-- Expanded brands with FAQ-style animation - only show if not on glasses page -->
+    {{ if ne .Page.Kind "page" }}
+    <div
+      class="overflow-hidden relative max-h-0 transition-all duration-150 ease-in-out"
+      x-ref="container"
+      x-bind:style="expanded ? 'max-height: ' + $refs.container.scrollHeight + 'px' : ''"
+    >
+
     <!-- Expanded brands with FAQ-style animation -->
     <div
       class="overflow-hidden relative max-h-0 transition-all duration-150 ease-in-out"
@@ -291,8 +299,10 @@
         </div>
       </div>
     </div>
+    {{ end }}
 
-    <!-- Control buttons -->
+    <!-- Control buttons - only show if not on glasses page -->
+    {{ if ne .Page.Kind "page" }}
     <div class="mt-6 text-center md:mt-8" x-show="{{ len .brands }} > 6">
       <div class="flex justify-center items-center gap-4">
         <!-- Toggle button with big chevron -->
@@ -322,5 +332,6 @@
         </a>
       </div>
     </div>
+    {{ end }}
   </div>
 </section>

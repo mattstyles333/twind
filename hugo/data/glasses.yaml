@@ -268,16 +268,16 @@ feature_cards:
 feature_cards:
   - id: "rated-1"
     title: "Glasses for Every Style and Need"
-    text: "From timeless classics to modern designer looks, we offer glasses to suit every face, lifestyle, and budget. Browse a wide selection of stylish frames and lens options, all backed by expert care and fast delivery."
+    text: "<strong>Huge Selection for Every Face</strong><br /><br />Find your perfect pair from our massive collection. From classic designs to trendy styles, we've got you covered. Plus, all backed by expert care and fast delivery."
     reviews_badge: "28K 5-Star Reviews"
 
   - id: "customer-focused"
     title: "Prescription Glasses, Made for You"
-    text: "Our prescription glasses are tailored to your exact needs. Whether you need single vision, bifocals, or varifocals, we'll help you see clearly in every setting. All lenses are crafted with precision and care for maximum clarity."
+    text: "<strong>Custom Lenses for Your Vision</strong><br /><br />Get glasses that match your exact prescription needs. <a href='/glasses/single-vision-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>Single vision</a>, <a href='/bifocal-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>bifocals</a>, or <a href='/varifocal-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>varifocals</a>. Every lens is carefully crafted for crystal-clear vision."
 
   - id: "more-for-less"
-    title: "Photochromic & Transition Lenses"
-    text: "Enjoy all-day comfort with light-adaptive lenses that darken in the sun and clear indoors. Photochromic lenses reduce glare, protect your eyes, and adapt to changing light — ideal for driving, working, and everyday wear."
+    title: "Photochromic Lenses"
+    text: "<strong>Smart Lenses That Adapt</strong><br /><br />One pair for all activities. These lenses automatically darken in sunlight and stay clear indoors. Perfect for driving, working, and everyday use.<br /><br /><a href='/how-to-choose-sunglass-tints#photochromic' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium underline'>Discover the Benefits</a>"
 
 additional_cards:
   - id: "frame-selection"
