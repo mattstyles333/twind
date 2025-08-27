@@ -1,3 +1,6 @@
 node_modules/
 src/output.css
 venv
+.mcp*
+.claude*
+.playwright*
