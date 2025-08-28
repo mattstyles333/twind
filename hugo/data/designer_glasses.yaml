@@ -189,7 +189,7 @@ faq:
 feature_cards:
   - id: "rated-1"
     title: "Rated #1 in the UK"
-    text: "Family-run and independent for 20+ years, we've helped over 500,000 customers find glasses they love, with care that's built our reputation as the <strong>UK's most trusted online optician.</strong> We offer everything from <a href='/glasses/single-vision-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>distance lenses</a> for everyday wear to <a href='/glasses/reading-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>reading glasses</a> for close-up tasks and <a href='/glasses/varifocal' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>varifocal lenses</a> for multiple distances."
+    text: "Family-run and independent for 20+ years, we've helped over 500,000 customers find glasses they love, with care that's built our reputation as the <strong>UK's most trusted online optician.</strong> We offer <a href='/glasses/single-vision-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>distance</a>, <a href='/glasses/reading-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>reading</a>, and <a href='/glasses/varifocal' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>varifocal lenses</a>."
     reviews_badge: "28K 5-Star Reviews"
 
   - id: "customer-focused"
