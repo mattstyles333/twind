@@ -277,7 +277,7 @@ feature_cards:
     title: "Not Sure About Your Purchase?"
     text: "<strong>30-Day Money Back Guarantee</strong><br /><br />All our glasses are covered under our 30-day guarantee. Return them for any reason - no questions asked. You'll get a full refund or be eligible for an exchange."
     cta_text: "Our Returns Policy"
-    cta_url: "/guarantee"
+    cta_url: "/exchange-or-return"
 
   - id: "more-for-less"
     title: "Photochromic Lenses"
@@ -301,7 +301,7 @@ additional_cards:
     text: "<strong>100% money-back guarantee for 30 days</strong> if you're unhappy for any reason. Plus <strong>12 month frame warranty</strong> - we're always here to help."
     buttons:
       - text: "Learn More"
-        url: '/guarantee'
+        url: '/exchange-or-return'
 
 # Trust Bar Data
 trust_bar:

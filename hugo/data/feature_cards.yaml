@@ -28,4 +28,4 @@ additional_cards:
     text: "100% money-back guarantee for 30 days if you're unhappy for any reason. Plus 12 month frame warranty - we're always here to help."
     buttons:
       - text: "Learn More"
-        url: "/guarantee"
+        url: "/exchange-or-return"

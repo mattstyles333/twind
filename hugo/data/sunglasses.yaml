@@ -215,7 +215,7 @@ additional_cards:
     text: "<strong>100% money-back guarantee for 30 days</strong> if you're unhappy for any reason. Plus <strong>12 month frame warranty</strong> - we're always here to help."
     buttons:
       - text: "Learn More"
-        url: '/guarantee'
+        url: '/exchange-or-return'
 
 # Feature Cards for selling-points partial (sunglasses-specific)
 feature_cards:
