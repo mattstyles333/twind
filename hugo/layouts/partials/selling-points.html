@@ -71,6 +71,13 @@
                   <p class="text-gray-600 dark:text-gray-400">
                     {{ $customerFocused.text | safeHTML }}
                   </p>
+                  {{ if $customerFocused.cta_text }}
+                  <div class="mt-6">
+                    <a href="{{ $customerFocused.cta_url }}" class="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-blue-800 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                      {{ $customerFocused.cta_text }}
+                    </a>
+                  </div>
+                  {{ end }}
                 </div>
               </div>
               {{ end }}
@@ -91,6 +98,13 @@
                   <p class="text-gray-600 dark:text-gray-400">
                     {{ $moreForLess.text | safeHTML }}
                   </p>
+                  {{ if $moreForLess.cta_text }}
+                  <div class="mt-6">
+                    <a href="{{ $moreForLess.cta_url }}" class="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-blue-800 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                      {{ $moreForLess.cta_text }}
+                    </a>
+                  </div>
+                  {{ end }}
                 </div>
               </div>
               {{ end }}
