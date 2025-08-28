@@ -268,20 +268,22 @@ feature_cards:
 feature_cards:
   - id: "rated-1"
     title: "Glasses for Every Style and Need"
-    text: "<strong>Huge Selection for Every Face</strong><br /><br />Find your perfect pair from our massive collection. From classic designs to trendy styles, we've got you covered. Plus, all backed by expert care and fast delivery."
+    text: "<strong>Huge Selection for Every Preference</strong><br /><br />Find your perfect pair from our massive collection. From classic designs to trendy styles, we've got you covered. Plus, all backed by expert care and fast delivery."
     reviews_badge: "28K 5-Star Reviews"
+    cta_text: "Shop All Glasses"
+    cta_url: "/glasses"
 
   - id: "customer-focused"
-    title: "Prescription Glasses, Made for You"
-    text: "<strong>Custom Lenses for Your Vision</strong><br /><br />Get glasses that match your exact prescription needs. <a href='/glasses/single-vision-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>Single vision</a>, <a href='/bifocal-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>bifocals</a>, or <a href='/varifocal-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>varifocals</a>. Every lens is carefully crafted for crystal-clear vision.<br /><br /><strong>Made in the UK</strong> - Quality you can trust."
-    cta_text: "Shop Prescription Glasses"
-    cta_url: "/glasses"
+    title: "Not Sure About Your Purchase?"
+    text: "<strong>30-Day Money Back Guarantee</strong><br /><br />All our glasses are covered under our 30-day guarantee. Return them for any reason - no questions asked. You'll get a full refund or be eligible for an exchange."
+    cta_text: "Our Returns Policy"
+    cta_url: "/guarantee"
 
   - id: "more-for-less"
     title: "Photochromic Lenses"
-    text: "<strong>Smart Lenses That Adapt</strong><br /><br />Our most popular lens choice! One pair for all activities. These lenses automatically darken in sunlight and stay clear indoors. Perfect for driving, working, and everyday use.<br /><br /><a href='/how-to-choose-sunglass-tints#photochromic' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium underline'>Discover the Benefits</a>"
-    cta_text: "Shop Photochromic Lenses"
-    cta_url: "/glasses/photochromic"
+    text: "<strong>Our Staff Favourite!</strong><br /><br />One pair for all activities. These lenses automatically darken in sunlight and stay clear indoors. Perfect for driving, working, and everyday use."
+    cta_text: "Discover the Benefits"
+    cta_url: "/how-to-choose-sunglass-tints#photochromic"
 
 additional_cards:
   - id: "frame-selection"

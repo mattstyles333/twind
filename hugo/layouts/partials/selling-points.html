@@ -41,16 +41,23 @@
                 {{ end }}
                 <div class="flex flex-col items-center justify-center min-h-[300px] lg:min-h-[320px] text-center">
                   {{ if $rated1.svg_path }}
-                  <svg class="mb-4 w-12 h-12 text-gray-800" viewBox="{{ $rated1.svg_viewbox }}" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <svg class="mb-6 w-12 h-12 text-gray-800" viewBox="{{ $rated1.svg_viewbox }}" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="{{ $rated1.svg_path }}"></path>
                   </svg>
                   {{ end }}
-                  <h2 class="mb-4 text-2xl font-semibold text-blue-800 dark:text-white">
+                  <h2 class="mb-6 text-2xl font-semibold text-blue-800 dark:text-white">
                     {{ $rated1.title }}
                   </h2>
-                  <p class="text-gray-800 dark:text-gray-300">
+                  <p class="mb-8 text-gray-800 dark:text-gray-300 leading-relaxed">
                     {{ $rated1.text | safeHTML }}
                   </p>
+                  {{ if $rated1.cta_text }}
+                  <div class="mt-auto">
+                    <a href="{{ $rated1.cta_url }}" class="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-blue-800 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                      {{ $rated1.cta_text }}
+                    </a>
+                  </div>
+                  {{ end }}
                 </div>
               </div>
               {{ end }}
@@ -61,18 +68,18 @@
               <div class="order-2 p-6 bg-white rounded-xl border border-gray-200 shadow-sm lg:col-span-2 lg:p-8 dark:border-gray-800 dark:bg-gray-900 lg:order-1">
                 <div class="flex flex-col items-center justify-center min-h-[280px] lg:min-h-[320px] text-center">
                   {{ if $customerFocused.svg_path }}
-                  <svg class="mb-4 w-12 h-12 text-gray-800" viewBox="{{ $customerFocused.svg_viewbox }}" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <svg class="mb-6 w-12 h-12 text-gray-800" viewBox="{{ $customerFocused.svg_viewbox }}" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="{{ $customerFocused.svg_path }}"></path>
                   </svg>
                   {{ end }}
-                  <h2 class="mb-4 text-2xl font-semibold text-gray-800 dark:text-white">
+                  <h2 class="mb-6 text-2xl font-semibold text-gray-800 dark:text-white">
                     {{ $customerFocused.title }}
                   </h2>
-                  <p class="text-gray-600 dark:text-gray-400">
+                  <p class="mb-8 text-gray-600 dark:text-gray-400 leading-relaxed">
                     {{ $customerFocused.text | safeHTML }}
                   </p>
                   {{ if $customerFocused.cta_text }}
-                  <div class="mt-6">
+                  <div class="mt-auto">
                     <a href="{{ $customerFocused.cta_url }}" class="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-blue-800 rounded-lg hover:bg-blue-700 transition-colors duration-200">
                       {{ $customerFocused.cta_text }}
                     </a>
@@ -85,21 +92,24 @@
               <!-- Card 3: More for Less Card -->
               {{ $moreForLess := index (where $featureCards "id" "more-for-less") 0 }}
               {{ if $moreForLess }}
-              <div class="order-3 p-6 bg-white rounded-xl border border-gray-200 shadow-sm lg:col-span-2 lg:p-8 dark:border-gray-800 dark:bg-gray-900">
+              <div class="relative order-3 p-6 bg-white rounded-xl border border-gray-200 shadow-sm lg:col-span-2 lg:p-8 dark:border-gray-800 dark:bg-gray-900">
                 <div class="flex flex-col items-center justify-center min-h-[280px] lg:min-h-[320px] text-center">
                   {{ if $moreForLess.svg_path }}
-                  <svg class="mb-4 w-12 h-12 text-gray-800" viewBox="{{ $moreForLess.svg_viewbox }}" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <svg class="mb-6 w-12 h-12 text-gray-800" viewBox="{{ $moreForLess.svg_viewbox }}" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="{{ $moreForLess.svg_path }}"></path>
                   </svg>
                   {{ end }}
-                  <h2 class="mb-4 text-2xl font-semibold text-gray-800 dark:text-white">
+                  <h2 class="mb-6 text-2xl font-semibold text-gray-800 dark:text-white">
                     {{ $moreForLess.title }}
                   </h2>
-                  <p class="text-gray-600 dark:text-gray-400">
+                  <p class="mb-6 text-gray-600 dark:text-gray-400 leading-relaxed">
                     {{ $moreForLess.text | safeHTML }}
                   </p>
+
+
+
                   {{ if $moreForLess.cta_text }}
-                  <div class="mt-6">
+                  <div class="mt-auto">
                     <a href="{{ $moreForLess.cta_url }}" class="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-blue-800 rounded-lg hover:bg-blue-700 transition-colors duration-200">
                       {{ $moreForLess.cta_text }}
                     </a>
@@ -107,6 +117,8 @@
                   {{ end }}
                 </div>
               </div>
+
+
               {{ end }}
             </div>
           </div>
