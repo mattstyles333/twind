@@ -54,7 +54,7 @@ menu:
       url: '/product-quiz-glasses'
       icon: "quiz"
     - text: "Our Satisfaction Guarantee"
-      url: '/exchange-or-return'
+      url: '/guarantee'
       icon: "guarantee"
 
   featured_images:

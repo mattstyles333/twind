@@ -53,7 +53,7 @@ menu:
       url: '/product-quiz-glasses'
       icon: "quiz"
     - text: "Our Satisfaction Guarantee"
-      url: '/trial-home'
+      url: '/guarantee'
       icon: "guarantee"
 
   featured_images:

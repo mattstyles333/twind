@@ -1,4 +1,7 @@
 {{ $brands := .Site.Data.glasses.brands_a_to_z }}
+{{ if eq .Layout "sunglasses" }}
+  {{ $brands = .Site.Data.sunglasses.brands_a_to_z }}
+{{ end }}
 
 <!-- Divider -->
 <div class="border-t-2 border-gray-200 my-8"></div>
