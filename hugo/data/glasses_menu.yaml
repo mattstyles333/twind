@@ -37,11 +37,11 @@ menu:
         - text: "Distance Glasses"
           url: '/glasses/single-vision-glasses'
         - text: "Reading Glasses"
-          url: '/glasses/reading-glasses'
+          url: '/reading-glasses'
         - text: "Bifocal Glasses"
-          url: '/glasses/bifocal'
+          url: '/bifocal-glasses'
         - text: "Varifocal Glasses"
-          url: '/glasses/varifocal'
+          url: '/varifocal-glasses'
         - text: "Photochromic Glasses"
           url: '/how-to-choose-sunglass-tints#photochromic'
 
