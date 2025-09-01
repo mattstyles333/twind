@@ -30,6 +30,9 @@
         },
       };
     </script>
+    <style>
+      [x-cloak] { display: none !important; }
+    </style>
   </head>
   <body class="bg-white">
     <main>
@@ -912,7 +915,7 @@
                   </p>
                   
                   <div class="mt-auto">
-                    <a href="/glasses" class="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-blue-800 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                    <a href="/glasses" class="inline-block bg-blue-800 hover:bg-blue-900 text-white font-medium py-3 px-6 rounded-lg transition-colors text-center">
                       Shop All Glasses
                     </a>
                   </div>
@@ -935,7 +938,7 @@
                   </p>
                   
                   <div class="mt-auto">
-                    <a href="/exchange-or-return" class="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-blue-800 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                    <a href="/exchange-or-return" class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-3 px-6 rounded-lg transition-colors text-center">
                       Our Returns Policy
                     </a>
                   </div>
@@ -961,7 +964,7 @@
 
                   
                   <div class="mt-auto">
-                    <a href="/how-to-choose-sunglass-tints#photochromic" class="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-blue-800 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                    <a href="/how-to-choose-sunglass-tints#photochromic" class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-3 px-6 rounded-lg transition-colors text-center">
                       Discover the Benefits
                     </a>
                   </div>
@@ -1138,6 +1141,7 @@
           
           <div
             x-show="showModal"
+            x-cloak
             class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0"
@@ -1307,6 +1311,7 @@
             
             <div
               x-show="showModalFaceShape"
+              x-cloak
               class="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50"
               x-transition:enter="transition ease-out duration-300"
               x-transition:enter-start="opacity-0"
@@ -1419,6 +1424,7 @@
           
           <div
             x-show="showModalColor"
+            x-cloak
             class="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50"
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0"

@@ -30,6 +30,9 @@
         },
       };
     </script>
+    <style>
+      [x-cloak] { display: none !important; }
+    </style>
   </head>
   <body class="bg-white">
     <main>
@@ -908,9 +911,14 @@
                     Prescription Sunglasses
                   </h2>
                   <p class="mb-8 text-gray-800 dark:text-gray-300 leading-relaxed">
-                    <strong>Eyewear Customised to You</strong><br /><br /><ul class='space-y-1.5 mb-3'><li class='flex items-center'><span class='mr-2 text-gray-600'>•</span><a href='/glasses/single-vision-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>Distance Lenses</a></li><li class='flex items-center'><span class='mr-2 text-gray-600'>•</span><a href='/glasses/reading-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>Reading Lenses</a></li><li class='flex items-center'><span class='mr-2 text-gray-600'>•</span><a href='/glasses/bifocal' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>Bifocal Lenses</a></li><li class='flex items-center'><span class='mr-2 text-gray-600'>•</span><a href='/glasses/varifocal' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>Varifocal Lenses</a></li></ul><p class='text-sm text-gray-600'>All with photochromic, mirrored, or tinted options.</p>
-
+                    <strong>Eyewear made for you</strong><br /><br />Whether you need <a href='/glasses/single-vision-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>distance</a>, <a href='/glasses/reading-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>reading</a>, <a href='/glasses/bifocal' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>bifocal</a>, or <a href='/glasses/varifocal' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>varifocal</a> lenses.<br /><br />Choose from photochromic, mirrored, or tinted finishes to suit your style.
                   </p>
+                  
+                  <div class="mt-auto">
+                    <a href="/sunglasses" class="inline-block bg-blue-800 hover:bg-blue-900 text-white font-medium py-3 px-6 rounded-lg transition-colors text-center">
+                      Shop Prescription Sunglasses
+                    </a>
+                  </div>
                   
                 </div>
               </div>
@@ -926,9 +934,14 @@
                     Polarised Sunglasses
                   </h2>
                   <p class="mb-8 text-gray-600 dark:text-gray-400 leading-relaxed">
-                    <strong>The Essential Sunglass Lens</strong><br /><br />Polarised technology eliminates 99% of glare for sharper, more comfortable vision in bright or reflective settings. An essential for driving, and everyday outdoor wear. <a href='https://www.spex4less.com/blog/polarised-sunglasses' class='text-blue-500 hover:text-blue-700 underline'>Learn more about polarised technology</a>
-
+                    <strong>The Essential Sunglass Lens</strong><br /><br />Polarised technology eliminates 99% of glare for sharper, more comfortable vision in bright or reflective settings. An essential for driving, and everyday outdoor wear.
                   </p>
+                  
+                  <div class="mt-auto">
+                    <a href="https://www.spex4less.com/blog/polarised-sunglasses" class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-3 px-6 rounded-lg transition-colors text-center">
+                      Learn About Polarised Lenses
+                    </a>
+                  </div>
                   
                 </div>
               </div>
@@ -944,11 +957,17 @@
                     Reading Sunglasses
                   </h2>
                   <p class="mb-6 text-gray-600 dark:text-gray-400 leading-relaxed">
-                    <strong>Clear Near Vision with UV Protection</strong><br /><br />Reading sunglasses combine clear near vision with UV protection, ideal for reading outdoors, relaxing in the garden, or on holiday. Available in various strengths and styles, custom-made to your prescription.
+                    <strong>Clear Near Vision with UV Protection</strong><br /><br /><a href='/sunglasses/reading-sunglasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>Reading sunglasses</a> combine clear near vision with UV protection, ideal for reading outdoors, relaxing in the garden, or on holiday. Available in various strengths and styles, custom-made to your prescription.
                   </p>
 
 
 
+                  
+                  <div class="mt-auto">
+                    <a href="/sunglasses/reading-sunglasses" class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-3 px-6 rounded-lg transition-colors text-center">
+                      Shop Reading Sunglasses
+                    </a>
+                  </div>
                   
                 </div>
               </div>
@@ -1122,6 +1141,7 @@
           
           <div
             x-show="showModal"
+            x-cloak
             class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0"
@@ -1291,6 +1311,7 @@
             
             <div
               x-show="showModalFaceShape"
+              x-cloak
               class="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50"
               x-transition:enter="transition ease-out duration-300"
               x-transition:enter-start="opacity-0"
@@ -1403,6 +1424,7 @@
           
           <div
             x-show="showModalColor"
+            x-cloak
             class="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50"
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0"
@@ -1703,252 +1725,252 @@ function quizApp() {
   >
     
     <a
-      href="/designer-sunglasses/adidas-original"
+      href="/sunglasses/adidas-original"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Adidas Original
     </a>
     
     <a
-      href="/designer-sunglasses/adidas-sport"
+      href="/sunglasses/adidas-sport"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Adidas Sport
     </a>
     
     <a
-      href="/designer-sunglasses/balenciaga"
+      href="/sunglasses/balenciaga"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Balenciaga
     </a>
     
     <a
-      href="/designer-sunglasses/boss"
+      href="/sunglasses/boss"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Boss
     </a>
     
     <a
-      href="/designer-sunglasses/bvlgari"
+      href="/sunglasses/bvlgari"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Bvlgari
     </a>
     
     <a
-      href="/designer-sunglasses/carrera"
+      href="/sunglasses/carrera"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Carrera
     </a>
     
     <a
-      href="/designer-sunglasses/carolina-herrera"
+      href="/sunglasses/carolina-herrera"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Carolina Herrera
     </a>
     
     <a
-      href="/designer-sunglasses/cat"
+      href="/sunglasses/cat"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Cat
     </a>
     
     <a
-      href="/designer-sunglasses/chiara-ferragni"
+      href="/sunglasses/chiara-ferragni"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Chiara Ferragni
     </a>
     
     <a
-      href="/designer-sunglasses/chloe"
+      href="/sunglasses/chloe"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Chloé
     </a>
     
     <a
-      href="/designer-sunglasses/david-beckham"
+      href="/sunglasses/david-beckham"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       David Beckham
     </a>
     
     <a
-      href="/designer-sunglasses/dsquared2"
+      href="/sunglasses/dsquared2"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Dsquared2
     </a>
     
     <a
-      href="/designer-sunglasses/emporio-armani"
+      href="/sunglasses/emporio-armani"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Emporio Armani
     </a>
     
     <a
-      href="/designer-sunglasses/gant"
+      href="/sunglasses/gant"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Gant
     </a>
     
     <a
-      href="/designer-sunglasses/gucci"
+      href="/sunglasses/gucci"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Gucci
     </a>
     
     <a
-      href="/designer-sunglasses/hugo"
+      href="/sunglasses/hugo"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Hugo
     </a>
     
     <a
-      href="/designer-sunglasses/kate-spade"
+      href="/sunglasses/kate-spade"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Kate Spade
     </a>
     
     <a
-      href="/designer-sunglasses/lipsy"
+      href="/sunglasses/lipsy"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Lipsy
     </a>
     
     <a
-      href="/designer-sunglasses/marc-jacobs"
+      href="/sunglasses/marc-jacobs"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Marc Jacobs
     </a>
     
     <a
-      href="/designer-sunglasses/michael-kors"
+      href="/sunglasses/michael-kors"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Michael Kors
     </a>
     
     <a
-      href="/designer-sunglasses/mont-blanc"
+      href="/sunglasses/mont-blanc"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Mont Blanc
     </a>
     
     <a
-      href="/designer-sunglasses/oakley"
+      href="/sunglasses/oakley"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Oakley
     </a>
     
     <a
-      href="/designer-sunglasses/oneill"
+      href="/sunglasses/oneill"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       O&#39;Neill
     </a>
     
     <a
-      href="/designer-sunglasses/pierre-cardin"
+      href="/sunglasses/pierre-cardin"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Pierre Cardin
     </a>
     
     <a
-      href="/designer-sunglasses/polaroid"
+      href="/sunglasses/polaroid"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Polaroid
     </a>
     
     <a
-      href="/designer-sunglasses/radley"
+      href="/sunglasses/radley"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Radley
     </a>
     
     <a
-      href="/designer-sunglasses/rag-bone"
+      href="/sunglasses/rag-bone"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Rag &amp; Bone
     </a>
     
     <a
-      href="/designer-sunglasses/ray-ban"
+      href="/sunglasses/ray-ban"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Ray-Ban
     </a>
     
     <a
-      href="/designer-sunglasses/salvini"
+      href="/sunglasses/salvini"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Salvini
     </a>
     
     <a
-      href="/designer-sunglasses/seventh-street"
+      href="/sunglasses/seventh-street"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Seventh Street
     </a>
     
     <a
-      href="/designer-sunglasses/superdry"
+      href="/sunglasses/superdry"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Superdry
     </a>
     
     <a
-      href="/designer-sunglasses/swarovski"
+      href="/sunglasses/swarovski"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Swarovski
     </a>
     
     <a
-      href="/designer-sunglasses/timberland"
+      href="/sunglasses/timberland"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Timberland
     </a>
     
     <a
-      href="/designer-sunglasses/tom-ford"
+      href="/sunglasses/tom-ford"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Tom Ford
     </a>
     
     <a
-      href="/designer-sunglasses/tommy-hilfiger"
+      href="/sunglasses/tommy-hilfiger"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Tommy Hilfiger
     </a>
     
     <a
-      href="/designer-sunglasses/under-armour"
+      href="/sunglasses/under-armour"
       class="text-black underline hover:text-blue-600 block mb-2"
     >
       Under Armour

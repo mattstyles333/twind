@@ -30,6 +30,9 @@
         },
       };
     </script>
+    <style>
+      [x-cloak] { display: none !important; }
+    </style>
   </head>
   <body class="bg-white">
     <main>
@@ -1120,6 +1123,7 @@
           
           <div
             x-show="showModal"
+            x-cloak
             class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0"
@@ -1289,6 +1293,7 @@
             
             <div
               x-show="showModalFaceShape"
+              x-cloak
               class="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50"
               x-transition:enter="transition ease-out duration-300"
               x-transition:enter-start="opacity-0"
@@ -1401,6 +1406,7 @@
           
           <div
             x-show="showModalColor"
+            x-cloak
             class="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50"
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0"
