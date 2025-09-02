@@ -233,9 +233,9 @@ feature_cards:
     cta_url: "https://www.spex4less.com/blog/polarised-sunglasses"
 
   - id: "more-for-less"
-    title: "Reading Sunglasses"
-    text: "<strong>Clear Near Vision with UV Protection</strong><br /><br /><a href='/sunglasses/reading-sunglasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>Reading sunglasses</a> combine clear near vision with UV protection, ideal for reading outdoors, relaxing in the garden, or on holiday. Available in various strengths and styles, custom-made to your prescription."
-    cta_text: "Shop Reading Sunglasses"
+    title: "Outdoor Reading Sunglasses"
+    text: "<strong>Read Anywhere with Protection</strong><br /><br />Bring focus to every moment with <a href='/sunglasses/reading-sunglasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>reading sunglasses</a> featuring <strong>full UV coverage</strong>. Explore <a href='/sunglasses/single-vision-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>single vision</a>, <a href='/glasses/bifocal' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>bifocal</a> and custom styles for <strong>reading outdoors</strong>, on the go, or wherever your day takes you."
+    cta_text: "Browse Collection"
     cta_url: "/sunglasses/reading-sunglasses"
 
 # Brands A-Z Section for Sunglasses
