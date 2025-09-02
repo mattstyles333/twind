@@ -4,7 +4,7 @@ hero:
   featured_product:
     name: "Ray-Ban Aviator RB3025"
     url: "/sunglasses/ray-ban/rb3025"
-    image: "/media/wysiwyg/0RB3025__L0205__STD__shad__cfr.png"
+    image: "https://www.spex4less.com/media/mf_webp/png//media/wysiwyg/0RB3025__L0205__STD__shad__cfr.webp"
     alt: "Gold RayBan Aviator folded 3025"
   banner_styling:
     background_gradient: "bg-gradient-to-b from-orange-100 via-orange-50 to-blue-100"
@@ -221,14 +221,14 @@ additional_cards:
 feature_cards:
   - id: "rated-1"
     title: "Prescription Sunglasses"
-    text: "<strong>Eyewear made for you</strong><br /><br />Whether you need <a href='/glasses/single-vision-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>distance</a>, <a href='/glasses/reading-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>reading</a>, <a href='/glasses/bifocal' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>bifocal</a>, or <a href='/glasses/varifocal' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>varifocal</a> lenses.<br /><br />Choose from photochromic, mirrored, or tinted finishes to suit your style."
+    text: "<strong>Custom Eyewear, Tailored for You</strong><br /><br />Transform your summer with prescription sunglasses for <a href='/glasses/single-vision-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>distance</a>, <a href='/glasses/reading-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>reading</a>, <a href='/glasses/bifocal' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>bifocal</a>, or <a href='/glasses/varifocal' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>varifocal</a> lenses.<br /><br /><strong>Unsure what suits best?</strong><br />Try our Style Finder and unlock your perfect pair in seconds."
     reviews_badge: "28K 5-Star Reviews"
-    cta_text: "Shop Prescription Sunglasses"
-    cta_url: "/sunglasses"
+    cta_text: "Find Your Perfect Style"
+    cta_url: "/style-finder"
 
   - id: "customer-focused"
     title: "Polarised Sunglasses"
-    text: "<strong>The Essential Sunglass Lens</strong><br /><br />Polarised technology eliminates 99% of glare for sharper, more comfortable vision in bright or reflective settings. An essential for driving, and everyday outdoor wear."
+    text: "<strong>The Optimal Sunglass Lens</strong><br /><br />Polarised technology eliminates 99% of glare for sharper, more comfortable vision in bright or reflective settings. An essential for driving, and everyday outdoor wear."
     cta_text: "Learn About Polarised Lenses"
     cta_url: "https://www.spex4less.com/blog/polarised-sunglasses"
 

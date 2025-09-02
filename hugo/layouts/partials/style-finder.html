@@ -13,10 +13,10 @@
         <!-- Left Column - Content -->
         <div class="text-center lg:text-left">
           <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
-            {{ $data.welcome.title }}
+            {{ if eq .Layout "sunglasses" }}Find Your Perfect Sunglasses{{ else }}{{ $data.welcome.title }}{{ end }}
           </h1>
           <p class="text-base md:text-xl text-gray-600 mb-6 md:mb-8 leading-relaxed">
-            {{ $data.welcome.subtitle }}
+            {{ if eq .Layout "sunglasses" }}Discover your ideal pair of sunglasses in seconds with just a few quick questions!{{ else }}{{ $data.welcome.subtitle }}{{ end }}
           </p>
           <div class="flex flex-col gap-3 md:gap-4">
             {{ range $data.welcome.cta_buttons }}
@@ -44,9 +44,9 @@
         <!-- Right Column - Image -->
         <div class="flex justify-center lg:justify-end">
           <img
-            src="{{ $data.welcome.image.src }}"
-            alt="{{ $data.welcome.image.alt }}"
-            class="w-full max-w-md h-auto object-contain"
+            src="{{ if eq .Layout "sunglasses" }}https://www.spex4less.com/media/mf_webp/png//media/wysiwyg/0RB3025__L0205__STD__shad__cfr.webp{{ else }}{{ $data.welcome.image.src }}{{ end }}"
+            alt="{{ if eq .Layout "sunglasses" }}Gold RayBan Aviator folded 3025{{ else }}{{ $data.welcome.image.alt }}{{ end }}"
+            class="w-full max-w-lg h-auto object-contain"
           />
         </div>
             </div>
