@@ -1,6 +1,8 @@
 {{ $brands := .Site.Data.glasses.brands_a_to_z }}
 {{ if eq .Layout "sunglasses" }}
   {{ $brands = .Site.Data.sunglasses.brands_a_to_z }}
+{{ else if eq .Layout "designer-sunglasses" }}
+  {{ $brands = .Site.Data.designer_sunglasses.brands_a_to_z }}
 {{ end }}
 
 <!-- Divider -->

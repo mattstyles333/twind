@@ -268,21 +268,21 @@ feature_cards:
 feature_cards:
   - id: "rated-1"
     title: "Glasses for Every Style and Need"
-    text: "<strong>Huge Selection for Every Preference</strong><br /><br />Find your perfect pair from our massive collection. From classic designs to trendy styles, we've got you covered. <a href='/glasses/single-vision-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>Distance</a>, <a href='/glasses/reading-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>reading</a>, and <a href='/glasses/varifocal' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>varifocal lenses</a> available."
+    text: "<strong>Find your perfect pair</strong>, browse our extensive collection from your favourite designers, choose from <a href='/glasses/single-vision-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>distance</a> to <a href='/glasses/reading-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>reading</a> to <a href='/glasses/varifocal' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>varifocal</a>, <strong>all from the comfort of your home</strong>.<br /><br /><strong>Not sure which style suits you? Try our Style Finder Quiz!</strong>"
     reviews_badge: "28K 5-Star Reviews"
-    cta_text: "Shop All Glasses"
-    cta_url: "/glasses"
+    cta_text: "Find My Style"
+    cta_url: "/product-quiz-glasses"
 
   - id: "customer-focused"
-    title: "Not Sure About Your Purchase?"
-    text: "<strong>30-Day Money Back Guarantee</strong><br /><br />All our glasses are covered under our 30-day guarantee. Return them for any reason - no questions asked. You'll get a full refund or be eligible for an exchange."
-    cta_text: "Our Returns Policy"
+    title: "Your Satisfaction, Guaranteed"
+    text: "<strong>100% Money Back Guarantee</strong><br /><br />All our glasses are covered under our 100% guarantee. Return them for any reason - <strong>no questions asked</strong>. You'll get a <strong>full refund</strong> or be eligible for an exchange."
+    cta_text: "Learn More"
     cta_url: "/exchange-or-return"
 
   - id: "more-for-less"
     title: "Photochromic Lenses"
-    text: "<strong>Our Staff Favourite!</strong><br /><br />One pair for all activities. These lenses automatically darken in sunlight and stay clear indoors. Perfect for driving, working, and everyday use."
-    cta_text: "Discover the Benefits"
+    text: "<strong>Enjoy effortless vision, indoors and out.</strong><br /><br />Multiple models of <a href='/sunglasses/photochromic' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>light-adaptive lenses</a> <strong>starting from just £50.00</strong>. These lenses <strong>automatically darken in sunlight</strong> and stay clear indoors. Perfect for driving, working, and everyday use."
+    cta_text: "See Light-Adaptive Options"
     cta_url: "/how-to-choose-sunglass-tints#photochromic"
 
 additional_cards:

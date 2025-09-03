@@ -1,0 +1,24 @@
+<section class="py-4 bg-white md:py-6">
+  <div class="mx-auto max-w-8xl">
+    <!-- Simple 6 brands grid - no dropdown -->
+    <div class="grid grid-cols-3 gap-0 md:grid-cols-6 px-4 md:px-0">
+      {{ range first 6 .brands }}
+      <a
+        href="{{ .url }}"
+        class="block p-3 h-20 border-[0.5px] border-gray-100 transition-all duration-200 md:h-24 hover:z-10 relative group"
+      >
+        {{ partial "image.html" (dict
+          "src" .logo
+          "alt" .name
+          "width" 300
+          "height" 127
+          "class" "object-contain w-full h-full transition-transform duration-200 group-hover:scale-110"
+          "placeholder" true
+          "placeholder_service" "placeholder"
+          "placeholder_category" "BRAND"
+        ) }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>

@@ -31,6 +31,9 @@
         },
       };
     </script>
+    <style>
+      [x-cloak] { display: none !important; }
+    </style>
   </head>
   <body class="bg-white">
     <main>
@@ -399,22 +402,22 @@
               
               
               
-              <div class="relative order-1 p-6 bg-white rounded-xl border-4 border-blue-800 shadow-sm lg:col-span-2 lg:p-8 dark:border-gray-800 dark:bg-gray-900 lg:order-2">
+              <div class="relative order-1 p-7 bg-white rounded-xl border-4 border-blue-800 shadow-md lg:col-span-2 lg:p-9 dark:border-gray-800 dark:bg-gray-900 lg:order-2">
                 
-                <div class="absolute top-4 right-4 lg:hidden">
-                  <span class="inline-flex items-center px-3 py-1 text-xs font-medium text-gray-700 bg-blue-50 rounded-full border border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700">
+                <div class="absolute top-5 right-5 lg:hidden">
+                  <span class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-gray-700 bg-blue-50 rounded-full border border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700">
                     <strong class="pr-1">28K 5-Star Reviews</strong>
                   </span>
                 </div>
                 
-                <div class="flex flex-col items-center justify-center min-h-[300px] lg:min-h-[320px] text-center">
+                <div class="flex flex-col items-center justify-center min-h-[320px] lg:min-h-[340px] text-center">
                   
                   <h2 class="mb-6 text-2xl font-semibold text-blue-800 dark:text-white">
                     Rated #1 in the UK
                   </h2>
-                  <p class="mb-8 text-gray-800 dark:text-gray-300 leading-relaxed">
+                  <div class="mb-8 text-gray-800 dark:text-gray-300 leading-relaxed">
                     Family-run and independent for 20+ years, we've helped over 500,000 customers find glasses they love, with care that's built our reputation as the <strong>UK's most trusted online optician.</strong>
-                  </p>
+                  </div>
                   
                 </div>
               </div>
@@ -423,15 +426,15 @@
               
               
               
-              <div class="order-2 p-6 bg-white rounded-xl border border-gray-200 shadow-sm lg:col-span-2 lg:p-8 dark:border-gray-800 dark:bg-gray-900 lg:order-1">
-                <div class="flex flex-col items-center justify-center min-h-[280px] lg:min-h-[320px] text-center">
+              <div class="order-2 p-7 bg-white rounded-xl border border-gray-200 shadow-md lg:col-span-2 lg:p-9 dark:border-gray-800 dark:bg-gray-900 lg:order-1">
+                <div class="flex flex-col items-center justify-center min-h-[320px] lg:min-h-[340px] text-center">
                   
                   <h2 class="mb-6 text-2xl font-semibold text-gray-800 dark:text-white">
                     Customer Focused
                   </h2>
-                  <p class="mb-8 text-gray-600 dark:text-gray-400 leading-relaxed">
+                  <div class="mb-8 text-gray-600 dark:text-gray-400 leading-relaxed">
                     <strong>Help When You Need It</strong><br />Got a question or something not quite right? <strong>We'll fix it fast.</strong><br /><br />Talk to a real person today - email <a href="mailto:info@spex4less.com" class="text-blue-500">info@spex4less.com</a> or call <a href="tel:01516326611" class="text-blue-500">0151 632 6611</a>. We're happy to help.
-                  </p>
+                  </div>
                   
                 </div>
               </div>
@@ -440,24 +443,20 @@
               
               
               
-              <div class="relative order-3 p-6 bg-white rounded-xl border border-gray-200 shadow-sm lg:col-span-2 lg:p-8 dark:border-gray-800 dark:bg-gray-900">
-                <div class="flex flex-col items-center justify-center min-h-[280px] lg:min-h-[320px] text-center">
+              <div class="relative order-3 p-7 bg-white rounded-xl border border-gray-200 shadow-md lg:col-span-2 lg:p-9 dark:border-gray-800 dark:bg-gray-900">
+                <div class="flex flex-col items-center justify-center min-h-[320px] lg:min-h-[340px] text-center">
                   
                   <h2 class="mb-6 text-2xl font-semibold text-gray-800 dark:text-white">
                     More for Less
                   </h2>
-                  <p class="mb-6 text-gray-600 dark:text-gray-400 leading-relaxed">
+                  <div class="mb-8 text-gray-600 dark:text-gray-400 leading-relaxed">
                     <strong>Expertly handled, fairly priced.</strong><br />Top-tier quality, personally checked by our in-house experts. No fuss, no shortcuts. Just great glasses, done right.
-                  </p>
-
-
-
+                  </div>
                   
                 </div>
               </div>
-
-
               
+
             </div>
           </div>
         </div>
@@ -515,7 +514,7 @@
           <img
             src="https://www.spex4less.com/media/mf_webp/png/media/wysiwyg/quiz/quiz-hero-image6.webp"
             alt="Quiz Hero Image"
-            class="w-full max-w-md h-auto object-contain"
+            class="w-full max-w-xl h-auto object-contain"
           />
         </div>
             </div>
@@ -625,6 +624,7 @@
           
           <div
             x-show="showModal"
+            x-cloak
             class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0"
@@ -794,6 +794,7 @@
             
             <div
               x-show="showModalFaceShape"
+              x-cloak
               class="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50"
               x-transition:enter="transition ease-out duration-300"
               x-transition:enter-start="opacity-0"
@@ -906,6 +907,7 @@
           
           <div
             x-show="showModalColor"
+            x-cloak
             class="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50"
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0"
