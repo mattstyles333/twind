@@ -188,18 +188,22 @@ faq:
 feature_cards:
   - id: "rated-1"
     title: "Designer Prescription Sunglasses"
-    text: "<strong>Tailored Vision Meets Iconic Style</strong><br />Choose from single vision, bifocal, or varifocal lenses, with options like polarised, mirrored, or tinted finishes. Your ideal sunglasses made just for you."
+    text: "<strong>Tailored Vision Meets Iconic Style</strong><br /><br />Choose from <a href='/sunglasses/single-vision-sunglasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>single vision</a>, <a href='/sunglasses/bifocal-sunglasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>bifocal</a>, or <a href='/sunglasses/varifocal-sunglasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>varifocal</a> lenses, with options like polarised, mirrored, or tinted finishes. Your ideal sunglasses made just for you."
     reviews_badge: "28K 5-Star Reviews"
     cta_text: "See our Brands"
     cta_url: "#brands-a-z"
 
   - id: "customer-focused"
     title: "Authentic Designer Frames"
-    text: '<strong>100% Genuine Designer Sunglasses</strong><br />Get Ray-Ban, Oakley, Tom Ford and more, customised to your prescription. Every pair is sourced straight from authorised distributors. Authentic style, unbeatable value, and total peace of mind.'
+    text: '<strong>100% Genuine Designer Sunglasses</strong><br /><br />Get <a href="/designer-sunglasses/ray-ban" class="text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium">Ray-Ban</a>, <a href="/designer-sunglasses/oakley" class="text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium">Oakley</a>, <a href="/designer-sunglasses/tom-ford" class="text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium">Tom Ford</a> <strong>and more</strong>. Every pair is sourced straight from authorised distributors. Authentic style, unbeatable value, and total peace of mind.'
+    cta_text: "Get Started Now"
+    cta_url: "https://www.spex4less.com/#how-to"
 
   - id: "more-for-less"
     title: "Luxury for Less"
-    text: "<strong>Designer Quality Without the Markup</strong><br />Enjoy premium brands at up to 60% off high-street prices - same style, same authenticity, unmatched value."
+    text: "<strong>Why pay the markup?</strong><br /><br />Get luxury designer sunglasses and prescription options at <strong>up to 75% off high-street prices</strong>. Discover thousands of styles, speedy UK delivery, and expert support every step of the way."
+    cta_text: "Browse Offers"
+    cta_url: "https://www.spex4less.com/offers"
 
 # Brands A-Z Section for Designer Sunglasses
 brands_a_to_z:

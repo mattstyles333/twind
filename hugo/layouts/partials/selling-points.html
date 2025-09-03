@@ -11,7 +11,9 @@
               {{ $featureCards := "" }}
 
               <!-- Try to get data based on the current page's layout or section -->
-              {{ if eq .Layout "sunglasses" }}
+              {{ if .Data }}
+                {{ $featureCards = .Data.feature_cards }}
+              {{ else if eq .Layout "sunglasses" }}
                 {{ $featureCards = .Site.Data.sunglasses.feature_cards }}
               {{ else if eq .Layout "glasses" }}
                 {{ $featureCards = .Site.Data.glasses.feature_cards }}
@@ -32,13 +34,6 @@
               {{ $rated1 := index (where $featureCards "id" "rated-1") 0 }}
               {{ if $rated1 }}
               <div class="relative order-1 p-7 bg-white rounded-xl border-4 border-blue-800 shadow-md lg:col-span-2 lg:p-9 dark:border-gray-800 dark:bg-gray-900 lg:order-2">
-                {{ if $rated1.reviews_badge }}
-                <div class="absolute top-5 right-5 lg:hidden">
-                  <span class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-gray-700 bg-blue-50 rounded-full border border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700">
-                    <strong class="pr-1">{{ $rated1.reviews_badge }}</strong>
-                  </span>
-                </div>
-                {{ end }}
                 <div class="flex flex-col items-center justify-center min-h-[320px] lg:min-h-[340px] text-center">
                   {{ if $rated1.svg_path }}
                   <svg class="mb-7 w-14 h-14 text-gray-800" viewBox="{{ $rated1.svg_viewbox }}" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
