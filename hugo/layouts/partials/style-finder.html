@@ -118,74 +118,19 @@
             <!-- Step 4: Select Frame Size -->
       <div x-show="currentStep === 3" class="flex justify-center py-3 md:py-6">
         <div class="w-full max-w-lg text-center">
-          <div x-data="{ showModal: false }">
-            <h4 class="text-lg font-semibold text-gray-900 mb-2 flex items-center justify-center">
-              {{ $data.steps.frame_size.question }}
-              <button
-                @click="showModal = true"
-                class="ml-2 w-5 h-5 bg-blue-100 hover:bg-blue-200 text-blue-600 rounded-full flex items-center justify-center text-xs transition-colors"
-              >
-                ?
-              </button>
-            </h4>
-
-          <!-- Modal -->
-          <div
-            x-show="showModal"
-            x-cloak
-            class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
-            x-transition:enter="transition ease-out duration-300"
-            x-transition:enter-start="opacity-0"
-            x-transition:enter-end="opacity-100"
-            x-transition:leave="transition ease-in duration-200"
-            x-transition:leave-start="opacity-100"
-            x-transition:leave-end="opacity-0"
-          >
-            <div
-              class="w-full overflow-hidden rounded-lg bg-white shadow md:w-1/2"
+          <h4 class="text-lg font-semibold text-gray-900 mb-4">
+            {{ $data.steps.frame_size.question }}
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+            {{ range $data.steps.frame_size.options }}
+            <button
+              @click="selectFrameSize('{{ .value }}')"
+              :class="selectedFrameSize === '{{ .value }}' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
+              class="flex justify-center items-center px-6 w-full h-12 rounded-lg border transition-all duration-200 font-semibold focus:outline-none"
             >
-              <div class="flex justify-end p-2">
-                <button
-                  @click="showModal = false"
-                  class="text-black hover:text-gray-700 dark:text-gray-200"
-                >
-                  <svg
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-              <div class="px-4 pb-8">
-                <p class="pb-2 text-lg font-semibold lg:text-2xl">
-                  {{ $data.steps.frame_size.modal.title }}
-                </p>
-                <p class="text-black">
-                  {{ $data.steps.frame_size.modal.content | safeHTML }}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mt-4 md:mt-6">
-              {{ range $data.steps.frame_size.options }}
-              <button
-                @click="selectFrameSize('{{ .value }}')"
-                :class="selectedFrameSize === '{{ .value }}' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
-                class="flex justify-center items-center px-6 w-full h-12 rounded-lg border transition-all duration-200 font-semibold focus:outline-none"
-              >
-                {{ .label }}
-              </button>
-              {{ end }}
-            </div>
+              {{ .label }}
+            </button>
+            {{ end }}
           </div>
         </div>
       </div>
@@ -193,76 +138,24 @@
           <!-- Step 5: Select Face Shape -->
       <div x-show="currentStep === 4" class="flex justify-center py-3 md:py-6">
         <div class="w-full max-w-2xl text-center">
-          <div x-data="{ showModalFaceShape: false }">
-            <h4 class="text-lg font-semibold text-gray-900 mb-4 flex items-center justify-center">
-              {{ $data.steps.face_shape.question }}
-              <button
-                @click="showModalFaceShape = true"
-                class="ml-2 w-5 h-5 bg-blue-100 hover:bg-blue-200 text-blue-600 rounded-full flex items-center justify-center text-xs transition-colors"
-              >
-                ?
-              </button>
-            </h4>
+          <h4 class="text-lg font-semibold text-gray-900 mb-4">
+            {{ $data.steps.face_shape.question }}
+          </h4>
 
-            <!-- Face Shape Options Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-4 md:mt-6 px-4 md:px-0">
-              {{ range $data.steps.face_shape.options }}
-              <button
-                @click="selectFaceShape('{{ .value }}')"
-                :class="selectedFaceShape === '{{ .value }}' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
-                class="flex flex-col items-center justify-center p-4 md:p-6 rounded-lg border transition-all duration-200 font-semibold focus:outline-none min-h-[120px] md:min-h-[140px]"
-              >
-                <div class="w-12 md:w-16 h-12 md:h-16 mb-2 md:mb-3 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-full [&>svg]:max-h-full">
-                  {{ .icon | safeHTML }}
-                </div>
-                <span class="text-sm md:text-base font-semibold text-center leading-tight">{{ .label }}</span>
-              </button>
-              {{ end }}
-            </div>
-
-            <!-- Modal -->
-            <div
-              x-show="showModalFaceShape"
-              x-cloak
-              class="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50"
-              x-transition:enter="transition ease-out duration-300"
-              x-transition:enter-start="opacity-0"
-              x-transition:enter-end="opacity-100"
-              x-transition:leave="transition ease-in duration-200"
-              x-transition:leave-start="opacity-100"
-              x-transition:leave-end="opacity-0"
+          <!-- Face Shape Options Grid -->
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 px-4 md:px-0">
+            {{ range $data.steps.face_shape.options }}
+            <button
+              @click="selectFaceShape('{{ .value }}')"
+              :class="selectedFaceShape === '{{ .value }}' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
+              class="flex flex-col items-center justify-center p-4 md:p-6 rounded-lg border transition-all duration-200 font-semibold focus:outline-none min-h-[120px] md:min-h-[140px]"
             >
-              <div class="w-full overflow-hidden rounded-lg bg-white shadow md:w-1/2">
-                <div class="flex justify-end p-2">
-                  <button
-                    @click="showModalFaceShape = false"
-                    class="text-black hover:text-gray-700"
-                  >
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="px-4 pb-8 text-left">
-                  <p class="pb-2 text-lg font-semibold lg:text-2xl">
-                    {{ $data.steps.face_shape.modal.title }}
-                  </p>
-                  <p class="text-black">
-                    {{ $data.steps.face_shape.modal.intro }}
-                  </p>
-                  <ul class="mt-2 list-disc pl-5 text-black">
-                    {{ range $data.steps.face_shape.modal.tips }}
-                    <li>
-                      <strong>{{ .shape }}:</strong> {{ .advice }}
-                    </li>
-                    {{ end }}
-                  </ul>
-                  <p class="mt-4 text-black">
-                    {{ $data.steps.face_shape.modal.conclusion }}
-                  </p>
-                </div>
+              <div class="w-12 md:w-16 h-12 md:h-16 mb-2 md:mb-3 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-full [&>svg]:max-h-full">
+                {{ .icon | safeHTML }}
               </div>
-            </div>
+              <span class="text-sm md:text-base font-semibold text-center leading-tight">{{ .label }}</span>
+            </button>
+            {{ end }}
           </div>
         </div>
       </div>
@@ -290,85 +183,12 @@
       <!-- Step 7: Select Colors -->
       <div x-show="currentStep === 6" class="flex justify-center py-3 md:py-6">
         <div class="w-full max-w-3xl text-center">
-          <div x-data="{ showModalColor: false }">
-            <h4 class="text-lg font-semibold text-gray-900 mb-2 flex items-center justify-center">
-              {{ $data.steps.colors.question }}
-              <button
-                @click="showModalColor = true"
-                class="ml-2 w-5 h-5 bg-blue-100 hover:bg-blue-200 text-blue-600 rounded-full flex items-center justify-center text-xs transition-colors"
-              >
-                ?
-              </button>
-            </h4>
-
-          <!-- Modal -->
-          <div
-            x-show="showModalColor"
-            x-cloak
-            class="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50"
-            x-transition:enter="transition ease-out duration-300"
-            x-transition:enter-start="opacity-0"
-            x-transition:enter-end="opacity-100"
-            x-transition:leave="transition ease-in duration-200"
-            x-transition:leave-start="opacity-100"
-            x-transition:leave-end="opacity-0"
-          >
-            <div
-              class="w-full overflow-hidden rounded-lg bg-white shadow md:w-1/2"
-            >
-              <div class="flex justify-end p-2">
-                <button
-                  @click="showModalColor = false"
-                  class="text-black hover:text-gray-700 dark:text-gray-200"
-                >
-                  <svg
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    ></path>
-                  </svg>
-                  </button>
-              </div>
-              <div class="px-4 pb-8 text-left">
-                <p class="pb-2 text-lg font-semibold lg:text-2xl">
-                  {{ $data.steps.colors.modal.title }}
-                </p>
-                <p class="text-black">
-                  {{ $data.steps.colors.modal.intro }}
-                </p>
-                <ul class="mt-2 list-disc pl-5 text-black">
-                  {{ range $data.steps.colors.modal.tips }}
-                  <li>
-                    <strong>{{ .category }}:</strong> {{ .advice }}
-                  </li>
-                  {{ end }}
-                </ul>
-                <p class="mt-4 text-black">
-                  {{ $data.steps.colors.modal.conclusion }}
-                </p>
-                <p class="mt-4">
-                  <a
-                    href="{{ $data.steps.colors.modal.learn_more.url }}"
-                    class="text-blue-600 hover:text-blue-800"
-                  >
-                    {{ $data.steps.colors.modal.learn_more.text }}
-                  </a>
-                  with our help frame colour guide!
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+          <h4 class="text-lg font-semibold text-gray-900 mb-4">
+            {{ $data.steps.colors.question }}
+          </h4>
 
           <!-- Color selection grid -->
-          <div class="grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-4 mt-6 px-4 md:px-0">
+          <div class="grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-4 px-4 md:px-0">
             <template x-for="color in colors" :key="color.name">
               <div
                 x-show="!(selectedMaterial === 'Metal' && ['White', 'Grey', 'Brown', 'Tortoise', 'Green', 'Crystal', 'Purple / Violet'].includes(color.name))"
@@ -398,13 +218,10 @@
                 </span>
               </button>
             </div>
-          </div>
         </div>
       </div>
     </div>
   </div>
-
-
 </div>
 
 <!-- Load the external JavaScript file -->

@@ -11,6 +11,9 @@
 
 {{ partial "expanded-logos-grid.html" (dict "brands" $data.brands) }}
 
+<!-- Selling Points Section -->
+{{ partial "selling-points.html" (dict "Layout" "designer-glasses" "Site" .Site "Data" .Site.Data.designer_glasses) }}
+
 <!-- Brands A-Z Section -->
 {{ partial "brands-a-to-z.html" . }}
 

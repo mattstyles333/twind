@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Twind - Hugo Site</title>
-    <script src="https://cdn.tailwindcss.com?v=1756896150"></script>
+    <script src="https://cdn.tailwindcss.com?v=1757517076"></script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
@@ -178,98 +178,43 @@
             
       <div x-show="currentStep === 3" class="flex justify-center py-3 md:py-6">
         <div class="w-full max-w-lg text-center">
-          <div x-data="{ showModal: false }">
-            <h4 class="text-lg font-semibold text-gray-900 mb-2 flex items-center justify-center">
-              Please choose the width of your frame that best fits your face size:
-              <button
-                @click="showModal = true"
-                class="ml-2 w-5 h-5 bg-blue-100 hover:bg-blue-200 text-blue-600 rounded-full flex items-center justify-center text-xs transition-colors"
-              >
-                ?
-              </button>
-            </h4>
-
-          
-          <div
-            x-show="showModal"
-            x-cloak
-            class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
-            x-transition:enter="transition ease-out duration-300"
-            x-transition:enter-start="opacity-0"
-            x-transition:enter-end="opacity-100"
-            x-transition:leave="transition ease-in duration-200"
-            x-transition:leave-start="opacity-100"
-            x-transition:leave-end="opacity-0"
-          >
-            <div
-              class="w-full overflow-hidden rounded-lg bg-white shadow md:w-1/2"
+          <h4 class="text-lg font-semibold text-gray-900 mb-4">
+            Please choose the width of your frame that best fits your face size:
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+            
+            <button
+              @click="selectFrameSize('115-135')"
+              :class="selectedFrameSize === '115-135' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
+              class="flex justify-center items-center px-6 w-full h-12 rounded-lg border transition-all duration-200 font-semibold focus:outline-none"
             >
-              <div class="flex justify-end p-2">
-                <button
-                  @click="showModal = false"
-                  class="text-black hover:text-gray-700 dark:text-gray-200"
-                >
-                  <svg
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-              <div class="px-4 pb-8">
-                <p class="pb-2 text-lg font-semibold lg:text-2xl">
-                  Choosing Your Size:
-                </p>
-                <p class="text-black">
-                  Selecting the correct frame width and face size is crucial to ensuring your glasses not only fit comfortably but also complement your facial features. For a detailed understanding of how to measure your face and choose the most flattering frame size, please visit our <a href="/choosing-the-right-size-glasses" target="_blank" class="text-blue-600 hover:text-blue-800">Size Guide page</a>. This guide will provide you with all the information you need to find the perfect size for your frames.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mt-4 md:mt-6">
-              
-              <button
-                @click="selectFrameSize('115-135')"
-                :class="selectedFrameSize === '115-135' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
-                class="flex justify-center items-center px-6 w-full h-12 rounded-lg border transition-all duration-200 font-semibold focus:outline-none"
-              >
-                Small
-              </button>
-              
-              <button
-                @click="selectFrameSize('130-140')"
-                :class="selectedFrameSize === '130-140' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
-                class="flex justify-center items-center px-6 w-full h-12 rounded-lg border transition-all duration-200 font-semibold focus:outline-none"
-              >
-                Medium
-              </button>
-              
-              <button
-                @click="selectFrameSize('135-145')"
-                :class="selectedFrameSize === '135-145' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
-                class="flex justify-center items-center px-6 w-full h-12 rounded-lg border transition-all duration-200 font-semibold focus:outline-none"
-              >
-                Large
-              </button>
-              
-              <button
-                @click="selectFrameSize('140-155')"
-                :class="selectedFrameSize === '140-155' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
-                class="flex justify-center items-center px-6 w-full h-12 rounded-lg border transition-all duration-200 font-semibold focus:outline-none"
-              >
-                Extra Large
-              </button>
-              
-            </div>
+              Small
+            </button>
+            
+            <button
+              @click="selectFrameSize('130-140')"
+              :class="selectedFrameSize === '130-140' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
+              class="flex justify-center items-center px-6 w-full h-12 rounded-lg border transition-all duration-200 font-semibold focus:outline-none"
+            >
+              Medium
+            </button>
+            
+            <button
+              @click="selectFrameSize('135-145')"
+              :class="selectedFrameSize === '135-145' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
+              class="flex justify-center items-center px-6 w-full h-12 rounded-lg border transition-all duration-200 font-semibold focus:outline-none"
+            >
+              Large
+            </button>
+            
+            <button
+              @click="selectFrameSize('140-155')"
+              :class="selectedFrameSize === '140-155' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
+              class="flex justify-center items-center px-6 w-full h-12 rounded-lg border transition-all duration-200 font-semibold focus:outline-none"
+            >
+              Extra Large
+            </button>
+            
           </div>
         </div>
       </div>
@@ -277,147 +222,79 @@
           
       <div x-show="currentStep === 4" class="flex justify-center py-3 md:py-6">
         <div class="w-full max-w-2xl text-center">
-          <div x-data="{ showModalFaceShape: false }">
-            <h4 class="text-lg font-semibold text-gray-900 mb-4 flex items-center justify-center">
-              Select your face shape:
-              <button
-                @click="showModalFaceShape = true"
-                class="ml-2 w-5 h-5 bg-blue-100 hover:bg-blue-200 text-blue-600 rounded-full flex items-center justify-center text-xs transition-colors"
-              >
-                ?
-              </button>
-            </h4>
+          <h4 class="text-lg font-semibold text-gray-900 mb-4">
+            Select your face shape:
+          </h4>
 
+          
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 px-4 md:px-0">
             
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-4 md:mt-6 px-4 md:px-0">
-              
-              <button
-                @click="selectFaceShape('Oval')"
-                :class="selectedFaceShape === 'Oval' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
-                class="flex flex-col items-center justify-center p-4 md:p-6 rounded-lg border transition-all duration-200 font-semibold focus:outline-none min-h-[120px] md:min-h-[140px]"
-              >
-                <div class="w-12 md:w-16 h-12 md:h-16 mb-2 md:mb-3 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-full [&>svg]:max-h-full">
-                  <svg class="mb-1 h-auto w-16" viewBox="0 0 517 606" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M226.51 0.539918C219.429 1.42633 202.828 5.26742 194.06 8.04642C161.93 18.2311 137.644 33.1673 112.556 58.1723C75.9432 94.6657 54.6198 139.57 45.2052 200.005C43.363 211.833 42.9566 219.537 42.5582 250.15C41.6027 323.609 46.5282 357.266 65.7538 408.63C86.8186 464.912 111.446 507.576 143.094 542.613C172.129 574.759 209.452 598.238 241.035 604.228C292.265 613.943 354.72 576.127 401.684 506.954C432.74 461.212 460.921 393.544 469.031 345.244C472.871 322.373 473.841 308.68 474.353 270.11C475.008 220.865 473.452 202.442 465.985 171.057C444.369 80.1997 378.469 14.8472 294.906 1.39937C287.82 0.259423 278.345 -0.0899491 257.463 0.0188553C242.086 0.0987117 228.158 0.33329 226.51 0.539918Z" fill="#60a5fa"/></svg>
-                </div>
-                <span class="text-sm md:text-base font-semibold text-center leading-tight">Oval</span>
-              </button>
-              
-              <button
-                @click="selectFaceShape('Round')"
-                :class="selectedFaceShape === 'Round' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
-                class="flex flex-col items-center justify-center p-4 md:p-6 rounded-lg border transition-all duration-200 font-semibold focus:outline-none min-h-[120px] md:min-h-[140px]"
-              >
-                <div class="w-12 md:w-16 h-12 md:h-16 mb-2 md:mb-3 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-full [&>svg]:max-h-full">
-                  <svg class="mb-1 h-auto w-16" viewBox="0 0 559 606" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M235.776 1.53722C202 5.20166 167.97 15.7207 146.641 29.0914C118.596 46.6712 87.8266 81.2002 71.8525 113.017C59.9497 136.724 54.0274 155.219 44.1001 199.686C36.8894 231.985 35.826 240.169 36.565 257.671C37.3258 275.675 40.0351 291.025 48.1403 323.238C55.7324 353.415 55.5893 352.6 57.0331 373.641C60.2565 420.604 71.3747 458.25 92.1994 492.717C131.481 557.733 195.966 599.278 267.302 605.529C288.535 607.39 316.261 603.662 340.453 595.694C364.391 587.81 394.722 570.879 414.505 554.357C434.951 537.282 455.833 512.598 468.424 490.621C489.168 454.415 499.715 416.892 502.615 368.981C503.437 355.411 504.288 349.887 507.323 338.436C519.46 292.648 522.697 273.904 522.7 249.388L522.703 232.303L515.743 201.757C502.839 145.117 495.068 123.228 478.284 96.2421C462.738 71.2454 434.667 42.6558 412.263 29.0034C386.017 13.0089 352.933 3.5553 313.88 0.891097C292.945 -0.536781 251.748 -0.19612 235.776 1.53722Z" fill="#60a5fa"/></svg>
-                </div>
-                <span class="text-sm md:text-base font-semibold text-center leading-tight">Round</span>
-              </button>
-              
-              <button
-                @click="selectFaceShape('Square')"
-                :class="selectedFaceShape === 'Square' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
-                class="flex flex-col items-center justify-center p-4 md:p-6 rounded-lg border transition-all duration-200 font-semibold focus:outline-none min-h-[120px] md:min-h-[140px]"
-              >
-                <div class="w-12 md:w-16 h-12 md:h-16 mb-2 md:mb-3 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-full [&>svg]:max-h-full">
-                  <svg class="mb-1 h-auto w-16" viewBox="0 0 547 606" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M214.84 0.465045C180.94 1.27822 169.896 2.15403 151.212 5.51222C76.5153 18.9384 49.5731 71.6069 43.6052 215.871C41.9969 254.756 42.8954 313.857 45.2727 325.541C47.1694 334.867 52.7325 351.08 58.3933 363.781C63.2389 374.653 65.0512 385.996 66.7165 415.868C70.2314 478.946 70.8787 484.783 75.3283 493.52C84.6005 511.725 120.416 544.552 153.586 565.248C183.397 583.848 218.303 598.784 244.688 604.23C254.428 606.24 287.994 606.647 298.764 604.886C321.081 601.235 355.329 587.742 383.236 571.603C421.191 549.653 460.916 514.919 471.11 494.768C476.274 484.559 477.068 477.883 480.351 416.967C481.917 387.918 483.791 376.025 488.641 364.372C490.815 359.151 494.258 350.182 496.295 344.44C503.44 324.298 503.605 322.846 504.155 274.661C505.542 152.972 492.673 79.6089 463.456 42.6534C443.058 16.8549 414.337 5.1419 362.94 1.66283C340.711 0.157357 256.176 -0.526149 214.84 0.465045Z" fill="#60a5fa"/></svg>
-                </div>
-                <span class="text-sm md:text-base font-semibold text-center leading-tight">Square</span>
-              </button>
-              
-              <button
-                @click="selectFaceShape('Heart')"
-                :class="selectedFaceShape === 'Heart' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
-                class="flex flex-col items-center justify-center p-4 md:p-6 rounded-lg border transition-all duration-200 font-semibold focus:outline-none min-h-[120px] md:min-h-[140px]"
-              >
-                <div class="w-12 md:w-16 h-12 md:h-16 mb-2 md:mb-3 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-full [&>svg]:max-h-full">
-                  <svg class="mb-1 h-auto w-16" viewBox="0 0 594 606" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M158.798 2.14076C112.373 10.1812 81.8433 34.9229 63.8626 79.0731C58.8707 91.3314 51.6022 118.065 48.797 134.484C44.5897 159.108 43.7194 203.755 46.9235 230.543C47.5377 235.676 49.3167 254.449 50.877 272.261C57.8181 351.487 62.8374 369.742 92.1259 422.297C140.576 509.234 198.87 570.376 258.913 597.231C275.382 604.598 281.562 606 297.552 606C309.562 606 312.017 605.651 321.017 602.66C364.23 588.304 414.25 547.344 456.275 491.901C481.087 459.166 512.169 405.863 523.869 375.981C533.389 351.668 536.472 335.065 541.57 280.671C547.124 221.391 548.052 207.772 548.047 185.533C548.039 147.874 543.42 119.235 532.11 86.7283C515.235 38.2241 483.147 10.5655 433.972 2.13747C423.733 0.382044 416.231 0 392.059 0C375.866 0 357.587 0.515978 351.438 1.14613C338.319 2.49097 318.272 7.31372 305.621 12.1672L296.656 15.6067L288.041 12.3198C277.432 8.27432 270.074 6.15222 256.144 3.12222C246.548 1.03525 241.253 0.738837 208.003 0.433641C175.438 0.133935 169.124 0.352402 158.798 2.14076Z" fill="#60a5fa"/></svg>
-                </div>
-                <span class="text-sm md:text-base font-semibold text-center leading-tight">Heart</span>
-              </button>
-              
-              <button
-                @click="selectFaceShape('Diamond')"
-                :class="selectedFaceShape === 'Diamond' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
-                class="flex flex-col items-center justify-center p-4 md:p-6 rounded-lg border transition-all duration-200 font-semibold focus:outline-none min-h-[120px] md:min-h-[140px]"
-              >
-                <div class="w-12 md:w-16 h-12 md:h-16 mb-2 md:mb-3 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-full [&>svg]:max-h-full">
-                  <svg class="mb-1 h-auto w-16" viewBox="0 0 544 606" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M232.679 1.7243C183.209 9.16469 151.126 28.0933 121.638 67.239C105.549 88.597 83.2469 123.655 71.4528 146.131C59.3057 169.279 51.0811 192.909 46.3955 218.124C44.3662 229.044 44.0334 234.099 44.0192 254.193C43.9999 279.469 44.5955 285.794 51.6564 335.377C56.831 371.708 62.1294 399.673 65.3833 407.816C66.7937 411.346 70.0263 418.003 72.5679 422.609C116.85 502.858 216.477 598.008 263.961 605.4C279.399 607.804 294.966 603.097 317.401 589.243C361.545 561.984 418.636 503.964 455.139 449.259C466.649 432.01 476.951 413.639 479.537 405.75C483.94 392.321 493.606 333.76 498.685 289.754C501.084 268.975 501.059 238.634 498.631 223.712C491.933 182.554 477.217 148.557 444.532 98.74C430.727 77.697 413.27 55.0527 403.068 44.9513C383.419 25.4974 361.464 13.0876 334.663 6.28424C315.431 1.40323 307.328 0.556878 275.801 0.138273C249.919 -0.205145 244.085 0.00923736 232.679 1.7243Z" fill="#60a5fa"/></svg>
-                </div>
-                <span class="text-sm md:text-base font-semibold text-center leading-tight">Diamond</span>
-              </button>
-              
-              <button
-                @click="selectFaceShape('Rectangular')"
-                :class="selectedFaceShape === 'Rectangular' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
-                class="flex flex-col items-center justify-center p-4 md:p-6 rounded-lg border transition-all duration-200 font-semibold focus:outline-none min-h-[120px] md:min-h-[140px]"
-              >
-                <div class="w-12 md:w-16 h-12 md:h-16 mb-2 md:mb-3 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-full [&>svg]:max-h-full">
-                  <svg class="mb-1 h-auto w-16" viewBox="0 0 544 606" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M196.033 0.21821C152.582 4.46045 123.005 15.7758 96.8812 38.1511C75.4794 56.4826 57.3514 89.8842 48.513 127.269C42.3057 153.529 39.6777 182.156 39.6777 223.519C39.6777 280.913 43.2193 317.963 55.086 384.713C61.8455 422.73 63.794 435.928 65.1528 452.89C67.025 476.256 69.6826 486.106 77.8935 500.101C86.9529 515.542 106.354 537.022 124.246 551.419C134.955 560.037 152.289 571.62 164.689 578.447C186.192 590.283 219.088 602.919 233.676 604.946C243.772 606.348 279.614 606.352 289.925 604.951C308.466 602.433 345.787 587.167 371.232 571.694C400.776 553.728 430.682 525.387 445.056 501.733C454.249 486.605 456.725 477.838 458.911 452.676C459.777 442.72 462.081 425.187 464.032 413.714C474.025 354.956 475.671 344.828 477.592 330.273C483.27 287.256 485.306 252.462 484.5 212.235C483.883 181.388 482.202 162.314 478.193 140.654C464.64 67.4377 428.459 23.5765 368.054 7.13665C343.07 0.337266 343.22 0.347441 268.353 0.0716805C230.818 -0.0656911 198.274 0.000450855 196.033 0.21821Z" fill="#60a5fa"/></svg>
-                </div>
-                <span class="text-sm md:text-base font-semibold text-center leading-tight">Rectangular</span>
-              </button>
-              
-            </div>
-
-            
-            <div
-              x-show="showModalFaceShape"
-              x-cloak
-              class="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50"
-              x-transition:enter="transition ease-out duration-300"
-              x-transition:enter-start="opacity-0"
-              x-transition:enter-end="opacity-100"
-              x-transition:leave="transition ease-in duration-200"
-              x-transition:leave-start="opacity-100"
-              x-transition:leave-end="opacity-0"
+            <button
+              @click="selectFaceShape('Oval')"
+              :class="selectedFaceShape === 'Oval' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
+              class="flex flex-col items-center justify-center p-4 md:p-6 rounded-lg border transition-all duration-200 font-semibold focus:outline-none min-h-[120px] md:min-h-[140px]"
             >
-              <div class="w-full overflow-hidden rounded-lg bg-white shadow md:w-1/2">
-                <div class="flex justify-end p-2">
-                  <button
-                    @click="showModalFaceShape = false"
-                    class="text-black hover:text-gray-700"
-                  >
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="px-4 pb-8 text-left">
-                  <p class="pb-2 text-lg font-semibold lg:text-2xl">
-                    Understanding Face Shapes:
-                  </p>
-                  <p class="text-black">
-                    Choosing the right glasses involves considering your face shape to ensure they enhance your best features. Different frame shapes can accentuate or soften your facial features, depending on the shape of your face:
-                  </p>
-                  <ul class="mt-2 list-disc pl-5 text-black">
-                    
-                    <li>
-                      <strong>Oval Faces:</strong> Almost any frame style works well. Look for frames that are as wide as (or wider than) the broadest part of the face.
-                    </li>
-                    
-                    <li>
-                      <strong>Round Faces:</strong> Opt for angular frames that add structure, such as rectangular frames, to make your face appear longer and thinner.
-                    </li>
-                    
-                    <li>
-                      <strong>Square Faces:</strong> Round or oval frames can soften the angularity and balance your strong jawline.
-                    </li>
-                    
-                    <li>
-                      <strong>Heart-Shaped Faces:</strong> Consider frames that are wider at the bottom or light-colored frames to balance the width of your forehead.
-                    </li>
-                    
-                    <li>
-                      <strong>Diamond Faces:</strong> Cat-eye styles or frames that have detailing at the top can draw attention to your eyes, balancing the face.
-                    </li>
-                    
-                  </ul>
-                  <p class="mt-4 text-black">
-                    Your choice of glasses can transform how your face is perceived by others. It&#39;s not just about clear vision—it&#39;s about showcasing your personality and style. For more personalized advice, consider consulting with an eyewear specialist who can recommend frames that suit your specific face shape.
-                  </p>
-                </div>
+              <div class="w-12 md:w-16 h-12 md:h-16 mb-2 md:mb-3 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-full [&>svg]:max-h-full">
+                <svg class="mb-1 h-auto w-16" viewBox="0 0 517 606" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M226.51 0.539918C219.429 1.42633 202.828 5.26742 194.06 8.04642C161.93 18.2311 137.644 33.1673 112.556 58.1723C75.9432 94.6657 54.6198 139.57 45.2052 200.005C43.363 211.833 42.9566 219.537 42.5582 250.15C41.6027 323.609 46.5282 357.266 65.7538 408.63C86.8186 464.912 111.446 507.576 143.094 542.613C172.129 574.759 209.452 598.238 241.035 604.228C292.265 613.943 354.72 576.127 401.684 506.954C432.74 461.212 460.921 393.544 469.031 345.244C472.871 322.373 473.841 308.68 474.353 270.11C475.008 220.865 473.452 202.442 465.985 171.057C444.369 80.1997 378.469 14.8472 294.906 1.39937C287.82 0.259423 278.345 -0.0899491 257.463 0.0188553C242.086 0.0987117 228.158 0.33329 226.51 0.539918Z" fill="#60a5fa"/></svg>
               </div>
-            </div>
+              <span class="text-sm md:text-base font-semibold text-center leading-tight">Oval</span>
+            </button>
+            
+            <button
+              @click="selectFaceShape('Round')"
+              :class="selectedFaceShape === 'Round' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
+              class="flex flex-col items-center justify-center p-4 md:p-6 rounded-lg border transition-all duration-200 font-semibold focus:outline-none min-h-[120px] md:min-h-[140px]"
+            >
+              <div class="w-12 md:w-16 h-12 md:h-16 mb-2 md:mb-3 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-full [&>svg]:max-h-full">
+                <svg class="mb-1 h-auto w-16" viewBox="0 0 559 606" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M235.776 1.53722C202 5.20166 167.97 15.7207 146.641 29.0914C118.596 46.6712 87.8266 81.2002 71.8525 113.017C59.9497 136.724 54.0274 155.219 44.1001 199.686C36.8894 231.985 35.826 240.169 36.565 257.671C37.3258 275.675 40.0351 291.025 48.1403 323.238C55.7324 353.415 55.5893 352.6 57.0331 373.641C60.2565 420.604 71.3747 458.25 92.1994 492.717C131.481 557.733 195.966 599.278 267.302 605.529C288.535 607.39 316.261 603.662 340.453 595.694C364.391 587.81 394.722 570.879 414.505 554.357C434.951 537.282 455.833 512.598 468.424 490.621C489.168 454.415 499.715 416.892 502.615 368.981C503.437 355.411 504.288 349.887 507.323 338.436C519.46 292.648 522.697 273.904 522.7 249.388L522.703 232.303L515.743 201.757C502.839 145.117 495.068 123.228 478.284 96.2421C462.738 71.2454 434.667 42.6558 412.263 29.0034C386.017 13.0089 352.933 3.5553 313.88 0.891097C292.945 -0.536781 251.748 -0.19612 235.776 1.53722Z" fill="#60a5fa"/></svg>
+              </div>
+              <span class="text-sm md:text-base font-semibold text-center leading-tight">Round</span>
+            </button>
+            
+            <button
+              @click="selectFaceShape('Square')"
+              :class="selectedFaceShape === 'Square' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
+              class="flex flex-col items-center justify-center p-4 md:p-6 rounded-lg border transition-all duration-200 font-semibold focus:outline-none min-h-[120px] md:min-h-[140px]"
+            >
+              <div class="w-12 md:w-16 h-12 md:h-16 mb-2 md:mb-3 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-full [&>svg]:max-h-full">
+                <svg class="mb-1 h-auto w-16" viewBox="0 0 547 606" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M214.84 0.465045C180.94 1.27822 169.896 2.15403 151.212 5.51222C76.5153 18.9384 49.5731 71.6069 43.6052 215.871C41.9969 254.756 42.8954 313.857 45.2727 325.541C47.1694 334.867 52.7325 351.08 58.3933 363.781C63.2389 374.653 65.0512 385.996 66.7165 415.868C70.2314 478.946 70.8787 484.783 75.3283 493.52C84.6005 511.725 120.416 544.552 153.586 565.248C183.397 583.848 218.303 598.784 244.688 604.23C254.428 606.24 287.994 606.647 298.764 604.886C321.081 601.235 355.329 587.742 383.236 571.603C421.191 549.653 460.916 514.919 471.11 494.768C476.274 484.559 477.068 477.883 480.351 416.967C481.917 387.918 483.791 376.025 488.641 364.372C490.815 359.151 494.258 350.182 496.295 344.44C503.44 324.298 503.605 322.846 504.155 274.661C505.542 152.972 492.673 79.6089 463.456 42.6534C443.058 16.8549 414.337 5.1419 362.94 1.66283C340.711 0.157357 256.176 -0.526149 214.84 0.465045Z" fill="#60a5fa"/></svg>
+              </div>
+              <span class="text-sm md:text-base font-semibold text-center leading-tight">Square</span>
+            </button>
+            
+            <button
+              @click="selectFaceShape('Heart')"
+              :class="selectedFaceShape === 'Heart' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
+              class="flex flex-col items-center justify-center p-4 md:p-6 rounded-lg border transition-all duration-200 font-semibold focus:outline-none min-h-[120px] md:min-h-[140px]"
+            >
+              <div class="w-12 md:w-16 h-12 md:h-16 mb-2 md:mb-3 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-full [&>svg]:max-h-full">
+                <svg class="mb-1 h-auto w-16" viewBox="0 0 594 606" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M158.798 2.14076C112.373 10.1812 81.8433 34.9229 63.8626 79.0731C58.8707 91.3314 51.6022 118.065 48.797 134.484C44.5897 159.108 43.7194 203.755 46.9235 230.543C47.5377 235.676 49.3167 254.449 50.877 272.261C57.8181 351.487 62.8374 369.742 92.1259 422.297C140.576 509.234 198.87 570.376 258.913 597.231C275.382 604.598 281.562 606 297.552 606C309.562 606 312.017 605.651 321.017 602.66C364.23 588.304 414.25 547.344 456.275 491.901C481.087 459.166 512.169 405.863 523.869 375.981C533.389 351.668 536.472 335.065 541.57 280.671C547.124 221.391 548.052 207.772 548.047 185.533C548.039 147.874 543.42 119.235 532.11 86.7283C515.235 38.2241 483.147 10.5655 433.972 2.13747C423.733 0.382044 416.231 0 392.059 0C375.866 0 357.587 0.515978 351.438 1.14613C338.319 2.49097 318.272 7.31372 305.621 12.1672L296.656 15.6067L288.041 12.3198C277.432 8.27432 270.074 6.15222 256.144 3.12222C246.548 1.03525 241.253 0.738837 208.003 0.433641C175.438 0.133935 169.124 0.352402 158.798 2.14076Z" fill="#60a5fa"/></svg>
+              </div>
+              <span class="text-sm md:text-base font-semibold text-center leading-tight">Heart</span>
+            </button>
+            
+            <button
+              @click="selectFaceShape('Diamond')"
+              :class="selectedFaceShape === 'Diamond' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
+              class="flex flex-col items-center justify-center p-4 md:p-6 rounded-lg border transition-all duration-200 font-semibold focus:outline-none min-h-[120px] md:min-h-[140px]"
+            >
+              <div class="w-12 md:w-16 h-12 md:h-16 mb-2 md:mb-3 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-full [&>svg]:max-h-full">
+                <svg class="mb-1 h-auto w-16" viewBox="0 0 544 606" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M232.679 1.7243C183.209 9.16469 151.126 28.0933 121.638 67.239C105.549 88.597 83.2469 123.655 71.4528 146.131C59.3057 169.279 51.0811 192.909 46.3955 218.124C44.3662 229.044 44.0334 234.099 44.0192 254.193C43.9999 279.469 44.5955 285.794 51.6564 335.377C56.831 371.708 62.1294 399.673 65.3833 407.816C66.7937 411.346 70.0263 418.003 72.5679 422.609C116.85 502.858 216.477 598.008 263.961 605.4C279.399 607.804 294.966 603.097 317.401 589.243C361.545 561.984 418.636 503.964 455.139 449.259C466.649 432.01 476.951 413.639 479.537 405.75C483.94 392.321 493.606 333.76 498.685 289.754C501.084 268.975 501.059 238.634 498.631 223.712C491.933 182.554 477.217 148.557 444.532 98.74C430.727 77.697 413.27 55.0527 403.068 44.9513C383.419 25.4974 361.464 13.0876 334.663 6.28424C315.431 1.40323 307.328 0.556878 275.801 0.138273C249.919 -0.205145 244.085 0.00923736 232.679 1.7243Z" fill="#60a5fa"/></svg>
+              </div>
+              <span class="text-sm md:text-base font-semibold text-center leading-tight">Diamond</span>
+            </button>
+            
+            <button
+              @click="selectFaceShape('Rectangular')"
+              :class="selectedFaceShape === 'Rectangular' ? 'bg-s border-s text-white' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'"
+              class="flex flex-col items-center justify-center p-4 md:p-6 rounded-lg border transition-all duration-200 font-semibold focus:outline-none min-h-[120px] md:min-h-[140px]"
+            >
+              <div class="w-12 md:w-16 h-12 md:h-16 mb-2 md:mb-3 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:max-w-full [&>svg]:max-h-full">
+                <svg class="mb-1 h-auto w-16" viewBox="0 0 544 606" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M196.033 0.21821C152.582 4.46045 123.005 15.7758 96.8812 38.1511C75.4794 56.4826 57.3514 89.8842 48.513 127.269C42.3057 153.529 39.6777 182.156 39.6777 223.519C39.6777 280.913 43.2193 317.963 55.086 384.713C61.8455 422.73 63.794 435.928 65.1528 452.89C67.025 476.256 69.6826 486.106 77.8935 500.101C86.9529 515.542 106.354 537.022 124.246 551.419C134.955 560.037 152.289 571.62 164.689 578.447C186.192 590.283 219.088 602.919 233.676 604.946C243.772 606.348 279.614 606.352 289.925 604.951C308.466 602.433 345.787 587.167 371.232 571.694C400.776 553.728 430.682 525.387 445.056 501.733C454.249 486.605 456.725 477.838 458.911 452.676C459.777 442.72 462.081 425.187 464.032 413.714C474.025 354.956 475.671 344.828 477.592 330.273C483.27 287.256 485.306 252.462 484.5 212.235C483.883 181.388 482.202 162.314 478.193 140.654C464.64 67.4377 428.459 23.5765 368.054 7.13665C343.07 0.337266 343.22 0.347441 268.353 0.0716805C230.818 -0.0656911 198.274 0.000450855 196.033 0.21821Z" fill="#60a5fa"/></svg>
+              </div>
+              <span class="text-sm md:text-base font-semibold text-center leading-tight">Rectangular</span>
+            </button>
+            
           </div>
         </div>
       </div>
@@ -461,93 +338,12 @@
       
       <div x-show="currentStep === 6" class="flex justify-center py-3 md:py-6">
         <div class="w-full max-w-3xl text-center">
-          <div x-data="{ showModalColor: false }">
-            <h4 class="text-lg font-semibold text-gray-900 mb-2 flex items-center justify-center">
-              Select your preferred colours:
-              <button
-                @click="showModalColor = true"
-                class="ml-2 w-5 h-5 bg-blue-100 hover:bg-blue-200 text-blue-600 rounded-full flex items-center justify-center text-xs transition-colors"
-              >
-                ?
-              </button>
-            </h4>
+          <h4 class="text-lg font-semibold text-gray-900 mb-4">
+            Select your preferred colours:
+          </h4>
 
           
-          <div
-            x-show="showModalColor"
-            x-cloak
-            class="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50"
-            x-transition:enter="transition ease-out duration-300"
-            x-transition:enter-start="opacity-0"
-            x-transition:enter-end="opacity-100"
-            x-transition:leave="transition ease-in duration-200"
-            x-transition:leave-start="opacity-100"
-            x-transition:leave-end="opacity-0"
-          >
-            <div
-              class="w-full overflow-hidden rounded-lg bg-white shadow md:w-1/2"
-            >
-              <div class="flex justify-end p-2">
-                <button
-                  @click="showModalColor = false"
-                  class="text-black hover:text-gray-700 dark:text-gray-200"
-                >
-                  <svg
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    ></path>
-                  </svg>
-                  </button>
-              </div>
-              <div class="px-4 pb-8 text-left">
-                <p class="pb-2 text-lg font-semibold lg:text-2xl">
-                  Choosing the Right Frame Color:
-                </p>
-                <p class="text-black">
-                  Selecting the right color for your glasses frames is crucial as it enhances your overall appearance and ensures your glasses complement your style. The color you choose can affect how your complexion looks, match with different outfits, and even reflect seasonal trends:
-                </p>
-                <ul class="mt-2 list-disc pl-5 text-black">
-                  
-                  <li>
-                    <strong>Skin Tone:</strong> Consider your skin&#39;s undertones. Warmer undertones may look better with colors like gold, brown, or warm reds, while cooler undertones are complemented by black, silver, and pink frames.
-                  </li>
-                  
-                  <li>
-                    <strong>Outfits:</strong> Think about your wardrobe. Neutral-colored frames like black or gray offer versatility, while bold colors like red or blue can add a pop of color to a simple outfit.
-                  </li>
-                  
-                  <li>
-                    <strong>Seasonal Choices:</strong> Lighter shades such as pastels can be great for spring and summer, while richer tones like burgundy or dark green might suit autumn and winter better.
-                  </li>
-                  
-                </ul>
-                <p class="mt-4 text-black">
-                  Frame color isn&#39;t just a matter of personal taste but also functionality. Some colors may be better suited for certain settings or times of day. Consulting with an eyewear specialist can provide personalized advice to choose the best color that matches your lifestyle and preferences.
-                </p>
-                <p class="mt-4">
-                  <a
-                    href="/how-to-choose-the-right-colour-frames"
-                    class="text-blue-600 hover:text-blue-800"
-                  >
-                    Learn more
-                  </a>
-                  with our help frame colour guide!
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-          
-          <div class="grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-4 mt-6 px-4 md:px-0">
+          <div class="grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-4 px-4 md:px-0">
             <template x-for="color in colors" :key="color.name">
               <div
                 x-show="!(selectedMaterial === 'Metal' && ['White', 'Grey', 'Brown', 'Tortoise', 'Green', 'Crystal', 'Purple / Violet'].includes(color.name))"
@@ -577,13 +373,10 @@
                 </span>
               </button>
             </div>
-          </div>
         </div>
       </div>
     </div>
   </div>
-
-
 </div>
 
 
