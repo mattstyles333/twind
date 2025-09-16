@@ -1,5 +1,5 @@
 hero:
-  headline: "Designer Glasses Online You'll Love"
+  headline: "Find Your Perfect Designer Frames"
   subheadline: "Premium designer sunglasses from the world's most prestigious brands at unbeatable prices."
   featured_product:
     name: "Oakley Socket 5.5 OX3218"
@@ -8,9 +8,9 @@ hero:
     alt: "Oakley Socket 5.5 OX3218"
   cta_buttons:
     - text: "Men's Glasses"
-      url: "/glasses/mens"
+      url: "/designer-glasses/mens"
     - text: "Women's Glasses"
-      url: "/glasses/womens"
+      url: "/designer-glasses/womens"
 
 featured_products:
   section:
@@ -86,6 +86,7 @@ brands:
   - name: "Superdry"
     url: "/designer-glasses/superdry"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/superdry_2_.webp"
+    large: true
   - name: "Marc Jacobs"
     url: "/designer-glasses/marc-jacobs"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/homepageimages/MARCJACOBS.webp"
@@ -94,7 +95,7 @@ brands:
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/logos/newlogos/armani.webp"
   - name: "Radley"
     url: "/designer-glasses/radley"
-    logo: "https://sadmx.spex4less.com/media/wysiwyg/logos/newlogos/radley.png"
+    logo: "https://spex4less.com/media/wysiwyg/logos/newlogos/radley.png"
   - name: "Gant"
     url: "/designer-glasses/gant"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/logos/newlogos/gant.webp"
@@ -102,13 +103,13 @@ brands:
     url: "/designer-glasses/carolina-herrera"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/logos/newlogos/carolina_herrera.webp"
   - name: "Adidas"
-    url: "/designer-glasses/adidas"
+    url: "https://www.spex4less.com/designer-glasses/adidas-sport"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/logos/newlogos/adidas_2_.webp"
   - name: "Ralph Lauren"
     url: "/designer-glasses/ralph-lauren"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/logos/newlogos/ralph_lauren.webp"
   - name: "Mont Blanc"
-    url: "/designer-glasses/mont-blanc"
+    url: "https://www.spex4less.com/designer-glasses/montblanc"
     logo: "https://spex4less.com/media/mf_webp/png/media/wysiwyg/logos/newlogos/montblanc.webp"
   - name: "Balenciaga"
     url: "/designer-glasses/balenciaga"
@@ -189,7 +190,7 @@ faq:
 feature_cards:
   - id: "rated-1"
     title: "Designer Prescription Glasses"
-    text: "<strong>Tailored Vision Meets Iconic Style</strong><br /><br />Choose from <a href='/glasses/single-vision-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>single vision</a>, <a href='/glasses/bifocal-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>bifocal</a>, or <a href='/glasses/varifocal' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>varifocal</a> lenses, with options like anti-glare, blue light blocking, and photochromic finishes. Your ideal glasses made just for you."
+    text: "<strong>Tailored Vision Meets Iconic Style</strong><br /><br />Choose from <a href='/glasses/single-vision-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>single vision</a>, <a href='/bifocal-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>bifocal</a>, or <a href='/varifocal-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>varifocal</a> lenses, with options like anti-glare, blue light blocking, and photochromic finishes. Your ideal glasses made just for you."
     cta_text: "See our Brands"
     cta_url: "#brands-a-z"
 

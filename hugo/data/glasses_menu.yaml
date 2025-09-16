@@ -3,57 +3,57 @@ menu:
     - title: "Glasses"
       links:
         - text: "Shop Mens"
-          url: '/glasses/mens'
+          url: 'https://sadmx.spex4less.com/glasses/mens'
         - text: "Shop Womens"
-          url: '/glasses/womens'
+          url: 'https://sadmx.spex4less.com/glasses/womens'
         - text: "Rimless Glasses"
-          url: '/glasses/rimless'
+          url: 'https://sadmx.spex4less.com/glasses/rimless'
         - text: "Aviator Glasses"
-          url: '/glasses/aviator'
+          url: 'https://sadmx.spex4less.com/glasses/aviator'
         - text: "Clear Glasses"
-          url: '/glasses?color=Crystal'
+          url: 'https://sadmx.spex4less.com/glasses?color=Crystal'
         - text: "Try at Home"
-          url: '/trial-home'
+          url: 'https://sadmx.spex4less.com/trial-home'
 
     - title: "Shop by Brand"
       links:
         - text: "Ray-Ban"
-          url: '/designer-glasses/ray-ban'
+          url: 'https://sadmx.spex4less.com/designer-glasses/ray-ban'
           popular: true
         - text: "Gucci"
-          url: '/designer-glasses/gucci'
+          url: 'https://sadmx.spex4less.com/designer-glasses/gucci'
           popular: true
         - text: "Oakley"
-          url: '/designer-glasses/oakley'
+          url: 'https://sadmx.spex4less.com/designer-glasses/oakley'
         - text: "Tom Ford"
-          url: '/designer-glasses/tom-ford'
+          url: 'https://sadmx.spex4less.com/designer-glasses/tom-ford'
         - text: "Polaroid"
-          url: '/designer-glasses/polaroid'
+          url: 'https://sadmx.spex4less.com/designer-glasses/polaroid'
         - text: "All Designers"
-          url: '/designer-glasses'
+          url: 'https://sadmx.spex4less.com/designer-glasses'
 
     - title: "Shop by lens"
       links:
         - text: "Distance Glasses"
-          url: '/glasses/single-vision-glasses'
+          url: 'https://sadmx.spex4less.com/glasses/single-vision-glasses'
         - text: "Reading Glasses"
-          url: '/reading-glasses'
+          url: 'https://sadmx.spex4less.com/reading-glasses'
         - text: "Bifocal Glasses"
-          url: '/bifocal-glasses'
+          url: 'https://sadmx.spex4less.com/bifocal-glasses'
         - text: "Varifocal Glasses"
-          url: '/varifocal-glasses'
+          url: 'https://sadmx.spex4less.com/varifocal-glasses'
         - text: "Photochromic Glasses"
-          url: '/how-to-choose-sunglass-tints#photochromic'
+          url: 'https://sadmx.spex4less.com/how-to-choose-sunglass-tints#photochromic'
 
         - text: "Lens Guide"
-          url: '/lens'
+          url: 'https://sadmx.spex4less.com/lens'
 
   featured_links:
     - text: "Check Out our Style Finder quiz!"
-      url: '/product-quiz-glasses'
+      url: 'https://sadmx.spex4less.com/product-quiz-glasses'
       icon: "quiz"
     - text: "Our Satisfaction Guarantee"
-      url: '/guarantee'
+      url: 'https://sadmx.spex4less.com/guarantee'
       icon: "guarantee"
 
   featured_images:

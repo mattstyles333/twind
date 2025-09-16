@@ -1,4 +1,6 @@
 ---
 title: "Code Limbo"
-layout: "single"
+layout: "limbo"
 ---
+
+This is the megamenu test page for the limbo content.

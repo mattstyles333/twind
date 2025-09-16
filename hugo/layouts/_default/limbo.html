@@ -1,0 +1,21 @@
+{{ define "main" }}
+{{- $data := .Site.Data.glasses_menu -}}
+<div class="px-4 pt-6 pb-12 space-y-6" role="navigation" aria-label="Mobile menu navigation">
+    <!-- CTA Links - Moved to TOP for immediate conversion -->
+    {{ partial "megamenu/menu-cta.html" $data }}
+
+    <!-- Top Cards - First two featured images side by side -->
+    {{ partial "megamenu/menu-cards.html" (dict "megamenu" (dict "featured_images" (first 2 $data.menu.featured_images))) }}
+
+    <!-- Navigation Sections - Moved lower as they're more exploratory -->
+    {{ range $data.menu.sections }}
+        {{ partial "megamenu/mobile-navigation-section.html" . }}
+    {{ end }}
+
+    <!-- Designer Glasses Card - Moved back to bottom -->
+    {{ partial "megamenu/mobile-bottom-card.html" (dict "megamenu" (dict "featured_images" (last 1 $data.menu.featured_images))) }}
+
+    <!-- Extra bottom spacing to prevent cutoff -->
+    <div class="h-8"></div>
+</div>
+{{ end }}

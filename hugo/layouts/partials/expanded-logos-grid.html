@@ -12,7 +12,7 @@
           "alt" .name
           "width" 300
           "height" 127
-          "class" "object-contain w-full h-full transition-transform duration-200 group-hover:scale-110 transform-gpu"
+          "class" (printf "object-contain w-full h-full transition-transform duration-200 group-hover:scale-110 transform-gpu %s" (cond .large "max-w-[80%] mx-auto" ""))
           "placeholder" true
           "placeholder_service" "placeholder"
           "placeholder_category" "BRAND"
@@ -40,7 +40,7 @@
                 "alt" .name
                 "width" 130
                 "height" 70
-                "class" "object-contain w-full h-full transition-transform duration-200 group-hover:scale-110 transform-gpu"
+                "class" (printf "object-contain w-full h-full transition-transform duration-200 group-hover:scale-110 transform-gpu %s" (cond .large "max-w-[80%] mx-auto" ""))
                 "placeholder" true
                 "placeholder_service" "placeholder"
                 "placeholder_category" "BRAND"
