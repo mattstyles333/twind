@@ -3,64 +3,64 @@ menu:
     - title: "Glasses"
       links:
         - text: "Shop Mens"
-          url: 'https://sadmx.spex4less.com/glasses/mens'
+          url: 'https://spex4less.com/glasses/mens'
         - text: "Shop Womens"
-          url: 'https://sadmx.spex4less.com/glasses/womens'
+          url: 'https://spex4less.com/glasses/womens'
         - text: "Rimless Glasses"
-          url: 'https://sadmx.spex4less.com/glasses/rimless'
+          url: 'https://spex4less.com/glasses/rimless'
         - text: "Aviator Glasses"
-          url: 'https://sadmx.spex4less.com/glasses/aviator'
+          url: 'https://spex4less.com/glasses/aviator'
         - text: "Clear Glasses"
-          url: 'https://sadmx.spex4less.com/glasses?color=Crystal'
+          url: 'https://spex4less.com/glasses?color=Crystal'
         - text: "Try at Home"
-          url: 'https://sadmx.spex4less.com/trial-home'
+          url: 'https://spex4less.com/trial-home'
 
     - title: "Shop by Brand"
       links:
         - text: "Ray-Ban"
-          url: 'https://sadmx.spex4less.com/designer-glasses/ray-ban'
+          url: 'https://spex4less.com/designer-glasses/ray-ban'
           popular: true
         - text: "Gucci"
-          url: 'https://sadmx.spex4less.com/designer-glasses/gucci'
+          url: 'https://spex4less.com/designer-glasses/gucci'
           popular: true
         - text: "Oakley"
-          url: 'https://sadmx.spex4less.com/designer-glasses/oakley'
+          url: 'https://spex4less.com/designer-glasses/oakley'
         - text: "Tom Ford"
-          url: 'https://sadmx.spex4less.com/designer-glasses/tom-ford'
+          url: 'https://spex4less.com/designer-glasses/tom-ford'
         - text: "Polaroid"
-          url: 'https://sadmx.spex4less.com/designer-glasses/polaroid'
+          url: 'https://spex4less.com/designer-glasses/polaroid'
         - text: "All Designers"
-          url: 'https://sadmx.spex4less.com/designer-glasses'
+          url: 'https://spex4less.com/designer-glasses'
 
     - title: "Shop by lens"
       links:
         - text: "Distance Glasses"
-          url: 'https://sadmx.spex4less.com/glasses/single-vision-glasses'
+          url: 'https://spex4less.com/glasses/single-vision-glasses'
         - text: "Reading Glasses"
-          url: 'https://sadmx.spex4less.com/reading-glasses'
+          url: 'https://spex4less.com/reading-glasses'
         - text: "Bifocal Glasses"
-          url: 'https://sadmx.spex4less.com/bifocal-glasses'
+          url: 'https://spex4less.com/bifocal-glasses'
         - text: "Varifocal Glasses"
-          url: 'https://sadmx.spex4less.com/varifocal-glasses'
+          url: 'https://spex4less.com/varifocal-glasses'
         - text: "Photochromic Glasses"
-          url: 'https://sadmx.spex4less.com/how-to-choose-sunglass-tints#photochromic'
+          url: 'https://spex4less.com/how-to-choose-sunglass-tints#photochromic'
 
         - text: "Lens Guide"
-          url: 'https://sadmx.spex4less.com/lens'
+          url: 'https://spex4less.com/lens'
 
   featured_links:
     - text: "Check Out our Style Finder quiz!"
-      url: 'https://sadmx.spex4less.com/product-quiz-glasses'
+      url: 'https://spex4less.com/product-quiz-glasses'
       icon: "quiz"
     - text: "Our Satisfaction Guarantee"
-      url: 'https://sadmx.spex4less.com/guarantee'
+      url: 'https://spex4less.com/guarantee'
       icon: "guarantee"
 
   featured_images:
     - title: "Mens Glasses"
       subtitle: "Professional & Casual Styles"
       url: '/glasses/mens'
-      image: "https://sadmx.spex4less.com/media/wysiwyg/homepageimages/Frame_224_1_.png"
+      image: "https://spex4less.com/media/wysiwyg/homepageimages/Frame_224_1_.png"
       alt: "Mens Glasses"
       item_count: "500"
       starting_price: "29"
@@ -68,12 +68,12 @@ menu:
     - title: "Womens Glasses"
       subtitle: "Designer & Everyday Elegance"
       url: '/glasses/womens'
-      image: "https://sadmx.spex4less.com/media/wysiwyg/homepageimages/Frame_225.png"
+      image: "https://spex4less.com/media/wysiwyg/homepageimages/Frame_225.png"
       alt: "Womens Glasses"
       item_count: "600"
       starting_price: "25"
       popular: true
     - title: "Designer Glasses"
       url: '/designer-glasses'
-      image: "https://sadmx.spex4less.com/media/wysiwyg/homepageimages/tomford_menu.png"
+      image: "https://spex4less.com/media/wysiwyg/homepageimages/tomford_menu.png"
       alt: "Designer Glasses"

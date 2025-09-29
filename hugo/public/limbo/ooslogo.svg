@@ -1,0 +1,7 @@
+      <svg x-data="{}" class="w-5 text-gray-500" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" @click="$dispatch('hyva-modal-show', {dialog: 'satisfaction-guarantee-info-modal'})" x-defer="intersect">
+      <!-- Outer grey circle -->
+      <circle cx="256" cy="256" r="240" fill="#6b7280"/>
+      <!-- White dash in the middle -->
+      <path d="M160 256L352 256" stroke="white" stroke-width="48"/>
+  </svg>
+

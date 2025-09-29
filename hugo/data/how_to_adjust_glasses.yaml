@@ -1,0 +1,127 @@
+title: "How to Adjust Your Glasses at Home: Simple DIY Tips for Better Fit"
+intro: "Sometimes your glasses don't fit quite right—maybe they're sliding down your nose or feeling too tight on the sides. While some adjustments can be made at home, we recommend being gentle and cautious to avoid damaging your frames. Here are a few simple tips to get your glasses feeling more comfortable again."
+
+buttons:
+  - text: "Learn Adjustments"
+    href: "#adjustments"
+    classes: "px-6 py-3 w-full font-medium text-center text-white rounded-lg shadow-md transition-all duration-300 duration-700 ease-in-out transform smooth-scroll sm:w-auto bg-s hover:bg-p hover:shadow-lg hover:-translate-y-0.5 scroll-smooth"
+  - text: "Need Help?"
+    href: "#contact"
+    classes: "px-6 py-3 w-full font-medium text-center text-white rounded-lg shadow-md transition-all duration-300 duration-700 ease-in-out transform smooth-scroll sm:w-auto bg-s hover:bg-p hover:shadow-lg hover:-translate-y-0.5 scroll-smooth"
+
+sections:
+  - type: image_text
+    image:
+      src: "https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/bending_arm.webp"
+      alt: "Professional adjusting glasses arm for better fit"
+      width: 1800
+      height: 1200
+      classes: "object-cover w-full h-full shadow-md transition-transform duration-300 ease-in-out"
+    text:
+      title: "Why Adjust Your Glasses at Home?"
+      subtitle: "Have you ever experienced any of the following?"
+      list:
+        - "Glasses sliding down your nose constantly"
+        - "Tight temple arms causing discomfort"
+        - "Uneven fit affecting your vision"
+        - "Frequent adjustments throughout the day"
+      content: "Simple home adjustments can solve these common issues. Let's explore how."
+
+  - type: text
+    title: "What Are Home Glasses Adjustments?"
+    content: "Home glasses adjustments are small modifications you can make to improve the fit and comfort of your frames. These adjustments focus on the temple arms (the parts that go behind your ears) and the nose pads. While professional adjustments are always recommended for major changes, these simple tweaks can provide immediate relief for common fit issues. The key is to be gentle and make incremental changes to avoid damaging your frames."
+
+  - type: image
+    src: "https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/adjusting-arms.webp"
+    alt: "Diagram showing proper glasses adjustment techniques"
+    width: 1328
+    height: 1200
+    classes: "object-contain w-full transition-transform duration-300 ease-in-out"
+
+  - type: solutions
+    solutions:
+      - number: 1
+        title: "Glasses Sliding Down Your Nose?"
+        description: "If your glasses keep slipping, there are small adjustments you can make, depending on whether you have plastic or metal frames."
+        solution:
+          title: "Solution"
+          steps:
+            - "Gently bend the temple arms downwards where they curve behind your ears"
+            - "Be very careful with the pressure you apply to avoid breaking the frames"
+            - "This helps them sit more securely on your face"
+        safety:
+          title: "Safety Tips"
+          steps:
+            - "Use both hands when adjusting"
+            - "Make small, incremental changes"
+            - "Stop if you feel resistance"
+
+      - number: 2
+        title: "Are the Arms of Your Glasses Too Tight?"
+        description: "If the arms of your glasses feel too tight, they may need to be adjusted. However, these adjustments can only be made on metal frames."
+        solution:
+          title: "For Metal Frames"
+          steps:
+            - "You'll need a cross-head (Phillips) screwdriver"
+            - "Place glasses upside down on a flat surface"
+            - "Locate the screw on the inside of the arm near the lens"
+            - "Gently loosen the screw while holding the arm steady"
+        safety:
+          title: "Important Notes"
+          steps:
+            - "Be careful not to loosen the screw too much"
+            - "The screw on your glasses may differ from examples"
+            - "Once loosened, adjust the arm to your desired fit"
+
+  - type: links
+    links:
+      - text: "Glasses"
+        href: "{{store direct_url='glasses'}}"
+        classes: "flex justify-center items-center px-4 py-2 w-full text-2xl font-bold bg-white rounded-md shadow-md duration-1000 ease-in-out text-p hover:text-s hover:bg-l hover:-translate-y-2 hover:shadow-2xl"
+      - text: "Varifocal Glasses"
+        href: "{{store direct_url='varifocal-glasses'}}"
+        classes: "flex justify-center items-center px-4 py-2 w-full text-2xl font-bold bg-white rounded-md shadow-md duration-1000 ease-in-out text-p hover:text-s hover:bg-l hover:-translate-y-2 hover:shadow-2xl"
+      - text: "Bifocal Glasses"
+        href: "{{store direct_url='bifocal-glasses'}}"
+        classes: "flex justify-center items-center px-4 py-2 w-full text-2xl font-bold bg-white rounded-md shadow-md duration-1000 ease-in-out text-p hover:text-s hover:bg-l hover:-translate-y-2 hover:shadow-2xl"
+      - text: "Sunglasses"
+        href: "{{store direct_url='sunglasses'}}"
+        classes: "flex justify-center items-center px-4 py-2 w-full text-2xl font-bold bg-white rounded-md shadow-md duration-1000 ease-in-out text-p hover:text-s hover:bg-l hover:-translate-y-2 hover:shadow-2xl"
+
+  - type: tips
+    title: "Tips for Success"
+    intro: "Follow these essential tips to ensure your home adjustments are safe and effective. Remember, when in doubt, it's always better to seek professional help."
+    tips:
+      - title: "1. Use Both Hands"
+        items:
+          - "Always put your glasses on and take them off with both hands"
+          - "This keeps the frame balanced and prevents unnecessary bending"
+      - title: "2. Avoid Overdoing It"
+        items:
+          - "Small, incremental adjustments are key"
+          - "Over-bending can cause more harm than good, especially with plastic frames"
+      - title: "3. Know Your Limits"
+        items:
+          - "If you're unsure, stop and seek professional help"
+          - "Some adjustments require specialized tools and expertise"
+      - title: "4. Test After Adjustments"
+        items:
+          - "Wear your glasses for a while to test the fit"
+          - "Make additional small adjustments if needed"
+
+  - type: checklist
+    title: "Glasses Adjustment Checklist"
+    intro: "Follow this quick checklist to ensure your glasses fit perfectly:"
+    items:
+      - "Check for slipping: Adjust temple arms downward"
+      - "Test tightness: Loosen screws on metal frames if needed"
+      - "Verify comfort: Wear for an hour and readjust"
+      - "Seek help: Contact Spex4Less for professional adjustments"
+
+  - type: contact
+    title: "Want a hand?"
+    content: "If you've purchased your glasses from Spex4Less, we're more than happy to help with any adjustments. Just give us a call at 0151 362 6611, and we'll take care of it for you. If you purchased your frames elsewhere, the store where you bought them from should be able to assist you with any necessary adjustments."
+
+  - type: final
+    title: "Final Thoughts"
+    content: "With a little care and patience, you can make them fit perfectly—no headaches, no slipping, just a comfortable, snug pair of specs. Give these tips a try, and you'll be amazed at how much of a difference a few simple tweaks can make."
