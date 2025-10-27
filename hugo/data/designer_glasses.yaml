@@ -57,7 +57,7 @@ featured_products:
     - url: "/glasses/zurich-as6548-glasses"
       image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/zurich_front_1_1_.webp"
       alt: "Zurich AS6548"
-      hover_image: "https://spex4less.com/media/mf_webp/jpg/media/wysiwyg/homepageimages/zurich_side_1_1_.webp"
+      hover_image: "https://sadmx.spex4less.com/media/wysiwyg/homepageimages/zurich_side.png"
       hover_alt: "Zurich AS6548 Hover"
       lazy: true
       brand:

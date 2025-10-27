@@ -2,22 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:36885/limbo/</loc>
+    <loc>https://example.org/limbo/</loc>
   </url><url>
-    <loc>http://localhost:36885/designer-glasses/</loc>
+    <loc>https://example.org/designer-glasses/</loc>
   </url><url>
-    <loc>http://localhost:36885/designer-sunglasses/</loc>
+    <loc>https://example.org/designer-sunglasses/</loc>
   </url><url>
-    <loc>http://localhost:36885/desktop_menu/</loc>
+    <loc>https://example.org/desktop_menu/</loc>
   </url><url>
-    <loc>http://localhost:36885/mobile_menu/</loc>
+    <loc>https://example.org/mobile_menu/</loc>
   </url><url>
-    <loc>http://localhost:36885/glasses/</loc>
+    <loc>https://example.org/glasses/</loc>
   </url><url>
-    <loc>http://localhost:36885/style-finder/</loc>
+    <loc>https://example.org/how-to-adjust-glasses/</loc>
   </url><url>
-    <loc>http://localhost:36885/sunglasses/</loc>
+    <loc>https://example.org/style-finder/</loc>
   </url><url>
-    <loc>http://localhost:36885/</loc>
+    <loc>https://example.org/sunglasses/</loc>
+  </url><url>
+    <loc>https://example.org/</loc>
   </url>
 </urlset>
