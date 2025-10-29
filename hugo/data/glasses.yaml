@@ -264,8 +264,8 @@ feature_cards:
     title: "More for Less"
     text: "<strong>Expertly handled, fairly priced.</strong><br />Top-tier quality, personally checked by our in-house experts. No fuss, no shortcuts. Just great glasses, done right."
 
-# Feature Cards for selling-points partial (glasses-specific)
-feature_cards:
+# Additional Feature Cards for selling-points partial (glasses-specific)
+glasses_feature_cards:
   - id: "rated-1"
     title: "Glasses for Every Style and Need"
     text: "<strong>Find your perfect pair</strong>, browse our extensive collection from your favourite designers, choose from <a href='/glasses/single-vision-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>distance</a> to <a href='/glasses/reading-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>reading</a> to <a href='/glasses/varifocal' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>varifocal</a>, <strong>all from the comfort of your home</strong>.<br /><br /><strong>Not sure which style suits you? Try our Style Finder Quiz!</strong>"

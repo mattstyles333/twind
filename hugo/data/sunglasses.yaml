@@ -217,8 +217,8 @@ additional_cards:
       - text: "Learn More"
         url: '/exchange-or-return'
 
-# Feature Cards for selling-points partial (sunglasses-specific)
-feature_cards:
+# Additional Feature Cards for selling-points partial (sunglasses-specific)
+sunglasses_feature_cards:
   - id: "rated-1"
     title: "Prescription Sunglasses"
     text: "<strong>Custom Eyewear, Tailored for You</strong><br /><br />Transform your summer with prescription sunglasses for <a href='/glasses/single-vision-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>distance</a>, <a href='/glasses/reading-glasses' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>reading</a>, <a href='/glasses/bifocal' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>bifocal</a>, or <a href='/glasses/varifocal' class='text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium'>varifocal</a> lenses.<br /><br /><strong>Unsure what suits best?</strong><br />Try our Style Finder and unlock your perfect pair in seconds."

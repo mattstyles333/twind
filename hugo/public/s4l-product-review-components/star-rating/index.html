@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twind - Hugo Site</title>
+    <script src="https://cdn.tailwindcss.com?v=1761131690"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              p: "#1f2937",
+              s: "#1E3A8A",
+              l: "#f3f4f6",
+              t: "#5494EC",
+              a: "#f97316",
+              b: "#2563eb",
+              gr: "#6b7280",
+            },
+            screens: {
+              xxsm: "420px",
+              xxxsm: "360px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white">
+    <main>
+
+      <!-- Rating Strip Component - Drop into any product page -->
+      <section class="s4l-rating-strip w-full bg-white">
+        <div class="mx-auto w-full px-4 sm:px-6 lg:px-8 py-4 md:py-5">
+          <div class="flex items-center gap-3 md:gap-4" aria-label="Average rating">
+            <span data-review-count class="text-gr text-sm md:text-base">(0)</span>
+            <div data-star-rating="0" class="flex gap-0.5"></div>
+            <span data-rating-decimal class="text-p font-bold text-base md:text-lg" aria-live="polite">0.0</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Star Rating Renderer -->
+      <script>
+        (function() {
+          let uidCounter = 0;
+
+          function renderStars(rating, size = 'default') {
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 >= 0.3 && rating % 1 < 0.8;
+            const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+            const sizeClasses = size === 'large'
+              ? 'w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10'
+              : 'w-7 h-7 sm:w-8 sm:h-8';
+
+            const starPath = 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z';
+            let html = '';
+
+            for (let i = 0; i < fullStars; i++) {
+              html += `<svg class="${sizeClasses} text-s flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="${starPath}"/></svg>`;
+            }
+
+            if (hasHalfStar) {
+              const uid = ++uidCounter;
+              html += `<svg class="${sizeClasses} text-s flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                <defs><linearGradient id="half-${uid}"><stop offset="50%" stop-color="currentColor"/><stop offset="50%" stop-color="#d1d5db"/></linearGradient></defs>
+                <path fill="url(#half-${uid})" d="${starPath}"/>
+              </svg>`;
+            }
+
+            for (let i = 0; i < emptyStars; i++) {
+              html += `<svg class="${sizeClasses} text-gray-300 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="${starPath}"/></svg>`;
+            }
+
+            return html;
+          }
+
+          // Hydrate from existing reviews data source
+          const reviewsRoot = document.querySelector('section[data-reviews-root]');
+          if (reviewsRoot) {
+            const avg = parseFloat(reviewsRoot.dataset.ratingAverage) || 0;
+            const count = parseInt(reviewsRoot.dataset.ratingCount, 10) || 0;
+
+            // Update strip elements
+            const strip = document.querySelector('.s4l-rating-strip');
+            if (strip) {
+              const countEl = strip.querySelector('[data-review-count]');
+              const decimalEl = strip.querySelector('[data-rating-decimal]');
+              const starEl = strip.querySelector('[data-star-rating]');
+
+              if (countEl) countEl.textContent = `(${count})`;
+              if (decimalEl) decimalEl.textContent = avg.toFixed(1);
+              if (starEl) starEl.setAttribute('data-star-rating', avg);
+            }
+          }
+
+          // Render all star elements on page
+          document.querySelectorAll('[data-star-rating]').forEach(el => {
+            const rating = parseFloat(el.getAttribute('data-star-rating'));
+            const isLarge = el.closest('[data-reviews-root]') && !el.closest('article');
+            el.innerHTML = renderStars(rating, isLarge ? 'large' : 'default');
+          });
+        })();
+      </script>
+
+    </main>
+  </body>
+</html>
