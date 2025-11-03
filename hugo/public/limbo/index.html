@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Twind - Hugo Site</title>
-    <script src="https://cdn.tailwindcss.com?v=1761658882"></script>
+    <script src="https://cdn.tailwindcss.com?v=1762164366"></script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
@@ -33,3 +33,159 @@
   </head>
   <body class="bg-white">
     <main>
+
+
+<div class="min-h-screen bg-gray-50 px-4 py-12 md:py-16">
+  <div class="max-w-3xl mx-auto">
+
+
+    <div class="text-center mb-12 md:mb-16">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
+        Answer 4 quick questions to see frames that fit you
+      </h1>
+      <p class="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">Find your perfect glasses in under a minute</p>
+    </div>
+
+
+    <form action="/glasses" method="get" class="space-y-10 md:space-y-12">
+
+
+      <div class="bg-white rounded-xl p-7 md:p-9 shadow-md border border-gray-200">
+        <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-6">1. What's your face shape?</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+
+          <input type="radio" name="face_shape" value="oval" id="face_oval" class="peer/oval hidden" />
+          <label for="face_oval" class="block p-4 md:p-5 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/oval:border-s peer-checked/oval:bg-s peer-checked/oval:text-white peer-checked/oval:shadow-md">
+            <span class="text-sm md:text-base font-medium">Oval</span>
+          </label>
+
+          <input type="radio" name="face_shape" value="round" id="face_round" class="peer/round hidden" />
+          <label for="face_round" class="block p-4 md:p-5 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/round:border-s peer-checked/round:bg-s peer-checked/round:text-white peer-checked/round:shadow-md">
+            <span class="text-sm md:text-base font-medium">Round</span>
+          </label>
+
+          <input type="radio" name="face_shape" value="square" id="face_square" class="peer/square hidden" />
+          <label for="face_square" class="block p-4 md:p-5 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/square:border-s peer-checked/square:bg-s peer-checked/square:text-white peer-checked/square:shadow-md">
+            <span class="text-sm md:text-base font-medium">Square</span>
+          </label>
+
+          <input type="radio" name="face_shape" value="heart" id="face_heart" class="peer/heart hidden" />
+          <label for="face_heart" class="block p-4 md:p-5 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/heart:border-s peer-checked/heart:bg-s peer-checked/heart:text-white peer-checked/heart:shadow-md">
+            <span class="text-sm md:text-base font-medium">Heart</span>
+          </label>
+
+          <input type="radio" name="face_shape" value="diamond" id="face_diamond" class="peer/diamond hidden" />
+          <label for="face_diamond" class="block p-4 md:p-5 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/diamond:border-s peer-checked/diamond:bg-s peer-checked/diamond:text-white peer-checked/diamond:shadow-md">
+            <span class="text-sm md:text-base font-medium">Diamond</span>
+          </label>
+
+          <input type="radio" name="face_shape" value="any" id="face_any" class="peer/any hidden" />
+          <label for="face_any" class="block p-4 md:p-5 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/any:border-s peer-checked/any:bg-s peer-checked/any:text-white peer-checked/any:shadow-md">
+            <span class="text-sm md:text-base font-medium">Not Sure</span>
+          </label>
+        </div>
+      </div>
+
+
+      <div class="bg-white rounded-xl p-7 md:p-9 shadow-md border border-gray-200">
+        <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-6">2. What's your preferred style?</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+
+          <input type="radio" name="style" value="classic" id="style_classic" class="peer/classic hidden" />
+          <label for="style_classic" class="block p-4 md:p-5 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/classic:border-s peer-checked/classic:bg-s peer-checked/classic:text-white peer-checked/classic:shadow-md">
+            <span class="text-sm md:text-base font-medium">Classic</span>
+          </label>
+
+          <input type="radio" name="style" value="modern" id="style_modern" class="peer/modern hidden" />
+          <label for="style_modern" class="block p-4 md:p-5 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/modern:border-s peer-checked/modern:bg-s peer-checked/modern:text-white peer-checked/modern:shadow-md">
+            <span class="text-sm md:text-base font-medium">Modern</span>
+          </label>
+
+          <input type="radio" name="style" value="vintage" id="style_vintage" class="peer/vintage hidden" />
+          <label for="style_vintage" class="block p-4 md:p-5 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/vintage:border-s peer-checked/vintage:bg-s peer-checked/vintage:text-white peer-checked/vintage:shadow-md">
+            <span class="text-sm md:text-base font-medium">Vintage</span>
+          </label>
+
+          <input type="radio" name="style" value="sporty" id="style_sporty" class="peer/sporty hidden" />
+          <label for="style_sporty" class="block p-4 md:p-5 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/sporty:border-s peer-checked/sporty:bg-s peer-checked/sporty:text-white peer-checked/sporty:shadow-md">
+            <span class="text-sm md:text-base font-medium">Sporty</span>
+          </label>
+
+          <input type="radio" name="style" value="designer" id="style_designer" class="peer/designer hidden" />
+          <label for="style_designer" class="block p-4 md:p-5 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/designer:border-s peer-checked/designer:bg-s peer-checked/designer:text-white peer-checked/designer:shadow-md">
+            <span class="text-sm md:text-base font-medium">Designer</span>
+          </label>
+
+          <input type="radio" name="style" value="any" id="style_any" class="peer/styleany hidden" />
+          <label for="style_any" class="block p-4 md:p-5 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/styleany:border-s peer-checked/styleany:bg-s peer-checked/styleany:text-white peer-checked/styleany:shadow-md">
+            <span class="text-sm md:text-base font-medium">Show All</span>
+          </label>
+        </div>
+      </div>
+
+
+      <div class="bg-white rounded-xl p-7 md:p-9 shadow-md border border-gray-200">
+        <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-6">3. What frame width fits you best?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+
+          <input type="radio" name="width" value="narrow" id="width_narrow" class="peer/narrow hidden" />
+          <label for="width_narrow" class="block p-5 md:p-6 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/narrow:border-s peer-checked/narrow:bg-s peer-checked/narrow:text-white peer-checked/narrow:shadow-md">
+            <span class="text-sm md:text-base font-medium block">Narrow</span>
+            <span class="text-xs block mt-1 opacity-75">130-135mm</span>
+          </label>
+
+          <input type="radio" name="width" value="medium" id="width_medium" class="peer/medium hidden" />
+          <label for="width_medium" class="block p-5 md:p-6 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/medium:border-s peer-checked/medium:bg-s peer-checked/medium:text-white peer-checked/medium:shadow-md">
+            <span class="text-sm md:text-base font-medium block">Medium</span>
+            <span class="text-xs block mt-1 opacity-75">136-145mm</span>
+          </label>
+
+          <input type="radio" name="width" value="wide" id="width_wide" class="peer/wide hidden" />
+          <label for="width_wide" class="block p-5 md:p-6 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/wide:border-s peer-checked/wide:bg-s peer-checked/wide:text-white peer-checked/wide:shadow-md">
+            <span class="text-sm md:text-base font-medium block">Wide</span>
+            <span class="text-xs block mt-1 opacity-75">146mm+</span>
+          </label>
+        </div>
+      </div>
+
+
+      <div class="bg-white rounded-xl p-7 md:p-9 shadow-md border border-gray-200">
+        <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-6">4. What's your budget?</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+
+          <input type="radio" name="price" value="0-50" id="price_1" class="peer/price1 hidden" />
+          <label for="price_1" class="block p-4 md:p-5 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/price1:border-s peer-checked/price1:bg-s peer-checked/price1:text-white peer-checked/price1:shadow-md">
+            <span class="text-sm md:text-base font-medium">Under £50</span>
+          </label>
+
+          <input type="radio" name="price" value="50-100" id="price_2" class="peer/price2 hidden" />
+          <label for="price_2" class="block p-4 md:p-5 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/price2:border-s peer-checked/price2:bg-s peer-checked/price2:text-white peer-checked/price2:shadow-md">
+            <span class="text-sm md:text-base font-medium">£50-£100</span>
+          </label>
+
+          <input type="radio" name="price" value="100-200" id="price_3" class="peer/price3 hidden" />
+          <label for="price_3" class="block p-4 md:p-5 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/price3:border-s peer-checked/price3:bg-s peer-checked/price3:text-white peer-checked/price3:shadow-md">
+            <span class="text-sm md:text-base font-medium">£100-£200</span>
+          </label>
+
+          <input type="radio" name="price" value="200+" id="price_4" class="peer/price4 hidden" />
+          <label for="price_4" class="block p-4 md:p-5 text-center border-2 border-gray-200 rounded-lg cursor-pointer transition-all duration-200 hover:border-gray-400 hover:bg-gray-50 peer-checked/price4:border-s peer-checked/price4:bg-s peer-checked/price4:text-white peer-checked/price4:shadow-md">
+            <span class="text-sm md:text-base font-medium">£200+</span>
+          </label>
+        </div>
+      </div>
+
+
+      <div class="pt-6 pb-12">
+        <button type="submit" class="w-full bg-s border-s hover:bg-black text-white font-semibold text-base md:text-lg py-5 md:py-6 px-8 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl">
+          See My Perfect Frames
+        </button>
+        <p class="text-center text-sm text-gray-600 mt-4">Free shipping on all orders over £50</p>
+      </div>
+
+    </form>
+  </div>
+</div>
+</main>
+  </body>
+</html>
