@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Mega-Dropdown - Spex4Less</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            p: "#1f2937",
+            s: "#1E3A8A",
+            l: "#f3f4f6",
+            t: "#5494EC",
+            a: "#f97316",
+            b: "#2563eb",
+            gr: "#6b7280",
+          },
+          screens: {
+            xxsm: "420px",
+            xxxsm: "360px",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-white">
+<!--
+
+
+  2. DEFAULT STATE (on first click/load):
+     - "Recommended Products" heading shows with 8 default product cards
+     - Resources section displays default options
+     - Categories section displays default options
+     - Top searches shows default popular search terms
+     - "Show all results" link should NOT be visible in default state
+
+  3. SEARCH STATE (when user types):
+     - "Recommended Products" heading should change to "Results"
+     - Display filtered/search results in the products grid
+     - "Show all results" should appear (only visible when searching)
+
+  4. ALWAYS VISIBLE SECTIONS:
+     - Resources section should ALWAYS display (never hide, regardless of search)
+     - Categories section should ALWAYS display (never hide, regardless of search)
+     - Top searches should ALWAYS display (never hide, regardless of search)
+
+  KEY ELEMENTS:
+  - Products heading ID: #products-heading (change text from "Recommended Products" to "Results")
+  - Show all results ID: #show-all-results (hide by default with 'hidden' class, show when searching)
+  ====================================================================================
+-->
+  <section>
+  <div id="search-topbar" class="max-w-[2200px] mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center">
+    <div class="flex-1 flex items-center gap-4">
+      <input
+        type="text"
+        placeholder="Browse"
+        class="flex-1 min-w-0 px-4 py-2.5 rounded-full border border-gray-300
+               text-base lg:text-lg font-semibold leading-tight
+               placeholder:text-sm lg:placeholder:text-base placeholder:text-gray-400 placeholder:font-normal
+               caret-[#1E3A8A] selection:bg-[#1E3A8A]/20
+               focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]"
+      />
+
+      <button
+        id="cancel-search"
+        class="text-p hover:text-s focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] rounded"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+
+
+  <!-- Search Mega-Dropdown -->
+    <div class="content-wrapper max-w-[2200px] mx-auto max-h-[100svh] overflow-y-auto lg:overflow-y-visible overscroll-contain pb-32 lg:pb-0">
+      <!-- Search Suggestions -->
+      <!-- BACKEND: Top searches should ALWAYS display with default options, regardless of search input -->
+      <div class="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-4">
+        <div class="flex items-center gap-2 flex-wrap mb-2">
+          <h3 class="text-base lg:text-lg font-semibold text-p whitespace-nowrap">Top searches:</h3>
+          <div class="flex flex-wrap gap-2 lg:gap-4" data-s4l-chips role="group" aria-label="Popular search terms">
+            <button data-chip class="s4l-chip px-3 lg:px-5 py-2 bg-l text-p text-sm lg:text-lg font-medium rounded-full hover:bg-s hover:text-white focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]">
+              ray ban
+            </button>
+            <button data-chip class="s4l-chip px-3 lg:px-5 py-2 bg-l text-p text-sm lg:text-lg font-medium rounded-full hover:bg-s hover:text-white focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]">
+              oakley
+            </button>
+            <button data-chip class="s4l-chip px-3 lg:px-5 py-2 bg-l text-p text-sm lg:text-lg font-medium rounded-full hover:bg-s hover:text-white focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]">
+              catwalk
+            </button>
+            <button data-chip class="s4l-chip px-3 lg:px-5 py-2 bg-l text-p text-sm lg:text-lg font-medium rounded-full hover:bg-s hover:text-white focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]">
+              sunglasses
+            </button>
+            <button data-chip class="s4l-chip px-3 lg:px-5 py-2 bg-l text-p text-sm lg:text-lg font-medium rounded-full hover:bg-s hover:text-white focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]">
+              rimless
+            </button>
+            <button data-chip class="s4l-chip px-3 lg:px-5 py-2 bg-l text-p text-sm lg:text-lg font-medium rounded-full hover:bg-s hover:text-white focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]">
+              scout
+            </button>
+            <button data-chip class="s4l-chip px-3 lg:px-5 py-2 bg-l text-p text-sm lg:text-lg font-medium rounded-full hover:bg-s hover:text-white focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]">
+              gucci
+            </button>
+            <button data-chip class="s4l-chip px-3 lg:px-5 py-2 bg-l text-p text-sm lg:text-lg font-medium rounded-full hover:bg-s hover:text-white focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]">
+              clear frames
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-16 xl:gap-20 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-6">
+        <!-- Products: wide, responsive multi-column layout -->
+        <!--
+          BACKEND:
+          - Default state: heading text should be "Recommended Products", show 8 default cards
+          - Search state: heading text should change to "Results", show filtered products
+          - Use data attribute or class to toggle heading text dynamically
+        -->
+        <div class="order-1 lg:col-span-9">
+          <h3 class="text-base lg:text-lg font-semibold text-p mb-3" id="products-heading">Recommended Products</h3>
+          <ul data-s4l-products="all" class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <li data-sku="RX7074-5943" data-brand="Ray-Ban" data-model="RX 7074 5943" data-price="89.00">
+              <a href="#" class="s4l-product-card inline-block w-full flex flex-col items-center lg:items-start gap-3 bg-l rounded p-2 lg:p-2 hover:outline hover:outline-2 hover:outline-s hover:rounded-none focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]">
+                <div class="w-full aspect-[4/3] bg-white rounded object-cover sm:w-24 lg:w-full" data-img>
+                </div>
+                <div class="min-w-0 w-full text-center lg:text-left">
+                  <p class="font-semibold text-sm sm:text-base lg:text-lg text-p truncate" data-model>RX 7074 5943</p>
+                  <p class="text-xs sm:text-sm lg:text-base text-gr" data-brand>Ray-Ban</p>
+                  <p class="text-sm sm:text-base lg:text-lg text-p font-medium">£89.00</p>
+                </div>
+              </a>
+            </li>
+            <li data-sku="RB3025-003-3F" data-brand="Ray-Ban" data-model="Aviator large RB 3025 003/3F" data-price="129.00">
+              <a href="#" class="s4l-product-card inline-block w-full flex flex-col items-center lg:items-start gap-3 bg-l rounded p-2 lg:p-2 hover:outline hover:outline-2 hover:outline-s hover:rounded-none focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]">
+                <div class="w-full aspect-[4/3] bg-white rounded object-cover sm:w-24 lg:w-full" data-img>
+                </div>
+                <div class="min-w-0 w-full text-center lg:text-left">
+                  <p class="font-semibold text-sm sm:text-base lg:text-lg text-p truncate" data-model>Aviator large RB 3025 003/3F</p>
+                  <p class="text-xs sm:text-sm lg:text-base text-gr" data-brand>Ray-Ban</p>
+                  <p class="text-sm sm:text-base lg:text-lg text-p font-medium">£129.00</p>
+                </div>
+              </a>
+            </li>
+            <li data-sku="RB4340-601" data-brand="Ray-Ban" data-model="Wayfarer RB 4340 601" data-price="139.00">
+              <a href="#" class="s4l-product-card inline-block w-full flex flex-col items-center lg:items-start gap-3 bg-l rounded p-2 lg:p-2 hover:outline hover:outline-2 hover:outline-s hover:rounded-none focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]">
+                <div class="w-full aspect-[4/3] bg-white rounded object-cover sm:w-24 lg:w-full" data-img>
+                </div>
+                <div class="min-w-0 w-full text-center lg:text-left">
+                  <p class="font-semibold text-sm sm:text-base lg:text-lg text-p truncate" data-model>Wayfarer RB 4340 601</p>
+                  <p class="text-xs sm:text-sm lg:text-base text-gr" data-brand>Ray-Ban</p>
+                  <p class="text-sm sm:text-base lg:text-lg text-p font-medium">£139.00</p>
+                </div>
+              </a>
+            </li>
+            <li data-sku="RX7159-2012" data-brand="Ray-Ban" data-model="RX 7159 2012 large" data-price="99.00">
+              <a href="#" class="s4l-product-card inline-block w-full flex flex-col items-center lg:items-start gap-3 bg-l rounded p-2 lg:p-2 hover:outline hover:outline-2 hover:outline-s hover:rounded-none focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]">
+                <div class="w-full aspect-[4/3] bg-white rounded object-cover sm:w-24 lg:w-full" data-img>
+                </div>
+                <div class="min-w-0 w-full text-center lg:text-left">
+                  <p class="font-semibold text-sm sm:text-base lg:text-lg text-p truncate" data-model>RX 7159 2012 large</p>
+                  <p class="text-xs sm:text-sm lg:text-base text-gr" data-brand>Ray-Ban</p>
+                  <p class="text-sm sm:text-base lg:text-lg text-p font-medium">£99.00</p>
+                </div>
+              </a>
+            </li>
+            <li data-sku="RX7074-5943-R" data-brand="Ray-Ban" data-model="RX 7074 5943" data-price="89.00">
+              <a href="#" class="s4l-product-card inline-block w-full flex flex-col items-center lg:items-start gap-3 bg-l rounded p-2 lg:p-2 hover:outline hover:outline-2 hover:outline-s hover:rounded-none focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]">
+                <div class="w-full aspect-[4/3] bg-white rounded object-cover sm:w-24 lg:w-full" data-img>
+                </div>
+                <div class="min-w-0 w-full text-center lg:text-left">
+                  <p class="font-semibold text-sm sm:text-base lg:text-lg text-p truncate" data-model>RX 7074 5943</p>
+                  <p class="text-xs sm:text-sm lg:text-base text-gr" data-brand>Ray-Ban</p>
+                  <p class="text-sm sm:text-base lg:text-lg text-p font-medium">£89.00</p>
+                </div>
+              </a>
+            </li>
+            <li data-sku="RB3025-003-3F-R" data-brand="Ray-Ban" data-model="Aviator large RB 3025 003/3F" data-price="129.00">
+              <a href="#" class="s4l-product-card inline-block w-full flex flex-col items-center lg:items-start gap-3 bg-l rounded p-2 lg:p-2 hover:outline hover:outline-2 hover:outline-s hover:rounded-none focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]">
+                <div class="w-full aspect-[4/3] bg-white rounded object-cover sm:w-24 lg:w-full" data-img>
+                </div>
+                <div class="min-w-0 w-full text-center lg:text-left">
+                  <p class="font-semibold text-sm sm:text-base lg:text-lg text-p truncate" data-model>Aviator large RB 3025 003/3F</p>
+                  <p class="text-xs sm:text-sm lg:text-base text-gr" data-brand>Ray-Ban</p>
+                  <p class="text-sm sm:text-base lg:text-lg text-p font-medium">£129.00</p>
+                </div>
+              </a>
+            </li>
+            <li data-sku="RB4340-601-R" data-brand="Ray-Ban" data-model="Wayfarer RB 4340 601" data-price="139.00">
+              <a href="#" class="s4l-product-card inline-block w-full flex flex-col items-center lg:items-start gap-3 bg-l rounded p-2 lg:p-2 hover:outline hover:outline-2 hover:outline-s hover:rounded-none focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]">
+                <div class="w-full aspect-[4/3] bg-white rounded object-cover sm:w-24 lg:w-full" data-img>
+                </div>
+                <div class="min-w-0 w-full text-center lg:text-left">
+                  <p class="font-semibold text-sm sm:text-base lg:text-lg text-p truncate" data-model>Wayfarer RB 4340 601</p>
+                  <p class="text-xs sm:text-sm lg:text-base text-gr" data-brand>Ray-Ban</p>
+                  <p class="text-sm sm:text-base lg:text-lg text-p font-medium">£139.00</p>
+                </div>
+              </a>
+            </li>
+            <li data-sku="reglaze-your-own-frames" data-brand="" data-model="Reglaze your own frames" data-price="">
+              <a href="#" class="s4l-product-card inline-block w-full flex flex-col items-center lg:items-start gap-3 bg-l rounded p-2 lg:p-2 hover:outline hover:outline-2 hover:outline-s hover:rounded-none focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]">
+                <div class="w-full aspect-[4/3] bg-white rounded object-cover sm:w-24 lg:w-full" data-img>
+                </div>
+                <div class="min-w-0 w-full text-center lg:text-left">
+                  <p class="font-semibold text-sm sm:text-base lg:text-lg text-p truncate" data-model>Reglaze your own frames</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <!-- Show All Results -->
+          <!-- BACKEND: This link should be HIDDEN by default. Only show when user is actively searching (has typed something) -->
+          <a href="#" id="show-all-results" class="hidden block py-2 lg:py-3 mt-2 lg:mt-4 text-base lg:text-lg font-medium text-p underline">Show all results</a>
+        </div>
+
+        <!-- Resources: tidy single column on desktop -->
+        <!-- BACKEND: Resources section should ALWAYS display with default options, regardless of search input -->
+        <div class="order-2 lg:order-2 lg:col-span-3">
+          <h3 class="text-base lg:text-lg font-bold text-p mb-2">Resources</h3>
+          <ul data-s4l-cats>
+            <li>
+              <a href="#" data-cat data-name="Ray-Ban sunglasses" class="block py-1 lg:py-2 text-base lg:text-lg text-p hover:bg-l hover:underline rounded focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] truncate">
+                Ray-Ban sunglasses
+              </a>
+            </li>
+            <li>
+              <a href="#" data-cat data-name="Ray-Ban glasses" class="block py-1 lg:py-2 text-base lg:text-lg text-p hover:bg-l hover:underline rounded focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] truncate">
+                Ray-Ban glasses
+              </a>
+            </li>
+            <li>
+              <a href="#" data-cat data-name="poloRalph Lauren Glasses" class="block py-1 lg:py-2 text-base lg:text-lg text-p hover:bg-l hover:underline rounded focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] truncate">
+                poloRalph Lauren Glasses
+              </a>
+            </li>
+            <li>
+              <a href="#" data-cat data-name="RaSeamless sunglasses" class="block py-1 lg:py-2 text-base lg:text-lg text-p hover:bg-l hover:underline rounded focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] truncate">
+                RaSeamless sunglasses
+              </a>
+            </li>
+            <li>
+              <a href="#" data-cat data-name="Raframeless sunglasses" class="block py-1 lg:py-2 text-base lg:text-lg text-p hover:bg-l hover:underline rounded focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] truncate">
+                Ultra premium designer frameless sunglasses with blue light blocking technology and anti-reflective coating
+              </a>
+            </li>
+          </ul>
+
+          <!-- Categories: glasses categories -->
+          <!-- BACKEND: Categories section should ALWAYS display with default options, regardless of search input -->
+          <h3 class="text-base lg:text-lg font-bold text-p mb-2 mt-6 lg:mt-8">Categories</h3>
+          <ul data-s4l-categories>
+            <li>
+              <a href="#" data-category data-name="Sunglasses" class="block py-1 lg:py-2 text-base lg:text-lg text-p hover:bg-l hover:underline rounded focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] truncate">
+                Sunglasses
+              </a>
+            </li>
+            <li>
+              <a href="#" data-category data-name="Prescription glasses" class="block py-1 lg:py-2 text-base lg:text-lg text-p hover:bg-l hover:underline rounded focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] truncate">
+                Prescription glasses
+              </a>
+            </li>
+            <li>
+              <a href="#" data-category data-name="Reading glasses" class="block py-1 lg:py-2 text-base lg:text-lg text-p hover:bg-l hover:underline rounded focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] truncate">
+                Reading glasses
+              </a>
+            </li>
+            <li>
+              <a href="#" data-category data-name="Computer glasses" class="block py-1 lg:py-2 text-base lg:text-lg text-p hover:bg-l hover:underline rounded focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] truncate">
+                Computer glasses
+              </a>
+            </li>
+            <li>
+              <a href="#" data-category data-name="Progressive lenses" class="block py-1 lg:py-2 text-base lg:text-lg text-p hover:bg-l hover:underline rounded focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] truncate">
+                Progressive lenses
+              </a>
+            </li>
+          </ul>
+
+          <!-- Contact: phone and email -->
+          <h3 class="text-base lg:text-lg font-bold text-p mb-2 mt-6 lg:mt-8">Contact</h3>
+          <div class="space-y-2">
+            <p class="text-base lg:text-lg text-p">
+              <a href="tel:01516326611" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] rounded">0151 632 6611</a>
+            </p>
+            <p class="text-base lg:text-lg text-p">
+              <a href="mailto:info@spex4less.com" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] rounded">info@spex4less.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  <script>
+    // Lock background scroll on mobile, allow menu to scroll
+    (function () {
+      const contentWrapper = document.querySelector('.content-wrapper');
+      const topbar = document.getElementById('search-topbar');
+      if (!contentWrapper) return;
+      const lockBackgroundScroll = () => {
+        const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+        if (!isDesktop) {
+          document.documentElement.style.overflow = 'hidden';
+          document.body.style.overflow = 'hidden';
+          const topbarHeight = topbar ? topbar.getBoundingClientRect().height : 0;
+          const available = Math.max(0, window.innerHeight - topbarHeight);
+          contentWrapper.style.maxHeight = available + 'px';
+          contentWrapper.style.overflowY = 'auto';
+          contentWrapper.style.webkitOverflowScrolling = 'touch';
+          contentWrapper.style.paddingBottom = 'calc(env(safe-area-inset-bottom, 0px) + 6rem)';
+        }
+      };
+      lockBackgroundScroll();
+      window.addEventListener('resize', lockBackgroundScroll);
+    })();
+  </script>
+</body>
+</html>
