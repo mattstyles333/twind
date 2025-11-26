@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "lsp": {
+    "html-ls": {
+      "command": ["vscode-html-language-server", "--stdio"],
+      "extensions": [".html", ".htm"]
+    },
+    "tailwindcss-ls": {
+      "command": ["tailwindcss-language-server", "--stdio"],
+      "extensions": [".html", ".htm", ".js", ".ts", ".jsx", ".tsx", ".vue", ".svelte", ".php"]
+    }
+  }
+}
