@@ -1,0 +1,20 @@
+Order Number : {{var orderIncrement}}
+Order ID : {{var orderId}}
+Order Link: {{var orderUrl}}
+Customer Name: {{var customerName}}
+Customer Firstname: {{var customerFirstName}}
+Customer Lastname: {{var customerLastName}}
+
+
+
+
+{{template config_path="design/email/header_template"}}
+
+Order Number : {{var orderIncrement}}
+<br>
+<br>
+Hi {{var customerFirstName}},
+You recently received your {{var receiveType}}. We’d love to hear what you think! Your feedback helps others shop with confidence.
+{{var productInvitesListHtml | raw}}
+
+{{template config_path="design/email/footer_template"}}

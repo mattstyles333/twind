@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guarantee & Warranty | Spex4Less</title>
+    <meta name="description" content="30-day money-back guarantee, 12-month warranty, and optional accidental damage protection. Shop with confidence at Spex4Less." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              p: "#1f2937",
+              s: "#1E3A8A",
+              l: "#f3f4f6",
+              t: "#5494EC",
+              a: "#f97316",
+              b: "#2563eb",
+              gr: "#6b7280",
+            },
+            screens: {
+              xxsm: "420px",
+              xxxsm: "360px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Faster tap response on touch devices */
+      a, button { touch-action: manipulation; }
+      /* Smooth scroll with header offset */
+      html { scroll-behavior: smooth; }
+      [id] { scroll-margin-top: 5rem; }
+      /* Reduce motion for accessibility */
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Sticky Mobile CTA Bar -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-gray-200 shadow-lg lg:hidden safe-area-pb">
+      <div class="flex gap-2 p-3">
+        <a href="#contact" class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-p bg-l rounded-lg active:bg-gray-200">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+          </svg>
+          Contact Us
+        </a>
+        <a href="https://www.spex4less.com/accessories/accidental-damage-protection" class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-white bg-s rounded-lg active:bg-blue-900">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+          Add Protection
+        </a>
+      </div>
+    </div>
+
+    <main class="pb-24 lg:pb-0">
+      <!-- Hero Section - Compact and Clear -->
+      <section class="bg-gradient-to-b from-blue-50 to-white">
+        <div class="px-4 py-8 mx-auto max-w-5xl sm:px-6 md:py-12">
+          <div class="text-center">
+            <h1 class="text-2xl font-bold text-slate-800 sm:text-3xl md:text-4xl">
+              Guarantee & Warranty
+            </h1>
+            <p class="mx-auto mt-3 max-w-2xl text-base text-gray-600 sm:text-lg">
+              Shop with confidence. Every pair includes our satisfaction guarantee and warranty protection.
+            </p>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-3 gap-3 mt-6 sm:gap-4 md:mt-8">
+            <div class="p-3 text-center bg-white rounded-lg border border-gray-200 shadow-sm sm:p-4">
+              <p class="text-xl font-bold text-s sm:text-2xl md:text-3xl">30</p>
+              <p class="text-xs text-gray-600 sm:text-sm">Day Returns</p>
+            </div>
+            <div class="p-3 text-center bg-white rounded-lg border border-gray-200 shadow-sm sm:p-4">
+              <p class="text-xl font-bold text-s sm:text-2xl md:text-3xl">12</p>
+              <p class="text-xs text-gray-600 sm:text-sm">Month Warranty</p>
+            </div>
+            <div class="p-3 text-center bg-white rounded-lg border border-gray-200 shadow-sm sm:p-4">
+              <p class="text-xl font-bold text-s sm:text-2xl md:text-3xl">100%</p>
+              <p class="text-xs text-gray-600 sm:text-sm">Money Back</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Protection Cards - Simplified Grid -->
+      <section id="protection" class="px-4 py-8 sm:px-6 md:py-12">
+        <div class="mx-auto max-w-5xl">
+          <div class="grid gap-4 md:grid-cols-2 md:gap-6">
+            <!-- 30-Day Satisfaction -->
+            <div class="p-5 bg-white rounded-xl border border-gray-200 shadow-sm sm:p-6">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-green-100 text-green-600 flex-shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <h2 class="text-lg font-bold text-slate-800 sm:text-xl">30-Day Satisfaction Guarantee</h2>
+              </div>
+              <p class="mb-4 text-sm text-gray-600 sm:text-base">
+                Not happy? Return within 30 days for a full refund. No questions asked.
+              </p>
+              <ul class="space-y-2 text-sm sm:text-base">
+                <li class="flex items-center gap-2 text-gray-700">
+                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Full refund available
+                </li>
+                <li class="flex items-center gap-2 text-gray-700">
+                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  First exchange free
+                </li>
+                <li class="flex items-center gap-2 text-gray-700">
+                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Any reason accepted
+                </li>
+              </ul>
+            </div>
+
+            <!-- 12-Month Warranty -->
+            <div class="p-5 bg-white rounded-xl border border-gray-200 shadow-sm sm:p-6">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-s flex-shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                  </svg>
+                </div>
+                <h2 class="text-lg font-bold text-slate-800 sm:text-xl">12-Month Frame Warranty</h2>
+              </div>
+              <p class="mb-4 text-sm text-gray-600 sm:text-base">
+                Manufacturing defects? We'll repair or replace free of charge.
+              </p>
+              <ul class="space-y-2 text-sm sm:text-base">
+                <li class="flex items-center gap-2 text-gray-700">
+                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Frame defects covered
+                </li>
+                <li class="flex items-center gap-2 text-gray-700">
+                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Lens coating issues
+                </li>
+                <li class="flex items-center gap-2 text-gray-700">
+                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Free repair/replacement
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Accidental Damage - Featured Card -->
+          <div class="mt-4 p-5 bg-gradient-to-r from-s to-blue-700 rounded-xl shadow-lg sm:p-6 md:mt-6">
+            <div class="md:flex md:items-center md:justify-between md:gap-6">
+              <div class="flex-1">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="flex items-center justify-center w-10 h-10 rounded-full bg-white/20 text-white flex-shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                  </div>
+                  <h2 class="text-lg font-bold text-white sm:text-xl">Accidental Damage Plan</h2>
+                  <span class="px-2 py-0.5 text-xs font-semibold text-s bg-white rounded-full">Optional</span>
+                </div>
+                <p class="mb-4 text-sm text-blue-100 sm:text-base md:mb-0">
+                  Dropped, sat on, or scratched? We'll replace them free. Covers accidents the warranty doesn't.
+                </p>
+              </div>
+              <div class="flex items-center gap-4 md:flex-shrink-0">
+                <span class="text-2xl font-bold text-white sm:text-3xl">£20</span>
+                <a href="https://www.spex4less.com/accessories/accidental-damage-protection" class="hidden md:inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-s bg-white rounded-lg hover:bg-gray-100 active:bg-gray-200 transition-colors">
+                  Add to Order
+                  <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What's Covered - Collapsible on Mobile -->
+      <section id="coverage" class="px-4 py-8 bg-gray-50 sm:px-6 md:py-12">
+        <div class="mx-auto max-w-5xl">
+          <h2 class="mb-6 text-xl font-bold text-center text-slate-800 sm:text-2xl">What's Covered?</h2>
+          
+          <div class="space-y-3 md:space-y-0 md:grid md:grid-cols-3 md:gap-4" x-data="{ open: null }">
+            <!-- Warranty Coverage -->
+            <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+              <button 
+                @click="open = open === 'warranty' ? null : 'warranty'" 
+                class="flex items-center justify-between w-full p-4 text-left md:cursor-default"
+                :class="{ 'border-b border-gray-100': open === 'warranty' }"
+              >
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-s flex items-center justify-center flex-shrink-0">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <span class="font-semibold text-slate-800">Warranty</span>
+                </div>
+                <svg class="w-5 h-5 text-gray-400 transition-transform md:hidden" :class="{ 'rotate-180': open === 'warranty' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div class="p-4 pt-0 md:block" :class="{ 'hidden': open !== 'warranty' }" x-show="open === 'warranty' || window.innerWidth >= 768" x-cloak>
+                <ul class="space-y-2 text-sm text-gray-600">
+                  <li>Manufacturing defects</li>
+                  <li>Lens delamination</li>
+                  <li>Frame breakage (defects)</li>
+                  <li>Prescription errors (our side)</li>
+                  <li>Loose screws/alignment</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Accidental Damage Coverage -->
+            <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+              <button 
+                @click="open = open === 'damage' ? null : 'damage'" 
+                class="flex items-center justify-between w-full p-4 text-left md:cursor-default"
+                :class="{ 'border-b border-gray-100': open === 'damage' }"
+              >
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-s flex items-center justify-center flex-shrink-0">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <span class="font-semibold text-slate-800">Damage Plan</span>
+                </div>
+                <svg class="w-5 h-5 text-gray-400 transition-transform md:hidden" :class="{ 'rotate-180': open === 'damage' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div class="p-4 pt-0 md:block" :class="{ 'hidden': open !== 'damage' }" x-show="open === 'damage' || window.innerWidth >= 768" x-cloak>
+                <ul class="space-y-2 text-sm text-gray-600">
+                  <li>Scratched lenses</li>
+                  <li>Dropped frames</li>
+                  <li>Sat on glasses</li>
+                  <li>Sports accidents</li>
+                  <li>General wear & tear</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Not Covered -->
+            <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+              <button 
+                @click="open = open === 'not' ? null : 'not'" 
+                class="flex items-center justify-between w-full p-4 text-left md:cursor-default"
+                :class="{ 'border-b border-gray-100': open === 'not' }"
+              >
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </div>
+                  <span class="font-semibold text-slate-800">Not Covered</span>
+                </div>
+                <svg class="w-5 h-5 text-gray-400 transition-transform md:hidden" :class="{ 'rotate-180': open === 'not' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div class="p-4 pt-0 md:block" :class="{ 'hidden': open !== 'not' }" x-show="open === 'not' || window.innerWidth >= 768" x-cloak>
+                <ul class="space-y-2 text-sm text-gray-600">
+                  <li>Intentional damage</li>
+                  <li>Loss or theft</li>
+                  <li>Prescription changes</li>
+                  <li>Normal wear (no plan)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <p class="mt-4 text-xs text-center text-gray-500">
+            <a href="https://www.spex4less.com/terms" class="underline hover:text-s">View full terms and conditions</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Shop Categories - Compact -->
+      <section class="px-4 py-8 sm:px-6 md:py-12">
+        <div class="mx-auto max-w-5xl">
+          <h2 class="mb-4 text-xl font-bold text-center text-slate-800 sm:text-2xl">Shop With Confidence</h2>
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-4 md:gap-4">
+            <a href="{{store direct_url='glasses'}}" class="group block">
+              <div class="relative overflow-hidden rounded-lg aspect-square">
+                <img 
+                  src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/single_vision_block_3.webp" 
+                  alt="Glasses" 
+                  class="object-cover w-full h-full transition-transform group-hover:scale-105"
+                  loading="lazy"
+                  width="300"
+                  height="300"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <span class="absolute bottom-2 left-2 text-sm font-semibold text-white sm:text-base sm:bottom-3 sm:left-3">Glasses</span>
+              </div>
+            </a>
+            <a href="{{store direct_url='sunglasses'}}" class="group block">
+              <div class="relative overflow-hidden rounded-lg aspect-square">
+                <img 
+                  src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/prescription_sunglasses_block.webp" 
+                  alt="Sunglasses" 
+                  class="object-cover w-full h-full transition-transform group-hover:scale-105"
+                  loading="lazy"
+                  width="300"
+                  height="300"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <span class="absolute bottom-2 left-2 text-sm font-semibold text-white sm:text-base sm:bottom-3 sm:left-3">Sunglasses</span>
+              </div>
+            </a>
+            <a href="{{store direct_url='varifocal-glasses'}}" class="group block">
+              <div class="relative overflow-hidden rounded-lg aspect-square">
+                <img 
+                  src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/varifocal_block2.webp" 
+                  alt="Varifocals" 
+                  class="object-cover w-full h-full transition-transform group-hover:scale-105"
+                  loading="lazy"
+                  width="300"
+                  height="300"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <span class="absolute bottom-2 left-2 text-sm font-semibold text-white sm:text-base sm:bottom-3 sm:left-3">Varifocals</span>
+              </div>
+            </a>
+            <a href="{{store direct_url='sports-glasses'}}" class="group block">
+              <div class="relative overflow-hidden rounded-lg aspect-square">
+                <img 
+                  src="https://www.spex4less.com/media/mf_webp/jpg/media/wysiwyg/redesign/lenses_step.webp" 
+                  alt="Sports" 
+                  class="object-cover w-full h-full transition-transform group-hover:scale-105"
+                  loading="lazy"
+                  width="300"
+                  height="300"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <span class="absolute bottom-2 left-2 text-sm font-semibold text-white sm:text-base sm:bottom-3 sm:left-3">Sports</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reviews - Horizontal Scroll on Mobile -->
+      <section class="py-8 bg-gray-50 md:py-12">
+        <div class="mx-auto max-w-5xl">
+          <h2 class="px-4 mb-4 text-xl font-bold text-center text-slate-800 sm:px-6 sm:text-2xl">What Customers Say</h2>
+          
+          <div class="flex gap-4 px-4 pb-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide sm:px-6 md:grid md:grid-cols-3 md:overflow-visible md:pb-0">
+            <!-- Review 1 -->
+            <div class="flex-shrink-0 w-72 p-4 bg-white rounded-xl shadow-sm snap-start md:w-auto">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-medium text-slate-800">Phillip</span>
+                <div class="flex gap-0.5">
+                  <span class="text-amber-400">&#9733;</span>
+                  <span class="text-amber-400">&#9733;</span>
+                  <span class="text-amber-400">&#9733;</span>
+                  <span class="text-amber-400">&#9733;</span>
+                  <span class="text-amber-400">&#9733;</span>
+                </div>
+              </div>
+              <p class="text-sm text-gray-600 line-clamp-4">
+                "Very happy with my glasses. Easy to navigate the website, received progress updates, and the process was quicker than expected. Great quality - would definitely use Spex4Less again."
+              </p>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="flex-shrink-0 w-72 p-4 bg-white rounded-xl shadow-sm snap-start md:w-auto">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-medium text-slate-800">Ron</span>
+                <div class="flex gap-0.5">
+                  <span class="text-amber-400">&#9733;</span>
+                  <span class="text-amber-400">&#9733;</span>
+                  <span class="text-amber-400">&#9733;</span>
+                  <span class="text-amber-400">&#9733;</span>
+                  <span class="text-amber-400">&#9733;</span>
+                </div>
+              </div>
+              <p class="text-sm text-gray-600 line-clamp-4">
+                "Always a great service. Made a mistake with my order and it was fixed within 10 mins. The staff was great - I wouldn't buy glasses from anywhere else."
+              </p>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="flex-shrink-0 w-72 p-4 bg-white rounded-xl shadow-sm snap-start md:w-auto">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-medium text-slate-800">Steve</span>
+                <div class="flex gap-0.5">
+                  <span class="text-amber-400">&#9733;</span>
+                  <span class="text-amber-400">&#9733;</span>
+                  <span class="text-amber-400">&#9733;</span>
+                  <span class="text-amber-400">&#9733;</span>
+                  <span class="text-amber-400">&#9733;</span>
+                </div>
+              </div>
+              <p class="text-sm text-gray-600 line-clamp-4">
+                "It's always a five star experience. Been using Spex4Less for years. Extremely helpful, competitive prices, and surprisingly quick turnaround. What's not to like?"
+              </p>
+            </div>
+          </div>
+
+          <p class="mt-4 text-center">
+            <a href="{{store direct_url='customer-reviews'}}" class="text-sm font-medium text-s hover:underline">
+              See all 28,000+ reviews
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <!-- FAQ - Streamlined -->
+      <section id="faq" class="px-4 py-8 sm:px-6 md:py-12">
+        <div class="mx-auto max-w-3xl">
+          <h2 class="mb-6 text-xl font-bold text-center text-slate-800 sm:text-2xl">Common Questions</h2>
+          
+          <div class="space-y-2" x-data="{ selected: null }">
+            <!-- FAQ 1 -->
+            <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button 
+                type="button" 
+                class="flex items-center justify-between w-full p-4 text-left focus:outline-none focus:ring-2 focus:ring-s focus:ring-inset"
+                @click="selected = selected === 1 ? null : 1"
+              >
+                <span class="pr-4 text-sm font-medium text-slate-800 sm:text-base">How does the 30-day guarantee work?</span>
+                <svg class="w-5 h-5 text-gray-400 transition-transform duration-200 flex-shrink-0" :class="{ 'rotate-180': selected === 1 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div 
+                x-ref="faq1"
+                x-show="selected === 1"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 -translate-y-1"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-1"
+                class="px-4 pb-4"
+              >
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  Simply contact us within 30 days of receiving your glasses. We'll arrange a full refund once we receive them back - no questions asked. This applies whether you don't like the style, they don't fit right, or you've changed your mind.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button 
+                type="button" 
+                class="flex items-center justify-between w-full p-4 text-left focus:outline-none focus:ring-2 focus:ring-s focus:ring-inset"
+                @click="selected = selected === 2 ? null : 2"
+              >
+                <span class="pr-4 text-sm font-medium text-slate-800 sm:text-base">What's covered under the 12-month warranty?</span>
+                <svg class="w-5 h-5 text-gray-400 transition-transform duration-200 flex-shrink-0" :class="{ 'rotate-180': selected === 2 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div 
+                x-show="selected === 2"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 -translate-y-1"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-1"
+                class="px-4 pb-4"
+              >
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  Our warranty covers all manufacturing defects including frame defects, coating issues, lens delamination, loose screws, and any prescription errors from our side. We'll repair or replace them free of charge.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button 
+                type="button" 
+                class="flex items-center justify-between w-full p-4 text-left focus:outline-none focus:ring-2 focus:ring-s focus:ring-inset"
+                @click="selected = selected === 3 ? null : 3"
+              >
+                <span class="pr-4 text-sm font-medium text-slate-800 sm:text-base">Is the Accidental Damage Plan worth it?</span>
+                <svg class="w-5 h-5 text-gray-400 transition-transform duration-200 flex-shrink-0" :class="{ 'rotate-180': selected === 3 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div 
+                x-show="selected === 3"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 -translate-y-1"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-1"
+                class="px-4 pb-4"
+              >
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  For just £20, it covers accidents the warranty doesn't - scratched lenses, broken frames from drops, or even sitting on your glasses. If you're active, wear your glasses daily, or are prone to accidents, this plan can save you hundreds.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button 
+                type="button" 
+                class="flex items-center justify-between w-full p-4 text-left focus:outline-none focus:ring-2 focus:ring-s focus:ring-inset"
+                @click="selected = selected === 4 ? null : 4"
+              >
+                <span class="pr-4 text-sm font-medium text-slate-800 sm:text-base">How do I make a claim?</span>
+                <svg class="w-5 h-5 text-gray-400 transition-transform duration-200 flex-shrink-0" :class="{ 'rotate-180': selected === 4 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div 
+                x-show="selected === 4"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 -translate-y-1"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-1"
+                class="px-4 pb-4"
+              >
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  Contact us by phone, email, or live chat. For warranty claims, we'll assess and arrange repair or replacement. For accidental damage, just describe what happened and send photos. We process most claims within 24-48 hours.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button 
+                type="button" 
+                class="flex items-center justify-between w-full p-4 text-left focus:outline-none focus:ring-2 focus:ring-s focus:ring-inset"
+                @click="selected = selected === 5 ? null : 5"
+              >
+                <span class="pr-4 text-sm font-medium text-slate-800 sm:text-base">Who pays for return shipping?</span>
+                <svg class="w-5 h-5 text-gray-400 transition-transform duration-200 flex-shrink-0" :class="{ 'rotate-180': selected === 5 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div 
+                x-show="selected === 5"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 -translate-y-1"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-1"
+                class="px-4 pb-4"
+              >
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  For manufacturing errors or warranty claims, we provide a free returns label. For satisfaction guarantee returns, customers cover return shipping. We recommend a tracked service for peace of mind.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section - Simplified -->
+      <section id="contact" class="px-4 py-8 bg-gray-50 sm:px-6 md:py-12">
+        <div class="mx-auto max-w-3xl">
+          <h2 class="mb-6 text-xl font-bold text-center text-slate-800 sm:text-2xl">Need Help?</h2>
+          
+          <div class="grid gap-4 sm:grid-cols-3">
+            <!-- Phone -->
+            <a href="tel:01516326611" class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-sm hover:border-s transition-colors active:bg-gray-50">
+              <div class="flex items-center justify-center w-10 h-10 rounded-full bg-s text-white flex-shrink-0">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-.93.14l-2.39 1.88c-2.83-1.44-5.15-3.75-6.59-6.59l1.85-2.39c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500">Call us</p>
+                <p class="font-semibold text-slate-800">0151 632 6611</p>
+              </div>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:info@spex4less.com" class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-sm hover:border-s transition-colors active:bg-gray-50">
+              <div class="flex items-center justify-center w-10 h-10 rounded-full bg-s text-white flex-shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500">Email us</p>
+                <p class="font-semibold text-slate-800 text-sm">info@spex4less.com</p>
+              </div>
+            </a>
+
+            <!-- Live Chat -->
+            <button onclick="if(typeof Tawk_API !== 'undefined') Tawk_API.toggle();" class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-sm hover:border-s transition-colors active:bg-gray-50 text-left">
+              <div class="flex items-center justify-center w-10 h-10 rounded-full bg-s text-white flex-shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500">Live chat</p>
+                <p class="font-semibold text-slate-800">Start a chat</p>
+              </div>
+            </button>
+          </div>
+
+          <p class="mt-4 text-xs text-center text-gray-500">
+            Mon-Fri 9am-5pm, Sat 9am-12pm (excluding bank holidays)
+          </p>
+        </div>
+      </section>
+    </main>
+
+
+  </body>
+</html>

@@ -22,18 +22,6 @@
       },
     };
   </script>
-  <style>
-    /* Hide scrollbar on mobile while maintaining scroll functionality */
-    @media (max-width: 1023px) {
-      .content-wrapper {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-      }
-      .content-wrapper::-webkit-scrollbar {
-        display: none;  /* Chrome, Safari, Opera */
-      }
-    }
-  </style>
 </head>
 <body class="bg-white">
 <!--
@@ -61,35 +49,45 @@
   - Show all results ID: #show-all-results (hide by default with 'hidden' class, show when searching)
   ====================================================================================
 -->
-  <section class="max-h-[100svh] flex flex-col overflow-hidden">
-    <div class="container mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-8 xl:px-8 py-2 flex items-center flex-shrink-0">
-      <div class="flex-1 flex items-center gap-4">
-        <input
-          type="text"
-          placeholder="Browse"
-          class="flex-1 min-w-0 px-4 py-1.5 rounded-full border border-gray-300 text-base lg:text-base font-semibold leading-tight placeholder:text-sm lg:placeholder:text-sm placeholder:text-gray-400 placeholder:font-normal caret-s selection:bg-s/20 focus:outline-none focus:ring-2 focus:ring-s"
-        />
+  <section class="max-h-[100svh] w-full flex flex-col overflow-hidden">
+    <div class="w-full pt-6 pb-2 flex-shrink-0">
+      <div class="max-w-[1750px] mx-auto px-4 sm:px-6 md:px-8 lg:px-8 xl:px-8 flex items-center gap-4">
+        <a href="/" class="hidden lg:flex flex-shrink-0">
+          <img
+            src="/media/mf_webp/png/media/wysiwyg/homepageimages/2025/s4l_logo.webp"
+            alt="Spex4Less Logo"
+            class="h-10 lg:h-12 w-auto object-contain"
+          />
+        </a>
+        <div class="flex-1 flex items-center gap-4">
+          <input
+            type="text"
+            placeholder="Browse"
+            class="flex-1 min-w-0 px-4 py-1.5 rounded-full border border-gray-300 text-base lg:text-base font-semibold leading-tight placeholder:text-sm lg:placeholder:text-sm placeholder:text-gray-400 placeholder:font-normal caret-s selection:bg-s/20 focus:outline-none focus:ring-2 focus:ring-s"
+          />
 
-        <button
-          id="cancel-search"
-          class="flex items-center justify-center text-p hover:text-s focus:outline-none focus:ring-2 focus:ring-s rounded flex-shrink-0"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+          <button
+            id="cancel-search"
+            class="flex items-center justify-center text-p hover:text-s focus:outline-none focus:ring-2 focus:ring-s rounded flex-shrink-0"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
 
     <!-- Search Mega-Dropdown -->
     <div class="content-wrapper flex-1 overflow-y-auto overscroll-contain pb-8 lg:pb-0">
-      <div class="container mx-auto">
+      <div class="w-full">
       <!-- Search Suggestions -->
       <!-- BACKEND: Top searches should ALWAYS display with default options, regardless of search input -->
-      <div class="px-4 sm:px-6 md:px-8 lg:px-8 xl:px-8 py-1">
-        <div class="flex items-center gap-2 flex-wrap mb-1">
-          <h3 class="text-lg lg:text-base font-semibold text-p whitespace-nowrap">Top searches:</h3>
-          <div class="flex flex-wrap gap-3 lg:gap-2" data-s4l-chips role="group" aria-label="Popular search terms">
+      <div class="py-1">
+        <div class="max-w-[1750px] mx-auto px-4 sm:px-6 md:px-8 lg:px-8 xl:px-8">
+          <div class="flex items-center gap-2 flex-wrap mb-1">
+            <h3 class="text-lg lg:text-base font-semibold text-p whitespace-nowrap">Top searches:</h3>
+            <div class="flex flex-wrap gap-3 lg:gap-2" data-s4l-chips role="group" aria-label="Popular search terms">
             <button data-chip class="px-3 lg:px-3 py-1.5 lg:py-1 bg-l text-p text-sm lg:text-base font-medium rounded-full hover:bg-s hover:text-white focus:outline-none focus:ring-2 focus:ring-s">
               ray ban
             </button>
@@ -116,10 +114,11 @@
             </button>
           </div>
         </div>
+        </div>
       </div>
 
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-16 px-4 sm:px-6 md:px-8 lg:px-8 xl:px-8 py-1">
+      <div class="max-w-[1750px] mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-16 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 py-1">
         <!-- Products: wide, responsive multi-column layout -->
         <!--
           BACKEND:
@@ -346,6 +345,7 @@
         </div>
       </div>
       </div>
+      </div>
     </div>
   </section>
   <script>
@@ -365,6 +365,47 @@
       };
       lockBackgroundScroll();
       window.addEventListener('resize', lockBackgroundScroll);
+    })();
+
+    // Truncate links in Resources, Categories, and Contact sections to 30 characters
+    (function () {
+      const truncateText = (text, maxLength) => {
+        if (text.length <= maxLength) return text;
+        return text.substring(0, maxLength) + '...';
+      };
+
+      // Resources section
+      const resourceLinks = document.querySelectorAll('[data-s4l-cats] a[data-cat]');
+      resourceLinks.forEach(link => {
+        const text = link.textContent.trim();
+        if (text.length > 30) {
+          link.textContent = truncateText(text, 30);
+        }
+      });
+
+      // Categories section
+      const categoryLinks = document.querySelectorAll('[data-s4l-categories] a[data-category]');
+      categoryLinks.forEach(link => {
+        const text = link.textContent.trim();
+        if (text.length > 30) {
+          link.textContent = truncateText(text, 30);
+        }
+      });
+
+      // Contact section - phone and email links
+      const contactSection = document.querySelector('h3 a[href="/contact-us"]');
+      if (contactSection) {
+        const contactDiv = contactSection.closest('h3').nextElementSibling;
+        if (contactDiv && contactDiv.classList.contains('space-y-1')) {
+          const contactLinks = contactDiv.querySelectorAll('a');
+          contactLinks.forEach(link => {
+            const text = link.textContent.trim();
+            if (text.length > 30) {
+              link.textContent = truncateText(text, 30);
+            }
+          });
+        }
+      }
     })();
   </script>
 </body>
