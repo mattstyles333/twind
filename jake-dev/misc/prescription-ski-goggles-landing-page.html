@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <title>Prescription Ski Glasses - Your Complete Guide | Spex4Less</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script>
+      tailwind.config = {
+        darkMode: false,
+        theme: {
+          extend: {
+            colors: {
+              p: "#1f2937",
+              s: "#1E3A8A",
+              l: "#f3f4f6",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white text-gray-900">
+
+    <main>
+      <!-- Hero Section -->
+      <div class="relative lg:grid lg:grid-cols-2">
+        <img
+          class="absolute h-full w-full object-cover lg:relative"
+          src="{{media url='wysiwyg/redesign/ski_glasses_banner.png'}}"
+          width="950"
+          height="435"
+          alt="Skier wearing prescription ski goggles on a snowy mountain"
+        />
+        <div
+          class="relative px-4 md:px-8 py-10 sm:py-12 md:py-16 lg:py-24 bg-gradient-to-br from-s to-p"
+        >
+          <div class="mx-auto flex max-w-3xl flex-col gap-5 sm:gap-6 md:gap-8">
+            <h1
+              class="text-left text-3xl font-extrabold leading-tight text-white drop-shadow-lg md:text-center md:text-4xl lg:text-left xl:text-5xl"
+            >
+              Prescription Ski Goggles
+            </h1>
+            <p
+              class="max-w-2xl text-left text-base md:text-lg leading-relaxed text-white/90 md:text-center lg:text-left lg:text-xl"
+            >
+            Discover our range of prescription ski goggles and optical inserts, custom-glazed in our UK laboratory. Get slope-ready with crystal-clear vision and lenses tailored to your exact prescription.
+            </p>
+            <div class="flex flex-wrap gap-4 md:justify-center lg:justify-start">
+              <a href="{{store direct_url='goggle-inserts-home-trial-pack'}}" class="inline-flex items-center px-6 py-3 font-semibold text-s bg-white rounded-lg hover:bg-s hover:text-white transition-colors focus:ring-2 focus:ring-s">
+                Try Before You Buy
+              </a>
+              <a href="#choosing" class="inline-flex items-center px-6 py-3 font-semibold text-white border-2 border-white/50 rounded-lg hover:bg-white hover:text-s transition-colors focus:ring-2 focus:ring-s">
+                Shop Ski Inserts
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Jump Navigation -->
+      <nav class="border-b border-gray-200 py-3 px-2 sm:px-4 mb-8 bg-white" x-data="{ active: 'inserts' }">
+        <div class="mx-auto max-w-[1500px]">
+          <div class="flex flex-wrap justify-center gap-1.5 sm:gap-2" role="group" aria-label="Page navigation">
+            <a href="#inserts" @click="active = 'inserts'"
+              class="px-2 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm font-medium rounded-full border focus:outline-none focus:ring-2 focus:ring-s transition-colors"
+              :class="active === 'inserts' ? 'bg-s text-white border-s' : 'bg-white text-p border-gray-400 hover:bg-s hover:text-white hover:border-s'">About Inserts</a>
+            <a href="#choosing" @click="active = 'choosing'"
+              class="px-2 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm font-medium rounded-full border focus:outline-none focus:ring-2 focus:ring-s transition-colors"
+              :class="active === 'choosing' ? 'bg-s text-white border-s' : 'bg-white text-p border-gray-400 hover:bg-s hover:text-white hover:border-s'">Insert Options</a>
+            <a href="#ordering-steps" @click="active = 'ordering-steps'"
+              class="px-2 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm font-medium rounded-full border focus:outline-none focus:ring-2 focus:ring-s transition-colors"
+              :class="active === 'ordering-steps' ? 'bg-s text-white border-s' : 'bg-white text-p border-gray-400 hover:bg-s hover:text-white hover:border-s'">How to Order</a>
+            <a href="#faq" @click="active = 'faq'"
+              class="px-2 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm font-medium rounded-full border focus:outline-none focus:ring-2 focus:ring-s transition-colors"
+              :class="active === 'faq' ? 'bg-s text-white border-s' : 'bg-white text-p border-gray-400 hover:bg-s hover:text-white hover:border-s'">FAQs</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Quick Navigation Cards Section -->
+      <section class="px-4 mx-auto max-w-[1500px] sm:px-6 md:px-8 mb-8 sm:mb-12">
+        <div class="flex flex-col gap-4 lg:flex-row lg:gap-6">
+          <!-- Shop Cards Column - First on mobile -->
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1 lg:w-1/3 lg:gap-3 lg:order-2">
+            <!-- Shop Ski Glasses Card -->
+            <a
+              href="{{store direct_url='ski-glasses'}}"
+              class="block overflow-hidden relative w-full aspect-[3/2] sm:aspect-[4/3] lg:aspect-[16/9] rounded-xl shadow-sm hover:shadow-lg transition-shadow"
+            >
+              <img
+                class="object-cover object-center absolute top-0 left-0 w-full h-full"
+                src="{{media url='wysiwyg/redesign/ski_glasses_banner.png'}}"
+                width="950"
+                height="435"
+                loading="lazy"
+                alt="Shop prescription ski glasses"
+                />
+              <div class="absolute bottom-0 left-0 p-4 sm:p-5 w-full bg-gradient-to-t to-transparent from-black/80">
+                <span class="text-lg sm:text-xl lg:text-xl font-bold text-white drop-shadow-md">Shop Ski Glasses</span>
+              </div>
+            </a>
+
+            <!-- Shop Ski Sunglasses Card -->
+            <a
+              href="{{store direct_url='ski-sunglasses'}}"
+              class="block overflow-hidden relative w-full aspect-[3/2] sm:aspect-[4/3] lg:aspect-[16/9] rounded-xl shadow-sm hover:shadow-lg transition-shadow"
+            >
+              <img
+                class="object-cover object-center absolute top-0 left-0 w-full h-full"
+                src="{{media url='wysiwyg/new/ski-banner.png'}}"
+                width="1200"
+                height="600"
+                loading="lazy"
+                alt="Shop ski sunglasses"
+              />
+              <div class="absolute bottom-0 left-0 p-4 sm:p-5 w-full bg-gradient-to-t to-transparent from-black/80">
+                <span class="text-lg sm:text-xl lg:text-xl font-bold text-white drop-shadow-md">Shop Ski Sunglasses</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Home Trial Large Card - Second on mobile -->
+          <div class="lg:w-2/3 lg:order-1">
+            <div class="w-full bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow h-full flex flex-col">
+              <!-- Image container -->
+              <a href="{{store direct_url='goggle-inserts-home-trial-pack'}}" class="block overflow-hidden">
+                <img
+                  class="object-cover w-full h-44 sm:h-56 md:h-72 scale-125 sm:scale-100"
+                  src="{{media url='wysiwyg/new/insert-home-trial_3_.png'}}"
+                  width="1660"
+                  height="900"
+                  loading="lazy"
+                  alt="Prescription ski goggle insert home trial pack"
+                />
+              </a>
+              <!-- Text container -->
+              <div class="p-4 sm:p-5 md:p-6 flex flex-col flex-1">
+                <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-slate-800 mb-2">
+                  Try Before You Buy - Home Trial Pack
+                </h3>
+                <p class="text-base leading-relaxed text-gray-700 mb-4">
+                  Not sure which insert fits your goggles? Order our Home Trial Pack for just £4.95 and test all three insert sizes in your own goggles before committing.
+                </p>
+                <div class="flex flex-wrap gap-3 mt-auto">
+                  <a
+                    href="{{store direct_url='goggle-inserts-home-trial-pack'}}"
+                    class="inline-flex items-center px-6 py-3 text-base font-semibold text-white bg-s rounded-lg hover:bg-blue-800 transition-colors w-fit"
+                  >
+                    Order Trial Pack
+                  </a>
+                  <a
+                    href="#choosing"
+                    class="inline-flex items-center px-6 py-3 text-base font-semibold text-s border-2 border-s/50 rounded-lg hover:bg-s hover:text-white transition-colors w-fit"
+                  >
+                    Shop Ski Inserts
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="border-t border-gray-300 mx-4 sm:mx-6 md:mx-8 max-w-[1500px] lg:mx-auto mb-6 sm:mb-8"></div>
+
+      <!-- Ski Goggle Inserts Educational Section -->
+      <section id="inserts" class="px-4 mx-auto max-w-[1500px] sm:px-6 md:px-8 mb-8 sm:mb-12 scroll-mt-24">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-3">
+          Prescription Ski Goggle Inserts Explained
+        </h2>
+        <p class="text-base md:text-lg leading-relaxed text-gray-700 mb-6">
+          Already own ski goggles? Our <a href="{{store direct_url='goggle-inserts-home-trial-pack'}}" class="text-s underline hover:text-blue-800">prescription ski goggle inserts</a> clip inside your existing goggles, custom-glazed to your prescription for clear vision in demanding mountain conditions.
+        </p>
+
+        <div class="grid gap-6 lg:grid-cols-3">
+          <div class="lg:col-span-2">
+            <div class="space-y-4 sm:space-y-6 h-full flex flex-col">
+              <!-- Feature 1 -->
+              <div class="bg-gray-200 rounded-xl p-5 sm:p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">
+                  A Simple Prescription Solution
+                </h3>
+                <p class="text-base leading-relaxed text-gray-700">
+                  Get specialist clarity without time-consuming appointments. Our fully glazed ski goggle inserts clip securely inside your goggles without affecting fit or visibility, even in fast descents and changing conditions.
+                </p>
+              </div>
+
+              <!-- Feature 2 -->
+              <div class="bg-gray-200 rounded-xl p-5 sm:p-6 flex-1 flex flex-col">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">
+                  Universal Fit, With Options for Total Confidence
+                </h3>
+                <p class="text-base leading-relaxed text-gray-700 mb-3">
+                  Our <a href="{{store direct_url='universal-prescription-skiing-insert-pi003'}}" class="text-s underline hover:text-blue-800">PI-003</a> insert fits around 90% of ski goggles, offering a simple, reliable option for most skiers.
+                </p>
+                <p class="text-base leading-relaxed text-gray-700 mb-3">
+                  For more specialised shapes, <a href="{{store direct_url='universal-prescription-skiing-insert-pi001'}}" class="text-s underline hover:text-blue-800">PI-001</a> and <a href="{{store direct_url='universal-prescription-skiing-insert-pi002'}}" class="text-s underline hover:text-blue-800">PI-002</a> extend compatibility to roughly 99% of goggles.
+                </p>
+                <p class="text-base leading-relaxed text-gray-700 mb-4">
+                  Want to be certain? Our <a href="{{store direct_url='goggle-inserts-home-trial-pack'}}" class="text-s underline hover:text-blue-800">Home Trial Pack</a> lets you test the fit in your own goggles before ordering.
+                </p>
+                <a
+                  href="{{store direct_url='goggle-inserts-home-trial-pack'}}"
+                  class="inline-flex items-center px-6 py-3 text-base font-semibold text-white bg-s rounded-lg hover:bg-blue-800 transition-colors mt-auto w-fit"
+                >
+                  Order Trial Pack
+                </a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img
+              src="{{media url='/wysiwyg/banners/insert_demo.jpg'}}"
+              alt="Prescription ski goggle insert demonstration"
+              class="object-contain w-full max-w-sm mx-auto h-auto rounded-lg shadow-md lg:max-w-none"
+              style="height: auto !important; max-height: none !important;"
+              width="800"
+              height="800"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="border-t border-gray-300 mx-4 sm:mx-6 md:mx-8 max-w-[1500px] lg:mx-auto mb-8 sm:mb-12"></div>
+
+      <!-- Insert Options Section -->
+      <section id="choosing" class="px-4 mx-auto max-w-[1500px] sm:px-6 md:px-8 mb-8 sm:mb-12 scroll-mt-24">
+        <h2 class="text-2xl font-bold text-slate-800 mb-6 text-center md:text-3xl">Which Insert is Right for You?</h2>
+
+        <div class="grid gap-4 sm:gap-6 sm:grid-cols-2 md:grid-cols-3 mb-8">
+          <!-- Insert 1: PI-001 -->
+          <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+            <div class="aspect-[4/3] sm:aspect-[800/700] overflow-hidden">
+              <img
+                src="{{media url='wysiwyg/new/pi001.png'}}"
+                alt="PI-001 Prescription Ski Goggle Insert"
+                class="w-full h-full object-cover"
+                width="800"
+                height="700"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-4 sm:p-5">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">PI-001 Insert</h3>
+              <p class="text-sm text-gray-600 mb-4">Designed for larger goggle frames. Ideal for spacious or larger-profile goggles that can accommodate a bigger insert.</p>
+              <a
+                href="{{store direct_url='universal-prescription-skiing-insert-pi001'}}"
+                class="inline-flex px-5 py-2.5 text-sm font-semibold text-white bg-s rounded-lg hover:bg-blue-800 transition-colors"
+              >
+                View Product
+              </a>
+            </div>
+          </div>
+
+          <!-- Insert 2: PI-002 -->
+          <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+            <div class="aspect-[4/3] sm:aspect-[800/700] overflow-hidden">
+              <img
+                src="{{media url='wysiwyg/new/pi002.png'}}"
+                alt="PI-002 Prescription Ski Goggle Insert"
+                class="w-full h-full object-cover"
+                width="800"
+                height="700"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-4 sm:p-5">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">PI-002 Insert</h3>
+              <p class="text-sm text-gray-600 mb-4">Designed for smaller goggle frames. Ideal for compact or smaller-profile goggles where space is limited.</p>
+              <a
+                href="{{store direct_url='universal-prescription-skiing-insert-pi002'}}"
+                class="inline-flex px-5 py-2.5 text-sm font-semibold text-white bg-s rounded-lg hover:bg-blue-800 transition-colors"
+              >
+                View Product
+              </a>
+            </div>
+          </div>
+
+          <!-- Insert 3: PI-003 -->
+          <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow sm:col-span-2 md:col-span-1">
+            <div class="aspect-[4/3] sm:aspect-[800/700] overflow-hidden">
+              <img
+                src="{{media url='wysiwyg/new/pioo3.png'}}"
+                alt="PI-003 Prescription Ski Goggle Insert"
+                class="w-full h-full object-cover"
+                width="800"
+                height="700"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-4 sm:p-5">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">PI-003 Insert</h3>
+              <p class="text-sm text-gray-600 mb-4">Our most popular universal insert. Fits approximately 90% of ski goggles on the market with a reliable, secure fit.</p>
+              <a
+                href="{{store direct_url='universal-prescription-skiing-insert-pi003'}}"
+                class="inline-flex px-5 py-2.5 text-sm font-semibold text-white bg-s rounded-lg hover:bg-blue-800 transition-colors"
+              >
+                View Product
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Home Trial CTA -->
+        <div class="text-center">
+          <p class="text-base text-gray-700 mb-3">Not sure which insert fits your goggles?</p>
+          <a
+            href="{{store direct_url='goggle-inserts-home-trial-pack'}}"
+            class="inline-flex items-center text-s font-semibold underline hover:text-blue-800 transition-colors"
+          >
+            Order a Home Trial Pack
+          </a>
+        </div>
+      </section>
+
+      <!-- Bifocal & Coatings Section -->
+      <section id="coatings" class="px-4 mx-auto max-w-[1500px] sm:px-6 md:px-8 mb-8 sm:mb-12">
+        <div class="grid gap-4 sm:gap-6 md:grid-cols-2">
+          <!-- Bifocal Large Card -->
+          <div>
+            <div class="w-full bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow h-full flex flex-col">
+              <!-- Image container -->
+              <div class="h-40 sm:h-48 lg:h-64 xl:h-72">
+                <img
+                  class="object-cover w-full h-full"
+                  src="{{media url='wysiwyg/new/bifocal-ski-insert_1_.png'}}"
+                  width="1200"
+                  height="600"
+                  loading="lazy"
+                  alt="Low-set bifocal prescription ski goggle insert"
+                />
+              </div>
+              <!-- Content - stacked on mobile, row on tablet -->
+              <div class="p-4 sm:p-5 flex flex-col md:flex-row md:gap-4 md:items-center flex-1">
+                <!-- SVG Icon -->
+                <div class="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 flex items-center justify-center mb-3 md:mb-0 mx-auto md:mx-0">
+                  <svg width="128" height="128" viewBox="0 0 1572 1267" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                    <path d="M99.5137 889.5L174.514 1029L306.514 1145.5L485.514 1221H908.514L1082.01 1192L1262.51 1116.5L1386.01 966.5L1490.01 754.5L1559.51 338.5L1490.01 192L1332.01 84L1116.51 42H631.014L365.014 84L211.014 134L72.0137 261.5L26.0137 415.5V631L99.5137 889.5Z" fill="white" stroke="#1F2937" stroke-width="12"/>
+                    <path d="M1135.01 735C1135.01 1003.41 917.424 1221 649.014 1221C380.603 1221 163.014 1003.41 163.014 735C481.427 735 625.272 735 625.272 735C625.272 735 720.936 735 1135.01 735Z" fill="#F3F4F6"/>
+                    <path d="M100.514 524.5C80.1137 282.9 265.014 169.167 360.014 142.5C441.891 106.5 646.514 78.0002 953.514 81.0002C1199.11 83.4002 1348.18 157.333 1392.01 194C1472.01 260.92 1510.01 359.5 1472.01 565.5C1434.01 771.5 1384.51 880 1364.51 908.5C1350.35 942 1280.31 1031.5 1113.51 1121.5C946.714 1211.5 647.347 1183 518.514 1157.5C471.847 1147.33 359.714 1107.9 284.514 1031.5C190.514 936 126.014 826.5 100.514 524.5Z" stroke="#1F2937" stroke-width="20" stroke-dasharray="40 40"/>
+                    <path d="M459.002 854.475H437.014V1063H793.014V854.475H761.602M489.234 878.644L579.077 894.382M731.247 878.644L640.843 894.382M489.234 911.806L579.077 927.543M731.247 911.806L640.843 927.543M489.234 945.529L579.077 961.267M489.234 979.253L579.077 994.991M731.247 945.529L640.843 961.267M731.247 979.253L640.843 994.991M455.544 828.828C490.192 821.485 569.359 815.19 608.837 848.761V1059.63C577.338 1048.44 502.582 1027.74 455.544 1034.45V828.828ZM762.692 828.828C728.043 821.485 648.877 815.19 609.399 848.761V1059.63C640.897 1048.44 715.654 1027.74 762.692 1034.45V828.828Z" stroke="#1F2937" stroke-width="12"/>
+                    <path d="M25.724 514.793C3.33809 247.56 206.238 121.761 310.486 92.2648C400.334 52.4454 624.877 20.9217 961.763 24.24C1231.27 26.8946 1394.85 108.672 1442.95 149.229C1530.74 223.249 1572.44 332.287 1530.74 560.143C1489.04 787.998 1434.72 908.01 1412.77 939.533C1397.23 976.588 1320.38 1075.58 1137.34 1175.13C954.301 1274.68 625.791 1243.16 484.416 1214.95C433.206 1203.71 310.157 1160.09 227.636 1075.58C124.485 969.951 53.7064 848.834 25.724 514.793Z" stroke="#1F2937" stroke-width="48"/>
+                    <path d="M768.672 515.5L901.837 342.684L1036.5 515.5H768.672ZM768.672 515.5H533.014L733.51 255.902L844.232 399.541" stroke="#1F2937" stroke-width="14"/>
+                    <circle cx="960.191" cy="255.902" r="33.9023" stroke="#1F2937" stroke-width="14"/>
+                  </svg>
+                </div>
+                <!-- Text content -->
+                <div class="text-center md:text-left flex-1">
+                  <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                    Low-Set Bifocal Inserts
+                  </h3>
+                  <p class="text-base leading-relaxed text-gray-600 mb-3">
+                    Need reading correction on the slopes? Our bifocal inserts position the reading segment at the bottom for easy access.
+                  </p>
+                  <a
+                    href="{{store direct_url='prescription-ski-goggle-inserts'}}"
+                    class="inline-flex items-center text-s font-semibold underline hover:text-blue-800 transition-colors"
+                  >
+                    Shop now
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coating Cards Column -->
+          <div class="flex flex-col gap-4 h-full">
+            <h3 class="text-xl md:text-2xl font-bold text-slate-800 underline decoration-2 underline-offset-4">Coatings: De-Mistified</h3>
+
+            <!-- Anti-Fog Coating Card -->
+            <div class="bg-gray-200 rounded-xl p-4 flex flex-row gap-4 items-center">
+              <div class="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 flex items-center justify-center">
+                <svg width="96" height="96" viewBox="0 0 1572 1267" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                  <path d="M100.5 891.5L175.5 1031L307.5 1147.5L486.5 1223H909.5L1083 1194L1263.5 1118.5L1387 968.5L1491 756.5L1560.5 340.5L1491 194L1333 86L1117.5 44H632L366 86L212 136L73 263.5L27 417.5V633L100.5 891.5Z" fill="white" stroke="black"/>
+                  <path d="M101.5 524.5C81.1 282.9 266 169.167 361 142.5C442.878 106.5 647.5 78.0002 954.5 81.0002C1200.1 83.4002 1349.17 157.333 1393 194C1473 260.92 1511 359.5 1473 565.5C1435 771.5 1385.5 880 1365.5 908.5C1351.33 942 1281.3 1031.5 1114.5 1121.5C947.7 1211.5 648.333 1183 519.5 1157.5C472.833 1147.33 360.7 1107.9 285.5 1031.5C191.5 936 127 826.5 101.5 524.5Z" stroke="#1F2937" stroke-width="20" stroke-dasharray="40 40"/>
+                  <path d="M26.7103 514.793C4.32442 247.56 207.224 121.761 311.472 92.2648C401.321 52.4454 625.863 20.9217 962.749 24.24C1232.26 26.8946 1395.84 108.672 1443.94 149.229C1531.72 223.249 1573.42 332.287 1531.72 560.143C1490.03 787.998 1435.71 908.01 1413.76 939.533C1398.21 976.588 1321.36 1075.58 1138.32 1175.13C955.287 1274.68 626.777 1243.16 485.402 1214.95C434.193 1203.71 311.143 1160.09 228.623 1075.58C125.472 969.951 54.6927 848.834 26.7103 514.793Z" stroke="#1F2937" stroke-width="48"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M499.711 279.582C498.152 281.95 496.674 289.765 495.347 302.634C490.832 346.412 479.865 373.515 456.672 398.194C435.203 421.044 407.131 434.529 367.041 441.255C342.426 445.385 340.972 446.041 341 453.018C341.039 462.281 343.55 463.694 363.976 465.962C401.842 470.166 432.643 484.823 457.253 510.347C481.209 535.193 491.121 560.273 496.786 610.399C497.867 619.939 499.56 628.716 500.55 629.905C502.758 632.552 510.519 632.731 513.978 630.212C515.838 628.858 516.893 625.136 517.893 616.382C524.722 556.589 532.777 536.179 560.427 508.639C576.385 492.746 584.109 487.502 604.411 478.789C619.091 472.488 634.311 468.384 651.58 466.07C658.217 465.179 665.75 463.577 668.323 462.507C672.649 460.707 673 460.07 673 454.032C673 448.001 672.648 447.359 668.37 445.605C665.822 444.561 658.103 442.971 651.214 442.072C582.857 433.145 537.989 395.038 523.289 333.417C521.671 326.641 519.503 312.199 518.467 301.326C516.352 279.107 514.921 276 506.803 276C503.313 276 501.448 276.942 499.711 279.582ZM522.105 388.489C525.447 394.087 533.986 404.644 541.084 411.949C558.015 429.371 575.805 441.28 599.614 451.131L605.314 453.491L594.626 458.195C555.74 475.311 530.54 499.561 513.069 536.677L507.343 548.839L498.617 531.886C493.817 522.564 486.899 511.086 483.243 506.38C469.189 488.299 448.505 472.419 423.431 460.457L409.36 453.744L424.466 446.433C432.776 442.411 444.279 435.882 450.032 431.924C471.76 416.97 493.75 389.789 502.899 366.575L506.698 356.937L511.364 367.624C513.931 373.502 518.765 382.892 522.105 388.489Z" fill="#FFBD13"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M1003.28 539.305C940.097 557.574 906.811 567.921 906.779 569.303C906.764 569.904 913.533 576.996 921.822 585.061L936.893 599.724L920.71 616.738C877.008 662.683 824.238 717.441 823.662 717.441C822.908 717.441 807.266 701.17 731.37 621.439C700.687 589.205 673.326 560.491 670.569 557.631L665.557 552.43L655.212 563.305C649.523 569.286 644.855 574.656 644.84 575.239C644.806 576.589 643.838 575.552 750.336 688.167C764.866 703.533 782.199 721.969 788.851 729.135L800.948 742.165L797.909 745.641C796.236 747.554 784.66 759.838 772.183 772.939L749.499 796.758L736.585 783.34C729.484 775.961 706.905 752.263 686.411 730.679C619.136 659.823 592.564 632.335 591.351 632.335C589.596 632.335 571.037 652.077 571.054 653.927C571.07 655.793 576.685 661.841 646.688 735.407C676.135 766.352 708.679 800.607 719.009 811.529L737.789 831.387L602.394 831.627L467 831.866V852.194V872.522L563.237 872.743C717.872 873.101 1131.15 872.518 1157.23 871.905L1181.13 871.344L1180.87 851.838L1180.62 832.333L1045.53 832.094C963.892 831.948 910.557 831.509 910.747 830.985C910.92 830.506 917.428 823.38 925.211 815.148C956.275 782.291 1095.88 635.209 1102.1 628.784L1108.74 621.925L1119.14 631.476C1132.08 643.354 1140.27 650.302 1141.34 650.302C1142.44 650.302 1167.07 549.393 1168.48 539.135C1169.02 535.208 1168.95 535.07 1166.79 535.578C1155.66 538.193 1089.95 557.37 1058.37 567.221C1056.68 567.748 1055.29 568.679 1055.29 569.289C1055.28 569.898 1062.06 576.993 1070.36 585.054L1085.44 599.711L1053.16 633.753C1035.41 652.476 996.174 693.702 965.972 725.363C935.772 757.027 908.082 786.062 904.441 789.886L897.82 796.84L875.593 773.107C845.476 740.949 846.763 742.523 848.528 740.003C850.104 737.756 876.107 710.151 927.031 656.668L960.137 621.898L963.973 625.548C977.001 637.937 991.319 650.347 992.235 650.041C992.824 649.846 993.817 647.921 994.442 645.764C996.957 637.073 1020.3 538.871 1020.3 536.975C1020.3 535.853 1019.77 534.965 1019.12 535.001C1018.47 535.036 1011.34 536.974 1003.28 539.305ZM868.694 812.475L884.904 829.496L880.143 830.213C877.526 830.607 849.893 830.82 818.74 830.685L762.096 830.442L773.118 818.621C779.181 812.12 793.08 797.515 804.005 786.166L823.866 765.531L838.175 780.492C846.045 788.721 859.778 803.113 868.694 812.475Z" fill="#1F2937"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h4 class="text-base font-bold text-gray-800 mb-1">Anti-Fog Coating</h4>
+                <p class="text-base text-gray-600 leading-relaxed">
+                  Prevents condensation in challenging mountain conditions.
+                </p>
+              </div>
+            </div>
+
+            <!-- Anti-Scratch Coating Card -->
+            <div class="bg-gray-200 rounded-xl p-4 flex flex-row gap-4 items-center">
+              <div class="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 flex items-center justify-center">
+                <svg width="96" height="96" viewBox="0 0 1572 1267" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                  <path d="M93.5 890.5L168.5 1030L300.5 1146.5L479.5 1222H902.5L1076 1193L1256.5 1117.5L1380 967.5L1484 755.5L1553.5 339.5L1484 193L1326 85L1110.5 43H625L359 85L205 135L66 262.5L20 416.5V632L93.5 890.5Z" fill="white" stroke="black"/>
+                  <path d="M101.5 524.5C81.1 282.9 266 169.167 361 142.5C442.878 106.5 647.5 78.0002 954.5 81.0002C1200.1 83.4002 1349.17 157.333 1393 194C1473 260.92 1511 359.5 1473 565.5C1435 771.5 1385.5 880 1365.5 908.5C1351.33 942 1281.3 1031.5 1114.5 1121.5C947.7 1211.5 648.333 1183 519.5 1157.5C472.833 1147.33 360.7 1107.9 285.5 1031.5C191.5 936 127 826.5 101.5 524.5Z" stroke="#1F2937" stroke-width="20" stroke-dasharray="40 40"/>
+                  <path d="M26.7103 514.793C4.32442 247.56 207.224 121.761 311.472 92.2648C401.321 52.4454 625.863 20.9217 962.749 24.24C1232.26 26.8946 1395.84 108.672 1443.94 149.229C1531.72 223.249 1573.42 332.287 1531.72 560.143C1490.03 787.998 1435.71 908.01 1413.76 939.533C1398.21 976.588 1321.36 1075.58 1138.32 1175.13C955.287 1274.68 626.777 1243.16 485.402 1214.95C434.193 1203.71 311.143 1160.09 228.623 1075.58C125.472 969.951 54.6927 848.834 26.7103 514.793Z" stroke="#1F2937" stroke-width="48"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M784.433 192.477C782.493 195.437 780.654 205.206 779.004 221.292C773.388 276.014 759.744 309.894 730.893 340.743C704.186 369.305 669.265 386.161 619.394 394.568C588.774 399.731 586.965 400.551 587 409.272C587.048 420.851 590.172 422.618 615.582 425.452C662.686 430.707 701.002 449.029 731.616 480.934C761.416 511.992 773.747 543.341 780.795 605.999C782.138 617.924 784.245 628.895 785.477 630.381C788.223 633.69 797.878 633.914 802.18 630.765C804.495 629.073 805.807 624.42 807.051 613.477C815.545 538.736 825.566 513.224 859.962 478.799C879.813 458.933 889.422 452.378 914.677 441.487C932.939 433.611 951.872 428.48 973.353 425.587C981.61 424.474 990.982 422.471 994.182 421.133C999.563 418.883 1000 418.088 1000 410.54C1000 403.002 999.562 402.199 994.24 400.006C991.07 398.701 981.468 396.714 972.899 395.589C887.864 384.432 832.05 336.797 813.763 259.772C811.751 251.301 809.053 233.249 807.764 219.658C805.134 191.883 803.354 188 793.254 188C788.913 188 786.593 189.177 784.433 192.477ZM812.29 328.612C816.447 335.609 827.07 348.806 835.9 357.936C856.961 379.713 879.092 394.6 908.71 406.914L915.801 409.864L902.505 415.744C854.132 437.139 822.783 467.451 801.05 513.846L793.927 529.049L783.072 507.858C777.101 496.204 768.495 481.857 763.947 475.976C746.465 453.374 720.734 433.524 689.542 418.571L672.038 410.18L690.83 401.041C701.167 396.014 715.477 387.852 722.633 382.904C749.663 364.213 777.018 330.236 788.398 301.219L793.125 289.172L798.929 302.529C802.122 309.878 808.135 321.615 812.29 328.612Z" fill="#FFBD13"/>
+                  <path d="M547 847.5L793.937 712" stroke="#1F2937" stroke-width="15" stroke-linecap="round"/>
+                  <path d="M680 932L834 847" stroke="#1F2937" stroke-width="15" stroke-linecap="round"/>
+                  <path d="M518 945L945 707" stroke="#1F2937" stroke-width="15" stroke-linecap="round"/>
+                  <path d="M631 1043L991 838" stroke="#1F2937" stroke-width="15" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <span class="inline-block px-2 py-0.5 bg-green-100 text-green-800 text-xs font-semibold rounded-full mb-1">Included</span>
+                <h4 class="text-base font-bold text-gray-800 mb-1">Anti-Scratch Lenses</h4>
+                <p class="text-base text-gray-600 leading-relaxed">
+                  Durable protection against daily wear and tear.
+                </p>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <a
+              href="{{store direct_url='prescription-ski-goggle-inserts'}}"
+              class="inline-flex items-center px-6 py-3 mt-auto text-base font-semibold text-white bg-s rounded-lg hover:bg-blue-800 transition-colors w-fit"
+            >
+              Shop Ski Eyewear
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="border-t border-gray-300 mx-4 sm:mx-6 md:mx-8 max-w-[1500px] lg:mx-auto mb-8 sm:mb-12"></div>
+
+      <!-- Ordering Steps Section -->
+      <section class="px-4 mx-auto max-w-[1500px] sm:px-6 md:px-8 mb-8 sm:mb-12 scroll-mt-24" id="ordering-steps">
+        <h2 class="mb-6 sm:mb-8 text-2xl md:text-4xl font-bold tracking-tight text-center text-slate-800">
+          How to Order Your Prescription Ski Goggle Inserts
+        </h2>
+
+        <div class="space-y-4 md:space-y-0">
+          <!-- Step 1 -->
+          <div class="flex flex-col md:flex-row">
+            <div class="hidden flex-col items-center md:flex">
+              <div class="flex flex-col justify-center items-center py-5 mr-4 w-32 uppercase rounded-xl border border-gray-200 bg-s">
+                <div class="text-lg font-black text-white">Step 1</div>
+              </div>
+              <div class="h-full border-l-4 border-transparent">
+                <div class="mr-4 h-full border-l-4 border-gray-200 border-solid"></div>
+              </div>
+            </div>
+            <div class="flex-auto">
+              <div class="rounded-xl border border-gray-200 p-5 sm:p-6 md:border-0 md:p-0">
+                <!-- Mobile step indicator -->
+                <div class="flex items-center gap-3 mb-4 md:hidden">
+                  <div class="flex items-center justify-center w-10 h-10 rounded-full bg-s text-white font-bold text-lg flex-shrink-0">1</div>
+                  <h3 class="text-xl font-bold text-gray-800">Order Your Trial Pack</h3>
+                </div>
+                <!-- Desktop heading -->
+                <div class="hidden md:block text-2xl lg:text-3xl font-bold text-slate-800 md:px-3 mb-2">
+                  Order Your Trial Pack
+                </div>
+                <div class="text-base md:text-lg leading-relaxed text-slate-800 md:px-3 mb-4 md:pt-4 md:pb-4">
+                  Begin by ordering your complimentary home trial pack for just the cost of postage and packaging (£4.95). We'll send you three versatile prescription inserts compatible with most goggles and masks, along with an order form.
+                </div>
+                <div class="flex md:justify-start md:px-3">
+                  <a
+                    href="{{store direct_url='goggle-inserts-home-trial-pack'}}"
+                    class="inline-flex items-center px-6 py-3 text-base font-semibold text-white bg-s rounded-lg hover:bg-blue-800 transition-colors"
+                  >
+                    Order Trial Pack
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Desktop Image -->
+            <div class="hidden lg:flex lg:items-center lg:justify-center flex-shrink-0 w-[400px]">
+              <img
+                src="{{media url='/wysiwyg/homepageimages/selectingglasses_2.png'}}"
+                alt="Order your ski goggle insert trial pack"
+                class="object-cover h-80 w-80 rounded-lg shadow-lg shadow-gray-400"
+                width="467"
+                height="377"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- Decorative border between Step 1 and Step 2 -->
+          <div class="hidden md:flex flex-row items-start">
+            <div class="border-t-4 border-r-4 border-transparent">
+              <div class="ml-16 w-12 h-12 rounded-bl-full border-b-4 border-l-4 border-gray-200 border-solid"></div>
+            </div>
+            <div class="flex-auto border-t-4 border-transparent">
+              <div class="h-12 border-b-4 border-gray-200 border-solid"></div>
+            </div>
+            <div class="mt-12 mr-16 w-12 h-12 rounded-tr-full border-t-4 border-r-4 border-gray-200 border-solid"></div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex flex-row-reverse">
+            <div class="hidden flex-col items-center md:flex">
+              <div class="flex flex-col justify-center items-center py-5 ml-4 w-32 uppercase rounded-xl border border-gray-200 bg-s">
+                <div class="text-lg font-black text-white">Step 2</div>
+              </div>
+              <div class="h-full border-r-4 border-transparent">
+                <div class="ml-4 h-full border-l-4 border-gray-200 border-solid"></div>
+              </div>
+            </div>
+            <div class="flex-auto">
+              <div class="rounded-xl border border-gray-200 p-5 sm:p-6 md:border-0 md:p-0">
+                <!-- Mobile step indicator -->
+                <div class="flex items-center gap-3 mb-4 md:hidden">
+                  <div class="flex items-center justify-center w-10 h-10 rounded-full bg-s text-white font-bold text-lg flex-shrink-0">2</div>
+                  <h3 class="text-xl font-bold text-gray-800">Test and Choose</h3>
+                </div>
+                <!-- Desktop heading -->
+                <div class="hidden md:block text-2xl lg:text-3xl font-bold text-slate-800 md:px-3 mb-2">
+                  Test and Choose
+                </div>
+                <div class="text-base md:text-lg leading-relaxed text-slate-800 md:px-3 md:pt-4 md:pb-4">
+                  To ensure optimal vision while using your goggles, we encourage you to try the included inserts. After evaluating their fit and comfort, please complete the detailed order form provided. Once you have filled it out, kindly return both the inserts and the completed order form to us for further processing.
+                </div>
+              </div>
+            </div>
+            <!-- Desktop Image -->
+            <div class="hidden lg:flex lg:items-center lg:justify-center flex-shrink-0 w-[400px]">
+              <img
+                src="{{media url='wysiwyg/homepageimages/holdinglens_2.png'}}"
+                alt="Testing ski goggle insert fit"
+                class="object-cover h-80 w-80 rounded-lg shadow-lg shadow-gray-400"
+                width="467"
+                height="377"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- Decorative border between Step 2 and Step 3 -->
+          <div class="hidden md:flex flex-row-reverse items-start">
+            <div class="border-t-4 border-l-4 border-transparent">
+              <div class="mr-16 w-12 h-12 rounded-br-full border-r-4 border-b-4 border-gray-200 border-solid"></div>
+            </div>
+            <div class="flex-auto border-t-4 border-transparent">
+              <div class="h-12 border-b-4 border-gray-200 border-solid"></div>
+            </div>
+            <div class="mt-12 ml-16 w-12 h-12 rounded-tl-full border-t-4 border-l-4 border-gray-200 border-solid"></div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex flex-row">
+            <div class="hidden flex-col items-center md:flex">
+              <div class="flex flex-col justify-center items-center py-5 mr-4 w-32 uppercase rounded-xl border border-gray-200 bg-s">
+                <div class="text-lg font-black text-white">Step 3</div>
+              </div>
+              <div class="h-full border-l-4 border-transparent">
+                <div class="mr-4 h-full border-l-4 border-gray-200 border-solid"></div>
+              </div>
+            </div>
+            <div class="flex-auto">
+              <div class="rounded-xl border border-gray-200 p-5 sm:p-6 md:border-0 md:p-0">
+                <!-- Mobile step indicator -->
+                <div class="flex items-center gap-3 mb-4 md:hidden">
+                  <div class="flex items-center justify-center w-10 h-10 rounded-full bg-s text-white font-bold text-lg flex-shrink-0">3</div>
+                  <h3 class="text-xl font-bold text-gray-800">Customise Your Lenses</h3>
+                </div>
+                <!-- Desktop heading -->
+                <div class="hidden md:block text-2xl lg:text-3xl font-bold text-slate-800 md:px-3 mb-2">
+                  Customise Your Lenses
+                </div>
+                <div class="text-base md:text-lg leading-relaxed text-slate-800 md:px-3 md:pt-4 md:pb-4">
+                  After testing our trial inserts, head to our website to find your perfect fit. Select the insert that matches your needs, personalise your lenses with our customisation options, and enter your prescription details for eyewear that enhances your vision with precision and style.
+                </div>
+              </div>
+            </div>
+            <!-- Desktop Image -->
+            <div class="hidden lg:flex lg:items-center lg:justify-center flex-shrink-0 w-[400px]">
+              <img
+                src="{{media url='wysiwyg/redesign/inserts_step_3.jpg'}}"
+                alt="Customise your prescription ski goggle insert"
+                class="object-cover h-80 w-80 rounded-lg shadow-lg shadow-gray-400"
+                width="467"
+                height="377"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- Decorative border between Step 3 and Step 4 -->
+          <div class="hidden md:flex flex-row items-start">
+            <div class="border-t-4 border-r-4 border-transparent">
+              <div class="ml-16 w-12 h-12 rounded-bl-full border-b-4 border-l-4 border-gray-200 border-solid"></div>
+            </div>
+            <div class="flex-auto border-t-4 border-transparent">
+              <div class="h-12 border-b-4 border-gray-200 border-solid"></div>
+            </div>
+            <div class="mt-12 mr-16 w-12 h-12 rounded-tr-full border-t-4 border-r-4 border-gray-200 border-solid"></div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flex flex-row-reverse">
+            <div class="hidden flex-col items-center md:flex">
+              <div class="flex flex-col justify-center items-center py-5 ml-4 w-32 uppercase rounded-xl border border-gray-200 bg-s">
+                <div class="text-lg font-black text-white">Step 4</div>
+              </div>
+              <div class="h-full border-r-4 border-transparent"></div>
+            </div>
+            <div class="flex-auto">
+              <div class="rounded-xl border border-gray-200 p-5 sm:p-6 md:border-0 md:p-0">
+                <!-- Mobile step indicator -->
+                <div class="flex items-center gap-3 mb-4 md:hidden">
+                  <div class="flex items-center justify-center w-10 h-10 rounded-full bg-s text-white font-bold text-lg flex-shrink-0">4</div>
+                  <h3 class="text-xl font-bold text-gray-800">Receive Your Inserts</h3>
+                </div>
+                <!-- Desktop heading -->
+                <div class="hidden md:block text-2xl lg:text-3xl font-bold text-slate-800 md:px-3 mb-2">
+                  Receive Your Customised Inserts
+                </div>
+                <div class="text-base md:text-lg leading-relaxed text-slate-800 md:px-3 md:pt-4 md:pb-4">
+                  Upon receiving your order, we'll tailor-make your inserts to your specifications and dispatch your personalized glazed insert within one day. And good news - there's no additional postage fee for your completed order if you've purchased a trial pack, effectively making this service free when you place an order.
+                </div>
+              </div>
+            </div>
+            <!-- Desktop Image -->
+            <div class="hidden lg:flex lg:items-center lg:justify-center flex-shrink-0 w-[400px]">
+              <img
+                src="{{media url='wysiwyg/new/bifocal-ski-insert_1_.png'}}"
+                alt="Receive your customised prescription ski goggle inserts"
+                class="object-cover h-80 w-80 rounded-lg shadow-lg shadow-gray-400"
+                width="467"
+                height="377"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+       <section class="px-4 mx-auto max-w-[1500px] sm:px-6 md:px-8 mb-8 sm:mb-12">
+        <div class="bg-s rounded-xl p-5 sm:p-6 md:p-8 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
+            Ready to Hit the Slopes with Clear Vision?
+          </h2>
+          <p class="text-white/90 text-base md:text-lg mb-5 sm:mb-6 max-w-2xl mx-auto">
+            Browse our full range of prescription ski eyewear, custom-glazed to your exact prescription. Perfect fit guaranteed with our home trial service.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="{{store direct_url='prescription-ski-goggle-inserts'}}"
+              class="inline-flex items-center px-6 py-3 text-base font-semibold text-s bg-white rounded-lg hover:bg-gray-100 transition-colors focus:ring-2 focus:ring-white"
+            >
+              Shop All Ski Eyewear
+            </a>
+            <a
+              href="{{store direct_url='goggle-inserts-home-trial-pack'}}"
+              class="text-white underline hover:text-white/80 font-semibold text-base md:text-lg transition-colors"
+            >
+              Order Insert Trial Pack
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="px-4 sm:px-6 py-8 w-full max-w-[1500px] mx-auto scroll-mt-24" id="faq">
+        <h2 class="mb-8 sm:mb-12 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-center text-slate-800">
+          Frequently Asked Questions
+        </h2>
+        <div class="mx-auto lg:px-32">
+          <div class="mx-auto bg-white border border-gray-200" x-data="{selected:0}">
+            <ul class="shadow-box">
+
+              <!-- FAQ 1 -->
+              <li class="relative border-b border-gray-200">
+                <button type="button" class="px-5 sm:px-6 md:px-8 py-5 sm:py-6 w-full text-left focus:outline-none" @click="selected !== 1 ? selected = 1 : selected = null">
+                  <div class="flex justify-between items-center">
+                    <span class="pr-2 text-base font-medium">Will ski goggle inserts fit my goggles?</span>
+                    <span class="block transition-transform duration-300" :class="selected === 1 ? 'rotate-180' : ''">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 330 330">
+                        <path d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+                <div class="overflow-hidden relative max-h-0 transition-all duration-300 ease-in-out" x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+                  <div class="px-5 sm:px-6 md:px-8 pb-5 sm:pb-6">
+                    <p class="text-base text-gray-600">Our PI-003 universal insert fits approximately 90% of ski goggles on the market. For specialised goggle shapes, we also offer PI-001 and PI-002 inserts, which together cover around 99% of all goggles. If you're unsure, our <a href="{{store direct_url='goggle-inserts-home-trial-pack'}}" class="text-s underline hover:text-blue-800">Home Trial Pack</a> lets you test the fit with your own goggles before committing to glazed lenses.</p>
+                  </div>
+                </div>
+              </li>
+
+              <!-- FAQ 2 -->
+              <li class="relative border-b border-gray-200">
+                <button type="button" class="px-5 sm:px-6 md:px-8 py-5 sm:py-6 w-full text-left focus:outline-none" @click="selected !== 2 ? selected = 2 : selected = null">
+                  <div class="flex justify-between items-center">
+                    <span class="pr-2 text-base font-medium">What prescription strengths can you accommodate?</span>
+                    <span class="block transition-transform duration-300" :class="selected === 2 ? 'rotate-180' : ''">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 330 330">
+                        <path d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+                <div class="overflow-hidden relative max-h-0 transition-all duration-300 ease-in-out" x-ref="container2" x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
+                  <div class="px-5 sm:px-6 md:px-8 pb-5 sm:pb-6">
+                    <p class="text-base text-gray-600">We can glaze most prescriptions into ski eyewear. For very high prescriptions or complex requirements, we recommend <a href="{{store direct_url='contact-us'}}" class="text-s underline hover:text-blue-800">contacting our optical team</a> before ordering. They can advise on the best frame and lens combination for your specific needs.</p>
+                  </div>
+                </div>
+              </li>
+
+              <!-- FAQ 3 -->
+              <li class="relative border-b border-gray-200">
+                <button type="button" class="px-5 sm:px-6 md:px-8 py-5 sm:py-6 w-full text-left focus:outline-none" @click="selected !== 3 ? selected = 3 : selected = null">
+                  <div class="flex justify-between items-center">
+                    <span class="pr-2 text-base font-medium">How do I prevent my ski goggles from fogging?</span>
+                    <span class="block transition-transform duration-300" :class="selected === 3 ? 'rotate-180' : ''">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 330 330">
+                        <path d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+                <div class="overflow-hidden relative max-h-0 transition-all duration-300 ease-in-out" x-ref="container3" x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
+                  <div class="px-5 sm:px-6 md:px-8 pb-5 sm:pb-6">
+                    <p class="text-base text-gray-600">Customers can purchase anti-fog coating with their prescription insert lenses. To minimise fogging, ensure your goggles have adequate ventilation, avoid covering vents with hats or balaclavas, and never wipe the inside of lenses with gloves. If you stop skiing, push goggles up onto your forehead to allow airflow.</p>
+                  </div>
+                </div>
+              </li>
+
+              <!-- FAQ 6 -->
+              <li class="relative border-b border-gray-200">
+                <button type="button" class="px-5 sm:px-6 md:px-8 py-5 sm:py-6 w-full text-left focus:outline-none" @click="selected !== 6 ? selected = 6 : selected = null">
+                  <div class="flex justify-between items-center">
+                    <span class="pr-2 text-base font-medium">What's your returns policy for ski eyewear?</span>
+                    <span class="block transition-transform duration-300" :class="selected === 6 ? 'rotate-180' : ''">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 330 330">
+                        <path d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+                <div class="overflow-hidden relative max-h-0 transition-all duration-300 ease-in-out" x-ref="container6" x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''">
+                  <div class="px-5 sm:px-6 md:px-8 pb-5 sm:pb-6">
+                    <p class="text-base text-gray-600">We offer a 30-day satisfaction guarantee on all purchases. If you're not happy with your ski eyewear, simply notify us within 7 days of receipt and return within 30 days for a full refund. We also provide a 12-month warranty against manufacturing faults. Read more about our <a href="{{store direct_url='exchange-or-return'}}" class="text-s underline hover:text-blue-800">returns policy</a>.</p>
+                  </div>
+                </div>
+              </li>
+
+              <!-- FAQ 7 -->
+              <li class="relative border-b border-gray-200">
+                <button type="button" class="px-5 sm:px-6 md:px-8 py-5 sm:py-6 w-full text-left focus:outline-none" @click="selected !== 7 ? selected = 7 : selected = null">
+                  <div class="flex justify-between items-center">
+                    <span class="pr-2 text-base font-medium">Can I return or exchange my prescription ski goggles if they don't fit?</span>
+                    <span class="block transition-transform duration-300" :class="selected === 7 ? 'rotate-180' : ''">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 330 330">
+                        <path d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+                <div class="overflow-hidden relative max-h-0 transition-all duration-300 ease-in-out" x-ref="container7" x-bind:style="selected == 7 ? 'max-height: ' + $refs.container7.scrollHeight + 'px' : ''">
+                  <div class="px-5 sm:px-6 md:px-8 pb-5 sm:pb-6">
+                    <p class="text-base text-gray-600">If you need to return your prescription goggles for an exchange or a refund, please notify us within 7 days of receipt and ensure their return within 30 days. Non-prescription glasses and sunglasses should be returned within 14 days from the date of dispatch and must be in their original, unused condition, including any accessories, and case. Upon return, we can credit your account with the total cost of the glasses or exchange them, adjusting the price as necessary, based on your choice.</p>
+                  </div>
+                </div>
+              </li>
+
+              <!-- FAQ 8 -->
+              <li class="relative border-b border-gray-200">
+                <button type="button" class="px-5 sm:px-6 md:px-8 py-5 sm:py-6 w-full text-left focus:outline-none" @click="selected !== 8 ? selected = 8 : selected = null">
+                  <div class="flex justify-between items-center">
+                    <span class="pr-2 text-base font-medium">How do I choose the right size?</span>
+                    <span class="block transition-transform duration-300" :class="selected === 8 ? 'rotate-180' : ''">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 330 330">
+                        <path d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+                <div class="overflow-hidden relative max-h-0 transition-all duration-300 ease-in-out" x-ref="container8" x-bind:style="selected == 8 ? 'max-height: ' + $refs.container8.scrollHeight + 'px' : ''">
+                  <div class="px-5 sm:px-6 md:px-8 pb-5 sm:pb-6">
+                    <p class="text-base text-gray-600">The best way is to order a similar size to a comfortable pair of sunglasses that you already have. All of our frames have measurements of the lens size, the distance between the lenses (DBL) and the arm length. You can usually find these measurements on your current frames, and they're given in millimetres. For a detailed guide please see <a href="{{store direct_url='choosing-the-right-size-glasses'}}" class="text-s underline hover:text-blue-800">How To Choose The Right Size Glasses</a>.</p>
+                  </div>
+                </div>
+              </li>
+
+              <!-- FAQ 9 -->
+              <li class="relative border-b border-gray-200">
+                <button type="button" class="px-5 sm:px-6 md:px-8 py-5 sm:py-6 w-full text-left focus:outline-none" @click="selected !== 9 ? selected = 9 : selected = null">
+                  <div class="flex justify-between items-center">
+                    <span class="pr-2 text-base font-medium">How do I get my prescription fitted into ski goggles?</span>
+                    <span class="block transition-transform duration-300" :class="selected === 9 ? 'rotate-180' : ''">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 330 330">
+                        <path d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+                <div class="overflow-hidden relative max-h-0 transition-all duration-300 ease-in-out" x-ref="container9" x-bind:style="selected == 9 ? 'max-height: ' + $refs.container9.scrollHeight + 'px' : ''">
+                  <div class="px-5 sm:px-6 md:px-8 pb-5 sm:pb-6">
+                    <p class="text-base text-gray-600">We use prescription inserts, which are custom-made to match your prescription. These inserts easily fit inside the ski goggles, ensuring you have clear vision while on the slopes without compromising the style or functionality of the goggles.</p>
+                  </div>
+                </div>
+              </li>
+
+              <!-- FAQ 10 -->
+              <li class="relative">
+                <button type="button" class="px-5 sm:px-6 md:px-8 py-5 sm:py-6 w-full text-left focus:outline-none" @click="selected !== 10 ? selected = 10 : selected = null">
+                  <div class="flex justify-between items-center">
+                    <span class="pr-2 text-base font-medium">Are prescription ski goggle inserts universal?</span>
+                    <span class="block transition-transform duration-300" :class="selected === 10 ? 'rotate-180' : ''">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 330 330">
+                        <path d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+                <div class="overflow-hidden relative max-h-0 transition-all duration-300 ease-in-out" x-ref="container10" x-bind:style="selected == 10 ? 'max-height: ' + $refs.container10.scrollHeight + 'px' : ''">
+                  <div class="px-5 sm:px-6 md:px-8 pb-5 sm:pb-6">
+                    <p class="text-base text-gray-600">Yes. Our most popular insert fits approximately 90% of ski goggles. Combined with our alternative insert sizes, we cover up to 99% of goggles on the market. For complete peace of mind, we offer a <a href="{{store direct_url='goggle-inserts-home-trial-pack'}}" class="text-s underline hover:text-blue-800">home trial pack</a> so you can test fit before ordering lenses.</p>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+
+    </main>
+  </body>
+</html>

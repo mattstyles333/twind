@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <title>Spex4Less - Banner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: false,
+        theme: {
+          extend: {
+            colors: {
+              p: "#1f2937",
+              s: "#1E3A8A",
+              l: "#f3f4f6",
+              t: "#5494EC",
+              a: "#f97316",
+              b: "#2563eb",
+              gr: "#6b7280",
+            },
+            screens: {
+              xxsm: "420px",
+              xxxsm: "360px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Hero Section - Friendly Intro -->
+    <div class="relative lg:grid lg:grid-cols-2">
+      <img
+        class="absolute h-full w-full object-cover lg:relative"
+        src="{{media url='wysiwyg/banners/black_frames.png'}}"
+        width="1092"
+        height="480"
+        alt="Find your perfect glasses"
+      />
+      <div
+        class="relative px-4 md:px-8 py-12 md:py-16 lg:py-24 bg-gradient-to-br from-s to-p"
+      >
+        <div class="mx-auto flex max-w-3xl flex-col gap-6 md:gap-8">
+          <h1
+            class="text-left text-3xl font-extrabold leading-tight text-white drop-shadow-lg md:text-center md:text-4xl lg:text-left xl:text-5xl"
+          >
+            Black Glasses Frames
+          </h1>
+          <p
+            class="max-w-2xl text-left text-lg leading-relaxed text-white/90 md:text-center lg:text-left lg:text-xl"
+          >
+            Timeless black frames for everyday wear
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
