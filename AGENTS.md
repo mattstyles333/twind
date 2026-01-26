@@ -1,5 +1,70 @@
 # Agent Guidelines for Twind
 
+## OpenCode Agent Definitions
+
+### Primary Agents
+
+#### Build Agent
+**Mode**: Primary  
+**Purpose**: Full development work with all tools enabled  
+**Temperature**: 0.3  
+**Tools**: All enabled (write, edit, bash, read, glob, grep)
+
+Use this agent for:
+- Creating new content, templates, or partials
+- Making edits to existing files
+- Running build/dev commands
+- Debugging template issues
+
+#### Plan Agent
+**Mode**: Primary  
+**Purpose**: Analysis and planning without making changes  
+**Temperature**: 0.1  
+**Tools**: Read, glob, grep enabled; write, edit, bash disabled
+
+Use this agent for:
+- Analyzing project structure
+- Planning refactors or new features
+- Reviewing code without changes
+- Understanding existing patterns
+
+### Subagents
+
+#### Template Specialist
+**Mode**: Subagent  
+**Purpose**: Hugo templating and Go template syntax expertise  
+**Temperature**: 0.2
+
+Specializes in:
+- Hugo partial creation
+- Go templating patterns
+- Template error debugging
+- Data file structure optimization
+
+#### Styles & Layout Specialist
+**Mode**: Subagent  
+**Purpose**: Tailwind CSS and responsive design  
+**Temperature**: 0.2
+
+Specializes in:
+- Tailwind utility composition
+- Responsive mobile-first layouts
+- CSS columns vs grids decisions
+- Performance-optimized styling
+
+#### Content & SEO Specialist
+**Mode**: Subagent  
+**Purpose**: Markdown content and SEO optimization  
+**Temperature**: 0.3
+
+Specializes in:
+- Markdown front matter
+- Content structure
+- Internal linking patterns
+- SEO best practices for Hugo
+
+---
+
 ## Build/Lint/Test Commands
 
 ### Build Commands
@@ -13,6 +78,8 @@ No automated testing framework configured. Manual testing required.
 
 ### Linting
 No linting tools configured. Use Prettier for formatting (see VSCode settings).
+
+---
 
 ## Code Style Guidelines
 

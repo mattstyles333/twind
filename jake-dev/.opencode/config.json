@@ -1,0 +1,9 @@
+{
+  "models": {
+    "primary": {
+      "provider": "google",
+      "model": "gemini-2.0-flash-exp",
+      "fallback": true
+    }
+  }
+}
